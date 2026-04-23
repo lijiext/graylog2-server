@@ -1,0 +1,397 @@
+{
+  "generatedAt": "2026-04-22T06:49:12.655Z",
+  "total": 78,
+  "withEnglish": 78,
+  "files": [
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/stream_processing_disabled.ftl",
+      "bytes": 456,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/sidecar_status_unknown.ftl",
+      "bytes": 146,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/search_error.ftl",
+      "bytes": 71,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/remote_reindex_running.ftl",
+      "bytes": 244,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/remote_reindex_finished.ftl",
+      "bytes": 308,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/output_failing.ftl",
+      "bytes": 283,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/output_disabled.ftl",
+      "bytes": 307,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/outdated_version.ftl",
+      "bytes": 293,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/no_leader.ftl",
+      "bytes": 625,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/no_input_running.ftl",
+      "bytes": 444,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/multi_leader.ftl",
+      "bytes": 538,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/legacy_ldap_config_migration.ftl",
+      "bytes": 1074,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/journal_utilization_too_high.ftl",
+      "bytes": 317,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/journal_uncommitted_messages_deleted.ftl",
+      "bytes": 360,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/input_failure_shutdown.ftl",
+      "bytes": 467,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/input_failing.ftl",
+      "bytes": 419,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/input_failed_to_start.ftl",
+      "bytes": 437,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/index_ranges_recalculation.ftl",
+      "bytes": 332,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/generic_with_link.ftl",
+      "bytes": 243,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/generic.ftl",
+      "bytes": 71,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/gc_too_long.ftl",
+      "bytes": 339,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/event_limit_reached.ftl",
+      "bytes": 281,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_version_mismatch.ftl",
+      "bytes": 524,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_unavailable.ftl",
+      "bytes": 395,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_open_files.ftl",
+      "bytes": 435,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_node_disk_watermark_low.ftl",
+      "bytes": 437,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_node_disk_watermark_high.ftl",
+      "bytes": 448,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_node_disk_watermark_flood_stage.ftl",
+      "bytes": 503,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_index_blocked.ftl",
+      "bytes": 163,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/es_cluster_red.ftl",
+      "bytes": 386,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/email_transport_failed.ftl",
+      "bytes": 216,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/email_transport_configuration_invalid.ftl",
+      "bytes": 313,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/drawdown_license_error.ftl",
+      "bytes": 166,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/deflector_exists_as_index.ftl",
+      "bytes": 382,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/data_tiering_rollover_error.ftl",
+      "bytes": 212,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/data_node_needs_provisioning.ftl",
+      "bytes": 491,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/check_server_clocks.ftl",
+      "bytes": 433,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/certificate_needs_renewal.ftl",
+      "bytes": 187,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/PLAINTEXT/archiving_summary.ftl",
+      "bytes": 409,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/stream_processing_disabled.ftl",
+      "bytes": 538,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/sidecar_status_unknown.ftl",
+      "bytes": 71,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/search_error.ftl",
+      "bytes": 71,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/remote_reindex_running.ftl",
+      "bytes": 395,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/remote_reindex_finished.ftl",
+      "bytes": 459,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/output_failing.ftl",
+      "bytes": 312,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/output_disabled.ftl",
+      "bytes": 339,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/outdated_version.ftl",
+      "bytes": 414,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/no_leader.ftl",
+      "bytes": 651,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/no_input_running.ftl",
+      "bytes": 506,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/multi_leader.ftl",
+      "bytes": 565,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/legacy_ldap_config_migration.ftl",
+      "bytes": 1274,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/journal_utilization_too_high.ftl",
+      "bytes": 339,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/journal_uncommitted_messages_deleted.ftl",
+      "bytes": 382,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/input_failure_shutdown.ftl",
+      "bytes": 560,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/input_failing.ftl",
+      "bytes": 502,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/input_failed_to_start.ftl",
+      "bytes": 520,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/index_ranges_recalculation.ftl",
+      "bytes": 366,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/generic_with_link.ftl",
+      "bytes": 290,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/generic.ftl",
+      "bytes": 71,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/gc_too_long.ftl",
+      "bytes": 382,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/event_limit_reached.ftl",
+      "bytes": 308,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_version_mismatch.ftl",
+      "bytes": 621,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_unavailable.ftl",
+      "bytes": 493,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_open_files.ftl",
+      "bytes": 550,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_node_disk_watermark_low.ftl",
+      "bytes": 580,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_node_disk_watermark_high.ftl",
+      "bytes": 591,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_node_disk_watermark_flood_stage.ftl",
+      "bytes": 645,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_index_blocked.ftl",
+      "bytes": 216,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/es_cluster_red.ftl",
+      "bytes": 483,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/email_transport_failed.ftl",
+      "bytes": 231,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/email_transport_configuration_invalid.ftl",
+      "bytes": 328,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/drawdown_license_error.ftl",
+      "bytes": 181,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/deflector_exists_as_index.ftl",
+      "bytes": 397,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/data_tiering_rollover_error.ftl",
+      "bytes": 241,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/data_node_needs_provisioning.ftl",
+      "bytes": 579,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/check_server_clocks.ftl",
+      "bytes": 448,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/certificate_needs_renewal.ftl",
+      "bytes": 187,
+      "hasEnglishText": true
+    },
+    {
+      "file": "graylog2-server/src/main/resources/org/graylog2/freemarker/templates/HTML/archiving_summary.ftl",
+      "bytes": 456,
+      "hasEnglishText": true
+    }
+  ]
+}

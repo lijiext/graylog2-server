@@ -41,3 +41,9 @@ dependency-reduced-pom.xml
 **/hs_err_pid*.log
 
 data-node/bin/*
+
+# i18n localization workflow artifacts
+build*.log
+i18n/graylog.tgz
+i18n/ftl-backup/
+scripts/i18n/node_modules/
