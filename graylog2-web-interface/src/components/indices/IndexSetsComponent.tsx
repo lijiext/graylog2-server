@@ -233,7 +233,7 @@ const IndexSetsComponent = () => {
             ? formatStatsString(globalIndexSetStats)
             : <StatsInfoText>{statsDisabledText}</StatsInfoText>}
           </GlobalStats>
-          <Button onClick={onToggleStats}>{statsEnabled ? 'Disable stats' : 'Enable stats'}</Button>
+          <Button onClick={onToggleStats}>{statsEnabled ? '禁用统计' : '启用统计'}</Button>
         </GlobalStatsCol>
       </Toolbar>
 

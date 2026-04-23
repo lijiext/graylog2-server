@@ -62,16 +62,16 @@ const JournalState = createReactClass({
     const metrics = MetricsExtractor.getValuesForNode(nodeMetrics, this.metricNames);
 
     if (Object.keys(metrics).length === 0) {
-      return <span>Journal metrics unavailable.</span>;
+      return <span>日志指标不可用。</span>;
     }
 
     return (
       <span>
-        The journal contains <strong>{numeral(metrics.entriesUncommitted).format('0,0')} unprocessed messages</strong> in {metrics.segments}
+        日志包含 <strong>{numeral(metrics.entriesUncommitted).format('0,0')} 未处理的日志消息</strong> in {metrics.segments}
         {' '}<Pluralize value={metrics.segments} singular="segment" plural="segments" />.{' '}
-        <strong>{numeral(metrics.append).format('0,0')} messages</strong> appended, <strong>
+        <strong>{numeral(metrics.append).format('0,0')} messages</strong> 已附加， <strong>
           {numeral(metrics.read).format('0,0')} messages
-        </strong> read in the last second.
+        </strong> 最近一秒内读取。
       </span>
     );
   },

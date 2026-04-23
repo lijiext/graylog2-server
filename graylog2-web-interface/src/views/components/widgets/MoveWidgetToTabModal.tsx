@@ -65,7 +65,7 @@ const MoveWidgetToTabModal = ({ view, onCancel, onSubmit, widgetId }: Props) => 
     <BootstrapModalForm show
                         onCancel={onCancel}
                         submitButtonDisabled={!selectedTab}
-                        submitButtonText={`${keepCopy ? 'Copy' : 'Move'} 小部件`}
+                        submitButtonText={`${keepCopy ? '复制' : '移动'} 小部件`}
                         onSubmitForm={submit}
                         title="选择目标页面">
       {renderResult}

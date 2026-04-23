@@ -130,7 +130,7 @@ const MessageDetail = ({ renderForDisplay, inputs, streams, message, customField
             )}
 
             <dt>存储在索引中</dt>
-            <dd>{message.index ? message.index : 'Message is not stored'}</dd>
+            <dd>{message.index ? message.index : '消息未存储'}</dd>
 
             {streamIds.size > 0 && (
               <>

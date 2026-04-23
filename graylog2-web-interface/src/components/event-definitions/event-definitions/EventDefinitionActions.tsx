@@ -264,9 +264,9 @@ const EventDefinitionActions = ({ eventDefinition }: Props) => {
           )}
           <MenuItem divider />
           <MenuItem disabled={isSystemEventDefinition()}
-                    title={isSystemEventDefinition() ? 'System Event Definition cannot be disabled' : undefined}
+                    title={isSystemEventDefinition() ? '系统事件定义无法禁用' : undefined}
                     onClick={isSystemEventDefinition() ? undefined : () => handleAction(isEnabled ? DIALOG_TYPES.DISABLE : DIALOG_TYPES.ENABLE, eventDefinition)}>
-            {isEnabled ? 'Disable' : 'Enable'}
+            {isEnabled ? '禁用' : '启用'}
           </MenuItem>
 
           {showActions() && (

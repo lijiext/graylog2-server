@@ -38,7 +38,7 @@ const NotificationTitle = ({ notification, testResults }: Props) => {
             <Spinner text="Testing Notification..." />
           ) : (
             <p className={result.error ? 'text-danger' : 'text-success'}>
-              <b>{result.error ? 'Error' : 'Success'}:</b> {result.message}
+              <b>{result.error ? '错误' : '成功'}:</b> {result.message}
             </p>
           )}
         </div>

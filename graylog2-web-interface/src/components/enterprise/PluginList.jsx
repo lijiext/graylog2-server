@@ -35,7 +35,7 @@ const PluginList = createReactClass({
     return (
       <li key={pluginName} className={plugin ? 'text-success' : 'text-danger'}>
         <Icon name={plugin ? 'check_circle' : 'radio_button_unchecked'} />&nbsp;
-        {this.ENTERPRISE_PLUGINS[pluginName]} is {plugin ? 'installed' : 'not installed'}
+        {this.ENTERPRISE_PLUGINS[pluginName]} is {plugin ? 'installed' : '未安装'}
       </li>
     );
   },
@@ -45,7 +45,7 @@ const PluginList = createReactClass({
 
     return (
       <>
-        <p>This is the status of Graylog Enterprise modules in this cluster:</p>
+        <p>这是此集群中 Graylog Enterprise 模块的状态:</p>
         <ul className={style.enterprisePlugins}>
           {enterprisePluginList}
         </ul>

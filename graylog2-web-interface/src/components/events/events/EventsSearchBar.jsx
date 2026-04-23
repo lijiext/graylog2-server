@@ -78,10 +78,10 @@ class EventsSearchBar extends React.Component {
         <div>
           <div className={styles.searchForm}>
             <SearchForm onSearch={onQueryChange}
-                        placeholder="Find Events"
+                        placeholder="查找事件"
                         topMargin={0}
                         useLoadingState>
-              <Button onClick={this.handleSearchReload} disabled={isReloadingResults} title="Refresh Events">
+              <Button onClick={this.handleSearchReload} disabled={isReloadingResults} title="刷新事件">
                 <Icon name="sync" spin={isReloadingResults} />
               </Button>
             </SearchForm>
@@ -98,9 +98,9 @@ class EventsSearchBar extends React.Component {
         </div>
         <div>
           <ButtonGroup>
-            <Button active={filterAlerts === 'only'} onClick={onAlertFilterChange('only')}>Alerts</Button>
-            <Button active={filterAlerts === 'exclude'} onClick={onAlertFilterChange('exclude')}>Events</Button>
-            <Button active={filterAlerts === 'include'} onClick={onAlertFilterChange('include')}>Both</Button>
+            <Button active={filterAlerts === 'only'} onClick={onAlertFilterChange('only')}>告警</Button>
+            <Button active={filterAlerts === 'exclude'} onClick={onAlertFilterChange('exclude')}>事件</Button>
+            <Button active={filterAlerts === 'include'} onClick={onAlertFilterChange('include')}>两者</Button>
           </ButtonGroup>
         </div>
       </div>

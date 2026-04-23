@@ -37,7 +37,7 @@ const LoggedInCell = ({ lastActivity, sessionActive, clientAddress }: Props) => 
   <Td>
     <OverlayTrigger trigger={['hover', 'focus']}
                     placement="right"
-                    title={sessionActive ? 'Logged in' : undefined}
+                    title={sessionActive ? '已登录' : undefined}
                     overlay={sessionActive
                       ? (
                         <>

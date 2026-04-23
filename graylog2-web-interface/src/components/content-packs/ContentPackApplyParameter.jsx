@@ -54,7 +54,7 @@ class ContentPackApplyParameter extends React.Component {
     const enableClear = findIndex(this.props.appliedParameter,
       { paramName: paramMap.paramName, configKey: paramMap.configKey, readOnly: true }) < 0;
     const lastCol = enableClear
-      ? <td><Button bsStyle="info" bsSize="small" onClick={() => { this._parameterClear(paramMap.configKey); }}>Clear</Button></td>
+      ? <td><Button bsStyle="info" bsSize="small" onClick={() => { this._parameterClear(paramMap.configKey); }}>清除</Button></td>
       : <td />;
 
     return (
@@ -132,7 +132,7 @@ class ContentPackApplyParameter extends React.Component {
                      type="select"
                      value={this.state.config_key}
                      onChange={this._bindValue}
-                     label="Config Key"
+                     label="配置键"
                      required>
                 {configOptions}
               </Input>
@@ -143,7 +143,7 @@ class ContentPackApplyParameter extends React.Component {
                      type="select"
                      value={this.state.parameter}
                      onChange={this._bindValue}
-                     label="Parameter"
+                     label="参数"
                      required>
                 {parameterOptions}
               </Input>
@@ -152,7 +152,7 @@ class ContentPackApplyParameter extends React.Component {
           </Row>
           <Row>
             <Col smOffset={10} sm={2}>
-              <Button bsStyle="primary" disabled={!this._valuesSelected()} type="submit">Apply</Button>
+              <Button bsStyle="primary" disabled={!this._valuesSelected()} type="submit">应用</Button>
             </Col>
           </Row>
         </form>

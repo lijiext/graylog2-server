@@ -74,7 +74,7 @@ class LinkToNode extends React.PureComponent {
       );
     }
 
-    return <i>Unknown Node</i>;
+    return <i>未知节点</i>;
   }
 }
 

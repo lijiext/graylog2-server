@@ -19,8 +19,8 @@ import React from 'react';
 const NoopRetentionStrategySummary = () => (
   <div>
     <dl>
-      <dt>Index retention strategy:</dt>
-      <dd>Do nothing</dd>
+      <dt>索引保留策略:</dt>
+      <dd>不执行任何操作</dd>
     </dl>
   </div>
 );

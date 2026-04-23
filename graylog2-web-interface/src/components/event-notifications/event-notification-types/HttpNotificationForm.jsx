@@ -139,20 +139,20 @@ class HttpNotificationForm extends React.Component {
                   name="skip_tls_verification"
                   onChange={this.handleChange}
                   checked={config.skip_tls_verification}>
-          Skip TLS verification
+          跳过 TLS 验证
         </Checkbox>
         <Row>
           <Col md={12}>
             {basic_auth?.keep_value ? (
               <>
-                <ControlLabel>Basic authentication</ControlLabel>
+                <ControlLabel>基本认证</ControlLabel>
                 <StyledButton bsStyle="default" type="button" onClick={() => { this.resetSecret('basic_auth'); }}>
-                  Reset Secret
+                  重置密钥
                 </StyledButton>
               </>
             ) : (
               <Input id="basicAuth"
-                     label={<span>Basic authentication <small className="text-muted">(Optional)</small></span>}
+                     label={<span>基本认证 <small className="text-muted">(可选)</small></span>}
                      name="basic_auth"
                      type="password"
                      onChange={this.handleSecretInputChange}
@@ -160,7 +160,7 @@ class HttpNotificationForm extends React.Component {
                      help="The Basic authentication string needs to follow this format: '<username>:<password>'."
                      buttonAfter={reset.basic_auth ? (
                        <Button type="button" onClick={() => { this.undoResetSecret('basic_auth'); }}>
-                         Undo Reset
+                         撤销重置
                        </Button>
                      ) : undefined} />
             )}
@@ -170,7 +170,7 @@ class HttpNotificationForm extends React.Component {
           <Col md={12}>
             <Input id="api_key"
                    name="api_key"
-                   label={<span>API Key <small className="text-muted">(Optional)</small></span>}
+                   label={<span>API Key <small className="text-muted">(可选)</small></span>}
                    type="text"
                    onChange={this.handleChange}
                    bsStyle={validation.errors.api_key ? 'error' : null}
@@ -184,12 +184,12 @@ class HttpNotificationForm extends React.Component {
               <>
                 <ControlLabel>API Secret</ControlLabel>
                 <StyledButton bsStyle="default" type="button" onClick={() => { this.resetSecret('api_secret'); }}>
-                  Reset Secret
+                  重置密钥
                 </StyledButton>
               </>
             ) : (
               <Input id="apiSecret"
-                     label={<span>API Secret <small className="text-muted">(Optional)</small></span>}
+                     label={<span>API Secret <small className="text-muted">(可选)</small></span>}
                      name="api_secret"
                      type="password"
                      onChange={this.handleSecretInputChange}
@@ -198,7 +198,7 @@ class HttpNotificationForm extends React.Component {
                      value={this.state.api_secret || ''}
                      buttonAfter={reset.api_secret ? (
                        <Button type="button" onClick={() => { this.undoResetSecret('api_secret'); }}>
-                         Undo Reset
+                         撤销重置
                        </Button>
                      ) : undefined} />
             )}
@@ -206,7 +206,7 @@ class HttpNotificationForm extends React.Component {
                       name="api_key_as_header"
                       onChange={this.handleChange}
                       checked={config.api_key_as_header}>
-              Send API Key/Secret as Header
+              将 API Key/Secret 作为请求头发送
             </Checkbox>
           </Col>
         </Row>

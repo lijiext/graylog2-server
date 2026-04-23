@@ -36,7 +36,7 @@ class IndexSummary extends React.Component {
     const labels = [];
 
     if (index.is_deflector) {
-      labels.push(<Label key={`${this.props.name}-deflector-label`} bsStyle="primary">active write index</Label>);
+      labels.push(<Label key={`${this.props.name}-deflector-label`} bsStyle="primary">活动写入索引</Label>);
     }
 
     if (index.is_closed) {
@@ -52,7 +52,7 @@ class IndexSummary extends React.Component {
 
   _formatIndexRange = () => {
     if (this.props.isDeflector) {
-      return <span>Contains messages up to <RelativeTime dateTime={new Date()} /></span>;
+      return <span>包含的消息数量上限为 <RelativeTime dateTime={new Date()} /></span>;
     }
 
     const sizes = this.props.index.size;
@@ -71,12 +71,12 @@ class IndexSummary extends React.Component {
     }
 
     if (this.props.indexRange.begin === 0) {
-      return <span>Contains messages up to <RelativeTime dateTime={this.props.indexRange.end} /></span>;
+      return <span>包含的消息数量上限为 <RelativeTime dateTime={this.props.indexRange.end} /></span>;
     }
 
     return (
       <span>
-        Contains messages from <RelativeTime dateTime={this.props.indexRange.begin} /> up to{' '}
+        包含来自的日志消息 <RelativeTime dateTime={this.props.indexRange.begin} /> 最多{' '}
         <RelativeTime dateTime={this.props.indexRange.end} />
       </span>
     );
@@ -84,10 +84,10 @@ class IndexSummary extends React.Component {
 
   _formatShowDetailsLink = () => {
     if (this.state.showDetails) {
-      return <span className="index-more-actions"><Icon name="arrow_drop_down" /> Hide Details / Actions</span>;
+      return <span className="index-more-actions"><Icon name="arrow_drop_down" /> 隐藏详情/操作</span>;
     }
 
-    return <span className="index-more-actions"><Icon name="arrow_right" /> Show Details / Actions</span>;
+    return <span className="index-more-actions"><Icon name="arrow_right" /> 显示详细信息 / 操作</span>;
   };
 
   _toggleShowDetails = (event) => {

@@ -100,7 +100,7 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
                        anyPermissions>
             <IfPermitted permissions={`eventnotifications:edit:${notification.id}`}>
               <MenuItem disabled={isTestLoading} onClick={() => onTest(notification)}>
-                {isTestLoading ? 'Testing...' : 'Test Notification'}
+                {isTestLoading ? '测试...' : '测试通知'}
               </MenuItem>
             </IfPermitted>
             <MenuItem divider />

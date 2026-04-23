@@ -110,7 +110,7 @@ class ScrollButton extends React.Component {
     }
 
     return (
-      <ScrollBtn title="Back to top"
+      <ScrollBtn title="返回顶部"
                  type="button"
                  className={position}
                  onClick={this.scrollToTop}>

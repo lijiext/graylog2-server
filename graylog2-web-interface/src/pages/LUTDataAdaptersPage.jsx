@@ -132,7 +132,7 @@ class LUTDataAdaptersPage extends React.Component {
               <DataAdapterForm dataAdapter={dataAdapter}
                                type={dataAdapter.config.type}
                                create={false}
-                               title="Data Adapter"
+                               title="数据适配器"
                                saved={() => _saved(history)}
                                validate={_validateAdapter}
                                validationErrors={validationErrors} />
@@ -164,15 +164,15 @@ class LUTDataAdaptersPage extends React.Component {
     }
 
     return (
-      <DocumentTitle title="Lookup Tables - Data Adapters">
+      <DocumentTitle title="查找表 - 数据适配器">
         <LUTPageNavigation />
-        <PageHeader title="Data adapters for Lookup Tables"
+        <PageHeader title="查找表的数据适配器"
                     actions={(
                       <LinkContainer to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.CREATE}>
-                        <Button bsStyle="success" style={{ marginLeft: 5 }}>Create data adapter</Button>
+                        <Button bsStyle="success" style={{ marginLeft: 5 }}>创建数据适配器</Button>
                       </LinkContainer>
                     )}>
-          <span>Data adapters provide the actual values for lookup tables</span>
+          <span>数据适配器为查找表提供实际值</span>
         </PageHeader>
 
         {content}

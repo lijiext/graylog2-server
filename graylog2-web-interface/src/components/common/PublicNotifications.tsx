@@ -106,7 +106,7 @@ const PublicNotifications = ({ readFromConfig }: Props) => {
             <ShortContent>{shortMessage}</ShortContent>
             {longMessage && (
               <Button bsStyle="link" onClick={toggleReadMore}>
-                读取 {showReadMore === notificationId ? 'Less' : 'More'}
+                读取 {showReadMore === notificationId ? '更少' : '更多'}
               </Button>
             )}
           </FlexWrap>

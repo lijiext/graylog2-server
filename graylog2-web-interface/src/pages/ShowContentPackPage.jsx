@@ -62,10 +62,10 @@ const ShowContentPackPage = createReactClass({
     ContentPacksActions.get(this.props.params.contentPackId).catch((error) => {
       if (error.status === 404) {
         UserNotification.error(
-          `Cannot find Content Pack with the id ${this.props.params.contentPackId} and may have been deleted.`,
+          `找不到 ID 为 ${this.props.params.contentPackId} 的内容包，可能已被删除。`,
         );
       } else {
-        UserNotification.error('An internal server error occurred. Please check your logfiles for more information');
+        UserNotification.error('发生内部服务器错误。请检查您的日志文件以获取更多信息');
       }
 
       const { history } = this.props;
@@ -83,11 +83,11 @@ const ShowContentPackPage = createReactClass({
     /* eslint-disable-next-line no-alert */
     if (window.confirm('You are about to delete this content pack revision, are you sure?')) {
       ContentPacksActions.deleteRev(contentPackId, revision).then(() => {
-        UserNotification.success('Content pack revision deleted successfully.', 'Success');
+        UserNotification.success('内容包修订版已成功删除。', '成功');
 
         ContentPacksActions.get(contentPackId).catch((error) => {
           if (error.status !== 404) {
-            UserNotification.error('An internal server error occurred. Please check your logfiles for more information');
+            UserNotification.error('发生内部服务器错误。请检查您的日志文件以获取更多信息');
           }
 
           const { history } = this.props;
@@ -100,7 +100,7 @@ const ShowContentPackPage = createReactClass({
           errMessage = error.responseMessage;
         }
 
-        UserNotification.error(`Deleting content pack failed: ${errMessage}`, 'Error');
+        UserNotification.error(`删除内容包失败：${errMessage}`, '错误');
       });
     }
   },
@@ -130,21 +130,21 @@ const ShowContentPackPage = createReactClass({
     const contentPackId = this.state.uninstallContentPackId;
 
     ContentPacksActions.uninstall(this.state.uninstallContentPackId, this.state.uninstallInstallId).then(() => {
-      UserNotification.success('Content Pack uninstalled successfully.', 'Success');
+      UserNotification.success('内容包卸载成功。', '成功');
       ContentPacksActions.installList(contentPackId);
       this._clearUninstall();
     }, () => {
-      UserNotification.error('Uninstall content pack failed, please check your logs for more information.', 'Error');
+      UserNotification.error('卸载内容包失败，请查看日志以获取更多信息。', '错误');
     });
   },
 
   _installContentPack(contentPackId, contentPackRev, parameters) {
     ContentPacksActions.install(contentPackId, contentPackRev, parameters).then(() => {
-      UserNotification.success('Content Pack installed successfully.', 'Success');
+      UserNotification.success('内容包安装成功。', '成功');
       ContentPacksActions.installList(contentPackId);
     }, (error) => {
-      UserNotification.error(`Installing content pack failed with status: ${error}.
-         Could not install content pack with ID: ${contentPackId}`);
+      UserNotification.error(`安装内容包失败，状态为：${error}。
+         无法安装 ID 为 ${contentPackId} 的内容包`);
     });
   },
 
@@ -156,21 +156,21 @@ const ShowContentPackPage = createReactClass({
     const { contentPackRevisions, selectedVersion, constraints } = this.state;
 
     return (
-      <DocumentTitle title="Content packs">
+      <DocumentTitle title="内容包">
         <span>
-          <PageHeader title="Content packs"
+          <PageHeader title="内容包"
                       topActions={(
                         <ButtonToolbar>
                           <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.LIST}>
-                            <Button bsStyle="info">Content Packs</Button>
+                            <Button bsStyle="info">内容包</Button>
                           </LinkContainer>
                         </ButtonToolbar>
                       )}>
             <span>
-              Content packs accelerate the set up process for a specific data source. A content pack can include inputs/extractors, streams, and dashboards.
+              内容包可加速特定数据源的设置过程。内容包可以包含输入端/提取器、数据流和仪表盘。
               <br />
-              Find more content packs in {' '}
-              <a href="https://marketplace.graylog.org/" target="_blank" rel="noopener noreferrer">the Graylog Marketplace</a>.
+              在以下位置查找更多内容包 {' '}
+              <a href="https://marketplace.graylog.org/" target="_blank" rel="noopener noreferrer">Graylog 应用市场</a>.
             </span>
           </PageHeader>
 
@@ -179,7 +179,7 @@ const ShowContentPackPage = createReactClass({
               <div id="content-pack-versions">
                 <Row className={ShowContentPackStyle.leftRow}>
                   <Col>
-                    <h2>Versions</h2>
+                    <h2>版本</h2>
                     <ContentPackVersions contentPackRevisions={contentPackRevisions}
                                          onInstall={this._installContentPack}
                                          onChange={this._onVersionChanged}
@@ -188,7 +188,7 @@ const ShowContentPackPage = createReactClass({
                 </Row>
                 <Row className={ShowContentPackStyle.leftRow}>
                   <Col>
-                    <h2>Installations</h2>
+                    <h2>安装</h2>
                     <ContentPackInstallations installations={this.state.installations}
                                               onUninstall={this._onUninstallContentPackRev} />
                   </Col>
@@ -204,7 +204,7 @@ const ShowContentPackPage = createReactClass({
           </Row>
         </span>
         <BootstrapModalConfirm showModal={this.state.showModal}
-                               title="Do you really want to uninstall this Content Pack?"
+                               title="您确定要卸载此内容包吗？"
                                onConfirm={this._uninstallContentPackRev}
                                onCancel={this._clearUninstall}>
           <ContentPackInstallEntityList uninstall entities={this.state.uninstallEntities} />

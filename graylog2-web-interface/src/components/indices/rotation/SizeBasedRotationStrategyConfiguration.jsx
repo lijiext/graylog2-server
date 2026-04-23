@@ -41,10 +41,10 @@ const SizeBasedRotationStrategyConfiguration = ({ config, updateConfig }) => {
     <div>
       <Input type="number"
              id="max-size"
-             label="Max size per index (in bytes)"
+             label="每个索引的最大大小（字节）"
              onChange={_onInputUpdate('max_size')}
              value={maxSize}
-             help="Maximum size of an index before it gets rotated"
+             help="索引在轮转前的最大大小"
              addonAfter={_formatSize()}
              required />
     </div>

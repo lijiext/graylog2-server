@@ -31,7 +31,7 @@ export const ErrorMessage = ({ fullMessage, niceMessage }) => {
       {niceMessage
         && (
           <ErrorToggleInfo onClick={() => toggleExpanded(!expanded)} expanded={expanded}>
-            More Info <MoreIcon name="chevron_right" />
+            更多信息 <MoreIcon name="chevron_right" />
           </ErrorToggleInfo>
         )}
     </>
@@ -46,7 +46,7 @@ export const ErrorMessage = ({ fullMessage, niceMessage }) => {
            bsStyle="danger"
            collapsible
            expanded={expanded}>
-      <strong>Additional Information: </strong>{fullMessage}
+      <strong>附加信息: </strong>{fullMessage}
     </Panel>
   );
 };
@@ -108,7 +108,7 @@ const FormWrap = ({
               onClick={disabledButton ? null : onSubmit}
               bsStyle="primary"
               disabled={disabledButton}>
-        {loading ? 'Loading...' : buttonContent}
+        {loading ? '加载中...' : buttonContent}
       </Button>
     </form>
   );

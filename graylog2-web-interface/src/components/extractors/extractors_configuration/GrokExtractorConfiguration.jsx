@@ -97,13 +97,13 @@ class GrokExtractorConfiguration extends React.Component {
 
     promise.then((result) => {
       if (result.error_message != null) {
-        UserNotification.error(`We were not able to run the grok extraction because of the following error: ${result.error_message}`);
+        UserNotification.error(`由于以下错误，无法运行 Grok 提取：${result.error_message}`);
 
         return;
       }
 
       if (!result.matched) {
-        UserNotification.warning('We were not able to run the grok extraction. Please check your parameters.');
+        UserNotification.warning('无法运行 Grok 提取。请检查您的参数。');
 
         return;
       }
@@ -138,15 +138,15 @@ class GrokExtractorConfiguration extends React.Component {
       <div>
         <Input type="checkbox"
                id="named_captures_only"
-               label="Named captures only"
+               label="仅命名捕获"
                wrapperClassName="col-md-offset-2 col-md-10"
                defaultChecked={configuration.named_captures_only}
                onChange={this._onChange('named_captures_only')}
-               help="Only put the explicitly named captures into the message." />
+               help="仅将显式命名的捕获项放入消息中。" />
 
         <Row>
           <Col mdOffset={1} md={1}>
-            <ControlLabel className="col-md-offset-2">Grok pattern</ControlLabel>
+            <ControlLabel className="col-md-offset-2">Grok 模式</ControlLabel>
           </Col>
           <Col md={10}>
             <GrokPatternInput onPatternChange={this._onPatternChange}
@@ -158,7 +158,7 @@ class GrokExtractorConfiguration extends React.Component {
         <Row>
           <Col mdOffset={2} md={1}>
             <Button bsStyle="info" onClick={this._onTryClick} disabled={this._isTryButtonDisabled()}>
-              {trying ? <Icon name="progress_activity" spin /> : 'Try against example'}
+              {trying ? <Icon name="progress_activity" spin /> : '尝试示例'}
             </Button>
           </Col>
         </Row>

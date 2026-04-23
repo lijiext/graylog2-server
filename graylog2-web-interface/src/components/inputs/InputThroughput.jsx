@@ -144,7 +144,7 @@ const InputThroughput = createReactClass({
   _formatNetworkStats(writtenBytes1Sec, writtenBytesTotal, readBytes1Sec, readBytesTotal) {
     const network = (
       <InputIO>
-        <span>Network IO: </span>
+        <span>网络 IO: </span>
         <span className="persec">
           <Icon name="arrow_drop_down" className="channel-direction channel-direction-down" />
           <span className="rx value">{NumberUtils.formatBytes(readBytes1Sec)} </span>
@@ -154,7 +154,7 @@ const InputThroughput = createReactClass({
         </span>
 
         <span className="total">
-          <span> (total: </span>
+          <span> (总计: </span>
           <Icon name="arrow_drop_down" className="channel-direction channel-direction-down" />
           <span className="rx value">{NumberUtils.formatBytes(readBytesTotal)} </span>
 
@@ -172,8 +172,8 @@ const InputThroughput = createReactClass({
   _formatConnections(openConnections, totalConnections) {
     return (
       <span>
-        Active connections: <span className="active">{this._formatCount(openConnections)} </span>
-        (<span className="total">{this._formatCount(totalConnections)}</span> total)
+        活动连接数: <span className="active">{this._formatCount(openConnections)} </span>
+        (<span className="total">{this._formatCount(totalConnections)}</span> 总计)
         <br />
       </span>
     );
@@ -204,8 +204,8 @@ const InputThroughput = createReactClass({
         <br />
         {!isNaN(writtenBytes1Sec) && this._formatNetworkStats(writtenBytes1Sec, writtenBytesTotal, readBytes1Sec, readBytesTotal)}
         {!isNaN(openConnections) && this._formatConnections(openConnections, totalConnections)}
-        {!isNaN(emptyMessages) && <span>Empty messages discarded: {this._formatCount(emptyMessages)}<br /></span>}
-        {isNaN(writtenBytes1Sec) && isNaN(openConnections) && <span>No metrics available for this node</span>}
+        {!isNaN(emptyMessages) && <span>丢弃的空消息： {this._formatCount(emptyMessages)}<br /></span>}
+        {isNaN(writtenBytes1Sec) && isNaN(openConnections) && <span>此节点无可用指标</span>}
         <br />
       </span>
     );
@@ -238,15 +238,15 @@ const InputThroughput = createReactClass({
 
     return (
       <div className="graylog-input-metrics">
-        <h3>Throughput / Metrics</h3>
+        <h3>吞吐量 / 指标</h3>
         <span>
-          {isNaN(incomingMessages) && isNaN(writtenBytes1Sec) && isNaN(openConnections) && <i>No metrics available for this input</i>}
-          {!isNaN(incomingMessages) && <span>1 minute average rate: {this._formatCount(incomingMessages)} msg/s<br /></span>}
+          {isNaN(incomingMessages) && isNaN(writtenBytes1Sec) && isNaN(openConnections) && <i>此输入端无可用指标</i>}
+          {!isNaN(incomingMessages) && <span>1 分钟平均速率: {this._formatCount(incomingMessages)} 消息/秒<br /></span>}
           {!isNaN(writtenBytes1Sec) && this._formatNetworkStats(writtenBytes1Sec, writtenBytesTotal, readBytes1Sec, readBytesTotal)}
           {!isNaN(openConnections) && this._formatConnections(openConnections, totalConnections)}
-          {!isNaN(emptyMessages) && <span>Empty messages discarded: {this._formatCount(emptyMessages)}<br /></span>}
+          {!isNaN(emptyMessages) && <span>丢弃的空消息： {this._formatCount(emptyMessages)}<br /></span>}
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          {!isNaN(writtenBytes1Sec) && input.global && <a href="" onClick={this._toggleShowDetails}>{showDetails ? 'Hide' : 'Show'} details</a>}
+          {!isNaN(writtenBytes1Sec) && input.global && <a href="" onClick={this._toggleShowDetails}>{showDetails ? '隐藏' : '显示'} details</a>}
           {!isNaN(writtenBytes1Sec) && showDetails && this._formatAllNodeDetails(metrics)}
         </span>
       </div>

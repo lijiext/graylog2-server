@@ -232,7 +232,7 @@ const RuleBlockForm = ({
                   <Errors objectWithErrors={existingBlock} />
                   <FormSubmit bsSize="small"
                               disabledSubmit={!isValid}
-                              submitButtonText={existingBlock ? 'Update' : 'Add'}
+                              submitButtonText={existingBlock ? '更新' : '添加'}
                               submitButtonType="submit"
                               onCancel={() => {
                                 resetForm();

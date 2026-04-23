@@ -30,7 +30,7 @@ import { ApiRoutes } from 'integrations/aws/common/Routes';
 import { DEFAULT_KINESIS_LOG_TYPE, KINESIS_LOG_TYPES } from 'integrations/aws/common/constants';
 
 const Default = ({ value }) => (
-  <>{value} <small>(default)</small></>
+  <>{value} <small>(默认)</small></>
 );
 
 Default.propTypes = {
@@ -82,7 +82,7 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit }) => {
     if (fetchSubmitStatus.error) {
       setFormError({
         full_message: fetchSubmitStatus.error,
-        nice_message: <span>We were unable to save your Input, please try again in a few moments.</span>,
+        nice_message: <span>无法保存您的输入端，请稍后再试。</span>,
       });
     }
   }, [fetchSubmitStatus.error]);
@@ -102,82 +102,82 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit }) => {
               buttonContent="Complete CloudWatch Setup"
               loading={fetchSubmitStatus.loading}
               error={formError}
-              title="Final Review"
-              description="Check out everything below to make sure it&apos;s correct, then click the button below to complete your CloudWatch setup!">
+              title="最终审查"
+              description="请检查下方的所有内容以确保正确，然后点击下方按钮完成 CloudWatch 设置！">
 
       <Container>
-        <Subheader>Setting up CloudWatch <small><EditAnchor onClick={onEditClick('authorize')}>Edit</EditAnchor></small></Subheader>
+        <Subheader>设置 CloudWatch <small><EditAnchor onClick={onEditClick('authorize')}>编辑</EditAnchor></small></Subheader>
         <ReviewItems>
           <li>
-            <strong>Name</strong>
+            <strong>名称</strong>
             <span>{awsCloudWatchName.value}</span>
           </li>
 
           <li>
-            <strong>Authorization Type</strong>
+            <strong>认证类型</strong>
             <span>{awsAuthenticationType.value}</span>
           </li>
 
           {awsCloudWatchAwsKey.value && (
             <li>
-              <strong>AWS Key</strong>
+              <strong>AWS 密钥</strong>
               <span>{awsCloudWatchAwsKey.value}</span>
             </li>
           )}
 
           {awsCloudWatchAssumeARN.value && (
             <li>
-              <strong>AWS Assumed ARN Role</strong>
+              <strong>AWS 假设 ARN 角色</strong>
               <span>{awsCloudWatchAssumeARN.value}</span>
             </li>
           )}
 
           {awsEndpointCloudWatch.value && (
             <li>
-              <strong>CloudWatch VPC Endpoint</strong>
+              <strong>CloudWatch VPC 端点</strong>
               <span>{awsEndpointCloudWatch.value}</span>
             </li>
           )}
 
           {awsEndpointDynamoDB.value && (
             <li>
-              <strong>DynamoDB VPC Endpoint</strong>
+              <strong>DynamoDB VPC 端点</strong>
               <span>{awsEndpointDynamoDB.value}</span>
             </li>
           )}
 
           {awsEndpointIAM.value && (
             <li>
-              <strong>IAM VPC Endpoint</strong>
+              <strong>IAM VPC 端点</strong>
               <span>{awsEndpointIAM.value}</span>
             </li>
           )}
 
           {awsEndpointKinesis.value && (
             <li>
-              <strong>Kinesis VPC Endpoint</strong>
+              <strong>Kinesis VPC 端点</strong>
               <span>{awsEndpointKinesis.value}</span>
             </li>
           )}
 
           <li>
-            <strong>AWS Region</strong>
+            <strong>AWS 区域</strong>
             <span>{awsCloudWatchAwsRegion.value}</span>
           </li>
         </ReviewItems>
 
-        <Subheader>Setting up Kinesis <small><EditAnchor onClick={onEditClick('kinesis-setup')}>Edit</EditAnchor></small></Subheader>
+        <Subheader>设置 Kinesis <small><EditAnchor onClick={onEditClick('kinesis-setup')}>编辑</EditAnchor></small></Subheader>
         <ReviewItems>
           <li>
-            <strong>Stream</strong>
+            <strong>数据流</strong>
             <span>{awsCloudWatchKinesisStream.value}</span>
           </li>
           <li>
-            <strong>Global Input</strong>
+            <strong>全局输入端</strong>
             <span><Icon name="done" /></span>
           </li>
           <li>
-            <strong>Record Batch Size</strong>
+            <strong>记录批次大小</strong>
             <span>
               {
                 awsCloudWatchBatchSize.value
@@ -187,23 +187,23 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit }) => {
             </span>
           </li>
           <li>
-            <strong>Enable Throttling</strong>
+            <strong>启用限流</strong>
             <span><Icon name={throttleEnabled ? 'check_circle' : 'cancel'} /></span>
           </li>
           <li>
-            <strong>Add Flow Log prefix to field names</strong>
+            <strong>为字段名称添加流日志前缀</strong>
             <span><Icon name={addPrefix ? 'check_circle' : 'cancel'} /></span>
           </li>
         </ReviewItems>
 
-        <Subheader>Formatting</Subheader>
+        <Subheader>格式化</Subheader>
         <ReviewItems>
           <li>
-            <strong>Log Type</strong>
+            <strong>日志类型</strong>
             <span>{KINESIS_LOG_TYPES.find((type) => type.value === awsCloudWatchKinesisInputType.value).label}</span>
           </li>
         </ReviewItems>
-        <p>If you need your logs parsed differently check out our <Link to={Routes.SYSTEM.PIPELINES.RULES}>Pipeline Rule</Link> for additional details and instructions.</p>
+        <p>如果您需要以不同方式解析日志，请查看我们的 <Link to={Routes.SYSTEM.PIPELINES.RULES}>管道规则</Link> 有关详细信息和说明。</p>
 
         <Input id="awsCloudWatchLog"
                type="textarea"

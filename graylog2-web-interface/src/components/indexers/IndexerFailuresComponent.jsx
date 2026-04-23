@@ -37,7 +37,7 @@ const formatTextForFailureCount = (count) => {
     return 'No failed indexing attempts in the last 24 hours.';
   }
 
-  return <strong>There were {numeral(count).format('0,0')} failed indexing attempts in the last 24 hours.</strong>;
+  return <strong>存在 {numeral(count).format('0,0')} 过去 24 小时内失败的索引尝试。</strong>;
 };
 
 class IndexerFailuresComponent extends React.Component {
@@ -61,7 +61,7 @@ class IndexerFailuresComponent extends React.Component {
 
       <LinkContainer to={Routes.SYSTEM.INDICES.FAILURES}>
         <Button bsStyle="info" bsSize="xs" className="pull-right">
-          Show errors
+          显示错误
         </Button>
       </LinkContainer>
     </Alert>
@@ -80,11 +80,11 @@ class IndexerFailuresComponent extends React.Component {
       <Row className="content">
         <Col md={12}>
           <Header>
-            <h2>Indexer failures</h2>
+            <h2>索引器故障</h2>
             <DocumentationLink page={DocsHelper.PAGES.INDEXER_FAILURES} text="Indexer failures documentation" displayIcon />
           </Header>
           <p className="description">
-            Every message that was not successfully indexed will be logged as an indexer failure.
+            每条未能成功索引入的消息都将被记录为索引器失败。
           </p>
           {content}
         </Col>

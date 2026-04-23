@@ -127,20 +127,20 @@ class TimeBasedRotationStrategyConfiguration extends React.Component {
         <Input id="rotation-period"
                type="text"
                ref={(rotationPeriodRef) => { this.inputs.rotation_period = rotationPeriodRef; }}
-               label="Rotation period (ISO8601 Duration)"
+               label="轮转周期 (ISO8601 持续时间)"
                onChange={this._onPeriodUpdate('rotation_period')}
                value={rotationPeriod}
-               help={`How long an index gets written to before it is rotated. (i.e. "P1D" for 1 day, "PT6H" for 6 hours).${maxRotationPeriodHelpText}`}
+               help={`索引在轮换前写入的时长（例如，"P1D" 表示 1 天，"PT6H" 表示 6 小时）。${maxRotationPeriodHelpText}`}
                addonAfter={this._formatDuration()}
                bsStyle={this._validationState()}
                required />
         <Input id="rotate-empty-index-sets-checkbox"
                type="checkbox"
                ref={(rotateEmptyIndexSetRef) => { this.inputs.rotate_empty_index_set = rotateEmptyIndexSetRef; }}
-               label="Rotate empty index set"
+               label="轮换空索引集"
                onChange={this._onRotateEmptyIndexSetUpdate('rotate_empty_index_set')}
                checked={rotateEmptyIndexSet}
-               help="Apply the rotation strategy even when the index set is empty (not recommended)." />
+               help="即使索引集为空也应用轮转策略（不推荐）。" />
       </div>
     );
   }

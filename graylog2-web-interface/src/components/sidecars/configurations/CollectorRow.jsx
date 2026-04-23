@@ -60,14 +60,14 @@ const CollectorRow = createReactClass({
         <td>
           <ButtonToolbar>
             <LinkContainer to={Routes.SYSTEM.SIDECARS.EDIT_COLLECTOR(collector.id)}>
-              <Button bsSize="xsmall">Edit</Button>
+              <Button bsSize="xsmall">编辑</Button>
             </LinkContainer>
             <MoreActions>
               <CopyCollectorModal collector={collector}
                                   validateCollector={validateCollector}
                                   copyCollector={onClone} />
               <MenuItem divider />
-              <MenuItem onSelect={this.handleDelete} variant="danger">Delete</MenuItem>
+              <MenuItem onSelect={this.handleDelete} variant="danger">删除</MenuItem>
             </MoreActions>
           </ButtonToolbar>
         </td>

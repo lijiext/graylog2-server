@@ -115,7 +115,7 @@ const TokenList = ({ creatingToken, deletingToken, onCreate, onDelete, tokens }:
         <ControlledTableList.Header />
         {effectiveTokens.length === 0 && (
           <ControlledTableList.Item>
-            <p>{query === '' ? 'No tokens to display.' : 'No tokens match the filter.'}</p>
+            <p>{query === '' ? '没有要显示的令牌。' : '没有令牌匹配该过滤器。'}</p>
           </ControlledTableList.Item>
         )}
         {effectiveTokens.map((token) => {
@@ -127,7 +127,7 @@ const TokenList = ({ creatingToken, deletingToken, onCreate, onDelete, tokens }:
                 <Col md={9}>
                   {token.name}
                   <StyledLastAccess>
-                    {tokenNeverUsed ? 'Never used' : <>上次使用 <RelativeTime dateTime={token.last_access} /></>}
+                    {tokenNeverUsed ? '从未使用' : <>上次使用 <RelativeTime dateTime={token.last_access} /></>}
                   </StyledLastAccess>
                 </Col>
                 <Col md={3} className="text-right">
@@ -135,7 +135,7 @@ const TokenList = ({ creatingToken, deletingToken, onCreate, onDelete, tokens }:
                           disabled={deletingToken === token.id}
                           bsStyle="danger"
                           onClick={deleteToken(token)}>
-                    {deletingToken === token.id ? <Spinner text="Deleting..." /> : 'Delete'}
+                    {deletingToken === token.id ? <Spinner text="Deleting..." /> : '删除'}
                   </Button>
                 </Col>
               </Row>

@@ -98,7 +98,7 @@ const FilterRulesFields = ({ type }: Props) => {
     <StyledPanel expanded>
       <StyledPanelHeading>
         <Panel.Title toggle>
-          {type === 'condition' ? 'When' : 'Then'}
+          {type === 'condition' ? '当' : '然后'}
         </Panel.Title>
         {type === 'condition' && (
         <WhenOperator>

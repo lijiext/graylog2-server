@@ -153,7 +153,7 @@ const RefreshControls = ({ disable }: Props) => {
                            $increase={false} />
       )}
 
-      <Button onClick={toggleEnable} title={refreshConfig?.enabled ? 'Pause Refresh' : 'Start Refresh'} disabled={disable || isLoadingMinimumInterval || !defaultInterval}>
+      <Button onClick={toggleEnable} title={refreshConfig?.enabled ? '暂停刷新' : '开始刷新'} disabled={disable || isLoadingMinimumInterval || !defaultInterval}>
         <Icon name={refreshConfig?.enabled ? 'pause' : 'update'} />
       </Button>
 

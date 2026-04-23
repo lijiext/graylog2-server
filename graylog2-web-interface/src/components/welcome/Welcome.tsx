@@ -83,8 +83,8 @@ const Welcome = () => {
       <StyledSectionComponent title="最近活动">
         <p className="description">
           {isAdmin
-            ? 'This list includes all actions Graylog users performed, like creating or sharing an entity.'
-            : 'Overview of actions you made with entities or somebody else made with entities which relates to you, like creating or sharing an entity.'}
+            ? '此列表包含 Graylog 用户执行的所有操作，例如创建或共享实体。'
+            : '关于您或他人对与您相关的实体执行的操作的概述，例如创建或共享实体。'}
         </p>
         <RecentActivityList />
       </StyledSectionComponent>

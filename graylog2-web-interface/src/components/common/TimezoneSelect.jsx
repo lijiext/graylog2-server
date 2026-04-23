@@ -106,7 +106,7 @@ class TimezoneSelect extends React.Component {
               {...otherProps}
               inputId="timezone-select"
               onChange={onChange}
-              placeholder="Pick a time zone"
+              placeholder="选择时区"
               options={timezones}
               optionRenderer={this._renderOption} />
     );

@@ -155,7 +155,7 @@ class EventNotificationForm extends React.Component {
           <form onSubmit={this.handleSubmit} id={formId}>
             <Input id="notification-title"
                    name="title"
-                   label="Title"
+                   label="标题"
                    type="text"
                    bsStyle={validation.errors.title ? 'error' : null}
                    help={get(validation, 'errors.title[0]', 'Title to identify this Notification.')}
@@ -166,15 +166,15 @@ class EventNotificationForm extends React.Component {
 
             <Input id="notification-description"
                    name="description"
-                   label={<span>Description <small className="text-muted">(Optional)</small></span>}
+                   label={<span>描述 <small className="text-muted">(可选)</small></span>}
                    type="textarea"
-                   help="Longer description for this Notification."
+                   help="此通知的较长描述。"
                    value={notification.description}
                    onChange={this.handleChange}
                    rows={2} />
 
             <FormGroup controlId="notification-type" validationState={validation.errors.config ? 'error' : null}>
-              <ControlLabel>Notification Type</ControlLabel>
+              <ControlLabel>通知类型</ControlLabel>
               <Select id="notification-type"
                       options={formattedEventNotificationTypes()}
                       value={notification.config.type}
@@ -190,7 +190,7 @@ class EventNotificationForm extends React.Component {
 
             {notificationFormComponent && (
               <FormGroup>
-                <ControlLabel>Test Notification <small className="text-muted">(Optional)</small></ControlLabel>
+                <ControlLabel>测试通知 <small className="text-muted">(可选)</small></ControlLabel>
                 <FormControl.Static>
                   <Button bsStyle="info"
                           bsSize="small"
@@ -200,19 +200,19 @@ class EventNotificationForm extends React.Component {
                   </Button>
                 </FormControl.Static>
                 {testResult.message && (
-                  <Alert bsStyle={testResult.error ? 'danger' : 'success'} title={testResult.error ? 'Error: ' : 'Success: '}>
+                  <Alert bsStyle={testResult.error ? 'danger' : 'success'} title={testResult.error ? '错误:' : '成功:'}>
                     {testResult.message}
                   </Alert>
                 )}
                 <HelpBlock>
-                  Execute this Notification with a test Alert.
+                  使用测试告警执行此通知。
                 </HelpBlock>
               </FormGroup>
             )}
 
             {!embedded && (
               <FormSubmit disabledSubmit={!isSubmitEnabled}
-                          submitButtonText={`${action === 'create' ? 'Create' : 'Update'} notification`}
+                          submitButtonText={`${action === 'create' ? '创建' : '更新'} 通知`}
                           onCancel={onCancel} />
             )}
           </form>

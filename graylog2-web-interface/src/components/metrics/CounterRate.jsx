@@ -59,7 +59,7 @@ class CounterRate extends React.Component {
       return null;
     }
 
-    return (<span>{this._prefix()}Calculating...</span>);
+    return (<span>{this._prefix()}计算中...</span>);
   };
 
   _prefix = () => {
@@ -108,7 +108,7 @@ class CounterRate extends React.Component {
     return (
       <span>
         {rate}
-        {this.props.showTotal && <span key="absolute" className="number-format"> ({numeral(count).format('0')} total)</span>}
+        {this.props.showTotal && <span key="absolute" className="number-format"> ({numeral(count).format('0')} 总计)</span>}
       </span>
     );
   }

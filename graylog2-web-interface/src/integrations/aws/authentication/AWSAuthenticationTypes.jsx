@@ -82,7 +82,7 @@ const AWSAuthenticationTypes = ({ onChange }) => {
                    name="awsAuthType"
                    id="awsAuthType"
                    onChange={handleTypeChange}
-                   label="AWS Authentication Type"
+                   label="AWS 认证类型"
                    defaultValue={currentType}>
               {Object.keys(AWS_AUTH_TYPES).map((type) => (
                 <option value={AWS_AUTH_TYPES[type]}

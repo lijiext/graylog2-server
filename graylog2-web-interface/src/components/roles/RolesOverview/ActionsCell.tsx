@@ -76,7 +76,7 @@ const ActionsCell = ({ roleId, roleName, readOnly }: Props) => {
             <>
               &nbsp;
               <Button id={`delete-role-${roleId}`} bsStyle="danger" bsSize="xs" title={`删除角色 ${roleName}`} onClick={() => _deleteRole(roleId, roleName, setDeleting)} type="button">
-                {deleting ? <Spinner text="Deleting" delay={0} /> : 'Delete'}
+                {deleting ? <Spinner text="Deleting" delay={0} /> : '删除'}
               </Button>
             </>
           </IfPermitted>

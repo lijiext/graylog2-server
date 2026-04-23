@@ -96,14 +96,14 @@ const PipelineForm = ({ pipeline, create, modal, save, onCancel }: Props) => {
         <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:edit')}
                 onClick={_openModal}
                 bsStyle="success">
-          {create ? 'Add new pipeline' : 'Edit pipeline details'}
+          {create ? '添加新处理管道' : '编辑处理管道详情'}
         </Button>
         <BootstrapModalForm show={showModal}
-                            title={`${create ? 'Add new' : 'Edit'} 处理管道 ${nextPipeline.title}`}
-                            data-telemetry-title={`${create ? 'Add new' : 'Edit'} pipeline`}
+                            title={`${create ? '添加新项' : '编辑'} 处理管道 ${nextPipeline.title}`}
+                            data-telemetry-title={`${create ? '添加新项' : '编辑'} pipeline`}
                             onSubmitForm={_handleSubmit}
                             onCancel={_closeModal}
-                            submitButtonText={create ? 'Add pipeline' : 'Update pipeline'}>
+                            submitButtonText={create ? '添加处理管道' : '更新处理管道'}>
           {content}
         </BootstrapModalForm>
       </span>
@@ -115,7 +115,7 @@ const PipelineForm = ({ pipeline, create, modal, save, onCancel }: Props) => {
       {content}
       <Row>
         <Col md={12}>
-          <FormSubmit submitButtonText={create ? 'Create pipeline' : 'Update pipeline'} onCancel={onCancel} />
+          <FormSubmit submitButtonText={create ? '创建处理管道' : '更新处理管道'} onCancel={onCancel} />
         </Col>
       </Row>
     </form>

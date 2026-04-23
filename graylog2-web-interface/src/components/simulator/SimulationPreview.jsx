@@ -25,10 +25,10 @@ const SimulationPreview = ({ simulationResults, streams }) => {
 
   if (messages.length === 0) {
     return (
-      <Alert bsStyle="info" title="Message would be dropped">
+      <Alert bsStyle="info" title="消息将被丢弃">
         <p>
-          The pipeline processor would drop such a message. That means that the message
-          <strong>would not be stored</strong>, and would not be available for searches, alerts, outputs, or dashboards.
+          处理管道将丢弃此类消息。这意味着该消息
+          <strong>将不会被存储</strong>, and would not be available for searches, alerts, outputs, or dashboards.
         </p>
       </Alert>
     );

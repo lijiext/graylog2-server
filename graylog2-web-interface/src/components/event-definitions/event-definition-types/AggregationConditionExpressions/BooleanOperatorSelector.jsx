@@ -43,7 +43,7 @@ const BooleanOperatorSelector = ({ initialText, operator, onOperatorChange }) =>
       <BooleanOperatorSelect isFirstElement={!initialText}>
         <Select className="boolean-operator"
                 matchProp="label"
-                aria-label="Boolean Operator"
+                aria-label="布尔运算符"
                 size="small"
                 onChange={onOperatorChange}
                 options={[
@@ -54,7 +54,7 @@ const BooleanOperatorSelector = ({ initialText, operator, onOperatorChange }) =>
                 clearable={false} />
       </BooleanOperatorSelect>
       <FormGroup>
-        <FormControl.Static> of the following rules:</FormControl.Static>
+        <FormControl.Static> 以下规则之一：</FormControl.Static>
       </FormGroup>
     </OperatorSelector>
   </Col>

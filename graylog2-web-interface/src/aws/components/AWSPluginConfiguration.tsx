@@ -105,15 +105,15 @@ const AWSPluginConfiguration = ({ config }: Props) => {
         <dt>实例详情查找：</dt>
         <dd>
           {config.lookups_enabled === true
-            ? 'Enabled'
-            : 'Disabled'}
+            ? '已启用'
+            : '已禁用'}
         </dd>
 
         <dt>通过 Proxy 连接：</dt>
         <dd>
           {config.proxy_enabled === true
-            ? 'Enabled'
-            : 'Disabled'}
+            ? '已启用'
+            : '已禁用'}
         </dd>
 
         <dt>查找区域：</dt>

@@ -50,7 +50,7 @@ export const ClusterOverviewStore = singletonStore(
           this.clusterOverview = response;
           this.trigger({ clusterOverview: this.clusterOverview });
         },
-        (error) => UserNotification.error(`Getting cluster overview failed: ${error}`, 'Could not get cluster overview'),
+        (error) => UserNotification.error(`获取集群概览失败：${error}`, '无法获取集群概览'),
       );
 
       return promise;
@@ -60,7 +60,7 @@ export const ClusterOverviewStore = singletonStore(
       const promise = fetch('GET', URLUtils.qualifyUrl(`${this.sourceUrl}/${nodeId}/threaddump`))
         .then(
           (response) => response.threaddump,
-          (error) => UserNotification.error(`Getting thread dump for node '${nodeId}' failed: ${error}`, 'Could not get thread dump'),
+          (error) => UserNotification.error(`获取节点 '${nodeId}' 的线程转储失败：${error}`, '无法获取线程转储'),
         );
 
       return promise;
@@ -70,7 +70,7 @@ export const ClusterOverviewStore = singletonStore(
       const promise = fetch('GET', URLUtils.qualifyUrl(`${this.sourceUrl}/${nodeId}/processbufferdump`))
         .then(
           (response) => response.processbuffer_dump,
-          (error) => UserNotification.error(`Getting process buffer dump for node '${nodeId}' failed: ${error}`, 'Could not get process buffer dump'),
+          (error) => UserNotification.error(`获取节点 '${nodeId}' 的进程缓冲区转储失败：${error}`, '无法获取进程缓冲区转储'),
         );
 
       return promise;
@@ -80,7 +80,7 @@ export const ClusterOverviewStore = singletonStore(
       const promise = fetchStreamingPlainText('GET', URLUtils.qualifyUrl(`${this.sourceUrl}/system/loggers/messages/recent/${nodeId}?limit=${limit}`))
         .then(
           (response) => response,
-          (error) => UserNotification.error(`Getting system log messages for node '${nodeId}' failed: ${error}`, 'Could not get system log messages'),
+          (error) => UserNotification.error(`获取节点 '${nodeId}' 的系统日志消息失败：${error}`, '无法获取系统日志消息'),
         );
 
       return promise;
@@ -89,7 +89,7 @@ export const ClusterOverviewStore = singletonStore(
     jvm(nodeId) {
       const promise = fetch('GET', URLUtils.qualifyUrl(`${this.sourceUrl}/${nodeId}/jvm`));
 
-      promise.catch((error) => UserNotification.error(`Getting JVM information for node '${nodeId}' failed: ${error}`, 'Could not get JVM information'));
+      promise.catch((error) => UserNotification.error(`获取节点 '${nodeId}' 的 JVM 信息失败：${error}`, '无法获取 JVM 信息'));
 
       return promise;
     },

@@ -58,7 +58,7 @@ class ContentPackUploadControls extends React.Component {
       ContentPacksActions.create.triggerPromise(request)
         .then(
           () => {
-            UserNotification.success('Content pack imported successfully', 'Success!');
+            UserNotification.success('内容包导入成功', '成功！');
             ContentPacksActions.list();
           },
           (response) => {
@@ -89,18 +89,18 @@ class ContentPackUploadControls extends React.Component {
                 active={isOpen}
                 id="upload-content-pack-button"
                 bsStyle="info"
-                onClick={this._openModal}>Upload
+                onClick={this._openModal}>上传
         </Button>
         <BootstrapModalForm onCancel={this._closeModal}
                             show={isOpen}
                             onSubmitForm={this._save}
-                            title="Upload Content Pack"
-                            submitButtonText="Upload">
+                            title="上传内容包"
+                            submitButtonText="上传">
           <Input ref={(node) => { this.uploadInput = node; }}
                  id="upload-content-pack"
-                 label="Choose File"
+                 label="选择文件"
                  type="file"
-                 help="Choose Content Pack from disk" />
+                 help="从磁盘选择内容包" />
         </BootstrapModalForm>
       </span>
     );

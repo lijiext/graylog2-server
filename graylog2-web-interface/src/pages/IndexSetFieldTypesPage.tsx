@@ -50,7 +50,7 @@ const IndexSetFieldTypesPage = () => {
   return (
     <DocumentTitle title={`索引集 - ${indexSet ? indexSet.title : ''}`}>
       <IndicesPageNavigation />
-      <PageHeader title={`配置 ${indexSet ? indexSet.title : 'Index Set'} 字段类型`}
+      <PageHeader title={`配置 ${indexSet ? indexSet.title : '索引集'} 字段类型`}
                   documentationLink={{
                     title: 'Index model documentation',
                     path: DocsHelper.PAGES.INDEX_MODEL,

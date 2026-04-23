@@ -58,30 +58,30 @@ class MaxmindAdapterDocumentation extends React.Component {
 
     return (
       <div>
-        <p>The GeoIP data adapter supports reading MaxMind's GeoIP2 databases.</p>
+        <p>GeoIP 数据适配器支持读取 MaxMind 的 GeoIP2 数据库。</p>
 
-        <Alert style={{ marginBottom: 10 }} bsStyle="info" title="Limitations">
-          <p>Currently the ASN, city and country databases are supported.</p>
-          <p>For support of additional database types, please visit our support channels.</p>
+        <Alert style={{ marginBottom: 10 }} bsStyle="info" title="限制条件">
+          <p>目前支持 ASN、城市和国家的数据库。</p>
+          <p>如需支持其他数据库类型，请访问我们的支持渠道。</p>
         </Alert>
 
         <hr />
 
-        <h3 style={{ marginBottom: 10 }}>ASN database fields</h3>
+        <h3 style={{ marginBottom: 10 }}>ASN 数据库字段</h3>
 
         <pre>{asnFields}</pre>
 
-        <h3 style={{ marginBottom: 10 }}>Country database fields</h3>
+        <h3 style={{ marginBottom: 10 }}>国家数据库字段</h3>
 
         <pre>{countryFields}</pre>
 
-        <h3 style={{ marginBottom: 10 }}>City database fields</h3>
+        <h3 style={{ marginBottom: 10 }}>城市数据库字段</h3>
 
-        <p>In addition to the fields provided by the country database, the city database also includes the following fields:</p>
+        <p>除了国家数据库提供的字段外，城市数据库还包含以下字段：</p>
 
         <pre>{cityFields}</pre>
 
-        <p>For a complete documentation of the fields, please see MaxMind's <a href="http://maxmind.github.io/GeoIP2-java/" target="_blank" rel="noopener noreferrer">developer documentation</a></p>
+        <p>有关字段的完整文档，请参阅 MaxMind 的 <a href="http://maxmind.github.io/GeoIP2-java/" target="_blank" rel="noopener noreferrer">开发者文档</a></p>
       </div>
     );
   }

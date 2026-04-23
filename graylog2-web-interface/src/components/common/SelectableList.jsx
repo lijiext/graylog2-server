@@ -119,7 +119,7 @@ class SelectableList extends React.Component {
           <div>
             {this._getOptionDisplayValue(option)}
           </div>
-          <Button bsStyle="danger" bsSize="xsmall" onClick={this._onRemoveOption(idx)}>Remove</Button>
+          <Button bsStyle="danger" bsSize="xsmall" onClick={this._onRemoveOption(idx)}>移除</Button>
         </StyledListGroupItem>
       )
     ));

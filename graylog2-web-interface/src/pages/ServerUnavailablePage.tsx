@@ -130,7 +130,7 @@ const ServerUnavailablePage = ({ server }: Props) => {
                         tabIndex={0}
                         onClick={_toggleDetails}
                         bsSize="sm">
-                  {showDetails ? 'Less details' : 'More details'}
+                  {showDetails ? '更少详情' : '更多详情'}
                   <StyledIcon name={showDetails ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
                 </Button>
                 {_formatErrorMessage()}

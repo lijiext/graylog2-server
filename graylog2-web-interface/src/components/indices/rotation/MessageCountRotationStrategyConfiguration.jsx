@@ -38,10 +38,10 @@ const MessageCountRotationStrategyConfiguration = ({ config, updateConfig }) => 
     <div>
       <Input type="number"
              id="max-docs-per-index"
-             label="Max documents per index"
+             label="每个索引的最大文档数"
              onChange={_onInputUpdate('max_docs_per_index')}
              value={maxDocsPerIndex}
-             help="Maximum number of documents in an index before it gets rotated"
+             help="索引在轮转前可容纳的最大文档数"
              required />
     </div>
   );

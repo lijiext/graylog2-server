@@ -136,8 +136,8 @@ const InputsList = ({ permissions, node }: Props) => {
             <small>{globalInputs.length} configured{nodeAffix}</small>
           </h2>
           <EntityList bsNoItemsStyle="info"
-                      noItemsText={globalInputs.length <= 0 ? 'There are no global inputs.'
-                        : 'No global inputs match the filter'}
+                      noItemsText={globalInputs.length <= 0 ? '没有全局输入端。'
+                        : '没有全局输入端匹配该过滤器'}
                       items={filteredGlobalInputs.map((input) => (
                         <InputListItem key={input.id}
                                        input={input}
@@ -152,8 +152,8 @@ const InputsList = ({ permissions, node }: Props) => {
             <small>{localInputs.length} configured{nodeAffix}</small>
           </h2>
           <EntityList bsNoItemsStyle="info"
-                      noItemsText={localInputs.length <= 0 ? 'There are no local inputs.'
-                        : 'No local inputs match the filter'}
+                      noItemsText={localInputs.length <= 0 ? '没有本地输入端。'
+                        : '没有本地输入端匹配该过滤器'}
                       items={filteredLocalInputs.map((input) => (
                         <InputListItem key={input.id}
                                        input={input}

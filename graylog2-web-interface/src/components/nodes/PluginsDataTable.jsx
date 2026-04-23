@@ -35,7 +35,7 @@ class PluginsDataTable extends React.Component {
       <td className="limited" style={{ width: '50%' }}>
         {plugin.description}
           &nbsp;&nbsp;
-        <ExternalLink href={plugin.url} style={{ marginLeft: 10 }}>Website</ExternalLink>
+        <ExternalLink href={plugin.url} style={{ marginLeft: 10 }}>网站</ExternalLink>
       </td>
     </tr>
   );
@@ -46,7 +46,7 @@ class PluginsDataTable extends React.Component {
     }
 
     if (this.props.plugins.length === 0) {
-      return <Alert bsStyle="info">This node has not any installed plugins.</Alert>;
+      return <Alert bsStyle="info">此节点未安装任何插件。</Alert>;
     }
 
     const headers = ['Name', 'Version', 'Author', 'Description'];

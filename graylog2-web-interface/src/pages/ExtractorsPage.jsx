@@ -80,13 +80,13 @@ const ExtractorsPage = createReactClass({
     const { node, input } = this.state;
 
     return (
-      <DocumentTitle title={`Extractors of ${input.title}`}>
+      <DocumentTitle title={`${input.title} 的提取器`}>
         <div>
-          <PageHeader title={<span>Extractors of <em>{input.title}</em></span>}
+          <PageHeader title={<span>提取器 <em>{input.title}</em></span>}
                       actions={(
-                        <DropdownButton bsStyle="info" id="extractor-actions-dropdown" title="Actions" pullRight>
-                          <MenuItem href={Routes.import_extractors(node.node_id, input.id)}>Import extractors</MenuItem>
-                          <MenuItem href={Routes.export_extractors(node.node_id, input.id)}>Export extractors</MenuItem>
+                        <DropdownButton bsStyle="info" id="extractor-actions-dropdown" title="操作" pullRight>
+                          <MenuItem href={Routes.import_extractors(node.node_id, input.id)}>导入提取器</MenuItem>
+                          <MenuItem href={Routes.export_extractors(node.node_id, input.id)}>导出提取器</MenuItem>
                         </DropdownButton>
                       )}
                       documentationLink={{
@@ -94,10 +94,10 @@ const ExtractorsPage = createReactClass({
                         path: DocsHelper.PAGES.EXTRACTORS,
                       }}>
             <span>
-              Extractors are applied on every message that is received by this input. Use them to extract and transform{' '}
-              any text data into fields that allow you easy filtering and analysis later on.{' '}
-              Example: Extract the HTTP response code from a log message, transform it to a numeric field and attach it{' '}
-              as <em>http_response_code</em> to the message.
+              提取器应用于此输入端接收到的每条消息。使用它们来提取和转换{' '}
+              将任何文本数据转换为字段，以便您稍后进行轻松过滤和分析。{' '}
+              示例：从日志消息中提取 HTTP 响应代码，将其转换为数值字段并附加{' '}
+              as <em>http_response_code</em> 到消息。
             </span>
           </PageHeader>
           <ExtractorsList input={input} node={node} />

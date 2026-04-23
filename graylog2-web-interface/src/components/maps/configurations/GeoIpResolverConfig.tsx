@@ -107,11 +107,11 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
 
       <dl className="deflist">
         <dt>已启用：</dt>
-        <dd>{config.enabled === true ? 'Yes' : 'No'}</dd>
+        <dd>{config.enabled === true ? '是' : '否'}</dd>
         {config.enabled && (
           <>
             <dt>强制执行 Graylog 默认架构：</dt>
-            <dd>{config.enforce_graylog_schema === true ? 'Yes' : 'No'}</dd>
+            <dd>{config.enforce_graylog_schema === true ? '是' : '否'}</dd>
             <dt>数据库供应商类型：</dt>
             <dd>{activeVendorType(config.db_vendor_type)}</dd>
             <dt>城市数据库路径：</dt>
@@ -121,7 +121,7 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
             <dt>数据库刷新间隔：</dt>
             <dd>{config.refresh_interval} {config.refresh_interval_unit}</dd>
             <dt>从 S3 存储桶拉取文件：</dt>
-            <dd>{config.use_s3 === true ? 'Yes' : 'No'}</dd>
+            <dd>{config.use_s3 === true ? '是' : '否'}</dd>
           </>
         )}
       </dl>

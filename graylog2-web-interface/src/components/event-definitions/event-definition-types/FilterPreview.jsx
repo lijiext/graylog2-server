@@ -47,15 +47,15 @@ class FilterPreview extends React.Component {
 
   renderSearchResult = (searchResult = {}) => {
     if (!searchResult.messages || searchResult.messages.length === 0) {
-      return <p>Could not find any messages with the current search criteria.</p>;
+      return <p>未找到符合当前搜索条件的任何消息。</p>;
     }
 
     return (
       <Table striped condensed bordered>
         <thead>
           <tr>
-            <th>Timestamp</th>
-            <th>Message</th>
+            <th>时间戳</th>
+            <th>消息</th>
           </tr>
         </thead>
         <tbody>
@@ -74,20 +74,17 @@ class FilterPreview extends React.Component {
       <>
         <HelpPanel collapsible
                    defaultExpanded={!displayPreview}
-                   title="How many Events will Filter & Aggregation create?">
+                   title="过滤和聚合将创建多少事件？">
           <p>
-            The Filter & Aggregation Condition will generate different number of Events, depending on how it is
-            configured:
+            筛选与聚合条件将根据其配置方式生成不同数量的事件：
           </p>
           <ul>
-            <li><b>Filter:</b>&emsp;One Event per message matching the filter</li>
+            <li><b>过滤器:</b> 每个匹配过滤器的消息生成一个事件</li>
             <li>
-              <b>Aggregation without groups:</b>&emsp;One Event every time the aggregation result satisfies
-              the condition
+              <b>无分组聚合:</b> 每次聚合结果满足条件时生成一个事件
             </li>
             <li>
-              <b>Aggregation with groups:</b>&emsp;One Event per group whose aggregation result satisfies
-              the condition
+              <b>按组聚合:</b> 每个分组中满足条件聚合结果的一个事件
             </li>
           </ul>
         </HelpPanel>
@@ -95,7 +92,7 @@ class FilterPreview extends React.Component {
         {displayPreview && (
           <Panel className={styles.filterPreview} bsStyle="default">
             <Panel.Heading>
-              <Panel.Title>Filter Preview</Panel.Title>
+              <Panel.Title>过滤器预览</Panel.Title>
             </Panel.Heading>
             <Panel.Body>
               {errors.length > 0 ? <p className="text-danger">{errors[0].description}</p> : renderedResults}

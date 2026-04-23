@@ -61,7 +61,7 @@ const UrlWhiteListConfig = () => {
         <td>{idx + 1}</td>
         <td>{urlConfig.title}</td>
         <td>{urlConfig.value}</td>
-        <td>{urlConfig.type === literal ? 'Exact match' : 'Regex'}</td>
+        <td>{urlConfig.type === literal ? '精确匹配' : 'Regex'}</td>
       </tr>
     ));
   };

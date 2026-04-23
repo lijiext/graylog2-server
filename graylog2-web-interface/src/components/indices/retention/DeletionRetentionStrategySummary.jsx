@@ -22,11 +22,11 @@ import { TIME_BASED_SIZE_OPTIMIZING_ROTATION_STRATEGY } from 'stores/indices/Ind
 const DeletionRetentionStrategySummary = ({ config, rotationStrategyClass }) => (
   <div>
     <dl>
-      <dt>Index retention strategy:</dt>
-      <dd>Delete</dd>
+      <dt>索引保留策略:</dt>
+      <dd>删除</dd>
       {rotationStrategyClass !== TIME_BASED_SIZE_OPTIMIZING_ROTATION_STRATEGY && (
       <>
-        <dt>Max number of indices:</dt>
+        <dt>最大索引数:</dt>
         <dd>{config.max_number_of_indices}</dd>
       </>
       )}

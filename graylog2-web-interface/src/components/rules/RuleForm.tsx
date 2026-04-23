@@ -130,7 +130,7 @@ const RuleForm = ({ create }: Props) => {
           {/* TODO: Figure out issue with props */}
           {/* @ts-ignore */}
           <StyledContainer>
-            <SourceCodeEditor id={`source${create ? '-create' : '-edit'}`}
+            <SourceCodeEditor id={`source${create ? '-创建' : '-编辑'}`}
                               mode="pipeline"
                               onLoad={onAceLoaded}
                               onChange={handleSourceChange}
@@ -144,7 +144,7 @@ const RuleForm = ({ create }: Props) => {
 
       <Row>
         <Col md={12}>
-          <FormSubmit submitButtonText={create ? 'Create rule' : 'Update rule & close'}
+          <FormSubmit submitButtonText={create ? '创建规则' : '更新规则并关闭'}
                       centerCol={!create && (
                         <Button type="button" bsStyle="info" onClick={handleApply}>
                           更新规则

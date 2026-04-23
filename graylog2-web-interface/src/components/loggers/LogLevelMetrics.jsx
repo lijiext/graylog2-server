@@ -59,12 +59,12 @@ const LogLevelMetrics = createReactClass({
 
       metricsDetails = (
         <dl className="loglevel-metrics-list">
-          <dt>Total written:</dt>
+          <dt>总写入数:</dt>
           <dd><span className="loglevel-metric-total">{metric.rate.total}</span></dd>
-          <dt>Mean rate:</dt>
-          <dd><span className="loglevel-metric-mean">{numeral(metric.rate.mean).format('0.00')}</span> / second</dd>
-          <dt>1 min rate:</dt>
-          <dd><span className="loglevel-metric-1min">{numeral(metric.rate.one_minute).format('0.00')}</span> / second</dd>
+          <dt>平均速率:</dt>
+          <dd><span className="loglevel-metric-mean">{numeral(metric.rate.mean).format('0.00')}</span> 每秒</dd>
+          <dt>1 分钟速率:</dt>
+          <dd><span className="loglevel-metric-1min">{numeral(metric.rate.one_minute).format('0.00')}</span> 每秒</dd>
         </dl>
       );
     }

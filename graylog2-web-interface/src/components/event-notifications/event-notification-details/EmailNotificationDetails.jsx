@@ -24,55 +24,55 @@ import styles from '../event-notification-types/EmailNotificationSummary.css';
 
 const EmailNotificationDetails = ({ notification }) => {
   const recipients = (
-    <ReadOnlyFormGroup label="Email Recipients"
+    <ReadOnlyFormGroup label="邮件收件人"
                        value={notification.config.email_recipients.join(', ') || 'No email addresses are configured to receive this notification.'} />
   );
   const recipientLookupInfo = (
     <>
-      <ReadOnlyFormGroup label="Email Recipients Lookup Table Name" value={notification.config.recipients_lut_name} />
-      <ReadOnlyFormGroup label="Email Recipients Lookup Table Key" value={notification.config.recipients_lut_key} />
+      <ReadOnlyFormGroup label="收件人邮箱查找表名称" value={notification.config.recipients_lut_name} />
+      <ReadOnlyFormGroup label="收件人邮箱查找表键" value={notification.config.recipients_lut_key} />
     </>
   );
   const sender = (
-    <ReadOnlyFormGroup label="Sender" value={notification.config.sender} />
+    <ReadOnlyFormGroup label="发送者" value={notification.config.sender} />
   );
   const senderLookupInfo = (
     <>
-      <ReadOnlyFormGroup label="Sender Lookup Table Name" value={notification.config.sender_lut_name} />
-      <ReadOnlyFormGroup label="Sender Lookup Table Key" value={notification.config.sender_lut_key} />
+      <ReadOnlyFormGroup label="发送方查找表名称" value={notification.config.sender_lut_name} />
+      <ReadOnlyFormGroup label="发送方查找表键" value={notification.config.sender_lut_key} />
     </>
   );
   const replyTo = (
-    <ReadOnlyFormGroup label="Reply-To" value={notification.config.reply_to} />
+    <ReadOnlyFormGroup label="回复至" value={notification.config.reply_to} />
   );
   const replyToLookupInfo = (
     <>
-      <ReadOnlyFormGroup label="Reply-To Lookup Table Name" value={notification.config.reply_to_lut_name} />
-      <ReadOnlyFormGroup label="Reply-To Lookup Table Key" value={notification.config.reply_to_lut_key} />
+      <ReadOnlyFormGroup label="回复目标查找表名称" value={notification.config.reply_to_lut_name} />
+      <ReadOnlyFormGroup label="回复地址查找表键" value={notification.config.reply_to_lut_key} />
     </>
   );
 
   return (
     <>
-      <ReadOnlyFormGroup label="Use Lookup Table for Sender" value={notification.config.lookup_sender_email ? 'Yes' : 'No'} />
+      <ReadOnlyFormGroup label="使用查找表进行发件人" value={notification.config.lookup_sender_email ? '是' : '否'} />
       {notification.config.lookup_sender_email ? senderLookupInfo : sender}
-      <ReadOnlyFormGroup label="Subject" value={notification.config.subject} />
-      <ReadOnlyFormGroup label="Use Lookup Table for Reply-To" value={notification.config.lookup_reply_to_email ? 'Yes' : 'No'} />
+      <ReadOnlyFormGroup label="主题" value={notification.config.subject} />
+      <ReadOnlyFormGroup label="使用查找表作为回复地址" value={notification.config.lookup_reply_to_email ? '是' : '否'} />
       {notification.config.lookup_reply_to_email ? replyToLookupInfo : replyTo}
-      <ReadOnlyFormGroup label="User Recipients" value={notification.config.user_recipients.join(', ') || 'No users will receive this notification.'} />
-      <ReadOnlyFormGroup label="Use Lookup Table for Email Recipients" value={notification.config.lookup_recipient_emails ? 'Yes' : 'No'} />
+      <ReadOnlyFormGroup label="用户收件人" value={notification.config.user_recipients.join(', ') || 'No users will receive this notification.'} />
+      <ReadOnlyFormGroup label="使用查找表作为电子邮件收件人" value={notification.config.lookup_recipient_emails ? '是' : '否'} />
       {notification.config.lookup_recipient_emails ? recipientLookupInfo : recipients}
-      <ReadOnlyFormGroup label="Time Zone" value={notification.config.time_zone} />
-      <ReadOnlyFormGroup label="Email Body"
+      <ReadOnlyFormGroup label="时区" value={notification.config.time_zone} />
+      <ReadOnlyFormGroup label="邮件正文"
                          value={(
                            <Well bsSize="small" className={styles.bodyPreview}>
-                             {notification.config.body_template || <em>Empty body</em>}
+                             {notification.config.body_template || <em>空主体</em>}
                            </Well>
                        )} />
-      <ReadOnlyFormGroup label="Email HTML Body"
+      <ReadOnlyFormGroup label="电子邮件 HTML 正文"
                          value={(
                            <Well bsSize="small" className={styles.bodyPreview}>
-                             {notification.config.html_body_template || <em>Empty body</em>}
+                             {notification.config.html_body_template || <em>空主体</em>}
                            </Well>
                        )} />
     </>

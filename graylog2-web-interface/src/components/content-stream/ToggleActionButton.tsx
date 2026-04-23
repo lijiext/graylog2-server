@@ -35,7 +35,7 @@ const StyledButton = styled(Button)(({ theme }) => css`
 const ToggleActionButton = ({ onClick, isOpen }: Props) => (
   <StyledButton bsStyle="link"
                 onClick={() => onClick()}
-                type="button">{isOpen ? 'Close' : 'Open'}
+                type="button">{isOpen ? '关闭' : '打开'}
     <Icon name={isOpen ? 'keyboard_arrow_down' : 'chevron_right'} />
   </StyledButton>
 );

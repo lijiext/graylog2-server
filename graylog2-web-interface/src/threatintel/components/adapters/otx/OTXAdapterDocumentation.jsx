@@ -26,65 +26,55 @@ class OTXAdapterDocumentation extends React.Component {
     return (
       <div>
         <p style={style}>
-          The AlienVault OTX data adapter uses the <ExternalLink href="https://otx.alienvault.com/api">OTX API</ExternalLink> to
-          lookup indicators for the given key.
+          AlienVault OTX 数据适配器使用 <ExternalLink href="https://otx.alienvault.com/api">OTX API</ExternalLink> 查找给定键的指标。
         </p>
 
-        <h3 style={style}>Configuration</h3>
+        <h3 style={style}>配置</h3>
 
-        <h5 style={style}>Indicator</h5>
+        <h5 style={style}>指标</h5>
 
         <p style={style}>
-          The OTX API offers several different indicators of compromise (IOCs). You have to select which indicator
-          should be used for this data adapter.
+          OTX API 提供多种不同的入侵指标 (IOCs)。您必须选择此数据适配器应使用哪个指标。
         </p>
         <p style={style}>
-          The <code>IP Auto-Detect</code> indicator is not an official one. We added that to make it possible to
-          auto-detect the IP address type to allow using the same data adapter for IP v4 and v6 addresses.
+          该 <code>IP 自动检测</code> 该指示器并非官方标准。我们添加此功能是为了能够自动检测 IP 地址类型，从而允许使用相同的数据适配器处理 IPv4 和 IPv6 地址。
         </p>
 
-        <h5 style={style}>OTX API Key</h5>
+        <h5 style={style}>OTX API 密钥</h5>
 
         <p style={style}>
-          The OTX API key is used to authenticate API requests. Requests also work if you don't enter an API key, but
-          you will most probably get a smaller request limit. <strong>If you use this data adapter for production traffic,
-            please register for an OTX account and get an API key.
+          OTX API 密钥用于对 API 请求进行认证。即使不输入 API 密钥，请求也能正常工作，但您很可能会受到更小的请求限制。 <strong>如果您使用此数据适配器处理生产流量，请注册 OTX 账户并获取 API 密钥。
                                                               </strong>
         </p>
 
         <h5 style={style}>OTX API URL</h5>
 
         <p style={style}>
-          HTTP URL of the OTX API server. The default setting of <code>https://otx.alienvault.com</code> should not be changed
-          except if you want to run some tests with a custom server.
+          OTX API 服务器的 HTTP URL。默认设置为 <code>https://otx.alienvault.com</code> 除非您想使用自定义服务器运行某些测试，否则不应更改此内容。
         </p>
 
         <h5 style={style}>HTTP User-Agent</h5>
 
         <p style={style}>
-          This will set the <code>User-Agent</code> HTTP header for OTX API requests. You can modify this to include
-          your contact details so the OTX API operators can contact you if there are problems with your API requests.
+          这将设置 <code>用户代理</code> OTX API 请求的 HTTP 请求头。您可以修改此内容以包含您的联系方式，以便在您的 API 请求出现问题时，OTX API 操作员能够联系您。
         </p>
 
-        <h5 style={style}>HTTP Connection Timeout</h5>
+        <h5 style={style}>HTTP 连接超时</h5>
 
         <p style={style}>
-          The HTTP connection timeout in milliseconds for the OTX API request. If you set this to a high value and
-          the OTX API connection is slow, processing performance can be affected.
+          OTX API 请求的 HTTP 连接超时时间（毫秒）。如果将其设置为较高值且 OTX API 连接缓慢，可能会影响处理性能。
         </p>
 
-        <h5 style={style}>HTTP Write Timeout</h5>
+        <h5 style={style}>HTTP 写入超时</h5>
 
         <p style={style}>
-          The HTTP write timeout in milliseconds for the OTX API request. If you set this to a high value and
-          the OTX API connection is slow, processing performance can be affected.
+          OTX API 请求的 HTTP 写入超时时间（毫秒）。如果将其设置为较高值且 OTX API 连接缓慢，则可能会影响处理性能。
         </p>
 
-        <h5 style={style}>HTTP Read Timeout</h5>
+        <h5 style={style}>HTTP 读取超时</h5>
 
         <p style={style}>
-          The HTTP read timeout in milliseconds for the OTX API request. If you set this to a high value and
-          the OTX API connection is slow, processing performance can be affected.
+          OTX API 请求的 HTTP 读取超时时间（毫秒）。如果将其设置为较高值且 OTX API 连接缓慢，可能会影响处理性能。
         </p>
       </div>
     );

@@ -30,31 +30,31 @@ const Automatic = () => (
     <thead>
       <tr>
         <td colSpan="2">
-          <SectionTitle>Automatic authentication will attempt each of the following in the listed order.</SectionTitle>
+          <SectionTitle>自动认证将按以下列出的顺序尝试每一项。</SectionTitle>
         </td>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <th>Environment variables</th>
+        <th>环境变量</th>
         <td><code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code></td>
       </tr>
       <tr>
-        <th>Java system properties</th>
+        <th>Java 系统属性</th>
         <td><code>aws.accessKeyId</code> and <code>aws.secretKey</code></td>
       </tr>
       <tr>
-        <th>Default credential profiles file</th>
-        <td>Typically located at <code>~/.aws/credentials</code></td>
+        <th>默认凭证配置文件</th>
+        <td>通常位于 <code>~/.aws/credentials</code></td>
       </tr>
       <tr>
-        <th>Amazon ECS container credentials</th>
-        <td>Loaded from the Amazon ECS if the environment variable <code>AWS_CONTAINER_CREDENTIALS_RELATIVE_URI</code> is set</td>
+        <th>Amazon ECS 容器凭据</th>
+        <td>如果环境变量从 Amazon ECS 加载 <code>AWS_CONTAINER_CREDENTIALS_RELATIVE_URI</code> 已设置</td>
       </tr>
       <tr>
-        <th>Instance profile credentials</th>
-        <td>Used on EC2 instances, and delivered through the Amazon EC2 metadata service</td>
+        <th>实例配置文件凭据</th>
+        <td>用于 EC2 实例，并通过 Amazon EC2 元数据服务提供</td>
       </tr>
     </tbody>
 
@@ -62,7 +62,7 @@ const Automatic = () => (
       <tr>
         <td colSpan="2">
           <SectionNote>
-            For more information, check out the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html" target="_blank" rel="noopener noreferrer">AWS Credential Configuration Documentation <Icon name="open_in_new" /></a>
+            有关更多信息，请查看 <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html" target="_blank" rel="noopener noreferrer">AWS 凭证配置文档 <Icon name="open_in_new" /></a>
           </SectionNote>
         </td>
       </tr>

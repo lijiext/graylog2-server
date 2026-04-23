@@ -75,13 +75,13 @@ class ConfigurationRow extends React.Component {
         <td className={styles.actions}>
           <ButtonToolbar>
             <LinkContainer to={Routes.SYSTEM.SIDECARS.EDIT_CONFIGURATION(configuration.id)}>
-              <Button onClick={this.openModal} bsStyle="info" bsSize="xsmall">Edit</Button>
+              <Button onClick={this.openModal} bsStyle="info" bsSize="xsmall">编辑</Button>
             </LinkContainer>
             <MoreActions>
-              <MenuItem onSelect={() => this.openModal()}>Clone</MenuItem>
+              <MenuItem onSelect={() => this.openModal()}>克隆</MenuItem>
 
               <MenuItem divider />
-              <MenuItem onSelect={this._handleDelete} variant="danger">Delete</MenuItem>
+              <MenuItem onSelect={this._handleDelete} variant="danger">删除</MenuItem>
             </MoreActions>
             {showModal && (
             <CopyConfigurationModal configuration={configuration}

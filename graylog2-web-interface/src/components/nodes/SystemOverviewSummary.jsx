@@ -38,11 +38,11 @@ export const SystemOverviewSummary = ({ information }) => {
 
   return (
     <NodeState>
-      <dt>Current lifecycle state:</dt>
+      <dt>当前生命周期状态：</dt>
       <dd>{StringUtils.capitalizeFirstLetter(information.lifecycle)}</dd>
-      <dt>Message processing:</dt>
-      <dd>{information.is_processing ? 'Enabled' : 'Disabled'}</dd>
-      <dt>Load balancer indication:</dt>
+      <dt>消息处理:</dt>
+      <dd>{information.is_processing ? '已启用' : '已禁用'}</dd>
+      <dt>负载均衡器指示:</dt>
       <dd className={lbStatus === 'DEAD' ? 'text-danger' : ''}>{lbStatus}</dd>
     </NodeState>
   );

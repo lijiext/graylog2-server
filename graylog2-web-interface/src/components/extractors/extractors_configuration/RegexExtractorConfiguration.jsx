@@ -52,13 +52,13 @@ class RegexExtractorConfiguration extends React.Component {
 
     promise.then((result) => {
       if (!result.matched) {
-        UserNotification.warning('Regular expression did not match.');
+        UserNotification.warning('正则表达式未匹配。');
 
         return;
       }
 
       if (!result.match) {
-        UserNotification.warning('Regular expression does not contain any matcher group to extract.');
+        UserNotification.warning('正则表达式不包含任何用于提取的匹配器组。');
 
         return;
       }
@@ -76,15 +76,15 @@ class RegexExtractorConfiguration extends React.Component {
   render() {
     const helpMessage = (
       <span>
-        The regular expression used for extraction. First matcher group is used.{' '}
-        Learn more in the <DocumentationLink page={DocsHelper.PAGES.EXTRACTORS} text="documentation" />.
+        用于提取的正则表达式。使用第一个匹配组。{' '}
+        了解更多 <DocumentationLink page={DocsHelper.PAGES.EXTRACTORS} text="documentation" />.
       </span>
     );
 
     return (
       <div>
         <Input id="regex-value-input"
-               label="Regular expression"
+               label="正则表达式"
                labelClassName="col-md-2"
                wrapperClassName="col-md-10"
                help={helpMessage}>
@@ -100,7 +100,7 @@ class RegexExtractorConfiguration extends React.Component {
             </Col>
             <Col md={1} className="text-right">
               <Button bsStyle="info" onClick={this._onTryClick} disabled={this._isTryButtonDisabled()}>
-                {this.state.trying ? <Icon name="progress_activity" spin /> : 'Try'}
+                {this.state.trying ? <Icon name="progress_activity" spin /> : '尝试'}
               </Button>
             </Col>
           </Row>

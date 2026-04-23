@@ -113,7 +113,7 @@ class LegacyNotificationForm extends React.Component {
     } else if (callbackType) {
       content = (
         <Alert bsStyle="danger" className={commonStyles.legacyNotificationAlert}>
-          Unknown legacy alarm callback type: <strong>{callbackType}</strong> Please make sure the plugin is installed.
+          未知的旧版告警回调类型: <strong>{callbackType}</strong> 请确保插件已安装。
         </Alert>
       );
     }
@@ -123,10 +123,10 @@ class LegacyNotificationForm extends React.Component {
         <fieldset>
           <FormGroup controlId="notification-legacy-select"
                      validationState={validation.errors.callback_type ? 'error' : null}>
-            <ControlLabel>Choose Legacy Notification</ControlLabel>
+            <ControlLabel>选择传统通知</ControlLabel>
             <Select id="notification-legacy-select"
                     matchProp="label"
-                    placeholder="Select Legacy Notification"
+                    placeholder="选择传统通知"
                     onChange={this.handleSelectNotificationChange}
                     options={formatLegacyTypes(legacyTypes)}
                     value={callbackType} />
@@ -137,7 +137,7 @@ class LegacyNotificationForm extends React.Component {
         </fieldset>
 
         <Alert bsStyle="danger" className={commonStyles.legacyNotificationAlert}>
-          Legacy alarm callbacks are deprecated and will be removed with the next major release. Please switch to the new notification types as soon as possible!
+          传统告警回调已弃用，将在下一个主要版本中移除。请尽快切换到新的通知类型！
         </Alert>
 
         {content}

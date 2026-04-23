@@ -72,7 +72,7 @@ const CertificateProvisioning = ({ onSkipProvisioning }: Props) => {
       ) : <Space h="sm" />}
       <Group>
         <Button onClick={() => onSubmit()} disabled={!dataNodes.length || isProvisioning}>
-          {isProvisioning ? 'Provisioning certificate...' : 'Provision certificate and continue'}
+          {isProvisioning ? '正在配置证书...' : '配置证书并继续'}
         </Button>
         <Button onClick={() => onSkipProvisioning()} variant="light" disabled={isProvisioning}>
           跳过配置

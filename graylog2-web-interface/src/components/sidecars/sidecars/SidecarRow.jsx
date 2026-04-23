@@ -72,7 +72,7 @@ class SidecarRow extends React.Component {
             {sidecar.node_name}
           </Link>
         </td>
-        <td aria-label="Status">
+        <td aria-label="状态">
           <StatusIndicator status={sidecarStatus.status}
                            message={sidecarStatus.message}
                            id={sidecarStatus.id}
@@ -97,10 +97,10 @@ class SidecarRow extends React.Component {
         <td>
           <ButtonToolbar>
             <LinkContainer to={`${Routes.SYSTEM.SIDECARS.ADMINISTRATION}?node_id=${sidecar.node_id}`}>
-              <Button bsSize="xsmall" bsStyle="info">Manage sidecar</Button>
+              <Button bsSize="xsmall" bsStyle="info">管理 Sidecar</Button>
             </LinkContainer>
             <LinkContainer to={Routes.search_with_query(`gl2_source_collector:${sidecar.node_id}`, 'absolute', recentMessagesTimeRange())}>
-              <Button bsSize="xsmall" bsStyle="info">Show messages</Button>
+              <Button bsSize="xsmall" bsStyle="info">显示消息</Button>
             </LinkContainer>
           </ButtonToolbar>
         </td>

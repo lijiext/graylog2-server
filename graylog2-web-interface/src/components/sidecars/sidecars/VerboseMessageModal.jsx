@@ -33,7 +33,7 @@ const VerboseMessageModal = ({ showModal, onHide, collectorName, collectorVerbos
                          onHide={onHide}
                          bsSize="large">
     <Modal.Header closeButton>
-      <Modal.Title><span>Error Details for <em>{collectorName}</em></span></Modal.Title>
+      <Modal.Title><span>错误详情： <em>{collectorName}</em></span></Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <pre>
@@ -43,7 +43,7 @@ const VerboseMessageModal = ({ showModal, onHide, collectorName, collectorVerbos
       </pre>
     </Modal.Body>
     <Modal.Footer>
-      <Button type="button" onClick={onHide}>Close</Button>
+      <Button type="button" onClick={onHide}>关闭</Button>
     </Modal.Footer>
   </BootstrapModalWrapper>
 );

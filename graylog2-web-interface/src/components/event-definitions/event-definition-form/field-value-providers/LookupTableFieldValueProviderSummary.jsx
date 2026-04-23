@@ -37,15 +37,15 @@ class LookupTableFieldValueProviderSummary extends React.Component {
         <IfPermitted permissions="lookuptables:read">
           <>
             <tr>
-              <td>Value source</td>
-              <td>Lookup Table</td>
+              <td>值源</td>
+              <td>查找表</td>
             </tr>
             <tr>
-              <td>Lookup Table</td>
+              <td>查找表</td>
               <td>{provider.table_name}</td>
             </tr>
             <tr>
-              <td>Lookup Table Key Field</td>
+              <td>查找表键字段</td>
               <td>{provider.key_field}</td>
             </tr>
           </>

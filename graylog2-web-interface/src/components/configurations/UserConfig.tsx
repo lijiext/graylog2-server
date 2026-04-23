@@ -96,7 +96,7 @@ const UserConfig = () => {
         <>
           <StyledDefList>
             <dt>全局会话超时：</dt>
-            <dd>{viewConfig.enable_global_session_timeout ? 'Enabled' : 'Disabled'}</dd>
+            <dd>{viewConfig.enable_global_session_timeout ? '已启用' : '已禁用'}</dd>
             <dt>超时间隔:</dt>
             <dd>{viewConfig.enable_global_session_timeout ? viewConfig.global_session_timeout_interval : '-'}</dd>
           </StyledDefList>

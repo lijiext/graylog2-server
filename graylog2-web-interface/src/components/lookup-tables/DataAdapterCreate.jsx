@@ -94,13 +94,13 @@ class DataAdapterCreate extends React.Component {
           <Col lg={8}>
             <form className="form form-horizontal" onSubmit={() => {}}>
               <Input id="data-adapter-type-select"
-                     label="Data Adapter Type"
+                     label="数据适配器类型"
                      required
                      autoFocus
-                     help="The type of data adapter to configure."
+                     help="要配置的数据适配器类型。"
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9">
-                <Select placeholder="Select Data Adapter Type"
+                <Select placeholder="选择数据适配器类型"
                         clearable={false}
                         options={sortedAdapters}
                         matchProp="label"
@@ -116,7 +116,7 @@ class DataAdapterCreate extends React.Component {
             <DataAdapterForm dataAdapter={dataAdapter}
                              type={type}
                              create
-                             title="Configure Adapter"
+                             title="配置适配器"
                              validate={validate}
                              validationErrors={validationErrors}
                              saved={saved} />

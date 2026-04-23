@@ -99,8 +99,8 @@ export const CollectorConfigurationsStore = singletonStore(
             return response.configurations;
           },
           (error) => {
-            UserNotification.error(`Fetching collector configurations failed with status: ${error}`,
-              'Could not retrieve configurations');
+            UserNotification.error(`获取收集器配置失败，状态为：${error}`,
+              '无法检索配置');
           },
         );
 
@@ -128,8 +128,8 @@ export const CollectorConfigurationsStore = singletonStore(
             return response.configurations;
           },
           (error) => {
-            UserNotification.error(`Fetching collector configurations failed with status: ${error}`,
-              'Could not retrieve configurations');
+            UserNotification.error(`获取收集器配置失败，状态为：${error}`,
+              '无法检索配置');
           },
         );
 
@@ -150,7 +150,7 @@ export const CollectorConfigurationsStore = singletonStore(
           errorMessage = `Unable to find a Configuration with ID <${configurationId}>, please ensure it was not deleted.`;
         }
 
-        UserNotification.error(errorMessage, 'Could not retrieve Configuration');
+        UserNotification.error(errorMessage, '无法检索配置');
       });
 
       CollectorConfigurationsActions.getConfiguration.promise(promise);
@@ -166,7 +166,7 @@ export const CollectorConfigurationsStore = singletonStore(
           errorMessage = `Unable to find a Configuration with ID <${configurationId}>, please ensure it was not deleted.`;
         }
 
-        UserNotification.error(errorMessage, 'Could not retrieve Configuration');
+        UserNotification.error(errorMessage, '无法检索配置');
       });
 
       CollectorConfigurationsActions.getConfigurationSidecars.promise(promise);
@@ -186,8 +186,8 @@ export const CollectorConfigurationsStore = singletonStore(
       promise
         .catch(
           (error) => {
-            UserNotification.error(`Fetching configuration preview failed with status: ${error}`,
-              'Could not retrieve preview');
+            UserNotification.error(`获取配置预览失败，状态为：${error}`,
+              '无法获取预览');
           },
         );
 
@@ -202,12 +202,12 @@ export const CollectorConfigurationsStore = singletonStore(
 
       promise
         .then((response) => {
-          UserNotification.success('', 'Configuration successfully created');
+          UserNotification.success('', '配置创建成功');
 
           return response;
         }, (error) => {
-          UserNotification.error(error.status === 400 ? error.responseMessage : `Creating configuration failed with status: ${error.message}`,
-            'Could not save configuration');
+          UserNotification.error(error.status === 400 ? error.responseMessage : `创建配置失败，状态为：${error.message}`,
+            '无法保存配置');
         });
 
       CollectorConfigurationsActions.createConfiguration.promise(promise);
@@ -220,13 +220,13 @@ export const CollectorConfigurationsStore = singletonStore(
 
       promise
         .then((response) => {
-          UserNotification.success('', 'Configuration successfully updated');
+          UserNotification.success('', '配置已成功更新');
           this.refreshList();
 
           return response;
         }, (error) => {
-          UserNotification.error(`Updating Configuration failed: ${error.status === 400 ? error.responseMessage : error.message}`,
-            `Could not update Configuration ${configuration.name}`);
+          UserNotification.error(`更新配置失败：${error.status === 400 ? error.responseMessage : error.message}`,
+            `无法更新配置 ${configuration.name}`);
         });
 
       CollectorConfigurationsActions.updateConfiguration.promise(promise);
@@ -240,13 +240,13 @@ export const CollectorConfigurationsStore = singletonStore(
 
       promise
         .then((response) => {
-          UserNotification.success('', `Configuration "${name}" successfully copied`);
+          UserNotification.success('', `配置 "${name}" 已成功复制`);
           this.refreshList();
 
           return response;
         }, (error) => {
-          UserNotification.error(`Saving configuration "${name}" failed with status: ${error.message}`,
-            'Could not save Configuration');
+          UserNotification.error(`保存配置 "${name}" 失败，状态为：${error.message}`,
+            '无法保存配置');
         });
 
       CollectorConfigurationsActions.copyConfiguration.promise(promise);
@@ -258,13 +258,13 @@ export const CollectorConfigurationsStore = singletonStore(
 
       promise
         .then((response) => {
-          UserNotification.success('', `Configuration "${configuration.name}" successfully deleted`);
+          UserNotification.success('', `配置 "${configuration.name}" 已成功删除`);
           this.refreshList();
 
           return response;
         }, (error) => {
-          UserNotification.error(`Deleting Configuration failed: ${error.status === 400 ? error.responseMessage : error.message}`,
-            `Could not delete Configuration ${configuration.name}`);
+          UserNotification.error(`删除配置失败：${error.status === 400 ? error.responseMessage : error.message}`,
+            `无法删除配置 ${configuration.name}`);
         });
 
       CollectorConfigurationsActions.delete.promise(promise);
@@ -287,8 +287,8 @@ export const CollectorConfigurationsStore = singletonStore(
         .then(
           (response) => response,
           (error) => (
-            UserNotification.error(`Validating configuration "${payload.name}" failed with status: ${error.message}`,
-              'Could not validate configuration')
+            UserNotification.error(`验证配置 "${payload.name}" 失败，状态为：${error.message}`,
+              '无法验证配置')
           ),
         );
 

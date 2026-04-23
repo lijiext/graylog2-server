@@ -62,7 +62,7 @@ class InputStaticFields extends React.Component {
 
     return (
       <div className="static-fields">
-        <h3 style={{ marginBottom: 5 }}>Static fields</h3>
+        <h3 style={{ marginBottom: 5 }}>静态字段</h3>
         <ul>
           {this._formatStaticFields(this.props.input.static_fields)}
         </ul>

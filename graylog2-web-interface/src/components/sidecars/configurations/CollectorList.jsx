@@ -69,13 +69,13 @@ const CollectorList = createReactClass({
           <Col md={12}>
             <div className="pull-right">
               <LinkContainer to={Routes.SYSTEM.SIDECARS.NEW_COLLECTOR}>
-                <Button bsStyle="success" bsSize="small">Create Log Collector</Button>
+                <Button bsStyle="success" bsSize="small">创建日志采集器</Button>
               </LinkContainer>
             </div>
-            <h2>Log Collectors <small>{total} total</small></h2>
+            <h2>日志采集器 <small>{total} total</small></h2>
           </Col>
           <Col md={12}>
-            <p>Manage Log Collectors that you can configure and supervise through Graylog Sidecar and Graylog Web Interface.</p>
+            <p>管理日志采集器，您可以通过 Graylog Sidecar 和 Graylog Web 界面对其进行配置和监控。</p>
           </Col>
         </Row>
 
@@ -84,7 +84,7 @@ const CollectorList = createReactClass({
             <SearchForm query={query}
                         onSearch={onQueryChange}
                         onReset={onQueryChange}
-                        placeholder="Find collectors"
+                        placeholder="查找采集器"
                         wrapperClass={style.inline}
                         topMargin={0}
                         useLoadingState />
@@ -102,7 +102,7 @@ const CollectorList = createReactClass({
                            headerCellFormatter={this.headerCellFormatter}
                            rows={collectors}
                            dataRowFormatter={this.collectorFormatter}
-                           noDataText="There are no log collectors to display, why don't you create one?"
+                           noDataText="暂无日志采集器可供显示，为何不创建一个？"
                            filterLabel=""
                            filterKeys={[]}
                            useResponsiveTable={false} />

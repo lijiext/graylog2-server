@@ -173,7 +173,7 @@ const RemoteReindexRunning = ({ currentStep, onTriggerStep, hideActions }: Migra
                     </tbody>
                   </table>
                 </LogsContainer>
-              ) : ('No logs.')}
+              ) : ('无日志。')}
             </pre>
           </Modal.Body>
         </BootstrapModalWrapper>

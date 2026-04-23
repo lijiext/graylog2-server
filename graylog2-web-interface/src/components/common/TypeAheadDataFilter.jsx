@@ -212,7 +212,7 @@ class TypeAheadDataFilter extends React.Component {
       <li key={`li-${filter}`}>
         <span className="pill label label-default">
           {filterBy}: {filter}
-          <button type="button" className="tag-remove" data-target={filter} onClick={this._onFilterRemoved} aria-label={`Remove filter ${filter}`} />
+          <button type="button" className="tag-remove" data-target={filter} onClick={this._onFilterRemoved} aria-label={`移除过滤器 ${filter}`} />
         </span>
       </li>
     ));
@@ -238,12 +238,12 @@ class TypeAheadDataFilter extends React.Component {
                           suggestions={suggestions}
                           label={label}
                           displayKey={displayKey} />
-          <Button type="submit" style={{ marginLeft: 5 }}>Filter</Button>
+          <Button type="submit" style={{ marginLeft: 5 }}>过滤器</Button>
           <Button type="button"
                   style={{ marginLeft: 5 }}
                   onClick={this._resetFilters}
                   disabled={filters.count() === 0 && filterText === ''}>
-            Reset
+            重置
           </Button>
         </form>
         <ul className="pill-list">

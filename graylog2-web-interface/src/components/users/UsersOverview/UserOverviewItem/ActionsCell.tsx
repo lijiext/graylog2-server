@@ -132,7 +132,7 @@ const EditActions = ({ user, user: { username, id, fullName, accountStatus, exte
             <MenuItem id={`set-status-user-${id}`}
                       onClick={_toggleStatus}
                       title={`设置 ${fullName} 的新账户状态`}>
-              {accountStatus === 'enabled' ? 'Disable' : 'Enable'}
+              {accountStatus === 'enabled' ? '禁用' : '启用'}
             </MenuItem>
           )}
           <MenuItem id={`delete-user-${id}`}

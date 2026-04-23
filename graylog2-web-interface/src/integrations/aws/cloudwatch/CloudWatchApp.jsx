@@ -22,8 +22,8 @@ import EmbeddedCloudWatchApp from './EmbeddedCloudWatchApp';
 
 const CloudWatchApp = () => (
   <>
-    <PageHeader title="AWS Integrations">
-      <span>This feature retrieves log messages from various AWS sources.</span>
+    <PageHeader title="AWS 集成">
+      <span>此功能从各种 AWS 源检索日志消息。</span>
     </PageHeader>
     <EmbeddedCloudWatchApp />
   </>

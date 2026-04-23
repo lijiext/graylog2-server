@@ -134,7 +134,7 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
     <>
       <dl>
         <dt>密钥</dt>
-        <dd>{keys.length > 0 ? keys.join(', ') : 'No Keys configured for Events based on this Definition.'}</dd>
+        <dd>{keys.length > 0 ? keys.join(', ') : '未为此事件定义配置任何密钥。'}</dd>
       </dl>
       {fieldNames.sort(naturalSort).map((fieldName) => renderField(fieldName, fields[fieldName], keys))}
     </>

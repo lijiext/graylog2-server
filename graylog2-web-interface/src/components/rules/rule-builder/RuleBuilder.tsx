@@ -385,7 +385,7 @@ const RuleBuilder = () => {
           </Col>
           <ActionsCol xs={12}>
             <FormSubmit disabledSubmit={hasRuleBuilderErrors(rule)}
-                        submitButtonText={!initialRule ? 'Create rule' : 'Update rule & close'}
+                        submitButtonText={!initialRule ? '创建规则' : '更新规则并关闭'}
                         centerCol={initialRule && (
                         <>
                           <Button type="button" bsStyle="info" onClick={handleSave} disabled={hasRuleBuilderErrors(rule)}>

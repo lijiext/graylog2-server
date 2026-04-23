@@ -136,7 +136,7 @@ const RenewalPolicyConfiguration = () => {
             </Group>
             {errors?.lifetime_value && <Input.Error>{errors?.lifetime_value}</Input.Error>}
             <Button disabled={isSubmitting || !isValid} type="submit">
-              {isSubmitting ? 'Creating policy...' : 'Create policy'}
+              {isSubmitting ? '正在创建策略...' : '创建策略'}
             </Button>
           </StyledForm>
         )}

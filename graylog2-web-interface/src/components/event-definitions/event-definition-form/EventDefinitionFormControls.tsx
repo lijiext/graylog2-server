@@ -34,7 +34,7 @@ const EventDefinitionFormControls = ({
     return (
       <ModalSubmit onCancel={onCancel}
                    onSubmit={onSubmit}
-                   submitButtonText={`${action === 'edit' ? 'Update' : 'Create'} 事件定义`} />
+                   submitButtonText={`${action === 'edit' ? '更新' : '创建'} 事件定义`} />
     );
   }
 

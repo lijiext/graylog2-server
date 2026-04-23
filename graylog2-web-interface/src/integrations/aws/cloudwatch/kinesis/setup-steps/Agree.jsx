@@ -19,12 +19,12 @@ import PropTypes from 'prop-types';
 
 const Agree = ({ groupName, streamName }) => (
   <>
-    <p>This auto setup will create the following AWS resources. Click below to acknowledge that you understand that these resources will be created and that you are solely responsible for any associated AWS fees incurred from them. Note that all resources must be manually deleted by you if they are not needed.</p>
+    <p>此自动设置将创建以下 AWS 资源。点击下方以确认您了解这些资源将被创建，且您需独自承担由此产生的所有相关 AWS 费用。请注意，如果不再需要这些资源，您必须手动删除它们。</p>
 
     <ol>
-      <li>Create a Kinesis stream with <strong>1</strong> shard.</li>
-      <li>Create an IAM Role and Policy to allow the specified CloudWatch group <strong>{groupName}</strong> to publish log messages to the Kinesis stream <strong>{streamName}</strong></li>
-      <li>Create a CloudWatch Subscription, which publishes log messages to the Kinesis stream.</li>
+      <li>创建 Kinesis 数据流，使用 <strong>1</strong> 分片。</li>
+      <li>创建 IAM 角色和策略以允许指定的 CloudWatch 组 <strong>{groupName}</strong> 将日志消息发布到 Kinesis 数据流 <strong>{streamName}</strong></li>
+      <li>创建 CloudWatch 订阅，将日志消息发布到 Kinesis 流。</li>
     </ol>
   </>
 );

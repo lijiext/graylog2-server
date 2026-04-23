@@ -175,7 +175,7 @@ const CAUpload = () => {
                        label="密码" />
           <UnsecureConnectionAlert renderIfSecure={<br />} />
           <Button bsStyle="primary" bsSize="small" disabled={!isValid} type="submit">
-            {isSubmitting ? 'Uploading CA...' : 'Upload CA'}
+            {isSubmitting ? '正在上传 CA...' : '上传 CA'}
           </Button>
         </Form>
       )}

@@ -184,7 +184,7 @@ const DataTieringVisualisation = ({ archiveData, minDays, maxDays, minDaysInHot,
           )}
         </AnnotationBar>
       </BarWrapper>
-      <MaxDaysLabel>{archiveData ? 'Archived and deleted' : 'Deleted'} after <strong>{maxDays} days</strong></MaxDaysLabel>
+      <MaxDaysLabel>{archiveData ? '已归档并删除' : '已删除'} after <strong>{maxDays} days</strong></MaxDaysLabel>
     </VisualisationWrapper>
   );
 };

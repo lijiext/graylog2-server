@@ -156,7 +156,7 @@ const ChangeFieldTypeModal = ({
 
   return (
     <BootstrapModalForm title={<span>更改 {fieldName} 字段类型</span>}
-                        submitButtonText={fieldTypeMutationIsLading ? 'Changing field type...' : 'Change field type'}
+                        submitButtonText={fieldTypeMutationIsLading ? '正在更改字段类型...' : '更改字段类型'}
                         onSubmitForm={onSubmit}
                         onCancel={onCancel}
                         show={show}
@@ -193,7 +193,7 @@ const ChangeFieldTypeModal = ({
         )}
         <StyledLabel>选择轮转策略</StyledLabel>
         <p>
-          要查看并使用 {type ? <b>{type}</b> : 'selected field type'} 作为字段类型{fieldName ? <> for <b>{fieldName}</b></> : ''}，您必须轮转索引。您可以在提交此表单后自动轮转受影响的索引，或者稍后手动操作。
+          要查看并使用 {type ? <b>{type}</b> : '选定的字段类型'} 作为字段类型{fieldName ? <> for <b>{fieldName}</b></> : ''}，您必须轮转索引。您可以在提交此表单后自动轮转受影响的索引，或者稍后手动操作。
         </p>
         <Input type="checkbox"
                id="rotate"

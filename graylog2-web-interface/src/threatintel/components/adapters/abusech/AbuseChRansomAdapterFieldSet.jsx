@@ -60,22 +60,22 @@ class AbuseChRansomAdapterFieldSet extends React.Component {
 
     return (
       <fieldset>
-        <Input label="Blocklist type"
+        <Input label="黑名单类型"
                id="blocklist-type-selector"
                required
                autoFocus
-               help="Select the type of the abuse.ch ransomware blocklist"
+               help="选择 abuse.ch 勒索软件黑名单的类型"
                labelClassName="col-sm-3"
                wrapperClassName="col-sm-9">
-          <Select placeholder="Select the type of blocklist"
+          <Select placeholder="选择黑名单类型"
                   clearable={false}
                   options={blocklistTypes}
                   matchProp="label"
                   onChange={this._onBlocklistTypeSelect}
                   value={config.blocklist_type} />
         </Input>
-        <TimeUnitInput label="Refresh blocklist"
-                       help="If enabled, the abuse.ch ransomware blocklist is refreshed when it changed."
+        <TimeUnitInput label="刷新黑名单"
+                       help="如果启用，abuse.ch 勒索软件黑名单将在其更新时刷新。"
                        update={this.updateRefreshInterval}
                        value={config.refresh_interval}
                        unit={config.refresh_interval_unit || 'MINUTES'}

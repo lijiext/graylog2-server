@@ -35,13 +35,13 @@ export const InputStaticFieldsStore = singletonStore(
         .then(
           (response) => {
             this.trigger({});
-            UserNotification.success(`Static field '${name}' added to '${input.title}' successfully`);
+            UserNotification.success(`成功将静态字段 '${name}' 添加到 '${input.title}'`);
 
             return response;
           },
           (error) => {
-            UserNotification.error(`Adding static field to input failed with: ${error}`,
-              `Could not add static field to input '${input.title}'`);
+            UserNotification.error(`向输入添加静态字段失败：${error}`,
+              `无法向输入 '${input.title}' 添加静态字段`);
           },
         );
 
@@ -56,13 +56,13 @@ export const InputStaticFieldsStore = singletonStore(
         .then(
           (response) => {
             this.trigger({});
-            UserNotification.success(`Static field '${name}' removed from '${input.title}' successfully`);
+            UserNotification.success(`静态字段 '${name}' 已从 '${input.title}' 成功移除`);
 
             return response;
           },
           (error) => {
-            UserNotification.error(`Removing static field from input failed with: ${error}`,
-              `Could not remove static field '${name} from input '${input.title}'`);
+            UserNotification.error(`从输入移除静态字段失败：${error}`,
+              `无法从输入 '${input.title}' 移除静态字段 '${name}'`);
           },
         );
 

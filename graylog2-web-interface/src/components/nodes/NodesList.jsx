@@ -59,7 +59,7 @@ const NodesList = createReactClass({
       <Row className="content">
         <Col md={12}>
           <h2>
-            There <Pluralize value={nodesNo} singular="is" plural="are" /> {nodesNo} active <Pluralize value={nodesNo} singular="node" plural="nodes" />
+            那里 <Pluralize value={nodesNo} singular="is" plural="are" /> {nodesNo} active <Pluralize value={nodesNo} singular="node" plural="nodes" />
           </h2>
           <EntityList bsNoItemsStyle="info"
                       noItemsText="There are no active nodes."

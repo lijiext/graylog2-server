@@ -92,8 +92,8 @@ export const SidecarsAdministrationStore = singletonStore(
           return response;
         },
         (error) => {
-          UserNotification.error(error.status === 400 ? error.responseMessage : `Fetching Sidecars failed with status: ${error.message}`,
-            'Could not retrieve Sidecars');
+          UserNotification.error(error.status === 400 ? error.responseMessage : `获取 Sidecar 失败，状态为：${error.message}`,
+            '无法检索 Sidecars');
         },
       );
 
@@ -119,13 +119,13 @@ export const SidecarsAdministrationStore = singletonStore(
 
       promise.then(
         (response) => {
-          UserNotification.success('', `${upperFirst(action)} for ${formattedCollectors.length} collectors requested`);
+          UserNotification.success('', `已请求为 ${formattedCollectors.length} 个收集器执行 ${upperFirst(action)}`);
 
           return response;
         },
         (error) => {
-          UserNotification.error(`Requesting ${action} failed with status: ${error}`,
-            `Could not ${action} collectors`);
+          UserNotification.error(`请求 ${action} 失败，状态为：${error}`,
+            `无法 ${action} 收集器`);
         },
       );
 

@@ -89,9 +89,9 @@ const PermissionsConfig = () => {
         <>
           <StyledDefList>
             <dt>与所有人共享:</dt>
-            <dd>{config.allow_sharing_with_everyone ? 'Enabled' : 'Disabled'}</dd>
+            <dd>{config.allow_sharing_with_everyone ? '已启用' : '已禁用'}</dd>
             <dt>与用户共享:</dt>
-            <dd>{config.allow_sharing_with_users ? 'Enabled' : 'Disabled'}</dd>
+            <dd>{config.allow_sharing_with_users ? '已启用' : '已禁用'}</dd>
           </StyledDefList>
 
           <IfPermitted permissions="clusterconfigentry:edit">

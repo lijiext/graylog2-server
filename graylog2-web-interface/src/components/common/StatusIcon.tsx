@@ -28,7 +28,7 @@ const StatusIcon = ({ active, className = undefined }: Props) => (
     name={active ? 'check_circle' : 'cancel'}
     bsStyle={active ? 'success' : undefined}
     className={className}
-    title={active ? 'Yes' : 'No'}
+    title={active ? '是' : '否'}
   />
 );
 

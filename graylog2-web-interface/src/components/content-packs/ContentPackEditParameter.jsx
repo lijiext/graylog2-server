@@ -201,9 +201,9 @@ class ContentPackEditParameter extends React.Component {
                    value={this.state.newParameter.title}
                    onChange={this._bindValue}
                    bsStyle={this.state.titleError ? 'error' : null}
-                   label="Title"
+                   label="标题"
                    help={this.state.titleError ? this.state.titleError
-                     : 'Give a descriptive title for this content pack.'}
+                     : '为此内容包提供一个描述性标题。'}
                    required />
             <Input name="name"
                    id="name"
@@ -212,9 +212,9 @@ class ContentPackEditParameter extends React.Component {
                    bsStyle={this.state.nameError ? 'error' : null}
                    value={this.state.newParameter.name}
                    onChange={this._bindValue}
-                   label="Name"
+                   label="名称"
                    help={this.state.nameError ? this.state.nameError
-                     : 'This is used as the parameter reference and must not contain a space.'}
+                     : '此参数参考不得包含空格。'}
                    required />
             <Input name="description"
                    id="description"
@@ -223,9 +223,9 @@ class ContentPackEditParameter extends React.Component {
                    maxLength={250}
                    value={this.state.newParameter.description}
                    onChange={this._bindValue}
-                   label="Description"
+                   label="描述"
                    help={this.state.descrError ? this.state.descrError
-                     : 'Give a description explaining what will be done with this parameter.'}
+                     : '提供描述，说明将如何处理此参数。'}
                    required />
             <Input name="type"
                    id="type"
@@ -233,13 +233,13 @@ class ContentPackEditParameter extends React.Component {
                    disabled={disableType}
                    value={this.state.newParameter.type}
                    onChange={this._bindValue}
-                   label="Value Type"
-                   help="Give the type of the parameter."
+                   label="值类型"
+                   help="指定参数的类型。"
                    required>
-              <option value="string">String</option>
-              <option value="integer">Integer</option>
-              <option value="double">Double</option>
-              <option value="boolean">Boolean</option>
+              <option value="string">字符串</option>
+              <option value="integer">整数</option>
+              <option value="double">双</option>
+              <option value="boolean">布尔值</option>
             </Input>
             <Input name="default_value"
                    id="default_value"
@@ -248,9 +248,9 @@ class ContentPackEditParameter extends React.Component {
                    bsStyle={this.state.defaultValueError ? 'error' : null}
                    value={this.state.newParameter.default_value}
                    onChange={this._bindValue}
-                   label="Default value"
+                   label="默认值"
                    help={this.state.defaultValueError ? this.state.defaultValueError
-                     : 'Give a default value if the parameter is not optional.'} />
+                     : '如果参数不是可选的，请提供默认值。'} />
           </fieldset>
         </form>
       </div>

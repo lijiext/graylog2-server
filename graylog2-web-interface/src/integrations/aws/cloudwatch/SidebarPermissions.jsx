@@ -21,11 +21,11 @@ import { ExternalLink } from 'components/common';
 
 export default function SidebarPermissions() {
   return (
-    <Panel bsStyle="info" header={<span>AWS Policy Permissions</span>}>
+    <Panel bsStyle="info" header={<span>AWS 策略权限</span>}>
       <p>
-        Please refer to the{' '}
-        <ExternalLink href="https://go2docs.graylog.org/current/getting_in_log_data/aws_kinesis_cloudwatch_input.html">official documentation</ExternalLink>
-        {' '}for information on required AWS permissions.<br />
+        请参阅{' '}
+        <ExternalLink href="https://go2docs.graylog.org/current/getting_in_log_data/aws_kinesis_cloudwatch_input.html">官方文档</ExternalLink>
+        {' '}有关所需 AWS 权限的信息。<br />
       </p>
 
     </Panel>

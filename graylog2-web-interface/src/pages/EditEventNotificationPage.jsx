@@ -73,9 +73,9 @@ class EditEventDefinitionPage extends React.Component {
 
     if (!notification) {
       return (
-        <DocumentTitle title="Edit Notification">
+        <DocumentTitle title="编辑通知">
           <span>
-            <PageHeader title="Edit Notification">
+            <PageHeader title="编辑通知">
               <Spinner text="Loading Notification information..." />
             </PageHeader>
           </span>
@@ -84,17 +84,16 @@ class EditEventDefinitionPage extends React.Component {
     }
 
     return (
-      <DocumentTitle title={`Edit "${notification.title}" Notification`}>
+      <DocumentTitle title={`编辑“${notification.title}”通知`}>
         <EventsPageNavigation />
-        <PageHeader title={`Edit "${notification.title}" Notification`}
+        <PageHeader title={`编辑“${notification.title}”通知`}
                     actions={<EventNotificationActionLinks notificationId={notification.id} />}
                     documentationLink={{
                       title: 'Alerts documentation',
                       path: DocsHelper.PAGES.ALERTS,
                     }}>
           <span>
-            Notifications alert you of any configured Event when they occur. Graylog can send Notifications directly
-            to you or to other systems you use for that purpose.
+            当配置的事件发生时，通知会提醒您。Graylog 可直接向您或您用于此目的的其他系统发送通知。
           </span>
         </PageHeader>
 

@@ -107,13 +107,13 @@ const NodeLoggers = createReactClass({
                           });
                         }}>
                   <Icon name="speed" />{' '}
-                  {showDetails ? 'Hide' : 'Show'} log level metrics
+                  {showDetails ? '隐藏' : '显示'} 日志级别指标
                 </Button>
               </div>
               <h2>
                 <LinkToNode nodeId={nodeId} />
                 <small>
-                  Has written a total of <strong>{this._formatThroughput()} internal log messages.</strong>
+                  已写入总数 <strong>{this._formatThroughput()} 内部日志消息。</strong>
                 </small>
               </h2>
             </div>

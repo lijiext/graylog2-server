@@ -72,7 +72,7 @@ const MigrationDatanodeList = ({ showProvisioningState }: Props) => {
                   <td>{datanode.hostname}</td>
                   <td>{datanode.transport_address}</td>
                   <td>{showProvisioningState ? datanode.status : datanode.data_node_status}</td>
-                  <td>{datanode.cert_valid_until ? <Timestamp dateTime={datanode.cert_valid_until} /> : 'No certificate'}</td>
+                  <td>{datanode.cert_valid_until ? <Timestamp dateTime={datanode.cert_valid_until} /> : '无证书'}</td>
                   <td>
                     {!datanode.version_compatible && (
                       <Icon name="warning"

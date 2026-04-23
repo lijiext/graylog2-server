@@ -33,16 +33,16 @@ const DnsAdapterSummary = ({ dataAdapter }) => {
 
   return (
     <dl>
-      <dt>DNS Lookup Type</dt>
+      <dt>DNS 查找类型</dt>
       <dd>{lookupType[config.lookup_type]}</dd>
 
-      <dt>DNS Server IP Address</dt>
+      <dt>DNS 服务器 IP 地址</dt>
       <dd>{config.server_ips || 'n/a'}</dd>
 
-      <dt>DNS Request Timeout</dt>
+      <dt>DNS 请求超时</dt>
       <dd>{config.request_timeout} ms</dd>
 
-      <dt>Cache TTL Override</dt>
+      <dt>缓存TTL覆盖</dt>
       <dd>
         {!config.cache_ttl_override_enabled ? 'n/a' : <TimeUnit value={config.cache_ttl_override} unit={config.cache_ttl_override_unit} />}
       </dd>

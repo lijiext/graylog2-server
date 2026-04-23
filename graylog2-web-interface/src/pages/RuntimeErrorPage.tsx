@@ -60,7 +60,7 @@ const RuntimeErrorPage = ({ error, componentStack }: Props) => {
           错误：
           <ToggleDetails className="pull-right">
             <Button bsStyle="link" tabIndex={0} onClick={_toggleDetails}>
-              {showDetails ? 'Show less' : 'Show more'}
+              {showDetails ? '显示更少' : '显示更多'}
             </Button>
           </ToggleDetails>
         </dt>

@@ -38,7 +38,7 @@ class WhoisAdapterFieldSet extends React.Component {
         <Input type="number"
                id="connect_timeout"
                name="connect_timeout"
-               label="Connect timeout"
+               label="连接超时"
                required
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('connect_timeout', 'WHOIS connection timeout in milliseconds.')}
@@ -49,7 +49,7 @@ class WhoisAdapterFieldSet extends React.Component {
         <Input type="number"
                id="read_timeout"
                name="read_timeout"
-               label="Read timeout"
+               label="读取超时"
                required
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('read_timeout', 'WHOIS connection read timeout in milliseconds.')}

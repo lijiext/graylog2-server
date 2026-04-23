@@ -24,8 +24,8 @@ const ARN = ({ awsARN, onChange }) => (
          type="text"
          value={awsARN.value}
          onChange={onChange}
-         label="AWS Assume Role (ARN)"
-         help="Amazon Resource Name with required cross account permission"
+         label="AWS 假设角色 (ARN)"
+         help="具有所需跨账户权限的 Amazon 资源名称"
          placeholder="arn:aws:sts::123456789012:assumed-role/some-role"
          maxLength="2048" />
 );

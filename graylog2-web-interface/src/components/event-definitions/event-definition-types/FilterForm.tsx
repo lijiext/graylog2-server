@@ -443,7 +443,7 @@ const FilterForm = ({
           <HelpBlock>
             {validation.errors.query_parameters
               ? get(validation, 'errors.query_parameters[0]')
-              : 'Please declare missing query parameters by clicking on the buttons above.'}
+              : '请通过点击上方的按钮声明缺失的查询参数。'}
           </HelpBlock>
         )}
       </FormGroup>

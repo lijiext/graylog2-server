@@ -53,7 +53,7 @@ const ResumeStartupButton = ({ variant, compact, color }: Props) => {
             size={compact ? 'compact-xs' : 'xs'}
             color={color}
             onClick={onResumeStartup}>
-      {isRestartingConfiguration ? 'restarting...' : 'restart'}
+      {isRestartingConfiguration ? '正在重启...' : 'restart'}
     </Button>
   );
 };

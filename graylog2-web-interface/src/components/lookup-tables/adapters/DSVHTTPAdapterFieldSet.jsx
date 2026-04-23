@@ -22,7 +22,7 @@ import { URLWhiteListInput } from 'components/common';
 
 const DSVHTTPAdapterFieldSet = ({ handleFormEvent, validationState, validationMessage, config }) => (
   <fieldset>
-    <URLWhiteListInput label="File URL"
+    <URLWhiteListInput label="文件 URL"
                        onChange={handleFormEvent}
                        validationMessage={validationMessage('url', 'The URL of the DSV file.')}
                        validationState={validationState('url')}
@@ -32,88 +32,88 @@ const DSVHTTPAdapterFieldSet = ({ handleFormEvent, validationState, validationMe
     <Input type="number"
            id="refresh_interval"
            name="refresh_interval"
-           label="Refresh interval"
+           label="刷新间隔"
            required
            onChange={handleFormEvent}
-           help="The interval to check if the DSV file needs a reload. (in seconds)"
+           help="检查 DSV 文件是否需要重新加载的间隔时间（秒）。"
            value={config.refresh_interval}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="text"
            id="separator"
            name="separator"
-           label="Separator"
+           label="分隔符"
            required
            onChange={handleFormEvent}
-           help="The delimiter to use for separating columns of entries."
+           help="用于分隔条目列的分隔符。"
            value={config.separator}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="text"
            id="line_separator"
            name="line_separator"
-           label="Line Separator"
+           label="行分隔符"
            required
            onChange={handleFormEvent}
-           help="The delimiter to use for separating lines."
+           help="用于分隔行的分隔符。"
            value={config.line_separator}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="text"
            id="quotechar"
            name="quotechar"
-           label="Quote character"
+           label="引号字符"
            required
            onChange={handleFormEvent}
-           help="The character to use for quoted elements."
+           help="用于引用元素的字符。"
            value={config.quotechar}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="text"
            id="ignorechar"
            name="ignorechar"
-           label="Ignore characters"
+           label="忽略字符"
            required
            onChange={handleFormEvent}
-           help="Ignore lines starting with these characters."
+           help="忽略以这些字符开头的行。"
            value={config.ignorechar}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="text"
            id="key_column"
            name="key_column"
-           label="Key column"
+           label="密钥列"
            required
            onChange={handleFormEvent}
-           help="The column number that should be used for the key lookup."
+           help="应使用哪一列号进行键查找。"
            value={config.key_column}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="text"
            id="value_column"
            name="value_column"
-           label="Value column"
+           label="值列"
            required
            onChange={handleFormEvent}
-           help="The column number that should be used as the value for a key."
+           help="应作为键值的列号。"
            value={config.value_column}
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9" />
     <Input type="checkbox"
            id="case_insensitive_lookup"
            name="case_insensitive_lookup"
-           label="Allow case-insensitive lookups"
+           label="允许不区分大小写的查找"
            checked={config.case_insensitive_lookup}
            onChange={handleFormEvent}
-           help="Enable if the key lookup should be case-insensitive."
+           help="如果查找表的键查找应不区分大小写，请启用。"
            wrapperClassName="col-md-offset-3 col-md-9" />
     <Input type="checkbox"
            id="check_presence_only"
            name="check_presence_only"
-           label="Check Presence Only"
+           label="仅检查存在性"
            checked={config.check_presence_only}
            onChange={handleFormEvent}
-           help="Only check if key is present in table, returns boolean instead of value."
+           help="仅检查键是否存在于表中，返回布尔值而非值。"
            wrapperClassName="col-md-offset-3 col-md-9" />
   </fieldset>
 );

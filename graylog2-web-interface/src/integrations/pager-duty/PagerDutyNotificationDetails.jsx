@@ -21,11 +21,11 @@ import { ReadOnlyFormGroup } from 'components/common';
 
 const PagerDutyNotificationDetails = ({ notification }) => (
   <>
-    <ReadOnlyFormGroup label="Routing Key" value={notification.config?.routing_key} />
-    <ReadOnlyFormGroup label="Custom Incident" value={notification.config?.custom_incident} />
-    <ReadOnlyFormGroup label="Key Prefix" value={notification.config?.key_prefix} />
-    <ReadOnlyFormGroup label="Client Name" value={notification.config?.client_name} />
-    <ReadOnlyFormGroup label="Client URL" value={notification.config?.client_url} />
+    <ReadOnlyFormGroup label="路由键" value={notification.config?.routing_key} />
+    <ReadOnlyFormGroup label="自定义事件" value={notification.config?.custom_incident} />
+    <ReadOnlyFormGroup label="键前缀" value={notification.config?.key_prefix} />
+    <ReadOnlyFormGroup label="客户端名称" value={notification.config?.client_name} />
+    <ReadOnlyFormGroup label="客户端 URL" value={notification.config?.client_url} />
   </>
 );
 

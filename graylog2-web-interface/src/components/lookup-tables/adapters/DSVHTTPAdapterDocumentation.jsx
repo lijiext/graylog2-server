@@ -29,38 +29,38 @@ const DSVHTTPAdapterDocumentation = () => {
 
   return (
     <div>
-      <p>The DSV data adapter can read key value pairs (or check for the presence of a key) from a DSV file.</p>
-      <p>Please make sure your DSV file is formatted according to your configuration settings.</p>
+      <p>DSV 数据适配器可以从 DSV 文件读取键值对（或检查键是否存在）。</p>
+      <p>请确保您的 DSV 文件已按照配置设置进行格式化。</p>
 
-      <Alert style={{ marginBottom: 10 }} bsStyle="info" title="CSV file requirements">
+      <Alert style={{ marginBottom: 10 }} bsStyle="info" title="CSV 文件要求">
         <ul className="no-padding">
-          <li>The file uses <strong>utf-8</strong> encoding</li>
-          <li>The file is accessible using the same URL by <strong>every</strong> Graylog server node</li>
+          <li>文件使用 <strong>utf-8</strong> encoding</li>
+          <li>该文件可通过相同的 URL 访问，方式为 <strong>every</strong> Graylog 服务器节点</li>
         </ul>
       </Alert>
 
       <hr />
 
-      <h3 style={{ marginBottom: 10 }}>Example 1</h3>
+      <h3 style={{ marginBottom: 10 }}>示例 1</h3>
 
-      <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+      <h5 style={{ marginBottom: 10 }}>配置</h5>
       <p style={{ marginBottom: 10, padding: 0 }}>
-        Separator: <code>,</code><br />
-        Quote character: <code>"</code><br />
+        分隔符: <code>,</code><br />
+        引号字符： <code>"</code><br />
       </p>
 
-      <h5 style={{ marginBottom: 10 }}>DSV File</h5>
+      <h5 style={{ marginBottom: 10 }}>DSV 文件</h5>
       <pre>{csvFile1}</pre>
 
-      <h3 style={{ marginBottom: 10 }}>Example 2</h3>
+      <h3 style={{ marginBottom: 10 }}>示例 2</h3>
 
-      <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+      <h5 style={{ marginBottom: 10 }}>配置</h5>
       <p style={{ marginBottom: 10, padding: 0 }}>
-        Separator: <code>;</code><br />
-        Quote character: <code>'</code><br />
+        分隔符: <code>;</code><br />
+        引号字符： <code>'</code><br />
       </p>
 
-      <h5 style={{ marginBottom: 10 }}>DSV File</h5>
+      <h5 style={{ marginBottom: 10 }}>DSV 文件</h5>
       <pre>{csvFile2}</pre>
     </div>
   );

@@ -103,7 +103,7 @@ const CreateEventDefinitionModal = ({ modalData, mappedData, show, onClose }: { 
         <RadioSection strategyAvailabilities={strategyAvailabilities} strategy={strategy} onChange={onStrategyChange} />
         <Button bsStyle="link" className="btn-text" bsSize="xsmall" onClick={toggleDetailsOpen}>
           <Icon name={`arrow_${showDetails ? 'drop_down' : 'right'}`} />&nbsp;
-          {showDetails ? 'Hide strategy details' : 'Show strategy details'}
+          {showDetails ? '隐藏策略详情' : '显示策略详情'}
         </Button>
         {
           showDetails && (

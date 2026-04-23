@@ -42,7 +42,7 @@ class ContentPackPreview extends React.Component {
     return (
       <a download={filename} href={href}>
         <Button id="download" bsStyle="info" onClick={this.props.onSave}>
-          Create and Download
+          创建并下载
         </Button>
       </a>
     );
@@ -63,7 +63,7 @@ class ContentPackPreview extends React.Component {
         </Row>
         <Row>
           <Col sm={6}>
-            <Button id="create" bsStyle="primary" onClick={this.props.onSave}>Create</Button>&nbsp;
+            <Button id="create" bsStyle="primary" onClick={this.props.onSave}>创建</Button>&nbsp;
             {this._renderDownload()}
           </Col>
         </Row>

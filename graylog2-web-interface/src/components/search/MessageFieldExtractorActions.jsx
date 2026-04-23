@@ -60,7 +60,7 @@ class MessageFieldExtractorActions extends React.Component {
         <div className="message-field-actions pull-right">
           <DropdownButton pullRight
                           bsSize="xsmall"
-                          title="Select extractor type"
+                          title="选择提取器类型"
                           key={1}
                           id={`select-extractor-type-dropdown-field-${fieldName}`}>
             {ExtractorUtils.EXTRACTOR_TYPES.map((extractorType) => this._formatExtractorMenuItem(extractorType))}
@@ -73,11 +73,11 @@ class MessageFieldExtractorActions extends React.Component {
       <div className="message-field-actions pull-right">
         <DropdownButton pullRight
                         bsSize="xsmall"
-                        title="Select extractor type"
+                        title="选择提取器类型"
                         key={1}
                         id={`select-extractor-type-dropdown-field-${fieldName}`}>
           <MenuItem key="select-extractor-type-disabled" disabled>
-            Extractors can only be used with string fields.
+            提取器仅可用于字符串字段。
           </MenuItem>
         </DropdownButton>
       </div>

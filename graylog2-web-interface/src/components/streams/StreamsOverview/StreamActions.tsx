@@ -180,8 +180,8 @@ const StreamActions = ({
           <MenuItem onSelect={onToggleStreamStatus}
                     disabled={isDefaultStream || isNotEditable}>
             {changingStatus
-              ? <span>{stream.disabled ? 'Starting Stream...' : 'Stopping Stream...'}</span>
-              : <span>{stream.disabled ? 'Start Stream' : 'Stop Stream'}</span>}
+              ? <span>{stream.disabled ? '正在启动数据流...' : '正在停止数据流...'}</span>
+              : <span>{stream.disabled ? '启动数据流' : '停止数据流'}</span>}
             {isDefaultStream && <DefaultStreamHelp />}
           </MenuItem>
         </IfPermitted>

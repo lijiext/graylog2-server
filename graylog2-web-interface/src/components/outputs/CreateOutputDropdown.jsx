@@ -66,20 +66,20 @@ class CreateOutputDropdown extends React.Component {
       <div>
         <div className="form-inline">
           <select id="input-type" defaultValue={this.PLACEHOLDER} value={this.state.typeName} onChange={this._onTypeChange} className="form-control">
-            <option value={this.PLACEHOLDER} disabled>Select Output Type</option>
+            <option value={this.PLACEHOLDER} disabled>选择输出类型</option>
             {outputTypes}
           </select>
           &nbsp;
-          <Button bsStyle="success" disabled={this.state.typeName === this.PLACEHOLDER} onClick={this._openModal}>Launch new output</Button>
+          <Button bsStyle="success" disabled={this.state.typeName === this.PLACEHOLDER} onClick={this._openModal}>启动新输出端</Button>
         </div>
 
         <ConfigurationForm ref={this.configurationForm}
                            key="configuration-form-output"
                            configFields={this.state.typeDefinition}
-                           title="Create new Output"
+                           title="创建新输出端"
                            titleHelpText="Select a name of your new output that describes it."
                            typeName={this.state.typeName}
-                           submitButtonText="Create output"
+                           submitButtonText="创建输出端"
                            submitAction={this.props.onSubmit} />
       </div>
     );

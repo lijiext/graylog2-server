@@ -106,7 +106,7 @@ const priorityFormatter = (eventId, priority) => {
       style = 'text-info';
   }
 
-  const tooltip = <>{priorityName} Priority</>;
+  const tooltip = <>{priorityName} 优先级</>;
 
   return (
     <OverlayTrigger placement="top" trigger={['hover', 'click', 'focus']} overlay={tooltip}>
@@ -118,14 +118,13 @@ const priorityFormatter = (eventId, priority) => {
 const renderEmptyContent = () => (
   <Row>
     <Col md={6} mdOffset={3} lg={4} lgOffset={4}>
-      <EmptyEntity title="Looks like you didn't define any Events yet">
+      <EmptyEntity title="看起来您尚未定义任何事件">
         <p>
-          Create Event Definitions that are able to search, aggregate or correlate Messages and other
-          Events, allowing you to record significant Events in Graylog and alert on them.
+          创建能够搜索、聚合或关联消息和其他事件的事件定义，允许您在 Graylog 中记录重要事件并对其进行告警。
         </p>
         <IfPermitted permissions="eventdefinitions:create">
           <LinkContainer to={Routes.ALERTS.DEFINITIONS.CREATE}>
-            <Button bsStyle="success">Get Started!</Button>
+            <Button bsStyle="success">开始使用！</Button>
           </LinkContainer>
         </IfPermitted>
       </EmptyEntity>
@@ -236,11 +235,11 @@ class Events extends React.Component {
 
     const emptyListComponent = query ? (
       <NoSearchResult>
-        No {entity} found for the current search criteria.
+        否 {entity} 符合当前搜索条件。
       </NoSearchResult>
     ) : (
       <NoEntitiesExist>
-        No {entity} exist.
+        否 {entity} 存在。
       </NoEntitiesExist>
     );
 
@@ -249,8 +248,7 @@ class Events extends React.Component {
         <tr>
           <td colSpan={5}>
             <NoSearchResult>
-              Unfortunately we can only fetch Events with an Offset (page number * rows per page) less than or equal to: [10000].
-              Please use more advanced methods (Search Field and Date Filter) in order to get distant chunks of results.
+              很抱歉，我们只能获取偏移量（页码 * 每页行数）小于或等于 [10000] 的事件。请使用更高级的方法（搜索字段和日期过滤器）来获取远处的结果块。
             </NoSearchResult>
           </td>
         </tr>

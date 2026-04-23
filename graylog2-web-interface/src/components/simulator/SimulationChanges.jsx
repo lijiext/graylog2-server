@@ -119,7 +119,7 @@ const SimulationChanges = createReactClass({
 
     return (
       <FieldResultWrap resultType="added">
-        <h4>Added fields</h4>
+        <h4>已添加字段</h4>
         <dl>
           {formattedFields}
         </dl>
@@ -143,7 +143,7 @@ const SimulationChanges = createReactClass({
 
     return (
       <FieldResultWrap resultType="removed">
-        <h4>Removed fields</h4>
+        <h4>已移除字段</h4>
         <dl>
           {formattedFields}
         </dl>
@@ -168,7 +168,7 @@ const SimulationChanges = createReactClass({
 
     return (
       <FieldResultWrap resultType="mutated">
-        <h4>Mutated fields</h4>
+        <h4>已修改字段</h4>
         <dl>
           {formattedFields}
         </dl>
@@ -181,7 +181,7 @@ const SimulationChanges = createReactClass({
     const processedMessages = simulationResults.messages;
 
     if (this._isOriginalMessageRemoved(originalMessage, processedMessages)) {
-      return <p>Original message would be dropped during processing.</p>;
+      return <p>原始消息在处理过程中将被丢弃。</p>;
     }
 
     const processedMessage = processedMessages.find((message) => message.id === originalMessage.id);
@@ -191,7 +191,7 @@ const SimulationChanges = createReactClass({
     const formattedMutatedFields = this._formatMutatedFields(processedMessage.decoration_stats.changed_fields);
 
     if (!formattedAddedFields && !formattedRemovedFields && !formattedMutatedFields) {
-      return <p>Original message would be not be modified during processing.</p>;
+      return <p>原始消息在处理过程中不会被修改。</p>;
     }
 
     return (
@@ -210,7 +210,7 @@ const SimulationChanges = createReactClass({
       <Row className="row-sm">
         <Col md={12}>
           <h3>
-            Changes in original message{' '}
+            原始消息中的更改{' '}
             <small><em>{originalMessage.id}</em></small>
           </h3>
           {this._getOriginalMessageChanges()}
@@ -231,11 +231,11 @@ const SimulationChanges = createReactClass({
     return (
       <Row className="row-sm">
         <Col md={12}>
-          <h3>Other changes</h3>
+          <h3>其他更改</h3>
           <p>
-            There would be {createdMessages.length}{' '}
-            <Pluralize singular="message" plural="messages" value={createdMessages.length} /> created.{' '}
-            Switch to the <em>Results preview</em> view option to see{' '}
+            将会出现 {createdMessages.length}{' '}
+            <Pluralize singular="message" plural="messages" value={createdMessages.length} /> 已创建。{' '}
+            切换到 <em>结果预览</em> 查看选项以查看{' '}
             <Pluralize singular="it" plural="them" value={createdMessages.length} />.
           </p>
         </Col>

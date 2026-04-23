@@ -72,7 +72,7 @@ class PagerDutyNotificationForm extends React.Component {
       <>
         <Input id="pagerduty-notification-v2-routing_key"
                name="routing_key"
-               label="Routing Key"
+               label="路由键"
                type="text"
                bsStyle={validation.errors.routing_key ? 'error' : null}
                help={get(validation, 'errors.routing_key[0]', 'The Pager Duty integration Routing Key.')}
@@ -81,7 +81,7 @@ class PagerDutyNotificationForm extends React.Component {
                required />
         <Input id="pagerduty-notification-v2-custom_incident"
                name="custom_incident"
-               label="Use Custom Incident Key"
+               label="使用自定义事件键"
                type="checkbox"
                bsStyle={validation.errors.custom_incident ? 'error' : null}
                help={get(validation, 'errors.custom_incident[0]', 'Generate a custom incident key based on the Stream and the Alert Condition.')}
@@ -90,7 +90,7 @@ class PagerDutyNotificationForm extends React.Component {
                onChange={this.handleChange} />
         <Input id="pagerduty-notification-v2-key_prefix"
                name="key_prefix"
-               label="Incident Key Prefix"
+               label="事件键前缀"
                type="text"
                bsStyle={validation.errors.key_prefix ? 'error' : null}
                help={get(validation, 'errors.key_prefix[0]', 'Incident key prefix that identifies the incident.')}
@@ -99,7 +99,7 @@ class PagerDutyNotificationForm extends React.Component {
                required />
         <Input id="pagerduty-notification-v2-client_name"
                name="client_name"
-               label="Client Name"
+               label="客户端名称"
                type="text"
                bsStyle={validation.errors.client_name ? 'error' : null}
                help={get(validation, 'errors.client_name[0]', 'The name of the Graylog system that is triggering the PagerDuty event.')}
@@ -108,7 +108,7 @@ class PagerDutyNotificationForm extends React.Component {
                required />
         <Input id="pagerduty-notification-v2-client_url"
                name="client_url"
-               label="Client URL"
+               label="客户端 URL"
                type="text"
                bsStyle={validation.errors.client_url ? 'error' : null}
                help={get(validation, 'errors.client_url[0]', 'The URL of the Graylog system that is triggering the PagerDuty event.')}

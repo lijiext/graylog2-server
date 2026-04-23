@@ -73,7 +73,7 @@ class ContentPackConstraints extends React.Component {
 
     return (
       <div>
-        <h2>Constraints</h2>
+        <h2>约束条件</h2>
         <br />
         <br />
         <DataTable id="content-packs-constraints"

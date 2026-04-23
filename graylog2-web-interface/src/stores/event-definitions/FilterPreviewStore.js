@@ -135,7 +135,7 @@ export const FilterPreviewStore = singletonStore(
 
               return result;
             },
-            () => UserNotification.error('Could not execute search'),
+            () => UserNotification.error('无法执行搜索'),
           );
 
         FilterPreviewActions.execute.promise(this.executePromise);

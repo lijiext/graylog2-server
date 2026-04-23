@@ -52,13 +52,13 @@ const ServerInputSelect = ({ selectedInputId, inputs, onChange, isLoading }: Ser
   <fieldset>
     <Description>
       {selectedInputId
-        ? 'Click on "Load Message" to load the most recent message received by this input within the last hour.'
-        : 'Select an Input from the list below and click "Load Message" to load the most recent message received by this input within the last hour.'}
+        ? '点击“加载消息”以加载该输入端在过去一小时内接收的最新消息。'
+        : '从下方列表选择一个输入端，然后点击“加载消息”以加载该输入端在过去一小时内接收的最新消息。'}
     </Description>
     <InputDropdown inputs={inputs}
                    preselectedInputId={selectedInputId}
                    onLoadMessage={onChange}
-                   title={isLoading ? 'Loading message...' : 'Load Message'}
+                   title={isLoading ? '正在加载消息...' : '加载消息'}
                    disabled={isLoading} />
   </fieldset>
 );
@@ -80,7 +80,7 @@ const ForwarderInputSelect = ({ selectedInputId, onChange, isLoading }: Forwader
       <Row>
         <Col md={8}>
           <ForwarderInputDropdown onLoadMessage={onChange}
-                                  title={isLoading ? 'Loading message...' : 'Load Message'}
+                                  title={isLoading ? '正在加载消息...' : '加载消息'}
                                   preselectedInputId={selectedInputId}
                                   loadButtonDisabled={isLoading} />
         </Col>

@@ -200,7 +200,7 @@ class DataTable extends React.Component {
     if (rows.length === 0) {
       data = <NoData noDataText={noDataText} />;
     } else if (effectiveRows.length === 0) {
-      data = <p>Filter does not match any data.</p>;
+      data = <p>过滤器未匹配到任何数据。</p>;
     } else {
       data = (
         <StyledTable className={`table ${className ?? ''}`}>

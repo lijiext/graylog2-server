@@ -97,7 +97,7 @@ const FilterRulesList = ({ streamId, destinationType, paginatedFilters, onPagina
                               </IfPermitted>
              )}>
       <Alert bsStyle="default">
-        满足以下过滤规则条件的消息将不会路由到  {destinationType === 'indexer' ? 'Index Set' : 'Data Warehouse'}.
+        满足以下过滤规则条件的消息将不会路由到  {destinationType === 'indexer' ? '索引集' : '数据仓库'}.
       </Alert>
       <PaginatedList totalItems={total}
                      pageSize={DEFAULT_PAGE_SIZES[0]}

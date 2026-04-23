@@ -196,7 +196,7 @@ const DateRangeForm = ({ filter, onSubmit }: Props) => {
               格式： <DateTimeFormat>YYYY-MM-DD [HH:mm:ss[.SSS]]</DateTimeFormat>.<br />
               所有时区使用： <b>{userTimezone}</b>.
             </Info>
-            <ModalSubmit submitButtonText={`${filter ? 'Update' : 'Create'} 过滤器`}
+            <ModalSubmit submitButtonText={`${filter ? '更新' : '创建'} 过滤器`}
                          bsSize="small"
                          disabledSubmit={!isValid}
                          displayCancel={false} />

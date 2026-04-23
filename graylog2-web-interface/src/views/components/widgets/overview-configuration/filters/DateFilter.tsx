@@ -100,7 +100,7 @@ const DateFilter = ({ values = [], onChange }: Props) => {
       <Row>
         <span>单个日期</span>
         <Switch checked={dateRange}
-                aria-label={`选择类型 ${dateRange ? 'single date' : 'range'}`}
+                aria-label={`选择类型 ${dateRange ? '单个日期' : 'range'}`}
                 onChange={toggleDateRange} />
         <span>范围</span>
       </Row>

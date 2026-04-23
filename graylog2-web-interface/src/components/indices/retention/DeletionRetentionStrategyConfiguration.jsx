@@ -37,10 +37,10 @@ const DeletionRetentionStrategyConfiguration = ({ updateConfig }) => {
     <div>
       <Input type="number"
              id="max-number-of-indices"
-             label="Max number of indices"
+             label="最大索引数"
              onChange={_onInputUpdate('max_number_of_indices')}
              value={maxNumberOfIndices}
-             help={<span>Maximum number of indices to keep before <strong>deleting</strong> the oldest ones</span>}
+             help={<span>在之前保留的最大索引数 <strong>deleting</strong> 最旧的</span>}
              required />
     </div>
   );

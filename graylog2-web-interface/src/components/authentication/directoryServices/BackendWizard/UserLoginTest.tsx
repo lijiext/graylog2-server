@@ -89,7 +89,7 @@ const UserLoginTest = ({ prepareSubmitPayload }: Props) => {
             </Col>
           </Row>
           <Button type="submit">
-            {loading ? <Spinner delay={0} text="Test User Login" /> : 'Test User Login'}
+            {loading ? <Spinner delay={0} text="Test User Login" /> : '测试用户登录'}
           </Button>
           {(!hasErrors && testFinished) && (
             <NotificationContainer bsStyle={success ? 'success' : 'danger'}>
@@ -97,7 +97,7 @@ const UserLoginTest = ({ prepareSubmitPayload }: Props) => {
                 {!result?.user_exists && 'User does not exist'}
                 {result?.user_exists && (
                   <>
-                    {result?.login_success ? message : 'Login failed'}
+                    {result?.login_success ? message : '登录失败'}
                   </>
                 )}
               </b>

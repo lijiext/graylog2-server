@@ -27,10 +27,10 @@ import ContentPackEntitiesListStyle from './ContentPackEntitiesList.css';
 
 const EntityIcon = ({ entity }) => {
   if (!entity.fromServer) {
-    return <span><Icon title="Content Pack" name="inventory_2" className={ContentPackEntitiesListStyle.contentPackEntity} /></span>;
+    return <span><Icon title="内容包" name="inventory_2" className={ContentPackEntitiesListStyle.contentPackEntity} /></span>;
   }
 
-  return <span><Icon title="Server" name="dns" /></span>;
+  return <span><Icon title="服务器" name="dns" /></span>;
 };
 
 EntityIcon.propTypes = {
@@ -123,13 +123,13 @@ class ContentPackEntitiesList extends React.Component {
                              onHide={closeModal}
                              bsSize="large">
         <Modal.Header closeButton>
-          <Modal.Title>Edit</Modal.Title>
+          <Modal.Title>编辑</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {applyParamComponent}
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={closeModal}>Close</Button>
+          <Button onClick={closeModal}>关闭</Button>
         </Modal.Footer>
       </BootstrapModalWrapper>
     );
@@ -153,13 +153,13 @@ class ContentPackEntitiesList extends React.Component {
                              onHide={closeShowModal}
                              bsSize="large">
         <Modal.Header closeButton>
-          <Modal.Title>Entity Config</Modal.Title>
+          <Modal.Title>实体配置</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {entityComponent}
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={closeShowModal}>Close</Button>
+          <Button onClick={closeShowModal}>关闭</Button>
         </Modal.Footer>
       </BootstrapModalWrapper>
     );
@@ -184,14 +184,14 @@ class ContentPackEntitiesList extends React.Component {
                         onClick={() => {
                           open();
                         }}>
-                  Edit
+                  编辑
                 </Button>
               )}
             <Button bsSize="xs"
                     onClick={() => {
                       openShowModal(entity.id);
                     }}>
-              Show
+              显示
             </Button>
           </ButtonToolbar>
         </td>
@@ -211,7 +211,7 @@ class ContentPackEntitiesList extends React.Component {
 
     return (
       <div>
-        <h2>Entity list</h2>
+        <h2>实体列表</h2>
         <br />
         <SearchForm onSearch={this._filterEntities}
                     onReset={() => {

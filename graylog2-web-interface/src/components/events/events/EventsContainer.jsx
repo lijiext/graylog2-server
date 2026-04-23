@@ -43,7 +43,7 @@ const fetchEvents = ({ page, pageSize, query, filter, timerange }) => {
     filter: filter,
     timerange: timerange,
   }).catch((error) => {
-    UserNotification.error(`Fetching alerts failed with status: ${error}`);
+    UserNotification.error(`获取告警失败，状态为：${error}`);
   });
 };
 

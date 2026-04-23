@@ -71,24 +71,24 @@ const StepHealthCheck = ({ onChange, onSubmit }) => {
              header={(
                <Notice>
                  <Icon name="warning" size="2x" />
-                 <span>We haven&apos;t received a response back from Amazon yet.</span>
+                 <span>我们尚未收到来自 Amazon 的回复。</span>
                </Notice>
             )}>
-        <p>Hang out for a few moments while we keep checking your AWS stream for logs. Amazon&apos;s servers parse logs every 10 minutes, so grab a cup of coffee because this may take some time!</p>
+        <p>请稍候，我们正在持续检查您的 AWS 数据流中的日志。Amazon 的服务器每 10 分钟解析一次日志，因此请泡杯咖啡，因为这可能需要一些时间！</p>
 
         <CheckAgain>
-          <strong>Checking again in: <Countdown timeInSeconds={120} callback={checkForLogs} paused={pauseCountdown} /></strong>
+          <strong>再次检查时间： <Countdown timeInSeconds={120} callback={checkForLogs} paused={pauseCountdown} /></strong>
 
           <Button type="button"
                   bsStyle="success"
                   bsSize="sm"
                   onClick={checkForLogs}
                   disabled={logDataProgress.loading}>
-            {logDataProgress.loading ? 'Checking...' : 'Check Now'}
+            {logDataProgress.loading ? '检查中...' : '立即检查'}
           </Button>
         </CheckAgain>
 
-        <p><em>Do not refresh your browser, we are continually checking for your logs and this page will automatically refresh when your logs are available.</em></p>
+        <p><em>请勿刷新浏览器，我们正在持续检查您的日志，当日志可用时，此页面将自动刷新。</em></p>
 
         <div>
           <SkipHealthCheck onSubmit={onSubmit} onChange={onChange} />
@@ -113,22 +113,22 @@ const StepHealthCheck = ({ onChange, onSubmit }) => {
     <FormWrap onSubmit={handleSubmit}
               buttonContent="Review &amp; Finalize"
               disabled={false}
-              title="Create Kinesis Stream"
-              description={<p>We are going to attempt to parse a single log to help you out! If we are unable to, or you would like it parsed differently, head on over to <a href="/system/pipelines">Pipeline Rules</a> to set up your own parser!</p>}>
+              title="创建 Kinesis 数据流"
+              description={<p>我们将尝试解析一条日志以帮助您！如果无法解析，或您希望以不同方式解析，请前往 <a href="/system/pipelines">管道规则</a> 设置您自己的解析器！</p>}>
 
       <Panel bsStyle={bsStyle}
              header={(
                <Notice>
                  <Icon name={iconName} size="2x" />
-                 <span>{acknowledgment} looks like <em>{logType}</em> message type.</span>
+                 <span>{acknowledgment} 看起来像 <em>{logType}</em> 消息类型。</span>
                </Notice>
              )}>
-        {knownLog ? 'Take a look at what we have parsed so far and you can create Pipeline Rules to handle even more!' : 'Not to worry, Graylog can still read in these log messages. We have parsed what we could and you can build Pipeline Rules to do the rest!'}
+        {knownLog ? '查看我们已解析的内容，并创建管道规则以处理更多内容！' : '别担心，Graylog 仍然可以读取这些日志消息。我们已解析了能解析的部分，您可以构建管道规则来完成其余部分！'}
       </Panel>
 
       <Input id="awsCloudWatchLog"
              type="textarea"
-             label="Formatted Log Message"
+             label="格式化日志消息"
              value={logData.message}
              rows={10}
              disabled />

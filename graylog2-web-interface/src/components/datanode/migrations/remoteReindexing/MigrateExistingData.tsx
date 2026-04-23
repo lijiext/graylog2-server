@@ -228,10 +228,10 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
                 <SearchForm onSearch={setQueryIndex}
                             query={queryIndex} />
               </SearchContainer>
-              {(filteredIndices.length === 0) ? 'No indices have been found' : (
+              {(filteredIndices.length === 0) ? '未找到任何索引' : (
                 <Input type="checkbox"
                        formGroupClassName=""
-                       label={<b>{areAllIndicesSelected ? 'Unselect all' : 'Select all'}</b>}
+                       label={<b>{areAllIndicesSelected ? '取消全选' : '全选'}</b>}
                        disabled={isLoading}
                        checked={areAllIndicesSelected}
                        onChange={() => {

@@ -180,7 +180,7 @@ class EditExtractor extends React.Component {
               <Button bsStyle="info"
                       onClick={this._testCondition}
                       disabled={this._tryButtonDisabled()}>
-                Try
+                尝试
               </Button>
             </Col>
           </Row>
@@ -218,14 +218,14 @@ class EditExtractor extends React.Component {
 
     const cursorStrategyHelpMessage = (
       <span>
-        Do you want to copy or cut from source? You cannot use the cutting feature on standard fields like{' '}
+        您想从源复制还是剪切？您无法在标准字段上使用剪切功能，例如{' '}
         <em>message</em> and <em>source</em>.
       </span>
     );
 
     const targetFieldHelpMessage = (
       <span>
-        Choose a field name to store the extracted value. It can only contain <b>alphanumeric characters and underscores</b>. Example: <em>http_response_code</em>.
+        选择一个字段名来存储提取的值。它只能包含 <b>字母数字字符和下划线</b>. 示例： <em>http_response_code</em>.
       </span>
     );
 
@@ -237,7 +237,7 @@ class EditExtractor extends React.Component {
         <Input type="text"
                ref={(targetField) => { this.targetField = targetField; }}
                id="target_field"
-               label="Store as field"
+               label="存储为字段"
                defaultValue={updatedExtractor.target_field}
                labelClassName="col-md-2"
                wrapperClassName="col-md-10"
@@ -251,7 +251,7 @@ class EditExtractor extends React.Component {
       <div>
         <Row className="content extractor-list">
           <Col md={12}>
-            <h2>Example message</h2>
+            <h2>示例消息</h2>
             <Row style={{ marginTop: 5 }}>
               <Col md={12}>
                 <ExtractorExampleMessage field={updatedExtractor.source_field}
@@ -259,7 +259,7 @@ class EditExtractor extends React.Component {
                                          onExampleLoad={this._updateExampleMessage} />
               </Col>
             </Row>
-            <h2>Extractor configuration</h2>
+            <h2>提取器配置</h2>
             <Row>
               <Col md={8}>
                 <form className="extractor-form form-horizontal" method="POST" onSubmit={this._saveExtractor}>
@@ -272,7 +272,7 @@ class EditExtractor extends React.Component {
                                               exampleMessage={exampleMessage} />
 
                   <Input id="condition-type"
-                         label="Condition"
+                         label="条件"
                          labelClassName="col-md-2"
                          wrapperClassName="col-md-10"
                          help={conditionTypeHelpMessage}>
@@ -285,7 +285,7 @@ class EditExtractor extends React.Component {
                                  value="none"
                                  onChange={this._onFieldChange('condition_type')}
                                  defaultChecked={!updatedExtractor.condition_type || updatedExtractor.condition_type === 'none'} />
-                          Always try to extract
+                          始终尝试提取
                         </label>
                       </div>
                       <div className="radio">
@@ -296,7 +296,7 @@ class EditExtractor extends React.Component {
                                  value="string"
                                  onChange={this._onFieldChange('condition_type')}
                                  defaultChecked={updatedExtractor.condition_type === 'string'} />
-                          Only attempt extraction if field contains string
+                          仅当字段包含字符串时尝试提取
                         </label>
                       </div>
                       <div className="radio">
@@ -307,7 +307,7 @@ class EditExtractor extends React.Component {
                                  value="regex"
                                  onChange={this._onFieldChange('condition_type')}
                                  defaultChecked={updatedExtractor.condition_type === 'regex'} />
-                          Only attempt extraction if field matches regular expression
+                          仅当字段匹配正则表达式时尝试提取
                         </label>
                       </div>
                     </span>
@@ -317,7 +317,7 @@ class EditExtractor extends React.Component {
                   {storeAsFieldInput}
 
                   <Input id="extraction-strategy"
-                         label="Extraction strategy"
+                         label="提取策略"
                          labelClassName="col-md-2"
                          wrapperClassName="col-md-10"
                          help={cursorStrategyHelpMessage}>
@@ -329,7 +329,7 @@ class EditExtractor extends React.Component {
                                value="copy"
                                onChange={this._onFieldChange('cursor_strategy')}
                                defaultChecked={!updatedExtractor.cursor_strategy || updatedExtractor.cursor_strategy === 'copy'} />
-                        Copy
+                        复制
                       </label>
                       <label className="radio-inline" htmlFor="cursor_strategy_cut">
                         <input type="radio"
@@ -338,20 +338,20 @@ class EditExtractor extends React.Component {
                                value="cut"
                                onChange={this._onFieldChange('cursor_strategy')}
                                defaultChecked={updatedExtractor.cursor_strategy === 'cut'} />
-                        Cut
+                        剪切
                       </label>
                     </span>
                   </Input>
 
                   <Input type="text"
                          id="title"
-                         label="Extractor title"
+                         label="提取器标题"
                          defaultValue={updatedExtractor.title}
                          labelClassName="col-md-2"
                          wrapperClassName="col-md-10"
                          onChange={this._onFieldChange('title')}
                          required
-                         help="A descriptive name for this extractor." />
+                         help="此提取器的描述性名称。" />
 
                   <div style={{ marginBottom: 20 }}>
                     <EditExtractorConverters extractorType={updatedExtractor.type}
@@ -362,7 +362,7 @@ class EditExtractor extends React.Component {
                   <Row>
                     <Col mdOffset={2} md={10}>
                       <Button type="submit" bsStyle="success">
-                        {action === 'create' ? 'Create extractor' : 'Update extractor'}
+                        {action === 'create' ? '创建提取器' : '更新提取器'}
                       </Button>
                     </Col>
                   </Row>

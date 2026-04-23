@@ -80,7 +80,7 @@ class IndexSetDeletionForm extends React.Component {
         <Row>
           <Col md={12}>
             <Alert bsStyle="danger">
-              Unable to delete the index set because it is the default index set!
+              无法删除索引集，因为它是默认索引集！
             </Alert>
           </Col>
         </Row>
@@ -97,13 +97,13 @@ class IndexSetDeletionForm extends React.Component {
           <Row>
             <Col md={12}>
               <Alert bsStyle="danger">
-                Unable to delete the index set because it has assigned streams. Remove stream assignments to be able to delete this index set.
+                无法删除索引集，因为它已分配数据流。请移除数据流分配以删除此索引集。
               </Alert>
             </Col>
           </Row>
           <Row>
             <Col md={12}>
-              <h4>Assigned streams:</h4>
+              <h4>已分配数据流:</h4>
               <ul>
                 {assignedStreams}
               </ul>
@@ -118,8 +118,8 @@ class IndexSetDeletionForm extends React.Component {
         <Col md={12}>
           <Input id="remove-data-checkbox"
                  type="checkbox"
-                 label="Remove all data for this index set?"
-                 help={<span>All indices related to this index set will be deleted from Elasticsearch.</span>}
+                 label="删除此索引集的所有数据？"
+                 help={<span>与此索引集相关的所有索引都将从 Elasticsearch 中删除。</span>}
                  checked={this.state.deleteIndices}
                  onChange={this._onRemoveClick} />
         </Col>
@@ -139,11 +139,11 @@ class IndexSetDeletionForm extends React.Component {
   render() {
     return (
       <BootstrapModalForm show={this.state.showModal}
-                          title={`Delete index set "${this.props.indexSet.title}"?`}
+                          title={`删除索引集 "${this.props.indexSet.title}"？`}
                           data-telemetry-title="Delete index set"
                           onCancel={this.close}
                           onSubmitForm={this._onDelete}
-                          submitButtonText="Delete"
+                          submitButtonText="删除"
                           submitButtonDisabled={!this._isDeletable()}>
         {this._modalContent()}
       </BootstrapModalForm>

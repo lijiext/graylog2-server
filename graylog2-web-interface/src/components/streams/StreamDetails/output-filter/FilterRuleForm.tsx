@@ -119,8 +119,8 @@ const FilterRuleForm = ({ title, filterRule, onCancel, handleSubmit, destination
                                onSubmit={onSubmit}
                                onCancel={onCancel}
                                disabledSubmit={!isValid || values?.rule?.errors?.length > 0}
-                               submitButtonText={values?.id ? 'Update' : 'Create'}
-                               submitLoadingText={values?.id ? 'Updating filter' : 'Saving filter'} />
+                               submitButtonText={values?.id ? '更新' : '创建'}
+                               submitLoadingText={values?.id ? '正在更新过滤器' : '正在保存过滤器'} />
                 </Modal.Footer>
               </Modal.Body>
             </>

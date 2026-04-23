@@ -195,7 +195,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
       <Popover.Target>
         <Container ref={explanationTriggerRef}>
           {hasExplanations ? (
-            <ExplanationTrigger title={`切换验证 ${isInfo ? 'information' : 'error explanation'}`}
+            <ExplanationTrigger title={`切换验证 ${isInfo ? 'information' : '错误说明'}`}
                                 onClick={toggleShow}
                                 $clickable
                                 tabIndex={0}

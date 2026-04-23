@@ -67,7 +67,7 @@ const ServerConnectionTest = ({ prepareSubmitPayload }: Props) => {
         在步骤“服务器配置”中定义的地址和凭据上执行后台连接检查。
       </p>
       <Button onClick={_handleConnectionCheck} type="button">
-        {loading ? <Spinner delay={0} text="Test Server Connection" /> : 'Test Server Connection'}
+        {loading ? <Spinner delay={0} text="Test Server Connection" /> : '测试服务器连接'}
       </Button>
       {success && (
         <NotificationContainer bsStyle="success">

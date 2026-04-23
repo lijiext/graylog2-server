@@ -92,7 +92,7 @@ class SourceViewModal extends React.Component {
       <BootstrapModalWrapper showModal={this.props.showModal}
                              onHide={this.props.onHide}>
         <Modal.Header closeButton>
-          <Modal.Title><span>Configuration <em>{this.state.name}</em></span></Modal.Title>
+          <Modal.Title><span>配置 <em>{this.state.name}</em></span></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="configuration">
@@ -102,7 +102,7 @@ class SourceViewModal extends React.Component {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="button" onClick={this.props.onHide}>Close</Button>
+          <Button type="button" onClick={this.props.onHide}>关闭</Button>
         </Modal.Footer>
       </BootstrapModalWrapper>
     );

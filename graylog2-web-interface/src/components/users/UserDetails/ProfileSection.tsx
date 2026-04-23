@@ -52,7 +52,7 @@ const ProfileSection = ({
       <ReadOnlyFormGroup label="已登录" value={sessionActive} />
       <ReadOnlyFormGroup label="已启用"
                          value={accountStatus === 'enabled'}
-                         help={(!authServiceEnabled && accountStatus === 'enabled') ? 'Authentication service is disabled, user cannot log in' : ''} />
+                         help={(!authServiceEnabled && accountStatus === 'enabled') ? '认证服务已禁用，用户无法登录' : ''} />
     </SectionComponent>
   );
 };

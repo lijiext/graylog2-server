@@ -80,7 +80,7 @@ const IndexSetTemplateCard = ({ template, handleCardClick, isSelected }: Props) 
       )}
       {template.enabled && (
         <ButtonWrapper>
-          <Button onClick={() => handleCardClick(template)} disabled={isSelected}>{isSelected ? 'Selected' : 'Select'}</Button>
+          <Button onClick={() => handleCardClick(template)} disabled={isSelected}>{isSelected ? '已选择' : '选择'}</Button>
         </ButtonWrapper>
       )}
     </StyledCard>

@@ -135,7 +135,7 @@ class LUTTablesPage extends React.Component {
         content = (
           <Row className="content">
             <Col lg={8}>
-              <h2>Lookup Table</h2>
+              <h2>查找表</h2>
               <LookupTableForm table={table}
                                create={false}
                                saved={saved}
@@ -170,15 +170,15 @@ class LUTTablesPage extends React.Component {
     }
 
     return (
-      <DocumentTitle title="Lookup Tables">
+      <DocumentTitle title="查找表">
         <LUTPageNavigation />
-        <PageHeader title="Lookup Tables"
+        <PageHeader title="查找表"
                     actions={(
                       <LinkContainer to={Routes.SYSTEM.LOOKUPTABLES.CREATE}>
-                        <Button bsStyle="success" style={{ marginLeft: 5 }}>Create lookup table</Button>
+                        <Button bsStyle="success" style={{ marginLeft: 5 }}>创建查找表</Button>
                       </LinkContainer>
                       )}>
-          <span>Lookup tables can be used in extractors, converters and processing pipelines to translate message fields or to enrich messages.</span>
+          <span>查找表可用于提取器、转换器和处理管道中，以转换消息字段或丰富消息。</span>
         </PageHeader>
 
         {content}

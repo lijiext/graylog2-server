@@ -69,14 +69,14 @@ export const InputStatesStore = singletonStore(
       const failedNodes = nodes.filter((nodeId) => response[nodeId] === null);
 
       if (failedNodes.length === 0) {
-        UserNotification.success(`Request to ${action.toLowerCase()} input '${input.title}' was sent successfully.`,
-          `Input '${input.title}' will be ${action === 'START' ? 'started' : 'stopped'} shortly`);
+        UserNotification.success(`向输入 '${input.title}' 发送的 ${action.toLowerCase()} 请求已成功发送。`,
+          `输入 '${input.title}' 即将 ${action === 'START' ? 'started' : 'stopped'}`);
       } else if (failedNodes.length === nodes.length) {
-        UserNotification.error(`Request to ${action.toLowerCase()} input '${input.title}' failed. Check your Graylog logs for more information.`,
-          `Input '${input.title}' could not be ${action === 'START' ? 'started' : 'stopped'}`);
+        UserNotification.error(`向输入 '${input.title}' 发送的 ${action.toLowerCase()} 请求失败。请检查您的 Graylog 日志以获取更多信息。`,
+          `输入 '${input.title}' 无法 ${action === 'START' ? 'started' : 'stopped'}`);
       } else {
-        UserNotification.warning(`Request to ${action.toLowerCase()} input '${input.title}' failed in some nodes. Check your Graylog logs for more information.`,
-          `Input '${input.title}' could not be ${action === 'START' ? 'started' : 'stopped'} in all nodes`);
+        UserNotification.warning(`在部分节点上向 ${action.toLowerCase()} 输入 '${input.title}' 的请求失败。请检查您的 Graylog 日志以获取更多信息。`,
+          `在所有节点上输入 '${input.title}' 无法 ${action === 'START' ? 'started' : 'stopped'}`);
       }
     },
 
@@ -92,7 +92,7 @@ export const InputStatesStore = singletonStore(
             return response;
           },
           (error) => {
-            UserNotification.error(`Error starting input '${input.title}': ${error}`, `Input '${input.title}' could not be started`);
+            UserNotification.error(`启动输入 '${input.title}' 时出错：${error}`, `无法启动输入 '${input.title}'`);
           },
         );
     },
@@ -109,7 +109,7 @@ export const InputStatesStore = singletonStore(
             return response;
           },
           (error) => {
-            UserNotification.error(`Error stopping input '${input.title}': ${error}`, `Input '${input.title}' could not be stopped`);
+            UserNotification.error(`停止输入 '${input.title}' 时出错：${error}`, `无法停止输入 '${input.title}'`);
           },
         );
     },

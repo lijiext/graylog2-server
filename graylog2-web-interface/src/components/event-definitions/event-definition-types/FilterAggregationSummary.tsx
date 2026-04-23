@@ -221,7 +221,7 @@ const FilterAggregationSummary = ({ config, currentUser, definitionId }: Props) 
       {conditionType === 'aggregation' && (
         <>
           <dt>按字段分组</dt>
-          <dd>{groupBy && groupBy.length > 0 ? groupBy.join(', ') : 'No Group by configured'}</dd>
+          <dd>{groupBy && groupBy.length > 0 ? groupBy.join(', ') : '未配置分组依据'}</dd>
           <dt>满足以下条件则创建事件</dt>
           <dd>
             {validationResults.isValid

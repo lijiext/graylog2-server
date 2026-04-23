@@ -68,11 +68,11 @@ class FiltersSummary extends React.Component {
       <Row className="row-sm">
         <Col md={10}>
           <ul className="list-inline">
-            <li><b>Filters</b></li>
+            <li><b>过滤器</b></li>
             {this.formatFilters(filters)}
             <li>
               <Button bsStyle="link" bsSize="xsmall" className={style.deleteButton} onClick={onResetFilters}>
-                <Icon name="close" /> Clear all
+                <Icon name="close" /> 清除全部
               </Button>
             </li>
           </ul>

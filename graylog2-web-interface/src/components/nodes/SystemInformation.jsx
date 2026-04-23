@@ -68,20 +68,20 @@ class SystemInformation extends React.Component {
     if (jvmInformation) {
       jvmInformationText = <span>PID {jvmInformation.pid}, {jvmInformation.info}</span>;
     } else {
-      jvmInformationText = <span>JMV information for this node is unavailable.</span>;
+      jvmInformationText = <span>此节点的 JMV 信息不可用。</span>;
     }
 
     return (
       <StyledDl>
-        <dt>Hostname:</dt>
+        <dt>主机名:</dt>
         <dd>{hostname}</dd>
-        <dt>Node ID:</dt>
+        <dt>节点 ID:</dt>
         <dd>{node.node_id}</dd>
         <dt>Version:</dt>
-        <dd>{version}, codename <em>{codename}</em></dd>
+        <dd>{version}，代号 <em>{codename}</em></dd>
         <dt>JVM:</dt>
         <dd>{jvmInformationText}</dd>
-        <dt>Time:</dt>
+        <dt>时间:</dt>
         <dd><Timestamp dateTime={time} format="withTz" tz={timezone} /></dd>
       </StyledDl>
     );

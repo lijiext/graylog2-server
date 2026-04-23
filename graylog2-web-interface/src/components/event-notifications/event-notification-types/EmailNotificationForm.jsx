@@ -198,11 +198,11 @@ class EmailNotificationForm extends React.Component {
 
     return (
       <FormGroup controlId="notification-email-recipients"
-                 validationState={validation.errors.recipients ? 'error' : null}><ControlLabel>Email recipient(s) <small className="text-muted">(Optional)</small></ControlLabel>
+                 validationState={validation.errors.recipients ? 'error' : null}><ControlLabel>电子邮件收件人 <small className="text-muted">(可选)</small></ControlLabel>
         <MultiSelect id="notification-email-recipients"
                      value={Array.isArray(config.email_recipients) ? config.email_recipients.join(',') : ''}
                      addLabelText='Add email "{label}"?'
-                     placeholder="Type email address"
+                     placeholder="输入电子邮件地址"
                      options={[]}
                      onChange={this.handleRecipientsChange('email_recipients')}
                      allowCreate />
@@ -221,7 +221,7 @@ class EmailNotificationForm extends React.Component {
     const customKeyField = (
       <Input id="recipients-table-key"
              name="recipients_lut_key"
-             label="Recipients Lookup Table Key"
+             label="收件人查找表键"
              type="text"
              placeholder={placeholderText}
              bsStyle={validation.errors.recipients_lut_key ? 'error' : null}
@@ -249,7 +249,7 @@ class EmailNotificationForm extends React.Component {
     return (
       <Input id="notification-sender"
              name="sender"
-             label={<ControlLabel>Sender <small className="text-muted">(Optional)</small></ControlLabel>}
+             label={<ControlLabel>发送者 <small className="text-muted">(可选)</small></ControlLabel>}
              type="text"
              bsStyle={validation.errors.sender ? 'error' : null}
              help={get(validation, 'errors.sender[0]', 'The email address that should be used as the notification sender. Leave it empty to use the default sender address.')}
@@ -266,7 +266,7 @@ class EmailNotificationForm extends React.Component {
     const customKeyField = (
       <Input id="sender-lookup-table-key"
              name="sender_lut_key"
-             label="Sender Lookup Table Key"
+             label="发送方查找表键"
              type="text"
              placeholder={placeholderText}
              bsStyle={validation.errors.sender_lut_key ? 'error' : null}
@@ -294,7 +294,7 @@ class EmailNotificationForm extends React.Component {
     return (
       <Input id="notification-replyto"
              name="reply_to"
-             label="Reply-To (Optional)"
+             label="回复地址（可选）"
              type="text"
              bsStyle={validation.errors.replyto ? 'error' : null}
              help={get(validation, 'errors.reply_to[0]', 'The email address that recipients should use for replies.')}
@@ -311,7 +311,7 @@ class EmailNotificationForm extends React.Component {
     const customKeyField = (
       <Input id="reply-to-lookup-table-key"
              name="reply_to_lut_key"
-             label="Reply To Lookup Table Key"
+             label="回复查找表键"
              type="text"
              placeholder={placeholderText}
              bsStyle={validation.errors.reply_to_lut_key ? 'error' : null}
@@ -340,7 +340,7 @@ class EmailNotificationForm extends React.Component {
       <>
         <Input id="notification-subject"
                name="subject"
-               label="Subject"
+               label="主题"
                type="text"
                bsStyle={validation.errors.subject ? 'error' : null}
                help={get(validation, 'errors.subject[0]', 'The subject that should be used for the email notification.')}
@@ -352,7 +352,7 @@ class EmailNotificationForm extends React.Component {
           <Input type="checkbox"
                  id="lookup_reply_to_email"
                  name="lookup_reply_to_email"
-                 label="Use lookup table for Reply To email"
+                 label="使用查找表进行回复邮箱"
                  onChange={this.handleUseReplyToLookupChange}
                  checked={config.lookup_reply_to_email} />
         </FormGroup>
@@ -362,7 +362,7 @@ class EmailNotificationForm extends React.Component {
             <Input type="checkbox"
                    id="lookup_sender_email"
                    name="lookup_sender_email"
-                   label="Use lookup table for Sender email"
+                   label="使用查找表进行发件人邮箱"
                    onChange={this.handleUseSenderLookupChange}
                    checked={config.lookup_sender_email} />
           </FormGroup>
@@ -371,7 +371,7 @@ class EmailNotificationForm extends React.Component {
         <IfPermitted permissions="users:list">
           <FormGroup controlId="notification-user-recipients"
                      validationState={validation.errors.recipients ? 'error' : null}>
-            <ControlLabel>User recipient(s) <small className="text-muted">(Optional)</small></ControlLabel>
+            <ControlLabel>用户收件人 <small className="text-muted">(可选)</small></ControlLabel>
             <UsersSelectField id="notification-user-recipients"
                               value={Array.isArray(config.user_recipients) ? config.user_recipients.join(',') : ''}
                               onChange={this.handleRecipientsChange('user_recipients')} />
@@ -385,13 +385,13 @@ class EmailNotificationForm extends React.Component {
           <Input type="checkbox"
                  id="lookup_recipient_emails"
                  name="lookup_recipient_emails"
-                 label="Use lookup table for Email Recipients"
+                 label="使用查找表作为电子邮件收件人"
                  onChange={this.handleUseRecipientLookupChange}
                  checked={config.lookup_recipient_emails} />
         </FormGroup>
         <Input id="notification-time-zone"
-               help="Time zone used for timestamps in the email body."
-               label={<>Time zone for date/time values <small className="text-muted">(Optional)</small></>}>
+               help="用于电子邮件正文中时间戳的时区。"
+               label={<>日期/时间值的时区 <small className="text-muted">(可选)</small></>}>
           <TimezoneSelect className="timezone-select"
                           name="time_zone"
                           value={config.time_zone}
@@ -399,7 +399,7 @@ class EmailNotificationForm extends React.Component {
         </Input>
         <FormGroup controlId="notification-body-template"
                    validationState={validation.errors.body ? 'error' : null}>
-          <ControlLabel>Body Template</ControlLabel>
+          <ControlLabel>正文模板</ControlLabel>
           <SourceCodeEditor id="notification-body-template"
                             mode="text"
                             theme="light"
@@ -411,7 +411,7 @@ class EmailNotificationForm extends React.Component {
         </FormGroup>
         <FormGroup controlId="notification-body-template"
                    validationState={validation.errors.body ? 'error' : null}>
-          <ControlLabel>HTML Body Template</ControlLabel>
+          <ControlLabel>HTML 正文模板</ControlLabel>
           <SourceCodeEditor id="notification-html-body-template"
                             mode="text"
                             theme="light"

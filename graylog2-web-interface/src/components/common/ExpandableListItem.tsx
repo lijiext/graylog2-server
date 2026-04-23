@@ -236,7 +236,7 @@ class ExpandableListItem extends React.Component<Props, State> {
                     {...inputProps} />
           )}
           {expandable && (
-            <Toggle role="button" tabIndex={0} onClick={this._toggleExpand} title={`${expanded ? 'Shrink' : 'Expand'} 列表项`}>
+            <Toggle role="button" tabIndex={0} onClick={this._toggleExpand} title={`${expanded ? '收缩' : '展开'} 列表项`}>
               <IconContainer>
                 <Icon name={expanded ? 'expand_circle_up' : 'expand_circle_down'} />
               </IconContainer>

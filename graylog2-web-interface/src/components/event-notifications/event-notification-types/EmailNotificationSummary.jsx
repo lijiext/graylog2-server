@@ -26,95 +26,95 @@ const EmailNotificationSummary = ({ notification, ...otherProps }) => (
   <CommonNotificationSummary notification={notification} {...otherProps}>
     <>
       <tr>
-        <td>Use Lookup Table for Sender</td>
-        <td>{notification.config.lookup_sender_email ? 'Yes' : 'No'}</td>
+        <td>使用查找表进行发件人</td>
+        <td>{notification.config.lookup_sender_email ? '是' : '否'}</td>
       </tr>
       {notification.config.lookup_sender_email ? (
         <>
           <tr>
-            <td>Sender Email Lookup Table Name</td>
+            <td>发件人邮箱查找表名称</td>
             <td>{notification.config.sender_lut_name}</td>
           </tr>
           <tr>
-            <td>Sender Email Lookup Table Key</td>
+            <td>发件人邮箱查找表键</td>
             <td>{notification.config.sender_lut_key}</td>
           </tr>
         </>
       )
         : (
           <tr>
-            <td>Sender</td>
+            <td>发送者</td>
             <td>{notification.config.sender}</td>
           </tr>
         )}
       <tr>
-        <td>Subject</td>
+        <td>主题</td>
         <td>{notification.config.subject}</td>
       </tr>
       <tr>
-        <td>Use Lookup Table for Reply-To</td>
-        <td>{notification.config.lookup_reply_to_email ? 'Yes' : 'No'}</td>
+        <td>使用查找表作为回复地址</td>
+        <td>{notification.config.lookup_reply_to_email ? '是' : '否'}</td>
       </tr>
       {notification.config.lookup_reply_to_email ? (
         <>
           <tr>
-            <td>Reply-To Email Lookup Table Name</td>
+            <td>回复邮箱查找表名称</td>
             <td>{notification.config.reply_to_lut_name}</td>
           </tr>
           <tr>
-            <td>Reply-To Email Lookup Table Key</td>
+            <td>回复邮箱查找表键</td>
             <td>{notification.config.reply_to_lut_key}</td>
           </tr>
         </>
       )
         : (
           <tr>
-            <td>Reply-To</td>
+            <td>回复至</td>
             <td>{notification.config.reply_to}</td>
           </tr>
         )}
 
       <tr>
-        <td>User Recipients</td>
+        <td>用户收件人</td>
         <td>{notification.config.user_recipients.join(', ') || 'No users will receive this notification.'}</td>
       </tr>
       <tr>
-        <td>Use Lookup Table for Email Recipients</td>
-        <td>{notification.config.lookup_recipient_emails ? 'Yes' : 'No'}</td>
+        <td>使用查找表作为电子邮件收件人</td>
+        <td>{notification.config.lookup_recipient_emails ? '是' : '否'}</td>
       </tr>
       {notification.config.lookup_recipient_emails ? (
         <>
           <tr>
-            <td>Email Recipients Lookup Table Name</td>
+            <td>收件人邮箱查找表名称</td>
             <td>{notification.config.recipients_lut_name}</td>
           </tr>
           <tr>
-            <td>Email Recipients Lookup Table Key</td>
+            <td>收件人邮箱查找表键</td>
             <td>{notification.config.recipients_lut_key}</td>
           </tr>
         </>
       )
         : (
           <tr>
-            <td>Email Recipients</td>
+            <td>邮件收件人</td>
             <td>
               {notification.config.email_recipients.join(', ') || 'No email addresses are configured to receive this notification.'}
             </td>
           </tr>
         )}
       <tr>
-        <td>Email Body</td>
+        <td>邮件正文</td>
         <td>
           <Well bsSize="small" className={styles.bodyPreview}>
-            {notification.config.body_template || <em>Empty body</em>}
+            {notification.config.body_template || <em>空主体</em>}
           </Well>
         </td>
       </tr>
       <tr>
-        <td>Email HTML Body</td>
+        <td>电子邮件 HTML 正文</td>
         <td>
           <Well bsSize="small" className={styles.bodyPreview}>
-            {notification.config.html_body_template || <em>Empty HTML body</em>}
+            {notification.config.html_body_template || <em>空的 HTML 正文</em>}
           </Well>
         </td>
       </tr>

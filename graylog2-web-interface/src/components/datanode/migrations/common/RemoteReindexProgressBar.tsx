@@ -66,7 +66,7 @@ const RemoteReindexProgressBar = ({ migrationStatus }: Props) => {
       {Object.keys(tasks_progress).length > 0 && (
         <>
           <Button bsStyle="link" bsSize="xs" onClick={() => setShowTasks(!showTasks)}>
-            {showTasks ? 'Hide tasks' : 'Show tasks'}
+            {showTasks ? '隐藏任务' : '显示任务'}
           </Button>
           {showTasks && Object.keys(tasks_progress).map((task) => (
             <TaskProgressBar bars={[{

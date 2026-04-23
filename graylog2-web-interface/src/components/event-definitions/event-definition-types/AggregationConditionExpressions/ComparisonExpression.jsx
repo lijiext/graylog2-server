@@ -47,10 +47,10 @@ const ComparisonExpression = (props) => {
 
         <Col md={3}>
           <FormGroup controlId="aggregation-condition" validationState={validation.message ? 'error' : null}>
-            {renderLabel && <ControlLabel>Is</ControlLabel>}
+            {renderLabel && <ControlLabel>是</ControlLabel>}
             <Select id="aggregation-condition"
                     matchProp="label"
-                    placeholder="Select Condition"
+                    placeholder="选择条件"
                     onChange={handleExpressionOperatorChange}
                     options={[
                       { label: '<', value: '<' },

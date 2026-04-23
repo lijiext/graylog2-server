@@ -104,7 +104,7 @@ class ContentPackParameterList extends React.Component {
                         onClick={() => {
                           onDeleteParameter(parameter);
                         }}>
-                  Delete
+                  删除
                 </Button>{this._parameterModal(parameter)}
               </ButtonToolbar>
             </td>
@@ -156,7 +156,7 @@ class ContentPackParameterList extends React.Component {
                              onHide={closeModal}
                              bsSize="large">
         <Modal.Header closeButton>
-          <Modal.Title>Parameter</Modal.Title>
+          <Modal.Title>参数</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ContentPackEditParameter ref={(node) => {
@@ -181,7 +181,7 @@ class ContentPackParameterList extends React.Component {
       <>
         <Button bsStyle="info"
                 bsSize={size}
-                title="Edit Modal"
+                title="编辑模态框"
                 onClick={openModal}>
           {triggerButtonName}
         </Button>
@@ -200,7 +200,7 @@ class ContentPackParameterList extends React.Component {
 
     return (
       <div>
-        <h2>Parameters list</h2>
+        <h2>参数列表</h2>
         <br />
         {!readOnly && this._parameterModal()}
         {!readOnly && (<span><br /><br /></span>)}
@@ -212,7 +212,7 @@ class ContentPackParameterList extends React.Component {
                    headers={headers}
                    className={ContentPackParameterListStyle.scrollable}
                    sortByKey="title"
-                   noDataText="To use parameters for content packs, at first a parameter must be created and can then be applied to a entity."
+                   noDataText="要使用内容包的参数，首先必须创建一个参数，然后才能将其应用于实体。"
                    filterKeys={[]}
                    rows={filteredParameters}
                    dataRowFormatter={this._parameterRowFormatter} />

@@ -40,10 +40,10 @@ const PipelinesUsingRule = ({ create }) => {
   ));
 
   return (
-    <Input id="used-in-pipelines" label="Used in pipelines" help="Pipelines that use this rule in one or more of their stages.">
+    <Input id="used-in-pipelines" label="用于处理管道" help="使用此规则的一个或多个阶段的处理管道。">
       <div className="form-control-static">
         {usedInPipelines.length === 0
-          ? 'This rule is not being used in any pipelines.' : (
+          ? '此规则未在任一处理管道中使用。' : (
             <ul className={RuleFormStyle.usedInPipelines}>
               {formattedPipelines()}
             </ul>

@@ -34,7 +34,7 @@ const SortDirectionSelect = ({ direction, disabled, onChange }: Props) => (
             { label: 'Descending', value: 'Descending' },
           ]}
           onChange={(value: string) => onChange(Direction.fromString(value))}
-          placeholder={disabled ? 'No sorting selected' : 'Click to select direction'}
+          placeholder={disabled ? '未选择排序' : '点击选择方向'}
           value={direction ?? null} />
 );
 

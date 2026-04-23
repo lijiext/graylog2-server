@@ -56,11 +56,11 @@ function SlackNotificationSummary({ notification, ...restProps }: SlackNotificat
       </tr>
       <tr>
         <td>通知通道</td>
-        <td>{notification.config.notify_channel ? 'Yes' : 'No'}</td>
+        <td>{notification.config.notify_channel ? '是' : '否'}</td>
       </tr>
       <tr>
         <td>链接名称</td>
-        <td>{notification.config.link_names ? 'Yes' : 'No'}</td>
+        <td>{notification.config.link_names ? '是' : '否'}</td>
       </tr>
       <tr>
         <td>图标 URL</td>

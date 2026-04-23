@@ -63,14 +63,14 @@ class OTXAdapterFieldSet extends React.Component {
     return (
       <fieldset>
         <Input id="indicator"
-               label="Indicator"
+               label="指标"
                required
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('indicator', 'The OTX indicator type that should be used for lookups.')}
                bsStyle={this.props.validationState('indicator')}
                labelClassName="col-sm-3"
                wrapperClassName="col-sm-9">
-          <Select placeholder="Select indicator"
+          <Select placeholder="选择指标"
                   clearable={false}
                   options={OTX_INDICATORS}
                   matchProp="label"
@@ -80,7 +80,7 @@ class OTXAdapterFieldSet extends React.Component {
         <Input type="text"
                id="api_key"
                name="api_key"
-               label="OTX API Key"
+               label="OTX API 密钥"
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('api_key', 'Your OTX API key.')}
                bsStyle={this.props.validationState('api_key')}
@@ -111,7 +111,7 @@ class OTXAdapterFieldSet extends React.Component {
         <Input type="number"
                id="http_connect_timeout"
                name="http_connect_timeout"
-               label="HTTP Connect Timeout"
+               label="HTTP 连接超时"
                required
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('http_connect_timeout', 'HTTP connection timeout in milliseconds.')}
@@ -122,7 +122,7 @@ class OTXAdapterFieldSet extends React.Component {
         <Input type="number"
                id="http_write_timeout"
                name="http_write_timeout"
-               label="HTTP Write Timeout"
+               label="HTTP 写入超时"
                required
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('http_write_timeout', 'HTTP write timeout in milliseconds.')}
@@ -133,7 +133,7 @@ class OTXAdapterFieldSet extends React.Component {
         <Input type="number"
                id="http_read_timeout"
                name="http_read_timeout"
-               label="HTTP Read Timeout"
+               label="HTTP 读取超时"
                required
                onChange={this.props.handleFormEvent}
                help={this.props.validationMessage('http_read_timeout', 'HTTP read timeout in milliseconds.')}

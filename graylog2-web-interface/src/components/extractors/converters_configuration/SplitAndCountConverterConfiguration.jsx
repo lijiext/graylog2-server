@@ -53,9 +53,9 @@ class SplitAndCountConverterConfiguration extends React.Component {
   render() {
     const splitByHelpMessage = (
       <span>
-        The Split & Count converter is splitting the extracted part by the defined character and stores the token{' '}
-        count as field. <strong>Example:</strong> <em>?fields=first_name,last_name,zip</em> split by <em>,</em>{' '}
-        results in <em>3</em>. You just counted the requested fields of a GET user REST request.
+        Split & Count 转换器正在按定义的字符拆分提取的部分并存储令牌{' '}
+        计为字段。 <strong>示例：</strong> <em>?fields=first_name,last_name,zip</em> 按...分割 <em>,</em>{' '}
+        导致 <em>3</em>。您刚刚统计了 GET 用户 REST 请求中请求的字段数。
       </span>
     );
 
@@ -64,7 +64,7 @@ class SplitAndCountConverterConfiguration extends React.Component {
         <Input type="checkbox"
                ref={(converterEnabled) => { this.converterEnabled = converterEnabled; }}
                id={`enable-${this.props.type}-converter`}
-               label="Split & Count"
+               label="拆分并计数"
                wrapperClassName="col-md-offset-2 col-md-10"
                defaultChecked
                onChange={this._toggleConverter} />
@@ -73,7 +73,7 @@ class SplitAndCountConverterConfiguration extends React.Component {
             <div className="xtrc-converter-subfields">
               <Input type="text"
                      id={`${this.props.type}_converter_split_by`}
-                     label="Split by"
+                     label="按...拆分"
                      defaultValue={this.props.configuration.split_by}
                      labelClassName="col-md-3"
                      wrapperClassName="col-md-9"

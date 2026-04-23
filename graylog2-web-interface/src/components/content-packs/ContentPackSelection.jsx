@@ -306,7 +306,7 @@ class ContentPackSelection extends React.Component {
       <div>
         <Row>
           <Col smOffset={1} lg={8}>
-            <h2>General Information</h2>
+            <h2>一般信息</h2>
             <br />
             <form className="content-selection-form" id="content-selection-form" onSubmit={(e) => { e.preventDefault(); }}>
               <fieldset>
@@ -317,8 +317,8 @@ class ContentPackSelection extends React.Component {
                        value={contentPack.name}
                        onChange={this._bindValue}
                        onBlur={() => this._handleTouched('name')}
-                       label="Name"
-                       help="Required. Give a descriptive name for this content pack."
+                       label="名称"
+                       help="必填。为此内容包提供一个描述性名称。"
                        error={this._error('name')}
                        required />
                 <Input name="summary"
@@ -328,8 +328,8 @@ class ContentPackSelection extends React.Component {
                        value={contentPack.summary}
                        onChange={this._bindValue}
                        onBlur={() => this._handleTouched('summary')}
-                       label="Summary"
-                       help="Required. Give a short summary of the content pack."
+                       label="摘要"
+                       help="必填。提供内容包的简短摘要。"
                        error={this._error('summary')}
                        required />
                 <Input name="description"
@@ -339,8 +339,8 @@ class ContentPackSelection extends React.Component {
                        onChange={this._bindValue}
                        onBlur={() => this._handleTouched('description')}
                        rows={6}
-                       label="Description"
-                       help="Give a long description of the content pack in markdown." />
+                       label="描述"
+                       help="用 Markdown 格式提供内容包的详细描述。" />
                 <Input name="vendor"
                        id="vendor"
                        type="text"
@@ -348,8 +348,8 @@ class ContentPackSelection extends React.Component {
                        value={contentPack.vendor}
                        onChange={this._bindValue}
                        onBlur={() => this._handleTouched('vendor')}
-                       label="Vendor"
-                       help="Required. Who did this content pack and how can they be reached, e.g. Name and email."
+                       label="供应商"
+                       help="必填。谁制作了此内容包，以及如何联系他们，例如姓名和电子邮件。"
                        error={this._error('vendor')}
                        required />
                 <Input name="url"
@@ -360,7 +360,7 @@ class ContentPackSelection extends React.Component {
                        onChange={this._bindValue}
                        onBlur={() => this._handleTouched('url')}
                        label="URL"
-                       help="Where can I find the content pack. e.g. github url"
+                       help="我在哪里可以找到内容包。例如：github url"
                        error={this._error('url')} />
               </fieldset>
             </form>
@@ -368,9 +368,9 @@ class ContentPackSelection extends React.Component {
         </Row>
         <Row>
           <Col smOffset={1} lg={8}>
-            <h2>Content Pack selection</h2>
+            <h2>内容包选择</h2>
             {edit && (
-            <HelpBlock>You can select between installed entities from the server (<Icon name="dns" />) or
+            <HelpBlock>您可以从服务器选择已安装的实体 (<Icon name="dns" />) or
               entities from the former content pack revision (<Icon name="archive" className={style.contentPackEntity} />).
             </HelpBlock>
             )}

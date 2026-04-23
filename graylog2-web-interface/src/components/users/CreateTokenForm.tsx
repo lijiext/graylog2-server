@@ -62,7 +62,7 @@ const CreateTokenForm = ({ creatingToken, disableForm, onCreate }: Props) => {
               disabled={disableForm || tokenName === '' || creatingToken}
               type="submit"
               bsStyle="primary">
-        {(creatingToken ? <Spinner text="Creating..." /> : 'Create Token')}
+        {(creatingToken ? <Spinner text="Creating..." /> : '创建令牌')}
       </Button>
     </StyledForm>
   );

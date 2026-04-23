@@ -112,7 +112,7 @@ const JournalDetails = createReactClass({
     if (!journalInformation.enabled) {
       return (
         <Alert bsStyle="warning">
-          The disk journal is disabled on this node.
+          此节点上的磁盘日志已禁用。
         </Alert>
       );
     }
@@ -122,7 +122,7 @@ const JournalDetails = createReactClass({
     if (Object.keys(metrics).length === 0) {
       return (
         <Alert bsStyle="warning">
-          Journal metrics unavailable.
+          日志指标不可用。
         </Alert>
       );
     }
@@ -133,8 +133,8 @@ const JournalDetails = createReactClass({
     if (metrics.utilizationRatio >= 1) {
       overcommittedWarning = (
         <span>
-          <strong>Warning!</strong> The journal utilization is exceeding the maximum size defined.
-          {' '}<Link to={Routes.SYSTEM.OVERVIEW}>Click here</Link> for more information.<br />
+          <strong>警告！</strong> 日志记录利用率已超过定义的最大大小。
+          {' '}<Link to={Routes.SYSTEM.OVERVIEW}>点击此处</Link> 更多详细信息。<br />
         </span>
       );
     }
@@ -142,25 +142,25 @@ const JournalDetails = createReactClass({
     return (
       <Row className="row-sm">
         <Col md={6}>
-          <h3>Configuration</h3>
+          <h3>配置</h3>
           <dl className="system-journal">
             <dt>Path:</dt>
             <dd>{journalInformation.journal_config.directory}</dd>
-            <dt>Earliest entry:</dt>
+            <dt>最早条目:</dt>
             <dd><RelativeTime dateTime={oldestSegment} /></dd>
-            <dt>Maximum size:</dt>
+            <dt>最大大小:</dt>
             <dd>{NumberUtils.formatBytes(journalInformation.journal_config.max_size)}</dd>
-            <dt>Maximum age:</dt>
+            <dt>最大年龄:</dt>
             <dd>{moment.duration(journalInformation.journal_config.max_age).format('d [days] h [hours] m [minutes]')}</dd>
-            <dt>Flush policy:</dt>
+            <dt>刷新策略:</dt>
             <dd>
-              Every {numeral(journalInformation.journal_config.flush_interval).format('0,0')} messages
+              每 {numeral(journalInformation.journal_config.flush_interval).format('0,0')} messages
               {' '}or {moment.duration(journalInformation.journal_config.flush_age).format('h [hours] m [minutes] s [seconds]')}
             </dd>
           </dl>
         </Col>
         <Col md={6}>
-          <h3>Utilization</h3>
+          <h3>利用率</h3>
 
           <JournalUsageProgressBar bars={[{
             value: metrics.utilizationRatio * 100,
@@ -169,11 +169,11 @@ const JournalDetails = createReactClass({
 
           {overcommittedWarning}
 
-          <strong>{numeral(metrics.entriesUncommitted).format('0,0')} unprocessed messages</strong>
-          {' '}are currently in the journal, in {metrics.segments} segments.<br />
+          <strong>{numeral(metrics.entriesUncommitted).format('0,0')} 未处理的日志消息</strong>
+          {' '}当前在日志中，在 {metrics.segments} 段。<br />
           <strong>{numeral(metrics.append).format('0,0')} messages</strong>
-          {' '}have been appended in the last second,{' '}
-          <strong>{numeral(metrics.read).format('0,0')} messages</strong> have been read in the last second.
+          {' '}在过去一秒内已追加，{' '}
+          <strong>{numeral(metrics.read).format('0,0')} messages</strong> 在过去一秒内已读取。
         </Col>
       </Row>
     );

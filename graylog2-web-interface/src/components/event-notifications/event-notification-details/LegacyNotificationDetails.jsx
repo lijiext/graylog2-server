@@ -43,8 +43,7 @@ const LegacyNotificationDetails = ({ notification }) => {
     <>
       {!typeData && (
         <Alert bsStyle="danger" className={notificationStyles.legacyNotificationAlert}>
-          Error in {notification.title || 'Legacy Alarm Callback'}: Unknown type <code>{callbackType}</code>,
-          please ensure the plugin is installed.
+          错误 {notification.title || 'Legacy Alarm Callback'}: 未知类型 <code>{callbackType}</code>, 请确保已安装该插件。
         </Alert>
       )}
       {typeData && Object.entries(typeData.configuration).map(([key, value]) => {
@@ -53,7 +52,7 @@ const LegacyNotificationDetails = ({ notification }) => {
             <ReadOnlyFormGroup label={value.human_name}
                                value={(
                                  <Well bsSize="small" className={emailStyles.bodyPreview}>
-                                   {configurationValues[key] || <em>Empty body</em>}
+                                   {configurationValues[key] || <em>空主体</em>}
                                  </Well>
                                )} />
           );

@@ -102,8 +102,8 @@ const StepAuthorize = ({ onChange, onSubmit, sidebarComponent }) => {
               loading={fetchRegionsStatus.loading || fetchStreamsStatus.loading}
               disabled={isFormValid}
               error={formError}
-              title="Create Input &amp; Authorize AWS"
-              description="This integration allows Graylog to read messages directly from a Kinesis stream. CloudWatch messages can optionally be forwarded to Kinesis via CloudWatch subscriptions and then read by Graylog.">
+              title="创建输入端并授权 AWS"
+              description="此集成允许 Graylog 直接从 Kinesis 数据流读取消息。CloudWatch 消息可选择性地通过 CloudWatch 订阅转发到 Kinesis，然后由 Graylog 读取。">
 
       <DisappearingInput id="name" type="text" />
       <DisappearingInput id="password" type="password" />
@@ -112,8 +112,8 @@ const StepAuthorize = ({ onChange, onSubmit, sidebarComponent }) => {
                       type="text"
                       fieldData={formData.awsCloudWatchName}
                       onChange={onChange}
-                      placeholder="Graylog Input Name"
-                      label="Graylog Input Name"
+                      placeholder="Graylog 输入名称"
+                      label="Graylog 输入名称"
                       autoComplete="off"
                       required />
 
@@ -123,8 +123,8 @@ const StepAuthorize = ({ onChange, onSubmit, sidebarComponent }) => {
                       type="select"
                       fieldData={formData.awsCloudWatchAwsRegion}
                       onChange={onChange}
-                      label="AWS Region"
-                      help="The AWS Region your service is running in."
+                      label="AWS 区域"
+                      help="您的服务运行的 AWS 区域。"
                       disabled={fetchRegionsStatus.loading}
                       required>
         {renderOptions(availableRegions, 'Choose AWS Region', fetchRegionsStatus.loading)}

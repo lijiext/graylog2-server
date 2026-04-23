@@ -73,7 +73,7 @@ const DataNodeLogsDialog = ({ show, hostname, onHide }: Props) => {
                 <tbody>{logs[logsType]?.map((log, key) => (<tr key={key}><td>{log}</td></tr>))}</tbody>
               </table>
             </LogsContainer>
-          ) : ('No logs.')}
+          ) : ('无日志。')}
         </pre>
       </Modal.Body>
     </BootstrapModalWrapper>

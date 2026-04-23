@@ -75,11 +75,11 @@ class SidecarStatusPage extends React.Component {
     const isLoading = !sidecar || !collectors;
 
     if (isLoading) {
-      return <DocumentTitle title="Sidecar status"><Spinner /></DocumentTitle>;
+      return <DocumentTitle title="Sidecar 状态"><Spinner /></DocumentTitle>;
     }
 
     return (
-      <DocumentTitle title={`Sidecar ${sidecar.node_name} status`}>
+      <DocumentTitle title={`Sidecar ${sidecar.node_name} 状态`}>
         <SidecarsPageNavigation />
         <PageHeader title={<span>Sidecar <em>{sidecar.node_name} status</em></span>}
                     documentationLink={{
@@ -87,7 +87,7 @@ class SidecarStatusPage extends React.Component {
                       path: DocsHelper.PAGES.COLLECTOR_STATUS,
                     }}>
           <span>
-            A status overview of the Graylog Sidecar.
+            Graylog Sidecar 的状态概览。
           </span>
         </PageHeader>
 

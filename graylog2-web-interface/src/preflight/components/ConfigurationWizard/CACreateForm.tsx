@@ -64,7 +64,7 @@ const CACreateForm = () => {
                          required />
             <Space h="md" />
             <Button disabled={isSubmitting || !isValid} type="submit">
-              {isSubmitting ? 'Creating CA...' : 'Create CA'}
+              {isSubmitting ? '正在创建 CA...' : '创建 CA'}
             </Button>
           </Form>
         )}

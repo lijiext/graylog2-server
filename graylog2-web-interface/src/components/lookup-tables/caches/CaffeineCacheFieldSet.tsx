@@ -72,7 +72,7 @@ const CaffeineCacheFieldSet = ({ config }: Props, ref: any) => {
                        name="config.max_size"
                        label="* 最大条目数"
                        required
-                       help={errors.config?.max_size ? null : 'The limit of the number of entries the cache keeps in memory.'}
+                       help={errors.config?.max_size ? null : '缓存保存在内存中的条目数量限制。'}
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9" />
       <TimeUnitInput label="访问后过期"

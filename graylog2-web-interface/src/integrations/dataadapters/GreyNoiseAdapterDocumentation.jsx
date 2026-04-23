@@ -26,9 +26,7 @@ class GreyNoiseAdapterDocumentation extends React.Component {
     return (
       <div>
         <p style={style}>
-          The GreyNoise Quick IP Lookup data adapter uses the <ExternalLink href="https://developer.greynoise.io/">Greynoise API</ExternalLink> to
-          lookup indicators for the given key and returns the values for the  IP Quick Context endpoint.
-          See <ExternalLink href="https://developer.greynoise.io/reference/ip-lookup-1#quickcheck-1">IP Quick Context</ExternalLink>
+          GrayNoise 快速 IP 查找数据适配器使用 <ExternalLink href="https://developer.greynoise.io/">Greynoise API</ExternalLink> 查找给定键的指标并返回 IP 快速上下文端点的值。参见 <ExternalLink href="https://developer.greynoise.io/reference/ip-lookup-1#quickcheck-1">IP 快速上下文</ExternalLink>
         </p>
       </div>
     );

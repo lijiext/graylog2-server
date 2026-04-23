@@ -63,10 +63,10 @@ const GreyNoiseAdapterFieldSet = ({ config, updateConfig, validationMessage, val
     <fieldset>
       {showResetPasswordButton ? (
         <Input id="api_token"
-               label="User Password"
+               label="用户密码"
                labelClassName="col-sm-3"
                wrapperClassName="col-sm-9">
-          <Button onClick={toggleUserPasswordReset}>Reset token</Button>
+          <Button onClick={toggleUserPasswordReset}>重置令牌</Button>
         </Input>
       ) : (
         <Input type="password"
@@ -75,7 +75,7 @@ const GreyNoiseAdapterFieldSet = ({ config, updateConfig, validationMessage, val
                label="API Token"
                buttonAfter={!isCreate.current ? (
                  <Button type="button" onClick={toggleUserPasswordReset}>
-                   Undo Reset
+                   撤销重置
                  </Button>
                ) : undefined}
                onChange={handleUserPasswordChange}

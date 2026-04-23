@@ -331,7 +331,7 @@ const ConfigurationForm = ({
 
             <Row>
               <Col md={12}>
-                <FormSubmit submitButtonText={`${action === 'create' ? 'Create' : 'Update'} 配置`}
+                <FormSubmit submitButtonText={`${action === 'create' ? '创建' : '更新'} 配置`}
                             disabledSubmit={_hasErrors()}
                             onCancel={_onCancel} />
               </Col>

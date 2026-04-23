@@ -34,7 +34,7 @@ const Td = styled.td`
 
 const StatusCell = ({ accountStatus, authServiceEnabled }: Props) => (
   <Td>
-    <Tooltip withArrow position="right" label={<>{`用户为 ${accountStatus}`}{!authServiceEnabled ? ' (authentication service is disabled)' : ''}</>}>
+    <Tooltip withArrow position="right" label={<>{`用户为 ${accountStatus}`}{!authServiceEnabled ? '(认证服务已禁用)' : ''}</>}>
       <div>
         <StatusIcon active={accountStatus === 'enabled'} />
       </div>

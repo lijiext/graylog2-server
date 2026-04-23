@@ -41,7 +41,7 @@ const GlobalProcessingView = ({ gracePeriod }: Props) => (
     <p>全局处理规则在输入端接收后应用，并在消息处理器应用的处理规则之前应用。</p>
     <StyledDefList>
       <dt>未来时间戳规范化：</dt>
-      <dd>{gracePeriod ? 'Enabled' : 'Disabled'}</dd>
+      <dd>{gracePeriod ? '已启用' : '已禁用'}</dd>
       <dt>宽限期：</dt>
       <dd>{gracePeriod}</dd>
     </StyledDefList>

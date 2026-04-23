@@ -113,7 +113,7 @@ class ContentPackParameters extends React.Component {
 
   _confirmationModal = () => (
     <BootstrapModalConfirm showModal={this.state.showParameterModal}
-                           title="Confirm deletion"
+                           title="确认删除"
                            onConfirm={() => { this._deleteParameter(this.state.parameterToDelete); }}
                            onCancel={this._closeConfirmModal}>
       {`Are you sure you want to do delete this parameter: ${(this.state.parameterToDelete || {}).title}?`}

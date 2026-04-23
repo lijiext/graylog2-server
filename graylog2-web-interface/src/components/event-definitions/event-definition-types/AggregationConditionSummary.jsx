@@ -31,7 +31,7 @@ const Expression = ({ expression, series }) => {
 
       return (selectedSeries && selectedSeries.type
         ? <var>{selectedSeries.type}({selectedSeries.strategy ? `${selectedSeries.strategy}, ` : null}{selectedSeries.field}{selectedSeries.percentile ? `, ${selectedSeries.percentile}` : null})</var>
-        : <span>No series selected</span>);
+        : <span>未选择系列</span>);
     case '&&':
     case '||':
       return (

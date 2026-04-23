@@ -214,7 +214,7 @@ const CollectorsAdministration = ({
         <Input ref={selectAllInput}
                id="select-all-checkbox"
                type="checkbox"
-               label={selectedItems === 0 ? 'Select all' : `已选择 ${selectedItems} 个`}
+               label={selectedItems === 0 ? '全选' : `已选择 ${selectedItems} 个`}
                disabled={enabledCollectors.length === 0}
                checked={isAllSelected(enabledCollectors, selected)}
                onChange={toggleSelectAll}
@@ -367,7 +367,7 @@ const CollectorsAdministration = ({
   if (sidecarCollectorPairs.length === 0) {
     formattedCollectors = (
       <ControlledTableList.Item>
-        {sidecarCollectorPairs.length === 0 ? 'There are no collectors to display' : 'Filters do not match any collectors'}
+        {sidecarCollectorPairs.length === 0 ? '没有要显示的采集器' : '过滤器未匹配任何采集器'}
       </ControlledTableList.Item>
     );
   } else {

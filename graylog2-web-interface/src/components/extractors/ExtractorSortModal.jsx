@@ -77,11 +77,11 @@ class ExtractorSortModal extends React.Component {
                              onHide={this._cancel}>
         <Modal.Header closeButton>
           <Modal.Title>
-            <span>Sort extractors for <em>{input.title}</em></span>
+            <span>排序提取器 <em>{input.title}</em></span>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>Drag and drop the extractors on the list to change the order in which they will be applied.</p>
+          <p>拖放列表中的提取器以更改其应用顺序。</p>
           <Row className="row-sm">
             <Col md={12}>
               <SortableList items={sortedExtractors} onMoveItem={this._updateSorting} displayOverlayInPortal />
@@ -89,7 +89,7 @@ class ExtractorSortModal extends React.Component {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <ModalSubmit onCancel={this._cancel} onSubmit={this._saveSorting} submitButtonText="Update sort" />
+          <ModalSubmit onCancel={this._cancel} onSubmit={this._saveSorting} submitButtonText="更新排序" />
         </Modal.Footer>
       </BootstrapModalWrapper>
     );

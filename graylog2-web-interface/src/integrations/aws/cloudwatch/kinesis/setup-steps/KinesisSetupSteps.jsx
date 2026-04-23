@@ -84,9 +84,9 @@ const KinesisSetupSteps = ({ onSuccess, onError }) => {
 
   return (
     <StepItems>
-      <KinesisSetupStep label="Kinesis Stream" progress={createStreamProgress} />
-      <KinesisSetupStep label="Subscription Policy" progress={createPolicyProgress} />
-      <KinesisSetupStep label="Subscription" progress={createSubsciptionProgress} />
+      <KinesisSetupStep label="Kinesis 数据流" progress={createStreamProgress} />
+      <KinesisSetupStep label="订阅策略" progress={createPolicyProgress} />
+      <KinesisSetupStep label="订阅" progress={createSubsciptionProgress} />
     </StepItems>
   );
 };

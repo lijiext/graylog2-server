@@ -57,19 +57,19 @@ class DateConverterConfiguration extends React.Component {
   render() {
     const dateFormatHelpMessage = (
       <span>
-        String format the date uses. Read more in the <DocumentationLink page={DocsHelper.PAGES.PAGE_STANDARD_DATE_CONVERTER} text="documentation" />.
+        日期使用的字符串格式。在以下位置了解更多信息 <DocumentationLink page={DocsHelper.PAGES.PAGE_STANDARD_DATE_CONVERTER} text="documentation" />.
       </span>
     );
 
     const timezoneHelpMessage = (
       <span>
-        Time zone to apply to date. Read more in the <DocumentationLink page={DocsHelper.PAGES.PAGE_STANDARD_DATE_CONVERTER} text="documentation" />.
+        要应用的时区。请阅读更多 <DocumentationLink page={DocsHelper.PAGES.PAGE_STANDARD_DATE_CONVERTER} text="documentation" />.
       </span>
     );
 
     const localeHelpMessage = (
       <span>
-        Locale to use when parsing the date. Read more in the <DocumentationLink page={DocsHelper.PAGES.PAGE_STANDARD_DATE_CONVERTER} text="documentation" />.
+        解析日期时使用的区域设置。更多信息请查看 <DocumentationLink page={DocsHelper.PAGES.PAGE_STANDARD_DATE_CONVERTER} text="documentation" />.
       </span>
     );
 
@@ -78,7 +78,7 @@ class DateConverterConfiguration extends React.Component {
         <Input type="checkbox"
                ref={(converterEnabled) => { this.converterEnabled = converterEnabled; }}
                id={`enable-${this.props.type}-converter`}
-               label="Convert to date type"
+               label="转换为日期类型"
                wrapperClassName="col-md-offset-2 col-md-10"
                defaultChecked
                onChange={this._toggleConverter} />
@@ -87,7 +87,7 @@ class DateConverterConfiguration extends React.Component {
             <div className="xtrc-converter-subfields">
               <Input type="text"
                      id={`${this.props.type}_converter_date_format`}
-                     label="Format string"
+                     label="格式化字符串"
                      defaultValue={this.props.configuration.date_format}
                      labelClassName="col-md-3"
                      wrapperClassName="col-md-9"
@@ -96,7 +96,7 @@ class DateConverterConfiguration extends React.Component {
                      required={this.converterEnabled && this.converterEnabled.getChecked()}
                      help={dateFormatHelpMessage} />
 
-              <Input label="Time Zone"
+              <Input label="时区"
                      id={`${this.props.type}_converter_timezone`}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9"
@@ -106,7 +106,7 @@ class DateConverterConfiguration extends React.Component {
                                 value={this.props.configuration.time_zone}
                                 onChange={this._onChange('time_zone')} />
               </Input>
-              <Input label="Locale"
+              <Input label="区域设置"
                      id={`${this.props.type}_converter_locale`}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9"

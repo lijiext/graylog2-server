@@ -153,7 +153,7 @@ const UrlWhiteListForm = ({ urls, onUpdate, disabled, newEntryId }: Props) => {
         <Input type="text"
                id={`title-input${idx}`}
                ref={(elem) => { inputs[`title${idx}`] = elem; }}
-               help={validationState.errors[idx] && validationState.errors[idx].title && !validationState.errors[idx].title.valid ? 'Required field' : null}
+               help={validationState.errors[idx] && validationState.errors[idx].title && !validationState.errors[idx].title.valid ? '必填字段' : null}
                name="title"
                bsStyle={validationState.errors[idx] && validationState.errors[idx].title && !validationState.errors[idx].title.valid ? 'error' : null}
                onChange={(event) => _onInputChange(event, idx)}

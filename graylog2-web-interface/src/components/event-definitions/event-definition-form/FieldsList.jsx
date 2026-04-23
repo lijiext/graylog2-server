@@ -95,17 +95,17 @@ class FieldsList extends React.Component {
     return (
       <tr key={fieldName}>
         <td>{fieldName}</td>
-        <td>{keyIndex < 0 ? 'No' : 'Yes'}</td>
+        <td>{keyIndex < 0 ? '否' : '是'}</td>
         <td>{fieldProviderPlugin.displayName || config.providers[0].type}</td>
         <td>{config.data_type}</td>
         <td>{providerFormatter(config.providers[0])}</td>
         <td className={styles.actions}>
           <ButtonToolbar>
             <Button bsStyle="primary" bsSize="xsmall" onClick={this.handleRemoveClick(fieldName)}>
-              Remove Field
+              移除字段
             </Button>
             <Button bsStyle="info" bsSize="xsmall" onClick={this.handleEditClick(fieldName)}>
-              Edit
+              编辑
             </Button>
           </ButtonToolbar>
         </td>
@@ -119,7 +119,7 @@ class FieldsList extends React.Component {
     const fieldNames = Object.keys(fields).sort(naturalSort);
     const addCustomFieldButton = (
       <Button bsStyle="success" onClick={this.handleAddFieldClick}>
-        Add custom field
+        添加自定义字段
       </Button>
     );
 
@@ -127,7 +127,7 @@ class FieldsList extends React.Component {
       return (
         <>
           <p>
-            This Event does not have any custom Fields yet.
+            此事件尚未有任何自定义字段。
           </p>
           {addCustomFieldButton}
         </>

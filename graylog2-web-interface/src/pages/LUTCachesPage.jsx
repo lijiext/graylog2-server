@@ -95,7 +95,7 @@ class LUTCachesPage extends React.Component {
             <Col lg={12}>
               <CacheForm cache={cache}
                          type={cache.config.type}
-                         title="Data Cache"
+                         title="数据缓存"
                          create={false}
                          saved={() => _saved(history)}
                          validate={_validateCache}
@@ -127,15 +127,15 @@ class LUTCachesPage extends React.Component {
     }
 
     return (
-      <DocumentTitle title="Lookup Tables - Caches">
+      <DocumentTitle title="查找表 - 缓存">
         <LUTPageNavigation />
-        <PageHeader title="Caches for Lookup Tables"
+        <PageHeader title="查找表的缓存"
                     actions={(
                       <LinkContainer to={Routes.SYSTEM.LOOKUPTABLES.CACHES.CREATE}>
-                        <Button bsStyle="success" style={{ marginLeft: 5 }}>Create cache</Button>
+                        <Button bsStyle="success" style={{ marginLeft: 5 }}>创建缓存</Button>
                       </LinkContainer>
                     )}>
-          <span>Caches provide the actual values for lookup tables</span>
+          <span>缓存为查找表提供实际值</span>
         </PageHeader>
         {content}
       </DocumentTitle>

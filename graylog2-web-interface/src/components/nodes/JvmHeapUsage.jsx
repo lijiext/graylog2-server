@@ -125,7 +125,7 @@ const JvmHeapUsage = createReactClass({
 
     if (usedPercentage || committedPercentage) {
       if (Object.keys(extractedMetrics).length === 0) {
-        detail = <p>Heap information unavailable.</p>;
+        detail = <p>堆信息不可用。</p>;
       } else {
         progressBarConfig = [
           { value: usedPercentage, bsStyle: 'primary' },
@@ -134,13 +134,13 @@ const JvmHeapUsage = createReactClass({
 
         detail = (
           <p>
-            The JVM is using{' '}
+            JVM 正在使用{' '}
             <Blob className="used-memory" />
             <strong> {NumberUtils.formatBytes(usedMemory)}</strong>
             {' '}of{' '}
             <Blob className="committed-memory" />
             <strong> {NumberUtils.formatBytes(committedMemory)}</strong>
-            {' '}heap space and will not attempt to use more than{' '}
+            {' '}堆空间，且不会尝试使用更多{' '}
             <Blob className="max-memory" />
             <strong> {NumberUtils.formatBytes(maxMemory)}</strong>
           </p>

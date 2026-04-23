@@ -135,7 +135,7 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
             <FormikFormGroup type="text"
                              name="title"
                              label="标题"
-                             help={(touched.title && errors.title) ? undefined : 'A short title for this lookup table.'}
+                             help={(touched.title && errors.title) ? undefined : '此查找表的简短标题。'}
                              labelClassName="col-sm-3"
                              wrapperClassName="col-sm-9" />
 
@@ -149,7 +149,7 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
             <FormikFormGroup type="text"
                              name="name"
                              label="名称"
-                             help={(touched.name && errors.name) ? undefined : 'The name that is being used to refer to this lookup table. Must be unique.'}
+                             help={(touched.name && errors.name) ? undefined : '用于引用此查找表的名称。必须唯一。'}
                              labelClassName="col-sm-3"
                              wrapperClassName="col-sm-9" />
 

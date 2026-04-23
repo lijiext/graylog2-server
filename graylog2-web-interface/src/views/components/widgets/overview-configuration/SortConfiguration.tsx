@@ -68,7 +68,7 @@ const SortConfiguration = ({ name: attributeName, directions, columns, columnTit
                     clearable={false}
                     size="small"
                     onChange={(newColumn) => onChange({ target: { value: newColumn, name } })}
-                    value={isUnknownColumn ? 'Unknown' : value} />
+                    value={isUnknownColumn ? '未知' : value} />
           </Input>
         )}
       </Field>

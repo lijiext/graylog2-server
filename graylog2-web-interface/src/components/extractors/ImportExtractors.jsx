@@ -35,8 +35,8 @@ class ImportExtractors extends React.Component {
 
       ExtractorsActions.import(this.props.input.id, extractors);
     } catch (error) {
-      UserNotification.error(`There was an error while parsing extractors. Are they in JSON format? ${error}`,
-        'Could not import extractors');
+      UserNotification.error(`解析提取器时出错。它们是否为 JSON 格式？${error}`,
+        '无法导入提取器');
     }
   };
 
@@ -46,14 +46,14 @@ class ImportExtractors extends React.Component {
         <Col md={12}>
           <Row>
             <Col md={12}>
-              <h2>Extractors JSON</h2>
+              <h2>提取器 JSON</h2>
             </Col>
           </Row>
           <Row>
             <Col md={12}>
               <form onSubmit={this._onSubmit}>
                 <Input type="textarea" ref={(extractorsInput) => { this.extractorsInput = extractorsInput; }} id="extractor-export-textarea" rows={30} />
-                <Button type="submit" bsStyle="success">Add extractors to input</Button>
+                <Button type="submit" bsStyle="success">向输入端添加提取器</Button>
               </form>
             </Col>
           </Row>

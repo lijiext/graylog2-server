@@ -84,7 +84,7 @@ const ColumnListItem = ({
   };
 
   return (
-    <MenuItem onSelect={toggleVisibility} title={`${isSelected ? 'Hide' : 'Show'} ${column.title}`}>
+    <MenuItem onSelect={toggleVisibility} title={`${isSelected ? '隐藏' : '显示'} ${column.title}`}>
       <ListItemInner>
         <ColumnCheckbox checked={isSelected} onChange={toggleVisibility} />
         <ColumnTitle>{column.title}</ColumnTitle>

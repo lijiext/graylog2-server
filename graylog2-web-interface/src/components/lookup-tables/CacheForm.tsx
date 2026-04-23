@@ -156,7 +156,7 @@ const CacheForm = ({ type, saved, title, create, cache, validate, validationErro
                                    name="title"
                                    label="* 标题"
                                    required
-                                   help={errors.title ? null : 'A short title for this cache.'}
+                                   help={errors.title ? null : '此缓存的简短标题。'}
                                    onChange={handleTitleChange(values, setValues)}
                                    autoFocus
                                    labelClassName="col-sm-3"
@@ -176,7 +176,7 @@ const CacheForm = ({ type, saved, title, create, cache, validate, validationErro
                                    help={
                                     (errors.name || validationErrors.name)
                                       ? null
-                                      : 'The name that is being used to refer to this cache. Must be unique.'
+                                      : '用于引用此缓存的名称。必须唯一。'
                                   }
                                    labelClassName="col-sm-3"
                                    wrapperClassName="col-sm-9" />

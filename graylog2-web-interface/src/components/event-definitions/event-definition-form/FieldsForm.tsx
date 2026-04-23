@@ -137,7 +137,7 @@ const FieldsForm = ({ currentUser, eventDefinition, validation, onChange, canEdi
                     <EventKeyHelpPopover />
                   </HoverForHelp>
                 </dt>
-                <dd>{eventDefinition.key_spec.length > 0 ? eventDefinition.key_spec.join(', ') : 'No Keys configured yet.'}</dd>
+                <dd>{eventDefinition.key_spec.length > 0 ? eventDefinition.key_spec.join(', ') : '尚未配置任何密钥。'}</dd>
               </dl>
             )}
             <FieldsList fields={eventDefinition.field_spec}

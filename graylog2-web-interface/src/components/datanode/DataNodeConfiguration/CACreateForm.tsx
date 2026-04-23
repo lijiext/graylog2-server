@@ -77,7 +77,7 @@ const CaCreateForm = () => {
                          label="组织名称"
                          required />
             <Button bsStyle="primary" bsSize="small" disabled={isSubmitting || !isValid} type="submit">
-              {isSubmitting ? 'Creating CA...' : 'Create CA'}
+              {isSubmitting ? '正在创建 CA...' : '创建 CA'}
             </Button>
           </Form>
         )}

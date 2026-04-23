@@ -38,29 +38,29 @@ const FormAdvancedOptions = ({ onChange }) => {
   };
 
   return (
-    <StyledAdditionalFields title="Advanced Options" visible={isAdvancedOptionsVisible} onToggle={handleToggle}>
+    <StyledAdditionalFields title="高级选项" visible={isAdvancedOptionsVisible} onToggle={handleToggle}>
       <Input id="awsCloudWatchThrottleEnabled"
              type="checkbox"
              value="enable-throttling"
              defaultChecked={awsCloudWatchThrottleEnabled && awsCloudWatchThrottleEnabled.value}
              onChange={onChange}
-             label="Enable Throttling"
-             help="If enabled, no new messages will be read from this input until Graylog catches up with its message load. This is typically useful for inputs reading from files or message queue systems like AMQP or Kafka. If you regularly poll an external system, e.g. via HTTP, you normally want to leave this disabled." />
+             label="启用限流"
+             help="如果启用，在 Graylog 追上其消息负载之前，不会从此输入端读取新消息。这通常适用于从文件或消息队列系统（如 AMQP 或 Kafka）读取的输入端。如果您定期轮询外部系统（例如通过 HTTP），通常应保持此选项禁用。" />
 
       <Input id="awsCloudWatchAddFlowLogPrefix"
              type="checkbox"
              value="enable-logprefix"
              defaultChecked={awsCloudWatchAddFlowLogPrefix && awsCloudWatchAddFlowLogPrefix.value}
              onChange={onChange}
-             label="Add Flow Log field name prefix"
-             help='Add field with the Flow Log prefix e. g. "src_addr" -> "flow_log_src_addr".' />
+             label="添加流日志字段名称前缀"
+             help='添加带有 Flow Log 前缀的字段，例如 "src_addr" -> "flow_log_src_addr"。' />
 
       <Input id="awsCloudWatchBatchSize"
              type="number"
              value={awsCloudWatchBatchSize.value || awsCloudWatchBatchSize.defaultValue}
              onChange={onChange}
-             label="Kinesis Record batch size"
-             help="The number of Kinesis records to fetch at a time. Each record may be up to 1MB in size. The AWS default is 10,000. Enter a smaller value to process smaller chunks at a time." />
+             label="Kinesis 记录批次大小"
+             help="每次获取的 Kinesis 记录数。每条记录大小可达 1MB。AWS 默认值为 10,000。输入较小的值以每次处理较小的数据块。" />
     </StyledAdditionalFields>
   );
 };

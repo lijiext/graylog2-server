@@ -33,7 +33,7 @@ class InputTypesDataTable extends React.Component {
       <td className="limited">{inputType.type}</td>
       <td className="limited" style={{ width: 150 }}>
         {inputType.link_to_docs
-          && <ExternalLink href={inputType.link_to_docs}>Documentation</ExternalLink>}
+          && <ExternalLink href={inputType.link_to_docs}>文档</ExternalLink>}
       </td>
     </tr>
   );
@@ -46,7 +46,7 @@ class InputTypesDataTable extends React.Component {
     if (Object.keys(this.props.inputDescriptions).length === 0) {
       return (
         <Alert bsStyle="warning">
-          Input types are unavailable.
+          输入端类型不可用。
         </Alert>
       );
     }

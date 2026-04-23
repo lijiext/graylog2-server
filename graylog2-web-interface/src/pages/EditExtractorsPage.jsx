@@ -88,15 +88,15 @@ const EditExtractorsPage = createReactClass({
     const { extractor, exampleMessage, input } = this.state;
 
     return (
-      <DocumentTitle title={`Edit extractor ${extractor.title}`}>
-        <PageHeader title={<span>Edit extractor <em>{extractor.title}</em> for input <em>{input.title}</em></span>}
+      <DocumentTitle title={`编辑提取器 ${extractor.title}`}>
+        <PageHeader title={<span>编辑提取器 <em>{extractor.title}</em> 用于输入 <em>{input.title}</em></span>}
                     documentationLink={{
                       title: 'Extractors documentation',
                       path: DocsHelper.PAGES.EXTRACTORS,
                     }}>
           <span>
-            Extractors are applied on every message that is received by an input. Use them to extract and transform{' '}
-            any text data into fields that allow you easy filtering and analysis later on.
+            提取器应用于输入端接收到的每条消息。使用它们来提取和转换{' '}
+            将任何文本数据转换为字段，以便您稍后进行轻松过滤和分析。
           </span>
         </PageHeader>
         <EditExtractor action="edit"

@@ -115,29 +115,29 @@ const ThreatIntelPluginConfig = createReactClass({
   render() {
     return (
       <div>
-        <h3>Threat Intelligence Lookup Configuration</h3>
+        <h3>威胁情报查找配置</h3>
 
         <p>
-          Configuration for threat intelligence lookup plugin.
+          威胁情报查找插件的配置。
         </p>
 
         <dl className="deflist">
-          <dt>Tor exit nodes:</dt>
-          <dd>{this.state.config.tor_enabled === true ? 'Enabled' : 'Disabled'}</dd>
+          <dt>Tor 出口节点:</dt>
+          <dd>{this.state.config.tor_enabled === true ? '已启用' : '已禁用'}</dd>
 
           <dt>Spamhaus:</dt>
-          <dd>{this.state.config.spamhaus_enabled === true ? 'Enabled' : 'Disabled'}</dd>
+          <dd>{this.state.config.spamhaus_enabled === true ? '已启用' : '已禁用'}</dd>
         </dl>
 
         <IfPermitted permissions="clusterconfigentry:edit">
-          <Button bsStyle="info" bsSize="xs" onClick={this._openModal}>Edit configuration</Button>
+          <Button bsStyle="info" bsSize="xs" onClick={this._openModal}>编辑配置</Button>
         </IfPermitted>
 
         <BootstrapModalForm show={this.state.threatintelConfigModal}
-                            title="Update Threat Intelligence plugin Configuration"
+                            title="更新威胁情报插件配置"
                             onSubmitForm={this._saveConfig}
                             onCancel={this._resetConfig}
-                            submitButtonText="Update configuration">
+                            submitButtonText="更新配置">
           <fieldset>
             <Input type="checkbox"
                    id="tor-checkbox"
@@ -145,8 +145,8 @@ const ThreatIntelPluginConfig = createReactClass({
                      // eslint-disable-next-line react/no-unused-class-component-methods
                      this.torEnabled = elem;
                    }}
-                   label="Allow Tor exit node lookups?"
-                   help="Enable to include Tor exit node lookup in global pipeline function, disabling also stops refreshing the data."
+                   label="是否允许 Tor 出口节点查找？"
+                   help="启用后将在全局管道函数中包含 Tor 出口节点查找，禁用也会停止刷新数据。"
                    name="tor_enabled"
                    checked={this.state.config.tor_enabled}
                    onChange={this._onCheckboxClick('tor_enabled', 'torEnabled')} />
@@ -157,8 +157,8 @@ const ThreatIntelPluginConfig = createReactClass({
                      // eslint-disable-next-line react/no-unused-class-component-methods
                      this.spamhausEnabled = elem;
                    }}
-                   label="Allow Spamhaus DROP/EDROP lookups?"
-                   help="Enable to include Spamhaus lookup in global pipeline function, disabling also stops refreshing the data."
+                   label="是否允许 Spamhaus DROP/EDROP 查找？"
+                   help="启用以在全局管道函数中包含 Spamhaus 查找，禁用也会停止刷新数据。"
                    name="tor_enabled"
                    checked={this.state.config.spamhaus_enabled}
                    onChange={this._onCheckboxClick('spamhaus_enabled', 'spamhausEnabled')} />

@@ -99,14 +99,14 @@ const StageForm = ({ pipeline, stage, create, save }: Props) => {
       <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:edit')}
               onClick={openModal}
               bsStyle={create ? 'success' : 'info'}>
-        {create ? 'Add new stage' : 'Edit'}
+        {create ? '添加新阶段' : '编辑'}
       </Button>
       <BootstrapModalForm show={showModal}
-                          title={`${create ? 'Add new' : 'Edit'} 阶段 ${nextStage.stage}`}
-                          data-telemetry-title={`${create ? 'Add new' : 'Edit'} stage`}
+                          title={`${create ? '添加新项' : '编辑'} 阶段 ${nextStage.stage}`}
+                          data-telemetry-title={`${create ? '添加新项' : '编辑'} stage`}
                           onSubmitForm={_handleSave}
                           onCancel={_closeModal}
-                          submitButtonText={create ? 'Add stage' : 'Update stage'}>
+                          submitButtonText={create ? '添加阶段' : '更新阶段'}>
         <fieldset>
           <Input type="number"
                  id="stage"
@@ -118,8 +118,8 @@ const StageForm = ({ pipeline, stage, create, save }: Props) => {
                  onChange={_onChange}
                  bsStyle={isOverridingStage ? 'error' : null}
                  help={isOverridingStage
-                   ? 'Stage is already in use, please use another number or edit the existing stage.'
-                   : 'Stage priority. The lower the number, the earlier it will execute.'}
+                   ? '阶段已被使用，请使用其他编号或编辑现有阶段。'
+                   : '阶段优先级。数字越小，执行越早。'}
                  value={nextStage.stage} />
 
           <FormGroup>
