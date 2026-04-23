@@ -10,11 +10,17 @@ paths:
     root: graylog2-web-interface/src
     include:
       - "**/*.tsx"
+      - "**/*.jsx"
+      - "**/*.js"
       - "**/*.ts"
     exclude:
       - "**/*.test.tsx"
+      - "**/*.test.jsx"
+      - "**/*.test.js"
       - "**/*.test.ts"
       - "**/*.spec.tsx"
+      - "**/*.spec.jsx"
+      - "**/*.spec.js"
       - "**/*.stories.tsx"
       - "**/__mocks__/**"
       - "**/@types/**"
