@@ -1,0 +1,1198 @@
+{
+  "generatedAt": "2026-04-23T00:39:59.910Z",
+  "totalFiles": 2440,
+  "uniqueStrings": 57,
+  "totalOccurrences": 111,
+  "parseErrorCount": 3,
+  "strings": [
+    {
+      "id": "61e6be1a",
+      "source": "No",
+      "occurrenceCount": 11
+    },
+    {
+      "id": "b3a43630",
+      "source": "Yes",
+      "occurrenceCount": 11
+    },
+    {
+      "id": "990de47d",
+      "source": "Create",
+      "occurrenceCount": 7
+    },
+    {
+      "id": "0ea847ae",
+      "source": "Try",
+      "occurrenceCount": 5
+    },
+    {
+      "id": "91312a12",
+      "source": "text-danger",
+      "occurrenceCount": 4
+    },
+    {
+      "id": "c2c76cb1",
+      "source": "Edit",
+      "occurrenceCount": 4
+    },
+    {
+      "id": "311bf57c",
+      "source": "text-success",
+      "occurrenceCount": 3
+    },
+    {
+      "id": "e10c7bcd",
+      "source": "Hide",
+      "occurrenceCount": 3
+    },
+    {
+      "id": "29742e5c",
+      "source": "Show",
+      "occurrenceCount": 3
+    },
+    {
+      "id": "6e230e94",
+      "source": "Update",
+      "occurrenceCount": 3
+    },
+    {
+      "id": "9c86e43e",
+      "source": "Enabled",
+      "occurrenceCount": 3
+    },
+    {
+      "id": "bfce9925",
+      "source": "Disabled",
+      "occurrenceCount": 3
+    },
+    {
+      "id": "74e66e91",
+      "source": "pull-right",
+      "occurrenceCount": 2
+    },
+    {
+      "id": "59d83eee",
+      "source": "Less details",
+      "occurrenceCount": 2
+    },
+    {
+      "id": "73d2f076",
+      "source": "More details",
+      "occurrenceCount": 2
+    },
+    {
+      "id": "44f9bf2d",
+      "source": "Pause",
+      "occurrenceCount": 2
+    },
+    {
+      "id": "454d1d8a",
+      "source": "Resume",
+      "occurrenceCount": 2
+    },
+    {
+      "id": "04f964a8",
+      "source": "compact-xs",
+      "occurrenceCount": 2
+    },
+    {
+      "id": "83ed469c",
+      "source": "table-responsive",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "e3537000",
+      "source": "Give a descriptive title for this content pack.",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "e4fe1185",
+      "source": "This is used as the parameter reference and must not contain a space.",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "f94ae78a",
+      "source": "Give a description explaining what will be done with this parameter.",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "bf9e5ee5",
+      "source": "Give a default value if the parameter is not optional.",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "fef1200c",
+      "source": "not installed",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "463ec1dc",
+      "source": "New Custom Field",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "17897598",
+      "source": "Threshold",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "2490a2fc",
+      "source": "Hide errors",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "fc5fbe63",
+      "source": "Show errors",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "32edd391",
+      "source": "Error:",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "ef3e923e",
+      "source": "Success:",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "f38d9cf1",
+      "source": "Error",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "6d8303b0",
+      "source": "Success",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "e29ac0e7",
+      "source": "Testing...",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "05aeaa00",
+      "source": "Test Notification",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "bfc9136a",
+      "source": "bg-danger",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "aa8818f9",
+      "source": "Create extractor",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "cabedc4c",
+      "source": "Update extractor",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "48d4ca18",
+      "source": "includes the string",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "ffd2ddc9",
+      "source": "matches the regular expression",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "0bc89abf",
+      "source": "Try against example",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "cfd8dbb0",
+      "source": "Under this name the pattern will be stored and can be used like: '%{THISNAME}' later on",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "e100f46d",
+      "source": "Stopping...",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "492e260d",
+      "source": "Stop input",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "6cac833d",
+      "source": "Starting...",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "a255e0d3",
+      "source": "Start input",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "137b4dfe",
+      "source": "Create adapter",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "ad49e863",
+      "source": "Update adapter",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "bb8edde6",
+      "source": "This rule is not being used in any pipelines.",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "dcf35875",
+      "source": "Not available",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "fd7a651c",
+      "source": "Simulating message processing, please wait a moment.",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "e626f2f5",
+      "source": "Checking...",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "b19a3117",
+      "source": "Check Now",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "a1a47d49",
+      "source": "Take a look at what we have parsed so far and you can create Pipeline Rules to handle even more!",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "0b2c5ccc",
+      "source": "Not to worry, Graylog can still read in these log messages. We have parsed what we could and you can build Pipeline Rules to do the rest!",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "28d3169e",
+      "source": "Executing Auto-Setup",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "84e80201",
+      "source": "Kinesis Auto Setup Agreement",
+      "occurrenceCount": 1
+    },
+    {
+      "id": "17b11033",
+      "source": "Loading...",
+      "occurrenceCount": 1
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "83ed469c",
+      "file": "graylog2-web-interface/src/components/common/DataTable/DataTable.jsx",
+      "line": 233,
+      "start": 7653,
+      "end": 7671,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "74e66e91",
+      "file": "graylog2-web-interface/src/components/common/HoverForHelp.tsx",
+      "line": 95,
+      "start": 2443,
+      "end": 2455,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "e3537000",
+      "file": "graylog2-web-interface/src/components/content-packs/ContentPackEditParameter.jsx",
+      "line": 206,
+      "start": 5540,
+      "end": 5589,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "e4fe1185",
+      "file": "graylog2-web-interface/src/components/content-packs/ContentPackEditParameter.jsx",
+      "line": 217,
+      "start": 6041,
+      "end": 6112,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "f94ae78a",
+      "file": "graylog2-web-interface/src/components/content-packs/ContentPackEditParameter.jsx",
+      "line": 228,
+      "start": 6595,
+      "end": 6665,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "bf9e5ee5",
+      "file": "graylog2-web-interface/src/components/content-packs/ContentPackEditParameter.jsx",
+      "line": 253,
+      "start": 7776,
+      "end": 7832,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "311bf57c",
+      "file": "graylog2-web-interface/src/components/enterprise/PluginList.jsx",
+      "line": 36,
+      "start": 1201,
+      "end": 1215,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "91312a12",
+      "file": "graylog2-web-interface/src/components/enterprise/PluginList.jsx",
+      "line": 36,
+      "start": 1218,
+      "end": 1231,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "fef1200c",
+      "file": "graylog2-web-interface/src/components/enterprise/PluginList.jsx",
+      "line": 38,
+      "start": 1388,
+      "end": 1403,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "463ec1dc",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/FieldForm.jsx",
+      "line": 242,
+      "start": 7404,
+      "end": 7422,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/FieldsList.jsx",
+      "line": 98,
+      "start": 3192,
+      "end": 3196,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/FieldsList.jsx",
+      "line": 98,
+      "start": 3199,
+      "end": 3204,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "59d83eee",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/field-value-providers/CommonFieldValueProviderSummary.jsx",
+      "line": 53,
+      "start": 1742,
+      "end": 1756,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "73d2f076",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/field-value-providers/CommonFieldValueProviderSummary.jsx",
+      "line": 53,
+      "start": 1759,
+      "end": 1773,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/field-value-providers/CommonFieldValueProviderSummary.jsx",
+      "line": 60,
+      "start": 2020,
+      "end": 2025,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/field-value-providers/CommonFieldValueProviderSummary.jsx",
+      "line": 60,
+      "start": 2028,
+      "end": 2032,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/field-value-providers/TemplateFieldValueProviderSummary.jsx",
+      "line": 45,
+      "start": 1478,
+      "end": 1483,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-form/field-value-providers/TemplateFieldValueProviderSummary.jsx",
+      "line": 45,
+      "start": 1486,
+      "end": 1490,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "17897598",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-types/AggregationConditionExpressions/NumberExpression.jsx",
+      "line": 38,
+      "start": 1425,
+      "end": 1436,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "2490a2fc",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-types/AggregationConditionsFormSummary.jsx",
+      "line": 47,
+      "start": 1666,
+      "end": 1679,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "fc5fbe63",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definition-types/AggregationConditionsFormSummary.jsx",
+      "line": 47,
+      "start": 1682,
+      "end": 1695,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "e10c7bcd",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definitions/EventDefinitionDescription.jsx",
+      "line": 190,
+      "start": 6254,
+      "end": 6260,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "29742e5c",
+      "file": "graylog2-web-interface/src/components/event-definitions/event-definitions/EventDefinitionDescription.jsx",
+      "line": 190,
+      "start": 6263,
+      "end": 6269,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-details/EmailNotificationDetails.jsx",
+      "line": 57,
+      "start": 2324,
+      "end": 2329,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-details/EmailNotificationDetails.jsx",
+      "line": 57,
+      "start": 2332,
+      "end": 2336,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-details/EmailNotificationDetails.jsx",
+      "line": 60,
+      "start": 2611,
+      "end": 2616,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-details/EmailNotificationDetails.jsx",
+      "line": 60,
+      "start": 2619,
+      "end": 2623,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-details/EmailNotificationDetails.jsx",
+      "line": 63,
+      "start": 2985,
+      "end": 2990,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-details/EmailNotificationDetails.jsx",
+      "line": 63,
+      "start": 2993,
+      "end": 2997,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "32edd391",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-form/EventNotificationForm.jsx",
+      "line": 203,
+      "start": 7358,
+      "end": 7367,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "ef3e923e",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-form/EventNotificationForm.jsx",
+      "line": 203,
+      "start": 7370,
+      "end": 7381,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-form/EventNotificationForm.jsx",
+      "line": 215,
+      "start": 7791,
+      "end": 7799,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "6e230e94",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-form/EventNotificationForm.jsx",
+      "line": 215,
+      "start": 7802,
+      "end": 7810,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "59d83eee",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/CommonNotificationSummary.jsx",
+      "line": 55,
+      "start": 1840,
+      "end": 1854,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "73d2f076",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/CommonNotificationSummary.jsx",
+      "line": 55,
+      "start": 1857,
+      "end": 1871,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/EmailNotificationSummary.jsx",
+      "line": 30,
+      "start": 1142,
+      "end": 1147,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/EmailNotificationSummary.jsx",
+      "line": 30,
+      "start": 1150,
+      "end": 1154,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/EmailNotificationSummary.jsx",
+      "line": 56,
+      "start": 1879,
+      "end": 1884,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/EmailNotificationSummary.jsx",
+      "line": 56,
+      "start": 1887,
+      "end": 1891,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/EmailNotificationSummary.jsx",
+      "line": 83,
+      "start": 2714,
+      "end": 2719,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notification-types/EmailNotificationSummary.jsx",
+      "line": 83,
+      "start": 2722,
+      "end": 2726,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "91312a12",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/EventNotifications.jsx",
+      "line": 107,
+      "start": 3447,
+      "end": 3460,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "311bf57c",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/EventNotifications.jsx",
+      "line": 107,
+      "start": 3463,
+      "end": 3477,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "f38d9cf1",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/EventNotifications.jsx",
+      "line": 108,
+      "start": 3517,
+      "end": 3524,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "6d8303b0",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/EventNotifications.jsx",
+      "line": 108,
+      "start": 3527,
+      "end": 3536,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "e29ac0e7",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/EventNotifications.jsx",
+      "line": 144,
+      "start": 5171,
+      "end": 5183,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "05aeaa00",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/EventNotifications.jsx",
+      "line": 144,
+      "start": 5186,
+      "end": 5205,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "91312a12",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/NotificationTitle.tsx",
+      "line": 40,
+      "start": 1423,
+      "end": 1436,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "311bf57c",
+      "file": "graylog2-web-interface/src/components/event-notifications/event-notifications/NotificationTitle.tsx",
+      "line": 40,
+      "start": 1439,
+      "end": 1453,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "bfc9136a",
+      "file": "graylog2-web-interface/src/components/events/events/Events.jsx",
+      "line": 187,
+      "start": 5835,
+      "end": 5846,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "aa8818f9",
+      "file": "graylog2-web-interface/src/components/extractors/EditExtractor.jsx",
+      "line": 365,
+      "start": 14326,
+      "end": 14344,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "cabedc4c",
+      "file": "graylog2-web-interface/src/components/extractors/EditExtractor.jsx",
+      "line": 365,
+      "start": 14347,
+      "end": 14365,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "48d4ca18",
+      "file": "graylog2-web-interface/src/components/extractors/ExtractorsListItem.jsx",
+      "line": 197,
+      "start": 5527,
+      "end": 5548,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "ffd2ddc9",
+      "file": "graylog2-web-interface/src/components/extractors/ExtractorsListItem.jsx",
+      "line": 197,
+      "start": 5551,
+      "end": 5583,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "0bc89abf",
+      "file": "graylog2-web-interface/src/components/extractors/extractors_configuration/GrokExtractorConfiguration.jsx",
+      "line": 161,
+      "start": 5043,
+      "end": 5064,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "0ea847ae",
+      "file": "graylog2-web-interface/src/components/extractors/extractors_configuration/JSONExtractorConfiguration.jsx",
+      "line": 175,
+      "start": 6877,
+      "end": 6882,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "0ea847ae",
+      "file": "graylog2-web-interface/src/components/extractors/extractors_configuration/LookupTableExtractorConfiguration.jsx",
+      "line": 120,
+      "start": 4155,
+      "end": 4160,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "0ea847ae",
+      "file": "graylog2-web-interface/src/components/extractors/extractors_configuration/RegexExtractorConfiguration.jsx",
+      "line": 103,
+      "start": 3574,
+      "end": 3579,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "0ea847ae",
+      "file": "graylog2-web-interface/src/components/extractors/extractors_configuration/RegexReplaceExtractorConfiguration.jsx",
+      "line": 130,
+      "start": 4684,
+      "end": 4689,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "0ea847ae",
+      "file": "graylog2-web-interface/src/components/extractors/extractors_configuration/SubstringExtractorConfiguration.jsx",
+      "line": 157,
+      "start": 5518,
+      "end": 5523,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 180,
+      "start": 4789,
+      "end": 4797,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "c2c76cb1",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 180,
+      "start": 4800,
+      "end": 4806,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 181,
+      "start": 4893,
+      "end": 4901,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "c2c76cb1",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 181,
+      "start": 4904,
+      "end": 4910,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 185,
+      "start": 5138,
+      "end": 5146,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "6e230e94",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 185,
+      "start": 5149,
+      "end": 5157,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "cfd8dbb0",
+      "file": "graylog2-web-interface/src/components/grok-patterns/EditPatternModal.jsx",
+      "line": 193,
+      "start": 5487,
+      "end": 5577,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/components/indices/rotation/TimeBasedRotationStrategySummary.jsx",
+      "line": 42,
+      "start": 1419,
+      "end": 1424,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/components/indices/rotation/TimeBasedRotationStrategySummary.jsx",
+      "line": 42,
+      "start": 1427,
+      "end": 1431,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "e100f46d",
+      "file": "graylog2-web-interface/src/components/inputs/InputStateControl.jsx",
+      "line": 103,
+      "start": 3195,
+      "end": 3208,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "492e260d",
+      "file": "graylog2-web-interface/src/components/inputs/InputStateControl.jsx",
+      "line": 103,
+      "start": 3211,
+      "end": 3223,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "6cac833d",
+      "file": "graylog2-web-interface/src/components/inputs/InputStateControl.jsx",
+      "line": 110,
+      "start": 3392,
+      "end": 3405,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "a255e0d3",
+      "file": "graylog2-web-interface/src/components/inputs/InputStateControl.jsx",
+      "line": 110,
+      "start": 3408,
+      "end": 3421,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "e10c7bcd",
+      "file": "graylog2-web-interface/src/components/inputs/InputThroughput.jsx",
+      "line": 249,
+      "start": 8422,
+      "end": 8428,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "29742e5c",
+      "file": "graylog2-web-interface/src/components/inputs/InputThroughput.jsx",
+      "line": 249,
+      "start": 8431,
+      "end": 8437,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "e10c7bcd",
+      "file": "graylog2-web-interface/src/components/loggers/NodeLoggers.jsx",
+      "line": 110,
+      "start": 3963,
+      "end": 3969,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "29742e5c",
+      "file": "graylog2-web-interface/src/components/loggers/NodeLoggers.jsx",
+      "line": 110,
+      "start": 3972,
+      "end": 3978,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "137b4dfe",
+      "file": "graylog2-web-interface/src/components/lookup-tables/DataAdapterForm.jsx",
+      "line": 383,
+      "start": 12110,
+      "end": 12126,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "ad49e863",
+      "file": "graylog2-web-interface/src/components/lookup-tables/DataAdapterForm.jsx",
+      "line": 383,
+      "start": 12129,
+      "end": 12145,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "44f9bf2d",
+      "file": "graylog2-web-interface/src/components/nodes/NodesActions.jsx",
+      "line": 78,
+      "start": 3047,
+      "end": 3054,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "454d1d8a",
+      "file": "graylog2-web-interface/src/components/nodes/NodesActions.jsx",
+      "line": 78,
+      "start": 3057,
+      "end": 3065,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "44f9bf2d",
+      "file": "graylog2-web-interface/src/components/nodes/SystemOverviewDetails.jsx",
+      "line": 82,
+      "start": 3299,
+      "end": 3306,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "454d1d8a",
+      "file": "graylog2-web-interface/src/components/nodes/SystemOverviewDetails.jsx",
+      "line": 82,
+      "start": 3309,
+      "end": 3317,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "9c86e43e",
+      "file": "graylog2-web-interface/src/components/nodes/SystemOverviewSummary.jsx",
+      "line": 44,
+      "start": 1261,
+      "end": 1270,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "bfce9925",
+      "file": "graylog2-web-interface/src/components/nodes/SystemOverviewSummary.jsx",
+      "line": 44,
+      "start": 1273,
+      "end": 1283,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "91312a12",
+      "file": "graylog2-web-interface/src/components/nodes/SystemOverviewSummary.jsx",
+      "line": 46,
+      "start": 1374,
+      "end": 1387,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "bb8edde6",
+      "file": "graylog2-web-interface/src/components/rules/PipelinesUsingRule.jsx",
+      "line": 46,
+      "start": 1572,
+      "end": 1619,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/CollectorForm.jsx",
+      "line": 295,
+      "start": 10518,
+      "end": 10526,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "6e230e94",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/CollectorForm.jsx",
+      "line": 295,
+      "start": 10529,
+      "end": 10537,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "74e66e91",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/EditConfigurationVariableModal.jsx",
+      "line": 168,
+      "start": 4354,
+      "end": 4366,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/EditConfigurationVariableModal.jsx",
+      "line": 172,
+      "start": 4517,
+      "end": 4525,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "c2c76cb1",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/EditConfigurationVariableModal.jsx",
+      "line": 172,
+      "start": 4528,
+      "end": 4534,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "990de47d",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/EditConfigurationVariableModal.jsx",
+      "line": 173,
+      "start": 4645,
+      "end": 4653,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "c2c76cb1",
+      "file": "graylog2-web-interface/src/components/sidecars/configuration-forms/EditConfigurationVariableModal.jsx",
+      "line": 173,
+      "start": 4656,
+      "end": 4662,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "dcf35875",
+      "file": "graylog2-web-interface/src/components/sidecars/sidecars/SidecarStatus.jsx",
+      "line": 58,
+      "start": 2266,
+      "end": 2281,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "fd7a651c",
+      "file": "graylog2-web-interface/src/components/simulator/SimulationResults.jsx",
+      "line": 160,
+      "start": 4824,
+      "end": 4878,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "e626f2f5",
+      "file": "graylog2-web-interface/src/integrations/aws/cloudwatch/StepHealthCheck.jsx",
+      "line": 87,
+      "start": 3275,
+      "end": 3288,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "b19a3117",
+      "file": "graylog2-web-interface/src/integrations/aws/cloudwatch/StepHealthCheck.jsx",
+      "line": 87,
+      "start": 3291,
+      "end": 3302,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "a1a47d49",
+      "file": "graylog2-web-interface/src/integrations/aws/cloudwatch/StepHealthCheck.jsx",
+      "line": 126,
+      "start": 4883,
+      "end": 4981,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "0b2c5ccc",
+      "file": "graylog2-web-interface/src/integrations/aws/cloudwatch/StepHealthCheck.jsx",
+      "line": 126,
+      "start": 4984,
+      "end": 5123,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "28d3169e",
+      "file": "graylog2-web-interface/src/integrations/aws/cloudwatch/kinesis/setup-steps/SetupModal.jsx",
+      "line": 47,
+      "start": 1513,
+      "end": 1535,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "84e80201",
+      "file": "graylog2-web-interface/src/integrations/aws/cloudwatch/kinesis/setup-steps/SetupModal.jsx",
+      "line": 47,
+      "start": 1538,
+      "end": 1568,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "17b11033",
+      "file": "graylog2-web-interface/src/integrations/aws/common/FormWrap.jsx",
+      "line": 111,
+      "start": 2960,
+      "end": 2972,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "b3a43630",
+      "file": "graylog2-web-interface/src/integrations/pager-duty/PagerDutyNotificationSummary.jsx",
+      "line": 31,
+      "start": 1220,
+      "end": 1225,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "61e6be1a",
+      "file": "graylog2-web-interface/src/integrations/pager-duty/PagerDutyNotificationSummary.jsx",
+      "line": 31,
+      "start": 1228,
+      "end": 1232,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "04f964a8",
+      "file": "graylog2-web-interface/src/preflight/components/RestartConfigurationButton.tsx",
+      "line": 53,
+      "start": 1836,
+      "end": 1848,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "04f964a8",
+      "file": "graylog2-web-interface/src/preflight/components/ResumeStartupButton.tsx",
+      "line": 57,
+      "start": 2105,
+      "end": 2117,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "9c86e43e",
+      "file": "graylog2-web-interface/src/threatintel/components/ThreatIntelPluginConfig.jsx",
+      "line": 126,
+      "start": 3550,
+      "end": 3559,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "bfce9925",
+      "file": "graylog2-web-interface/src/threatintel/components/ThreatIntelPluginConfig.jsx",
+      "line": 126,
+      "start": 3562,
+      "end": 3572,
+      "kind": "ternary:alternate"
+    },
+    {
+      "id": "9c86e43e",
+      "file": "graylog2-web-interface/src/threatintel/components/ThreatIntelPluginConfig.jsx",
+      "line": 129,
+      "start": 3670,
+      "end": 3679,
+      "kind": "ternary:consequent"
+    },
+    {
+      "id": "bfce9925",
+      "file": "graylog2-web-interface/src/threatintel/components/ThreatIntelPluginConfig.jsx",
+      "line": 129,
+      "start": 3682,
+      "end": 3692,
+      "kind": "ternary:alternate"
+    }
+  ],
+  "parseErrors": [
+    {
+      "file": "graylog2-web-interface/src/routing/Routes.ts",
+      "error": "Unexpected token, expected \"}\" (243:45)"
+    },
+    {
+      "file": "graylog2-web-interface/src/views/components/visualizations/utils/unitConverters.ts",
+      "error": "Unexpected token (75:2)"
+    },
+    {
+      "file": "graylog2-web-interface/src/views/logic/aggregationbuilder/UnitsConfig.ts",
+      "error": "Unexpected token (47:4)"
+    }
+  ]
+}
