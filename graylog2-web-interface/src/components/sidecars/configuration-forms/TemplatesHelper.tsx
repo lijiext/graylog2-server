@@ -26,34 +26,34 @@ const TemplatesHelper = () => {
       <Table responsive>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>名称</th>
+            <th>描述</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><code>{_buildVariableName('operatingSystem')}</code></td>
-            <td>Name of the operating system the sidecar is running on, e.g. <code>&quot;Linux&quot;, &quot;Windows&quot;</code></td>
+            <td>Sidecar 运行的操作系统名称，例如 <code>&quot;Linux&quot;, &quot;Windows&quot;</code></td>
           </tr>
           <tr>
             <td><code>{_buildVariableName('nodeName')}</code></td>
-            <td>The name of the sidecar, defaults to hostname if not set.</td>
+            <td>Sidecar 的名称，若未设置则默认为主机名。</td>
           </tr>
           <tr>
             <td><code>{_buildVariableName('nodeId')}</code></td>
-            <td>UUID of the sidecar.</td>
+            <td>Sidecar 的 UUID。</td>
           </tr>
           <tr>
             <td><code>{_buildVariableName('sidecarVersion')}</code></td>
-            <td>Version string of the running sidecar.</td>
+            <td>正在运行的 Sidecar 的版本字符串。</td>
           </tr>
           <tr>
             <td><code>{_buildVariableName('spoolDir')}</code></td>
-            <td>A directory that is unique per configuration and can be used to store collector data.</td>
+            <td>每个配置唯一的目录，可用于存储采集器数据。</td>
           </tr>
           <tr>
             <td><code>{_buildVariableName('tags.<tag>')}</code></td>
-            <td>A map of tags that are set for the sidecar. This can be used to render conditional configuration snippets. e.g.: <br />
+            <td>为 Sidecar 设置的标签映射。这可以用于渲染条件配置片段。例如： <br />
               <code> &lt;#if sidecar.tags.webserver??&gt;<br />&nbsp;&nbsp;- /var/log/apache/*.log<br />&lt;/#if&gt;  </code>
             </td>
           </tr>

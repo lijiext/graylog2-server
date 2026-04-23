@@ -122,11 +122,11 @@ const UsersOverview = () => {
       <Row className="content">
         <Col xs={12}>
           <Header>
-            <h2>Users</h2>
+            <h2>用户</h2>
             {loading && <LoadingSpinner text="" delay={0} />}
           </Header>
           <p className="description">
-            Found {total} registered users on the system.
+            已找到 {total} 系统中已注册的用户。
           </p>
           <StyledPaginatedList totalItems={total}>
             <DataTable id="users-overview"
@@ -135,7 +135,7 @@ const UsersOverview = () => {
                        headers={TABLE_HEADERS}
                        headerCellFormatter={_headerCellFormatter}
                        sortByKey="fullName"
-                       noDataText={<NoSearchResult>No users have been found.</NoSearchResult>}
+                       noDataText={<NoSearchResult>未找到用户。</NoSearchResult>}
                        rows={users.toJS()}
                        customFilter={searchFilter}
                        dataRowFormatter={buildUsersOverviewItem(currentUser)}

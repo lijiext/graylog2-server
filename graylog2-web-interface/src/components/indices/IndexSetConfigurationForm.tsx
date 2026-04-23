@@ -119,11 +119,11 @@ const RotationStrategies = ({ rotationStrategies, indexSetRotationStrategy, inde
   if (!rotationStrategies) return <Spinner />;
 
   return (
-    <IndexMaintenanceStrategiesConfiguration title="Index Rotation Configuration"
+    <IndexMaintenanceStrategiesConfiguration title="索引轮转配置"
                                              name="rotation"
-                                             description="Graylog uses multiple indices to store documents in. You can configure the strategy it uses to determine when to rotate the currently active write index."
+                                             description="Graylog 使用多个索引来存储文档。您可以配置其使用的策略，以确定何时轮换当前活动的写入索引。"
                                              selectPlaceholder="Select rotation strategy"
-                                             label="Rotation strategy"
+                                             label="轮转策略"
                                              pluginExports={PluginStore.exports('indexRotationConfig')}
                                              strategies={rotationStrategies}
                                              activeConfig={{
@@ -138,11 +138,11 @@ const RetentionConfig = ({ retentionStrategies, retentionStrategiesContext, inde
   if (!retentionStrategies) return <Spinner />;
 
   return (
-    <IndexMaintenanceStrategiesConfiguration title="Index Retention Configuration"
+    <IndexMaintenanceStrategiesConfiguration title="索引保留配置"
                                              name="retention"
-                                             description="Graylog uses a retention strategy to clean up old indices."
+                                             description="Graylog 使用保留策略来清理旧索引。"
                                              selectPlaceholder="Select retention strategy"
-                                             label="Retention strategy"
+                                             label="保留策略"
                                              pluginExports={PluginStore.exports('indexRetentionConfig')}
                                              strategies={retentionStrategies}
                                              retentionStrategiesContext={retentionStrategiesContext}
@@ -157,8 +157,7 @@ const RetentionConfig = ({ retentionStrategies, retentionStrategiesContext, inde
 const ReadOnlyConfig = () => {
   const indexPrefixHelp = (
     <span>
-      A <strong>unique</strong> prefix used in Elasticsearch indices belonging to this index set.
-      The prefix must start with a letter or number, and can only contain letters, numbers, &apos;_&apos;, &apos;-&apos; and &apos;+&apos;.
+      A <strong>unique</strong> 此索引集所属的 Elasticsearch 索引中使用的前缀。前缀必须以字母或数字开头，且只能包含字母、数字、'_'、'-' 和 '+'。
     </span>
   );
 
@@ -166,16 +165,16 @@ const ReadOnlyConfig = () => {
     <span>
       <FormikInput type="text"
                    id="index-prefix"
-                   label="Index prefix"
+                   label="索引前缀"
                    name="index_prefix"
                    help={indexPrefixHelp}
                    validate={_validateIndexPrefix}
                    required />
       <FormikInput type="text"
                    id="index-analyzer"
-                   label="Analyzer"
+                   label="分析器"
                    name="index_analyzer"
-                   help="Elasticsearch analyzer for this index set."
+                   help="此索引集的 Elasticsearch 分析器。"
                    required />
     </span>
   );
@@ -283,53 +282,53 @@ const IndexSetConfigurationForm = ({
             <IndexRetentionProvider>
               <Form>
                 <FlexWrapper>
-                  <Section title="Configuration Information">
+                  <Section title="配置信息">
                     <FormikInput type="text"
-                                 label="Title"
+                                 label="标题"
                                  id="title"
                                  name="title"
-                                 help="Descriptive name of the index set."
+                                 help="索引集的描述性名称。"
                                  required />
                     <FormikInput type="text"
                                  id="description"
-                                 label="Description"
+                                 label="描述"
                                  name="description"
-                                 help="Add a description of this index set."
+                                 help="添加此索引集的描述。"
                                  required />
                   </Section>
-                  <Section title="Details">
+                  <Section title="详情">
                     {create && <ReadOnlyConfig />}
                     <HideOnCloud>
                       <FormikInput type="number"
                                    id="shards"
-                                   label="Index Shards"
+                                   label="索引分片"
                                    name="shards"
-                                   help="Number of search cluster Shards used per index in this Index Set. Increasing the Index Shards improves the search cluster write speed of data stored to this Index Set by distributing the active write Index over multiple search nodes. Increasing the Index Shards can degrade search performance and increases the memory footprint of the Index. This value should not be set higher than the number of search nodes."
+                                   help="此索引集中每个索引使用的搜索集群分片数。增加索引分片可通过将活动写入索引分布在多个搜索节点上来提高存储到此索引集的数据的搜索集群写入速度。增加索引分片可能会降低搜索性能并增加索引的内存占用。此值不应设置为高于搜索节点的数量。"
                                    required />
                       <FormikInput type="number"
                                    id="replicas"
-                                   label="Index Replica"
+                                   label="索引副本"
                                    name="replicas"
-                                   help="Number of search cluster Replica Shards used per Index in this Index Set. Adding Replica Shards improves search performance during parallel reads of the index, such as occurs on dashboards, and is a component of HA and backup strategy. Each Replica Shard set multiplies the storage requirement and memory footprint of the index. This value should not be set higher than the number of search nodes, and typically not higher than 1.                                   "
+                                   help="此索引集中每个索引使用的搜索集群副本分片数。添加副本分片可提升索引并行读取时的搜索性能，例如在仪表盘中发生的情况，也是高可用性和备份策略的组成部分。每个副本分片组会成倍增加索引的存储需求和内存占用。此值不应设置得高于搜索节点数，通常不应高于 1。                                   "
                                    required />
                       <FormikInput type="number"
                                    id="max-number-segments"
-                                   label="Maximum Number of Segments"
+                                   label="最大段数"
                                    name="index_optimization_max_num_segments"
                                    minLength={1}
-                                   help={<><em>Advanced Option.</em> Maximum number of segments per Search Cluster Index after optimization (force merge). Setting higher values decreases the compression ratio of Index Optimization.</>}
+                                   help={<><em>高级选项。</em> 优化（强制合并）后每个搜索集群索引的最大段数。设置更高的值会降低索引优化的压缩率。</>}
                                    required />
                       <FormikInput type="checkbox"
                                    id="index-optimization-disabled"
-                                   label="Disable Index Optimization after Rotation"
+                                   label="轮转后禁用索引优化"
                                    name="index_optimization_disabled"
-                                   help={<><em>Advanced Option.</em> Index Optimization is a compression process that occurs after an active Index has been rotated and reduces the size of an Index on disk. It manifests as a CPU intensive maintenance task performed by the search cluster after Index rotation. Compressing Indexes improves search performance and decreases the storage footprint of Index Sets.</>} />
+                                   help={<><em>高级选项。</em> 索引优化是在活动索引轮转后执行的压缩过程，可减少磁盘上索引的大小。它表现为搜索集群在索引轮转后执行的 CPU 密集型维护任务。压缩索引可提高搜索性能并减少索引集的存储占用。</>} />
                       <Field name="field_type_refresh_interval">
                         {({ field: { name, value, onChange } }) => (
                           <TimeUnitInput id="field-type-refresh-interval"
-                                         label="Field Type Refresh Interval"
+                                         label="字段类型刷新间隔"
                                          type="number"
-                                         help={<><em>Advanced Option.</em> How often the Field Type Information for the active write Index will be updated. Setting this value higher can marginally reduce search cluster overhead and improve performance, but will result in new data messages longer to be searchable in Graylog.</>}
+                                         help={<><em>高级选项。</em> 活动写入索引的字段类型信息更新频率。将此值设置得更高可以略微减少搜索集群的开销并提高性能，但会导致新数据消息在 Graylog 中可搜索的时间变长。</>}
                                          value={moment.duration(value, 'milliseconds').as(fieldTypeRefreshIntervalUnit)}
                                          unit={fieldTypeRefreshIntervalUnit.toUpperCase()}
                                          units={['SECONDS', 'MINUTES']}
@@ -342,7 +341,7 @@ const IndexSetConfigurationForm = ({
                     </HideOnCloud>
                   </Section>
 
-                  <Section title="Rotation & Retention">
+                  <Section title="轮转与保留">
                     {isCloud && !enableDataTieringCloud ? (
                       <>
                         {indexSet.writable && <RotationStrategies rotationStrategies={rotationStrategies} indexSetRotationStrategy={values.rotation_strategy} indexSetRotationStrategyClass={values.rotation_strategy_class} />}
@@ -375,7 +374,7 @@ const IndexSetConfigurationForm = ({
                     )}
                   </Section>
                   {isIndexFieldTypeChangeAllowed(indexSet) && (
-                  <Section title="Field Type Profile">
+                  <Section title="字段类型配置文件">
                     <Field name="field_type_profile">
                       {({ field: { name, value } }) => (
                         <IndexSetProfileConfiguration value={value}

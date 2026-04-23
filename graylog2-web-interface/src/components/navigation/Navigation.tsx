@@ -78,7 +78,7 @@ const Navigation = React.memo(({ pathname }: Props) => {
 
           <LinkContainer relativeActive to={activePerspective.welcomeRoute}>
             <NavItem id="welcome-nav-link">
-              <Icon size="lg" title="Welcome" name="home" />
+              <Icon size="lg" title="欢迎" name="home" />
             </NavItem>
           </LinkContainer>
 

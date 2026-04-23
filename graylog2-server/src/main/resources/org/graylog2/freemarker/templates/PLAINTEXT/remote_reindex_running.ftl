@@ -1,6 +1,6 @@
-<#if _title>Remote Reindex Migration is running</#if>
+<#if _title>远程重新索引迁移正在进行</#if>
 
 <#if _description><span>
-    Remote reindexing your existing data into the Graylog data node is running.
-    Please visit the data node migration wizard to see the current progress.
+    正在将您现有的数据远程重新索引到 Graylog 数据节点。
+    请访问数据节点迁移向导以查看当前进度。
 </#if>

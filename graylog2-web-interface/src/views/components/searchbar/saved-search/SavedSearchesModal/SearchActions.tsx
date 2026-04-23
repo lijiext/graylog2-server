@@ -70,16 +70,16 @@ const SearchActions = ({ search, onDeleteSavedSearch, activeSavedSearchId, refet
                 role="button"
                 bsSize="xsmall"
                 bsStyle="danger"
-                title={`Delete search ${search.title}`}
+                title={`删除搜索 ${search.title}`}
                 tabIndex={0}>
-          Delete
+          删除
         </Button>
       </IfPermitted>
       {showShareModal && (
         <EntityShareModal entityId={search.id}
                           entityType="search"
                           entityTitle={search.title}
-                          description="Search for a User or Team to add as collaborator on this search."
+                          description="搜索要添加为此搜索协作者的用户或团队。"
                           onClose={toggleEntityShareModal} />
       )}
     </>

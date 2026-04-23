@@ -26,7 +26,7 @@ const CreateClientCertificateButton = () => {
   return (
     <>
       <Button bsStyle="primary" bsSize="small" onClick={() => setShowCertificateForm(true)}>
-        Generate client certificate
+        生成客户端证书
       </Button>
       {showCertificateForm && (
         <BootstrapModalWrapper showModal={showCertificateForm}

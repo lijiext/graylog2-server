@@ -40,12 +40,12 @@ const ProfileActions = ({ profileId, profileName }: { profileId: string, profile
     <ButtonToolbar>
       <LinkContainer to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(profileId)}>
         <Button bsSize="xs">
-          Edit
+          编辑
         </Button>
       </LinkContainer>
       <MoreActions>
         <MenuItem onSelect={onDelete}>
-          Delete
+          删除
         </MenuItem>
       </MoreActions>
     </ButtonToolbar>

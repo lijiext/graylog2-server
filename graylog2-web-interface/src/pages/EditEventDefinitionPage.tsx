@@ -90,9 +90,9 @@ const EditEventDefinitionPage = () => {
 
   if (!eventDefinition) {
     return (
-      <DocumentTitle title="Edit Event Definition">
+      <DocumentTitle title="编辑事件定义">
         <span>
-          <PageHeader title="Edit Event Definition">
+          <PageHeader title="编辑事件定义">
             <Spinner text="Loading Event Definition..." />
           </PageHeader>
         </span>
@@ -101,15 +101,15 @@ const EditEventDefinitionPage = () => {
   }
 
   return (
-    <DocumentTitle title={`Edit "${eventDefinition.title}" Event Definition`}>
+    <DocumentTitle title={`编辑 "${eventDefinition.title}" 事件定义`}>
       <EventsPageNavigation />
-      <PageHeader title={`Edit "${eventDefinition.title}" Event Definition`}
+      <PageHeader title={`编辑 "${eventDefinition.title}" 事件定义`}
                   documentationLink={{
                     title: 'Alerts documentation',
                     path: DocsHelper.PAGES.ALERTS,
                   }}>
         <span>
-          Event Definitions allow you to create Events from different Conditions and alert on them.
+          事件定义允许您从不同的条件创建事件并对其进行告警。
         </span>
       </PageHeader>
       <Row className="content">

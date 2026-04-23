@@ -23,8 +23,8 @@ import type { WizardFormValues } from './BackendWizard/BackendWizardContext';
 
 export default (payload: WizardSubmitPayload, formValues: WizardFormValues, backendId: string, backendGroupSyncIsActive: boolean, serviceType: string, shouldUpdateGroupSync: boolean | undefined = true) => {
   const enterpriseGroupSyncPlugin = getEnterpriseGroupSyncPlugin();
-  const notifyOnSuccess = () => UserNotification.success('Authentication service was updated successfully.', 'Success');
-  const notifyOnError = (error) => UserNotification.error(`Updating authentication service failed with status: ${error}`, 'Error');
+  const notifyOnSuccess = () => UserNotification.success('认证服务已成功更新。', '成功');
+  const notifyOnError = (error) => UserNotification.error(`更新身份验证服务失败，状态为：${error}`, '错误');
 
   return AuthenticationActions.update(backendId, {
     ...payload,

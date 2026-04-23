@@ -41,25 +41,25 @@ const CompatibilityCheckStep = ({ currentStep, onTriggerStep, hideActions }: Mig
 
   return (
     <>
-      <h3>Directory compatibility check</h3>
+      <h3>目录兼容性检查</h3>
       <CompatibilityAlert bsStyle={(!isError && isCompatible) ? 'success' : 'danger'}>
-        {isCompatible && <h4>Your existing OpenSearch data can be migrated to Data Node.</h4>}
+        {isCompatible && <h4>您现有的 OpenSearch 数据可以迁移到数据节点。</h4>}
         {!isError && !isCompatible && (
           <>
-            <h4>Your existing OpenSearch data cannot be migrated to Data Node.</h4>
+            <h4>您现有的 OpenSearch 数据无法迁移到数据节点。</h4>
             <br />
-            Error: {errors} {errors.map((error) => <dd key={error}>{error}</dd>)}
+            错误： {errors} {errors.map((error) => <dd key={error}>{error}</dd>)}
           </>
         )}
         {isError && (
           <>
-            <h4>There was an error checking the compatibility</h4>
+            <h4>检查兼容性时发生错误</h4>
             <p>{requestError.message}</p>
           </>
         )}
       </CompatibilityAlert>
       <br />
-      {!isCompatible && (<p>Your OpenSearch cluster cannot be migrated to this Data Node version because it&apos;s not compatible.</p>)}
+      {!isCompatible && (<p>您的 OpenSearch 集群无法迁移到此数据节点版本，因为不兼容。</p>)}
       {isCompatible && data && Object.keys(data).map((hostname) => (
         <CompatibilityStatus key={hostname} hostname={hostname} opensearchVersion={data[hostname].opensearch_version} nodeInfo={data[hostname].info} />
       ))}

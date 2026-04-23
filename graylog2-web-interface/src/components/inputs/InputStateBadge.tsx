@@ -106,9 +106,9 @@ const InputStateBadge = ({ input }: Props) => {
     )));
 
     return (
-      <OverlayTrigger trigger="click" placement="bottom" overlay={popOverText} rootClose title={`Input States for ${input.title}`}>
+      <OverlayTrigger trigger="click" placement="bottom" overlay={popOverText} rootClose title={`${input.title} 的输入状态`}>
         <Label bsStyle={_labelClassForState(sorted)}
-               title="Click to show details"
+               title="点击显示详情"
                bsSize="xsmall"
                style={{ cursor: 'pointer' }}>{_textForState(sorted)}
         </Label>

@@ -122,16 +122,16 @@ const RolesSelector = ({ assignedRolesIds, onSubmit, identifier, submitOnSelect 
                       onChange={onChange}
                       optionRenderer={_renderRoleOption}
                       options={options}
-                      placeholder="Search for roles"
+                      placeholder="搜索角色"
                       multi
                       value={selectedRoleNames} />
         {!submitOnSelect && (
         <SubmitButton bsStyle="success"
                       onClick={_onSubmit}
                       disabled={isSubmitting || !selectedRoleNames}
-                      title="Assign Role"
+                      title="分配角色"
                       type="button">
-          Assign Role
+          分配角色
         </SubmitButton>
         )}
 

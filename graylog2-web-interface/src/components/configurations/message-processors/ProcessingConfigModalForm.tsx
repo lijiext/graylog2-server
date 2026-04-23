@@ -90,43 +90,43 @@ const ProcessingConfigModalForm = ({ closeModal, formConfig }: Props) => {
         {({ isSubmitting, values, setFieldValue, isValid }) => (
           <Form>
             <Modal.Header closeButton>
-              <Modal.Title id="dialog_label">Update Message Processors Configuration</Modal.Title>
+              <Modal.Title id="dialog_label">更新消息处理器配置</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
               <>
-                <h2>Global Processing Rules Configuration</h2>
+                <h2>全局处理规则配置</h2>
                 <FormikInput type="checkbox"
                              name="enableFutureTimestampNormalization"
                              id="enableFutureTimestampNormalization"
                              help={futureTimestampNormalizationHelpText}
                              onChange={(event) => handleEnableFutureTimestampNormalisation(getValueFromInput(event.target), setFieldValue)}
                              label={(
-                               <LabelSpan>Future Timestamp Normalization</LabelSpan>
+                               <LabelSpan>未来时间戳规范化</LabelSpan>
                                )} />
                 <FormikInput type="text"
                              name="grace_period"
                              id="grace_period"
                              placeholder="P2D"
-                             label="Grace Period"
+                             label="宽限期"
                              disabled={!values?.enableFutureTimestampNormalization}
-                             help="If Future Timestamp Normalisation is enabled, timestamps specifying a time further ahead of Graylog's own system time than the Grace Period interval will be normalised."
+                             help="如果启用未来时间戳规范化，则指定时间超过 Graylog 自身系统时间且超过宽限期间隔的时间戳将被规范化。"
                              addonAfter={values.enableFutureTimestampNormalization ? ISODurationUtils.formatDuration(values.grace_period, gracePeriodValidator, 'invalid') : ''}
                              validate={validateGracePeriodField(values.enableFutureTimestampNormalization)}
                              required />
-                <h2>Message Processors Configuration</h2>
-                <h3>Order</h3>
-                <p>Use drag and drop to change the execution order of the message processors.</p>
+                <h2>消息处理器配置</h2>
+                <h3>排序</h3>
+                <p>使用拖放功能更改消息处理器的执行顺序。</p>
                 <SortableList items={sortableItems(values)}
                               onMoveItem={(newSorting) => updateSorting(newSorting, setFieldValue)}
                               displayOverlayInPortal />
-                <h3>Status</h3>
-                <p>Change the checkboxes to change the status of a message processor.</p>
+                <h3>状态</h3>
+                <p>更改复选框以更改消息处理器的状态。</p>
                 <Table striped bordered condensed className="top-margin">
                   <thead>
                     <tr>
-                      <th>Processor</th>
-                      <th>Enabled</th>
+                      <th>消息处理器</th>
+                      <th>已启用</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -134,8 +134,8 @@ const ProcessingConfigModalForm = ({ closeModal, formConfig }: Props) => {
                   </tbody>
                 </Table>
                 {hasNoActiveProcessor() && (
-                <Alert bsStyle="danger" title="Error">
-                  No active message processor!
+                <Alert bsStyle="danger" title="错误">
+                  无活动的消息处理器！
                 </Alert>
                 )}
               </>
@@ -145,8 +145,8 @@ const ProcessingConfigModalForm = ({ closeModal, formConfig }: Props) => {
                            isSubmitting={isSubmitting}
                            disabledSubmit={!isValid}
                            isAsyncSubmit
-                           submitLoadingText="Update configuration"
-                           submitButtonText="Update configuration" />
+                           submitLoadingText="更新配置"
+                           submitButtonText="更新配置" />
             </Modal.Footer>
           </Form>
         )}

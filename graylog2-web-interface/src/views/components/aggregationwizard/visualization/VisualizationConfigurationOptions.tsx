@@ -58,7 +58,7 @@ const titleForField = (field: ConfigurationField) => {
     ? (
       <TitleLabelWithHelp>
         {field.title}
-        <TitleHoverForHelp title={`Help for ${field.title}`} placement="top">
+        <TitleHoverForHelp title={`${field.title} 帮助`} placement="top">
           <HelpComponent />
         </TitleHoverForHelp>
       </TitleLabelWithHelp>

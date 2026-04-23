@@ -28,9 +28,9 @@ const AuthenticationCreatePage = () => {
   const { finishedLoading, activeBackend } = useActiveBackend();
 
   return (
-    <DocumentTitle title="Create Authentication Service">
+    <DocumentTitle title="创建认证服务">
       <AuthenticationPageNavigation />
-      <PageHeader title="Create Authentication Service"
+      <PageHeader title="创建认证服务"
                   actions={(
                     <BackendActionLinks activeBackend={activeBackend}
                                         finishedLoading={finishedLoading} />
@@ -39,10 +39,10 @@ const AuthenticationCreatePage = () => {
                     title: 'Authentication documentation',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
-        <span>Configure Graylog&apos;s authentication services of this Graylog cluster.</span>
+        <span>配置此 Graylog 集群的 Graylog 认证服务。</span>
       </PageHeader>
 
-      <GettingStarted title="Create New Authentication Service" />
+      <GettingStarted title="创建新的认证服务" />
     </DocumentTitle>
   );
 };

@@ -106,10 +106,10 @@ const ColumnsVisibilitySelect = ({ onChange, selectedColumns, allColumns }: Prop
   );
 
   return (
-    <StyledDropdownButton title="Columns"
+    <StyledDropdownButton title="列"
                           bsSize="small"
                           pullRight
-                          aria-label="Configure visible columns"
+                          aria-label="配置显示列"
                           id="columns-visibility-select"
                           bsStyle="default"
                           closeOnItemClick={false}>

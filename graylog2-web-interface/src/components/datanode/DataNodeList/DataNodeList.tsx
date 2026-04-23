@@ -72,7 +72,7 @@ const DataNodeList = () => (
                                                  commonFields={['name']}
                                                  example={(
                                                    <p>
-                                                     Find entities with a description containing node:<br />
+                                                     查找描述中包含 node 的实体：<br />
                                                      <code>name:node</code><br />
                                                    </p>
                                             )} />

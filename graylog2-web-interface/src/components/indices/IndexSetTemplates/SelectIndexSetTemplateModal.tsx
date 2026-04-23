@@ -131,17 +131,17 @@ const SelectIndexSetTemplateModal = ({ hideModal, show }: Props) => {
 
   return (
     <Modal show={show}
-           title="Index Set Templates"
+           title="索引集模板"
            bsSize="large"
            onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Index Set Templates</Modal.Title>
+        <Modal.Title>索引集模板</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <FlexWrapper>
           <Row>
             <Col md={12}>
-              Select a template appropriate to the requirements for this data (and available storage).
+              选择一个适合此数据需求（及可用存储）的模板。
               {tempSelectedTemplate?.index_set_config.data_tiering?.warm_tier_enabled && dataTieringPlugin && <dataTieringPlugin.WarmTierReadinessInfo />}
             </Col>
           </Row>
@@ -159,7 +159,7 @@ const SelectIndexSetTemplateModal = ({ hideModal, show }: Props) => {
 
                   <Input id="built-in-data-tiering"
                          type="checkbox"
-                         label="Warm Tier (Enterprise)"
+                         label="Warm Tier (企业版)"
                          checked={showBuiltInWarmTier}
                          onChange={() => setShowBuiltInWarmTier(!showBuiltInWarmTier)} />
                   {isLoadingBuiltIn ? (<div><Spinner /></div>) : (
@@ -180,7 +180,7 @@ const SelectIndexSetTemplateModal = ({ hideModal, show }: Props) => {
                         <Select clearable={false}
                                 onChange={handleCustomSelect}
                                 options={customList.map((template) => ({ label: template.title, value: template.id }))}
-                                placeholder="Select a template"
+                                placeholder="选择模板"
                                 value={selectedCustomTemplate?.id} />
                       </Col>
                     </Row>
@@ -199,7 +199,7 @@ const SelectIndexSetTemplateModal = ({ hideModal, show }: Props) => {
         <ModalSubmit onSubmit={handleSubmit}
                      submitButtonType="button"
                      disabledSubmit={!tempSelectedTemplate}
-                     submitButtonText="Apply template"
+                     submitButtonText="应用模板"
                      displayCancel={false} />
       </Modal.Footer>
     </Modal>

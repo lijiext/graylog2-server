@@ -164,10 +164,10 @@ public class AWSService {
             return input;
         } catch (NoSuchInputTypeException e) {
             LOG.error("There is no such input type registered.", e);
-            throw new NotFoundException("There is no such input type registered.", e);
+            throw new NotFoundException("未注册此类输入端类型。", e);
         } catch (ConfigurationException e) {
             LOG.error("Missing or invalid input configuration.", e);
-            throw new BadRequestException("Missing or invalid input configuration.", e);
+            throw new BadRequestException("输入配置缺失或无效。", e);
         }
     }
 }

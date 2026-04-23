@@ -47,19 +47,16 @@ const CAConfiguration = () => {
 
   return (
     <>
-      <h2>Configure Certificate Authority</h2>
+      <h2>配置证书颁发机构</h2>
       <p>
-        In this step you can either upload or create a new certificate authority.<br />
-        The certificate authority will provision and manage certificates for your Data Nodes more easily.
+        在此步骤中，您可以上传或创建新的证书颁发机构。<br />
+        证书颁发机构将更轻松地为您数据节点配置和管理证书。
       </p>
-      <StyledAlert bsStyle="info" title="Reusing certificates">
-        If your existing cluster uses certificates, by default these will get replaced with the Graylog CA
-        and automatically generated certificates during provisioning of the data nodes in the next step.
-        If you want to include your own CA, you can upload an existing certificate.
-        Please see <DocumentationLink page="graylog-data-node" text="Graylog Data Node - Getting Started" /> for more information.
+      <StyledAlert bsStyle="info" title="重用证书">
+        如果您的现有集群使用证书，默认情况下，这些证书将在下一步中数据节点配置期间被 Graylog CA 和自动生成的证书替换。如果您希望包含自己的 CA，可以上传现有证书。请参阅 <DocumentationLink page="graylog-data-node" text="Graylog Data Node - Getting Started" /> 更多详细信息。
       </StyledAlert>
       <Tabs defaultActiveKey={TAB_KEYS[0]} id="ca-configurations" onClick={handleTabSwitch}>
-        <Tab eventKey={TAB_KEYS[0]} title="Create new CA">
+        <Tab eventKey={TAB_KEYS[0]} title="创建新的 CA">
           <CACreateForm />
         </Tab>
         <Tab eventKey={TAB_KEYS[1]} title={UploadCA}>

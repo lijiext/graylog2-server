@@ -91,26 +91,26 @@ const FilterRuleForm = ({ title, filterRule, onCancel, handleSubmit, destination
               <Modal.Body>
                 <FormikInput id="title"
                              name="title"
-                             label="Title"
-                             help="Rule title"
+                             label="标题"
+                             help="规则标题"
                              error={errors.title}
                              required />
                 <FormikInput id="description"
                              name="description"
-                             label="Description"
-                             help="Rule description" />
+                             label="描述"
+                             help="规则描述" />
                 <Field name="status">
                   {({ field: { name, value }, meta }) => (
                     <Input id={name}
                            error={meta?.error}
-                           label="Enabled"
+                           label="已启用"
                            type="checkbox"
                            onChange={onStatusChange}
                            checked={value === 'enabled'}
                            value={value === 'enabled'} />
                   )}
                 </Field>
-                <label htmlFor="rule_builder">Rule Builder</label>
+                <label htmlFor="rule_builder">规则构建器</label>
                 {errors?.rule && (<p className="text-danger">{errors.rule as React.ReactNode}</p>)}
                 <FilterRulesFields type="condition" />
                 <Modal.Footer>

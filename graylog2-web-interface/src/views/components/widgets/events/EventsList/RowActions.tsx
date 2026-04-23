@@ -64,7 +64,7 @@ const RowActions = ({ eventId, hasReplayInfo, eventDefinitionId }: Props) => {
   const moreActions = [
     (hasReplayInfo && isPermitted(user.permissions, `eventdefinitions:read:${eventDefinitionId}`)) ? (
       <MenuItem href={Routes.ALERTS.replay_search(eventId)} target="_blank" key="replay-search">
-        Replay search
+        重播搜索
       </MenuItem>
     ) : null,
     pluggableActions.length ? pluggableActions : null,
@@ -73,11 +73,11 @@ const RowActions = ({ eventId, hasReplayInfo, eventDefinitionId }: Props) => {
   return (
     <>
       <ButtonToolbar>
-        <IconButton name="open_in_full" title="View event details" onClick={toggleDetailsModal} />
+        <IconButton name="open_in_full" title="查看事件详情" onClick={toggleDetailsModal} />
         {!!moreActions.length && (
           <Menu position="bottom-end">
             <Menu.Target>
-              <IconButton name="more_vert" title="Toggle event actions" />
+              <IconButton name="more_vert" title="切换事件操作" />
             </Menu.Target>
             <Menu.Dropdown>
               {moreActions}
@@ -90,7 +90,7 @@ const RowActions = ({ eventId, hasReplayInfo, eventDefinitionId }: Props) => {
                bsSize="large"
                onHide={toggleDetailsModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Event details</Modal.Title>
+            <Modal.Title>事件详情</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <EventDetails eventId={eventId} />
@@ -99,7 +99,7 @@ const RowActions = ({ eventId, hasReplayInfo, eventDefinitionId }: Props) => {
             <ModalSubmit displayCancel={false}
                          onSubmit={toggleDetailsModal}
                          submitButtonType="button"
-                         submitButtonText="Close" />
+                         submitButtonText="关闭" />
           </Modal.Footer>
         </Modal>
       )}

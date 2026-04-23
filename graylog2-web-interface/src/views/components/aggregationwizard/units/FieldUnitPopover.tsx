@@ -88,7 +88,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string, predefined
 
     const unitName = units[predefinedUnit.unitType].find(({ abbrev }) => abbrev === predefinedUnit?.abbrev).name;
 
-    return <>Unit <b>{unitName}</b> was defined for field <b>{field}</b> by Graylog. Changing this unit might represent data incorrectly on the charts</>;
+    return <>单位 <b>{unitName}</b> 已为字段定义 <b>{field}</b> 由 Graylog 提供。更改此单位可能会导致图表上的数据展示不正确</>;
   }, [field, predefinedUnit?.abbrev, predefinedUnit?.isDefined, predefinedUnit?.unitType]);
 
   const onClear = useCallback(() => {
@@ -100,15 +100,15 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string, predefined
     <Popover position="right" opened={show} withArrow>
       <Popover.Target>
         <ButtonContainer>
-          <StyledButton bsSize="xs" onClick={toggleShow} title={`${field} unit settings`}>{badgeLabel}</StyledButton>
+          <StyledButton bsSize="xs" onClick={toggleShow} title={`${field} 单元设置`}>{badgeLabel}</StyledButton>
         </ButtonContainer>
       </Popover.Target>
-      <Popover.Dropdown title={`${field} unit settings`}>
+      <Popover.Dropdown title={`${field} 单元设置`}>
         <Container>
           <Field name={`units.${field}.unitType`}>
             {({ field: { name, value }, meta: { error } }) => (
               <Input id="metric-unit-type-field"
-                     label="Type"
+                     label="类型"
                      error={error}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9">
@@ -116,7 +116,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string, predefined
                         onChange={onUnitTypeChange}
                         name={name}
                         value={value}
-                        aria-label="Select a unit type"
+                        aria-label="选择单位类型"
                         options={unitTypesOptions}
                         size="small" />
               </Input>
@@ -126,7 +126,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string, predefined
           <Field name={`units.${field}.abbrev`}>
             {({ field: { name, value, onChange }, meta: { error } }) => (
               <Input id="metric-unit-field"
-                     label={<span>Unit <HoverForHelp displayLeftMargin>Unit which is used to format values of metric in charts</HoverForHelp></span>}
+                     label={<span>单位 <HoverForHelp displayLeftMargin>用于格式化图表中指标值的单位</HoverForHelp></span>}
                      error={error}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9">
@@ -134,7 +134,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string, predefined
                         onChange={(fieldName) => onChange({ target: { name, value: fieldName } })}
                         name={name}
                         value={value}
-                        aria-label="Select a unit"
+                        aria-label="选择单位"
                         options={unitOptions}
                         size="small" />
               </Input>
@@ -143,7 +143,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string, predefined
           )}
           {predefinedInfo && <Alert bsStyle="info">{predefinedInfo}</Alert>}
           <ModalButtonToolbar>
-            <Button bsSize="xs" onClick={onClear}>Clear</Button>
+            <Button bsSize="xs" onClick={onClear}>清除</Button>
             <Button bsSize="xs" bsStyle="success" onClick={toggleShow}>OK</Button>
           </ModalButtonToolbar>
         </Container>

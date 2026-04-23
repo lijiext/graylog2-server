@@ -69,17 +69,17 @@ const PasswordGroup = () => {
 
   return (
     <>
-      <FormikFormGroup label="New Password"
+      <FormikFormGroup label="新密码"
                        name="password"
                        type="password"
-                       help="Passwords must be at least 6 characters long. We recommend using a strong password."
+                       help="密码长度至少为 6 个字符。我们建议使用强密码。"
                        maxLength={100}
                        minLength={6}
                        autoComplete="new-password"
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9"
                        required />
-      <FormikFormGroup label="Repeat Password"
+      <FormikFormGroup label="重复密码"
                        name="password_repeat"
                        type="password"
                        minLength={6}
@@ -106,7 +106,7 @@ const PasswordSection = ({ user: { id } }: Props) => {
   }
 
   return (
-    <SectionComponent title="Password">
+    <SectionComponent title="密码">
       <Formik onSubmit={(formData) => _onSubmit(formData, id)}
               validate={_validate}
               initialValues={{}}>
@@ -114,7 +114,7 @@ const PasswordSection = ({ user: { id } }: Props) => {
           <Form className="form form-horizontal">
             <InvisibleInput readOnly id="username" autoComplete="username" type={isCloud ? 'email' : undefined} value={isCloud ? currentUser.email : currentUser.username} />
             {requiresOldPassword && (
-              <FormikFormGroup label="Old Password"
+              <FormikFormGroup label="旧密码"
                                name="old_password"
                                type="password"
                                maxLength={100}
@@ -129,9 +129,9 @@ const PasswordSection = ({ user: { id } }: Props) => {
                 <div className="pull-right">
                   <Button bsStyle="success"
                           disabled={isSubmitting || !isValid}
-                          title="Change Password"
+                          title="修改密码"
                           type="submit">
-                    Change Password
+                    修改密码
                   </Button>
                 </div>
               </Col>

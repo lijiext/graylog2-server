@@ -205,7 +205,7 @@ public class EventNotificationsResource extends RestResource implements PluginRe
         }
 
         if (!notificationId.equals(dto.id())) {
-            throw new BadRequestException("Notification IDs don't match");
+            throw new BadRequestException("通知 ID 不匹配");
         }
 
         final ValidationResult validationResult = dto.validate();
@@ -265,11 +265,11 @@ public class EventNotificationsResource extends RestResource implements PluginRe
     @Path("/{notificationId}/test")
     @ApiOperation(value = "Send a test alert for a given event notification")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Event notification not found."),
+            @ApiResponse(code = 404, message = "未找到事件通知。"),
             @ApiResponse(code = 500, message = "Error while testing event notification")
     })
     @NoAuditEvent("only used to test event notifications")
-    public Response test(@ApiParam(name = "notificationId", value = "The event notification id to send a test alert for.", required = true)
+    public Response test(@ApiParam(name = "notificationId", value = "用于发送测试告警的事件通知 ID。", required = true)
                          @PathParam("notificationId") @NotBlank String notificationId) {
         checkPermission(RestPermissions.EVENT_NOTIFICATIONS_EDIT, notificationId);
         final NotificationDto notificationDto =
@@ -286,7 +286,7 @@ public class EventNotificationsResource extends RestResource implements PluginRe
     @RequiresPermissions(RestPermissions.EVENT_NOTIFICATIONS_CREATE)
     @ApiOperation(value = "Send a test alert for a given event notification")
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Event notification is invalid."),
+            @ApiResponse(code = 400, message = "事件通知无效。"),
             @ApiResponse(code = 500, message = "Error while testing event notification")
     })
     @NoAuditEvent("only used to test event notifications")

@@ -55,7 +55,7 @@ const EditButton = ({ authenticationBackend }: { authenticationBackend: Authenti
   return (
     <LinkContainer to={link}>
       <Button bsSize="xs" type="button">
-        Edit
+        编辑
       </Button>
     </LinkContainer>
   );
@@ -92,17 +92,17 @@ const ActionsCell = ({ isActive, authenticationBackend }: { authenticationBacken
           <>
             <EditButton authenticationBackend={authenticationBackend} />
             <Button onClick={_deactivateBackend} bsStyle="warning" bsSize="xs" type="button">
-              Deactivate
+              停用
             </Button>
           </>
         ) : (
           <>
             <EditButton authenticationBackend={authenticationBackend} />
             <Button onClick={_activateBackend} bsStyle="warning" bsSize="xs" type="button">
-              Activate
+              激活
             </Button>
             <Button onClick={_deleteBackend} bsStyle="danger" bsSize="xs" type="button">
-              Delete
+              删除
             </Button>
           </>
         )}

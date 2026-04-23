@@ -47,8 +47,8 @@ const useIndexSetsList = (stats: boolean = false) : {
     () => fetchIndexSetsList(stats),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index sets with list failed with status: ${errorThrown}`,
-          'Could not load index sets list');
+        UserNotification.error(`加载索引集列表失败，状态为：${errorThrown}`,
+          '无法加载索引集列表');
       },
       keepPreviousData: true,
     },

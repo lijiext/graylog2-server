@@ -1,8 +1,7 @@
-<#if _title>Elasticsearch nodes disk usage above flood stage watermark</#if>
+<#if _title>Elasticsearch 节点磁盘使用率超过洪水阶段水位线</#if>
 
 <#if _description>
-There are Elasticsearch nodes in the cluster without free disk, their disk usage is above the flood stage watermark.
-For this reason Elasticsearch enforces a read-only index block on all indexes having any of their shards in any of the
-affected nodes. The affected nodes are: [${nodes}]
-Check here for more details:"https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html
+集群中存在没有可用磁盘空间的 Elasticsearch 节点，其磁盘使用率已超过洪水阶段水位线。
+因此，Elasticsearch 会对所有在受影响节点中拥有任意分片的索引强制实施只读索引块。受影响的节点如下：[${nodes}]
+点击此处查看详细信息："https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html
 </#if>

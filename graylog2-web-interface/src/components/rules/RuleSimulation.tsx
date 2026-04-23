@@ -159,32 +159,32 @@ const RuleSimulation = ({ rule: currentRule, onSaveMessage }: Props) => {
 
   return (
     <StyledFormGroup>
-      <ControlLabel>Rule Simulation <small className="text-muted">(Optional)</small></ControlLabel>
+      <ControlLabel>规则模拟 <small className="text-muted">(可选)</small></ControlLabel>
       <div>
         <ButtonGroup>
           <Button active={simulationFieldType === SimulationFieldType.JSON} onClick={() => handleFieldTypeChange(SimulationFieldType.JSON)}>JSON</Button>
-          <Button active={simulationFieldType === SimulationFieldType.KeyValue} onClick={() => handleFieldTypeChange(SimulationFieldType.KeyValue)}>Key Value</Button>
-          <Button active={simulationFieldType === SimulationFieldType.Simple} onClick={() => handleFieldTypeChange(SimulationFieldType.Simple)}>Simple Message</Button>
+          <Button active={simulationFieldType === SimulationFieldType.KeyValue} onClick={() => handleFieldTypeChange(SimulationFieldType.KeyValue)}>键值</Button>
+          <Button active={simulationFieldType === SimulationFieldType.Simple} onClick={() => handleFieldTypeChange(SimulationFieldType.Simple)}>简单消息</Button>
         </ButtonGroup>
         <Input id="message"
                type="textarea"
                placeholder={getPlaceHolderByType()}
                value={rawMessageToSimulate}
                onChange={handleRawMessageChange}
-               title="Simple message field, Key-Value pairs or JSON"
-               help="Enter a normal string to simulate the message field, Key-Value pairs or a JSON to simulate the whole message."
+               title="简单消息字段、键值对或 JSON"
+               help="输入普通字符串以模拟消息字段、键值对或 JSON 以模拟整条消息。"
                error={ruleErrorMessage || simulationErrorMessage}
                rows={4} />
         <Button bsStyle="info"
                 bsSize="xsmall"
                 disabled={!rawMessageToSimulate || Boolean(ruleErrorMessage)}
                 onClick={handleRunRuleSimulation}>
-          Run rule simulation
+          运行规则模拟
         </Button>
         <ResetButton bsStyle="default"
                      bsSize="xsmall"
                      onClick={handleResetRuleSimulation}>
-          Reset
+          重置
         </ResetButton>
         {rawMessageToSimulate && ruleSimulationResult && (
           <>
@@ -195,7 +195,7 @@ const RuleSimulation = ({ rule: currentRule, onSaveMessage }: Props) => {
               <>
                 {conditionsOutputKeys.length > 0 && (
                   <OutputContainer data-testid="conditions-output">
-                    <label htmlFor="simulation_conditions_output">Conditions Output</label>
+                    <label htmlFor="simulation_conditions_output">条件输出</label>
                     {conditionsOutputKeys.map((conditionsOutputKey) => (
                       <OutputText key={conditionsOutputKey}>
                         <ActionOutputIndex>{conditionsOutputKey}</ActionOutputIndex>: {JSON.stringify(ruleSimulationResult?.simulator_condition_variables[conditionsOutputKey])}
@@ -205,7 +205,7 @@ const RuleSimulation = ({ rule: currentRule, onSaveMessage }: Props) => {
                 )}
                 {ruleSimulationResult?.simulator_action_variables?.length > 0 && (
                   <OutputContainer data-testid="actions-output">
-                    <label htmlFor="simulation_actions_output">Actions Output</label>
+                    <label htmlFor="simulation_actions_output">操作输出端</label>
                     {ruleSimulationResult?.simulator_action_variables?.map((actionOutputKeyValue) => {
                       const keyValue = Object.entries(actionOutputKeyValue)[0];
 

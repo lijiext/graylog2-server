@@ -56,7 +56,7 @@ const SaveDashboardButton = ({ userIsAllowedToEdit, openSaveAsModal }: Props) =>
   });
 
   return (
-    <SaveViewButton title="Save dashboard"
+    <SaveViewButton title="保存仪表盘"
                     onClick={_onSaveView}
                     disabled={hasUndeclaredParameters || isNewView || !userIsAllowedToEdit} />
   );

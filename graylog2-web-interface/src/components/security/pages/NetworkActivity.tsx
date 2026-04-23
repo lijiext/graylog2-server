@@ -52,7 +52,7 @@ const hotspots = [
 ];
 
 const NetworkActivity = () => (
-  <DocumentTitle title="Network activity">
+  <DocumentTitle title="网络活动">
     <TeaserSearch viewJson={viewJson} searchJson={searchJson} searchJobResult={resultJson} hotspots={hotspots} />
   </DocumentTitle>
 );

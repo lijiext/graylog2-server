@@ -104,13 +104,13 @@ class MetricsComponent extends React.Component<Props, State> {
             <Alert bsStyle="danger">
               {error ? (
                 <span>
-                  Could not fetch metrics from node: server returned <em>{error.responseMessage || ''}</em>{' '}
-                  with a {error.status} status code.
+                  无法从节点获取指标：服务器返回 <em>{error.responseMessage || ''}</em>{' '}
+                  使用 {error.status} 状态码。
                 </span>
               ) : (
-                <span>There was a problem fetching node metrics.</span>
+                <span>获取节点指标时出现问题。</span>
               )}
-              {' '}Graylog will keep trying to get them in the background.
+              {' '}Graylog 将在后台继续尝试获取它们。
             </Alert>
           </Col>
         </Row>
@@ -125,16 +125,16 @@ class MetricsComponent extends React.Component<Props, State> {
           <StyledWarningDiv className="text-warning">
             {error && (
               <>
-                <Icon name="warning" />&nbsp;
-                Could not fetch metrics from node: server returned <em>{error.responseMessage || ''}</em>{' '}
-                with a {error.status} status code. Displaying last metrics available.
+                <Icon name="warning" /> 
+                无法从节点获取指标：服务器返回 <em>{error.responseMessage || ''}</em>{' '}
+                使用 {error.status} 状态码。显示最后可用的指标。
               </>
             )}
           </StyledWarningDiv>
           <SearchForm query={filter}
                       onSearch={this.onFilterChange}
                       queryWidth={300}
-                      placeholder="Type a metric name to filter&hellip;">
+                      placeholder="输入指标名称以进行过滤…">
             <MetricsListContainer>
               <MetricsList names={filteredNames} namespace={this.props.namespace} nodeId={this.props.nodeId} />
             </MetricsListContainer>

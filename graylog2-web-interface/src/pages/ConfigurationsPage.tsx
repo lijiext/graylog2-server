@@ -159,10 +159,10 @@ const ConfigurationsPage = () => {
   ].filter(({ hide }) => !hide), [currentUser?.permissions]);
 
   return (
-    <DocumentTitle title="Configurations">
-      <PageHeader title="Configurations">
+    <DocumentTitle title="配置">
+      <PageHeader title="配置">
         <span>
-          You can configure system settings for different sub systems on this page.
+          您可以在本页配置不同子系统的系统设置。
         </span>
       </PageHeader>
 

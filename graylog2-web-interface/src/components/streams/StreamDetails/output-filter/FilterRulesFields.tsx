@@ -140,14 +140,14 @@ const FilterRulesFields = ({ type }: Props) => {
         </StyledPanelBody>
       </Panel.Collapse>
       {blockToDelete && (
-      <ConfirmDialog title={`Delete ${blockToDelete.type}`}
+      <ConfirmDialog title={`删除 ${blockToDelete.type}`}
                      show
                      onConfirm={() => {
                        deleteBlock(blockToDelete.orderIndex, blockToDelete.type);
                        setBlockToDelete(null);
                      }}
                      onCancel={() => setBlockToDelete(null)}>
-        <>Are you sure you want to delete <strong>{blockToDelete.type} N° {blockToDelete.orderIndex + 1}</strong>?</>
+        <>您确定要删除 <strong>{blockToDelete.type} 编号 {blockToDelete.orderIndex + 1}</strong>?</>
       </ConfirmDialog>
       )}
       <Errors objectWithErrors={values.rule} />

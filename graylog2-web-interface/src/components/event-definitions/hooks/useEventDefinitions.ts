@@ -52,8 +52,8 @@ const useEventDefinitions = (searchParams: SearchParams, { enabled }: Options = 
     () => fetchEventDefinitions(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Event Definitions failed with status: ${errorThrown}`,
-          'Could not load Event definition');
+        UserNotification.error(`加载事件定义失败，状态为：${errorThrown}`,
+          '无法加载事件定义');
       },
       keepPreviousData: true,
       enabled,

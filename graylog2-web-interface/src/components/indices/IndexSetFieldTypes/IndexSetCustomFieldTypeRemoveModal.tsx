@@ -87,31 +87,29 @@ const IndexSetCustomFieldTypeRemoveContent = ({ fields, indexSets, setRotated, r
   return (
     <div>
       <Alert>
-        After removing the overridden field type for <b>{fieldsStr}</b> in <b>{indexSetsStr}</b>
+        移除覆盖的字段类型后，针对 <b>{fieldsStr}</b> in <b>{indexSetsStr}</b>
         {overriddenIndexFieldsStr && (
-          <>, the settings of your <i>search engine</i> will be applied for
-            fields: <b>{overriddenIndexFieldsStr}</b>
+          <>，您的设置 <i>搜索引擎</i> 将应用于以下字段： <b>{overriddenIndexFieldsStr}</b>
           </>
         )}
         {!!overriddenProfilesFieldsWithType.length && (
           <>
             {', '}
-            the settings from <Link to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(profileId)}>{profileName}</Link> (
-            namely <OverriddenProfilesFieldsWithTypeList overriddenProfilesFieldsWithType={overriddenProfilesFieldsWithType} />
+            来自以下设置 <Link to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(profileId)}>{profileName}</Link> ( 即 <OverriddenProfilesFieldsWithTypeList overriddenProfilesFieldsWithType={overriddenProfilesFieldsWithType} />
             )
             {' '}
-            will be applied.
+            将应用。
           </>
         )}
       </Alert>
-      <StyledLabel>Select Rotation Strategy</StyledLabel>
+      <StyledLabel>选择轮转策略</StyledLabel>
       <p>
-        To see and use field type changes for <b>{fieldsStr}</b>, you have to rotate indices. You can automatically rotate affected indices after submitting this form or do that manually later.
+        要查看并使用字段类型更改 <b>{fieldsStr}</b>，您必须轮转索引。您可以在提交此表单后自动轮转受影响的索引，或者稍后手动操作。
       </p>
       <Input type="checkbox"
              id="rotate"
              name="rotate"
-             label="Rotate affected indices after change"
+             label="更改后轮转受影响的索引"
              onChange={() => setRotated((cur: boolean) => !cur)}
              checked={rotated} />
     </div>
@@ -167,8 +165,8 @@ const IndexSetCustomFieldTypeRemoveModal = ({ show, fields, onClose, indexSetIds
   }, [sendTelemetry, telemetryPathName]);
 
   return (
-    <BootstrapModalForm title={<span>Remove Field Type Overrides</span>}
-                        submitButtonText="Remove field type overrides"
+    <BootstrapModalForm title={<span>移除字段类型覆盖</span>}
+                        submitButtonText="移除字段类型覆盖"
                         onSubmitForm={onSubmit}
                         onCancel={onCancel}
                         show={show}

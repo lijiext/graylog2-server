@@ -40,7 +40,7 @@ const StreamsPage = () => {
     });
 
     return StreamsStore.save(stream, () => {
-      UserNotification.success('Stream has been successfully created.', 'Success');
+      UserNotification.success('数据流已成功创建。', '成功');
     });
   };
 
@@ -55,8 +55,8 @@ const StreamsPage = () => {
   }
 
   return (
-    <DocumentTitle title="Streams">
-      <PageHeader title="Streams"
+    <DocumentTitle title="数据流">
+      <PageHeader title="数据流"
                   documentationLink={{
                     title: 'Streams documentation',
                     path: DocsHelper.PAGES.STREAMS,
@@ -69,8 +69,7 @@ const StreamsPage = () => {
                     </IfPermitted>
                   )}>
         <span>
-          You can route incoming messages into streams by applying rules against them. Messages matching
-          the rules of a stream are routed into it. A message can also be routed into multiple streams.
+          您可以通过对传入消息应用规则将其路由到数据流。匹配数据流规则的日志消息将被路由到该数据流。一条消息也可以被路由到多个数据流。
         </span>
       </PageHeader>
 

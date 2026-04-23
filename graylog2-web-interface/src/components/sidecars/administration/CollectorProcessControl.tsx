@@ -73,25 +73,23 @@ const CollectorProcessControl = ({ selectedSidecarCollectorPairs, onProcessActio
   const renderSummaryContent = (selectedSidecars: string[]) => (
     <>
       <p>
-        You are going to <strong>{selectedAction}</strong> log collectors in&nbsp;
+        您即将 <strong>{selectedAction}</strong> 日志采集器 
         <Pluralize singular="this sidecar" plural="these sidecars" value={selectedSidecars.length} />:
       </p>
       <p>{selectedSidecars.join(', ')}</p>
-      <p>Are you sure you want to proceed with this action?</p>
+      <p>您确定要继续执行此操作吗？</p>
     </>
   );
 
   const renderConfigurationWarning = () => (
-    <Panel bsStyle="info" header="Collectors without Configuration">
+    <Panel bsStyle="info" header="没有配置的采集器">
       <p>
-        At least one selected Collector is not configured yet. To start a new Collector, assign a
-        Configuration to it and the Sidecar will start the process for you.
+        至少有一个选定的采集器尚未配置。要启动新的采集器，请为其分配一个配置，Sidecar 将为您启动该进程。
       </p>
       <p>
-        {capitalize(selectedAction)}ing a Collector without Configuration will have no effect.
+        {capitalize(selectedAction)}配置采集器将不会产生任何效果。
       </p>
-      <Button bsSize="xsmall" bsStyle="primary" onClick={hideConfigurationWarning}>Understood, continue
-        anyway
+      <Button bsSize="xsmall" bsStyle="primary" onClick={hideConfigurationWarning}>明白了，仍继续
       </Button>
     </Panel>
   );
@@ -106,7 +104,7 @@ const CollectorProcessControl = ({ selectedSidecarCollectorPairs, onProcessActio
 
     return (
       <BootstrapModalConfirm showModal={showModal}
-                             title="Process action summary"
+                             title="操作摘要"
                              confirmButtonDisabled={shouldShowConfigurationWarning}
                              onConfirm={confirmProcessAction}
                              onCancel={cancelProcessAction}>
@@ -124,9 +122,9 @@ const CollectorProcessControl = ({ selectedSidecarCollectorPairs, onProcessActio
   return (
     <span>
       <SelectPopover id="process-management-action"
-                     title="Manage collector processes"
+                     title="管理采集器进程"
                      triggerNode={(
-                       <Button bsStyle="primary" bsSize="small">Process</Button>
+                       <Button bsStyle="primary" bsSize="small">处理</Button>
                      )}
                      items={PROCESS_ACTIONS}
                      itemFormatter={actionFormatter}

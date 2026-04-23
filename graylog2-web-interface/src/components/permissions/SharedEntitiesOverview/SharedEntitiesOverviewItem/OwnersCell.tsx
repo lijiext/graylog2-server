@@ -56,7 +56,7 @@ const OwnerTitle = ({ owner: { type, id, title } }: OwnerTitleProps) => {
 
       return <TitleWithLink entityId={id} title={title} />;
     case 'global':
-      return <span>Everyone</span>;
+      return <span>所有人</span>;
     default:
       return assertUnreachable(type);
   }

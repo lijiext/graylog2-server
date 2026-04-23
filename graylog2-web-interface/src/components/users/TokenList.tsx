@@ -93,22 +93,22 @@ const TokenList = ({ creatingToken, deletingToken, onCreate, onDelete, tokens }:
       {createdToken && (
         <StyledTokenPanel bsStyle="success">
           <Panel.Heading>
-            <Panel.Title>Token <em>{createdToken.name}</em> created!</Panel.Title>
+            <Panel.Title>Token <em>{createdToken.name}</em> 已创建！</Panel.Title>
           </Panel.Heading>
           <Panel.Body>
-            <p>This is your new token. Make sure to copy it now, you will not be able to see it again.</p>
+            <p>这是您的新令牌。请确保现在将其复制，您将无法再次看到它。</p>
             <pre>
               {createdToken.token}
               <StyledCopyTokenButton title={<Icon name="content_copy" />} text={createdToken.token} bsSize="xsmall" />
             </pre>
-            <Button bsStyle="primary" onClick={() => setCreatedToken(undefined)}>Done</Button>
+            <Button bsStyle="primary" onClick={() => setCreatedToken(undefined)}>完成</Button>
           </Panel.Body>
         </StyledTokenPanel>
       )}
       <hr />
       <StyledSearchForm onSearch={updateQuery}
                         onReset={updateQuery}
-                        label="Filter"
+                        label="过滤器"
                         useLoadingState={false} />
 
       <ControlledTableList>
@@ -127,7 +127,7 @@ const TokenList = ({ creatingToken, deletingToken, onCreate, onDelete, tokens }:
                 <Col md={9}>
                   {token.name}
                   <StyledLastAccess>
-                    {tokenNeverUsed ? 'Never used' : <>Last used <RelativeTime dateTime={token.last_access} /></>}
+                    {tokenNeverUsed ? 'Never used' : <>上次使用 <RelativeTime dateTime={token.last_access} /></>}
                   </StyledLastAccess>
                 </Col>
                 <Col md={3} className="text-right">

@@ -123,11 +123,11 @@ public class IndexSetsResource extends RestResource {
     @ApiResponses(value = {
             @ApiResponse(code = 403, message = "Unauthorized"),
     })
-    public IndexSetResponse list(@ApiParam(name = "skip", value = "The number of elements to skip (offset).", required = true)
+    public IndexSetResponse list(@ApiParam(name = "skip", value = "要跳过的元素数量（偏移量）。", required = true)
                                  @QueryParam("skip") @DefaultValue("0") int skip,
-                                 @ApiParam(name = "limit", value = "The maximum number of elements to return.", required = true)
+                                 @ApiParam(name = "limit", value = "返回的最大元素数量。", required = true)
                                  @QueryParam("limit") @DefaultValue("0") int limit,
-                                 @ApiParam(name = "stats", value = "Include index set stats.")
+                                 @ApiParam(name = "stats", value = "包含索引集统计信息。")
                                  @QueryParam("stats") @DefaultValue("false") boolean computeStats) {
 
         final IndexSetConfig defaultIndexSet = indexSetService.getDefault();
@@ -146,13 +146,13 @@ public class IndexSetsResource extends RestResource {
     @ApiResponses(value = {
             @ApiResponse(code = 403, message = "Unauthorized"),
     })
-    public IndexSetResponse search(@ApiParam(name = "searchTitle", value = "The number of elements to skip (offset).")
+    public IndexSetResponse search(@ApiParam(name = "searchTitle", value = "要跳过的元素数量（偏移量）。")
                                    @QueryParam("searchTitle") String searchTitle,
-                                   @ApiParam(name = "skip", value = "The number of elements to skip (offset).", required = true)
+                                   @ApiParam(name = "skip", value = "要跳过的元素数量（偏移量）。", required = true)
                                    @QueryParam("skip") @DefaultValue("0") int skip,
-                                   @ApiParam(name = "limit", value = "The maximum number of elements to return.", required = true)
+                                   @ApiParam(name = "limit", value = "返回的最大元素数量。", required = true)
                                    @QueryParam("limit") @DefaultValue("0") int limit,
-                                   @ApiParam(name = "stats", value = "Include index set stats.")
+                                   @ApiParam(name = "stats", value = "包含索引集统计信息。")
                                    @QueryParam("stats") @DefaultValue("false") boolean computeStats) {
         final IndexSetConfig defaultIndexSet = indexSetService.getDefault();
         List<IndexSetConfig> allowedConfigurations = indexSetService.searchByTitle(searchTitle).stream()

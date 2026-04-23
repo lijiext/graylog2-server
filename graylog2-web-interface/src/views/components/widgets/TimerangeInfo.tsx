@@ -71,9 +71,9 @@ const TimerangeInfo = ({ className, widget, activeQuery, widgetId, returnsAllRec
   if (returnsAllRecords) {
     return (
       <Wrapper className={className}>
-        <StyledIcon name="warning" title="The result of this widget is independent of the current search." />
+        <StyledIcon name="warning" title="此小部件的结果与当前搜索无关。" />
         <TextOverflowEllipsis titleOverride={effectiveTimerangeString}>
-          All Time
+          所有时间
         </TextOverflowEllipsis>
       </Wrapper>
     );

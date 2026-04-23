@@ -48,10 +48,10 @@ const RuleListEntry = ({ rule, onDelete, usingPipelines }: Props) => {
   const actions = (
     <ButtonToolbar>
       <LinkContainer to={`${Routes.SYSTEM.PIPELINES.RULE(id)}${isRuleBuilder}`}>
-        <Button bsSize="xsmall">Edit</Button>
+        <Button bsSize="xsmall">编辑</Button>
       </LinkContainer>
-      <Button bsStyle="danger" bsSize="xsmall" onClick={onDelete(rule)} title="Delete rule">
-        Delete
+      <Button bsStyle="danger" bsSize="xsmall" onClick={onDelete(rule)} title="删除规则">
+        删除
       </Button>
     </ButtonToolbar>
   );

@@ -1,8 +1,8 @@
-<#if _title>Remote Reindex Migration has finished</#if>
+<#if _title>远程重新索引迁移已完成</#if>
 
 <#if _description><span>
-    Remote reindexing your existing data into the Graylog data node has finished <#if status == 'FINISHED'>sucessfully<#else>with errors</#if>.<br />
+    将现有数据远程重新索引到 Graylog 数据节点的操作已完成<#if status == 'FINISHED'>成功<#else>出现错误</#if>。<br />
     <#if DATA_NODE_MIGRATION_WIZARD?has_content>
-        Please visit the <a href="${DATA_NODE_MIGRATION_WIZARD}" target="_blank" rel="noreferrer">data node migration wizard</a> to finalize the migration.
+        请访问<a href="${DATA_NODE_MIGRATION_WIZARD}" target="_blank" rel="noreferrer">数据节点迁移向导</a>以完成迁移。
     </#if>
     </#if>

@@ -43,8 +43,8 @@ const ShareButton = ({ bsStyle, bsSize, entityId, entityType, onClick, disabledI
               bsSize={bsSize}
               onClick={onClick}
               disabled={!!disabledInfo || hasMissingPermissions}
-              title="Share">
-        <Icon name="person_add" /> Share {(!!disabledInfo || hasMissingPermissions) && <SharingDisabledPopover type={entityType} description={disabledInfo} />}
+              title="共享">
+        <Icon name="person_add" /> 共享 {(!!disabledInfo || hasMissingPermissions) && <SharingDisabledPopover type={entityType} description={disabledInfo} />}
       </Button>
     )}
   </HasOwnership>

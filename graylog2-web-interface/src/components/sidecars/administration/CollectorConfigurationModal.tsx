@@ -189,8 +189,8 @@ const CollectorConfigurationModal = ({
                   }
                 }}>
         <IconTableCell>
-          {selected && <Icon name="check" title={`${configName} is selected`} />}
-          {partiallySelected && <Icon type="regular" name="radio_button_partial" title={`${configName} is selected`} />}
+          {selected && <Icon name="check" title={`${configName} 已选中`} />}
+          {partiallySelected && <Icon type="regular" name="radio_button_partial" title={`${configName} 已选中`} />}
         </IconTableCell>
         <IconTableCell><ColorLabel color={configuration.color} size="xsmall" /></IconTableCell>
         <ConfigurationTableCell>
@@ -200,17 +200,17 @@ const CollectorConfigurationModal = ({
           </SecondaryText>
         </ConfigurationTableCell>
         <IconTableCell>
-          {isAssignedFromTags && <Icon name="lock" title={`Assigned from tags: ${autoAssignedTags.join(', ')}`} />}
+          {isAssignedFromTags && <Icon name="lock" title={`分配自标签：${autoAssignedTags.join(', ')}`} />}
         </IconTableCell>
         <CollectorTableCell>
           <small>
             {collector
               ? <CollectorIndicator collector={collector.name} operatingSystem={collector.node_operating_system} />
-              : <em>Unknown collector</em>}
+              : <em>未知的采集器</em>}
           </small>
         </CollectorTableCell>
         <UnselectTableCell>{(selected || partiallySelected) && !isAssignedFromTags
-          && <Icon name="close" title={`Remove ${configName}`} />}
+          && <Icon name="close" title={`移除 ${configName}`} />}
         </UnselectTableCell>
       </TableRow>
     );
@@ -221,7 +221,7 @@ const CollectorConfigurationModal = ({
                            onHide={onCancel}>
       <Modal.Header>
         <ModalTitle>
-          Edit <b>{selectedCollectorName}</b> Configurations
+          编辑 <b>{selectedCollectorName}</b> 配置
           <ModalSubTitle>
             <small>
               {`${selectedSidecarNames.length} sidecar${selectedSidecarNames.length > 1 ? 's' : ''}: `}
@@ -236,8 +236,7 @@ const CollectorConfigurationModal = ({
                           topMargin={0} />
         {(rows.length > 0) && (
           <InfoContainer bsStyle="info">
-            Collector configurations that have a lock icon &nbsp;<Icon name="lock" size="xs" />&nbsp; have been assigned
-            using tags and cannot be changed here.
+            带有锁定图标的采集器配置  <Icon name="lock" size="xs" />  已通过标签分配，无法在此处更改。
           </InfoContainer>
         )}
         <ConfigurationContainer>
@@ -246,8 +245,7 @@ const CollectorConfigurationModal = ({
               {(rows.length === 0) ? (
                 <TableRow>
                   <td colSpan={6}>
-                    <NoConfigurationMessage>No configurations available for the selected log
-                      collector.
+                    <NoConfigurationMessage>未找到所选日志采集器的配置。
                     </NoConfigurationMessage>
                   </td>
                 </TableRow>
@@ -257,8 +255,7 @@ const CollectorConfigurationModal = ({
               <StickyTableRowFooter>
                 <td colSpan={6}>
                   <AddNewConfiguration>
-                    <Link to={Routes.SYSTEM.SIDECARS.NEW_CONFIGURATION}><Icon name="add" />&nbsp;Add a new
-                      configuration
+                    <Link to={Routes.SYSTEM.SIDECARS.NEW_CONFIGURATION}><Icon name="add" /> 添加新配置
                     </Link>
                   </AddNewConfiguration>
                 </td>
@@ -268,11 +265,11 @@ const CollectorConfigurationModal = ({
         </ConfigurationContainer>
       </Modal.Body>
       <Modal.Footer>
-        <ModalSubmit submitButtonText="Save"
+        <ModalSubmit submitButtonText="保存"
                      disabledSubmit={isNotDirty}
                      onSubmit={() => onSave(selectedConfigurations, partiallySelectedConfigurations)}
                      onCancel={onCancel}
-                     leftCol={<Button type="button" onClick={onReset}>Reset</Button>} />
+                     leftCol={<Button type="button" onClick={onReset}>重置</Button>} />
       </Modal.Footer>
     </BootstrapModalWrapper>
   );

@@ -68,9 +68,9 @@ const RecentActivityList = () => {
   if (recentActivity.length === 0) {
     return (
       <NoSearchResult>
-        There is no recent activity yet.
+        暂无最近活动。
         <p>
-          Whenever any other user will update content you have access to, or share new content with you, it will show up here.
+          当任何其他用户更新您有权访问的内容或与您共享新内容时，它都将显示在此处。
         </p>
       </NoSearchResult>
     );

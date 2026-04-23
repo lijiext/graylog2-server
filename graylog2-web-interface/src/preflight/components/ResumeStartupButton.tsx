@@ -46,8 +46,8 @@ const ResumeStartupButton = ({ setIsWaitingForStartup, children, variant, compac
         .catch((error) => {
           setIsWaitingForStartup(false);
 
-          UserNotification.error(`Resuming startup failed with error: ${error}`,
-            'Could not resume startup');
+          UserNotification.error(`恢复启动失败，错误：${error}`,
+            '无法恢复启动');
         });
     }
   }, [dataNodes?.length, setIsWaitingForStartup]);

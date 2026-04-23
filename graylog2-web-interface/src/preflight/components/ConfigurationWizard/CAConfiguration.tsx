@@ -30,16 +30,16 @@ const StyledTabs = styled(Tabs)(({ theme }) => css`
 
 const CAConfiguration = () => (
   <>
-    <Title order={3}>Configure Certificate Authority</Title>
+    <Title order={3}>配置证书颁发机构</Title>
     <p>
-      In this first step you can either upload or create a new certificate authority.<br />
-      Using it we can provision your data nodes with certificates easily.
+      在此第一步中，您可以上传或创建新的证书颁发机构。<br />
+      使用它我们可以轻松地为您的数据节点配置证书。
     </p>
     <Space h="md" />
     <StyledTabs defaultValue="create">
       <Tabs.List>
-        <Tabs.Tab value="create">Create new CA</Tabs.Tab>
-        <Tabs.Tab value="upload">Upload CA</Tabs.Tab>
+        <Tabs.Tab value="create">创建新的 CA</Tabs.Tab>
+        <Tabs.Tab value="upload">上传 CA</Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="upload" pt="xs">

@@ -28,8 +28,8 @@ const _onRecalculateAllIndexRange = () => {
 
 const AllIndicesMaintenanceDropdown = () => (
   <ButtonGroup>
-    <DropdownButton bsStyle="info" title="Maintenance" id="indices-maintenance-actions" pullRight>
-      <MenuItem eventKey="1" onClick={_onRecalculateAllIndexRange}>Cleanup & recalculate all index ranges</MenuItem>
+    <DropdownButton bsStyle="info" title="维护" id="indices-maintenance-actions" pullRight>
+      <MenuItem eventKey="1" onClick={_onRecalculateAllIndexRange}>清理并重新计算所有索引范围</MenuItem>
     </DropdownButton>
   </ButtonGroup>
 );

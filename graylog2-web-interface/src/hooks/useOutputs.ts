@@ -50,8 +50,8 @@ const useOutputs = ({ enabled }: Options = { enabled: true }): {
     () => fetchOutputs(),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading outputs failed with status: ${errorThrown}`,
-          'Could not load outputs');
+        UserNotification.error(`加载输出失败，状态为：${errorThrown}`,
+          '无法加载输出端');
       },
       keepPreviousData: true,
       enabled,

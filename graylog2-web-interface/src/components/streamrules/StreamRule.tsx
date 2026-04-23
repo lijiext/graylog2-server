@@ -72,7 +72,7 @@ const StreamRule = ({ matchData, stream, streamRule, onSubmit, onDelete }: Props
           onDelete(streamRule.id);
         }
 
-        UserNotification.success('Stream rule has been successfully deleted.', 'Success');
+        UserNotification.success('流规则已成功删除。', '成功');
       });
     }
   };
@@ -82,7 +82,7 @@ const StreamRule = ({ matchData, stream, streamRule, onSubmit, onDelete }: Props
       onSubmit(streamRuleId, data);
     }
 
-    UserNotification.success('Stream rule has been successfully updated.', 'Success');
+    UserNotification.success('流规则已成功更新。', '成功');
   });
 
   const _formatActionItems = () => (
@@ -90,13 +90,13 @@ const StreamRule = ({ matchData, stream, streamRule, onSubmit, onDelete }: Props
       <Button bsStyle="link"
               bsSize="xsmall"
               onClick={_onDelete}
-              title="Delete stream rule">
+              title="删除数据流规则">
         <Icon name="delete" type="regular" />
       </Button>
       <Button bsStyle="link"
               bsSize="xsmall"
               onClick={_onEdit}
-              title="Edit stream rule">
+              title="编辑数据流规则">
         <Icon name="edit_square" />
       </Button>
     </ActionButtonsWrap>
@@ -114,9 +114,9 @@ const StreamRule = ({ matchData, stream, streamRule, onSubmit, onDelete }: Props
       {showStreamRuleForm && (
         <StreamRuleModal initialValues={streamRule}
                          onClose={() => setShowStreamRuleForm(false)}
-                         title="Edit Stream Rule"
-                         submitButtonText="Update Rule"
-                         submitLoadingText="Updating Rule..."
+                         title="编辑数据流规则"
+                         submitButtonText="更新规则"
+                         submitLoadingText="正在更新规则..."
                          onSubmit={_onSubmit} />
       )}
       {description}

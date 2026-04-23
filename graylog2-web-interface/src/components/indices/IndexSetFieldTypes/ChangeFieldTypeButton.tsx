@@ -31,7 +31,7 @@ const ChangeFieldTypeButton = ({ indexSetId }: Props) => {
 
   return (
     <>
-      <Button bsStyle="success" onClick={toggleModal}>Change field type</Button>
+      <Button bsStyle="success" onClick={toggleModal}>更改字段类型</Button>
       {showModal && (
         <ChangeFieldTypeModal initialSelectedIndexSets={[indexSetId]}
                               onClose={toggleModal}

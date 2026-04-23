@@ -56,27 +56,24 @@ const UnknownWidget: React.ComponentType<WidgetComponentProps & EditWidgetCompon
     </IconContainer>
     <Description>
       <Row>
-        <strong>Unknown Widget: {type}</strong>
+        <strong>未知的小部件： {type}</strong>
       </Row>
       <Row>
-        Unfortunately we are not able to render this widget, because we do not know how to handle widgets of
-        type <strong>{type}</strong>. This might be caused by one of these situations:
+        很遗憾，我们无法渲染此小部件，因为我们不知道如何处理类型为 <strong>{type}</strong>。这可能是由以下情况之一引起的：
       </Row>
 
       <Row>
         <OrderedList>
-          <li>You created this widget using a plugin that is now missing.</li>
-          <li>This widget was part of a legacy dashboard and created by a plugin that is not available anymore.</li>
+          <li>您使用一个现已缺失的插件创建了此小部件。</li>
+          <li>此小部件属于旧版仪表盘，由不再可用的插件创建。</li>
         </OrderedList>
       </Row>
 
       <Row>
-        What can you do about it? You can load the plugin again, contact the original plugin author for a plugin that
-        works with Graylog 3.2+, or remove the widget if you do not need it anymore.
+        您能做什么？您可以重新加载插件，联系原始插件作者以获取适用于 Graylog 3.2+ 的插件，或者如果您不再需要该小部件，请将其移除。
       </Row>
       <Row>
-        Either way, you can copy the widget&rsquo;s config to the
-        clipboard: <ClipboardButton title={<Icon name="content_copy" size="sm" />} text={JSON.stringify(config, null, 2)} bsSize="xsmall" />
+        无论哪种方式，您都可以将小部件的配置复制到剪贴板： <ClipboardButton title={<Icon name="content_copy" size="sm" />} text={JSON.stringify(config, null, 2)} bsSize="xsmall" />
       </Row>
     </Description>
   </Container>

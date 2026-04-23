@@ -1,9 +1,9 @@
 <#if _title>
-    Certificate renewal necessary
+    证书需要续期
 </#if>
 
 <#if _description>
     <span>
-        Some of your certificates need renewal, the affected nodes are: [${nodes}]
+        您的部分证书需要续期，受影响的节点为：[${nodes}]
     </span>
 </#if>

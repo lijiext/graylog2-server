@@ -41,11 +41,11 @@ const createRule = async (rule: RuleBuilderRule) => {
       rule,
     );
 
-    UserNotification.success(`Rule "${rule.title}" created successfully`);
+    UserNotification.success(`规则 "${rule.title}" 创建成功`);
 
     return result;
   } catch (errorThrown) {
-    UserNotification.error(`Creating the Rule Builder Rule failed with status: ${errorThrown}`, 'Could not Create the Rule Builder Rule.');
+    UserNotification.error(`创建规则构建器规则失败，状态为：${errorThrown}`, '无法创建规则构建器规则。');
 
     return null;
   }
@@ -62,9 +62,9 @@ const updateRule = async (rule: RuleBuilderRule) => {
       ruleToUpdate,
     );
 
-    UserNotification.success(`Rule "${rule.title}" updated successfully`);
+    UserNotification.success(`规则 "${rule.title}" 更新成功`);
   } catch (errorThrown) {
-    UserNotification.error(`Updating the Rule Builder Rule failed with status: ${errorThrown}`, 'Could not Update the Rule Builder Rule.');
+    UserNotification.error(`更新规则构建器规则失败，状态为：${errorThrown}`, '无法更新规则构建器规则。');
   }
 };
 
@@ -93,8 +93,8 @@ const useRuleBuilder = () => {
     {
       enabled,
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Rule Builder Rule failed with status: ${errorThrown}`,
-          'Could not load Rule Builder Rule.');
+        UserNotification.error(`加载规则构建器规则失败，状态为：${errorThrown}`,
+          '无法加载规则构建器规则。');
       },
     },
   );
@@ -103,8 +103,8 @@ const useRuleBuilder = () => {
     fetchConditionsDict,
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Rule Builder Conditions list failed with status: ${errorThrown}`,
-          'Could not load Rule Builder Conditions list.');
+        UserNotification.error(`加载规则构建器条件列表失败，状态为：${errorThrown}`,
+          '无法加载规则构建器条件列表。');
       },
       keepPreviousData: true,
     },
@@ -114,8 +114,8 @@ const useRuleBuilder = () => {
     fetchActionsDict,
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Rule Builder Actions list failed with status: ${errorThrown}`,
-          'Could not load Rule Builder Actions list.');
+        UserNotification.error(`加载规则构建器操作列表失败，状态为：${errorThrown}`,
+          '无法加载规则构建器动作列表。');
       },
       keepPreviousData: true,
     },

@@ -102,7 +102,7 @@ const UsersSelectField = ({ value, onChange }: Props) => {
   return (
     <PaginatedSelect id="user-select-list"
                      value={value}
-                     placeholder="Select user(s)..."
+                     placeholder="选择用户..."
                      options={formatUsers(list.toArray())}
                      onInputChange={handleSearch}
                      loadOptions={isNextPageLoading || isSearching ? () => {} : loadMoreOptions}

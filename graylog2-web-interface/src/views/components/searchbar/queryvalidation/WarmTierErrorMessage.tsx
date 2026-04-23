@@ -56,7 +56,7 @@ const WarmTierErrorMessage = ({ warmTierIndices } : Props) => {
 
   return (
     <span>
-      The selected time range includes data stored in the Warm Tier, which can be slow to retrieve. Data older than the listed timestamp falls within the Warm Tier for that stream:<br />
+      所选时间范围包含存储在温层中的数据，检索速度可能较慢。早于所列时间戳的数据属于该数据流的温层：<br />
       {streamsWithTimestampMap.map((streamWithTimestamp) => (
         <><strong>{streamWithTimestamp.name}:</strong> {formatTimestamp(streamWithTimestamp.timestamp)}<br /></>
       ))}

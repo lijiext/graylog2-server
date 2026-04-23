@@ -24,13 +24,13 @@ const SystemOutputsPage = () => {
   const currentUser = useCurrentUser();
 
   return (
-    <DocumentTitle title="Outputs">
+    <DocumentTitle title="输出端">
       <span>
-        <PageHeader title="Outputs in Cluster">
+        <PageHeader title="集群中的输出端">
           <span>
-            Graylog nodes can forward messages via outputs. Launch or terminate as many outputs as you want here{' '}
-            <strong>and then assign them to streams to forward all messages of a stream in real-time.</strong><br />
-            You can find output plugins in <a href="https://marketplace.graylog.org/" target="_blank" rel="noreferrer">the Graylog Marketplace</a>.
+            Graylog 节点可通过输出端转发消息。在此处可启动或终止任意数量的输出端{' '}
+            <strong>然后将其分配给数据流，以实时转发该数据流的所有消息。</strong><br />
+            您可以在 中找到输出插件 <a href="https://marketplace.graylog.org/" target="_blank" rel="noreferrer">Graylog 应用市场</a>.
           </span>
         </PageHeader>
 

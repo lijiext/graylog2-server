@@ -76,7 +76,7 @@ public class IndexSetsMappingResource extends RestResource {
     @Path("/{index_set_id}")
     @Timed
     @NoAuditEvent("No change to the DB")
-    @ApiOperation(value = "Gets list of field_name-field_type pairs for given index set, paginated")
+    @ApiOperation(value = "获取给定索引集的 field_name-field_type 对列表（分页）")
     public PageListResponse<IndexSetFieldType> indexSetFieldTypesList(@ApiParam(name = "index_set_id") @PathParam("index_set_id") String indexSetId,
                                                                       @ApiParam(name = "query") @QueryParam("query") @DefaultValue("") String query,
                                                                       @ApiParam(name = "filters") @QueryParam("filters") List<String> filters,
@@ -104,7 +104,7 @@ public class IndexSetsMappingResource extends RestResource {
     @Path("/{index_set_id}/all")
     @Timed
     @NoAuditEvent("No change to the DB")
-    @ApiOperation(value = "Gets list of all field_name-field_type pairs for given index set")
+    @ApiOperation(value = "获取给定索引集的所有 field_name-field_type 对列表")
     public List<IndexSetFieldType> indexSetFieldTypesList(@ApiParam(name = "index_set_id") @PathParam("index_set_id") String indexSetId,
                                                           @ApiParam(name = "fieldNameQuery") @QueryParam("fieldNameQuery") @DefaultValue("") String fieldNameQuery,
                                                           @ApiParam(name = "filters") @QueryParam("filters") List<String> filters,

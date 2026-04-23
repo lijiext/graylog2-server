@@ -39,8 +39,8 @@ const ScrollContainer = styled.div`
 `;
 const queryExample = (
   <p>
-    Searching without a field name matches against the <code>title</code> field:<br />
-    <kbd>geoip</kbd> <br />is the same as<br />
+    未指定字段名时，搜索将匹配 <code>title</code> 字段：<br />
+    <kbd>geoip</kbd> <br />与...相同<br />
     <kbd>title:geoip</kbd>
   </p>
 );
@@ -97,8 +97,8 @@ const NoResults = ({ query }: { query: string }) => (
     <tr>
       <td colSpan={6}>
         {query
-          ? <NoSearchResult>No tables found with title &quot;{query}&quot;</NoSearchResult>
-          : <NoEntitiesExist>There are no data adapters to list</NoEntitiesExist>}
+          ? <NoSearchResult>未找到标题为"的表{query}&quot;</NoSearchResult>
+          : <NoEntitiesExist>没有要列出的数据适配器</NoEntitiesExist>}
       </td>
     </tr>
   </tbody>
@@ -184,7 +184,7 @@ const LookupTablesOverview = ({
     <Row className="content">
       <Col md={12}>
         <h2 style={{ marginBottom: 16 }}>
-          Configured lookup tables <small>{pagination.total} total</small>
+          已配置的查找表 <small>{pagination.total} total</small>
         </h2>
         <PaginatedList activePage={localPagination.currentPage}
                        pageSize={localPagination.currentPageSize}
@@ -195,12 +195,12 @@ const LookupTablesOverview = ({
             <Table condensed hover className={Styles.overviewTable}>
               <thead>
                 <tr>
-                  <th className={Styles.rowTitle}>Title</th>
-                  <th className={Styles.rowDescription}>Description</th>
-                  <th className={Styles.rowName}>Name</th>
-                  <th className={Styles.rowCache}>Cache</th>
-                  <th className={Styles.rowAdapter}>Data Adapter</th>
-                  <th className={Styles.rowActions}>Actions</th>
+                  <th className={Styles.rowTitle}>标题</th>
+                  <th className={Styles.rowDescription}>描述</th>
+                  <th className={Styles.rowName}>名称</th>
+                  <th className={Styles.rowCache}>缓存</th>
+                  <th className={Styles.rowAdapter}>数据适配器</th>
+                  <th className={Styles.rowActions}>操作</th>
                 </tr>
               </thead>
               {loading ? <Spinner text="Loading data adapters" /> : (

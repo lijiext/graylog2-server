@@ -29,7 +29,7 @@ const useIndexSetTemplateDefaults = () => {
     fetchIndexSetTemplateDefaults,
     {
       onError: (fetchError: Error) => {
-        UserNotification.error(`Error fetching index default template: ${fetchError.message}`);
+        UserNotification.error(`获取索引默认模板时出错：${fetchError.message}`);
       },
       retry: 1,
     },

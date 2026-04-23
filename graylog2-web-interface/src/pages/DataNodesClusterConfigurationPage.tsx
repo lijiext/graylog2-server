@@ -23,15 +23,15 @@ import DataNodeConfiguration from 'components/datanode/DataNodeConfiguration/Dat
 import DataNodesPageNavigation from 'components/datanode/DataNodePageNavigation';
 
 const DataNodesClusterConfigurationPage = () => (
-  <DocumentTitle title="Data Nodes Cluster Configuration">
+  <DocumentTitle title="数据节点集群配置">
     <DataNodesPageNavigation />
-    <PageHeader title="Data Nodes Cluster Configuration"
+    <PageHeader title="数据节点集群配置"
                 documentationLink={{
                   title: 'Data Nodes documentation',
                   path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
                 }}>
       <span>
-        Graylog Data Nodes offer a better integration with Graylog and simplify future updates. They allow you to index and search through all the messages in your Graylog message database.
+        Graylog 数据节点与 Graylog 集成更紧密，可简化未来更新。它们允许您在 Graylog 消息数据库中索引和搜索所有消息。
       </span>
     </PageHeader>
     <Row className="content">

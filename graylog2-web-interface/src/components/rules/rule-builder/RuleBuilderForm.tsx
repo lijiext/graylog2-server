@@ -42,21 +42,21 @@ const RuleBuilderForm = ({ rule, onChange }: Props) => {
         <Col xs={6}>
           <Input type="text"
                  id="title"
-                 label="Title"
+                 label="标题"
                  value={rule.title}
                  onChange={handleTitleChange}
                  autoFocus
                  required
-                 help="Rule title." />
+                 help="规则标题。" />
         </Col>
         <Col xs={6}>
           <Input type="textarea"
                  id="description"
-                 label="Description"
+                 label="描述"
                  value={rule.description}
                  onChange={handleDescriptionChange}
                  rows={1}
-                 help="Rule description (optional)." />
+                 help="规则描述（可选）。" />
         </Col>
       </Row>
 

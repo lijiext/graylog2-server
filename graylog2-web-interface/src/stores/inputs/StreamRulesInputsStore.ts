@@ -73,8 +73,8 @@ export const StreamRulesInputsStore = singletonStore(
             return this.inputs;
           },
           (error) => {
-            UserNotification.error(`Fetching Stream Rule Inputs List failed with status: ${error}`,
-              'Could not retrieve Stream Rule Inputs');
+            UserNotification.error(`获取数据流规则输入列表失败，状态：${error}`,
+              '无法检索数据流规则输入端');
           },
         );
 

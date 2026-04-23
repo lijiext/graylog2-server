@@ -67,11 +67,11 @@ const IndexerClusterHealthSummary = ({ health, name }: {
   return (
     <ESClusterStatus bsStyle={alertClassForHealth()}>
       {formattedTextForHealth}{' '}
-      Shards:{' '}
-      {health.shards.active} active,{' '}
-      {health.shards.initializing} initializing,{' '}
-      {health.shards.relocating} relocating,{' '}
-      {health.shards.unassigned} unassigned,{' '}
+      分片:{' '}
+      {health.shards.active} 活动，{' '}
+      {health.shards.initializing} 正在初始化，{' '}
+      {health.shards.relocating} 正在迁移，{' '}
+      {health.shards.unassigned} 未分配，{' '}
       <DocumentationLink page={DocsHelper.PAGES.CLUSTER_STATUS_EXPLAINED} text="What does this mean?" />
     </ESClusterStatus>
   );

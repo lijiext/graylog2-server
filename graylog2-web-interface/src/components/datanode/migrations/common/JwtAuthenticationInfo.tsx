@@ -33,16 +33,14 @@ export const StyledPanel = styled(Panel)<{ bsStyle: string }>(({ bsStyle = 'defa
 const JwtAuthenticationInfo = () => (
   <StyledPanel bsStyle="info">
     <Panel.Heading>
-      <Panel.Title componentClass="h3">JWT authentication</Panel.Title>
+      <Panel.Title componentClass="h3">JWT 认证</Panel.Title>
     </Panel.Heading>
     <Panel.Body>
       <p>
-        Depending on how you secured your existing cluster, some preliminary changes are needed to the security configuration.
-        We use JWT authentication to access OpenSearch from Graylog. In the next step, you have to manually enable JWT authentication
-        in your existing OpenSearch cluster to make sure the data can be accessed in the data node.
+        根据您现有集群的安全设置方式，需要对安全配置进行一些初步更改。我们使用 JWT 认证从 Graylog 访问 OpenSearch。在下一步中，您必须在现有 OpenSearch 集群中手动启用 JWT 认证，以确保可以在数据节点中访问数据。
       </p>
       <p>
-        To do this, you should add the following snippet to your <code>opensearch-security/config.yml</code>
+        为此，您应将以下代码段添加到您的 <code>opensearch-security/config.yml</code>
       </p>
       <pre>
         {`jwt_auth_domain:
@@ -63,7 +61,7 @@ const JwtAuthenticationInfo = () => (
             type: noop`}
       </pre>
       <p>
-        Please replace the signing key with your <code>GRAYLOG_PASSWORD_SECRET</code> in base64 encoding. To encode it, you can run
+        请用您的 <code>GRAYLOG_PASSWORD_SECRET</code> 以 base64 编码。要对其进行编码，您可以运行
       </p>
       <pre>echo &quot;YOUR SECRET&quot; | base64</pre>
     </Panel.Body>

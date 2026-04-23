@@ -173,7 +173,7 @@ const DashboardSearchBar = () => {
                                       <QueryInput value={value}
                                                   view={view}
                                                   timeRange={values?.timerange}
-                                                  placeholder="Apply filter to all widgets"
+                                                  placeholder="将过滤器应用于所有小部件"
                                                   name={name}
                                                   onChange={onChange}
                                                   disableExecution={disableSearchSubmit}

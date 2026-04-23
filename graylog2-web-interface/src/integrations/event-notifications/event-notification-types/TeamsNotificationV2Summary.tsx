@@ -29,15 +29,15 @@ function TeamsNotificationSummary({ notification, ...restProps }: TeamsNotificat
       </tr>
 
       <tr>
-        <td>Adaptive Card Template</td>
+        <td>自适应卡片模板</td>
         <td>{notification.config.adaptive_card}</td>
       </tr>
       <tr>
-        <td>Time Zone</td>
+        <td>时区</td>
         <td>{notification.config.time_zone}</td>
       </tr>
       <tr>
-        <td>Message Backlog Limit</td>
+        <td>消息积压限制</td>
         <td>{notification.config.backlog_size}</td>
       </tr>
     </CommonNotificationSummary>

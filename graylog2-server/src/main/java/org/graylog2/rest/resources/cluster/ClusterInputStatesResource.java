@@ -80,7 +80,7 @@ public class ClusterInputStatesResource extends ProxiedResource {
     @Timed
     @ApiOperation(value = "Start or restart specified input in all nodes")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input."),
+            @ApiResponse(code = 404, message = "不存在此类输入端。"),
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_START)
     public Map<String, Optional<InputCreated>> start(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) {
@@ -92,7 +92,7 @@ public class ClusterInputStatesResource extends ProxiedResource {
     @Timed
     @ApiOperation(value = "Stop specified input in all nodes")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input."),
+            @ApiResponse(code = 404, message = "不存在此类输入端。"),
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_STOP)
     public Map<String, Optional<InputDeleted>> stop(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) {

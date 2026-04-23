@@ -44,7 +44,7 @@ const IndexMaintenanceStrategiesSummary = ({ config, pluginExports, rotationStra
   const strategy = pluginExports.filter((exportedStrategy) => exportedStrategy.type === activeStrategy)[0];
 
   if (!strategy || !strategy.summaryComponent) {
-    return (<Alert bsStyle="danger">Summary for strategy {activeStrategy} not found!</Alert>);
+    return (<Alert bsStyle="danger">策略摘要 {activeStrategy} 未找到!</Alert>);
   }
 
   const componentProps = rotationStrategyClass ? { config: config.config, rotationStrategyClass } : { config: config.config };

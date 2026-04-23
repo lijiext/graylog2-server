@@ -61,22 +61,22 @@ const ExportSettings = ({
     {selectedWidget && <SelectedWidgetInfo selectedWidget={selectedWidget} view={view} />}
     <Row>
       <p>
-        Define the fields for your file.<br />
+        为您的文件定义字段。<br />
       </p>
       {selectedWidget && (
       <p>
-        The export supports fields created by decorators which are part of the message table, but they currently do not appear in the field list. If you want to export a decorated field, just enter its name.
+        导出支持由装饰器创建的字段，这些字段属于消息表，但目前未出现在字段列表中。如果要导出装饰字段，只需输入其名称。
       </p>
       )}
       <p>
-        When you&apos;ve finished the configuration, click on <q>Start Download</q>.
+        完成配置后，点击 <q>开始下载</q>.
       </p>
     </Row>
     <Row>
       <Field name="selectedFields">
         {({ field: { name, value, onChange } }) => (
           <>
-            <label htmlFor={name}>Fields to export</label>
+            <label htmlFor={name}>要导出的字段</label>
             <FieldsConfiguration onChange={
                                       (newFields) => onChange({
                                         target: { name, value: newFields.map((field) => ({ field })) },
@@ -96,7 +96,7 @@ const ExportSettings = ({
       <Field name="limit">
         {({ field: { name, value, onChange } }) => (
           <>
-            <label htmlFor={name}>Messages limit</label>
+            <label htmlFor={name}>消息限制</label>
             <Input type="number"
                    id={name}
                    name={name}
@@ -105,7 +105,7 @@ const ExportSettings = ({
                    step={1}
                    value={value} />
             <HelpBlock>
-              Messages are loaded in chunks. If a limit is defined, all chunks up to the one where the limit is reached will be retrieved. Which means the total number of delivered messages can be higher than the defined limit.
+              消息以块为单位加载。如果定义了限制，将检索达到限制之前的所有块。这意味着交付的消息总数可能高于定义的限制。
             </HelpBlock>
           </>
         )}

@@ -154,7 +154,7 @@ const CacheForm = ({ type, saved, title, create, cache, validate, validationErro
                 <fieldset>
                   <FormikFormGroup type="text"
                                    name="title"
-                                   label="* Title"
+                                   label="* 标题"
                                    required
                                    help={errors.title ? null : 'A short title for this cache.'}
                                    onChange={handleTitleChange(values, setValues)}
@@ -163,13 +163,13 @@ const CacheForm = ({ type, saved, title, create, cache, validate, validationErro
                                    wrapperClassName="col-sm-9" />
                   <FormikFormGroup type="text"
                                    name="description"
-                                   label="Description"
-                                   help="Cache description."
+                                   label="描述"
+                                   help="缓存描述。"
                                    labelClassName="col-sm-3"
                                    wrapperClassName="col-sm-9" />
                   <FormikFormGroup type="text"
                                    name="name"
-                                   label="* Name"
+                                   label="* 名称"
                                    required
                                    error={validationErrors.name ? validationErrors.name[0] : null}
                                    onChange={() => setGenerateName(false)}
@@ -187,15 +187,15 @@ const CacheForm = ({ type, saved, title, create, cache, validate, validationErro
                   <Row>
                     <Col mdOffset={3} sm={12}>
                       {create && (
-                        <FormSubmit submitButtonText="Create cache"
-                                    submitLoadingText="Creating cache..."
+                        <FormSubmit submitButtonText="创建缓存"
+                                    submitLoadingText="正在创建缓存..."
                                     isSubmitting={isSubmitting}
                                     isAsyncSubmit
                                     onCancel={onCancel} />
                       )}
                       {updatable && (
-                        <FormSubmit submitButtonText="Update cache"
-                                    submitLoadingText="Updating cache..."
+                        <FormSubmit submitButtonText="更新缓存"
+                                    submitLoadingText="正在更新缓存..."
                                     isAsyncSubmit
                                     isSubmitting={isSubmitting}
                                     onCancel={onCancel} />

@@ -43,20 +43,20 @@ const SidecarsPage = () => {
   return (
     <DocumentTitle title="Sidecars">
       <SidecarsPageNavigation />
-      <PageHeader title="Sidecars Overview"
+      <PageHeader title="Sidecars 概览"
                   documentationLink={{
                     title: 'Sidecar documentation',
                     path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                   }}>
         <span>
-          The Graylog sidecars can reliably forward contents of log files or Windows EventLog from your servers.
+          Graylog Sidecar 可以可靠地转发来自您服务器的日志文件或 Windows 事件日志的内容。
           {canCreateSidecarUserTokens && (
             sidecarUser ? (
               <span>
                 <br />
-                Do you need an API token for a sidecar?&ensp;
+                需要用于 Sidecar 的 API Token 吗？ 
                 <Link to={Routes.SYSTEM.USERS.TOKENS.edit(sidecarUser.id)}>
-                  Create or reuse a token for the <em>graylog-sidecar</em> user
+                  创建或重用 Token 用于 <em>graylog-sidecar</em> user
                 </Link>
               </span>
             ) : <Spinner />

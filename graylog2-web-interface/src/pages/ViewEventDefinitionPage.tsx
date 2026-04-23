@@ -111,9 +111,9 @@ const ViewEventDefinitionPage = () => {
 
   if (!eventDefinition || !notifications) {
     return (
-      <DocumentTitle title="View Event Definition">
+      <DocumentTitle title="查看事件定义">
         <span>
-          <PageHeader title="View Event Definition">
+          <PageHeader title="查看事件定义">
             <Spinner text="Loading Event Definition..." />
           </PageHeader>
         </span>
@@ -123,18 +123,17 @@ const ViewEventDefinitionPage = () => {
 
   return (
     <>
-      <DocumentTitle title={`View "${eventDefinition.title}" Event Definition`}>
+      <DocumentTitle title={`查看“${eventDefinition.title}”事件定义`}>
         <EventsPageNavigation />
-        <PageHeader title={`View "${eventDefinition.title}" Event Definition`}
+        <PageHeader title={`查看“${eventDefinition.title}”事件定义`}
                     actions={(
                       <ButtonToolbar>
                         <IfPermitted permissions={`eventdefinitions:edit:${params.definitionId}`}>
-                          <Button bsStyle="success" onClick={onEditEventDefinition}>Edit Event Definition</Button>
+                          <Button bsStyle="success" onClick={onEditEventDefinition}>编辑事件定义</Button>
                         </IfPermitted>
                         {!isSystemEventDefinition() && (
                           <IfPermitted permissions="eventdefinitions:create">
-                            <Button onClick={() => setShowDialog(true)} bsStyle="success">Duplicate Event
-                              Definition
+                            <Button onClick={() => setShowDialog(true)} bsStyle="success">复制事件定义
                             </Button>
                           </IfPermitted>
                         )}
@@ -145,7 +144,7 @@ const ViewEventDefinitionPage = () => {
                       path: DocsHelper.PAGES.ALERTS,
                     }}>
           <span>
-            Event Definitions allow you to create Events from different Conditions and alert on them.
+            事件定义允许您从不同的条件创建事件并对其进行告警。
           </span>
         </PageHeader>
 
@@ -158,7 +157,7 @@ const ViewEventDefinitionPage = () => {
         </Row>
       </DocumentTitle>
       {showDialog && (
-        <ConfirmDialog title="Copy Event Definition"
+        <ConfirmDialog title="复制事件定义"
                        show
                        onConfirm={() => handleDuplicateEvent()}
                        onCancel={() => setShowDialog(false)}>

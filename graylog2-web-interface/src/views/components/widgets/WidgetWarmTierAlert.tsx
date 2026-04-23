@@ -40,10 +40,10 @@ const WidgetWarmTierAlert = ({ activeQuery, widgetId } : Props) => {
   return (
     <Popover position="bottom">
       <Popover.Target>
-        <IconButton title="Info" name="info" />
+        <IconButton title="信息" name="info" />
       </Popover.Target>
-      <Popover.Dropdown title="Info">
-        This widget is retrieving data from the Warm Tier and may take longer to load.
+      <Popover.Dropdown title="信息">
+        此小部件正在从温存储层检索数据，加载时间可能较长。
       </Popover.Dropdown>
     </Popover>
   );

@@ -37,7 +37,7 @@ const SplitButton = React.forwardRef<HTMLButtonElement, Props>(
           {title}
         </Button>
         <Menu.Target>
-          <Button ref={ref} aria-label="More Actions" {...props}><Icon name="arrow_drop_down" /></Button>
+          <Button ref={ref} aria-label="更多操作" {...props}><Icon name="arrow_drop_down" /></Button>
         </Menu.Target>
         <Menu.Dropdown>
           {children}

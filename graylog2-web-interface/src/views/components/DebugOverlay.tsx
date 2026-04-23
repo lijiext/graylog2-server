@@ -32,7 +32,7 @@ const DebugOverlay = ({ show, onClose }: Props) => {
     <BootstrapModalWrapper showModal={show}
                            onHide={onClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Debug information</Modal.Title>
+        <Modal.Title>调试信息</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <textarea disabled
@@ -40,7 +40,7 @@ const DebugOverlay = ({ show, onClose }: Props) => {
                   value={JSON.stringify(fullState, null, 2)} />
       </Modal.Body>
       <Modal.Footer>
-        <Button type="button" onClick={() => onClose()}>Close</Button>
+        <Button type="button" onClick={() => onClose()}>关闭</Button>
       </Modal.Footer>
     </BootstrapModalWrapper>
   );

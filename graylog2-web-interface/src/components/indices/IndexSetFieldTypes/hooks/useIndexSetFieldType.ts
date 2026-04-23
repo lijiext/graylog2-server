@@ -65,8 +65,8 @@ const useIndexSetFieldTypes = (indexSetId: string, searchParams: SearchParams, {
     () => fetchIndexSetFieldTypes(indexSetId, searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index field types failed with status: ${errorThrown}`,
-          'Could not load index field types');
+        UserNotification.error(`加载索引字段类型失败，状态：${errorThrown}`,
+          '无法加载索引字段类型');
       },
       keepPreviousData: true,
       enabled,

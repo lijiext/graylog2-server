@@ -59,22 +59,22 @@ const MoveWidgetToTabModal = ({ view, onCancel, onSubmit, widgetId }: Props) => 
   ));
   const renderResult = list && list.length > 0
     ? <ListGroup>{tabList}</ListGroup>
-    : <span>No pages found</span>;
+    : <span>未找到页面</span>;
 
   return (
     <BootstrapModalForm show
                         onCancel={onCancel}
                         submitButtonDisabled={!selectedTab}
-                        submitButtonText={`${keepCopy ? 'Copy' : 'Move'} widget`}
+                        submitButtonText={`${keepCopy ? 'Copy' : 'Move'} 小部件`}
                         onSubmitForm={submit}
-                        title="Choose Target Page">
+                        title="选择目标页面">
       {renderResult}
       <Input type="checkbox"
              id="keepCopy"
              name="keepCopy"
-             label="Keep Copy on this Page"
+             label="在此页面保留副本"
              onChange={onKeepCopy}
-             help="When 'Keep Copy on the Page' is enabled, the widget will be copied and not moved to another page"
+             help="启用“在页面上保留副本”后，小部件将被复制而不会移动到其他页面"
              checked={keepCopy} />
     </BootstrapModalForm>
   );

@@ -93,12 +93,12 @@ public class MessageResource extends RestResource {
     @GET
     @Path("/{index}/{messageId}")
     @Timed
-    @ApiOperation(value = "Get a single message.")
+    @ApiOperation(value = "获取单条消息。")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Specified index does not exist."),
-            @ApiResponse(code = 404, message = "Message does not exist.")
+            @ApiResponse(code = 404, message = "指定的索引不存在。"),
+            @ApiResponse(code = 404, message = "消息不存在。")
     })
-    public ResultMessage search(@ApiParam(name = "index", value = "The index this message is stored in.", required = true)
+    public ResultMessage search(@ApiParam(name = "index", value = "此消息存储的索引。", required = true)
                                 @PathParam("index") String index,
                                 @ApiParam(name = "messageId", required = true)
                                 @PathParam("messageId") String messageId) throws IOException {
@@ -140,8 +140,8 @@ public class MessageResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Parse a raw message")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Specified codec does not exist."),
-            @ApiResponse(code = 400, message = "Could not decode message.")
+            @ApiResponse(code = 404, message = "指定的编解码器不存在。"),
+            @ApiResponse(code = 400, message = "无法解码消息。")
     })
     @NoAuditEvent("only used to parse a test message")
     public ResultMessage parse(@ApiParam(name = "JSON body", required = true) MessageParseRequest request) {
@@ -196,14 +196,14 @@ public class MessageResource extends RestResource {
                   notes = "Returns what tokens/terms a message string (message or full_message) is split to.")
     @RequiresPermissions(RestPermissions.MESSAGES_ANALYZE)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Specified index does not exist."),
+            @ApiResponse(code = 404, message = "指定的索引不存在。"),
     })
     public MessageTokens analyze(
-            @ApiParam(name = "index", value = "The index the message containing the string is stored in.", required = true)
+            @ApiParam(name = "index", value = "包含该字符串的消息所在的索引。", required = true)
             @PathParam("index") String index,
-            @ApiParam(name = "analyzer", value = "The analyzer to use.")
+            @ApiParam(name = "analyzer", value = "要使用的分析器。")
             @QueryParam("analyzer") @Nullable String analyzer,
-            @ApiParam(name = "string", value = "The string to analyze.", required = true)
+            @ApiParam(name = "string", value = "要分析的字符串。", required = true)
             @QueryParam("string") @NotEmpty String string) throws IOException {
 
         final String indexAnalyzer = indexSetRegistry.getForIndex(index)

@@ -107,8 +107,8 @@ const RuleForm = ({ create }: Props) => {
     <form onSubmit={handleSubmit}>
       <fieldset>
         <FormGroup id="ruleTitleInformation">
-          <ControlLabel>Title</ControlLabel>
-          <FormControl.Static>You can set the rule title in the rule source. See the quick reference for more information.</FormControl.Static>
+          <ControlLabel>标题</ControlLabel>
+          <FormControl.Static>您可以在规则源中设置规则标题。有关更多信息，请参阅快速参考。</FormControl.Static>
         </FormGroup>
 
         {isDirty && (
@@ -117,16 +117,16 @@ const RuleForm = ({ create }: Props) => {
 
         <Input type="textarea"
                id="description"
-               label="Description"
+               label="描述"
                value={description}
                onChange={handleDescriptionChange}
                autoFocus
                rows={1}
-               help="Rule description (optional)." />
+               help="规则描述（可选）。" />
 
         <PipelinesUsingRule create={create} />
 
-        <Input id="rule-source-editor" label="Rule source" help="Rule source, see quick reference for more information." error={errorMessage}>
+        <Input id="rule-source-editor" label="规则源" help="规则源，请参阅快速参考以获取更多信息。" error={errorMessage}>
           {/* TODO: Figure out issue with props */}
           {/* @ts-ignore */}
           <StyledContainer>
@@ -147,7 +147,7 @@ const RuleForm = ({ create }: Props) => {
           <FormSubmit submitButtonText={create ? 'Create rule' : 'Update rule & close'}
                       centerCol={!create && (
                         <Button type="button" bsStyle="info" onClick={handleApply}>
-                          Update rule
+                          更新规则
                         </Button>
                       )}
                       onCancel={handleCancel} />

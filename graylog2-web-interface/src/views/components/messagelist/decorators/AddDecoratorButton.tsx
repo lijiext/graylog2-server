@@ -128,7 +128,7 @@ class AddDecoratorButton extends React.Component<Props, State> {
         <ConfigurationForm<Decorator['config']> ref={this.configurationForm}
                                                 key="configuration-form-output"
                                                 configFields={typeDefinition.requested_configuration}
-                                                title={`Create new ${typeDefinition.name}`}
+                                                title={`创建新的 ${typeDefinition.name}`}
                                                 typeName={typeName}
                                                 includeTitleField={false}
                                                 wrapperComponent={wrapperComponent as React.ComponentProps<typeof ConfigurationForm>['wrapperComponent']}
@@ -140,7 +140,7 @@ class AddDecoratorButton extends React.Component<Props, State> {
       <>
         <div className={`${DecoratorStyles.decoratorBox} ${DecoratorStyles.addDecoratorButtonContainer}`}>
           <div className={DecoratorStyles.addDecoratorSelect}>
-            <Select placeholder="Select decorator"
+            <Select placeholder="选择装饰器"
                     onChange={this._onTypeChange}
                     options={decoratorTypeOptions}
                     matchProp="label"

@@ -124,16 +124,16 @@ const URLWhiteListFormModal = ({ newUrlEntry, urlType, onUpdate }: Props) => {
     return (
       <>
         <IfPermitted permissions="urlwhitelist:write">
-          <Button bsStyle="info" bsSize="xs" onClick={openModal}>Add to URL Whitelist</Button>
+          <Button bsStyle="info" bsSize="xs" onClick={openModal}>添加到 URL 白名单</Button>
         </IfPermitted>
         <BootstrapModalForm show={showConfigModal}
                             bsSize="lg"
-                            title="Update Whitelist Configuration"
+                            title="更新白名单配置"
                             onCancel={closeModal}
                             onSubmitForm={saveConfig}
                             submitButtonDisabled={!isValid}
-                            submitButtonText="Update configuration">
-          <h3>Whitelist URLs</h3>
+                            submitButtonText="更新配置">
+          <h3>白名单 URL</h3>
           <UrlWhiteListForm key={newUrlEntryId}
                             urls={entries}
                             disabled={disabled}

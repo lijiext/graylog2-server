@@ -411,7 +411,7 @@ const FilterForm = ({
     if (!userCanViewLookupTables()) {
       return (
         <Alert bsStyle="info">
-          This account lacks permission to declare Query Parameters from Lookup Tables.
+          此账户缺少从查找表声明查询参数的权限。
         </Alert>
       );
     }
@@ -433,7 +433,7 @@ const FilterForm = ({
 
     return (
       <FormGroup validationState={validation.errors.query_parameters ? 'error' : null}>
-        <ControlLabel>Query Parameters</ControlLabel>
+        <ControlLabel>查询参数</ControlLabel>
         <Alert bsStyle={hasEmbryonicParameters ? 'danger' : 'info'}>
           <ButtonToolbar>
             {parameterButtons}
@@ -455,13 +455,13 @@ const FilterForm = ({
 
     return (
       <FormGroup controlId="filter-stream-categories">
-        <ControlLabel>Stream Categories <small className="text-muted">(Optional)</small></ControlLabel>
+        <ControlLabel>数据流类别 <small className="text-muted">(可选)</small></ControlLabel>
         <MultiSelect id="filter-stream-categories"
                      matchProp="label"
                      onChange={(selected) => propagateChange(getUpdatedConfig('stream_categories', selected === '' ? [] : selected.split(',')))}
                      options={streamCategoryOptions}
                      value={defaultTo(eventDefinition.config.stream_categories, []).join(',')} />
-        <HelpBlock>Select stream categories the search should include.</HelpBlock>
+        <HelpBlock>选择搜索应包含的数据流类别。</HelpBlock>
       </FormGroup>
     );
   };
@@ -480,17 +480,16 @@ const FilterForm = ({
 
   return (
     <fieldset>
-      <h2 className={commonStyles.title}>Filter</h2>
-      <p>Add information to filter the log messages that are relevant for this Event Definition.</p>
+      <h2 className={commonStyles.title}>过滤器</h2>
+      <p>添加信息以过滤与此事件定义相关的日志消息。</p>
       {onlyFilters || (
       <Input id="filter-query"
              name="query"
-             label="Search Query"
+             label="搜索查询"
              type="text"
              help={(
                <span>
-                 Search query that Messages should match. You can use the same syntax as in the Search page,
-                 including declaring Query Parameters from Lookup Tables by using the <code>$newParameter$</code> syntax.
+                 消息应匹配的搜索查询。您可以使用与搜索页面相同的语法，包括通过使用 <code>$newParameter$</code> 语法。
                </span>
                  )}
              value={defaultTo(currentConfig.query, '')}
@@ -501,7 +500,7 @@ const FilterForm = ({
 
       {!searchFiltersHidden && (
       <FormGroup controlId="search-filters">
-        <ControlLabel>Search Filters <small className="text-muted">(Optional)</small></ControlLabel>
+        <ControlLabel>搜索过滤器 <small className="text-muted">(可选)</small></ControlLabel>
         <div style={{ margin: '16px 0' }}>
           <SearchFiltersFormControls filters={eventDefinition.config.filters}
                                      onChange={handleSearchFiltersChange}
@@ -513,23 +512,22 @@ const FilterForm = ({
       {onlyFilters || (
       <>
         <FormGroup controlId="filter-streams">
-          <ControlLabel>Streams <small className="text-muted">(Optional)</small></ControlLabel>
+          <ControlLabel>数据流 <small className="text-muted">(可选)</small></ControlLabel>
           <MultiSelect id="filter-streams"
                        matchProp="label"
                        onChange={(selected) => handleStreamsChange(selected === '' ? [] : selected.split(','))}
                        options={formattedStreams}
                        value={defaultTo(eventDefinition.config.streams, []).join(',')} />
-          <HelpBlock>Select streams the search should include. Searches in all streams if empty.</HelpBlock>
+          <HelpBlock>选择搜索应包含的数据流。如果为空，则搜索所有数据流。</HelpBlock>
         </FormGroup>
         {streamCategorySelector()}
         {isSearchingWarmTier(warmTierRanges) && (
-        <Alert bsStyle="danger" title="Warm Tier Warning">
-          The selected time range will include data stored in the Warm Tier. Events that must frequently retrieve data from the Warm Tier may cause performance problems.
-          A value for <strong>Search within the last</strong> exceeding the following duration will fall into the Warm Tier: {warmTierTimeStamp()}.
+        <Alert bsStyle="danger" title="热层警告">
+          所选时间范围将包含存储在温层中的数据。必须频繁从温层检索数据的事件可能会导致性能问题。一个值 <strong>搜索最近</strong> 超过以下时长将进入温存储层： {warmTierTimeStamp()}.
         </Alert>
         )}
         <FormGroup controlId="search-within" validationState={validation.errors.search_within_ms ? 'error' : null}>
-          <TimeUnitInput label="Search within the last"
+          <TimeUnitInput label="搜索最近"
                          update={handleTimeRangeChange('search_within_ms')}
                          value={searchWithinMsDuration}
                          unit={searchWithinMsUnit}
@@ -543,8 +541,8 @@ const FilterForm = ({
         <Input id="is-cron-checkbox"
                type="checkbox"
                name="use_cron_scheduling"
-               label="Use Cron Scheduling"
-               help="Schedule this event with a Quartz cron expression"
+               label="使用 Cron 调度"
+               help="使用 Quartz cron 表达式调度此事件"
                checked={defaultTo(eventDefinition.config.use_cron_scheduling, false)}
                onChange={handleUseCronSchedulingChange} />
         {currentConfig.use_cron_scheduling
@@ -553,7 +551,7 @@ const FilterForm = ({
               <FormGroup controlId="cron-expression" validationState={validation.errors.cron_expression ? 'error' : null}>
                 <Input id="cron-expression"
                        name="cron_expression"
-                       label="Cron Expression"
+                       label="Cron 表达式"
                        type="text"
                        help={(
                          <span>
@@ -568,7 +566,7 @@ const FilterForm = ({
                 )}
               </FormGroup>
               <FormGroup>
-                <ControlLabel>Cron Time Zone</ControlLabel>
+                <ControlLabel>Cron 时区</ControlLabel>
                 <TimezoneSelect value={defaultTo(currentConfig.cron_timezone, userTimezone)}
                                 name="cron_timezone"
                                 clearable={false}
@@ -579,7 +577,7 @@ const FilterForm = ({
           )
           : (
             <FormGroup controlId="execute-every" validationState={validation.errors.execute_every_ms ? 'error' : null}>
-              <TimeUnitInput label="Execute search every"
+              <TimeUnitInput label="每"
                              update={handleTimeRangeChange('execute_every_ms')}
                              value={executeEveryMsDuration}
                              unit={executeEveryMsUnit}
@@ -595,8 +593,8 @@ const FilterForm = ({
         <Input id="schedule-checkbox"
                type="checkbox"
                name="_is_scheduled"
-               label="Enable"
-               help="Should this event definition be executed automatically?"
+               label="启用"
+               help="是否应自动执行此事件定义？"
                checked={defaultTo(eventDefinition.config._is_scheduled, true)}
                onChange={handleEnabledChange} />
       </>

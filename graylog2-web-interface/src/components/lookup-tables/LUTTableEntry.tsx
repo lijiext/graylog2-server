@@ -80,7 +80,7 @@ const LUTTableEntry = ({ table, cache, dataAdapter, errors }: Props) => {
       <tr>
         <td>
           {errors.table && (
-            <ErrorPopover placement="right" errorText={errors.table} title="Lookup Table problem" />
+            <ErrorPopover placement="right" errorText={errors.table} title="查找表问题" />
           )}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.show(table.name)}>{table.title}</Link>
         </td>
@@ -88,13 +88,13 @@ const LUTTableEntry = ({ table, cache, dataAdapter, errors }: Props) => {
         <td>{table.name}</td>
         <td>
           {errors.cache && (
-            <ErrorPopover placement="bottom" errorText={errors.cache} title="Cache problem" />
+            <ErrorPopover placement="bottom" errorText={errors.cache} title="缓存问题" />
           )}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.CACHES.show(cache.name)}>{cache.title}</Link>
         </td>
         <td>
           {errors.dataAdapter && (
-            <ErrorPopover placement="bottom" errorText={errors.dataAdapter} title="Data adapter problem" />
+            <ErrorPopover placement="bottom" errorText={errors.dataAdapter} title="数据适配器问题" />
           )}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.show(dataAdapter.name)}>{dataAdapter.title}</Link>
         </td>
@@ -105,14 +105,14 @@ const LUTTableEntry = ({ table, cache, dataAdapter, errors }: Props) => {
                       onClick={handleEdit}
                       role="button"
                       name="edit_square">
-                Edit
+                编辑
               </Button>
               <Button bsSize="xsmall"
                       bsStyle="danger"
                       onClick={handleDelete}
                       role="button"
                       name="delete">
-                Delete
+                删除
               </Button>
             </Actions>
           )}

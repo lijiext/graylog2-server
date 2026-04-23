@@ -109,13 +109,13 @@ const RuleHelper = ({ functionDescriptors, paginationQueryParameter, hideExample
   const pagedEntries = ruleDescriptors.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   return (
-    <Panel header="Rules quick reference">
+    <Panel header="规则快速参考">
       <Row className="row-sm rule-ref-descriptions">
         <Col md={12}>
           <p className={RuleHelperStyle.marginQuickReferenceText}>
-            Read the <DocumentationLink page={DocsHelper.PAGES.PIPELINE_RULES}
+            阅读 <DocumentationLink page={DocsHelper.PAGES.PIPELINE_RULES}
                                         text="full documentation" />{' '}
-            to gain a better understanding of how Graylog pipeline rules work.
+            以更好地理解 Graylog 管道规则的工作原理。
           </p>
         </Col>
       </Row>
@@ -139,19 +139,18 @@ const RuleHelper = ({ functionDescriptors, paginationQueryParameter, hideExample
         ) : (
           <Col md={12}>
             <Tabs id="functionsHelper" defaultActiveKey={1} animation={false}>
-              <Tab eventKey={1} title="Functions">
+              <Tab eventKey={1} title="函数">
                 <Row className="rule-ref-descriptions">
                   <Col sm={12}>
                     <p className={RuleHelperStyle.marginTab}>
-                      This is a list of all available functions in pipeline rules. Click on a row to see more information
-                      about the function parameters.
+                      这是管道规则中所有可用函数的列表。点击某一行可查看该函数参数的更多信息。
                     </p>
                   </Col>
                 </Row>
                 <Row>
                   <Col sm={12}>
                     <SearchForm onSearch={filterDescriptors}
-                                label="Filter rules"
+                                label="过滤器规则"
                                 topMargin={0}
                                 onReset={onFilterReset} />
                     <div className={`table-responsive ${RuleHelperStyle.marginTab} ref-rule`}>
@@ -167,9 +166,9 @@ const RuleHelper = ({ functionDescriptors, paginationQueryParameter, hideExample
                   </Col>
                 </Row>
               </Tab>
-              <Tab eventKey={2} title="Example">
+              <Tab eventKey={2} title="示例">
                 <p className={RuleHelperStyle.marginTab}>
-                  Do you want to see how a pipeline rule looks like? Take a look at this example:
+                  想看看管道规则是什么样的吗？请看这个例子：
                 </p>
                 <pre className={`${RuleHelperStyle.marginTab} ${RuleHelperStyle.exampleFunction}`}>
                   {ruleTemplate}

@@ -69,7 +69,7 @@ public class ClusterJournalResource extends ProxiedResource {
     @Timed
     @ApiOperation(value = "Get message journal information of a given node")
     @RequiresPermissions(RestPermissions.JOURNAL_READ)
-    public JournalSummaryResponse get(@ApiParam(name = "nodeId", value = "The id of the node to get message journal information.", required = true)
+    public JournalSummaryResponse get(@ApiParam(name = "nodeId", value = "获取消息日志信息的节点 ID。", required = true)
                                       @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
 
         var response = doNodeApiCall(nodeId, RemoteJournalResource.class, RemoteJournalResource::get, Function.identity(), null);

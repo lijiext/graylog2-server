@@ -25,16 +25,14 @@ type Props = {
 
 const TelemetryInfoText = ({ showProfile }: Props) => (
   <Alert bsStyle="info">
-    We would like to collect anonymous usage data to help us prioritize improvements
-    and make Graylog better in the future.
+    我们希望收集匿名使用数据，以帮助我们优先改进并让 Graylog 在未来变得更好。
     <br />
-    We do not collect personal data, sensitive information, or content such as logs in your
-    instances.
+    我们不会收集您实例中的个人数据、敏感信息或日志等内容。
     <br />
-    Learn more on our <ExternalLink href="https://www.graylog.org/privacy-policy/">Privacy Policy</ExternalLink>.
+    在我们的 <ExternalLink href="https://www.graylog.org/privacy-policy/">隐私政策</ExternalLink>.
     <br />
-    You can turn data collection off or on any time
-    {showProfile && <b> in the user profile</b>}
+    您可以随时关闭或开启数据采集
+    {showProfile && <b> 在用户资料中</b>}
     {!showProfile && ' here'}.
   </Alert>
 );

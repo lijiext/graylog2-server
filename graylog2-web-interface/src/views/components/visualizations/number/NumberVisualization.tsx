@@ -101,7 +101,7 @@ const NumberVisualization = ({ config, fields, data, height: heightProp }: Visua
   const { value: previousValue } = _extractValueAndField(trendRows || []);
 
   if (!field || (value !== 0 && !value)) {
-    return <>N/A</>;
+    return <>不适用</>;
   }
 
   const ContainerComponent = visualizationConfig.trend ? GridContainer : SingleItemGrid;

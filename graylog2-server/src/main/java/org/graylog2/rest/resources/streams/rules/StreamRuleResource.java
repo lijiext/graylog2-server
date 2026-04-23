@@ -83,7 +83,7 @@ public class StreamRuleResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.STREAM_RULE_CREATE)
-    public Response create(@ApiParam(name = "streamid", value = "The stream id this new rule belongs to.", required = true)
+    public Response create(@ApiParam(name = "streamid", value = "此新规则所属的数据流 ID。", required = true)
                            @PathParam("streamid") String streamId,
                            @ApiParam(name = "JSON body", required = true)
                            @Valid @NotNull CreateStreamRuleRequest cr) throws NotFoundException, ValidationException {
@@ -110,13 +110,13 @@ public class StreamRuleResource extends RestResource {
     @Timed
     @ApiOperation(value = "Update a stream rule")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream or stream rule not found."),
-            @ApiResponse(code = 400, message = "Invalid JSON Body.")
+            @ApiResponse(code = 404, message = "未找到数据流或数据流规则。"),
+            @ApiResponse(code = 400, message = "JSON 正文无效。")
     })
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.STREAM_RULE_UPDATE)
-    public SingleStreamRuleSummaryResponse update(@ApiParam(name = "streamid", value = "The stream id this rule belongs to.", required = true)
+    public SingleStreamRuleSummaryResponse update(@ApiParam(name = "streamid", value = "此规则所属的数据流 ID。", required = true)
                                                   @PathParam("streamid") String streamid,
                                                   @ApiParam(name = "streamRuleId", value = "The stream rule id we are updating", required = true)
                                                   @PathParam("streamRuleId") String streamRuleId,
@@ -167,7 +167,7 @@ public class StreamRuleResource extends RestResource {
     @Timed
     @ApiOperation(value = "Get a list of all stream rules")
     @Produces(MediaType.APPLICATION_JSON)
-    public StreamRuleListResponse get(@ApiParam(name = "streamid", value = "The id of the stream whose stream rules we want.", required = true)
+    public StreamRuleListResponse get(@ApiParam(name = "streamid", value = "我们要其数据流规则的数据流 ID。", required = true)
                                       @PathParam("streamid") String streamid) throws NotFoundException {
         checkPermission(RestPermissions.STREAMS_READ, streamid);
 
@@ -182,7 +182,7 @@ public class StreamRuleResource extends RestResource {
     @Timed
     @ApiOperation(value = "Get a single stream rules")
     @Produces(MediaType.APPLICATION_JSON)
-    public StreamRule get(@ApiParam(name = "streamid", value = "The id of the stream whose stream rule we want.", required = true) @PathParam("streamid") String streamid,
+    public StreamRule get(@ApiParam(name = "streamid", value = "我们要其数据流规则的数据流 ID。", required = true) @PathParam("streamid") String streamid,
                           @ApiParam(name = "streamRuleId", value = "The stream rule id we are getting", required = true) @PathParam("streamRuleId") String streamRuleId) throws NotFoundException {
         checkPermission(RestPermissions.STREAMS_READ, streamid);
 
@@ -194,11 +194,11 @@ public class StreamRuleResource extends RestResource {
     @Timed
     @ApiOperation(value = "Delete a stream rule")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream rule not found."),
-            @ApiResponse(code = 400, message = "Invalid ObjectId.")
+            @ApiResponse(code = 404, message = "未找到数据流规则。"),
+            @ApiResponse(code = 400, message = "ObjectId 无效。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_RULE_DELETE)
-    public void delete(@ApiParam(name = "streamid", value = "The stream id this new rule belongs to.", required = true)
+    public void delete(@ApiParam(name = "streamid", value = "此新规则所属的数据流 ID。", required = true)
                        @PathParam("streamid") String streamid,
                        @ApiParam(name = "streamRuleId", required = true)
                        @PathParam("streamRuleId") @NotEmpty String streamRuleId) throws NotFoundException {
@@ -219,7 +219,7 @@ public class StreamRuleResource extends RestResource {
     @ApiOperation(value = "Get all available stream types")
     @Produces(MediaType.APPLICATION_JSON)
     // TODO: Move this to a better place. This method is not related to a context that is bound to the instance of a stream.
-    public List<StreamRuleTypeResponse> types(@ApiParam(name = "streamid", value = "The stream id this new rule belongs to.", required = true)
+    public List<StreamRuleTypeResponse> types(@ApiParam(name = "streamid", value = "此新规则所属的数据流 ID。", required = true)
                                               @PathParam("streamid") String streamid) {
         final List<StreamRuleTypeResponse> result = new ArrayList<>(StreamRuleType.values().length);
         for (StreamRuleType type : StreamRuleType.values()) {

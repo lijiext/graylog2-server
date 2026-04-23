@@ -125,7 +125,7 @@ public class IndexRangesResource extends RestResource {
     @ApiOperation(value = "Show single index range")
     @Produces(MediaType.APPLICATION_JSON)
     public IndexRangeSummary show(
-            @ApiParam(name = "index", value = "The name of the Graylog-managed Elasticsearch index", required = true)
+            @ApiParam(name = "index", value = "Graylog 管理的 Elasticsearch 索引名称", required = true)
             @PathParam("index") @NotEmpty String index) throws NotFoundException {
         if (!indexSetRegistry.isManagedIndex(index)) {
             throw new BadRequestException(index + " is not a Graylog-managed Elasticsearch index.");
@@ -146,12 +146,12 @@ public class IndexRangesResource extends RestResource {
     @Timed
     @Path("/rebuild")
     @RequiresPermissions(RestPermissions.INDEXRANGES_REBUILD)
-    @ApiOperation(value = "Rebuild/sync index range information.",
+    @ApiOperation(value = "重建/同步索引范围信息。",
                   notes = "This triggers a systemjob that scans every index and stores meta information " +
                           "about what indices contain messages in what timeranges. It atomically overwrites " +
                           "already existing meta information.")
     @ApiResponses(value = {
-            @ApiResponse(code = 202, message = "Rebuild/sync systemjob triggered.")
+            @ApiResponse(code = 202, message = "已触发重建/同步系统任务。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.ES_INDEX_RANGE_UPDATE_JOB)
@@ -166,12 +166,12 @@ public class IndexRangesResource extends RestResource {
     @Timed
     @Path("/index_set/{indexSetId}/rebuild")
     @RequiresPermissions(RestPermissions.INDEXRANGES_REBUILD)
-    @ApiOperation(value = "Rebuild/sync index range information for the given index set.",
+    @ApiOperation(value = "为给定的索引集重建/同步索引范围信息。",
                   notes = "This triggers a systemjob that scans every index in the given index set and stores meta information " +
                           "about what indices contain messages in what timeranges. It atomically overwrites " +
                           "already existing meta information.")
     @ApiResponses(value = {
-            @ApiResponse(code = 202, message = "Rebuild/sync systemjob triggered.")
+            @ApiResponse(code = 202, message = "已触发重建/同步系统任务。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.ES_INDEX_RANGE_UPDATE_JOB)
@@ -187,17 +187,17 @@ public class IndexRangesResource extends RestResource {
     @POST
     @Timed
     @Path("/{index: [a-z_0-9-]+}/rebuild")
-    @ApiOperation(value = "Rebuild/sync index range information.",
+    @ApiOperation(value = "重建/同步索引范围信息。",
                   notes = "This triggers a system job that scans an index and stores meta information " +
                           "about what indices contain messages in what time ranges. It atomically overwrites " +
                           "already existing meta information.")
     @ApiResponses(value = {
-            @ApiResponse(code = 202, message = "Rebuild/sync system job triggered.")
+            @ApiResponse(code = 202, message = "已触发重建/同步系统任务。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.ES_INDEX_RANGE_UPDATE_JOB)
     public Response rebuildIndex(
-            @ApiParam(name = "index", value = "The name of the Graylog-managed Elasticsearch index", required = true)
+            @ApiParam(name = "index", value = "Graylog 管理的 Elasticsearch 索引名称", required = true)
             @PathParam("index") @NotEmpty String index) {
         if (!indexSetRegistry.isManagedIndex(index)) {
             throw new BadRequestException(index + " is not a Graylog-managed Elasticsearch index.");

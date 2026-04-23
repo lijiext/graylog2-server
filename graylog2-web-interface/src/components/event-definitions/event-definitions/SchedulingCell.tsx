@@ -55,7 +55,7 @@ const getTimeRange = (scheduler: Scheduler) => {
 
   return (
     <>
-      <DetailTitle>Next time range:</DetailTitle>
+      <DetailTitle>下次时间范围：</DetailTitle>
       <DetailValue><Timestamp dateTime={from} /> <Icon name="arrow_circle_right" /> <Timestamp dateTime={to} /></DetailValue>
     </>
   );
@@ -75,22 +75,22 @@ const describeSchedule = (isCron: boolean, value: number | string) => {
 
 const detailsPopover = (scheduler: Scheduler, clearNotifications: () => void) => (
   <dl>
-    <DetailTitle>Status:</DetailTitle>
+    <DetailTitle>状态:</DetailTitle>
     <DetailValue>{scheduler.status}</DetailValue>
     {scheduler.triggered_at && (
       <>
-        <DetailTitle>Last execution:</DetailTitle>
+        <DetailTitle>最后执行：</DetailTitle>
         <DetailValue><Timestamp dateTime={scheduler.triggered_at} /></DetailValue>
       </>
     )}
     {scheduler.next_time && (
       <>
-        <DetailTitle>Next execution:</DetailTitle>
+        <DetailTitle>下次执行：</DetailTitle>
         <DetailValue><Timestamp dateTime={scheduler.next_time} /></DetailValue>
       </>
     )}
     {getTimeRange(scheduler)}
-    <DetailTitle>Queued notifications:</DetailTitle>
+    <DetailTitle>排队的通知：</DetailTitle>
     <DetailValue>{scheduler.queued_notifications}
       {scheduler.queued_notifications > 0 && (
         <Button bsStyle="link" bsSize="xsmall" onClick={() => clearNotifications()}>
@@ -128,7 +128,7 @@ const SchedulingInfo = ({
       <OverlayTrigger trigger="click"
                       rootClose
                       placement="left"
-                      title={`${title} details.`}
+                      title={`${title} 详情。`}
                       overlay={detailsPopover(scheduler, clearNotifications)}
                       width={500}>
         <DetailsButton bsStyle="link"><Icon name="info" /></DetailsButton>
@@ -139,7 +139,7 @@ const SchedulingInfo = ({
 
 const SchedulingCell = ({ definition } : Props) => {
   if (!definition?.config?.search_within_ms && !definition?.config?.execute_every_ms) {
-    return <>Not Scheduled.</>;
+    return <>未计划。</>;
   }
 
   const clearNotifications = (eventDefinition: EventDefinition) => () => {

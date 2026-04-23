@@ -27,15 +27,15 @@ const SidecarAdministrationPage = () => {
   const { node_id: nodeId } = useQuery();
 
   return (
-    <DocumentTitle title="Collectors Administration">
+    <DocumentTitle title="采集器管理">
       <SidecarsPageNavigation />
-      <PageHeader title="Collectors Administration"
+      <PageHeader title="采集器管理"
                   documentationLink={{
                     title: 'Sidecar documentation',
                     path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                   }}>
         <span>
-          The Graylog collectors can reliably forward contents of log files or Windows EventLog from your servers.
+          Graylog 采集器可以可靠地转发来自您服务器的日志文件或 Windows 事件日志的内容。
         </span>
       </PageHeader>
 

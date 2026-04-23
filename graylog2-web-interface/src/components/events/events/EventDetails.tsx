@@ -62,20 +62,20 @@ const EventDetails = ({ event, eventDefinitionContext }: Props) => {
         <dl>
           <dt>ID</dt>
           <dd>{event.id}</dd>
-          <dt>Priority</dt>
+          <dt>优先级</dt>
           <dd>
             <PriorityName priority={event.priority} />
           </dd>
-          <dt>Timestamp</dt>
+          <dt>时间戳</dt>
           <dd> <Timestamp dateTime={event.timestamp} />
           </dd>
-          <dt>Event Definition</dt>
+          <dt>事件定义</dt>
           <dd>
             <EventDefinitionLink event={event} eventDefinitionContext={eventDefinitionContext} />
             &emsp;
             ({(plugin && plugin.displayName) || event.event_definition_type})
           </dd>
-          <dt>Remediation Steps</dt>
+          <dt>补救步骤</dt>
           <dd>
             {eventDefinitionContext?.remediation_steps ? (
               <MarkdownPreview show
@@ -84,12 +84,12 @@ const EventDetails = ({ event, eventDefinitionContext }: Props) => {
                                noBackground
                                value={eventDefinitionContext.remediation_steps} />
             ) : (
-              <i>No remediation steps</i>
+              <i>无修复步骤</i>
             )}
           </dd>
           {!event.event_definition_type.startsWith('system-notifications') && (
             <>
-              <dt>Actions</dt>
+              <dt>操作</dt>
               {event.replay_info && (
               <dd>
                 <LinkToReplaySearch id={event.id} isEvent />
@@ -104,7 +104,7 @@ const EventDetails = ({ event, eventDefinitionContext }: Props) => {
         <dl>
           {event.timerange_start && event.timerange_end && (
             <>
-              <dt>Aggregation time range</dt>
+              <dt>聚合时间范围</dt>
               <dd>
                 <Timestamp dateTime={event.timerange_start} />
                 &ensp;&mdash;&ensp;
@@ -112,15 +112,15 @@ const EventDetails = ({ event, eventDefinitionContext }: Props) => {
               </dd>
             </>
           )}
-          <dt>Event Key</dt>
+          <dt>事件键</dt>
           <dd>{event.key || 'No Key set for this Event.'}</dd>
-          <dt>Additional Fields</dt>
+          <dt>附加字段</dt>
           {isEmpty(event.fields)
-            ? <dd>No additional Fields added to this Event.</dd>
+            ? <dd>未向此事件添加其他字段。</dd>
             : <EventFields fields={event.fields} />}
-          <dt>Group-By Fields</dt>
+          <dt>分组字段</dt>
           {isEmpty(event.group_by_fields)
-            ? <dd>No group-by fields on this Event.</dd>
+            ? <dd>此事件无分组字段。</dd>
             : <EventFields fields={event.group_by_fields} />}
         </dl>
       </Col>

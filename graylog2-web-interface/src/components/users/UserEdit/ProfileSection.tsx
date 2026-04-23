@@ -61,11 +61,11 @@ const ProfileSection = ({
 
   const _getUserNameGroup = () => {
     if (isCloud) {
-      return <StyledReadOnlyFormGroup label="Email" value={email} />;
+      return <StyledReadOnlyFormGroup label="电子邮件" value={email} />;
     }
 
     return (
-      <StyledReadOnlyFormGroup label="Username" value={username} />
+      <StyledReadOnlyFormGroup label="用户名" value={username} />
     );
   };
 
@@ -82,13 +82,13 @@ const ProfileSection = ({
   const isOldUser = () => fullName && (!firstName && !lastName);
 
   return (
-    <SectionComponent title="Profile">
+    <SectionComponent title="配置文件">
       {isOldUser() && <ProfileUpdateInfo />}
       <Formik onSubmit={onSubmit}
               initialValues={{ email, first_name: firstName, last_name: lastName }}>
         {({ isSubmitting, isValid }) => (
           <Form className="form form-horizontal">
-            {isOldUser() && <StyledReadOnlyFormGroup label="Full Name" value={fullName} />}
+            {isOldUser() && <StyledReadOnlyFormGroup label="全名" value={fullName} />}
             <FirstNameFormGroup />
             <LastNameFormGroup />
             {_getUserNameGroup()}
@@ -98,9 +98,9 @@ const ProfileSection = ({
                 <div className="pull-right">
                   <Button bsStyle="success"
                           disabled={isSubmitting || !isValid}
-                          title="Update Profile"
+                          title="更新个人资料"
                           type="submit">
-                    Update Profile
+                    更新个人资料
                   </Button>
                 </div>
               </Col>

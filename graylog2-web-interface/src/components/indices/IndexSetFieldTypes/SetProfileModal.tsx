@@ -109,40 +109,40 @@ const SetProfileModal = ({ show, onClose, currentProfile }: Props) => {
            data-testid="modal-form">
       <form onSubmit={onSubmit}>
         <Modal.Header closeButton>
-          <Modal.Title><span>Set Profile</span></Modal.Title>
+          <Modal.Title><span>设置配置文件</span></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
-            <Input id="index_set_profile" label="Select profile">
+            <Input id="index_set_profile" label="选择配置文件">
               <StyledSelect inputId="index_set_profile"
                             options={options}
                             value={profile}
                             onChange={onChangeProfile}
                             inputProps={{ 'aria-label': 'Select index set profile' }}
-                            placeholder="Select index set profile"
+                            placeholder="选择索引集配置文件"
                             disabled={profileOptionsIsLoading}
                             required />
             </Input>
-            <StyledLabel>Select Rotation Strategy</StyledLabel>
+            <StyledLabel>选择轮转策略</StyledLabel>
             <p>
-              To see and use new profile setting (changing or removal) for index set, you have to rotate indices. You can automatically rotate affected indices after submitting this form or do that manually later.
+              要查看并使用索引集的新配置文件设置（更改或删除），您必须轮换索引。提交此表单后，您可以自动轮换受影响的索引，或稍后手动执行。
             </p>
             <Input type="checkbox"
                    id="rotate"
                    name="rotate"
-                   label="Rotate affected indices after change"
+                   label="更改后轮转受影响的索引"
                    onChange={() => setRotated((cur: boolean) => !cur)}
                    checked={rotated} />
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <ModalSubmit submitButtonText="Set profile"
-                       submitLoadingText="Set profile..."
+          <ModalSubmit submitButtonText="设置配置文件"
+                       submitLoadingText="设置配置文件..."
                        onCancel={onClose}
                        submitButtonType="submit"
                        disabledSubmit={isLoading || isProfileRemoving}
                        isSubmitting={isLoading || isProfileRemoving}
-                       leftCol={currentProfile && <Button onClick={onRemoveProfileFromIndex} disabled={isLoading || isProfileRemoving} bsStyle="danger">Remove profile</Button>} />
+                       leftCol={currentProfile && <Button onClick={onRemoveProfileFromIndex} disabled={isLoading || isProfileRemoving} bsStyle="danger">移除配置文件</Button>} />
         </Modal.Footer>
       </form>
     </Modal>

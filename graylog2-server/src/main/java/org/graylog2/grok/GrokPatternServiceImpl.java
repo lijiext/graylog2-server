@@ -84,7 +84,7 @@ abstract class GrokPatternServiceImpl implements GrokPatternService {
     protected void validateAllOrThrow(Collection<GrokPattern> newPatterns, ImportStrategy importStrategy) throws ValidationException {
         try {
             if (!validateAll(newPatterns)) {
-                throw new ValidationException("Patterns invalid.");
+                throw new ValidationException("模式无效。");
             }
         } catch (GrokException | PatternSyntaxException e) {
             throw new ValidationException("Invalid patterns.\n" + e.getMessage());

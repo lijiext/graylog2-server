@@ -32,7 +32,7 @@ const HelpMenu = () => (
         position="bottom-end">
     <Menu.Target>
       <StyledButton variant="default">
-        <Text fw={500} size="sm" mr={3}>Get Help</Text>
+        <Text fw={500} size="sm" mr={3}>获取帮助</Text>
         <Icon name="keyboard_arrow_down" />
       </StyledButton>
     </Menu.Target>
@@ -41,25 +41,25 @@ const HelpMenu = () => (
                  rightSection={<Icon name="open_in_new" />}
                  href="https://docs.graylog.org/docs"
                  target="_blank">
-        Graylog Documentation
+        Graylog 文档
       </Menu.Item>
       <Menu.Item component="a"
                  rightSection={<Icon name="open_in_new" />}
                  href="https://docs.graylog.org/docs/changelog"
                  target="_blank">
-        Graylog changelogs
+        Graylog 更新日志
       </Menu.Item>
       <Menu.Item component="a"
                  rightSection={<Icon name="open_in_new" />}
                  href="https://docs.graylog.org/docs/changelog-graylog"
                  target="_blank">
-        Graylog Operations changelogs
+        Graylog 操作变更日志
       </Menu.Item>
       <Menu.Item component="a"
                  rightSection={<Icon name="open_in_new" />}
                  href="https://support.graylog.org/portal"
                  target="_blank">
-        Support
+        支持
       </Menu.Item>
     </Menu.Dropdown>
   </Menu>

@@ -210,24 +210,23 @@ const UserCreate = () => {
           {({ isSubmitting, isValidating, isValid }) => (
             <Form className="form form-horizontal">
               <div>
-                <Headline>Profile</Headline>
+                <Headline>配置文件</Headline>
                 <FirstNameFormGroup />
                 <LastNameFormGroup />
                 <UserNameGroup />
                 <EmailGroup />
               </div>
               <div>
-                <Headline>Settings</Headline>
+                <Headline>设置</Headline>
                 {isGlobalTimeoutEnabled ? (
-                  <GlobalTimeoutMessage label="Sessions Timeout"
+                  <GlobalTimeoutMessage label="会话超时"
                                         value={(
-                                          <NoSearchResult>User session timeout is not editable because
-                                            the
+                                          <NoSearchResult>用户会话超时不可编辑，因为
                                             <IfPermitted permissions={['clusterconfigentry:read']}>
                                               <Link to={Routes.SYSTEM.CONFIGURATIONS}>
-                                                global session timeout
+                                                全局会话超时
                                               </Link>
-                                            </IfPermitted> is enabled.
+                                            </IfPermitted> 已启用。
                                           </NoSearchResult>
                                         )} />
                 ) : (
@@ -237,11 +236,11 @@ const UserCreate = () => {
                 <ServiceAccountFormGroup />
               </div>
               <div>
-                <Headline>Roles</Headline>
+                <Headline>角色</Headline>
                 <Input id="roles-selector-input"
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9"
-                       label="Assign Roles">
+                       label="分配角色">
                   <RolesSelector onSubmit={_onAssignRole}
                                  assignedRolesIds={user.roles}
                                  identifier={(role) => role.name}
@@ -251,7 +250,7 @@ const UserCreate = () => {
                 <Input id="selected-roles-overview"
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9"
-                       label="Selected Roles">
+                       label="已选角色">
                   <>
                     {selectedRoles.map((role) => (
                       <PaginatedItem item={role}
@@ -260,21 +259,20 @@ const UserCreate = () => {
                     ))}
                     {!hasValidRole && (
                       <Alert bsStyle="danger">
-                        You need to select at least one of
-                        the <em>Reader</em> or <em>Admin</em> roles.
+                        您至少需要选择一项 <em>读取器</em> or <em>管理员</em> 角色。
                       </Alert>
                     )}
                   </>
                 </Input>
               </div>
               <div>
-                <Headline>Password</Headline>
+                <Headline>密码</Headline>
                 <PasswordGroup />
               </div>
               {submitError && (
                 <Row>
                   <Col xs={9} xsOffset={3}>
-                    <Alert bsStyle="danger" title="Failed to create user">
+                    <Alert bsStyle="danger" title="创建用户失败">
                       {showSubmitError(submitError)}
                     </Alert>
                   </Col>
@@ -283,8 +281,8 @@ const UserCreate = () => {
               <Row>
                 <Col md={9} mdOffset={3}>
                   <FormSubmit disabledSubmit={!isValid || !hasValidRole || isValidating}
-                              submitButtonText="Create user"
-                              submitLoadingText="Creating user..."
+                              submitButtonText="创建用户"
+                              submitLoadingText="正在创建用户..."
                               isSubmitting={isSubmitting}
                               isAsyncSubmit
                               onCancel={_handleCancel} />

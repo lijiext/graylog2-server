@@ -231,8 +231,8 @@ export const EventNotificationsStore = singletonStore(
 
       promise.catch((error) => {
         if (error.status === 404) {
-          UserNotification.error(`Unable to find Event Notification with id <${notificationId}>, please ensure it wasn't deleted.`,
-            'Could not retrieve Event Notification');
+          UserNotification.error(`找不到 ID 为 <${notificationId}> 的事件通知，请确保其未被删除。`,
+            '无法检索事件通知');
         }
       });
 
@@ -244,15 +244,15 @@ export const EventNotificationsStore = singletonStore(
 
       promise.then(
         (response) => {
-          UserNotification.success('Notification created successfully', `Notification "${notification.title}" was created successfully.`);
+          UserNotification.success('通知创建成功', `通知 "${notification.title}" 创建成功。`);
           this.refresh();
 
           return response;
         },
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
-            UserNotification.error(`Creating Notification "${notification.title}" failed with status: ${error}`,
-              'Could not save Notification');
+            UserNotification.error(`创建通知 "${notification.title}" 失败，状态：${error}`,
+              '无法保存通知');
           }
         },
       );
@@ -265,15 +265,15 @@ export const EventNotificationsStore = singletonStore(
 
       promise.then(
         (response) => {
-          UserNotification.success('Notification updated successfully', `Notification "${notification.title}" was updated successfully.`);
+          UserNotification.success('通知更新成功', `通知 "${notification.title}" 已成功更新。`);
           this.refresh();
 
           return response;
         },
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
-            UserNotification.error(`Updating Notification "${notification.title}" failed with status: ${error}`,
-              'Could not update Notification');
+            UserNotification.error(`更新通知 "${notification.title}" 失败，状态为：${error}`,
+              '无法更新通知');
           }
         },
       );
@@ -286,12 +286,12 @@ export const EventNotificationsStore = singletonStore(
 
       promise.then(
         () => {
-          UserNotification.success('Notification deleted successfully', `Notification "${notification.title}" was deleted successfully.`);
+          UserNotification.success('通知删除成功', `通知 "${notification.title}" 已成功删除。`);
           this.refresh();
         },
         (error) => {
-          UserNotification.error(`Deleting Notification "${notification.title}" failed with status: ${error}`,
-            'Could not delete Notification');
+          UserNotification.error(`删除通知 "${notification.title}" 失败，状态为：${error}`,
+            '无法删除通知');
         },
       );
 

@@ -95,7 +95,7 @@ const CopyToDashboardForm = ({ onCancel, onCopyToDashboard, submitButtonText, su
   return (
     <Modal show onHide={onCancel}>
       <Modal.Header>
-        <Modal.Title>Copy widget to dashboard</Modal.Title>
+        <Modal.Title>复制小部件到仪表盘</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {isLoadingDashboards && <Spinner />}
@@ -127,13 +127,13 @@ const CopyToDashboardForm = ({ onCancel, onCopyToDashboard, submitButtonText, su
                     );
                   })}
                 </ListGroup>
-              ) : <NoSearchResult>No dashboards found.</NoSearchResult>}
+              ) : <NoSearchResult>未找到仪表盘。</NoSearchResult>}
             </PaginatedList>
             {showCreateNewDashboardCheckbox && (
               <Input type="checkbox"
                      id="create-new-dashboard"
                      name="createNewDashboard"
-                     label="Create a new dashboard"
+                     label="创建新仪表盘"
                      onChange={toggleCreateNewDashboard}
                      checked={createNewDashboard} />
             )}

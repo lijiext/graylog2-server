@@ -36,7 +36,7 @@ public class SortedPathSetConverter implements Converter<SortedSet<Path>> {
     @Override
     public SortedSet<Path> convertFrom(String value) {
         if (value == null) {
-            throw new ParameterException("Path list must not be null.");
+            throw new ParameterException("路径列表不能为空。");
         }
 
         return Arrays.stream(value.split(SEPARATOR))
@@ -49,7 +49,7 @@ public class SortedPathSetConverter implements Converter<SortedSet<Path>> {
     @Override
     public String convertTo(SortedSet<Path> value) {
         if (value == null) {
-            throw new ParameterException("String list of Paths must not be null.");
+            throw new ParameterException("路径字符串列表不能为 null。");
         }
 
         return value.stream().map(Path::toString).collect(Collectors.joining(","));

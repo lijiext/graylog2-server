@@ -35,7 +35,7 @@ public class URIListConverter implements Converter<List<URI>> {
     @Override
     public List<URI> convertFrom(String value) {
         if (value == null) {
-            throw new ParameterException("URI List must not be null.");
+            throw new ParameterException("URI 列表不能为空。");
         }
 
         final Iterable<String> splittedUris = Splitter.on(SEPARATOR)
@@ -51,7 +51,7 @@ public class URIListConverter implements Converter<List<URI>> {
     @Override
     public String convertTo(List<URI> value) {
         if (value == null) {
-            throw new ParameterException("URI List must not be null.");
+            throw new ParameterException("URI 列表不能为空。");
         }
 
         return Joiner.on(SEPARATOR)

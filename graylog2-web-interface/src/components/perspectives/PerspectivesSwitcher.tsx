@@ -74,7 +74,7 @@ const Switcher = () => {
       <Menu shadow="md" withinPortal>
         <ActivePerspectiveBrand>
           <Menu.Target>
-            <DropdownTrigger type="button" title="Change UI perspective">
+            <DropdownTrigger type="button" title="更改 UI 视图">
               <DropdownIcon name="arrow_drop_down" />
             </DropdownTrigger>
           </Menu.Target>

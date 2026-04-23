@@ -48,7 +48,7 @@ const WidgetModeConfiguration = ({ name, onChange: onChangeProp, options }: Prop
 
       return (
         <Input id="widget-type-configuration"
-               label="Type"
+               label="类型"
                error={error}
                labelClassName="col-sm-3"
                wrapperClassName="col-sm-9">

@@ -71,8 +71,8 @@ const useSavedSearches = (searchParams: SearchParams, { enabled }: Options = { e
     () => fetchSavedSearches(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading saved searches failed with status: ${errorThrown}`,
-          'Could not load saved searches');
+        UserNotification.error(`加载保存的搜索失败，状态码：${errorThrown}`,
+          '无法加载已保存的搜索');
       },
       keepPreviousData: true,
       enabled,

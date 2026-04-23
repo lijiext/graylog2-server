@@ -38,7 +38,7 @@ type Props = {
 
 const PageTitle = ({ fullName }: { fullName: string | null | undefined }) => (
   <>
-    Edit Tokens Of User  {fullName && (
+    编辑用户 Token  {fullName && (
       <>
         - <i>{fullName}</i>
       </>
@@ -97,7 +97,7 @@ const UserEditPage = ({ params }: Props) => {
   useEffect(() => { UsersDomain.load(userId).then(setLoadedUser); }, [userId]);
 
   return (
-    <DocumentTitle title={`Edit Tokens Of User ${loadedUser?.fullName ?? ''}`}>
+    <DocumentTitle title={`编辑用户 ${loadedUser?.fullName ?? ''} 的令牌`}>
       <UsersPageNavigation />
       <PageHeader title={<PageTitle fullName={loadedUser?.fullName} />}
                   actions={(
@@ -109,13 +109,13 @@ const UserEditPage = ({ params }: Props) => {
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>
-          You can create new tokens or delete old ones.
+          您可以创建新令牌或删除旧令牌。
         </span>
       </PageHeader>
 
       <Row className="content">
         <Col lg={8}>
-          <Headline>Create And Edit Tokens</Headline>
+          <Headline>创建并编辑 Token</Headline>
           {loadedUser ? (
             <TokenList tokens={tokens}
                        onDelete={_handleTokenDelete}

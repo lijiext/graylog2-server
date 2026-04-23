@@ -33,10 +33,10 @@ export const StyledPanel = styled(Panel)<{ bsStyle: string }>(({ bsStyle = 'defa
 const InPlaceMigrationInfo = () => (
   <StyledPanel bsStyle="info">
     <Panel.Heading>
-      <Panel.Title componentClass="h3">In-Place migration</Panel.Title>
+      <Panel.Title componentClass="h3">就地迁移</Panel.Title>
     </Panel.Heading>
     <Panel.Body>
-      For In-Place migrations, please ensure the configuration of your Data Nodes in <code>datanode.conf</code>, specifically the <code>opensearch_data_location</code> configuration option, points to the correct existing OpenSearch data directory on every node.
+      对于就地迁移，请确保您的数据节点在 <code>datanode.conf</code>，特别是 <code>opensearch_data_location</code> 配置选项，指向每个节点上正确的现有 OpenSearch 数据目录。
     </Panel.Body>
   </StyledPanel>
 );

@@ -92,7 +92,7 @@ const Sort = React.memo(({ index }: Props) => {
       <Field name={`sort.${index}.field`}>
         {({ field: { name, onChange }, meta: { error } }) => (
           <Input id="field-select"
-                 label="Field"
+                 label="字段"
                  error={error}
                  labelClassName="col-sm-3"
                  wrapperClassName="col-sm-9">
@@ -102,8 +102,8 @@ const Sort = React.memo(({ index }: Props) => {
                     clearable={false}
                     name={name}
                     value={invalidSort ? 0 : selectedOption}
-                    placeholder="Specify field/metric to be sorted on"
-                    aria-label="Select field for sorting"
+                    placeholder="指定用于排序的字段/指标"
+                    aria-label="选择用于排序的字段"
                     size="small"
                     menuPortalTarget={document.body}
                     onChange={(newValue: Option['value']) => {
@@ -118,7 +118,7 @@ const Sort = React.memo(({ index }: Props) => {
       <Field name={`sort.${index}.direction`}>
         {({ field: { name, value, onChange }, meta: { error } }) => (
           <Input id="direction-select"
-                 label="Direction"
+                 label="方向"
                  error={error}
                  labelClassName="col-sm-3"
                  wrapperClassName="col-sm-9">
@@ -126,7 +126,7 @@ const Sort = React.memo(({ index }: Props) => {
                     disabled={invalidSort}
                     clearable={false}
                     name={name}
-                    aria-label="Select direction for sorting"
+                    aria-label="选择排序方向"
                     value={value}
                     size="small"
                     menuPortalTarget={document.body}

@@ -116,7 +116,7 @@ const TabAbsoluteTimeRange = ({ disabled, limitDuration }: Props) => {
 
         <AccordionItem name="Timestamp">
           <TimestampContent>
-            <p>Date should be formatted as <code>YYYY-MM-DD [HH:mm:ss[.SSS]]</code>.</p>
+            <p>日期格式应为 <code>YYYY-MM-DD [HH:mm:ss[.SSS]]</code>.</p>
             <FlexWrap>
               <RangeWrapper>
                 <AbsoluteTimestamp disabled={disabled}

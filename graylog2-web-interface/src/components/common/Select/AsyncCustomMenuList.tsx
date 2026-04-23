@@ -30,7 +30,7 @@ const StyledDiv = styled.div`
 
 const getNoOptionMessage = () => (
   <StyledDiv key="noOptions" className="menu-notice menu-notice--no-options">
-    No Options
+    无选项
   </StyledDiv>
 );
 

@@ -28,9 +28,9 @@ const Welcome = ({ currentStep, onTriggerStep, hideActions } : MigrationStepComp
 
   return (
     <>
-      <h3>Welcome</h3>
-      <p>Using the Remote Reindexing will allow you to move to Data Nodes by reindexing the data in your existing cluster to a Data Node cluster.</p>
-      <p>To start please install Data Node on every OS/ES node from your previous setup. You can find more information on how to download and install the Data Node  <DocumentationLink page="graylog-data-node" text="here" />.</p>
+      <h3>欢迎</h3>
+      <p>使用远程重新索引功能，您可以将现有集群中的数据重新索引到数据节点集群，从而迁移到数据节点。</p>
+      <p>要开始使用，请在您之前设置中的每个 OS/ES 节点上安装 Data Node。您可以找到有关如何下载和安装 Data Node 的更多信息。  <DocumentationLink page="graylog-data-node" text="here" />.</p>
       <MigrationDatanodeList />
       <MigrationStepTriggerButtonToolbar hidden={hideActions} disabled={dataNodes?.list?.length <= 0} nextSteps={currentStep.next_steps} onTriggerStep={onTriggerStep} />
     </>

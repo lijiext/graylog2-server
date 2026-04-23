@@ -43,7 +43,7 @@ const ContentStreamNewsFooter = () => (
   <StyledDiv>
     <StyledReadMoreDiv>
       <ExternalLink href="https://www.graylog.org/blog/">
-        Read more
+        阅读更多
       </ExternalLink>
     </StyledReadMoreDiv>
     <StyledActionDiv><ContentStreamNewsContentActions /></StyledActionDiv>

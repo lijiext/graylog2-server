@@ -57,7 +57,7 @@ const List = ({ filter, activeQueryFields, allFields, currentGroup }: Props) => 
   const activeQuery = useActiveQueryId();
 
   if (!activeQueryFields) {
-    return <span>No field information available.</span>;
+    return <span>无字段信息可用。</span>;
   }
 
   const fieldFilter = filter ? ((field) => field.name.toLocaleUpperCase().includes(filter.toLocaleUpperCase())) : () => true;
@@ -67,7 +67,7 @@ const List = ({ filter, activeQueryFields, allFields, currentGroup }: Props) => 
     .sortBy((field) => field.name.toLocaleUpperCase());
 
   if (fieldList.isEmpty()) {
-    return <i>No fields to show. Try changing your filter term or select a different field set above.</i>;
+    return <i>无字段可显示。请尝试更改筛选条件或选择上方不同的字段集。</i>;
   }
 
   return (

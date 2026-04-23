@@ -51,7 +51,7 @@ const Rule = ({ create, title, isRuleBuilder }: Props) => {
   if (create) {
     pageTitle = 'Create pipeline rule';
   } else {
-    pageTitle = <span>Pipeline rule <em>{title}</em></span>;
+    pageTitle = <span>管道规则 <em>{title}</em></span>;
   }
 
   return (
@@ -70,7 +70,7 @@ const Rule = ({ create, title, isRuleBuilder }: Props) => {
 
                               setShowConfirmSourceCodeEditor(true);
                             }}>
-                      Use Source Code Editor
+                      使用源代码编辑器
                     </Button>
                   ) : undefined}
                   documentationLink={{
@@ -78,9 +78,9 @@ const Rule = ({ create, title, isRuleBuilder }: Props) => {
                     path: DocsHelper.PAGES.PIPELINE_RULES,
                   }}>
         <span>
-          Rules are a way of applying changes to messages in Graylog. A rule consists of a condition and a list{' '}
-          of actions.{' '}
-          Graylog evaluates the condition against a message and executes the actions if the condition is satisfied.
+          规则是 Graylog 中对消息应用更改的一种方式。规则由条件和列表组成{' '}
+          的操作。{' '}
+          Graylog 将条件与消息进行比对，若条件满足则执行相应操作。
         </span>
       </PageHeader>
 
@@ -99,7 +99,7 @@ const Rule = ({ create, title, isRuleBuilder }: Props) => {
 
       {showConfirmSourceCodeEditor && (
         <BootstrapModalConfirm showModal
-                               title="Switch to Source Code Editor"
+                               title="切换到源代码编辑器"
                                onConfirm={() => {
                                  sendTelemetry(TELEMETRY_EVENT_TYPE.PIPELINE_RULE_BUILDER.SWITCH_TO_SOURCE_CODE_EDITOR_CONFIRM_CLICKED, {
                                    app_pathname: getPathnameWithoutId(pathname),
@@ -119,8 +119,8 @@ const Rule = ({ create, title, isRuleBuilder }: Props) => {
 
                                  setShowConfirmSourceCodeEditor(false);
                                }}>
-          <div>You are about to leave this page and go to the Source Code Editor.</div>
-          <div>Make sure you have no unsaved changes.</div>
+          <div>您即将离开此页面并进入源代码编辑器。</div>
+          <div>请确保没有未保存的更改。</div>
         </BootstrapModalConfirm>
       )}
     </div>

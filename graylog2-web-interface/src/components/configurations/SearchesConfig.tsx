@@ -263,36 +263,33 @@ const SearchesConfig = () => {
 
   return (
     <div>
-      <h2>Search Configuration</h2>
+      <h2>搜索配置</h2>
 
       <dl className="deflist">
-        <dt>Query time range limit</dt>
+        <dt>查询时间范围限制</dt>
         <dd>{limit(viewConfig)}</dd>
-        <dd>The maximum time users can query data in the past. This prevents users from accidentally creating queries
-          which
-          span a lot of data and would need a long time and many resources to complete (if at all).
+        <dd>用户查询过去数据的最长时间限制。这可以防止用户意外创建跨越大量数据的查询，此类查询可能需要很长时间和大量资源才能完成（甚至可能无法完成）。
         </dd>
       </dl>
 
       <dl className="deflist">
-        <dt>Cancellation timeout</dt>
+        <dt>取消超时</dt>
         <dd>{cancellationTimeout(viewConfig)}</dd>
-        <dd>The time in seconds per widget after which search execution will be canceled automatically.
-          This minimizes the amount of executed searches and improves performance.
+        <dd>每个小部件在多少秒后自动取消搜索执行。这可以最小化执行的搜索数量并提高性能。
         </dd>
       </dl>
 
       <Row>
         <Col md={4}>
-          <strong>Search Time Range Presets</strong>
+          <strong>搜索时间范围预设</strong>
           <TimeRangePresetOptionsSummary options={timeRangePresetsFromBE.toArray()} />
-          <strong>Surrounding time range options</strong>
+          <strong>周围时间范围选项</strong>
           <TimeRangeOptionsSummary options={viewConfig.surrounding_timerange_options} />
         </Col>
         <Col md={4}>
           <Row style={{ marginBottom: 20 }}>
             <Col>
-              <strong>Surrounding search filter fields</strong>
+              <strong>周围搜索过滤字段</strong>
               <ul>
                 {viewConfig.surrounding_filter_fields && viewConfig.surrounding_filter_fields.map((f: string) => (
                   <li key={f}>{f}
@@ -303,7 +300,7 @@ const SearchesConfig = () => {
           </Row>
           <Row>
             <Col>
-              <strong>UI analysis disabled for fields</strong>
+              <strong>字段禁用 UI 分析</strong>
               <ul>
                 {viewConfig.analysis_disabled_fields && (viewConfig.analysis_disabled_fields.map((f: string) => (
                   <li key={f}>{f}
@@ -314,29 +311,29 @@ const SearchesConfig = () => {
           </Row>
         </Col>
         <Col md={4}>
-          <strong>Auto-refresh interval options</strong>
+          <strong>自动刷新间隔选项</strong>
           <TimeRangeOptionsSummary options={viewConfig.auto_refresh_timerange_options} />
 
-          <strong>Default auto-refresh interval</strong>
+          <strong>默认自动刷新间隔</strong>
           <TimeRangeOptionsSummary options={{ [viewConfig.default_auto_refresh_option]: viewConfig.auto_refresh_timerange_options[viewConfig.default_auto_refresh_option] }} />
         </Col>
       </Row>
       <IfPermitted permissions="clusterconfigentry:edit">
-        <Button bsStyle="info" bsSize="xs" onClick={openModal}>Edit configuration</Button>
+        <Button bsStyle="info" bsSize="xs" onClick={openModal}>编辑配置</Button>
       </IfPermitted>
 
       {showConfigModal && formConfig && (
         <BootstrapModalForm show
                             bsSize="large"
-                            title="Update Search Configuration"
+                            title="更新搜索配置"
                             onSubmitForm={saveConfig}
                             onCancel={handleModalCancel}
-                            submitButtonText="Update configuration">
+                            submitButtonText="更新配置">
           <fieldset>
-            <label htmlFor="query-limit-checkbox">Query Time Range Limit</label>
+            <label htmlFor="query-limit-checkbox">查询时间范围限制</label>
             <Input id="query-limit-checkbox"
                    type="checkbox"
-                   label="Enable query limit"
+                   label="启用查询限制"
                    name="enabled"
                    checked={isLimitEnabled(formConfig)}
                    onChange={onChecked} />
@@ -344,23 +341,23 @@ const SearchesConfig = () => {
               <ISODurationInput id="query-timerange-limit-field"
                                 duration={formConfig.query_time_range_limit}
                                 update={onUpdate('query_time_range_limit')}
-                                label="Query time range limit (ISO8601 Duration)"
-                                help='The maximum time range for searches. (i.e. "P30D" for 30 days, "PT24H" for 24 hours)'
+                                label="查询时间范围限制 (ISO8601 持续时间)"
+                                help='搜索的最大时间范围。（例如："P30D" 表示 30 天，"PT24H" 表示 24 小时）'
                                 validator={queryTimeRangeLimitValidator}
                                 required />
             )}
-            <label htmlFor="cancel_after_seconds_checkbox">Query Cancellation Timeout</label>
+            <label htmlFor="cancel_after_seconds_checkbox">查询取消超时</label>
             <Input id="cancel_after_seconds_checkbox"
                    type="checkbox"
-                   label="Enable query cancellation timeout"
+                   label="启用查询取消超时"
                    name="cancel_after_seconds_checkbox"
                    checked={showCancelAfterSeconds}
                    onChange={onCheckedCancelAfterSeconds}
-                   help="The time in seconds per widget after which search execution will be canceled automatically. This minimizes the amount of executed searches and improves performance." />
+                   help="每个小部件在多少秒后自动取消搜索执行。这可以最小化执行的搜索数量并提高性能。" />
             {showCancelAfterSeconds && (
               <Input id="cancel_after_seconds"
                      type="number"
-                     label="Cancellation timeout"
+                     label="取消超时"
                      name="cancel_after_seconds"
                      min="1"
                      step="1"
@@ -373,36 +370,36 @@ const SearchesConfig = () => {
             <TimeRangeOptionsForm options={surroundingTimeRangeOptionsUpdate || buildTimeRangeOptions(formConfig.surrounding_timerange_options)}
                                   update={onSurroundingTimeRangeOptionsUpdate}
                                   validator={surroundingTimeRangeValidator}
-                                  title="Surrounding Timerange Options"
+                                  title="周围时间范围选项"
                                   help={
-                                    <span>Configure the available options for the <strong>surrounding</strong> time range selector as <strong>ISO8601 duration</strong></span>
+                                    <span>配置可用选项，针对 <strong>surrounding</strong> 时间范围选择器为 <strong>ISO8601 时长</strong></span>
               } />
 
             <Input id="filter-fields-input"
                    type="text"
-                   label="Surrounding search filter fields"
+                   label="周围搜索过滤字段"
                    onChange={onFilterFieldsUpdate}
                    value={surroundingFilterFieldsUpdate || (formConfig.surrounding_filter_fields && formConfig.surrounding_filter_fields.join(', '))}
-                   help="A ',' separated list of message fields that will be used as filter for the surrounding messages query."
+                   help="以 ',' 分隔的消息字段列表，将用作周围消息查询的过滤器。"
                    required />
 
             <Input id="disabled-fields-input"
                    type="text"
-                   label="Disabled analysis fields"
+                   label="已禁用的分析字段"
                    onChange={onAnalysisDisabledFieldsUpdate}
                    value={analysisDisabledFieldsUpdate || (formConfig.analysis_disabled_fields && formConfig.analysis_disabled_fields.join(', '))}
-                   help="A ',' separated list of message fields for which analysis features like QuickValues will be disabled in the web UI."
+                   help="以 ',' 分隔的消息字段列表，对于这些字段，Web UI 中的 QuickValues 等分析功能将被禁用。"
                    required />
             <TimeRangeOptionsForm options={autoRefreshOptions(formConfig)}
                                   update={onAutoRefreshTimeRangeOptionsUpdate}
                                   validator={autoRefreshTimeRangeValidator(minimumRefreshIntervalMS)}
-                                  title="Auto-Refresh Interval Options"
-                                  help={<span>Configure the available options for the <strong>auto-refresh</strong> interval selector as <strong>ISO8601 duration</strong></span>} />
-            <Input label="Default Auto-Refresh Option"
+                                  title="自动刷新间隔选项"
+                                  help={<span>配置可用选项，针对 <strong>自动刷新</strong> 区间选择器为 <strong>ISO8601 时长</strong></span>} />
+            <Input label="默认自动刷新选项"
                    id="default-auto-refresh-option"
                    required
-                   help="Select the interval which is used when auto-refresh is started without explicitly selecting one">
-              <Select placeholder="Select the default interval"
+                   help="选择自动刷新启动时未明确指定所使用的间隔时间">
+              <Select placeholder="选择默认间隔"
                       clearable={false}
                       options={autoRefreshOptions(formConfig)}
                       displayKey="description"
@@ -413,8 +410,7 @@ const SearchesConfig = () => {
             </Input>
             {!isLoadingMinimumRefreshInterval && (
               <Alert bsStyle="warning">
-                Please note, a minimum refresh interval of <ReadableDuration duration={minimumRefreshInterval} /> ({minimumRefreshInterval}) has been configured in the graylog.conf.
-                Only intervals which are equal or above the minimum can be used.
+                请注意，最小刷新间隔为 <ReadableDuration duration={minimumRefreshInterval} /> ({minimumRefreshInterval}) 已在 graylog.conf 中配置。只有等于或大于最小值的间隔才能使用。
               </Alert>
             )}
           </fieldset>

@@ -30,7 +30,7 @@ type Props = {
 }
 
 const ShardRouting = ({ route }: Props) => {
-  const tooltip = <>State: <i>{route.state}</i> on {route.node_hostname} ({route.node_name})</>;
+  const tooltip = <>状态: <i>{route.state}</i> on {route.node_hostname} ({route.node_name})</>;
 
   return (
     <li className={classNames('shard', `shard-${route.state}`, { 'shard-primary': route.primary })}>

@@ -48,7 +48,7 @@ const _getTestAgainstStreamButton = (streams: Immutable.List<any>, index: string
         <MenuItem key={stream.id}
                   onClick={() => sendEvent()}
                   disabled
-                  title="Cannot test against the default stream">{stream.title}
+                  title="无法针对默认数据流进行测试">{stream.title}
         </MenuItem>
       );
     }
@@ -64,9 +64,9 @@ const _getTestAgainstStreamButton = (streams: Immutable.List<any>, index: string
   return (
     <DropdownButton pullRight
                     bsSize="small"
-                    title="Test against stream"
+                    title="测试数据流"
                     id="select-stream-dropdown">
-      {(streamList && !streamList.isEmpty()) ? streamList.toArray() : <MenuItem header>No streams available</MenuItem>}
+      {(streamList && !streamList.isEmpty()) ? streamList.toArray() : <MenuItem header>无可用数据流</MenuItem>}
     </DropdownButton>
   );
 };
@@ -126,7 +126,7 @@ const MessageActions = ({
   );
 
   const showChanges = decorationStats
-    && <Button onClick={toggleShowOriginal} active={showOriginal}>Show changes</Button>;
+    && <Button onClick={toggleShowOriginal} active={showOriginal}>显示更改</Button>;
 
   return (
     <ButtonGroup>
@@ -134,8 +134,8 @@ const MessageActions = ({
       <MessagePermalinkButton messageIndex={index} messageId={id} />
       {pluggableActions}
 
-      <ClipboardButton title="Copy ID" text={id} bsSize="small" />
-      <ClipboardButton title="Copy message" bsSize="small" text={JSON.stringify(fields, null, 2)} />
+      <ClipboardButton title="复制 ID" text={id} bsSize="small" />
+      <ClipboardButton title="复制消息" bsSize="small" text={JSON.stringify(fields, null, 2)} />
       {surroundingSearchButton}
       {disableTestAgainstStream ? null : _getTestAgainstStreamButton(streams, index, id)}
     </ButtonGroup>

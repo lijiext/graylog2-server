@@ -34,8 +34,8 @@ const useDataNode = (datanodeId: string) : {
     () => fetchDataNode(datanodeId),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Data Node failed with status: ${errorThrown}`,
-          'Could not load Data Node');
+        UserNotification.error(`加载数据节点失败，状态码：${errorThrown}`,
+          '无法加载数据节点');
       },
       notifyOnChangeProps: ['data', 'error'],
       refetchInterval: 5000,

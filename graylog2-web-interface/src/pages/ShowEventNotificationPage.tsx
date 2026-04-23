@@ -56,9 +56,9 @@ const ShowEventDefinitionPage = () => {
 
   if (!notification) {
     return (
-      <DocumentTitle title="Notification Details">
+      <DocumentTitle title="通知详情">
         <span>
-          <PageHeader title="Notification Details">
+          <PageHeader title="通知详情">
             <Spinner text="Loading Notification information..." />
           </PageHeader>
         </span>
@@ -67,17 +67,16 @@ const ShowEventDefinitionPage = () => {
   }
 
   return (
-    <DocumentTitle title={`View "${notification.title}" Notification`}>
+    <DocumentTitle title={`查看“${notification.title}”通知`}>
       <EventsPageNavigation />
-      <PageHeader title={`View "${notification.title}" Notification`}
+      <PageHeader title={`查看“${notification.title}”通知`}
                   actions={notification && <EventNotificationActionLinks notificationId={notification.id} />}
                   documentationLink={{
                     title: 'Alerts documentation',
                     path: DocsHelper.PAGES.ALERTS,
                   }}>
         <span>
-          Notifications alert you of any configured Event when they occur. Graylog can send Notifications directly
-          to you or to other systems you use for that purpose.
+          当配置的事件发生时，通知会提醒您。Graylog 可直接向您或您用于此目的的其他系统发送通知。
         </span>
       </PageHeader>
 

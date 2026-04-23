@@ -30,18 +30,18 @@ const BackendActionLinks = ({ activeBackend, finishedLoading }: Props) => (
   <ButtonToolbar>
     <LinkContainer to={Routes.SYSTEM.AUTHENTICATION.BACKENDS.ACTIVE}>
       <Button disabled={!finishedLoading || !activeBackend}>
-        View active service
+        查看活动服务
       </Button>
     </LinkContainer>
     <LinkContainer to={Routes.SYSTEM.AUTHENTICATION.BACKENDS.edit(activeBackend?.id)}>
       <Button disabled={!activeBackend || !finishedLoading}
               type="button">
-        Edit active service
+        编辑活动服务
       </Button>
     </LinkContainer>
     <LinkContainer to={Routes.SYSTEM.AUTHENTICATION.BACKENDS.CREATE}>
       <Button bsStyle="success" type="button">
-        Create service
+        创建服务
       </Button>
     </LinkContainer>
   </ButtonToolbar>

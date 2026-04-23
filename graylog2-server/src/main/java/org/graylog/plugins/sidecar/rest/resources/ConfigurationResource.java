@@ -317,7 +317,7 @@ public class ConfigurationResource extends RestResource implements PluginRestRes
         // Only allow changing the associated collector ID if the configuration is not in use
         if (!previousConfiguration.collectorId().equals(request.collectorId())) {
             if (isConfigurationInUse(id)) {
-                throw new BadRequestException("Configuration still in use, cannot change collector type.");
+                throw new BadRequestException("配置仍在使用中，无法更改采集器类型。");
             }
         }
 
@@ -349,7 +349,7 @@ public class ConfigurationResource extends RestResource implements PluginRestRes
     public Response deleteConfiguration(@ApiParam(name = "id", required = true)
                                         @PathParam("id") String id) {
         if (isConfigurationInUse(id)) {
-            throw new BadRequestException("Configuration still in use, cannot delete.");
+            throw new BadRequestException("配置仍在使用中，无法删除。");
         }
 
         int deleted = configurationService.delete(id);

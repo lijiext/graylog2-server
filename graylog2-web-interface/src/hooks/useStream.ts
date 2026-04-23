@@ -36,8 +36,8 @@ const useStream = (streamId: string): {
     () => fetchStream(streamId),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading stream failed with status: ${errorThrown}`,
-          'Could not load stream.');
+        UserNotification.error(`加载数据流失败，状态：${errorThrown}`,
+          '无法加载数据流。');
       },
       notifyOnChangeProps: ['data', 'error'],
     },

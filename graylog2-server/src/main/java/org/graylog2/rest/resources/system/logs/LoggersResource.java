@@ -169,7 +169,7 @@ public class LoggersResource extends RestResource {
     @ApiOperation(value = "Set the loglevel of a whole subsystem",
                   notes = "Provided level is falling back to DEBUG if it does not exist")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such subsystem.")
+            @ApiResponse(code = 404, message = "不存在此类子系统。")
     })
     @Path("/subsystems/{subsystem}/level/{level}")
     @AuditEvent(type = AuditEventTypes.LOG_LEVEL_UPDATE)
@@ -212,24 +212,24 @@ public class LoggersResource extends RestResource {
     @Timed
     @ApiOperation(value = "Get recent internal log messages")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Memory appender is disabled."),
-            @ApiResponse(code = 500, message = "Memory appender is broken.")
+            @ApiResponse(code = 404, message = "内存记录器已禁用。"),
+            @ApiResponse(code = 500, message = "内存追加器已损坏。")
     })
     @Path("/messages/recent")
     @Produces(MediaType.TEXT_PLAIN)
     @RequiresPermissions(RestPermissions.LOGGERSMESSAGES_READ)
     @HideOnCloud
-    public Response messages(@ApiParam(name = "limit", value = "How many log messages should be returned. 0 returns all existing messages." +
+    public Response messages(@ApiParam(name = "limit", value = "应返回多少条日志消息。0 返回所有现有消息。" +
             "The limit can be rounded up to the next batch size and thus return slightly more logs than requested.",
                                        defaultValue = "1000", allowableValues = "range[0, infinity]")
                              @QueryParam("limit") @DefaultValue("1000") @Min(0L) int limit) {
         final Appender appender = getAppender(MEMORY_APPENDER_NAME);
         if (appender == null) {
-            throw new NotFoundException("Memory appender is disabled. Please refer to the example log4j.xml file.");
+            throw new NotFoundException("内存记录器已禁用。请参考示例 log4j.xml 文件。");
         }
 
         if (!(appender instanceof MemoryAppender memoryAppender)) {
-            throw new InternalServerErrorException("Memory appender is not an instance of MemoryAppender. Please refer to the example log4j.xml file.");
+            throw new InternalServerErrorException("内存记录器不是 MemoryAppender 的实例。请参考示例 log4j.xml 文件。");
         }
         var mediaType = MediaType.valueOf(MediaType.TEXT_PLAIN);
         StreamingOutput streamingOutput = outputStream -> memoryAppender.streamFormattedLogMessages(outputStream, limit);

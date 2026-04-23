@@ -38,7 +38,7 @@ const AttributeSelect = ({
   setSelectedAttributeId: React.Dispatch<React.SetStateAction<string>>
 }) => (
   <>
-    <MenuItem header>Create Filter</MenuItem>
+    <MenuItem header>创建过滤器</MenuItem>
     {attributes.map(({ id, title, type }) => {
       const hasActiveFilter = !!activeFilters?.get(id)?.length;
       const disabled = type === 'BOOLEAN' ? hasActiveFilter : false;
@@ -50,8 +50,8 @@ const AttributeSelect = ({
           {title}
           {(type === 'BOOLEAN' && disabled) && (
             <HoverForHelp displayLeftMargin>
-              You can only create one filter for a boolean attribute.<br />
-              If you want to change the filter value, you can update the existing one.
+              您只能为布尔属性创建一个过滤器。<br />
+              如果您想更改过滤器值，可以更新现有值。
             </HoverForHelp>
           )}
         </MenuItem>

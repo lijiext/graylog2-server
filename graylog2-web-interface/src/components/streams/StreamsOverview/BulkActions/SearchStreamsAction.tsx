@@ -36,7 +36,7 @@ const SearchStreamsAction = () => {
 
   return (
     <MenuItem href={link} target="_blank">
-      Search in streams
+      在数据流中搜索
     </MenuItem>
   );
 };

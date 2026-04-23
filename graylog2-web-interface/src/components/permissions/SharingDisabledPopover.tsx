@@ -27,7 +27,7 @@ const SharingDisabledPopover = ({ type, description }: Props) => {
   const getReadableType = (_type: string) => _type.replaceAll('_', ' ');
 
   return (
-    <HoverForHelp title="Sharing not possible" pullRight={false}>
+    <HoverForHelp title="无法共享" pullRight={false}>
       {description || `Only owners of this ${getReadableType(type)} are allowed to share it.`}
     </HoverForHelp>
   );

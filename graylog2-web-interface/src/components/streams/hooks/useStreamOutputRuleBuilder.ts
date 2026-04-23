@@ -41,8 +41,8 @@ const useStreamOutputRuleBuilder = () => {
     fetchRuleConditions,
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Stream Output Filter Rule Builder Conditions list failed with status: ${errorThrown}`,
-          'Could not load Stream Output Filter Rule Builder Conditions list.');
+        UserNotification.error(`加载数据流输出过滤器规则构建器条件列表失败，状态：${errorThrown}`,
+          '无法加载数据流输出过滤器规则构建器条件列表。');
       },
       keepPreviousData: true,
     },

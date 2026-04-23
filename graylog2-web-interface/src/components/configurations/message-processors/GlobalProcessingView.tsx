@@ -37,12 +37,12 @@ const StyledDefList = styled.dl.attrs({ className: 'deflist' })(({ theme }) => c
 
 const GlobalProcessingView = ({ gracePeriod }: Props) => (
   <Wrapper>
-    <h2>Global Processing Rules Configuration</h2>
-    <p>Global Processing Rules are applied after receipt by an Input, and before processing rules applied by Message Processors.</p>
+    <h2>全局处理规则配置</h2>
+    <p>全局处理规则在输入端接收后应用，并在消息处理器应用的处理规则之前应用。</p>
     <StyledDefList>
-      <dt>Future Timestamp Normalization:</dt>
+      <dt>未来时间戳规范化：</dt>
       <dd>{gracePeriod ? 'Enabled' : 'Disabled'}</dd>
-      <dt>Grace Period:</dt>
+      <dt>宽限期：</dt>
       <dd>{gracePeriod}</dd>
     </StyledDefList>
   </Wrapper>

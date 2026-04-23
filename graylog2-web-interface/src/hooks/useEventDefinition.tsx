@@ -104,8 +104,8 @@ const useEventDefinition = (definitionId: string, { onErrorHandler }: { onErrorH
       onError: (errorThrown: FetchError) => {
         if (onErrorHandler) onErrorHandler(errorThrown);
 
-        UserNotification.error(`Loading event definition failed with status: ${errorThrown}`,
-          'Could not load event definition');
+        UserNotification.error(`加载事件定义失败，状态码：${errorThrown}`,
+          '无法加载事件定义');
       },
       keepPreviousData: true,
       enabled: !!definitionId,

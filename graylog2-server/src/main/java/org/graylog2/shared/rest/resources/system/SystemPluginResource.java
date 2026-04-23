@@ -51,7 +51,7 @@ public class SystemPluginResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "List all installed plugins on this node.")
+    @ApiOperation(value = "列出此节点上安装的所有插件。")
     public PluginList list() {
         final List<PluginMetaDataValue> pluginMetaDataValues = Lists.newArrayList();
 

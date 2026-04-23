@@ -85,15 +85,14 @@ const AggregationForm = ({ aggregationFunctions, eventDefinition, validation, on
 
   return (
     <fieldset>
-      <h2 className={commonStyles.title}>Aggregation</h2>
+      <h2 className={commonStyles.title}>聚合</h2>
       <p>
-        Summarize log messages matching the Filter defined above by using a function. You can optionally group the
-        Filter results by identical field values.
+        使用函数汇总匹配上述过滤器的日志消息。您可以选择按相同的字段值对过滤结果进行分组。
       </p>
       <Row>
         <Col lg={7}>
           <FormGroup controlId="group-by">
-            <ControlLabel>Group by Field(s) <small className="text-muted">(Optional)</small></ControlLabel>
+            <ControlLabel>按字段分组 <small className="text-muted">(可选)</small></ControlLabel>
             <MultiSelect id="group-by"
                          matchProp="label"
                          onChange={handleGroupByChange}
@@ -102,12 +101,9 @@ const AggregationForm = ({ aggregationFunctions, eventDefinition, validation, on
                          value={defaultTo(eventDefinition.config.group_by, []).join(',')}
                          allowCreate />
             <HelpBlock>
-              Select Fields that Graylog should use to group Filter results when they have identical values.
-              {' '}<b>Example:</b><br />
-              Assuming you created a Filter with all failed log-in attempts in your network, Graylog could alert you
-              when there are more than 5 failed log-in attempts overall. Now, add <code>username</code> as Group by
-              Field and Graylog will alert you <em>for each <code>username</code></em> with more than 5 failed
-              log-in attempts.
+              选择 Graylog 在过滤结果具有相同值时应用于分组的字段。
+              {' '}<b>示例：</b><br />
+              假设您在网络中创建了一个包含所有失败登录尝试的过滤器，当总共出现超过 5 次失败登录尝试时，Graylog 可以向您发送告警。现在，添加 <code>username</code> 作为分组字段，Graylog 将会向您发出告警 <em>对于每个 <code>username</code></em> 有超过 5 次失败的登录尝试。
             </HelpBlock>
           </FormGroup>
         </Col>

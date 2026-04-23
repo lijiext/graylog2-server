@@ -202,7 +202,7 @@ public class RoleServiceImpl implements RoleService {
         RoleImpl role = (RoleImpl) role1;
         final Set<ConstraintViolation<Role>> violations = validate(role);
         if (!violations.isEmpty()) {
-            throw new ValidationException("Validation failed.", violations.toString());
+            throw new ValidationException("验证失败。", violations.toString());
         }
         return MongoDBUpsertRetryer.run(() ->
                 dbCollection.findAndModify(is(NAME_LOWER, role.nameLower()), null, null, false, role, true, true));

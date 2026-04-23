@@ -121,11 +121,11 @@ const RolesOverview = () => {
       <Row className="content">
         <Col xs={12}>
           <Header>
-            <h2>Roles</h2>
+            <h2>角色</h2>
             {loading && <LoadingSpinner text="" delay={0} />}
           </Header>
           <p className="description">
-            Found {paginatedRoles.pagination.total} roles on the system.
+            已找到 {paginatedRoles.pagination.total} 系统上的角色。
           </p>
           <StyledPaginatedList totalItems={paginatedRoles.pagination.total}>
             <DataTable id="roles-overview"
@@ -135,7 +135,7 @@ const RolesOverview = () => {
                        headerCellFormatter={_headerCellFormatter}
                        sortByKey="name"
                        rows={roles.toJS()}
-                       noDataText={<NoSearchResult>No roles have been found.</NoSearchResult>}
+                       noDataText={<NoSearchResult>未找到角色。</NoSearchResult>}
                        customFilter={searchFilter}
                        dataRowFormatter={_rolesOverviewItem}
                        filterKeys={[]}

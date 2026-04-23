@@ -25,13 +25,13 @@ import SidecarFailureTrackingListContainer from 'components/sidecars/failure-tra
 const SidecarFailureTrackingPage = () => (
   <DocumentTitle title="Sidecars">
     <SidecarsPageNavigation />
-    <PageHeader title="Failure Tracking"
+    <PageHeader title="故障跟踪"
                 documentationLink={{
                   title: 'Sidecar documentation',
                   path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                 }}>
       <span>
-        The Graylog Sidecar Failure Tracking provides additional useful information about failure reasons, that can help you decrease troubleshooting time and get your collectors back online faster.
+        Graylog Sidecar 故障跟踪提供了有关故障原因的额外有用信息，可帮助您减少故障排查时间，使采集器更快恢复在线。
       </span>
     </PageHeader>
 

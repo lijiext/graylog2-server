@@ -88,7 +88,7 @@ const FilterRulesList = ({ streamId, destinationType, paginatedFilters, onPagina
   const { list: filters, pagination: { total } } = paginatedFilters;
 
   return (
-    <StyledSectionComponent title="Filter Rules"
+    <StyledSectionComponent title="过滤器规则"
                             headerActions={(
                               <IfPermitted permissions="">
                                 <FilterRuleEditButton filterRule={{ stream_id: streamId }}
@@ -97,7 +97,7 @@ const FilterRulesList = ({ streamId, destinationType, paginatedFilters, onPagina
                               </IfPermitted>
              )}>
       <Alert bsStyle="default">
-        Messages which meet the criteria of the following filter rule(s) will not be routed to the  {destinationType === 'indexer' ? 'Index Set' : 'Data Warehouse'}.
+        满足以下过滤规则条件的消息将不会路由到  {destinationType === 'indexer' ? 'Index Set' : 'Data Warehouse'}.
       </Alert>
       <PaginatedList totalItems={total}
                      pageSize={DEFAULT_PAGE_SIZES[0]}
@@ -110,7 +110,7 @@ const FilterRulesList = ({ streamId, destinationType, paginatedFilters, onPagina
                    headers={TABLE_HEADERS}
                    headerCellFormatter={_headerCellFormatter}
                    sortByKey="title"
-                   noDataText={<NoSearchResult>No filter have been found.</NoSearchResult>}
+                   noDataText={<NoSearchResult>未找到任何筛选条件。</NoSearchResult>}
                    rows={filters.toJS()}
                    dataRowFormatter={buildFilterItem(destinationType)} />
       </PaginatedList>

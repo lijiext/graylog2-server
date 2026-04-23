@@ -38,9 +38,9 @@ const TelemetrySettingsDetails = () => {
   }
 
   return (
-    <SectionComponent title="Telemetry">
+    <SectionComponent title="遥测">
       <TelemetryInfoText />
-      <ReadOnlyFormGroup label="Telemetry" value={settings.telemetry_enabled ?? false} />
+      <ReadOnlyFormGroup label="遥测" value={settings.telemetry_enabled ?? false} />
     </SectionComponent>
   );
 };

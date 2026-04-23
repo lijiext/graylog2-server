@@ -41,16 +41,16 @@ const ProfileSection = ({
   const isOldUser = () => fullName && (!firstName && !lastName);
 
   return (
-    <SectionComponent title="Profile">
-      <ReadOnlyFormGroup label="Username" value={username} />
-      {isOldUser() && <ReadOnlyFormGroup label="Full name" value={fullName} />}
-      <ReadOnlyFormGroup label="First Name" value={firstName} />
-      <ReadOnlyFormGroup label="Last Name" value={lastName} />
-      <ReadOnlyFormGroup label="E-Mail Address" value={email} />
-      <ReadOnlyFormGroup label="Client Address" value={clientAddress} />
-      <ReadOnlyFormGroup label="Last Activity" value={lastActivity} />
-      <ReadOnlyFormGroup label="Logged In" value={sessionActive} />
-      <ReadOnlyFormGroup label="Enabled"
+    <SectionComponent title="配置文件">
+      <ReadOnlyFormGroup label="用户名" value={username} />
+      {isOldUser() && <ReadOnlyFormGroup label="全名" value={fullName} />}
+      <ReadOnlyFormGroup label="名" value={firstName} />
+      <ReadOnlyFormGroup label="姓" value={lastName} />
+      <ReadOnlyFormGroup label="电子邮件地址" value={email} />
+      <ReadOnlyFormGroup label="客户端地址" value={clientAddress} />
+      <ReadOnlyFormGroup label="最后活动" value={lastActivity} />
+      <ReadOnlyFormGroup label="已登录" value={sessionActive} />
+      <ReadOnlyFormGroup label="已启用"
                          value={accountStatus === 'enabled'}
                          help={(!authServiceEnabled && accountStatus === 'enabled') ? 'Authentication service is disabled, user cannot log in' : ''} />
     </SectionComponent>

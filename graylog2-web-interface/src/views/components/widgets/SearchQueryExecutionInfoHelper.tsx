@@ -65,26 +65,26 @@ const HelpPopover = ({ widgetExecutionData }: { widgetExecutionData: WidgetExecu
   <StyledTable condensed>
     <tbody>
       <tr>
-        <td><i>Executed at:</i></td>
-        <td aria-label="Executed at"><Timestamp dateTime={widgetExecutionData?.timestamp} /></td>
+        <td><i>执行时间：</i></td>
+        <td aria-label="执行于"><Timestamp dateTime={widgetExecutionData?.timestamp} /></td>
       </tr>
       <tr>
-        <td><i>Executed in:</i> </td>
+        <td><i>执行耗时：</i> </td>
         <td>{numeral(widgetExecutionData?.duration).format('0,0')}ms</td>
       </tr>
       <tr>
-        <td colSpan={2}><i>Effective time range:</i></td>
+        <td colSpan={2}><i>有效时间范围：</i></td>
       </tr>
       <tr>
-        <td>From</td>
-        <td aria-label="Effective time range from"><Timestamp dateTime={widgetExecutionData?.effectiveTimerange?.from} format="complete" /></td>
+        <td>从</td>
+        <td aria-label="有效时间范围自"><Timestamp dateTime={widgetExecutionData?.effectiveTimerange?.from} format="complete" /></td>
       </tr>
       <tr>
-        <td>To</td>
-        <td aria-label="Effective time range to"><Timestamp dateTime={widgetExecutionData?.effectiveTimerange?.to} format="complete" /></td>
+        <td>至</td>
+        <td aria-label="有效时间范围至"><Timestamp dateTime={widgetExecutionData?.effectiveTimerange?.to} format="complete" /></td>
       </tr>
       <tr>
-        <td><i>Total results:</i></td>
+        <td><i>总结果数：</i></td>
         <td>{numeral(widgetExecutionData?.total).format('0,0')}</td>
       </tr>
     </tbody>
@@ -127,8 +127,8 @@ const SearchQueryExecutionInfoHelper = ({ currentWidgetMapping, children }: Prop
           </>
         </TargetContainer>
       </Popover.Target>
-      <Popover.Dropdown title="Execution Info">
-        {isEmpty(result) ? <i>No query executed yet.</i> : <HelpPopover widgetExecutionData={widgetExecutionData} />}
+      <Popover.Dropdown title="执行信息">
+        {isEmpty(result) ? <i>尚未执行查询。</i> : <HelpPopover widgetExecutionData={widgetExecutionData} />}
       </Popover.Dropdown>
     </Popover>
 

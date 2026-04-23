@@ -148,8 +148,8 @@ const ViewManagementStore = singletonStore(
           return response;
         })
         .catch((error) => {
-          UserNotification.error(`Fetching views failed with status: ${error}`,
-            'Could not retrieve views');
+          UserNotification.error(`获取视图失败，状态码：${error}`,
+            '无法检索视图');
         });
 
       ViewManagementActions.search.promise(promise);
@@ -157,8 +157,8 @@ const ViewManagementStore = singletonStore(
 
     delete(view) {
       const promise = fetch('DELETE', viewsIdUrl(view.id)).catch((error) => {
-        UserNotification.error(`Deleting view ${view.title} failed with status: ${error}`,
-          'Could not delete view');
+        UserNotification.error(`删除视图 ${view.title} 失败，状态码：${error}`,
+          '无法删除视图');
       });
 
       ViewManagementActions.delete.promise(promise);
@@ -166,7 +166,7 @@ const ViewManagementStore = singletonStore(
 
     forValue() {
       const promise = fetch('POST', forValueUrl())
-        .catch((error) => UserNotification.error(`Finding matching views for value failed with status: ${error}`, 'Could not find matching views'));
+        .catch((error) => UserNotification.error(`查找匹配值的视图失败，状态码：${error}`, '找不到匹配的视图'));
 
       ViewManagementActions.forValue.promise(promise);
     },

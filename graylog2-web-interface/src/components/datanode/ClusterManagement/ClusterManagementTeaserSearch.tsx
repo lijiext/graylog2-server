@@ -39,7 +39,7 @@ const hotspots = [
 const ClusterManagementTeaserSearch = () => (
   <>
     <StyledAlert bsStyle="warning">
-      Please make sure you have a valid license and Data Node configured to see the performance metrics of your Data Node and your managed OpenSearch cluster.
+      请确保您拥有有效的许可证并已配置数据节点，以便查看您的数据节点和托管的 OpenSearch 集群的性能指标。
     </StyledAlert>
     <TeaserSearch viewJson={viewJson} searchJson={searchJson} searchJobResult={resultJson} hotspots={hotspots} />
   </>

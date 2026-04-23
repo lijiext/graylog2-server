@@ -47,7 +47,7 @@ const SearchResultOverview = ({ results }: Props) => {
   const viewType = useViewType();
 
   if (isEmpty(results)) {
-    return <i>No query executed yet.</i>;
+    return <i>尚未执行查询。</i>;
   }
 
   const { timestamp, duration, effectiveTimerange, searchTypes } = results;
@@ -57,30 +57,30 @@ const SearchResultOverview = ({ results }: Props) => {
   return (
     <>
       <p>
-        Query executed in <br />
-        {numeral(duration).format('0,0')}ms at <Timestamp dateTime={timestamp} />
+        查询执行时间 <br />
+        {numeral(duration).format('0,0')}毫秒 <Timestamp dateTime={timestamp} />
       </p>
       <EffectiveTimeRange>
-        Effective time range<br />
-        {isVariesPerWidget ? <i>Varies per widget</i>
+        有效时间范围<br />
+        {isVariesPerWidget ? <i>因小部件而异</i>
           : (
             <EffectiveTimeRangeTable>
               <tbody>
                 <tr>
-                  <td>From</td>
-                  <td aria-label="Effective time range from"><Timestamp dateTime={effectiveTimerange.from} format="complete" /></td>
+                  <td>从</td>
+                  <td aria-label="有效时间范围自"><Timestamp dateTime={effectiveTimerange.from} format="complete" /></td>
                 </tr>
                 <tr>
-                  <td>To</td>
-                  <td aria-label="Effective time range to"><Timestamp dateTime={effectiveTimerange.to} format="complete" /></td>
+                  <td>至</td>
+                  <td aria-label="有效时间范围至"><Timestamp dateTime={effectiveTimerange.to} format="complete" /></td>
                 </tr>
               </tbody>
             </EffectiveTimeRangeTable>
           )}
       </EffectiveTimeRange>
       <p>
-        Total results<br />
-        {isVariesPerWidget ? <i>Varies per widget</i> : numeral(total).format('0,0')}
+        总结果数<br />
+        {isVariesPerWidget ? <i>因小部件而异</i> : numeral(total).format('0,0')}
       </p>
     </>
   );

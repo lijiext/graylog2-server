@@ -67,12 +67,12 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
       () => {
         deselectEntity(notification.id);
 
-        UserNotification.success('Event Notification deleted successfully',
-          `Event Notification "${notification.title}" was deleted successfully.`);
+        UserNotification.success('事件通知删除成功',
+          `事件通知 "${notification.title}" 已成功删除。`);
       },
       (error) => {
-        UserNotification.error(`Deleting Event Notification "${notification.title}" failed with status: ${error}`,
-          'Could not delete Event Notification');
+        UserNotification.error(`删除事件通知 "${notification.title}" 失败，状态：${error}`,
+          '无法删除事件通知');
       },
     ).finally(() => {
       handleClearState();
@@ -92,7 +92,7 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
           <IfPermitted permissions={`eventnotifications:edit:${notification.id}`}>
             <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.edit(notification.id)}>
               <MenuItem>
-                Edit
+                编辑
               </MenuItem>
             </LinkContainer>
           </IfPermitted>
@@ -105,14 +105,14 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
             </IfPermitted>
             <MenuItem divider />
             <IfPermitted permissions={`eventnotifications:delete:${notification.id}`}>
-              <MenuItem onClick={onDelete} variant="danger">Delete</MenuItem>
+              <MenuItem onClick={onDelete} variant="danger">删除</MenuItem>
             </IfPermitted>
           </IfPermitted>
         </MoreActions>
 
       </ButtonToolbar>
       {showDialog && (
-        <ConfirmDialog title="Delete Notification"
+        <ConfirmDialog title="删除通知"
                        show
                        onConfirm={handleDelete}
                        onCancel={handleClearState}>
@@ -122,7 +122,7 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
       {showShareNotification && (
         <EntityShareModal entityId={notification.id}
                           entityType="notification"
-                          description="Search for a user or team to add as collaborator on this notification."
+                          description="搜索要添加为此通知协作者的用户或团队。"
                           entityTitle={notification.title}
                           onClose={() => setShowShareNotification(undefined)} />
       )}

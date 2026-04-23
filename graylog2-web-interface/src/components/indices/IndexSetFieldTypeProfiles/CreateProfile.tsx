@@ -72,7 +72,7 @@ const CreateProfile = () => {
   }, [history, sendTelemetry, telemetryPathName]);
 
   return (
-    <ProfileForm initialValues={initialValues} onCancel={onCancel} submitButtonText="Create profile" submitLoadingText="Creating profile..." onSubmit={onSubmit} />
+    <ProfileForm initialValues={initialValues} onCancel={onCancel} submitButtonText="创建个人资料" submitLoadingText="正在创建配置文件..." onSubmit={onSubmit} />
   );
 };
 

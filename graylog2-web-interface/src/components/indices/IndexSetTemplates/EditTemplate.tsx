@@ -64,8 +64,8 @@ const EditTemplate = ({
 
   return (
     <TemplateForm onCancel={onCancel}
-                  submitButtonText="Update template"
-                  submitLoadingText="Updating template..."
+                  submitButtonText="更新模板"
+                  submitLoadingText="正在更新模板..."
                   onSubmit={onSubmit}
                   initialValues={template} />
   );

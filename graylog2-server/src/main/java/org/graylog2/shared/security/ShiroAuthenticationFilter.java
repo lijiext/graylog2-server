@@ -55,7 +55,7 @@ public class ShiroAuthenticationFilter implements ContainerRequestFilter {
                 }
             }
         } else {
-            throw new NotAuthorizedException("Basic realm=\"Graylog Server\"");
+            throw new NotAuthorizedException("基本域=\"Graylog Server\"");
         }
 
     }

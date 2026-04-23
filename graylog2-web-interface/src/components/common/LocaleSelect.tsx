@@ -67,7 +67,7 @@ const LocaleSelect = (props: Omit<React.ComponentProps<typeof Select>, 'placehol
 
   return (
     <Select {...props}
-            placeholder="Pick a locale"
+            placeholder="选择区域设置"
             options={_locales}
             optionRenderer={_renderOption} />
   );

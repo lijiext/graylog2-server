@@ -1,8 +1,8 @@
-<#if _title>Elasticsearch nodes disk usage above low watermark</#if>
+<#if _title>Elasticsearch 节点磁盘使用率超过低水位线</#if>
 
 <#if _description>
-There are Elasticsearch nodes in the cluster running out of disk space, their disk usage is above the low watermark.
-For this reason Elasticsearch will not allocate new shards to the affected nodes.
-The affected nodes are: [${nodes}]
-Check for more details: https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html
+集群中有 Elasticsearch 节点磁盘空间不足，其磁盘使用率已超过低水位线。
+因此，Elasticsearch 将不再向受影响的节点分配新的分片。
+受影响的节点为：[${nodes}]
+查看详细信息：https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html
 </#if>

@@ -232,7 +232,7 @@ public class ViewsResource extends RestResource implements PluginRestResource {
                           @Context UserContext userContext,
                           @Context SearchUser searchUser) throws ValidationException {
         if (dto.type().equals(ViewDTO.Type.DASHBOARD) && !searchUser.canCreateDashboards()) {
-            throw new ForbiddenException("User is not allowed to create new dashboards.");
+            throw new ForbiddenException("用户无权创建新仪表盘。");
         }
 
         validateIntegrity(dto, searchUser, true);

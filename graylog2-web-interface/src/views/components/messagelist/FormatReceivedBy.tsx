@@ -48,7 +48,7 @@ const FormatReceivedBy = ({ isLocalNode, inputs, sourceInputId, sourceNodeId }: 
 
   return (
     <div>
-      <dt>Received by</dt>
+      <dt>由...接收</dt>
       <dd>
         <em>{_inputName(inputs, sourceInputId)}</em>{' '}
         on <NodeName nodeId={sourceNodeId} />

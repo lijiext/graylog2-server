@@ -163,8 +163,8 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
         <Form role="form">
           <Input id="hostname"
                  name="hostname"
-                 label="Hostname"
-                 help="URI of the host to call the remote reindexing command against (http://example:9200)"
+                 label="主机名"
+                 help="调用远程重新索引命令的主机 URI (http://example:9200)"
                  placeholder="http://example:9200"
                  type="text"
                  disabled={isLoading}
@@ -176,7 +176,7 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
             <Col md={6}>
               <Input id="user"
                      name="user"
-                     label="Username"
+                     label="用户名"
                      type="text"
                      disabled={isLoading}
                      value={values.user}
@@ -185,7 +185,7 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
             <Col md={6}>
               <Input id="password"
                      name="password"
-                     label="Password"
+                     label="密码"
                      type="password"
                      disabled={isLoading}
                      value={values.password}
@@ -194,9 +194,9 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
           </Row>
           <Input id="allowlist"
                  name="allowlist"
-                 label="Allowlist"
-                 help="Allowlist of all machines in the old cluster (example:9200,example:9201,example:9202 or Regular expression)"
-                 placeholder="example:9200,example:9201,example:9202 or Regular expression"
+                 label="白名单"
+                 help="旧集群中所有机器的白名单（例如：9200,example:9201,example:9202 或正则表达式）"
+                 placeholder="example:9200,example:9201,example:9202 或正则表达式"
                  type="text"
                  disabled={isLoading}
                  value={values.allowlist}
@@ -204,8 +204,8 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
                  required />
           <Input id="threads"
                  name="threads"
-                 label="Threads count"
-                 help="Threads count defines how many indices will be migrated in parallel (minimum 1, default 4)"
+                 label="线程数"
+                 help="线程数定义将并行迁移多少个索引（最小值为 1，默认值为 4）"
                  type="number"
                  min={1}
                  step={1}
@@ -214,16 +214,16 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
                  onChange={(e) => handleChange(e, setFieldValue)} />
           <Input id="trust_unknown_certs"
                  name="trust_unknown_certs"
-                 label="Trust unknown certificates"
-                 help="Trust all certificates of the remote host during the migration process."
+                 label="信任未知证书"
+                 help="在迁移过程中信任远程主机的所有证书。"
                  type="checkbox"
                  disabled={isLoading}
                  checked={values.trust_unknown_certs}
                  onChange={(e) => handleCheckboxChange(e, setFieldValue)}
                  required />
           {(availableIndices.length > 0) && (
-            <Alert title="Valid connection" bsStyle="success">
-              Below are the available indices for the remote reindex migration, <b>{filteredSelectedIndices.length}/{availableIndices.length}</b> are selected.
+            <Alert title="有效连接" bsStyle="success">
+              以下是可用于远程重新索引迁移的索引， <b>{filteredSelectedIndices.length}/{availableIndices.length}</b> 项被选中。
               <SearchContainer>
                 <SearchForm onSearch={setQueryIndex}
                             query={queryIndex} />
@@ -253,11 +253,11 @@ const MigrateExistingData = ({ currentStep, onTriggerStep, hideActions }: Migrat
                              <span>{index.name} </span>
                              {!index.managed && !index.closed && (
                                <Icon name="warning"
-                                     title="This is an index not managed by Graylog. If you import it, you will not be able to query it in Graylog." />
+                                     title="这是由 Graylog 管理的索引。如果您导入它，将无法在 Graylog 中查询它。" />
                              )}
                              {index.closed && (
                                <Icon name="warning"
-                                     title="This index is closed, will be reopened and closed again during the migration." />
+                                     title="此索引已关闭，将在迁移期间重新打开并再次关闭。" />
                              )}
                            </>
                          )}

@@ -19,8 +19,8 @@ import * as React from 'react';
 import { Alert } from 'components/bootstrap';
 
 const ProfileUpdateInfo = () => (
-  <Alert bsStyle="info" title="First and Last Name">
-    With Graylog 4.1, we&apos;ve added distinct first and last name fields. These must be provided before the user’s profile can be saved.
+  <Alert bsStyle="info" title="名和姓">
+    在 Graylog 4.1 中，我们添加了独立的姓和名字段。在保存用户个人资料之前，必须提供这些字段。
   </Alert>
 );
 

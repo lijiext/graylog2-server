@@ -164,7 +164,7 @@ const ViewHeader = () => {
                     <FavoriteIcon isFavorite={view.favorite} grn={createGRN(view.type, view.id)} onChange={onChangeFavorite} />
                     <EditButton onClick={toggleMetadataEdit}
                                 role="button"
-                                title={`Edit ${typeText} ${view.title} metadata`}
+                                title={`编辑 ${typeText} ${view.title} 元数据`}
                                 tabIndex={0}>
                       <Icon name="edit_square" />
                     </EditButton>
@@ -177,10 +177,10 @@ const ViewHeader = () => {
         {showMetadataEdit && (
         <ViewPropertiesModal show
                              view={view}
-                             title={`Editing saved ${typeText}`}
+                             title={`正在编辑已保存的 ${typeText}`}
                              onClose={toggleMetadataEdit}
                              onSave={_onSaveView}
-                             submitButtonText={`Save ${typeText}`} />
+                             submitButtonText={`保存 ${typeText}`} />
         )}
         {showExecutionInfo && <ExecutionInfoContainer><ExecutionInfo /></ExecutionInfoContainer>}
       </Content>

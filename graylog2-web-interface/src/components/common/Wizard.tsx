@@ -420,14 +420,14 @@ class Wizard extends React.Component<Props, State> {
                 <Button onClick={this._onPrevious}
                         bsSize="small"
                         bsStyle="info"
-                        disabled={this._disableButton('previous')}>Previous
+                        disabled={this._disableButton('previous')}>上一个
                 </Button>
               </Col>
               <Col className="text-right" xs={6}>
                 <Button onClick={this._onNext}
                         bsSize="small"
                         bsStyle="info"
-                        disabled={this._disableButton('next')}>Next
+                        disabled={this._disableButton('next')}>下一步
                 </Button>
               </Col>
             </Row>
@@ -447,14 +447,14 @@ class Wizard extends React.Component<Props, State> {
           <div className="pull-right">
             <HorizontalButtonToolbar>
               <Button onClick={this._onPrevious}
-                      aria-label="Previous"
+                      aria-label="上一个"
                       bsSize="xsmall"
                       bsStyle="info"
                       disabled={this._disableButton('previous')}>
                 <Icon name="arrow_left" />
               </Button>
               <Button onClick={this._onNext}
-                      aria-label="Next"
+                      aria-label="下一步"
                       bsSize="xsmall"
                       bsStyle="info"
                       disabled={this._disableButton('next')}>

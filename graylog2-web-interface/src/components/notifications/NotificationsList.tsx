@@ -35,7 +35,7 @@ const getTitle = (count) => (count === 0 ? 'No notifications' : `There ${_format
 
 const getContent = (count: number, notificationsList: Array<NotificationType>) => (count === 0 ? (
   <Alert bsStyle="success" className="notifications-none">
-    No notifications
+    无通知
   </Alert>
 ) : (
   notificationsList?.map((notification) => <Notification key={`${notification.type}-${notification?.key}-${notification.timestamp}`} notification={notification} />)
@@ -53,8 +53,7 @@ const NotificationsList = () => {
       <Col md={12}>
         <h2>{getTitle(total)}</h2>
         <p className="description">
-          Notifications are triggered by Graylog and indicate a situation you should act upon. Many notification
-          types will also provide a link to the Graylog documentation if you need more information or assistance.
+          通知由 Graylog 触发，表示您需要采取行动的情况。许多通知类型还会提供指向 Graylog 文档的链接，以便您获取更多信息或帮助。
         </p>
 
         {getContent(total, notifications)}

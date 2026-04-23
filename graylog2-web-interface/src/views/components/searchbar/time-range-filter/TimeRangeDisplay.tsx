@@ -82,15 +82,15 @@ export const range = (timerange: AbsoluteTimeRange | RelativeTimeRange | null | 
 
 const TimeRange = ({ timerange }: { timerange: TimeRangeType | null | undefined }) => {
   if (isTypeKeyword(timerange)) {
-    return <span>Keyword: <b>{timerange.keyword}</b></span>;
+    return <span>关键词： <b>{timerange.keyword}</b></span>;
   }
 
   const { from, until } = range(timerange);
 
   return (
     <>
-      <span data-testid="from">From: <b>{from}</b></span>
-      <span data-testid="to">Until: <b>{until}</b></span>
+      <span data-testid="from">来自： <b>{from}</b></span>
+      <span data-testid="to">直到： <b>{until}</b></span>
     </>
   );
 };
@@ -101,9 +101,9 @@ type Props = {
 };
 
 const TimeRangeDisplay = ({ timerange, toggleDropdownShow }: Props) => (
-  <TimeRangeWrapper aria-label="Search Time Range, Opens Time Range Selector On Click" role="button" onClick={toggleDropdownShow}>
+  <TimeRangeWrapper aria-label="搜索时间范围，点击时打开时间范围选择器" role="button" onClick={toggleDropdownShow}>
     {isNoTimeRangeOverride(timerange)
-      ? <span>No Override</span>
+      ? <span>无覆盖</span>
       : <TimeRange timerange={timerange} />}
   </TimeRangeWrapper>
 );

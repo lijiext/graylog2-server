@@ -28,7 +28,7 @@ const ReadOnlyWarning = ({ fullName }: Props) => (
   <Row className="content">
     <Col xs={12}>
       <Alert bsStyle="danger">
-        The selected user {fullName} can&apos;t be edited.
+        所选用户 {fullName} 无法编辑。
       </Alert>
     </Col>
   </Row>

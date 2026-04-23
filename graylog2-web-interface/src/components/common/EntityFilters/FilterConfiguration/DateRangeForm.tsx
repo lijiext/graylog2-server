@@ -186,17 +186,17 @@ const DateRangeForm = ({ filter, onSubmit }: Props) => {
           <Form>
             <Sections>
               <Section>
-                <DateConfiguration name="from" label="From" checkboxLabel="All time" />
+                <DateConfiguration name="from" label="从" checkboxLabel="All time" />
               </Section>
               <Section>
-                <DateConfiguration name="until" label="Until" checkboxLabel="Now" />
+                <DateConfiguration name="until" label="直到" checkboxLabel="Now" />
               </Section>
             </Sections>
             <Info>
-              Format: <DateTimeFormat>YYYY-MM-DD [HH:mm:ss[.SSS]]</DateTimeFormat>.<br />
-              All timezones using: <b>{userTimezone}</b>.
+              格式： <DateTimeFormat>YYYY-MM-DD [HH:mm:ss[.SSS]]</DateTimeFormat>.<br />
+              所有时区使用： <b>{userTimezone}</b>.
             </Info>
-            <ModalSubmit submitButtonText={`${filter ? 'Update' : 'Create'} filter`}
+            <ModalSubmit submitButtonText={`${filter ? 'Update' : 'Create'} 过滤器`}
                          bsSize="small"
                          disabledSubmit={!isValid}
                          displayCancel={false} />

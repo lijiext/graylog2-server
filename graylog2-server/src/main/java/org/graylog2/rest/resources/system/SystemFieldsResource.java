@@ -62,7 +62,7 @@ public class SystemFieldsResource extends RestResource {
                   notes = "This operation is comparably fast because it reads directly from the indexer mapping.")
     @RequiresPermissions(RestPermissions.FIELDNAMES_READ)
     @Produces(APPLICATION_JSON)
-    public Map<String, Set<String>> fields(@ApiParam(name = "limit", value = "Maximum number of fields to return. Set to 0 for all fields.", required = false)
+    public Map<String, Set<String>> fields(@ApiParam(name = "limit", value = "返回的最大字段数。设置为 0 以返回所有字段。", required = false)
                                            @QueryParam("limit") int limit) {
         boolean unlimited = limit <= 0;
 

@@ -41,7 +41,7 @@ export const downloadBLOB = (contents: BlobPart, metadata: { fileName: string, c
 };
 
 const errorHandler = (errorThrown: Error) => {
-  UserNotification.error(`Downloading failed with status: ${errorThrown}`, 'Unable to download');
+  UserNotification.error(`下载失败，状态为：${errorThrown}`, '无法下载');
 };
 
 export const fetchTextFile = async <Body>(method: string, url: string, body: Body | undefined, mimeType: string, fileName: string) => fetchFile(method, url, body, mimeType)

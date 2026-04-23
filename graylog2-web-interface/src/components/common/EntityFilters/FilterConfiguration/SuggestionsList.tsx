@@ -77,7 +77,7 @@ const SuggestionsList = ({ attribute, filterValueRenderer, onSubmit, allActiveFi
       <SearchInput type="text"
                    id="search-filters-input"
                    formGroupClassName=""
-                   placeholder={`Search for ${attribute.title.toLowerCase()}`}
+                   placeholder={`搜索 ${attribute.title.toLowerCase()}`}
                    onChange={({ target: { value } }) => debounceOnSearch(value)} />
       {isInitialLoading && <Spinner />}
 
@@ -117,12 +117,12 @@ const SuggestionsList = ({ attribute, filterValueRenderer, onSubmit, allActiveFi
         </PaginatedList>
       )}
 
-      {!suggestions?.length && <NoSearchResult>No entities found</NoSearchResult>}
+      {!suggestions?.length && <NoSearchResult>未找到实体</NoSearchResult>}
 
       {!filter && (
         <Hint>
           <i>
-            Hold Shift to select multiple
+            按住 Shift 键以选择多个
           </i>
         </Hint>
       )}

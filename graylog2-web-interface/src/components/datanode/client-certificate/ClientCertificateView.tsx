@@ -43,23 +43,23 @@ const Textarea = styled.textarea(({ theme }) => css`
 
 const ClientCertificateView = ({ clientCerts }: Props) => (
   <>
-    <dt>Principal:</dt>
+    <dt>主体：</dt>
     <dd>{clientCerts.principal}</dd>
-    <dt>Role:</dt>
+    <dt>角色：</dt>
     <dd>{clientCerts.role}</dd>
-    <dt>CA certificate <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.ca_certificate)}>Copy to clipboard</Button></dt>
+    <dt>CA 证书 <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.ca_certificate)}>复制到剪贴板</Button></dt>
     <dd>
       <Textarea id="ca_certificate"
                 value={clientCerts.ca_certificate}
                 spellCheck={false} />
     </dd>
-    <dt>Private key <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.private_key)}>Copy to clipboard</Button></dt>
+    <dt>私钥 <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.private_key)}>复制到剪贴板</Button></dt>
     <dd>
       <Textarea id="private_key"
                 value={clientCerts.private_key}
                 spellCheck={false} />
     </dd>
-    <dt>Certificate <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.certificate)}>Copy to clipboard</Button></dt>
+    <dt>证书 <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.certificate)}>复制到剪贴板</Button></dt>
     <dd>
       <Textarea id="certificate"
                 value={clientCerts.certificate}

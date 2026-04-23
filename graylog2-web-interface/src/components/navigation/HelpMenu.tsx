@@ -39,16 +39,16 @@ const HelpMenu = () => {
                  noCaret>
 
       <HelpMenuLinkItem href={DocsHelper.versionedDocsHomePage()}>
-        Documentation
+        文档
       </HelpMenuLinkItem>
 
       <Menu.Item onClick={() => setShowHotkeysModal(true)}>
-        Keyboard Shortcuts
+        键盘快捷键
       </Menu.Item>
 
       {AppConfig.isCloud() && (
         <HelpMenuLinkItem href={Routes.global_api_browser()}>
-          Cluster Global API browser
+          集群全局 API 浏览器
         </HelpMenuLinkItem>
       )}
     </NavDropdown>

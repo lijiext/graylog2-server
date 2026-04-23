@@ -37,8 +37,8 @@ const useIndexSetStats = (indexSetId: string): {
     () => fetchIndexSetStats(indexSetId),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index set stats failed with status: ${errorThrown}`,
-          'Could not load index set stats.');
+        UserNotification.error(`加载索引集统计信息失败，状态为：${errorThrown}`,
+          '无法加载索引集统计信息。');
       },
       notifyOnChangeProps: ['data', 'error'],
     },

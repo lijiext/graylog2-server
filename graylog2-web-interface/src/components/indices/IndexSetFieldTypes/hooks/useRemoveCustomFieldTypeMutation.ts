@@ -61,8 +61,8 @@ const useRemoveCustomFieldTypeMutation = (params: { onErrorHandler: (response: R
 
   const put = useMutation(putFieldType, {
     onError: (errorThrown) => {
-      UserNotification.error(`Removing custom field type failed with status: ${errorThrown}`,
-        'Could not remove custom field type');
+      UserNotification.error(`删除自定义字段类型失败，状态为：${errorThrown}`,
+        '无法移除自定义字段类型');
     },
     onSuccess: (response: RemovalResponseJSON) => {
       let errorsQuantity: number = 0;
@@ -89,7 +89,7 @@ const useRemoveCustomFieldTypeMutation = (params: { onErrorHandler: (response: R
       queryClient.refetchQueries({ queryKey: ['indexSetFieldTypes'], type: 'active' });
 
       if (errorsQuantity === 0) {
-        UserNotification.success('Custom field type removed successfully', 'Success!');
+        UserNotification.success('自定义字段类型已成功移除', '成功！');
 
         return params.onSuccessHandler(mappedResponse);
       }

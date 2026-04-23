@@ -40,11 +40,11 @@ const IndexSetTemplatePage = () => {
                     <ButtonToolbar>
                       {!isFetching && !data.built_in && (
                         <LinkContainer to={Routes.SYSTEM.INDICES.TEMPLATES.edit(templateId)}>
-                          <Button bsStyle="success">Edit</Button>
+                          <Button bsStyle="success">编辑</Button>
                         </LinkContainer>
                       )}
                       <LinkContainer to={Routes.SYSTEM.INDICES.TEMPLATES.OVERVIEW}>
-                        <Button>Overview</Button>
+                        <Button>概述</Button>
                       </LinkContainer>
                     </ButtonToolbar>
                   )}>
@@ -57,7 +57,7 @@ const IndexSetTemplatePage = () => {
         <Col md={12}>
           {isFetching && <Spinner />}
           {isSuccess && <TemplateDetails template={data} />}
-          {isError && <p>There was an error when loading the template.</p>}
+          {isError && <p>加载模板时发生错误。</p>}
         </Col>
       </Row>
     </DocumentTitle>

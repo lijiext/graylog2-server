@@ -67,7 +67,7 @@ public class ClusterSystemPluginResource extends ProxiedResource {
     @GET
     @Timed
     @ApiOperation(value = "List all installed plugins on the given node")
-    public PluginList list(@ApiParam(name = "nodeId", value = "The id of the node where processing will be paused.", required = true)
+    public PluginList list(@ApiParam(name = "nodeId", value = "处理将暂停的节点 ID。", required = true)
                            @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Node targetNode = nodeService.byNodeId(nodeId);
 

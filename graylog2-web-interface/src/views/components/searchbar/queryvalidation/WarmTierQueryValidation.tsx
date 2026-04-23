@@ -32,7 +32,7 @@ const WarmTierQueryValidation = ({ validationState } : Props) => {
 
   return (
     <Explanation>
-      <span><b>Warm Tier Search</b>: <WarmTierErrorMessage warmTierIndices={warmTierIndices} /></span>
+      <span><b>热层搜索</b>: <WarmTierErrorMessage warmTierIndices={warmTierIndices} /></span>
     </Explanation>
   );
 };

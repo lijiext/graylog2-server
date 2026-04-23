@@ -39,8 +39,8 @@ const useStream = (streamId: string, { enabled } = { enabled: true }): {
     () => fetchStream(streamId),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading stream failed with status: ${errorThrown}`,
-          'Could not load Stream');
+        UserNotification.error(`加载数据流失败，状态：${errorThrown}`,
+          '无法加载数据流');
       },
       keepPreviousData: true,
       enabled,

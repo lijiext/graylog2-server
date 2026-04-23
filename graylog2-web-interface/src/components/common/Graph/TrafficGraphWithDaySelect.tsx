@@ -86,7 +86,7 @@ const TrafficGraphWithDaySelect = ({ traffic, trafficLimit, title } : Props) => 
   if (traffic) {
     const bytesOut = reduce(traffic, (result, value) => result + value);
 
-    sumOutput = <small>Last {graphDays} days: {NumberUtils.formatBytes(bytesOut)}</small>;
+    sumOutput = <small>最后 {graphDays} 天： {NumberUtils.formatBytes(bytesOut)}</small>;
 
     const unixTraffic = formatTrafficData(traffic);
 
@@ -103,7 +103,7 @@ const TrafficGraphWithDaySelect = ({ traffic, trafficLimit, title } : Props) => 
         <Input id="graph-days"
                type="select"
                bsSize="small"
-               label="Days"
+               label="天"
                value={graphDays}
                onChange={onGraphDaysChange}
                formGroupClassName="graph-days-select">

@@ -58,7 +58,7 @@ const AbsoluteDateInput = ({ name, disabled, onChange, value, hasError, classNam
              buttonAfter={(
                <Button disabled={disabled}
                        onClick={_onSetTimeToNow}
-                       title="Insert current date">
+                       title="插入当前日期">
                  <Icon name="calendar_clock" />
                </Button>
              )}

@@ -35,8 +35,8 @@ const usePipelines = ({ enabled }: Options = { enabled: true }) : {
     () => PipelinesPipelines.getAll(),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading pipelines failed with status: ${errorThrown}`,
-          'Could not load pipelines');
+        UserNotification.error(`加载处理管道失败，状态为：${errorThrown}`,
+          '无法加载处理管道');
       },
       enabled,
     },

@@ -59,7 +59,7 @@ public class IndexSetDefaultsResource extends RestResource {
     @ApiOperation(value = "Set index set default template")
     @RequiresPermissions({RestPermissions.CLUSTER_CONFIG_ENTRY_CREATE, RestPermissions.CLUSTER_CONFIG_ENTRY_EDIT})
     @NoAuditEvent("event is handled in service class")
-    public Response update(@ApiParam(name = "body", value = "Index set default template id.", required = true)
+    public Response update(@ApiParam(name = "body", value = "索引集默认模板 ID。", required = true)
                            @NotNull IndexSetDefaultTemplate defaultTemplate) throws IOException {
         try {
             indexSetDefaultTemplateService.setDefault(defaultTemplate, Optional.ofNullable(getCurrentUser())

@@ -196,14 +196,14 @@ public class SidecarResource extends RestResource implements PluginRestResource 
     @PUT
     @Timed
     @Path("/{sidecarId}")
-    @ApiOperation(value = "Create/update a Sidecar registration",
+    @ApiOperation(value = "创建/更新 Sidecar 注册",
                   notes = "This is a stateless method which upserts a Sidecar registration")
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "The supplied request is not valid.")
+            @ApiResponse(code = 400, message = "提供的请求无效。")
     })
     @RequiresPermissions(SidecarRestPermissions.SIDECARS_UPDATE)
     @NoAuditEvent("this is only a ping from Sidecars, and would overflow the audit log")
-    public Response register(@ApiParam(name = "sidecarId", value = "The id this Sidecar is registering as.", required = true)
+    public Response register(@ApiParam(name = "sidecarId", value = "此 Sidecar 注册为的 ID。", required = true)
                              @PathParam("sidecarId") @NotEmpty String nodeId,
                              @ApiParam(name = "JSON body", required = true)
                              @Valid @NotNull RegistrationRequest request,

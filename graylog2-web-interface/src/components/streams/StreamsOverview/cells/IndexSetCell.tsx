@@ -42,7 +42,7 @@ const IndexSetCell = ({ stream, indexSets }: Props) => {
       <Link to={Routes.SYSTEM.INDEX_SETS.SHOW(indexSet.id)}>
         {indexSet.title}
       </Link>
-    ) : <i>not found</i>
+    ) : <i>未找到</i>
   );
 };
 

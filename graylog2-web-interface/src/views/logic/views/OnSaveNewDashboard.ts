@@ -35,8 +35,8 @@ export default (view: View, history: HistoryFunction) => async (dispatch: AppDis
     });
 
     loadDashboard(history, savedView.id);
-    UserNotification.success(`Saving view "${view.title}" was successful!`, 'Success!');
+    UserNotification.success(`保存视图 "${view.title}" 成功！`, '成功！');
   } catch (error) {
-    UserNotification.error(`Saving view failed: ${error}`, 'Error!');
+    UserNotification.error(`保存视图失败：${error}`, '错误！');
   }
 };

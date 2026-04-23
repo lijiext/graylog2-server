@@ -20,7 +20,7 @@ import QueryHelper from 'components/common/QueryHelper';
 
 const queryExample = (
   <p>
-    Find role with a name containing manager:<br />
+    查找名称中包含 manager 的角色：<br />
     <kbd>name:manager</kbd><br />
   </p>
 );

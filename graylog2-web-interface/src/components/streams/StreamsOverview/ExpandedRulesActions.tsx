@@ -41,7 +41,7 @@ const RulesSectionActions = ({ stream }: Props) => {
   }, []);
 
   const onSaveStreamRule = useCallback((_streamRuleId: string, streamRule: StreamRule) => (
-    StreamRulesStore.create(stream.id, streamRule, () => UserNotification.success('Stream rule was created successfully.', 'Success'))
+    StreamRulesStore.create(stream.id, streamRule, () => UserNotification.success('流规则创建成功。', '成功'))
   ), [stream.id]);
 
   return (
@@ -49,20 +49,20 @@ const RulesSectionActions = ({ stream }: Props) => {
       <IfPermitted permissions={[`streams:edit:${stream.id}`]}>
         <LinkContainer to={Routes.stream_edit(stream.id)}>
           <Button bsStyle="link" bsSize="xsmall" disabled={isDefaultStream || isNotEditable}>
-            Manage Rules
+            管理规则
           </Button>
         </LinkContainer>
       </IfPermitted>
       <IfPermitted permissions={[`streams:edit:${stream.id}`]}>
         <Button bsStyle="info" bsSize="xsmall" disabled={isDefaultStream || isNotEditable} onClick={toggleAddRuleModal}>
-          Quick add rule
+          快速添加规则
         </Button>
       </IfPermitted>
       {showAddRuleModal && (
         <StreamRuleModal onClose={toggleAddRuleModal}
-                         title="New Stream Rule"
-                         submitButtonText="Create Rule"
-                         submitLoadingText="Creating Rule..."
+                         title="新数据流规则"
+                         submitButtonText="创建规则"
+                         submitLoadingText="正在创建规则..."
                          onSubmit={onSaveStreamRule} />
       )}
     </>

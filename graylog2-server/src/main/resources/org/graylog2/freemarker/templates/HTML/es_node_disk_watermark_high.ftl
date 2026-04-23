@@ -1,9 +1,9 @@
-<#if _title>Elasticsearch nodes disk usage above high watermark</#if>
+<#if _title>Elasticsearch 节点磁盘使用率超过高水位线</#if>
 
 <#if _description><span>
-There are Elasticsearch nodes in the cluster with almost no free disk, their disk usage is above the high watermark.
-For this reason Elasticsearch will attempt to relocate shards away from the affected nodes.
-The affected nodes are: [${nodes}]
-Check <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html" target="_blank" rel="noreferrer">https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html</a>
-for more details.
+集群中存在磁盘几乎耗尽的 Elasticsearch 节点，其磁盘使用率已超过高水位线。
+因此，Elasticsearch 将尝试将分片从受影响的节点迁移出去。
+受影响的节点为：[${nodes}]
+请查看 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html" target="_blank" rel="noreferrer">https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html</a>
+以获取更多信息。
 </span></#if>

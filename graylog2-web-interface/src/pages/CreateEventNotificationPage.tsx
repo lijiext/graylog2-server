@@ -35,16 +35,15 @@ const CreateEventDefinitionPage = () => {
   }
 
   return (
-    <DocumentTitle title="New Notification">
+    <DocumentTitle title="新通知">
       <EventsPageNavigation />
-      <PageHeader title="New Notification"
+      <PageHeader title="新通知"
                   documentationLink={{
                     title: 'Alerts documentation',
                     path: DocsHelper.PAGES.ALERTS,
                   }}>
         <span>
-          Notifications alert you of any configured Event when they occur. Graylog can send Notifications directly
-          to you or to other systems you use for that purpose.
+          当配置的事件发生时，通知会提醒您。Graylog 可直接向您或您用于此目的的其他系统发送通知。
         </span>
       </PageHeader>
 

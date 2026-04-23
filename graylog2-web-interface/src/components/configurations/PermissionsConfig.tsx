@@ -82,15 +82,15 @@ const PermissionsConfig = () => {
 
   return (
     <div>
-      <h2>Permissions Configuration</h2>
-      <p>These settings can be used to control which entity sharing options are available.</p>
+      <h2>权限配置</h2>
+      <p>这些设置可用于控制可用的实体共享选项。</p>
 
       {!config ? <Spinner /> : (
         <>
           <StyledDefList>
-            <dt>Share with everyone:</dt>
+            <dt>与所有人共享:</dt>
             <dd>{config.allow_sharing_with_everyone ? 'Enabled' : 'Disabled'}</dd>
-            <dt>Share with users:</dt>
+            <dt>与用户共享:</dt>
             <dd>{config.allow_sharing_with_users ? 'Enabled' : 'Disabled'}</dd>
           </StyledDefList>
 
@@ -102,7 +102,7 @@ const PermissionsConfig = () => {
                       onClick={() => {
                         setShowModal(true);
                       }}>
-                Edit configuration
+                编辑配置
               </Button>
             </p>
           </IfPermitted>
@@ -127,18 +127,18 @@ const PermissionsConfig = () => {
                                        name="allow_sharing_with_everyone"
                                        id="shareWithEveryone"
                                        label={(
-                                         <LabelSpan>Share with everyone</LabelSpan>
+                                         <LabelSpan>与所有人共享</LabelSpan>
                                        )} />
-                          <InputDescription help="Control whether it is possible to share with everyone." />
+                          <InputDescription help="控制是否可以与所有人共享。" />
                         </Col>
                         <Col sm={12}>
                           <FormikInput type="checkbox"
                                        name="allow_sharing_with_users"
                                        id="shareWithUsers"
                                        label={(
-                                         <LabelSpan>Share with users</LabelSpan>
+                                         <LabelSpan>与用户共享</LabelSpan>
                                        )} />
-                          <InputDescription help="Control whether it is possible to share with single users." />
+                          <InputDescription help="控制是否可以与单个用户共享。" />
                         </Col>
 
                       </Row>
@@ -149,8 +149,8 @@ const PermissionsConfig = () => {
                     <ModalSubmit onCancel={resetConfig}
                                  isSubmitting={isSubmitting}
                                  isAsyncSubmit
-                                 submitLoadingText="Update configuration"
-                                 submitButtonText="Update configuration" />
+                                 submitLoadingText="更新配置"
+                                 submitButtonText="更新配置" />
                   </Modal.Footer>
                 </Form>
               )}

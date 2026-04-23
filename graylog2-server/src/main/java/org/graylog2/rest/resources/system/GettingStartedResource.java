@@ -62,7 +62,7 @@ public class GettingStartedResource extends RestResource {
 
     @POST
     @Path("dismiss")
-    @ApiOperation("Dismiss auto-showing getting started guide for this version")
+    @ApiOperation("关闭此版本的自动显示入门指南")
     @AuditEvent(type = AuditEventTypes.GETTING_STARTED_GUIDE_OPT_OUT_CREATE)
     public void dismissGettingStarted() {
         final GettingStartedState gettingStartedState = clusterConfigService.getOrDefault(GettingStartedState.class,

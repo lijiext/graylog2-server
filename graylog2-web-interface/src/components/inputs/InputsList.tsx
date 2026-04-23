@@ -128,11 +128,11 @@ const InputsList = ({ permissions, node }: Props) => {
           <SearchForm onSearch={setFilter}
                       topMargin={0}
                       onReset={resetFilter}
-                      placeholder="Filter by title" />
+                      placeholder="按标题过滤" />
           <br />
           <h2>
-            Global inputs
-            &nbsp;
+            全局输入端
+             
             <small>{globalInputs.length} configured{nodeAffix}</small>
           </h2>
           <EntityList bsNoItemsStyle="info"
@@ -147,8 +147,8 @@ const InputsList = ({ permissions, node }: Props) => {
           <br />
           <br />
           <h2>
-            Local inputs
-            &nbsp;
+            本地输入端
+             
             <small>{localInputs.length} configured{nodeAffix}</small>
           </h2>
           <EntityList bsNoItemsStyle="info"

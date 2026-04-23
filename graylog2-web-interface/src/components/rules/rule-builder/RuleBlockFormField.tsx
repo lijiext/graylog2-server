@@ -84,7 +84,7 @@ const RuleBlockFormField = ({ param, functionName, blockId, order, outputVariabl
   const primaryInputButtonAfter = () => {
     if (!shouldHandlePrimaryParam() || filteredOutputVariableList().length <= 0) return null;
 
-    return (<Button onClick={() => onPrimaryInputToggle('select')}>Use output from previous steps</Button>);
+    return (<Button onClick={() => onPrimaryInputToggle('select')}>使用上一步的输出</Button>);
   };
 
   const showOutputVariableSelect = () => {
@@ -119,7 +119,7 @@ const RuleBlockFormField = ({ param, functionName, blockId, order, outputVariabl
                        buttonAfter={<Button onClick={() => onPrimaryInputToggle('custom')}>{`Set custom ${param.name}`}</Button>}
                        help={param.description}
                        {...field}>
-        <option key="placeholder" value="">Select output from list</option>
+        <option key="placeholder" value="">从列表中选择输出端</option>
         {filteredOutputVariableList().map(({ variableName, stepOrder }) => (
           <option key={`option-${variableName}`} value={variableName}>{`Output from step ${(stepOrder + 1)} (${variableName})`}</option>),
         )}
@@ -188,7 +188,7 @@ const RuleBlockFormField = ({ param, functionName, blockId, order, outputVariabl
                                : undefined
                            }
                            {...field}>
-            <option key="placeholder" value="">Select output from list</option>
+            <option key="placeholder" value="">从列表中选择输出端</option>
             {filteredOutputVariableList().map(({ variableName, stepOrder }) => (
               <option key={`option-${variableName}`} value={variableName}>{`Output from step ${(stepOrder + 1)} (${variableName})`}</option>),
             )}

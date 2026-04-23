@@ -93,8 +93,8 @@ const ContentPacksList = ({ contentPacks, contentPackMetadata, onDeletePack, onI
   );
 
   const noContentMessage = contentPacks.length <= 0
-    ? <NoEntitiesExist>No content packs found. Please create or upload one</NoEntitiesExist>
-    : <NoSearchResult>No matching content packs have been found</NoSearchResult>;
+    ? <NoEntitiesExist>未找到内容包。请创建或上传一个</NoEntitiesExist>
+    : <NoSearchResult>未找到匹配的内容包</NoSearchResult>;
 
   const content = filteredContentPacks.length <= 0
     ? (<div className="has-bm">{noContentMessage}</div>)
@@ -110,7 +110,7 @@ const ContentPacksList = ({ contentPacks, contentPackMetadata, onDeletePack, onI
       <Row className="has-bm">
         <Col md={5}>
           <TypeAheadDataFilter id="content-packs-filter"
-                               label="Filter"
+                               label="过滤器"
                                data={contentPacks}
                                displayKey="name"
                                onDataFiltered={filterContentPacks}

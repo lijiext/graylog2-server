@@ -79,13 +79,13 @@ const KeywordTimeRangePreview = () => {
     <EffectiveTimeRangeTable>
       <tbody>
         <tr>
-          <td>From</td>
+          <td>从</td>
           <td>
             <TimePreview dateTime={data?.from} isLoading={isFetching} />
           </td>
         </tr>
         <tr>
-          <td>To</td>
+          <td>至</td>
           <td>
             <TimePreview dateTime={data?.to} isLoading={isFetching} />
           </td>
@@ -102,7 +102,7 @@ type Props = {
 const TabKeywordTimeRange = ({ disabled }: Props) => (
   <Row className="no-bm">
     <Col sm={5}>
-      <Headline>Time range:</Headline>
+      <Headline>时间范围：</Headline>
       <Field name="timeRangeTabs.keyword.keyword">
         {({ field: { name, value, onChange }, meta: { error } }) => (
           <FormGroup controlId="form-inline-keyword"
@@ -112,35 +112,35 @@ const TabKeywordTimeRange = ({ disabled }: Props) => (
                           className="input-sm mousetrap"
                           name={name}
                           disabled={disabled}
-                          placeholder="Last week"
-                          title="Keyword input"
-                          aria-label="Keyword input"
+                          placeholder="上周"
+                          title="关键词输入"
+                          aria-label="关键词输入"
                           onChange={onChange}
                           required
                           value={value} />
-            <InputDescription error={error} help="Specify the time frame for the search in natural language." />
+            <InputDescription error={error} help="用自然语言指定搜索的时间范围。" />
           </FormGroup>
         )}
       </Field>
 
-      <b>Preview</b>
+      <b>预览</b>
       <KeywordTimeRangePreview />
     </Col>
 
     <Col sm={7}>
       <Panel>
         <Panel.Body>
-          <p><code>last month</code> searches between one month ago and now</p>
+          <p><code>上个月</code> 搜索从一个月前到现在的內容</p>
 
-          <p><code>4 hours ago</code> searches between four hours ago and now</p>
+          <p><code>4 小时前</code> 搜索从4小时前到现在的內容</p>
 
-          <p><code>1st of april to 2 days ago</code> searches between 1st of April and 2 days ago</p>
+          <p><code>4 月 1 日到 2 天前</code> 搜索从4月1日到2天前的内容</p>
 
-          <p><code>yesterday midnight +0200 to today midnight +0200</code> searches between yesterday midnight and today midnight in timezone +0200 - will be 22:00 in UTC</p>
+          <p><code>昨天 00:00 (+0200) 到今天 00:00 (+0200)</code> 搜索从昨天午夜到今天午夜（时区+0200）的内容 - 相当于UTC时间22:00</p>
 
-          <p>Please consult the <DocumentationLink page={DocsHelper.PAGES.TIME_FRAME_SELECTOR}
-                                                   title="Keyword Time Range Documentation"
-                                                   text="documentation" /> for more details.
+          <p>请咨询 <DocumentationLink page={DocsHelper.PAGES.TIME_FRAME_SELECTOR}
+                                                   title="关键词时间范围文档"
+                                                   text="documentation" /> 更多详细信息。
           </p>
         </Panel.Body>
       </Panel>

@@ -39,8 +39,8 @@ const useFieldTypesForMappings = (): {
     fetchFieldTypes,
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading field type options failed with status: ${errorThrown}`,
-          'Could not load field type options');
+        UserNotification.error(`加载字段类型选项失败，状态码：${errorThrown}`,
+          '无法加载字段类型选项');
       },
       keepPreviousData: true,
     },

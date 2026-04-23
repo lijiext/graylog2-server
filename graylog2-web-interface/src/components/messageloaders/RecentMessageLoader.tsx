@@ -75,8 +75,7 @@ const ForwarderInputSelect = ({ selectedInputId, onChange, isLoading }: Forwader
   return (
     <fieldset>
       <Description>
-        Select an Input profile from the list below then select an then select an Input and click
-        on &quot;Load message&quot; to load most recent message received by this input within the last hour.
+        从下方列表中选择输入配置文件，然后选择一个输入，点击“加载消息”以加载该输入在最近一小时内接收的最新消息。
       </Description>
       <Row>
         <Col md={8}>
@@ -113,8 +112,8 @@ const RecentMessageLoader = ({ inputs, onMessageLoaded, selectedInputId }: Props
     const input = inputs && inputs.get(inputId);
 
     if (selectedInputType === 'server' && !input) {
-      UserNotification.error(`Invalid input selected: ${inputId}`,
-        `Could not load message from invalid Input ${inputId}`);
+      UserNotification.error(`选择的输入无效：${inputId}`,
+        `无法从无效输入 ${inputId} 加载消息`);
 
       return;
     }
@@ -126,7 +125,7 @@ const RecentMessageLoader = ({ inputs, onMessageLoaded, selectedInputId }: Props
       if (response.total_results > 0) {
         onMessageLoaded(response.messages[0]);
       } else {
-        UserNotification.error('Input did not return a recent message.');
+        UserNotification.error('输入端未返回最近的消息。');
         onMessageLoaded(undefined);
       }
     });
@@ -149,17 +148,17 @@ const RecentMessageLoader = ({ inputs, onMessageLoaded, selectedInputId }: Props
           <>
             <fieldset>
               <Description>
-                Select the Input type you want to load the message from.
+                选择要从中加载消息的输入端类型。
               </Description>
               <StyledSelect id="inputTypeSelect"
-                            aria-label="input type select"
+                            aria-label="输入类型选择"
                             type="select"
                             value={selectedInputType ?? 'placeholder'}
                             disabled={!!selectedInputId}
                             onChange={(e) => setSelectedInputType(e.target.value)}>
-                <option value="placeholder" disabled>Select an Input type</option>
-                <option value="server">Server Input</option>
-                <option value="forwarder">Forwarder Input</option>
+                <option value="placeholder" disabled>选择输入类型</option>
+                <option value="server">服务器输入</option>
+                <option value="forwarder">转发器输入</option>
               </StyledSelect>
             </fieldset>
 

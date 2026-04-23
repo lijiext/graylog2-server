@@ -62,7 +62,7 @@ const TabRelativeTimeRange = ({ disabled, limitDuration }: Props) => {
                                fieldName="from"
                                limitDuration={limitDuration}
                                onUnsetRange={() => { setFieldValue('timeRangeTabs.relative.to', RELATIVE_CLASSIFIED_ALL_TIME_RANGE); }}
-                               title="From:"
+                               title="来自："
                                unsetRangeLabel="All Time" />
           <StyledIcon name="arrow_right_alt" />
 
@@ -71,7 +71,7 @@ const TabRelativeTimeRange = ({ disabled, limitDuration }: Props) => {
                                disabled={disableUntil}
                                fieldName="to"
                                limitDuration={limitDuration}
-                               title="Until:"
+                               title="直到："
                                unsetRangeLabel="Now" />
         </>
       </RelativeWrapper>

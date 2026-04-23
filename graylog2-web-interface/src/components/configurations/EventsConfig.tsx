@@ -141,81 +141,80 @@ const EventsConfig = () => {
 
   return (
     <div>
-      <h2>Events Configuration</h2>
+      <h2>事件配置</h2>
 
       <dl className="deflist">
-        <dt>Search Timeout:</dt>
+        <dt>搜索超时：</dt>
         <dd>{eventsSearchTimeout(viewConfig).duration} {titleCase(eventsSearchTimeout(viewConfig).unit)}</dd>
-        <dt>Notification Retry:</dt>
+        <dt>通知重试：</dt>
         <dd>{eventsNotificationRetryPeriod(viewConfig).duration} {titleCase(eventsNotificationRetryPeriod(viewConfig).unit)}</dd>
-        <dt>Notification Backlog:</dt>
+        <dt>通知积压：</dt>
         <dd>{eventsNotificationDefaultBacklog(viewConfig)}</dd>
-        <dt>Catch Up Window:</dt>
+        <dt>追赶窗口：</dt>
         <dd>{eventsCatchupWindow(viewConfig).duration > 0 ? eventsCatchupWindow(viewConfig).duration : 'disabled'} {eventsCatchupWindow(viewConfig).duration > 0 ? titleCase(eventsCatchupWindow(viewConfig).unit) : ''}</dd>
-        <dt>TCP keep-alive probes:</dt>
+        <dt>TCP 保活探测：</dt>
         <dd>{eventsNotificationTcpKeepalive(viewConfig) ? 'enabled' : 'disabled'}</dd>
       </dl>
 
       <IfPermitted permissions="clusterconfigentry:edit">
-        <Button bsStyle="info" bsSize="xs" onClick={openModal}>Edit configuration</Button>
+        <Button bsStyle="info" bsSize="xs" onClick={openModal}>编辑配置</Button>
       </IfPermitted>
 
       {showConfigModal && formConfig && (
       <BootstrapModalForm show
-                          title="Update Events System Configuration"
+                          title="更新事件系统配置"
                           onSubmitForm={saveConfig}
                           onCancel={closeModal}
-                          submitButtonText="Update configuration">
+                          submitButtonText="更新配置">
         <fieldset>
           <FormGroup controlId="search-timeout-field">
-            <TimeUnitInput label="Search Timeout"
+            <TimeUnitInput label="搜索超时"
                            update={onSearchTimeoutUpdate}
                            value={eventsSearchTimeout(formConfig).duration}
                            unit={eventsSearchTimeout(formConfig).unit}
                            units={TIME_UNITS}
                            required />
             <HelpBlock>
-              Amount of time after which an Elasticsearch query is interrupted. (Minimum timeout is 1s)
+              Elasticsearch 查询中断前的超时时间。（最小超时时间为 1s）
             </HelpBlock>
           </FormGroup>
           <FormGroup controlId="notifications-retry-field">
-            <TimeUnitInput label="Notifications retry period"
+            <TimeUnitInput label="通知重试周期"
                            update={onRetryPeriodUpdate}
                            value={eventsNotificationRetryPeriod(formConfig).duration}
                            unit={eventsNotificationRetryPeriod(formConfig).unit}
                            units={TIME_UNITS}
                            required />
             <HelpBlock>
-              Amount of time after which a failed notification is resend. (Minimum is 0 or immediate retry)
+              失败通知重发的间隔时间。（最小值为 0 或立即重试）
             </HelpBlock>
           </FormGroup>
           <Input id="notification-backlog-field"
                  type="number"
                  onChange={onBacklogUpdate}
-                 label="Default notifications backlog size"
-                 help="Amount of log messages included in a notification by default."
+                 label="默认通知积压大小"
+                 help="默认情况下通知中包含的日志消息数量。"
                  value={eventsNotificationDefaultBacklog(formConfig)}
                  min="0"
                  required />
           <FormGroup controlId="catch-up-window">
-            <TimeUnitInput label="Catch up window size"
+            <TimeUnitInput label="追赶窗口大小"
                            update={onCatchUpWindowUpdate}
                            value={eventsCatchupWindow(formConfig).duration}
                            unit={eventsCatchupWindow(formConfig).unit}
                            enabled={eventsCatchupWindow(formConfig).duration > 0}
                            units={TIME_UNITS} />
-            <HelpBlock>If Event processor execution is behind schedule, queries on older data will be run with this window size to speed up processing.
-              (If the &quot;search within the last&quot; setting of an event definition is greater, this setting will be ignored)
+            <HelpBlock>如果事件处理器执行落后于计划，将使用此窗口大小对旧数据运行查询以加快处理速度。（如果事件定义的“在最近时间内搜索”设置更大，则此设置将被忽略）
             </HelpBlock>
           </FormGroup>
           <FormGroup controlId="notification-tcp-keepalive-field">
             <Input id="notification-tcp-keepalive-field"
-                   label="Send TCP keep-alive probes for notification connections"
+                   label="为通知连接发送 TCP 保活探测"
                    type="checkbox"
                    onChange={onNotificationTcpKeepAliveUpdate}
                    checked={eventsNotificationTcpKeepalive(formConfig)} />
             <HelpBlock>
-              If enabled, http connections for notifications will send TCP keep-alive probes
+              如果启用，通知的 HTTP 连接将发送 TCP 保活探测
             </HelpBlock>
           </FormGroup>
         </fieldset>

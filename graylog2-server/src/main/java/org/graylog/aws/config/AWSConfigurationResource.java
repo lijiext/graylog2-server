@@ -56,7 +56,7 @@ public class AWSConfigurationResource extends RestResource implements PluginRest
     }
 
     @PUT
-    @ApiOperation(value = "Updates the AWS default configuration.")
+    @ApiOperation(value = "更新 AWS 默认配置。")
     @RequiresPermissions({RestPermissions.CLUSTER_CONFIG_ENTRY_CREATE, RestPermissions.CLUSTER_CONFIG_ENTRY_EDIT})
     @AuditEvent(type = AuditEventTypes.CLUSTER_CONFIGURATION_UPDATE)
     public Response updateConfig(@Valid AWSPluginConfigurationUpdate update) {

@@ -1,10 +1,10 @@
 <#if _title>
-Nodes with too long GC pauses
+GC 暂停时间过长的节点
 </#if>
 
 <#if _description>
-There are Graylog nodes on which the garbage collector runs too long.
-Garbage collection runs should be as short as possible. Please check whether those nodes are healthy.
-(Node: ${node_id}, GC duration: ${gc_duration_ms} ms,
-GC threshold: ${gc_threshold_ms} ms
+存在垃圾回收运行时间过长的 Graylog 节点。
+垃圾回收运行时间应尽可能短。请检查这些节点的健康状况。
+(节点：${node_id}，GC 持续时间：${gc_duration_ms} 毫秒，
+GC 阈值：${gc_threshold_ms} 毫秒
 </#if>

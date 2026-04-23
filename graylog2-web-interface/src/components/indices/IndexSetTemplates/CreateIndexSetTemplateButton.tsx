@@ -44,7 +44,7 @@ const CreateIndexSetTemplateButton = () => {
   };
 
   return (
-    <Button bsStyle="success" onClick={handleClick}>Create template</Button>
+    <Button bsStyle="success" onClick={handleClick}>创建模板</Button>
   );
 };
 

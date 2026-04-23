@@ -68,15 +68,14 @@ const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps) => {
   return (
     <Alert bsStyle="danger">
       {isCloud ? (
-        <p>Error loading login screen, please contact your Graylog account manager.</p>
+        <p>加载登录界面失败，请联系您的 Graylog 账户管理员。</p>
       ) : (
         <>
           <p>
-            Error using active authentication service login. Please check its configuration or contact your
-            Graylog account manager. Error details:
+            使用当前认证服务登录失败。请检查其配置或联系您的 Graylog 账户管理员。错误详情：
           </p>
           <StyledPre>{error.message}</StyledPre>
-          <Button bsStyle="danger" onClick={resetErrorBoundary}>Login with default method</Button>
+          <Button bsStyle="danger" onClick={resetErrorBoundary}>使用默认方式登录</Button>
         </>
       )}
     </Alert>
@@ -164,13 +163,13 @@ const LoginPage = () => {
 
   return (
     (
-      <DocumentTitle title="Sign in">
+      <DocumentTitle title="登录">
         <LoginChrome>
           <LastError />
           <PluggableLoginForm />
           {shouldDisplayFallbackLink && (
           <StyledButton as="a" onClick={() => setUseFallback(!useFallback)}>
-            {`Login with ${useFallback ? loginComponent.type.replace(/^\w/, (c) => c.toUpperCase()) : 'default method'}`}
+            {`使用 ${useFallback ? loginComponent.type.replace(/^\w/, (c) => c.toUpperCase()) : '默认方式'} 登录`}
           </StyledButton>
           )}
         </LoginChrome>

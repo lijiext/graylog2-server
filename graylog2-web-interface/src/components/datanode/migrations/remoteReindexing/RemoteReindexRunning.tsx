@@ -121,13 +121,12 @@ const RemoteReindexRunning = ({ currentStep, onTriggerStep, hideActions }: Migra
 
   return (
     <>
-      We are currently migrating your existing data asynchronically (Graylog can be used while the reindexing is running),
-      once the data migration is finished you will be automatically transitioned to the next step.
+      我们目前正在异步迁移您的现有数据（Graylog 可在重新索引运行时使用），数据迁移完成后，您将自动进入下一步。
       <br />
       <br />
       <RemoteReindexTasksProgress migrationStatus={migrationStatus} />
       {(indicesWithErrors.length > 0) && (
-        <Alert title="Migration failed" bsStyle="danger">
+        <Alert title="迁移失败" bsStyle="danger">
           <IndicesContainer>
             {indicesWithErrors.map((index) => (
               <span key={index.name}>
@@ -139,15 +138,15 @@ const RemoteReindexRunning = ({ currentStep, onTriggerStep, hideActions }: Migra
         </Alert>
       )}
       <MigrationStepTriggerButtonToolbar hidden={hideActions} nextSteps={(nextSteps || currentStep.next_steps).filter((step) => step !== RetryMigrateExistingData)} onTriggerStep={handleTriggerStep}>
-        <Button bsStyle="default" bsSize="small" onClick={handleLogViewClick}>Log View</Button>
+        <Button bsStyle="default" bsSize="small" onClick={handleLogViewClick}>日志视图</Button>
         <Button bsStyle="default" bsSize="small" onClick={handleRetryClick}>{MIGRATION_ACTIONS[RetryMigrateExistingData]?.label}</Button>
       </MigrationStepTriggerButtonToolbar>
       {showRetryMigrationConfirmDialog && (
         <ConfirmDialog show={showRetryMigrationConfirmDialog}
-                       title="Retry migrating existing data"
+                       title="重试迁移现有数据"
                        onCancel={() => setShowRetryMigrationConfirmDialog(false)}
                        onConfirm={handleRetryConfirmClick}>
-          Are you sure you want to stop the current running remote reindexing migration and retry migrating existing data?
+          您确定要停止当前正在运行的远程重新索引迁移并重试迁移现有数据吗？
         </ConfirmDialog>
       )}
       {showLogView && (
@@ -156,7 +155,7 @@ const RemoteReindexRunning = ({ currentStep, onTriggerStep, hideActions }: Migra
                                bsSize="large"
                                backdrop>
           <Modal.Header closeButton>
-            <Modal.Title>Remote Reindex Migration Logs</Modal.Title>
+            <Modal.Title>远程重新索引迁移日志</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <pre>

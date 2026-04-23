@@ -81,7 +81,7 @@ export const IndicesConfigurationStore = singletonStore(
           this.trigger(this.getState());
         },
         (error) => {
-          UserNotification.error(`Fetching rotation strategies failed: ${error}`, 'Could not retrieve rotation strategies');
+          UserNotification.error(`获取轮换策略失败：${error}`, '无法检索轮转策略');
         },
       );
 
@@ -98,7 +98,7 @@ export const IndicesConfigurationStore = singletonStore(
           this.trigger(this.getState());
         },
         (error) => {
-          UserNotification.error(`Fetching retention strategies failed: ${error}`, 'Could not retrieve retention strategies');
+          UserNotification.error(`获取保留策略失败：${error}`, '无法检索保留策略');
         },
       );
 

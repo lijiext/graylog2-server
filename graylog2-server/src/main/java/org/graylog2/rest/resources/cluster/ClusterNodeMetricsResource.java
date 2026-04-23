@@ -79,9 +79,9 @@ public class ClusterNodeMetricsResource extends ProxiedResource {
     @GET
     @Timed
     @Path("/names")
-    @ApiOperation(value = "Get all metrics keys/names from node")
+    @ApiOperation(value = "从节点获取所有指标键/名称")
     @RequiresPermissions(RestPermissions.METRICS_ALLKEYS)
-    public MetricNamesResponse metricNames(@ApiParam(name = "nodeId", value = "The id of the node whose metrics we want.", required = true)
+    public MetricNamesResponse metricNames(@ApiParam(name = "nodeId", value = "我们想要其指标的节点 ID。", required = true)
                                            @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Response<MetricNamesResponse> result = getResourceForNode(nodeId).metricNames().execute();
         if (result.isSuccessful()) {
@@ -99,7 +99,7 @@ public class ClusterNodeMetricsResource extends ProxiedResource {
             @ApiResponse(code = 400, message = "Malformed body")
     })
     @NoAuditEvent("only used to get multiple metric values")
-    public MetricsSummaryResponse multipleMetrics(@ApiParam(name = "nodeId", value = "The id of the node whose metrics we want.", required = true)
+    public MetricsSummaryResponse multipleMetrics(@ApiParam(name = "nodeId", value = "我们想要其指标的节点 ID。", required = true)
                                                   @PathParam("nodeId") String nodeId,
                                                   @ApiParam(name = "Requested metrics", required = true)
                                                   @Valid @NotNull MetricsReadRequest request) throws IOException, NodeNotFoundException {
@@ -118,7 +118,7 @@ public class ClusterNodeMetricsResource extends ProxiedResource {
     @ApiResponses(value = {
             @ApiResponse(code = 404, message = "No such metric namespace")
     })
-    public MetricsSummaryResponse byNamespace(@ApiParam(name = "nodeId", value = "The id of the node whose metrics we want.", required = true)
+    public MetricsSummaryResponse byNamespace(@ApiParam(name = "nodeId", value = "我们想要其指标的节点 ID。", required = true)
                                               @PathParam("nodeId") String nodeId,
                                               @ApiParam(name = "namespace", required = true)
                                               @PathParam("namespace") String namespace) throws IOException, NodeNotFoundException {

@@ -58,8 +58,8 @@ const MatchingTypeSwitcher = ({ stream, onChange }: Props) => {
     StreamsStore.update(stream.id, { matching_type: newValue }, (response) => {
       onChange();
 
-      UserNotification.success(`Messages will now be routed into the stream when ${newValue === 'AND' ? 'all' : 'any'} rules are matched`,
-        'Success');
+      UserNotification.success(`当匹配 ${newValue === 'AND' ? 'all' : 'any'} 规则时，消息现在将被路由到数据流`,
+        '成功');
 
       return response;
     });
@@ -70,21 +70,21 @@ const MatchingTypeSwitcher = ({ stream, onChange }: Props) => {
       <div>
         <Input id="streamrule-and-connector"
                type="radio"
-               label="A message must match all of the following rules"
+               label="消息必须匹配以下所有规则"
                checked={stream.matching_type === 'AND'}
                onChange={() => setMatchingType('AND')} />
         <Input id="streamrule-or-connector"
                type="radio"
-               label="A message must match at least one of the following rules"
+               label="消息必须匹配以下至少一条规则"
                checked={stream.matching_type === 'OR'}
                onChange={() => setMatchingType('OR')} />
       </div>
       {matchingType && (
         <ConfirmDialog show
-                       title={`Switch matching type to ${matchingType === 'AND' ? 'ALL' : 'ANY'}`}
+                       title={`将匹配类型切换为 ${matchingType === 'AND' ? 'ALL' : 'ANY'}`}
                        onConfirm={() => handleTypeChange(matchingType)}
                        onCancel={() => setMatchingType(undefined)}>
-          You are about to change how rules are applied to this stream, do you want to continue? Changes will take effect immediately.
+          您即将更改规则应用于此数据流的方式，是否继续？更改将立即生效。
         </ConfirmDialog>
       )}
     </StreamRuleConnector>

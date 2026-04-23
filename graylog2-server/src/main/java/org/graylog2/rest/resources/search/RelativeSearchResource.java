@@ -76,23 +76,23 @@ public class RelativeSearchResource extends SearchResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Message search with relative timerange.",
+    @ApiOperation(value = "使用相对时间范围搜索消息。",
                   notes = "Search for messages in a relative timerange, specified as seconds from now. " +
                           "Example: 300 means search from 5 minutes ago to now.")
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid timerange parameters provided.")
+            @ApiResponse(code = 400, message = "提供的计时范围参数无效。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     public SearchResponse searchRelative(
-            @ApiParam(name = "query", value = "Query (Lucene syntax)", required = true)
+            @ApiParam(name = "query", value = "查询（Lucene 语法）", required = true)
             @QueryParam("query") @NotEmpty String query,
-            @ApiParam(name = "range", value = "Relative timeframe to search in. See method description.", required = true)
+            @ApiParam(name = "range", value = "搜索的相对时间范围。请参阅方法描述。", required = true)
             @QueryParam("range") @NotNull @PositiveOrZero Integer range,
-            @ApiParam(name = "limit", value = "Maximum number of messages to return.") @QueryParam("limit") int limit,
+            @ApiParam(name = "limit", value = "返回的最大消息数。") @QueryParam("limit") int limit,
             @ApiParam(name = "offset", value = "Offset") @QueryParam("offset") int offset,
             @ApiParam(name = "filter", value = "Filter") @QueryParam("filter") String filter,
             @ApiParam(name = "fields", value = "Comma separated list of fields to return") @QueryParam("fields") String fields,
-            @ApiParam(name = "sort", value = "Sorting (field:asc / field:desc)") @QueryParam("sort") String sort,
+            @ApiParam(name = "sort", value = "排序 (field:asc / field:desc)") @QueryParam("sort") String sort,
             @ApiParam(name = "decorate", value = "Run decorators on search result") @QueryParam("decorate") @DefaultValue("true") boolean decorate,
             @Context SearchUser searchUser) {
         checkSearchPermission(filter, RestPermissions.SEARCHES_RELATIVE);
@@ -107,21 +107,21 @@ public class RelativeSearchResource extends SearchResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Message search with relative timerange.",
+    @ApiOperation(value = "使用相对时间范围搜索消息。",
                   notes = "Search for messages in a relative timerange, specified as seconds from now. " +
                           "Example: 300 means search from 5 minutes ago to now.")
     @Produces(MoreMediaTypes.TEXT_CSV)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid timerange parameters provided.")
+            @ApiResponse(code = 400, message = "提供的计时范围参数无效。")
     })
     public ChunkedOutput<ResultChunk> searchRelativeChunked(
-            @ApiParam(name = "query", value = "Query (Lucene syntax)", required = true)
+            @ApiParam(name = "query", value = "查询（Lucene 语法）", required = true)
             @QueryParam("query") @NotEmpty String query,
-            @ApiParam(name = "range", value = "Relative timeframe to search in. See method description.", required = true)
+            @ApiParam(name = "range", value = "搜索的相对时间范围。请参阅方法描述。", required = true)
             @QueryParam("range") @NotNull @PositiveOrZero Integer range,
-            @ApiParam(name = "limit", value = "Maximum number of messages to return.", required = false) @QueryParam("limit") int limit,
+            @ApiParam(name = "limit", value = "返回的最大消息数。", required = false) @QueryParam("limit") int limit,
             @ApiParam(name = "offset", value = "Offset", required = false) @QueryParam("offset") int offset,
-            @ApiParam(name = "batch_size", value = "Batch size for the backend storage export request.", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
+            @ApiParam(name = "batch_size", value = "后端存储导出请求的批处理大小。", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
             @ApiParam(name = "filter", value = "Filter", required = false) @QueryParam("filter") String filter,
             @ApiParam(name = "fields", value = "Comma separated list of fields to return", required = true)
             @QueryParam("fields") @NotEmpty String fields) {
@@ -138,21 +138,21 @@ public class RelativeSearchResource extends SearchResource {
     @GET
     @Path("/export")
     @Timed
-    @ApiOperation(value = "Export message search with relative timerange.",
+    @ApiOperation(value = "导出具有相对时间范围的邮件搜索。",
                   notes = "Search for messages in a relative timerange, specified as seconds from now. " +
                           "Example: 300 means search from 5 minutes ago to now.")
     @Produces(MoreMediaTypes.TEXT_CSV)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid timerange parameters provided.")
+            @ApiResponse(code = 400, message = "提供的计时范围参数无效。")
     })
     public Response exportSearchRelativeChunked(
-            @ApiParam(name = "query", value = "Query (Lucene syntax)", required = true)
+            @ApiParam(name = "query", value = "查询（Lucene 语法）", required = true)
             @QueryParam("query") @NotEmpty String query,
-            @ApiParam(name = "range", value = "Relative timeframe to search in. See method description.", required = true)
+            @ApiParam(name = "range", value = "搜索的相对时间范围。请参阅方法描述。", required = true)
             @QueryParam("range") @PositiveOrZero int range,
-            @ApiParam(name = "limit", value = "Maximum number of messages to return.", required = false) @QueryParam("limit") int limit,
+            @ApiParam(name = "limit", value = "返回的最大消息数。", required = false) @QueryParam("limit") int limit,
             @ApiParam(name = "offset", value = "Offset", required = false) @QueryParam("offset") int offset,
-            @ApiParam(name = "batch_size", value = "Batch size for the backend storage export request.", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
+            @ApiParam(name = "batch_size", value = "后端存储导出请求的批处理大小。", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
             @ApiParam(name = "filter", value = "Filter", required = false) @QueryParam("filter") String filter,
             @ApiParam(name = "fields", value = "Comma separated list of fields to return", required = true)
             @QueryParam("fields") @NotEmpty String fields) {

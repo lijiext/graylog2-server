@@ -35,25 +35,19 @@ const StreamOutputsPage = () => {
   }
 
   return (
-    <DocumentTitle title={`Outputs for Stream ${stream.title}`}>
+    <DocumentTitle title={`数据流 ${stream.title} 的输出`}>
       <div>
         <ContentHeadRow className="content">
           <Col md={10}>
             <h1>
-              Outputs for Stream &raquo;{stream.title}&laquo;
+              数据流的输出端 »{stream.title}&laquo;
             </h1>
 
             <p className="description">
-              Graylog nodes can forward messages of streams via outputs. Launch or terminate as many outputs as you want here.
-              You can also reuse outputs that are already running for other streams.
-
-              A global view of all configured outputs is available <Link to={Routes.SYSTEM.OUTPUTS}>here</Link>.
-              You can find output plugins on <a href="https://marketplace.graylog.org/" rel="noopener noreferrer" target="_blank">the Graylog Marketplace</a>.
+              Graylog 节点可通过输出端转发数据流的消息。在此处可启动或终止任意数量的输出端。您还可重用已为其他数据流运行的输出端。所有已配置输出端的全局视图可用 <Link to={Routes.SYSTEM.OUTPUTS}>here</Link>。您可以在以下位置找到输出插件 <a href="https://marketplace.graylog.org/" rel="noopener noreferrer" target="_blank">Graylog 应用市场</a>.
               <br />
 
-              <i>Removing</i> an output removes it from this stream but it will still be in the list of available outputs.
-              Deleting an output <i>globally</i> will remove it from this and all other streams and terminate it.
-              You can see all defined outputs in details at the {' '} <Link to={Routes.SYSTEM.OUTPUTS}>global output list</Link>.
+              <i>正在移除</i> 一个输出端会将其从该数据流中移除，但它仍将保留在可用输出端列表中。删除一个输出端 <i>globally</i> 将从此数据流和所有其他数据流中移除它并终止它。您可以在详细信息中查看所有定义的输出端 {' '} <Link to={Routes.SYSTEM.OUTPUTS}>全局输出端列表</Link>.
             </p>
           </Col>
         </ContentHeadRow>

@@ -67,26 +67,26 @@ const TemplateActions = ({ id, title, built_in, isDefault, isEnabled } : Props) 
     <>
       {showDeleteDialog && (
       <ConfirmDialog show={showDeleteDialog}
-                     title={`Deleting "${title}"`}
+                     title={`删除 "${title}"`}
                      onCancel={cancelDelete}
                      onConfirm={handleDelete}>
-        <p>You are about to delete the template: &quot;{title}&quot;. Are you sure?</p>
+        <p>您即将删除模板："{title}"。您确定吗？</p>
       </ConfirmDialog>
       )}
 
       <ButtonToolbar>
         <LinkContainer to={Routes.SYSTEM.INDICES.TEMPLATES.edit(id)}>
           <Button bsSize="xs">
-            Edit
+            编辑
           </Button>
         </LinkContainer>
         {!isDefault && (
         <MoreActions>
           <MenuItem onSelect={onSetAsDefault}>
-            Set as default
+            设为默认
           </MenuItem>
           <MenuItem onSelect={onDelete}>
-            Delete
+            删除
           </MenuItem>
         </MoreActions>
         )}

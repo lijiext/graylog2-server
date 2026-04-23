@@ -53,16 +53,16 @@ const UserSyncSection = ({ authenticationBackend, roles, excludedFields }: Props
   } = authenticationBackend;
 
   return (
-    <SectionComponent title="User Synchronization" headerActions={<EditLinkButton authenticationBackendId={authenticationBackend.id} stepKey={USER_SYNC_KEY} />}>
-      <ReadOnlyFormGroup label="Search Base DN" value={userSearchBase} />
-      <ReadOnlyFormGroup label="Search Pattern" value={userSearchPattern} />
-      <ReadOnlyFormGroup label="Name Attribute" value={userNameAttribute} />
-      <ReadOnlyFormGroup label="Full Name Attribute" value={userFullNameAttribute} />
-      {!excludedFields.emailAttributes && <ReadOnlyFormGroup label="Email Attribute" value={emailAttributes.join(',')} />}
+    <SectionComponent title="用户同步" headerActions={<EditLinkButton authenticationBackendId={authenticationBackend.id} stepKey={USER_SYNC_KEY} />}>
+      <ReadOnlyFormGroup label="搜索基础 DN" value={userSearchBase} />
+      <ReadOnlyFormGroup label="搜索模式" value={userSearchPattern} />
+      <ReadOnlyFormGroup label="名称属性" value={userNameAttribute} />
+      <ReadOnlyFormGroup label="全名属性" value={userFullNameAttribute} />
+      {!excludedFields.emailAttributes && <ReadOnlyFormGroup label="电子邮件属性" value={emailAttributes.join(',')} />}
       {!excludedFields.userUniqueIdAttribute && (
-        <ReadOnlyFormGroup label="ID Attribute" value={userUniqueIdAttribute} />
+        <ReadOnlyFormGroup label="ID 属性" value={userUniqueIdAttribute} />
       )}
-      <ReadOnlyFormGroup label="Default Roles" value={rolesList(defaultRoles, roles)} />
+      <ReadOnlyFormGroup label="默认角色" value={rolesList(defaultRoles, roles)} />
     </SectionComponent>
   );
 };

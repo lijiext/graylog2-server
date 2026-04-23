@@ -40,14 +40,11 @@ const singleNumber: VisualizationType<typeof NumberVisualization.type, NumberVis
       helpComponent: () => (
         <>
           <p>
-            If the user enables trending, a separate box is shown below the current value, indicating the direction of the change
-            by an icon as well as the absolute and the relative differences between the current value and the previous one.
+            如果用户启用趋势，将在当前值下方显示一个单独的框，通过图标指示变化方向，以及当前值与前一个值之间的绝对和相对差异。
           </p>
 
           <p>
-            The previous value is calculated by performing two searches in the background, which are completely identical besides
-            the timerange. The timerange of the first search is identical to the one configured for this query/this widget,
-            the second one is the same timerange, but with an offset of the timerange length shifted to the past.
+            前一个值是通过在后台执行两次搜索计算得出的，这两次搜索除了时间范围外完全相同。第一次搜索的时间范围与为此查询/此小部件配置的时间范围相同，第二次搜索的时间范围相同，但偏移了时间范围长度并向前推移。
           </p>
         </>
       ),

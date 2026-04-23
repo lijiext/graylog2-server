@@ -161,11 +161,11 @@ const CollectorConfigurationModalContainer = ({
 
     return (
       <BootstrapModalConfirm showModal={showConfirmModal}
-                             title="Configuration summary"
+                             title="配置摘要"
                              onConfirm={confirmConfigurationChange}
                              onCancel={cancelConfigurationChange}>
         <ConfigurationSummary>
-          <p>Are you sure you want to proceed with this action for <b>{summary}</b>?</p>
+          <p>您确定要为以下对象继续执行此操作 <b>{summary}</b>?</p>
         </ConfigurationSummary>
       </BootstrapModalConfirm>
     );

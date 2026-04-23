@@ -37,64 +37,64 @@ const CSVFileAdapterDocumentation = () => {
 
   return (
     <div>
-      <p>The CSV data adapter can read key value pairs from a CSV file.</p>
-      <p>Please make sure your CSV file is formatted according to your configuration settings.</p>
+      <p>CSV 数据适配器可以从 CSV 文件读取键值对。</p>
+      <p>请确保您的 CSV 文件格式符合您的配置设置。</p>
 
-      <Alert style={{ marginBottom: 10 }} bsStyle="info" title="CSV file requirements">
+      <Alert style={{ marginBottom: 10 }} bsStyle="info" title="CSV 文件要求">
         <ul className="no-padding">
-          <li>The first line in the CSV file needs to be a list of field/column names</li>
-          <li>The file uses <strong>utf-8</strong> encoding</li>
-          <li>The file is readable by <strong>every</strong> Graylog server node</li>
+          <li>CSV 文件的第一行需要是字段/列名称列表</li>
+          <li>文件使用 <strong>utf-8</strong> encoding</li>
+          <li>文件可由以下用户读取 <strong>every</strong> Graylog 服务器节点</li>
         </ul>
       </Alert>
 
       <hr />
 
-      <h3 style={{ marginBottom: 10 }}>Example 1</h3>
+      <h3 style={{ marginBottom: 10 }}>示例 1</h3>
 
-      <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+      <h5 style={{ marginBottom: 10 }}>配置</h5>
       <p style={{ marginBottom: 10, padding: 0 }}>
-        Separator: <code>,</code><br />
-        Quote character: <code>"</code><br />
-        Key column: <code>ipaddr</code><br />
-        Value column: <code>hostname</code>
+        分隔符: <code>,</code><br />
+        引号字符： <code>"</code><br />
+        密钥列： <code>ipaddr</code><br />
+        值列： <code>hostname</code>
       </p>
 
-      <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+      <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
       <pre>{csvFile1}</pre>
 
-      <h3 style={{ marginBottom: 10 }}>Example 2</h3>
+      <h3 style={{ marginBottom: 10 }}>示例 2</h3>
 
-      <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+      <h5 style={{ marginBottom: 10 }}>配置</h5>
       <p style={{ marginBottom: 10, padding: 0 }}>
-        Separator: <code>;</code><br />
-        Quote character: <code>'</code><br />
-        Key column: <code>ipaddr</code><br />
-        Value column: <code>hostname</code>
+        分隔符: <code>;</code><br />
+        引号字符： <code>'</code><br />
+        密钥列： <code>ipaddr</code><br />
+        值列： <code>hostname</code>
       </p>
 
-      <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+      <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
       <pre>{csvFile2}</pre>
 
-      <h3 style={{ marginBottom: 10 }}>CIDR Lookups</h3>
+      <h3 style={{ marginBottom: 10 }}>CIDR 查找</h3>
       <p style={{ marginBottom: 10, padding: 0 }}>
-        If this data adapter will be used to lookup IP address keys against CIDR addresses<br />
-        then it should be marked as a CIDR lookup. For example:<br />
+        如果此数据适配器将用于根据 CIDR 地址查找 IP 地址键<br />
+        则应标记为 CIDR 查找。例如：<br />
       </p>
 
-      <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+      <h5 style={{ marginBottom: 10 }}>配置</h5>
       <p style={{ marginBottom: 10, padding: 0 }}>
-        Separator: <code>,</code><br />
-        Quote character: <code>"</code><br />
-        Key column: <code>cidr</code><br />
-        Value column: <code>subnet</code><br />
-        CIDR lookup: <code>true</code>
+        分隔符: <code>,</code><br />
+        引号字符： <code>"</code><br />
+        密钥列： <code>cidr</code><br />
+        值列： <code>subnet</code><br />
+        CIDR 查找： <code>true</code>
       </p>
 
-      <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+      <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
       <pre>{csvFile3}</pre>
 
-      <p>Given this CSV file and configuration looking up the key 192.168.101.64 would return 'IT Department subnet'.</p>
+      <p>给定此 CSV 文件和配置，查找键 192.168.101.64 将返回'IT 部门子网'。</p>
     </div>
   );
 };

@@ -34,7 +34,7 @@ const _pageTitle = (authBackend, title) => {
   if (authBackend) {
     const backendTitle = StringUtils.truncateWithEllipses(authBackend.title, 30);
 
-    return <>Edit Authentication Service - <i>{backendTitle}</i></>;
+    return <>编辑认证服务 - <i>{backendTitle}</i></>;
   }
 
   return title || 'Create LDAP Authentication Service';
@@ -56,7 +56,7 @@ const WizardPageHeader = ({ authenticationBackend: authBackend, title }: Props) 
                     title: 'Authentication documentation',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
-        <span>Configure Graylog&apos;s authentication services of this Graylog cluster.</span>
+        <span>配置此 Graylog 集群的 Graylog 认证服务。</span>
       </PageHeader>
     </>
   );

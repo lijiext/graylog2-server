@@ -43,12 +43,10 @@ const DataNodesOverview = () => {
   return (
     <>
       <P>
-        Graylog data nodes offer a better integration with Graylog and simplify future updates.
-        Once a Graylog data node is running and you configured the certificate authority, you can resume startup.
+        Graylog 数据节点与 Graylog 的集成更紧密，并简化了未来的更新。一旦 Graylog 数据节点运行且您已配置证书颁发机构，即可恢复启动。
       </P>
       <P>
-        These are the data nodes which are currently registered.
-        The list is constantly updated. {isFetchingDataNodes && <Spinner text="" />}
+        这些是当前注册的数据节点。列表会持续更新。 {isFetchingDataNodes && <Spinner text="" />}
       </P>
 
       {!!dataNodes.length && (
@@ -65,8 +63,8 @@ const DataNodesOverview = () => {
             }) => (
               <List.Item key={short_node_id}>
                 <DataNodeBadge status={status} nodeId={short_node_id} transportAddress={transport_address} />
-                <span title="Transport address">{transport_address}</span>{' – '}
-                <span title="Hostname">{hostname}</span>
+                <span title="传输地址">{transport_address}</span>{' – '}
+                <span title="主机名">{hostname}</span>
                 {error_msg && <Error message={error_msg} />}
               </List.Item>
             ))}
@@ -75,7 +73,7 @@ const DataNodesOverview = () => {
       )}
       {(!dataNodes.length && !isInitialLoadingDataNodes) && (
         <Alert bsStyle="info">
-          No data nodes have been found.
+          未找到数据节点。
         </Alert>
       )}
       <Space h="md" />

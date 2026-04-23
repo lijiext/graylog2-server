@@ -188,24 +188,23 @@ const AddWidgetButton = ({ onClick }: Props) => {
 
   return (
     <>
-      <SectionInfo>Use the following options to add an aggregation, log view (enterprise feature) or parameters
-        (enterprise feature) to your search.
+      <SectionInfo>使用以下选项向搜索添加聚合、日志视图（企业版功能）或参数（企业版功能）。
       </SectionInfo>
       <Group>
-        <SectionSubheadline>Generic</SectionSubheadline>
+        <SectionSubheadline>通用</SectionSubheadline>
         <GroupCreateMenuItems creators={generic}
                               onClick={onClick}
                               setOverflowingComponents={setOverflowingComponents} />
       </Group>
       <Group>
-        <SectionSubheadline>Predefined Aggregation</SectionSubheadline>
+        <SectionSubheadline>预定义聚合</SectionSubheadline>
         <GroupCreateMenuItems creators={presets}
                               onClick={onClick}
                               setOverflowingComponents={setOverflowingComponents} />
       </Group>
       {!!investigationsCreator?.length && (
         <Group>
-          <SectionSubheadline>Investigations</SectionSubheadline>
+          <SectionSubheadline>调查</SectionSubheadline>
           <GroupCreateMenuItems creators={investigationsCreator}
                                 onClick={onClick}
                                 setOverflowingComponents={setOverflowingComponents} />
@@ -213,7 +212,7 @@ const AddWidgetButton = ({ onClick }: Props) => {
       )}
       {!!eventsCreator?.length && (
         <Group>
-          <SectionSubheadline>Events</SectionSubheadline>
+          <SectionSubheadline>事件</SectionSubheadline>
           <GroupCreateMenuItems creators={eventsCreator}
                                 onClick={onClick}
                                 setOverflowingComponents={setOverflowingComponents} />

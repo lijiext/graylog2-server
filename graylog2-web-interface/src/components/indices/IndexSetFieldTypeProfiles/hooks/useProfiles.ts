@@ -78,8 +78,8 @@ const useProfiles = (searchParams: SearchParams, { enabled }): {
     () => fetchIndexSetFieldTypeProfiles(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index field type profiles failed with status: ${errorThrown}`,
-          'Could not load index field type profiles');
+        UserNotification.error(`加载索引字段类型配置文件失败，状态为：${errorThrown}`,
+          '无法加载索引字段类型配置');
       },
       keepPreviousData: true,
       enabled,

@@ -59,15 +59,15 @@ const SavedSearchForm = ({ children, show, isCreateNew, saveSearch, saveAsSearch
       <Popover.Target>
         {children}
       </Popover.Target>
-      <Popover.Dropdown title="Name of search"
+      <Popover.Dropdown title="搜索名称"
                         id="saved-search-popover">
         <StyledForm onSubmit={stopEvent}>
           <FormGroup>
-            <ControlLabel htmlFor="title">Title</ControlLabel>
+            <ControlLabel htmlFor="title">标题</ControlLabel>
             <FormControl type="text"
                          value={title}
                          id="title"
-                         placeholder="Enter title"
+                         placeholder="输入标题"
                          onChange={onChangeTitle} />
           </FormGroup>
           {pluggableSaveViewControls?.map(({ component: Component, id }) => (Component
@@ -78,9 +78,9 @@ const SavedSearchForm = ({ children, show, isCreateNew, saveSearch, saveAsSearch
                       className={styles.button}
                       type="submit"
                       bsSize="sm"
-                      title="Save search"
+                      title="保存搜索"
                       onClick={_saveSearch}>
-                Save
+                保存
               </Button>
             )}
             <Button disabled={disableSaveAs}
@@ -95,7 +95,7 @@ const SavedSearchForm = ({ children, show, isCreateNew, saveSearch, saveAsSearch
             <Button className={styles.button}
                     onClick={toggleModal}
                     bsSize="sm">
-              Cancel
+              取消
             </Button>
           </ButtonToolbar>
         </StyledForm>

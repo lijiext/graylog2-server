@@ -39,7 +39,7 @@ const _deleteContentPack = (contentPackId: string) => {
   // eslint-disable-next-line no-alert
   if (window.confirm('You are about to delete this Content Pack, are you sure?')) {
     ContentPacksActions.delete(contentPackId).then(() => {
-      UserNotification.success('Content Pack deleted successfully.', 'Success');
+      UserNotification.success('内容包删除成功。', '成功');
       ContentPacksActions.list();
     }, (error) => {
       let err_message = error.message;
@@ -49,18 +49,18 @@ const _deleteContentPack = (contentPackId: string) => {
         err_message = error.additional.body.message;
       }
 
-      UserNotification.error(`Deleting bundle failed: ${err_message}`, 'Error');
+      UserNotification.error(`删除捆绑包失败：${err_message}`, '错误');
     });
   }
 };
 
 const _installContentPack = (contentPackId: string, contentPackRev: string, parameters: unknown) => {
   ContentPacksActions.install(contentPackId, contentPackRev, parameters).then(() => {
-    UserNotification.success('Content Pack installed successfully.', 'Success');
+    UserNotification.success('内容包安装成功。', '成功');
     ContentPacksActions.list();
   }, (error) => {
-    UserNotification.error(`Installing content pack failed with status: ${error}.
-         Could not install Content Pack with ID: ${contentPackId}`);
+    UserNotification.error(`安装内容包失败，状态为：${error}。
+         无法安装 ID 为 ${contentPackId} 的内容包`);
   });
 };
 
@@ -76,23 +76,23 @@ const ContentPacksPage = () => {
   }
 
   return (
-    <DocumentTitle title="Content Packs">
+    <DocumentTitle title="内容包">
       <span>
-        <PageHeader title="Content Packs"
-                    topActions={<Button bsStyle="info">Content Packs</Button>}
+        <PageHeader title="内容包"
+                    topActions={<Button bsStyle="info">内容包</Button>}
                     actions={(
                       <ButtonToolbar>
                         <ContentPackUploadControls />
                         <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.CREATE}>
-                          <Button bsStyle="success">Create a content pack</Button>
+                          <Button bsStyle="success">创建内容包</Button>
                         </LinkContainer>
                       </ButtonToolbar>
                       )}>
           <span>
-            Content Packs accelerate the set up process for a specific data source. A Content Pack can include inputs/extractors, streams, and dashboards.
+            内容包可加速特定数据源的设置过程。内容包可以包含输入端/提取器、数据流和仪表盘。
             <br />
-            Find more Content Packs in {' '}
-            <a href="https://marketplace.graylog.org/" target="_blank" rel="noopener noreferrer">the Graylog Marketplace</a>.
+            在以下位置查找更多内容包 {' '}
+            <a href="https://marketplace.graylog.org/" target="_blank" rel="noopener noreferrer">Graylog 应用市场</a>.
           </span>
         </PageHeader>
 

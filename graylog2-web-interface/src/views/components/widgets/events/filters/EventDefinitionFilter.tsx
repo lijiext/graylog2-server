@@ -44,7 +44,7 @@ const EventDefinitionFilter = ({ value, onSelect, selectedValues }: Props) => {
   }
 
   return (
-    <Select placeholder="Select event definition"
+    <Select placeholder="选择事件定义"
             clearable={false}
             menuIsOpen
             options={eventDefinitionOptions}

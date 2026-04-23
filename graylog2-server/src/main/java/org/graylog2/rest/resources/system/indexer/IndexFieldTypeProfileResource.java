@@ -101,7 +101,7 @@ public class IndexFieldTypeProfileResource extends RestResource {
     @Path("/all")
     @Timed
     @NoAuditEvent("No change to the DB")
-    @ApiOperation(value = "Gets list of all profiles (their ids and names only)")
+    @ApiOperation(value = "获取所有配置文件列表（仅包含其 ID 和名称）")
     public List<IndexFieldTypeProfileIdAndName> getAll() {
         checkPermission(RestPermissions.MAPPING_PROFILES_READ);
         return profileService.getAll();

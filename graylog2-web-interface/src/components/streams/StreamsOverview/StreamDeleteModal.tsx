@@ -41,7 +41,7 @@ const StreamDeleteModal = ({ onDelete, streamId, streamTitle, onCancel }: Props)
                    onConfirm={onDelete}
                    btnConfirmDisabled={shouldShowWarning}
                    onCancel={onCancel}
-                   title="Delete Stream">
+                   title="删除数据流">
       {shouldShowWarning ? <DataWarehouseStreamDeleteWarning /> : `Do you really want to remove stream:  ${streamTitle}?`}
     </ConfirmDialog>
   );

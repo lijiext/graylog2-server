@@ -27,10 +27,7 @@ const OverriddenProfileExpandedSection = ({ type, fieldName }: ExpandedSectionPr
 
   return (
     <div>
-      Field type <i>{type}</i> comes from the individual, custom field type mapping.
-      It overrides not only possible mappings from the search engine index mapping,
-      but also mapping <b>{fieldName}: </b><i>{profileFieldType}</i> present in
-      profile <Link to={Routes.SYSTEM.INDICES.LIST}>{profileName}</Link>
+      字段类型 <i>{type}</i> 来自单个自定义字段类型映射。它不仅覆盖了来自搜索引擎索引映射的可能映射，还覆盖了映射 <b>{fieldName}: </b><i>{profileFieldType}</i> 存在于配置文件中 <Link to={Routes.SYSTEM.INDICES.LIST}>{profileName}</Link>
     </div>
   );
 };

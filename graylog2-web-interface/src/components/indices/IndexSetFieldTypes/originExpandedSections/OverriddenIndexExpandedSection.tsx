@@ -20,9 +20,7 @@ import type { ExpandedSectionProps } from 'components/indices/IndexSetFieldTypes
 
 const OverriddenProfileExpandedSection = ({ type }: ExpandedSectionProps) => (
   <span>
-    Field type <i>{type}</i> comes from the individual, custom field type mapping.
-    It overrides possible mappings from the search engine index mapping,
-    either immediately (if index was rotated) or during the next rotation.
+    字段类型 <i>{type}</i> 来自单个自定义字段类型映射。它覆盖了来自搜索引擎索引映射的可能映射，要么立即生效（如果索引已轮转），要么在下次轮转期间生效。
   </span>
 );
 

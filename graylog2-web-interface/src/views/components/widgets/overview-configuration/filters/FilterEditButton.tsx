@@ -79,7 +79,7 @@ const FilterEditButton = ({ filterComponent, column, value, columnTitle, onEdit,
           onClose={onClose}>
       <Menu.Target>
         <IconButton name="edit"
-                    title={`Edit ${columnTitle(column)} filter`}
+                    title={`编辑 ${columnTitle(column)} 过滤器`}
                     onClick={() => setOpen(true)} />
       </Menu.Target>
       <Menu.Dropdown>

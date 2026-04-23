@@ -38,14 +38,14 @@ const DataAdapterPicker = ({
   return (
     <fieldset>
       <Input id="data-adapter-select"
-             label="Data Adapter"
+             label="数据适配器"
              required
              autoFocus
              bsStyle={errorMessage ? 'error' : undefined}
              help={errorMessage || 'Select an existing data adapter'}
              labelClassName="col-sm-3"
              wrapperClassName="col-sm-9">
-        <Select placeholder="Select a data adapter"
+        <Select placeholder="选择数据适配器"
                 clearable={false}
                 options={sortedAdapters}
                 matchProp="label"

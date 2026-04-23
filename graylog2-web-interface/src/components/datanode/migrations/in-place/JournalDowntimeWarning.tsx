@@ -34,16 +34,16 @@ const JournalDowntimeWarning = ({ currentStep, onTriggerStep, hideActions }: Mig
 
   return (
     <>
-      <h3>Journal downtime size warning</h3>
-      <p>Please note that during migration data processing  will stop on your Graylog node, this will result in the journal growing in size.</p>
-      <p>Therefore you might need to increase your journal volume size.</p>
-      <p>Your current journal size is: <b>{data.journal_size_MB} MB</b> and your current journal throughput is: <b>{data.KBs_per_minute} KB/min</b></p>
-      <p>Your current maximum downtime for reconfiguring Graylog to point to the data node is: <b>{data.max_downtime_duration}</b></p>
+      <h3>日志记录停机大小警告</h3>
+      <p>请注意，在迁移过程中，您的 Graylog 节点上的数据处理将停止，这将导致日志大小增长。</p>
+      <p>因此，您可能需要增加日志卷的大小。</p>
+      <p>您当前的日志大小是： <b>{data.journal_size_MB} MB</b> 且您当前的日志吞吐量为： <b>{data.KBs_per_minute} KB/分钟</b></p>
+      <p>您重新配置 Graylog 以指向数据节点的最大停机时间为： <b>{data.max_downtime_duration}</b></p>
       {isError && (
-        <MigrationError errorMessage={`There was an error while estimating your journal throughput: ${error?.message}`} />
+        <MigrationError errorMessage={`估算日志吞吐量时发生错误：${error?.message}`} />
       )}
       <DownsizeWarning bsStyle="warning">
-        Please make sure your journal volume size is sufficient before proceeding.
+        请继续操作前确保您的日志卷大小足够。
       </DownsizeWarning>
       <MigrationStepTriggerButtonToolbar hidden={hideActions} nextSteps={currentStep.next_steps} onTriggerStep={onTriggerStep} />
     </>

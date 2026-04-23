@@ -55,7 +55,7 @@ const OutputsList = ({ outputs, streamId, getTypeDefinition, isLoadingOutputType
     <Table condensed striped hover>
       <thead>
         <tr>
-          <th colSpan={2}>Name</th>
+          <th colSpan={2}>名称</th>
         </tr>
       </thead>
       <tbody>
@@ -70,7 +70,7 @@ const OutputsList = ({ outputs, streamId, getTypeDefinition, isLoadingOutputType
 
         {(outputs.length <= 0) && (
         <tr>
-          <td colSpan={2}>No output defined.</td>
+          <td colSpan={2}>未定义输出。</td>
         </tr>
         )}
       </tbody>

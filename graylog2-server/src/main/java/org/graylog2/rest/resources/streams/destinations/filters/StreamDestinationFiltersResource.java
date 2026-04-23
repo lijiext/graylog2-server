@@ -165,7 +165,7 @@ public class StreamDestinationFiltersResource extends RestResource {
         checkStream(streamId);
 
         if (!filterId.equals(dto.id())) {
-            throw new BadRequestException("The filter ID in the URL doesn't match the one in the payload");
+            throw new BadRequestException("URL 中的过滤器 ID 与有效负载中的 ID 不匹配");
         }
 
         validateDto(dto);

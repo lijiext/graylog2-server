@@ -34,46 +34,45 @@ export const HELP = {
   // server config help
   systemUserDn: (
     <span>
-      The username for the initial connection to the LDAP server, e.g. <code>cn=admin,dc=example,dc=com</code>,
-      this might be optional depending on your LDAP server.
+      用于初始连接到 LDAP 服务器的用户名，例如： <code>cn=admin,dc=example,dc=com</code>，这可能是可选的，具体取决于您的 LDAP 服务器。
     </span>
   ),
   systemUserPassword: 'The password for the initial connection to the LDAP server.',
   // user sync help
   userSearchBase: (
     <span>
-      The base tree to limit the LDAP search query to, e.g. <code>cn=users,dc=example,dc=com</code>.
+      LDAP 搜索查询的基准树，例如 <code>cn=users,dc=example,dc=com</code>.
     </span>
   ),
   userSearchPattern: (
     <span>
-      For example <code className="text-nowrap">{'(&(uid={0})(objectClass=inetOrgPerson))'}</code>.{' '}
-      The string <code>{'{0}'}</code> will be replaced by the entered username.
+      例如 <code className="text-nowrap">{'(&(uid={0})(objectClass=inetOrgPerson))'}</code>.{' '}
+      该字符串 <code>{'{0}'}</code> 将被输入的用户名替换。
     </span>
   ),
   userNameAttribute: (
     <span>
-      Which LDAP attribute to use for the username of the user in Graylog, e.g <code>uid</code>.<br />
-      Try to load a test user in the sidebar section <i>User Login Test</i>, if you are unsure which attribute to use.
+      要使用哪个 LDAP 属性作为 Graylog 中用户的用户名，例如 <code>uid</code>.<br />
+      尝试在侧边栏部分加载测试用户 <i>用户登录测试</i>，如果您不确定要使用哪个属性。
     </span>
   ),
   userFullNameAttribute: (
     <span>
-      Which LDAP attribute to use for the full name of a synchronized Graylog user, e.g. <code>cn</code>.<br />
+      用于同步的 Graylog 用户全名的 LDAP 属性，例如： <code>cn</code>.<br />
     </span>
   ),
   userUniqueIdAttribute: (
     <span>
-      Which LDAP attribute to use for the ID of a synchronized Graylog user, e.g. <code>entryUUID</code>.<br />
+      用于同步的 Graylog 用户 ID 的 LDAP 属性，例如： <code>entryUUID</code>.<br />
     </span>
   ),
   defaultRoles: (
-    <span>The default Graylog roles synchronized user will obtain. All users need the <code>Reader</code> role, to use the Graylog web interface</span>
+    <span>同步用户将获得的默认 Graylog 角色。所有用户都需要 <code>读取器</code> 角色，以使用 Graylog Web 界面</span>
   ),
   emailAttributes: (
     <span>
-      Which LDAP attribute to use for the user&apos;s email address, e.g. <code>mail</code>.<br />
-      You can specify multiple attributes, type <kbd>Tab</kbd> or <kbd>Enter</kbd> to accept your value.
+      用于用户电子邮件地址的 LDAP 属性，例如： <code>mail</code>.<br />
+      您可以指定多个属性，输入 <kbd>标签页</kbd> or <kbd>输入</kbd> 以接受您的值。
     </span>
   ),
 };
@@ -100,7 +99,7 @@ const BackendCreate = () => {
   const initialValues = { ...INITIAL_VALUES, ...initialGroupSyncValues };
 
   return (
-    <DocumentTitle title="Create LDAP Authentication Service">
+    <DocumentTitle title="创建 LDAP 认证服务">
       <WizardPageHeader />
       <BackendWizard onSubmit={handleCreate}
                      help={help}

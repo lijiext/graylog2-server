@@ -41,7 +41,7 @@ const IndexSetSelect = ({ indexSets, help }: Props) => {
   return (
     <Field name="index_set_id">
       {({ field: { name, value, onChange, onBlur }, meta: { error, touched } }) => (
-        <Input label="Index Set"
+        <Input label="索引集"
                help={help}
                id={name}
                error={(error && touched) ? error : undefined}>
@@ -51,7 +51,7 @@ const IndexSetSelect = ({ indexSets, help }: Props) => {
                   })}
                   options={indexSetOptions}
                   inputId={name}
-                  placeholder="Select an index set"
+                  placeholder="选择索引集"
                   inputProps={{ 'aria-label': 'Select an index set' }}
                   value={value} />
         </Input>

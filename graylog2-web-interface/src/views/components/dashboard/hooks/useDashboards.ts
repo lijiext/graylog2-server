@@ -79,8 +79,8 @@ const useDashboards = (searchParams: SearchParamsForDashboards, { enabled }: Opt
     () => fetchDashboards(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading dashboards failed with status: ${errorThrown}`,
-          'Could not load dashboards');
+        UserNotification.error(`加载仪表盘失败，状态为：${errorThrown}`,
+          '无法加载仪表盘');
       },
       keepPreviousData: true,
       enabled,

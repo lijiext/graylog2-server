@@ -64,8 +64,8 @@ const useFilterValueSuggestions = (
 
   const { data, isInitialLoading } = useQuery(['filters', 'suggestions', searchParams], () => fetchFilterValueSuggestions(collection, searchParams, collectionProperty), {
     onError: (errorThrown) => {
-      UserNotification.error(`Loading suggestions for filter failed with status: ${errorThrown}`,
-        'Could not load filter suggestions');
+      UserNotification.error(`加载过滤器建议失败，状态为：${errorThrown}`,
+        '无法加载过滤器建议');
     },
     retry: 0,
     keepPreviousData: true,

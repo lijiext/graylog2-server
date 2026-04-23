@@ -29,16 +29,14 @@ const StyledHelpPanel = styled(StyledPanel)`
 
 const StopMessageProcessing = ({ currentStep, onTriggerStep, hideActions }: MigrationStepComponentProps) => (
   <>
-    <p>Graylog processing is stopped.</p>
+    <p>Graylog 处理已停止。</p>
     <StyledHelpPanel bsStyle="warning">
       <Panel.Heading>
-        <Panel.Title componentClass="h3"><Icon name="warning" />Stop OpenSearch</Panel.Title>
+        <Panel.Title componentClass="h3"><Icon name="warning" />停止 OpenSearch</Panel.Title>
       </Panel.Heading>
       <Panel.Body>
-        <p>Please stop your OpenSearch cluster before proceeding.</p>
-        <p>If you are migrating existing OpenSearch data by pointing the data node to its data directory, make sure that
-          the user running the data node (usually graylog-datanode) has permissions to write to the data directory set
-          in the data node configuration.
+        <p>请在继续之前停止您的 OpenSearch 集群。</p>
+        <p>如果您通过将数据节点指向其数据目录来迁移现有的 OpenSearch 数据，请确保运行数据节点的用户（通常为 graylog-datanode）具有对数据节点配置中设置的数据目录的写入权限。
         </p>
       </Panel.Body>
     </StyledHelpPanel>

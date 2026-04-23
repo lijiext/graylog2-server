@@ -47,7 +47,7 @@ const FormatAssetList = ({ associated_assets, fieldType }: { associated_assets: 
 
   return (
     <div>
-      <dt>Associated Assets</dt>
+      <dt>关联资产</dt>
       {assetsList?.map((assetElement) => (
         <div key={uuidv4()}>
           {assetElement}

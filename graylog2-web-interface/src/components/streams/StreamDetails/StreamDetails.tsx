@@ -191,7 +191,7 @@ const StreamDetails = ({ stream }: Props) => {
     });
   }, [sendTelemetry]);
   const onUpdate = useCallback((newStream: Stream) => StreamsStore.update(stream.id, newStream, (response) => {
-    UserNotification.success(`Stream '${newStream.title}' was updated successfully.`, 'Success');
+    UserNotification.success(`数据流 '${newStream.title}' 已成功更新。`, '成功');
     queryClient.invalidateQueries(['stream', stream.id]);
 
     return response;
@@ -204,14 +204,14 @@ const StreamDetails = ({ stream }: Props) => {
         <Header>
           <LeftCol>
             <Button onClick={() => navigate(Routes.STREAMS)}>
-              <Icon name="arrow_left_alt" size="sm" /> Back
+              <Icon name="arrow_left_alt" size="sm" /> 返回
             </Button>
 
-            <h1>Stream: {stream.title}</h1>
+            <h1>流： {stream.title}</h1>
 
             <IfPermitted permissions="stream:edit">
               <DropdownButton title={<Icon name="more_horiz" />} id="stream-actions" noCaret bsSize="xs">
-                <MenuItem onClick={() => toggleUpdateModal()}>Edit</MenuItem>
+                <MenuItem onClick={() => toggleUpdateModal()}>编辑</MenuItem>
               </DropdownButton>
             </IfPermitted>
           </LeftCol>
@@ -221,7 +221,7 @@ const StreamDetails = ({ stream }: Props) => {
         <Row className="content no-bm">
           <Col xs={10}>
             <StyledSectionGrid>
-              <h3>Data Routing</h3>
+              <h3>数据路由</h3>
               <MainDetailsRow>
                 <StyledSegmentedControl<DetailsSegment> data={SEGMENTS_DETAILS}
                                                         radius="sm"
@@ -232,7 +232,7 @@ const StreamDetails = ({ stream }: Props) => {
             <p className="description">{getPageDescription(currentSegment)}</p>
           </Col>
           <ThroughputCol xs={2}>
-            <strong>Throughput</strong>
+            <strong>吞吐量</strong>
             <ThroughputCell stream={stream} />
           </ThroughputCol>
         </Row>
@@ -244,11 +244,11 @@ const StreamDetails = ({ stream }: Props) => {
           </FullHeightCol>
         </SegmentContainer>
         {showUpdateModal && (
-        <StreamModal title="Editing Stream"
+        <StreamModal title="正在编辑数据流"
                      onSubmit={onUpdate}
                      onClose={toggleUpdateModal}
-                     submitButtonText="Update stream"
-                     submitLoadingText="Updating stream..."
+                     submitButtonText="更新数据流"
+                     submitLoadingText="正在更新数据流..."
                      initialValues={stream}
                      indexSets={indexSets} />
         )}

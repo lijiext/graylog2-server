@@ -57,7 +57,7 @@ const NodeName = ({ nodeId }: Props) => {
   const node = useStore(NodesStore, (state) => state?.nodes?.[nodeId]);
 
   if (!node) {
-    return <BreakWord>stopped node</BreakWord>;
+    return <BreakWord>已停止的节点</BreakWord>;
   }
 
   if (AppConfig.isCloud()) {

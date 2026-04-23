@@ -44,7 +44,7 @@ const StopStreamsAction = ({ handleFailures, refetchStreams, descriptor, onSelec
       { entity_ids: selectedEntities },
     ).then(({ failures }) => handleFailures(failures, 'stopped'))
       .catch((error) => {
-        UserNotification.error(`An error occurred while stopping streams. ${error}`);
+        UserNotification.error(`停止数据流时发生错误。${error}`);
       })
       .finally(() => {
         refetchStreams();
@@ -52,7 +52,7 @@ const StopStreamsAction = ({ handleFailures, refetchStreams, descriptor, onSelec
   }, [handleFailures, onSelect, refetchStreams, selectedEntities]);
 
   return (
-    <MenuItem onSelect={onStopStreams}>Stop {descriptor}</MenuItem>
+    <MenuItem onSelect={onStopStreams}>停止 {descriptor}</MenuItem>
   );
 };
 

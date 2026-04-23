@@ -107,7 +107,7 @@ const StreamRulesEditor = ({ streamId, messageId, index }: Props) => {
   return (
     <Row className="content">
       <Col md={12} className="streamrule-sample-message">
-        <h2>1. Load a message to test rules</h2>
+        <h2>1. 加载一条消息以测试规则</h2>
 
         <div className="stream-loader">
           <LoaderTabs messageId={messageId}
@@ -121,37 +121,37 @@ const StreamRulesEditor = ({ streamId, messageId, index }: Props) => {
           <Button bsStyle="success"
                   className="show-stream-rule"
                   onClick={_onAddStreamRule}>
-            Add stream rule
+            添加数据流规则
           </Button>
           {showStreamRuleForm && (
-            <StreamRuleModal title="New Stream Rule"
+            <StreamRuleModal title="新数据流规则"
                              onClose={() => setShowStreamRuleForm(false)}
-                             submitButtonText="Create Rule"
-                             submitLoadingText="Creating Rule..."
+                             submitButtonText="创建规则"
+                             submitLoadingText="正在创建规则..."
                              onSubmit={_onStreamRuleFormSubmit} />
           )}
         </div>
 
-        <h2>2. Manage stream rules</h2>
+        <h2>2. 管理数据流规则</h2>
 
         <MatchingTypeSwitcher stream={stream} onChange={refetch} />
         <Panel bsStyle={styles}>
           <StreamAlertHeader>
             {matchData?.matches && (
               <>
-                <MatchIcon $matches name="check" /> This message would be routed to this stream!
+                <MatchIcon $matches name="check" /> 此消息将路由到此数据流！
               </>
             )}
 
             {(matchData && !matchData.matches) && (
               <>
-                <MatchIcon name="close" /> This message would not be routed to this stream.
+                <MatchIcon name="close" /> 此消息将不会路由到此数据流。
               </>
             )}
 
             {!matchData && (
               <>
-                <MatchIcon $empty name="error" /> Please load a message in Step 1 above to check if it would match against these rules.
+                <MatchIcon $empty name="error" /> 请在上面的步骤 1 中加载一条消息，以检查它是否与这些规则匹配。
               </>
             )}
           </StreamAlertHeader>
@@ -161,7 +161,7 @@ const StreamRulesEditor = ({ streamId, messageId, index }: Props) => {
 
         <p>
           <LinkContainer to={Routes.STREAMS}>
-            <Button bsStyle="success">I&apos;m done!</Button>
+            <Button bsStyle="success">完成！</Button>
           </LinkContainer>
         </p>
       </Col>

@@ -22,10 +22,10 @@ import { IndicesPageNavigation } from 'components/indices';
 import CreateTemplate from 'components/indices/IndexSetTemplates/CreateTemplate';
 
 const IndexSetTemplateCreatePage = () => (
-  <DocumentTitle title="Create Index Set Template">
+  <DocumentTitle title="创建索引集模板">
     <IndicesPageNavigation />
-    <PageHeader title="Create Index Set Template">
-      <span>Create a new Index Set Template. This is a set of configuration that can be applied when creating a new Index Set.</span>
+    <PageHeader title="创建索引集模板">
+      <span>创建新的索引集模板。这是一组可以在创建新索引集时应用的配置。</span>
     </PageHeader>
     <Row className="content">
       <Col md={12}>

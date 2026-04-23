@@ -31,10 +31,9 @@ const LoadViewError = ({ error }: { error: Error }) => {
   }, [error]);
 
   return (
-    <ErrorPage title="Something went wrong"
+    <ErrorPage title="出错了"
                description={(
-                 <p>An unknown error has occurred. Please have a look at the following message and the
-                   graylog server log for more information.
+                 <p>发生未知错误。请查看以下信息及 Graylog 服务端日志以获取更多信息。
                  </p>
 )}>
       <pre>

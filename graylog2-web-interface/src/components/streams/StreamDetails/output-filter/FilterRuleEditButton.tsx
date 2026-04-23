@@ -71,8 +71,8 @@ const FilterRuleEditButton = ({ streamId, filterRule, destinationType }: Props) 
       <StyledButton bsStyle={isNew ? 'default' : 'default'}
                     bsSize={isNew ? 'sm' : 'xs'}
                     onClick={onClick}
-                    title="Edit">
-        {isNew ? (<><Icon name="add" size="sm" /> Create rule</>) : (<Icon name="edit_square" />)}
+                    title="编辑">
+        {isNew ? (<><Icon name="add" size="sm" /> 创建规则</>) : (<Icon name="edit_square" />)}
       </StyledButton>
       {showForm && (
         <FilterRuleForm title={title}

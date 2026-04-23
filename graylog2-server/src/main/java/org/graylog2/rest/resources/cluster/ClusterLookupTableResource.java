@@ -78,7 +78,7 @@ public class ClusterLookupTableResource extends ProxiedResource {
     @POST
     @Timed
     @Path("tables/{idOrName}/purge")
-    @ApiOperation(value = "Purge Lookup Table Cache on the cluster-wide level")
+    @ApiOperation(value = "在集群级别清除查找表缓存")
     @NoAuditEvent("Cache purge only")
     @RequiresPermissions(RestPermissions.LOOKUP_TABLES_READ)
     public Map<String, CallResult<Void>> performPurge(

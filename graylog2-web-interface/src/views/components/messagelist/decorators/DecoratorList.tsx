@@ -65,7 +65,7 @@ class DecoratorList extends React.Component<Props> {
       return (
         <AlertContainer>
           <Alert bsStyle="info" className={DecoratorStyles.noDecoratorsAlert}>
-            No decorators configured.
+            未配置装饰器。
           </Alert>
         </AlertContainer>
       );

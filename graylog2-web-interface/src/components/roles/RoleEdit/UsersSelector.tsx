@@ -140,15 +140,15 @@ const UsersSelector = ({ role, onSubmit }: Props) => {
                                 optionRenderer={_renderOption}
                                 multi
                                 options={options}
-                                placeholder="Search for users"
+                                placeholder="搜索用户"
                                 value={value} />
                 )}
               </Field>
               <SubmitButton bsStyle="success"
                             disabled={isSubmitting || !isValid}
-                            title="Assign User"
+                            title="分配用户"
                             type="submit">
-                Assign User
+                分配用户
               </SubmitButton>
             </FormElements>
             {errors && (

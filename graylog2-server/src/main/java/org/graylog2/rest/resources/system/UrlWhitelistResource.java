@@ -68,7 +68,7 @@ public class UrlWhitelistResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Get url whitelist.")
+    @ApiOperation(value = "获取 URL 白名单。")
     @RequiresPermissions(RestPermissions.URL_WHITELIST_READ)
     public UrlWhitelist get() {
         checkPermission(RestPermissions.URL_WHITELIST_READ);
@@ -77,7 +77,7 @@ public class UrlWhitelistResource extends RestResource {
 
     @PUT
     @Timed
-    @ApiOperation(value = "Update url whitelist.")
+    @ApiOperation(value = "更新 URL 白名单。")
     @AuditEvent(type = AuditEventTypes.URL_WHITELIST_UPDATE)
     @Consumes(MediaType.APPLICATION_JSON)
     @RequiresPermissions(RestPermissions.URL_WHITELIST_WRITE)
@@ -89,7 +89,7 @@ public class UrlWhitelistResource extends RestResource {
     @POST
     @Path("/check")
     @Timed
-    @ApiOperation(value = "Check if a url is whitelisted.")
+    @ApiOperation(value = "检查 URL 是否在白名单中。")
     @NoAuditEvent("Validation only")
     @Consumes(MediaType.APPLICATION_JSON)
     // Checking can be done without any special permission.
@@ -102,7 +102,7 @@ public class UrlWhitelistResource extends RestResource {
     @POST
     @Path("/generate_regex")
     @Timed
-    @ApiOperation(value = "Generates a regex that can be used as a value for a whitelist entry.")
+    @ApiOperation(value = "生成可用于白名单条目值的正则表达式。")
     @NoAuditEvent("Utility function only.")
     @Consumes(MediaType.APPLICATION_JSON)
     public WhitelistRegexGenerationResponse generateRegex(@ApiParam(name = "JSON body", required = true)

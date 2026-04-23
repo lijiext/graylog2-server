@@ -89,15 +89,15 @@ const UserConfig = () => {
 
   return (
     <div>
-      <h2>Users Configuration</h2>
-      <p>These settings can be used to set a global session timeout value.</p>
+      <h2>用户配置</h2>
+      <p>这些设置可用于设置全局会话超时值。</p>
 
       {!viewConfig ? <Spinner /> : (
         <>
           <StyledDefList>
-            <dt>Global session timeout:</dt>
+            <dt>全局会话超时：</dt>
             <dd>{viewConfig.enable_global_session_timeout ? 'Enabled' : 'Disabled'}</dd>
-            <dt>Timeout interval:</dt>
+            <dt>超时间隔:</dt>
             <dd>{viewConfig.enable_global_session_timeout ? viewConfig.global_session_timeout_interval : '-'}</dd>
           </StyledDefList>
 
@@ -109,7 +109,7 @@ const UserConfig = () => {
                       onClick={() => {
                         setShowModal(true);
                       }}>
-                Edit configuration
+                编辑配置
               </Button>
             </p>
           </IfPermitted>
@@ -133,17 +133,17 @@ const UserConfig = () => {
                                        name="enable_global_session_timeout"
                                        id="enable_global_session_timeout"
                                        label={(
-                                         <LabelSpan>Enable global session timeout</LabelSpan>
+                                         <LabelSpan>启用全局会话超时</LabelSpan>
                                        )} />
-                          <InputDescription help="If enabled, it will be set for all the users." />
+                          <InputDescription help="如果启用，将为用户设置。" />
                         </Col>
                         <Col sm={12}>
                           <fieldset>
                             <ISODurationInput id="global_session_timeout_interval"
                                               duration={values.global_session_timeout_interval}
                                               update={(value) => setFieldValue('global_session_timeout_interval', value)}
-                                              label="Global session timeout interval (as ISO8601 Duration)"
-                                              help="Session automatically end after this amount of time, unless they are actively used."
+                                              label="全局会话超时间隔（以 ISO8601 时长表示）"
+                                              help="会话在此时长后自动结束，除非它们正在被使用。"
                                               validator={timeoutIntervalValidator}
                                               errorText="invalid (min: 1 second)"
                                               disabled={!values.enable_global_session_timeout}
@@ -158,8 +158,8 @@ const UserConfig = () => {
                     <ModalSubmit onCancel={resetConfig}
                                  isSubmitting={isSubmitting}
                                  isAsyncSubmit
-                                 submitLoadingText="Update configuration"
-                                 submitButtonText="Update configuration" />
+                                 submitLoadingText="更新配置"
+                                 submitButtonText="更新配置" />
                   </Modal.Footer>
                 </Form>
               )}

@@ -44,16 +44,16 @@ const DataNodesMigrationPage = () => {
   }, [currentStep.next_steps, currentStep.state, isLoading, onTriggerNextState]);
 
   return (
-    <DocumentTitle title="Data Nodes Migration">
+    <DocumentTitle title="数据节点迁移">
       <DataNodesPageNavigation />
-      <PageHeader title="Data Nodes Migration"
+      <PageHeader title="数据节点迁移"
                   actions={<ResetMigrationButton />}
                   documentationLink={{
                     title: 'Data Nodes documentation',
                     path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
                   }}>
         <span>
-          Graylog Data Nodes offer a better integration with Graylog and simplify future updates. They allow you to index and search through all the messages in your Graylog message database.
+          Graylog 数据节点与 Graylog 集成更紧密，可简化未来更新。它们允许您在 Graylog 消息数据库中索引和搜索所有消息。
         </span>
       </PageHeader>
       <Row className="content">

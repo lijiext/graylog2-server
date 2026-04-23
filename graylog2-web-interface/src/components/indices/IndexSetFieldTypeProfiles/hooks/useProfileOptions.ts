@@ -40,8 +40,8 @@ const useProfileOptions = (): {
     () => fetchProfileOptions(),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index field type profile options failed with status: ${errorThrown}`,
-          'Could not load index field type profile options');
+        UserNotification.error(`加载索引字段类型配置文件选项失败，状态：${errorThrown}`,
+          '无法加载索引字段类型配置选项');
       },
       keepPreviousData: true,
     },

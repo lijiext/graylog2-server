@@ -134,21 +134,21 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
           <fieldset>
             <FormikFormGroup type="text"
                              name="title"
-                             label="Title"
+                             label="标题"
                              help={(touched.title && errors.title) ? undefined : 'A short title for this lookup table.'}
                              labelClassName="col-sm-3"
                              wrapperClassName="col-sm-9" />
 
             <FormikFormGroup type="text"
                              name="description"
-                             label="Description"
-                             help="Description of the lookup table."
+                             label="描述"
+                             help="查找表的描述。"
                              labelClassName="col-sm-3"
                              wrapperClassName="col-sm-9" />
 
             <FormikFormGroup type="text"
                              name="name"
-                             label="Name"
+                             label="名称"
                              help={(touched.name && errors.name) ? undefined : 'The name that is being used to refer to this lookup table. Must be unique.'}
                              labelClassName="col-sm-3"
                              wrapperClassName="col-sm-9" />
@@ -156,8 +156,8 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
             <Input id="enable_single_value"
                    name="enable_single_value"
                    type="checkbox"
-                   label="Enable single default value"
-                   help="Enable if the lookup table should provide a default for the single value."
+                   label="启用单默认值"
+                   help="如果查找表应为单值提供默认值，请启用。"
                    wrapperClassName="col-md-offset-3 col-md-9"
                    checked={values.enable_single_value}
                    onChange={() => {
@@ -169,7 +169,7 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
                      }
                    }} />
             {values.enable_single_value && (
-              <JSONValueInput label="Default single value"
+              <JSONValueInput label="默认单值"
                               help={(touched.default_single_value && errors.default_single_value) || 'The single value that is being used as lookup result if the data adapter or cache does not find a value.'}
                               validationState={(touched.default_single_value && errors.default_single_value) ? 'error' : undefined}
                               onBlur={() => setFieldTouched('default_single_value', true)}
@@ -190,8 +190,8 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
             <Input id="enable_multi_value"
                    name="enable_multi_value"
                    type="checkbox"
-                   label="Enable multi default value"
-                   help="Enable if the lookup table should provide a default for the multi value."
+                   label="启用多默认值"
+                   help="如果查找表应为多值提供默认值，请启用。"
                    wrapperClassName="col-md-offset-3 col-md-9"
                    checked={values.enable_multi_value}
                    onChange={() => {
@@ -203,7 +203,7 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
                      }
                    }} />
             {values.enable_multi_value && (
-              <JSONValueInput label="Default multi value"
+              <JSONValueInput label="默认多值"
                               help={(touched.default_multi_value && errors.default_multi_value) || 'The multi value that is being used as lookup result if the data adapter or cache does not find a value.'}
                               validationState={(touched.default_multi_value && errors.default_multi_value) ? 'error' : undefined}
                               onBlur={() => setFieldTouched('default_multi_value', true)}
@@ -234,15 +234,15 @@ const LookupTableForm = ({ saved, create, table }: Props) => {
             <Row>
               <Col mdOffset={3} md={9}>
                 {create && (
-                  <FormSubmit submitButtonText="Create lookup table"
-                              submitLoadingText="Creating lookup table..."
+                  <FormSubmit submitButtonText="创建查找表"
+                              submitLoadingText="正在创建查找表..."
                               isSubmitting={isSubmitting}
                               isAsyncSubmit
                               onCancel={onCancel} />
                 )}
                 {updatable && (
-                  <FormSubmit submitButtonText="Update lookup table"
-                              submitLoadingText="Updating lookup table..."
+                  <FormSubmit submitButtonText="更新查找表"
+                              submitLoadingText="正在更新查找表..."
                               isSubmitting={isSubmitting}
                               isAsyncSubmit
                               onCancel={onCancel} />

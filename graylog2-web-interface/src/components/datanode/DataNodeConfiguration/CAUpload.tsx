@@ -99,17 +99,17 @@ const CAUpload = () => {
   const queryClient = useQueryClient();
   const sendTelemetry = useSendTelemetry();
   const onRejectUpload = useCallback(() => {
-    UserNotification.error('CA upload failed');
+    UserNotification.error('CA 上传失败');
   }, []);
 
   const { mutateAsync: onProcessUpload, isLoading } = useMutation(submitUpload, {
     onSuccess: () => {
-      UserNotification.success('CA uploaded successfully');
+      UserNotification.success('CA 上传成功');
       queryClient.invalidateQueries(DATA_NODES_CA_QUERY_KEY);
       queryClient.invalidateQueries(MIGRATION_STATE_QUERY_KEY);
     },
     onError: (error) => {
-      UserNotification.error(`CA upload failed with error: ${error}`);
+      UserNotification.error(`CA 上传失败，错误：${error}`);
     },
   });
 
@@ -127,14 +127,12 @@ const CAUpload = () => {
       {({ isSubmitting, isValid }) => (
         <Form>
           <Explanation>
-            Here you can upload your existing CA. You need to upload a single file containing both private key
-            (encrypted or unencrypted), the CA certificate as well as any intermediate certificates. The file can be in PEM
-            or in PKCS#12 format. If your private key is encrypted, you also need to supply its password.
+            您可以在这里上传现有的 CA。您需要上传一个包含私钥（加密或未加密）、CA 证书以及任何中间证书的文件。该文件可以是 PEM 或 PKCS#12 格式。如果您的私钥已加密，您还需要提供其密码。
           </Explanation>
           <Field name="files">
             {({ field: { name, onChange, value }, meta: { error } }) => (
               <>
-                <Label required htmlFor="ca-dropzone">Certificate Authority</Label>
+                <Label required htmlFor="ca-dropzone">证书颁发机构</Label>
                 <CADropzone onDrop={(files) => onChange({ target: { name, value: files } })}
                             onReject={onRejectUpload}
                             data-testid="upload-dropzone"
@@ -150,7 +148,7 @@ const CAUpload = () => {
                       <Icon name="draft" type="regular" size="2x" />
                     </Dropzone.Idle>
                     <div>
-                      Drag CA here or click to select file
+                      将 CA 拖至此处或点击选择文件
                     </div>
                   </DropzoneInner>
                 </CADropzone>
@@ -171,10 +169,10 @@ const CAUpload = () => {
           </Field>
 
           <FormikInput id="password"
-                       placeholder="Password"
+                       placeholder="密码"
                        name="password"
                        type="password"
-                       label="Password" />
+                       label="密码" />
           <UnsecureConnectionAlert renderIfSecure={<br />} />
           <Button bsStyle="primary" bsSize="small" disabled={!isValid} type="submit">
             {isSubmitting ? 'Uploading CA...' : 'Upload CA'}

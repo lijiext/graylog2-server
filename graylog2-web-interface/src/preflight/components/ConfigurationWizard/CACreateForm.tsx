@@ -39,11 +39,11 @@ const CACreateForm = () => {
 
   const { mutateAsync: onCreateCA } = useMutation(createCA, {
     onSuccess: () => {
-      UserNotification.success('CA created successfully');
+      UserNotification.success('CA 创建成功');
       queryClient.invalidateQueries(DATA_NODES_CA_QUERY_KEY);
     },
     onError: (error) => {
-      UserNotification.error(`CA creation failed with error: ${error}`);
+      UserNotification.error(`CA 创建失败，错误：${error}`);
     },
   });
 
@@ -52,17 +52,15 @@ const CACreateForm = () => {
   return (
     <div>
       <p>
-        Here you can quickly create a new certificate authority.
-        All you need to do is to click on the &ldquo;Create CA&rdquo; button.
-        The CA should only be used to secure your Graylog data nodes.
+        在此您可以快速创建新的证书颁发机构。您只需点击“创建 CA"按钮即可。该 CA 仅应用于保护您的 Graylog 数据节点。
       </p>
       <Space h="xs" />
       <Formik initialValues={{ organization: 'Graylog CA' }} onSubmit={(formValues: FormValues) => onSubmit(formValues)}>
         {({ isSubmitting, isValid }) => (
           <Form>
-            <FormikInput placeholder="Organization Name"
+            <FormikInput placeholder="组织名称"
                          name="organization"
-                         label="Organization Name"
+                         label="组织名称"
                          required />
             <Space h="md" />
             <Button disabled={isSubmitting || !isValid} type="submit">

@@ -65,7 +65,7 @@ public class LegacyAlarmCallbackEventNotification implements EventNotification {
             alarmCallbackSender.send(config, optionalEventDefinition.get(), ctx.event(), messagesForEvent);
         } catch (Exception e) {
             // TODO: Is there a case where we want to retry? (and are able to detect when to do it)
-            throw new PermanentEventNotificationException("Couldn't send legacy notification - legacy notifications cannot be retried!", e);
+            throw new PermanentEventNotificationException("无法发送传统通知 - 传统通知无法重试！", e);
         }
 
     }

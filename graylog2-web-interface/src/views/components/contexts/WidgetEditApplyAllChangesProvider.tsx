@@ -72,7 +72,7 @@ const WidgetEditApplyAllChangesProvider = ({ children, widget }: Props) => {
 
       return dispatch(updateWidget(widget.id, newWidget))
         .catch((error) => {
-          UserNotification.error(`Applying widget changes failed with status: ${error}`);
+          UserNotification.error(`应用小部件更改失败，状态为：${error}`);
 
           return error;
         }).finally(() => setDisableWidgetEditSubmit(false));

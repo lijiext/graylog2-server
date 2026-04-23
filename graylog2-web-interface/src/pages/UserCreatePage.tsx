@@ -25,12 +25,12 @@ import UserCreate from 'components/users/UserCreate';
 import UsersPageNavigation from 'components/users/navigation/UsersPageNavigation';
 
 const UserCreatePage = () => (
-  <DocumentTitle title="Create New User">
+  <DocumentTitle title="创建新用户">
     <UsersPageNavigation />
-    <PageHeader title="Create New User"
+    <PageHeader title="创建新用户"
                 actions={(
                   <LinkContainer to={Routes.SYSTEM.USERS.CREATE}>
-                    <Button bsStyle="success">Create user</Button>
+                    <Button bsStyle="success">创建用户</Button>
                   </LinkContainer>
                 )}
                 documentationLink={{
@@ -38,8 +38,7 @@ const UserCreatePage = () => (
                   path: DocsHelper.PAGES.USERS_ROLES,
                 }}>
       <span>
-        Use this page to create new Graylog users. The users and their permissions created here are not limited
-        to the web interface but valid and required for the REST APIs of your Graylog server nodes, too.
+        使用此页面创建新的 Graylog 用户。在此处创建的用户及其权限不仅适用于 Web 界面，也适用于 Graylog 服务器节点的 REST API。
       </span>
     </PageHeader>
 

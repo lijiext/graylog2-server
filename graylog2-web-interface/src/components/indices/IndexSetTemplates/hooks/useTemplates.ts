@@ -65,8 +65,8 @@ const useTemplates = (searchParams: SearchParams, { enabled } = { enabled: true 
     () => fetchIndexSetTemplates(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index set templates failed with status: ${errorThrown}`,
-          'Could not load index set templates');
+        UserNotification.error(`加载索引集模板失败，状态为：${errorThrown}`,
+          '无法加载索引集模板');
       },
       keepPreviousData: true,
       enabled,

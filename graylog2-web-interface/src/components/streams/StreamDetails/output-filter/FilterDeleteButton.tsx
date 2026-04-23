@@ -57,11 +57,11 @@ const FilterDeleteButton = ({ streamId, filterOutputRule }: Props) => {
       <Button bsStyle="danger"
               bsSize="xsmall"
               onClick={onDelete}
-              title="View">
+              title="查看">
         <Icon name="delete" type="regular" />
       </Button>
       {showDialog && (
-      <ConfirmDialog title="Delete Rule"
+      <ConfirmDialog title="删除规则"
                      show
                      onConfirm={onConfirmDelete}
                      onCancel={() => setShowDialog(false)}>

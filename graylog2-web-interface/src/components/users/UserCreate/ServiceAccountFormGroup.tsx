@@ -52,21 +52,21 @@ const ServiceAccountFormGroup = () => {
             <Input id="service-account-controls"
                    labelClassName="col-sm-3"
                    wrapperClassName="col-sm-9"
-                   label="Service Account">
-              <Input label="User is a Service Account"
+                   label="服务账户">
+              <Input label="用户是服务账户"
                      id="service_account"
                      type="checkbox"
                      wrapperClassName="col-sm-9"
                      name="service_account"
                      checked={value ?? false}
-                     help="When checked, the user becomes a Service Account and will be unable to log into the web interface and edit their settings. (e.g., API tokens)"
+                     help="选中后，用户将变为服务账户，无法登录 Web 界面并编辑其设置（例如 API 令牌）。"
                      onChange={(newValue) => onValueChange(newValue)} />
             </Input>
             <BootstrapModalConfirm showModal={showModal}
-                                   title="Are you sure?"
+                                   title="您确定吗？"
                                    onConfirm={handleCheckServiceAccount}
                                    onCancel={handleCancel}>
-              Changing this user to a Service Account prevents the user from logging into the web interface and editing their settings. (e.g., API tokens) Do you wish to proceed?
+              将此用户更改为服务账户将阻止该用户登录 Web 界面并编辑其设置（例如 API Token）。是否继续？
             </BootstrapModalConfirm>
           </>
         );

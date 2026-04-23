@@ -33,17 +33,16 @@ type Props = {
 
 const Setup = ({ setIsWaitingForStartup }: Props) => (
   <>
-    <Section title="Welcome!" titleOrder={1} dataTestid="welcome-section">
+    <Section title="欢迎!" titleOrder={1} dataTestid="welcome-section">
       <P>
-        It looks like you are starting Graylog for the first time and have not configured a data node.<br />
-        Data nodes allow you to index and search through all the messages in your Graylog message database.
+        您似乎首次启动 Graylog，且尚未配置数据节点。<br />
+        数据节点允许您对 Graylog 消息数据库中的所有消息进行索引和搜索。
       </P>
       <P>
-        You can either implement a <DocumentationLink page={DocsHelper.PAGES.GRAYLOG_DATA_NODE} text="Graylog data node" /> (recommended) or you can configure an <DocumentationLink page={DocsHelper.PAGES.OPEN_SEARCH_SETUP} text="OpenSearch" /> node manually.
-        For the manual OpenSearch configuration you need to adjust the Graylog configuration and restart the Graylog server. After the restart this page will not show up again.
+        您可以实施 <DocumentationLink page={DocsHelper.PAGES.GRAYLOG_DATA_NODE} text="Graylog data node" /> (推荐) 或者您可以配置一个 <DocumentationLink page={DocsHelper.PAGES.OPEN_SEARCH_SETUP} text="OpenSearch" /> 手动配置节点。对于手动 OpenSearch 配置，您需要调整 Graylog 配置并重启 Graylog 服务器。重启后，此页面将不再显示。
       </P>
     </Section>
-    <Section title="Graylog Data Nodes" titleOrder={2}>
+    <Section title="Graylog 数据节点" titleOrder={2}>
       <DataNodesOverview />
       <ConfigurationWizard setIsWaitingForStartup={setIsWaitingForStartup} />
     </Section>

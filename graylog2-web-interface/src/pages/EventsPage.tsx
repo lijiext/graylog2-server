@@ -27,16 +27,15 @@ const EventsPage = () => {
   const { stream_id: streamId } = useQuery();
 
   return (
-    <DocumentTitle title="Alerts &amp; Events">
+    <DocumentTitle title="告警与事件">
       <EventsPageNavigation />
-      <PageHeader title="Alerts &amp; Events"
+      <PageHeader title="告警与事件"
                   documentationLink={{
                     title: 'Alerts documentation',
                     path: DocsHelper.PAGES.ALERTS,
                   }}>
         <span>
-          Define Events through different conditions. Add Notifications to Events that require your attention
-          to create Alerts.
+          通过不同的条件定义事件。向需要您关注的事件添加通知，以创建告警。
         </span>
       </PageHeader>
 

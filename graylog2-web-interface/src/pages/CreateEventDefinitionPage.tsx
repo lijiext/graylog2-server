@@ -63,7 +63,7 @@ const CreateEventDefinitionPage = () => {
                     path: DocsHelper.PAGES.ALERTS,
                   }}>
         <span>
-          Event Definitions allow you to create Alerts from different Conditions and alert on them.
+          事件定义允许您从不同的条件创建告警并对其进行告警。
         </span>
       </PageHeader>
 

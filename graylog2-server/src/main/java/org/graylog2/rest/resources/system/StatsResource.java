@@ -50,7 +50,7 @@ public class StatsResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "System information about this node.",
+    @ApiOperation(value = "关于此节点的系统信息。",
                   notes = "This resource returns information about the system this node is running on.")
     public SystemStats systemStats() {
         return statsService.systemStatsWithoutNetwork();
@@ -59,7 +59,7 @@ public class StatsResource extends RestResource {
     @GET
     @Path("/fs")
     @Timed
-    @ApiOperation(value = "Filesystem information about this node.",
+    @ApiOperation(value = "有关此节点的文件系统信息。",
                   notes = "This resource returns information about the filesystems of this node.")
     public FsStats fsStats() {
         return statsService.fsStats();
@@ -68,7 +68,7 @@ public class StatsResource extends RestResource {
     @GET
     @Path("/jvm")
     @Timed
-    @ApiOperation(value = "JVM information about this node.",
+    @ApiOperation(value = "此节点的 JVM 信息。",
                   notes = "This resource returns information about the Java Virtual Machine of this node.")
     public JvmStats jvmStats() {
         return statsService.jvmStats();
@@ -77,7 +77,7 @@ public class StatsResource extends RestResource {
     @GET
     @Path("/network")
     @Timed
-    @ApiOperation(value = "Networking information about this node.",
+    @ApiOperation(value = "此节点的网络信息。",
                   notes = "This resource returns information about the networking system this node is running with.")
     public NetworkStats networkStats() {
         return statsService.networkStats();
@@ -86,7 +86,7 @@ public class StatsResource extends RestResource {
     @GET
     @Path("/os")
     @Timed
-    @ApiOperation(value = "OS information about this node.",
+    @ApiOperation(value = "关于此节点的操作系统信息。",
                   notes = "This resource returns information about the operating system this node is running on.")
     public OsStats osStats() {
         return statsService.osStats();
@@ -95,7 +95,7 @@ public class StatsResource extends RestResource {
     @GET
     @Path("/process")
     @Timed
-    @ApiOperation(value = "Process information about this node.",
+    @ApiOperation(value = "处理此节点的信息。",
                   notes = "This resource returns information about the process this node is running as.")
     public ProcessStats processStats() {
         return statsService.processStats();

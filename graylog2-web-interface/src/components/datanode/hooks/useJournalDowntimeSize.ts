@@ -39,8 +39,8 @@ const useJournalDowntimeSize = () : {
     fetchJournalDowntimeSize,
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Data Node migration journal estimate: ${errorThrown}`,
-          'Could not load Data Node journal size estimate');
+        UserNotification.error(`正在加载数据节点迁移日志估算：${errorThrown}`,
+          '无法加载数据节点 journal 大小估算');
       },
       notifyOnChangeProps: ['data', 'error'],
       refetchInterval: 5000,

@@ -33,17 +33,17 @@ const HttpNotificationDetailsV2 = ({ notification } : Props) => {
   return (
     <>
       <ReadOnlyFormGroup label="URL" value={notification.config.url} />
-      <ReadOnlyFormGroup label="Basic Authentication" value={notification.config.basic_auth?.is_set ? '******' : null} />
-      <ReadOnlyFormGroup label="API Key/Secret Sent As" value={apiKeySet ? apiSentAs : null} />
+      <ReadOnlyFormGroup label="基本认证" value={notification.config.basic_auth?.is_set ? '******' : null} />
+      <ReadOnlyFormGroup label="API Key/Secret 发送方式" value={apiKeySet ? apiSentAs : null} />
       <ReadOnlyFormGroup label="API Key" value={notification.config.api_key} />
       <ReadOnlyFormGroup label="API Secret" value={apiKeySet ? '******' : null} />
-      <ReadOnlyFormGroup label="Method" value={notification.config.method} />
-      {notification.config.time_zone && (<ReadOnlyFormGroup label="Time Zone" value={notification.config.time_zone} />)}
+      <ReadOnlyFormGroup label="方法" value={notification.config.method} />
+      {notification.config.time_zone && (<ReadOnlyFormGroup label="时区" value={notification.config.time_zone} />)}
       {notification.config.content_type && (
-      <ReadOnlyFormGroup label="Content Type" value={notification.config.content_type} />)}
-      {notification.config.headers && (<ReadOnlyFormGroup label="Headers" value={notification.config.headers} />)}
+      <ReadOnlyFormGroup label="内容类型" value={notification.config.content_type} />)}
+      {notification.config.headers && (<ReadOnlyFormGroup label="标头" value={notification.config.headers} />)}
       {notification.config.body_template && (
-      <ReadOnlyFormGroup label="Body Template"
+      <ReadOnlyFormGroup label="正文模板"
                          value={(
                            <Well bsSize="small" className={styles.bodyPreview}>
                              {notification.config.body_template}

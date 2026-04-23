@@ -90,7 +90,7 @@ const StatusCell = ({ eventDefinition } : Props) => {
       </StatusLabel>
       {showConfirmDisableModal && (
         <BootstrapModalConfirm showModal
-                               title="Disable event definition"
+                               title="禁用事件定义"
                                onConfirm={handleConfirmDisable}
                                onCancel={() => setShowConfirmDisableModal(false)}>
           {`Do you really want to disable event definition '${eventDefinition.title}'?`}

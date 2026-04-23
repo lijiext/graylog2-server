@@ -305,11 +305,11 @@ const RuleBuilder = () => {
                              onChange={setRule} />
           </Col>
           <Col xs={8}>
-            <label htmlFor="rule_builder">Rule Builder</label>
+            <label htmlFor="rule_builder">规则构建器</label>
             <StyledPanel expanded={conditionsExpanded}>
               <StyledPanelHeading>
                 <Panel.Title toggle>
-                  When
+                  当
                 </Panel.Title>
                 <WhenOperator>
                   <Radio checked={rule.rule_builder.operator === 'AND'}
@@ -351,7 +351,7 @@ const RuleBuilder = () => {
             <StyledPanel expanded={actionsExpanded}>
               <StyledPanelHeading>
                 <Panel.Title toggle>
-                  Then
+                  然后
                 </Panel.Title>
               </StyledPanelHeading>
               <Panel.Collapse>
@@ -389,10 +389,10 @@ const RuleBuilder = () => {
                         centerCol={initialRule && (
                         <>
                           <Button type="button" bsStyle="info" onClick={handleSave} disabled={hasRuleBuilderErrors(rule)}>
-                            Update rule
+                            更新规则
                           </Button>
                           <Button bsStyle="info"
-                                  title="Convert Rule Builder to Source Code"
+                                  title="将规则构建器转换为源代码"
                                   disabled={hasRuleBuilderErrors(rule)}
                                   onClick={() => {
                                     sendTelemetry(TELEMETRY_EVENT_TYPE.PIPELINE_RULE_BUILDER.CONVERT_TO_SOURCE_CODE_CLICKED, {
@@ -403,7 +403,7 @@ const RuleBuilder = () => {
 
                                     setRuleSourceCodeToShow(rule);
                                   }}>
-                            Convert to Source Code
+                            转换为源代码
                           </Button>
                         </>
                         )}
@@ -411,14 +411,14 @@ const RuleBuilder = () => {
           </ActionsCol>
         </Row>
         {blockToDelete && (
-        <ConfirmDialog title={`Delete ${blockToDelete.type}`}
+        <ConfirmDialog title={`删除 ${blockToDelete.type}`}
                        show
                        onConfirm={() => {
                          deleteBlock(blockToDelete.orderIndex, blockToDelete.type);
                          setBlockToDelete(null);
                        }}
                        onCancel={() => setBlockToDelete(null)}>
-          <>Are you sure you want to delete <strong>{blockToDelete.type} N° {blockToDelete.orderIndex + 1}</strong>?</>
+          <>您确定要删除 <strong>{blockToDelete.type} 编号 {blockToDelete.orderIndex + 1}</strong>?</>
         </ConfirmDialog>
         )}
         {ruleSourceCodeToShow && (

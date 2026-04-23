@@ -66,15 +66,15 @@ const IndexDetails = ({ index, indexName, indexRange, indexSetId, isDeflector }:
     if (isDeflector) {
       return (
         <span>
-          <Button bsStyle="danger" bsSize="xs" disabled>Active write index cannot be deleted</Button>
+          <Button bsStyle="danger" bsSize="xs" disabled>无法删除活动的写入索引</Button>
         </span>
       );
     }
 
     return (
       <span>
-        <Button bsStyle="warning" bsSize="xs" onClick={_onRecalculateIndex}>Recalculate index ranges</Button>{' '}
-        <Button bsStyle="danger" bsSize="xs" onClick={_onDeleteIndex}>Delete index</Button>
+        <Button bsStyle="warning" bsSize="xs" onClick={_onRecalculateIndex}>重新计算索引范围</Button>{' '}
+        <Button bsStyle="danger" bsSize="xs" onClick={_onDeleteIndex}>删除索引</Button>
       </span>
     );
   }, [isDeflector, _onDeleteIndex, _onRecalculateIndex]);
@@ -88,15 +88,15 @@ const IndexDetails = ({ index, indexName, indexRange, indexSetId, isDeflector }:
       <IndexRangeSummary indexRange={indexRange} />{' '}
 
       <HideOnCloud>
-        {NumberUtils.formatNumber(index.all_shards.segments)} segments,{' '}
-        {NumberUtils.formatNumber(index.all_shards.open_search_contexts)} open search contexts,{' '}
-        {NumberUtils.formatNumber(index.all_shards.documents.deleted)} deleted messages
+        {NumberUtils.formatNumber(index.all_shards.segments)} 段，{' '}
+        {NumberUtils.formatNumber(index.all_shards.open_search_contexts)} 打开搜索上下文，{' '}
+        {NumberUtils.formatNumber(index.all_shards.documents.deleted)} 已删除的消息
         <Row style={{ marginBottom: '10' }}>
           <Col md={4} className="shard-meters">
-            <ShardMeter title="Primary shard operations" shardMeter={index.primary_shards} />
+            <ShardMeter title="主分片操作" shardMeter={index.primary_shards} />
           </Col>
           <Col md={4} className="shard-meters">
-            <ShardMeter title="Total shard operations" shardMeter={index.all_shards} />
+            <ShardMeter title="总分片操作数" shardMeter={index.all_shards} />
           </Col>
         </Row>
         <ShardRoutingOverview routing={index.routing} indexName={indexName} />

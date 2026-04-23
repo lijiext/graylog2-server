@@ -91,7 +91,7 @@ public class ClusterLoggersResource extends ProxiedResource {
     @ApiOperation(value = "Set the loglevel of a whole subsystem",
                   notes = "Provided level is falling back to DEBUG if it does not exist")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such subsystem.")
+            @ApiResponse(code = 404, message = "不存在此类子系统。")
     })
     @NoAuditEvent("proxy resource, audit event will be emitted on target nodes")
     public void setSubsystemLoggerLevel(
@@ -121,13 +121,13 @@ public class ClusterLoggersResource extends ProxiedResource {
     @Path("messages/recent/{nodeId}")
     @ApiOperation(value = "Get recent internal log messages from a specific node")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Memory appender is disabled."),
-            @ApiResponse(code = 500, message = "Memory appender is broken.")
+            @ApiResponse(code = 404, message = "内存记录器已禁用。"),
+            @ApiResponse(code = 500, message = "内存追加器已损坏。")
     })
     @Produces(MediaType.TEXT_PLAIN)
     @HideOnCloud
     public Response messages(@ApiParam(name = "nodeId", value = "The nodeId to get logs from") @PathParam("nodeId") @NotEmpty String nodeId,
-                             @ApiParam(name = "limit", value = "How many log messages should be returned. 0 returns all existing messages." +
+                             @ApiParam(name = "limit", value = "应返回多少条日志消息。0 返回所有现有消息。" +
                                      "The limit can be rounded up to the next batch size and thus return slightly more logs than requested.",
                                        defaultValue = "1000", allowableValues = "range[0, infinity]")
                              @QueryParam("limit") @DefaultValue("1000") @Min(0L) int limit) throws IOException {

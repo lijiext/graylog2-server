@@ -81,13 +81,11 @@ const TimeoutInput = ({ value: propsValue, onChange }: Props) => {
     <Input id="timeout-controls"
            labelClassName="col-sm-3"
            wrapperClassName="col-sm-9"
-           label="Sessions Timeout">
+           label="会话超时">
       <Row className="no-bm">
         <Col xs={12}>
-          <Alert bsStyle="info" title="Changing the session timeout">
-            Changing the timeout setting for sessions will log the user out of Graylog and will invalidate all their
-            current sessions. If you are changing the setting for your own user, you will be logged out at the moment
-            of saving the setting. In that case, make sure to save any pending changes before changing the timeout.
+          <Alert bsStyle="info" title="更改 Session 超时时间">
+            更改 Session 的超时设置将导致用户登出 Graylog，并使他们当前的所有 Session 失效。如果您正在更改自己用户的设置，您将在保存设置时立即登出。在这种情况下，请确保在更改超时设置之前保存所有待处理的更改。
           </Alert>
         </Col>
       </Row>
@@ -95,8 +93,8 @@ const TimeoutInput = ({ value: propsValue, onChange }: Props) => {
         <Input type="checkbox"
                id="session-timeout-never"
                name="session_timeout_never"
-               label="Sessions do not time out"
-               help="When checked, sessions never time out due to inactivity."
+               label="会话不会超时"
+               help="选中后，会话永远不会因不活动而超时。"
                formGroupClassName="no-bm"
                onChange={_onClick}
                checked={sessionTimeoutNever} />
@@ -105,7 +103,7 @@ const TimeoutInput = ({ value: propsValue, onChange }: Props) => {
           <Col xs={2}>
             <Input type="number"
                    id="timeout"
-                   placeholder="Timeout amount"
+                   placeholder="超时时长"
                    name="timeout"
                    min={1}
                    formGroupClassName="form-group no-bm"
@@ -121,7 +119,7 @@ const TimeoutInput = ({ value: propsValue, onChange }: Props) => {
           <Row className="no-bm">
             <Col xs={12}>
               <HelpBlock>
-                Session automatically end after this amount of time, unless they are actively used.
+                会话在此时长后自动结束，除非它们正在被使用。
               </HelpBlock>
             </Col>
           </Row>

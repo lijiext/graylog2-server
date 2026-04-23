@@ -27,8 +27,8 @@ const useMinimumRefreshInterval = () => {
     () => fetch('GET', qualifyUrl('/system/configuration/minimum_auto_refresh_interval')),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading system configuration "minimum_auto_refresh_interval" failed with status: ${errorThrown}`,
-          'Could not configuration option');
+        UserNotification.error(`加载系统配置“minimum_auto_refresh_interval”失败，状态码：${errorThrown}`,
+          '无法配置选项');
       },
       keepPreviousData: true,
     },

@@ -39,8 +39,8 @@ const useBuiltInTemplates = (warmTierEnabled: boolean, { enabled } = { enabled: 
     () => fetchBuiltInIndexSetTemplates(warmTierEnabled),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading built in index set templates failed with status: ${errorThrown}`,
-          'Could not load built in index set templates');
+        UserNotification.error(`加载内置索引集模板失败，状态为：${errorThrown}`,
+          '无法加载内置索引集模板');
       },
       keepPreviousData: true,
       enabled,

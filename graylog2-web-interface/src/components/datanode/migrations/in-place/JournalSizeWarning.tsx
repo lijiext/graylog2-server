@@ -28,11 +28,10 @@ const StyledHelpPanel = styled(StyledPanel)`
 const JournalSizeWarning = () => (
   <StyledHelpPanel bsStyle="warning">
     <Panel.Heading>
-      <Panel.Title componentClass="h3"><Icon name="warning" /> Journal size warning</Panel.Title>
+      <Panel.Title componentClass="h3"><Icon name="warning" /> 日志记录大小警告</Panel.Title>
     </Panel.Heading>
     <Panel.Body>
-      <p>Please note that during migration you will have to stop processing on your Graylog node, this will result in the journal growing in size.
-        Therefore you will have to increase your journal volume size during the Journal size downsize step or earlier.
+      <p>请注意，在迁移过程中，您将不得不停止在 Graylog 节点上的处理，这将导致日志大小增长。因此，您必须在日志大小缩减步骤或更早时增加您的日志卷大小。
       </p>
     </Panel.Body>
   </StyledHelpPanel>

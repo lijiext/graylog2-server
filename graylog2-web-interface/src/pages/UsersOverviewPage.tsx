@@ -25,19 +25,19 @@ import UsersOverview from 'components/users/UsersOverview';
 import UsersPageNavigation from 'components/users/navigation/UsersPageNavigation';
 
 const UsersOverviewPage = () => (
-  <DocumentTitle title="Users Overview">
+  <DocumentTitle title="用户概览">
     <UsersPageNavigation />
-    <PageHeader title="Users Overview"
+    <PageHeader title="用户概览"
                 actions={(
                   <LinkContainer to={Routes.SYSTEM.USERS.CREATE}>
-                    <Button bsStyle="success">Create user</Button>
+                    <Button bsStyle="success">创建用户</Button>
                   </LinkContainer>
                 )}
                 documentationLink={{
                   title: 'Permissions documentation',
                   path: DocsHelper.PAGES.USERS_ROLES,
                 }}>
-      <span>Overview of Graylog&apos;s registered users.</span>
+      <span>Graylog 注册用户概览。</span>
     </PageHeader>
 
     <UsersOverview />

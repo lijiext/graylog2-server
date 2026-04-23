@@ -44,19 +44,19 @@ const List = styled.ul`
 const _cap = StringUtils.capitalizeFirstLetter;
 
 const DependenciesWarning = ({ missingDependencies, availableGrantees }: Props) => (
-  <Container bsStyle="danger" title="There are missing dependencies for the current set of collaborators">
+  <Container bsStyle="danger" title="当前协作人员集合缺少依赖项">
     <List>
       {missingDependencies.entrySeq().map(([granteeGRN, dependencyList]) => {
         const grantee = availableGrantees.find((selectedGrantee) => selectedGrantee.id === granteeGRN);
 
         return (grantee && (
         <li key={grantee.id}>
-          {_cap(grantee.type)} <i>{grantee.title}</i> needs access to
+          {_cap(grantee.type)} <i>{grantee.title}</i> 需要访问
           {dependencyList.map((dependency) => (
             <List key={dependency.id}>
               <li>
                 {_cap(dependency.type)}: <i>{dependency.title}</i><br />
-                Owners: {dependency.owners.map((owner, key) => (
+                所有者： {dependency.owners.map((owner, key) => (
                   <span key={owner.id}>
                     {_cap(owner.type)} <i>{owner.title}</i>
                     {key !== dependency.owners.size - 1 && ', '}

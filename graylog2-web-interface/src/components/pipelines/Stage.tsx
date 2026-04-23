@@ -55,7 +55,7 @@ const Stage = ({ stage, pipeline, isLastStage, onUpdate, onDelete }: Props) => {
             key={`delete-stage-${stage}`}
             bsStyle="danger"
             onClick={onDelete}>
-      Delete
+      删除
     </Button>,
     <StageForm key={`edit-stage-${stage}`} pipeline={pipeline} stage={stage} save={onUpdate} />,
   ];
@@ -84,8 +84,8 @@ const Stage = ({ stage, pipeline, isLastStage, onUpdate, onDelete }: Props) => {
 
     description = (
       <span>
-        Messages satisfying <strong>{matchText}</strong>{' '}
-        in this stage, will continue to the next stage.
+        满足 <strong>{matchText}</strong>{' '}
+        在此阶段，将继续进入下一阶段。
       </span>
     );
   }
@@ -107,7 +107,7 @@ const Stage = ({ stage, pipeline, isLastStage, onUpdate, onDelete }: Props) => {
     : <Spinner />);
 
   return (
-    <EntityListItem title={`Stage ${stage.stage}`}
+    <EntityListItem title={`阶段 ${stage.stage}`}
                     titleSuffix={suffix}
                     actions={actions}
                     description={block}

@@ -300,8 +300,8 @@ public class StreamResource extends RestResource {
     @ApiOperation(value = "Get a single stream")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid ObjectId.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "ObjectId 无效。")
     })
     public StreamResponse get(@ApiParam(name = "streamId", required = true)
                               @PathParam("streamId") @NotEmpty String streamId) throws NotFoundException {
@@ -317,8 +317,8 @@ public class StreamResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid ObjectId.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "ObjectId 无效。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_UPDATE)
     public StreamResponse update(@ApiParam(name = "streamId", required = true)
@@ -361,7 +361,7 @@ public class StreamResource extends RestResource {
                 .orElseThrow(() -> new BadRequestException("Index set with ID <" + stream.getIndexSetId() + "> does not exist!"));
 
         if (!indexSet.getConfig().isWritable()) {
-            throw new BadRequestException("Assigned index set must be writable!");
+            throw new BadRequestException("分配的索引集必须可写！");
         }
         if (!indexSet.getConfig().isRegularIndex()) {
             throw new BadRequestException("Assigned index set is not usable");
@@ -378,8 +378,8 @@ public class StreamResource extends RestResource {
     @Timed
     @ApiOperation(value = "Delete a stream")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid ObjectId.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "ObjectId 无效。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_DELETE)
     public void delete(@ApiParam(name = "streamId", required = true) @PathParam("streamId") String streamId,
@@ -465,8 +465,8 @@ public class StreamResource extends RestResource {
     @Timed
     @ApiOperation(value = "Pause a stream")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid or missing Stream id.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "数据流 ID 无效或缺失。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_STOP)
     public void pause(@ApiParam(name = "streamId", required = true)
@@ -488,8 +488,8 @@ public class StreamResource extends RestResource {
     @Timed
     @ApiOperation(value = "Resume a stream")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid or missing Stream id.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "数据流 ID 无效或缺失。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_START)
     public void resume(@ApiParam(name = "streamId", required = true)
@@ -512,8 +512,8 @@ public class StreamResource extends RestResource {
     @Timed
     @ApiOperation(value = "Test matching of a stream against a supplied message")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid or missing Stream id.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "数据流 ID 无效或缺失。")
     })
     @NoAuditEvent("only used for testing stream matches")
     public TestMatchResponse testMatch(@ApiParam(name = "streamId", required = true)
@@ -553,8 +553,8 @@ public class StreamResource extends RestResource {
     @Timed
     @ApiOperation(value = "Clone a stream", response = StreamCreatedResponse.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Stream not found."),
-            @ApiResponse(code = 400, message = "Invalid or missing Stream id.")
+            @ApiResponse(code = 404, message = "未找到数据流。"),
+            @ApiResponse(code = 400, message = "数据流 ID 无效或缺失。")
     })
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -624,7 +624,7 @@ public class StreamResource extends RestResource {
     @Timed
     @ApiOperation(value = "Assign multiple streams to index set")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Index set not found.")
+            @ApiResponse(code = 404, message = "未找到索引集。")
     })
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -660,7 +660,7 @@ public class StreamResource extends RestResource {
 
     private void checkIndexSet(IndexSet indexSet) {
         if (!indexSet.getConfig().isWritable()) {
-            throw new BadRequestException("Assigned index set must be writable!");
+            throw new BadRequestException("分配的索引集必须可写！");
         } else if (!indexSet.getConfig().isRegularIndex()) {
             throw new BadRequestException("Assigned index set is not usable");
         }

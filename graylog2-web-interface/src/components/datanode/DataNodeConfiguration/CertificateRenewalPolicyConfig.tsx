@@ -91,7 +91,7 @@ const fetchCurrentConfig = () => ConfigurationsActions.list(ConfigurationType.CE
 const NoExistingPolicy = ({ createPolicy }: { createPolicy: () => void }) => (
   <Button onClick={createPolicy}
           bsSize="small"
-          bsStyle="primary">Configure Certificate Renewal Policy
+          bsStyle="primary">配置证书续订策略
   </Button>
 );
 
@@ -128,7 +128,7 @@ const CertificateRenewalPolicyConfig = ({ className }: Props) => {
       setShowModal(false);
     },
     onError: (err: Error) => {
-      UserNotification.error(`Error Updating Detector Definition: ${err.toString()}`, 'Unable to update detector definition');
+      UserNotification.error(`更新检测器定义时出错：${err.toString()}`, '无法更新检测器定义');
     },
   });
 
@@ -178,17 +178,17 @@ const CertificateRenewalPolicyConfig = ({ className }: Props) => {
 
   return (
     <div className={className}>
-      <h2>Certificate Renewal Policy Configuration</h2>
+      <h2>证书更新策略配置</h2>
       <p>
-        These settings will be used when detecting expiration of certificates and/or when renewing them.
+        这些设置将在检测证书过期和/或续订证书时使用。
       </p>
       {!currentConfig ? <NoExistingPolicy createPolicy={() => setShowModal(true)} /> : (
         <>
           <StyledDefList>
-            <dt>Renewal Mode:</dt>
+            <dt>续订模式：</dt>
             <dd>{capitalize(currentConfig.mode)}</dd>
             <dd><i>{renewalModeExplanation}</i></dd>
-            <dt>Certificate Lifetime:</dt>
+            <dt>证书有效期：</dt>
             <dd>{formConfig.lifetimeValue} {formConfig.lifetimeUnit}</dd>
             <dd><i>{lifetimeExplanation}</i></dd>
           </StyledDefList>
@@ -204,7 +204,7 @@ const CertificateRenewalPolicyConfig = ({ className }: Props) => {
                         });
 
                         setShowModal(true);
-                      }}>Edit configuration
+                      }}>编辑配置
               </Button>
             </IfPermitted>
           </p>
@@ -229,19 +229,19 @@ const CertificateRenewalPolicyConfig = ({ className }: Props) => {
                       <Field name="mode">
                         {({ field: { name, value, onChange } }) => (
                           <Input id={name}
-                                 label="Certificate Renewal Mode"
+                                 label="证书更新模式"
                                  help={renewalModeExplanation}>
                             <Select options={certicateRenewalModes}
                                     clearable={false}
                                     name={name}
                                     value={value ?? 'AUTOMATIC'}
-                                    aria-label="Select certificate renewal mode"
+                                    aria-label="选择证书续期模式"
                                     size="small"
                                     onChange={(newValue) => onChange({ target: { name, value: newValue } })} />
                           </Input>
                         )}
                       </Field>
-                      <TimeUnitInput label="Certificate Lifetime"
+                      <TimeUnitInput label="证书有效期"
                                      help={lifetimeExplanation}
                                      update={(value, unit) => {
                                        setFieldValue('lifetimeValue', value);
@@ -262,8 +262,8 @@ const CertificateRenewalPolicyConfig = ({ className }: Props) => {
                              disabledSubmit={isValidating || !isValid}
                              isSubmitting={isSubmitting}
                              isAsyncSubmit
-                             submitLoadingText="Updating configuration"
-                             submitButtonText="Update configuration" />
+                             submitLoadingText="正在更新配置"
+                             submitButtonText="更新配置" />
               </Modal.Footer>
             </Form>
           )}

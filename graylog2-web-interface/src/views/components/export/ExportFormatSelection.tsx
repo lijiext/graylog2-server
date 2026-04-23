@@ -38,7 +38,7 @@ const ExportFormatSelection = () => {
       <Field name="format">
         {({ field: { name, value, onChange } }) => (
           <>
-            <label htmlFor={name}>Output Format</label>
+            <label htmlFor={name}>输出格式</label>
             <Select name={name} value={value} options={exportFormatOptions} onChange={(newFormat) => onChange({ target: { name, value: newFormat } })} />
           </>
         )}

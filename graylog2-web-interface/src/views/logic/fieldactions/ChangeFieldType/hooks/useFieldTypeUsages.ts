@@ -81,8 +81,8 @@ const useFieldTypeUsages = ({ streams, field }: { streams: Array<string>, field:
     () => fetchFieldTypeUsages({ streams, field }, searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading ${field} types failed with status: ${errorThrown}`,
-          'Could not load field types');
+        UserNotification.error(`加载 ${field} 类型失败，状态码：${errorThrown}`,
+          '无法加载字段类型');
       },
       keepPreviousData: true,
       enabled,

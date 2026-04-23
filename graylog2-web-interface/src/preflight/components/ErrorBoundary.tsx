@@ -49,8 +49,8 @@ class ErrorBoundary extends React.Component<Props, State> {
     if (error) {
       return (
         <div>
-          <Section title="Something went wrong" titleOrder={1}>
-            <p>An unknown error has occurred. Please have a look at the following message and the graylog server log for more information.</p>
+          <Section title="出错了" titleOrder={1}>
+            <p>发生未知错误。请查看以下信息及 Graylog 服务端日志以获取更多信息。</p>
             <pre className="content">
               {error.error.message}
               <br />

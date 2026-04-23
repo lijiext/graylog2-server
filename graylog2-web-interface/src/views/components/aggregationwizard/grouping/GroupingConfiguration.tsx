@@ -60,11 +60,11 @@ const SkipEmptyValues = ({ index }: SkipEmptyValuesPropes) => (
     {({ field: { name, value, onChange } }) => (
       <SkipEmptyValuesCheckbox onChange={() => onChange({ target: { name, value: !value } })} checked={value ?? false}>
         <SkipEmptyValuesLabel>
-          Skip Empty Values
-          <SkipEmptyValuesHoverForHelp title="Skip Empty Values">
-            When this is enabled, messages which do not contain the configured fields will be skipped.
+          跳过空值
+          <SkipEmptyValuesHoverForHelp title="跳过空值">
+            启用此选项后，不包含配置字段的消息将被跳过。
             <p />
-            Otherwise an &quot;(Empty Value)&quot; bucket will be created.
+            否则将创建一个"(空值)"桶。
           </SkipEmptyValuesHoverForHelp>
         </SkipEmptyValuesLabel>
       </SkipEmptyValuesCheckbox>
@@ -83,7 +83,7 @@ const GroupingConfiguration = React.memo(({ index }: Props) => {
       {fieldType === DateType && (<Time index={index} />)}
       {fieldType === ValuesType && (
         <>
-          <FormikFormGroup label="Limit"
+          <FormikFormGroup label="限制"
                            name={`groupBy.groupings.${index}.limit`}
                            type="number"
                            bsSize="small" />

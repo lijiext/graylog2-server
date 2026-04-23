@@ -110,10 +110,10 @@ const PaginatedItemOverview = ({
                    activePage={pagination.page}
                    useQueryParameter={false}>
       <SearchForm onSearch={(newQuery) => setPagination({ ...pagination, page: INITIAL_PAGE, query: newQuery })}
-                  label="Filter"
+                  label="过滤器"
                   queryWidth={300}
                   wrapperClass="has-bm"
-                  placeholder="Enter query to filter"
+                  placeholder="输入查询以进行过滤"
                   queryHelpComponent={queryHelper} />
       <ResultsWrapperComponent isEmptyResult={!itemList}>
         {itemList ?? emptyResult}

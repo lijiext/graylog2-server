@@ -73,7 +73,7 @@ const FailureStreamLink = () => {
   return (
     <span>
       <StreamLink stream={isErrorFailureStream ? { id: failureStreamId, title: 'Processing and Indexing Failures' } as Stream : failureStream} />
-      <i> (<Link to={Routes.SYSTEM.ENTERPRISE}>Enterprise Plugin</Link> required)</i>
+      <i> (<Link to={Routes.SYSTEM.ENTERPRISE}>企业插件</Link> 必需)</i>
     </span>
   );
 };
@@ -155,7 +155,7 @@ const ChangeFieldTypeModal = ({
   }, [initialSelectedIndexSets, setIndexSetSelection]);
 
   return (
-    <BootstrapModalForm title={<span>Change {fieldName} Field Type</span>}
+    <BootstrapModalForm title={<span>更改 {fieldName} 字段类型</span>}
                         submitButtonText={fieldTypeMutationIsLading ? 'Changing field type...' : 'Change field type'}
                         onSubmitForm={onSubmit}
                         onCancel={onCancel}
@@ -169,10 +169,7 @@ const ChangeFieldTypeModal = ({
                        field={fieldName} />
         )}
         <Alert bsStyle="warning">
-          Changing the type of the field <b>{fieldName}</b> can have a significant impact on the ingestion of future log messages.
-          If you declare a field to have a type which is incompatible with the logs you are ingesting, it can lead to
-          ingestion errors. It is recommended to enable <DocumentationLink page={DocsHelper.PAGES.INDEXER_FAILURES} displayIcon text="Failure Processing" /> and watch
-          the <FailureStreamLink /> stream closely afterwards.
+          更改字段类型 <b>{fieldName}</b> 可能对未来日志消息的摄取产生重大影响。如果您声明的字段类型与正在摄取的日志不兼容，可能会导致摄取错误。建议启用 <DocumentationLink page={DocsHelper.PAGES.INDEXER_FAILURES} displayIcon text="Failure Processing" /> 并观察 <FailureStreamLink /> 随后请密切监控数据流。
         </Alert>
         <StyledLabel>{`Select Field Type For ${fieldName || 'Field'}`}</StyledLabel>
         <Input id="field_type">
@@ -180,28 +177,28 @@ const ChangeFieldTypeModal = ({
                         options={fieldTypeOptions}
                         value={type}
                         onChange={onChangeFieldType}
-                        placeholder="Select field type"
+                        placeholder="选择字段类型"
                         disabled={isLoadingFieldTypes}
                         inputProps={{ 'aria-label': 'Select Field Type For Field' }}
                         required />
         </Input>
         {showSelectionTable && (
           <>
-            <StyledLabel>Select Targeted Index Sets</StyledLabel>
+            <StyledLabel>选择目标索引集</StyledLabel>
             <p>
-              By default the {type ? <b>{type}</b> : 'selected'} field type will be set for the <b>{fieldName}</b> field in all index sets of the current message/search. You can select for which index sets you would like to make the change.
+              默认情况下 {type ? <b>{type}</b> : 'selected'} 字段类型将设置为 <b>{fieldName}</b> 当前消息/搜索的所有索引集中的字段。您可以选择要更改的索引集。
             </p>
             <IndexSetsTable field={fieldName} setIndexSetSelection={setIndexSetSelection} fieldTypes={fieldTypes} initialSelection={initialSelectedIndexSets} />
           </>
         )}
-        <StyledLabel>Select Rotation Strategy</StyledLabel>
+        <StyledLabel>选择轮转策略</StyledLabel>
         <p>
-          To see and use the {type ? <b>{type}</b> : 'selected field type'} as a field type{fieldName ? <> for <b>{fieldName}</b></> : ''}, you have to rotate indices. You can automatically rotate affected indices after submitting this form or do that manually later.
+          要查看并使用 {type ? <b>{type}</b> : 'selected field type'} 作为字段类型{fieldName ? <> for <b>{fieldName}</b></> : ''}，您必须轮转索引。您可以在提交此表单后自动轮转受影响的索引，或者稍后手动操作。
         </p>
         <Input type="checkbox"
                id="rotate"
                name="rotate"
-               label="Rotate affected indices after change"
+               label="更改后轮转受影响的索引"
                onChange={() => setRotated((cur) => !cur)}
                checked={rotated} />
       </div>

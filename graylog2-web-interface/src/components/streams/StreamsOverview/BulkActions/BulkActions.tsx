@@ -54,10 +54,10 @@ const BulkActions = ({ indexSets }: Props) => {
     if (failures?.length) {
       const notDeletedStreamIds = failures.map(({ entity_id }) => entity_id);
       setSelectedEntities(notDeletedStreamIds);
-      UserNotification.error(`${notDeletedStreamIds.length} out of ${selectedItemsAmount} selected ${descriptor} could not be ${actionPastTense}.`);
+      UserNotification.error(`${notDeletedStreamIds.length} 个选定的 ${descriptor} 中的 ${selectedItemsAmount} 个无法 ${actionPastTense}。`);
     } else {
       setSelectedEntities([]);
-      UserNotification.success(`${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionPastTense} successfully.`, 'Success');
+      UserNotification.success(`${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionPastTense} 成功。`, '成功');
     }
   }, [descriptor, selectedItemsAmount, setSelectedEntities]);
 
@@ -69,7 +69,7 @@ const BulkActions = ({ indexSets }: Props) => {
         qualifyUrl(ApiRoutes.StreamsApiController.bulk_delete().url),
         { entity_ids: selectedEntities },
       ).then(({ failures }) => handleFailures(failures, 'deleted')).catch((error) => {
-        UserNotification.error(`An error occurred while deleting streams. ${error}`);
+        UserNotification.error(`删除数据流时发生错误。${error}`);
       }).finally(() => {
         refetchStreams();
       });
@@ -86,7 +86,7 @@ const BulkActions = ({ indexSets }: Props) => {
       )}
       <BulkActionsDropdown>
         <IfPermitted permissions="indexsets:read">
-          <MenuItem onSelect={toggleAssignIndexSetModal}>Assign index set</MenuItem>
+          <MenuItem onSelect={toggleAssignIndexSetModal}>分配索引集</MenuItem>
         </IfPermitted>
         <SearchStreamsAction />
         <StartStreamsAction handleFailures={handleFailures}
@@ -97,7 +97,7 @@ const BulkActions = ({ indexSets }: Props) => {
                            refetchStreams={refetchStreams}
                            descriptor={descriptor} />
 
-        <MenuItem onSelect={onDelete}>Delete</MenuItem>
+        <MenuItem onSelect={onDelete}>删除</MenuItem>
       </BulkActionsDropdown>
     </>
   );

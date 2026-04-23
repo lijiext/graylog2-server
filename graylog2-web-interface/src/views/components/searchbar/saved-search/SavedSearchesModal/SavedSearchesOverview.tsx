@@ -94,12 +94,12 @@ const SavedSearchesOverview = ({
       </div>
       {pagination?.total === 0 && !searchParams.query && (
         <NoEntitiesExist>
-          No saved searches have been created yet.
+          尚未创建任何保存的搜索。
         </NoEntitiesExist>
       )}
       {pagination?.total === 0 && searchParams.query && (
         <NoSearchResult>
-          No saved searches have been found.
+          未找到任何保存的搜索。
         </NoSearchResult>
       )}
       {!!savedSearches?.length && (

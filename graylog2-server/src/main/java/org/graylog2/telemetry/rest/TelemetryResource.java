@@ -64,16 +64,16 @@ public class TelemetryResource extends RestResource {
     }
 
     @GET
-    @ApiOperation(value = "Get telemetry information.")
+    @ApiOperation(value = "获取遥测信息。")
     public Map<String, Object> get() {
         return telemetryService.getTelemetryResponse(getCurrentUserOrThrow());
     }
 
     @GET
     @Path("user/settings")
-    @ApiOperation("Retrieve a user's telemetry settings.")
+    @ApiOperation("检索用户的遥测设置。")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "Current user not found.")
+            @ApiResponse(code = 404, message = "未找到当前用户。")
     })
     public TelemetryUserSettings getTelemetryUserSettings() {
         return telemetryService.getTelemetryUserSettings(getCurrentUserOrThrow());
@@ -81,10 +81,10 @@ public class TelemetryResource extends RestResource {
 
     @PUT
     @Path("user/settings")
-    @ApiOperation("Update a user's telemetry settings.")
-    @ApiResponses({@ApiResponse(code = 404, message = "Current user not found.")})
+    @ApiOperation("更新用户的遥测设置。")
+    @ApiResponses({@ApiResponse(code = 404, message = "未找到当前用户。")})
     @NoAuditEvent("Audit event is sent manually.")
-    public void saveTelemetryUserSettings(@ApiParam(name = "JSON body", value = "The telemetry settings to assign to the user.", required = true)
+    public void saveTelemetryUserSettings(@ApiParam(name = "JSON body", value = "要分配给用户的遥测设置。", required = true)
                                           @Valid @NotNull TelemetryUserSettings telemetryUserSettings) {
 
         User currentUser = getCurrentUserOrThrow();
@@ -102,7 +102,7 @@ public class TelemetryResource extends RestResource {
     private User getCurrentUserOrThrow() {
         User currentUser = getCurrentUser();
         if (currentUser == null) {
-            throw new NotFoundException("Couldn't find current user!");
+            throw new NotFoundException("找不到当前用户！");
         }
         return currentUser;
     }

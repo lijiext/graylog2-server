@@ -91,15 +91,15 @@ const Marker = ({ coordinates, value, min, max, radiusSize, increment, color, na
                   opacity={0.8}>
       <Popup>
         <dl>
-          <dt>Name</dt>
+          <dt>名称</dt>
           <dd>{name}</dd>
           {markerKeys}
-          <dt>Coordinates:</dt>
+          <dt>坐标：</dt>
           <dd>{coordinates}</dd>
           {value
             && (
               <>
-                <dt>Value:</dt>
+                <dt>值：</dt>
                 <dd>{value}</dd>
               </>
             )}

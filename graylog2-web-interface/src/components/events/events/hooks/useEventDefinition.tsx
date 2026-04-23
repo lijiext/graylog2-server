@@ -30,7 +30,7 @@ const useEventDefinition = (eventDefId: string, enabled = true) => {
     queryKey: ['get-event-definition-details', eventDefId],
     queryFn: () => fetchEventDefinitionDetails(eventDefId),
     onError: (errorThrown) => {
-      UserNotification.error(`Loading archives failed with status: ${errorThrown}`);
+      UserNotification.error(`加载归档失败，状态：${errorThrown}`);
     },
     retry: 0,
     keepPreviousData: true,

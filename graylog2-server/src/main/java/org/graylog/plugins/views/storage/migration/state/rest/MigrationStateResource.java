@@ -94,7 +94,7 @@ public class MigrationStateResource {
     @Path("/state")
     @NoAuditEvent("No Audit Event needed") // TODO: do we need audit log here?
     @RequiresPermissions(RestPermissions.DATANODE_MIGRATION)
-    @ApiOperation(value = "Reset the whole migration to the first step, start over")
+    @ApiOperation(value = "将整个迁移重置为第一步，重新开始")
     public CurrentStateInformation resetState() {
         stateMachine.reset();
         return new CurrentStateInformation(stateMachine.getState(), stateMachine.nextSteps());
@@ -104,7 +104,7 @@ public class MigrationStateResource {
     @Path("/journalestimate")
     @NoAuditEvent("No audit event needed")
     @RequiresPermissions(RestPermissions.DATANODE_MIGRATION)
-    @ApiOperation(value = "Get journal size estimate (bytes/minute)")
+    @ApiOperation(value = "获取日志大小估算（字节/分钟）")
     public JournalEstimate getJournalEstimate() {
         long bytesPerMinute = stateMachine.getContext()
                 .getExtendedState(TrafficSnapshot.ESTIMATED_TRAFFIC_PER_MINUTE, Long.class)

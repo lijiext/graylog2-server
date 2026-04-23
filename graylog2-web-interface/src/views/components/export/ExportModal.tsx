@@ -167,7 +167,7 @@ const ExportModal = ({ closeModal, view, directExportWidgetId }: Props) => {
                 <ModalSubmit leftCol={
                   allowWidgetSelection && (
                     <Button bsStyle="link" onClick={resetSelectedWidget} className="pull-left">
-                      Select different message table
+                      选择不同的消息表
                     </Button>
                   )
                 }
@@ -175,9 +175,9 @@ const ExportModal = ({ closeModal, view, directExportWidgetId }: Props) => {
                              disabledSubmit={!enableDownload}
                              isSubmitting={loading}
                              isAsyncSubmit
-                             submitLoadingText="Downloading..."
+                             submitLoadingText="正在下载..."
                              submitIcon="download"
-                             submitButtonText="Start Download" />
+                             submitButtonText="开始下载" />
               </Modal.Footer>
             </Form>
           </BootstrapModalWrapper>

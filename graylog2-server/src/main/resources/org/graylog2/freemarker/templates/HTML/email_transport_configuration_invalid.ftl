@@ -1,11 +1,11 @@
 <#if _title>
-Email Transport Configuration is missing or invalid!
+邮件传输配置缺失或无效！
 </#if>
 
 <#if _description>
 <span>
-The configuration for the email transport subsystem has shown to be missing or invalid.
-Please check the related section of your Graylog server configuration file.
-This is the detailed error message: ${exception}
+邮件传输子系统的配置显示缺失或无效。
+请检查您的 Graylog 服务器配置文件中相关部分。
+这是详细的错误信息：${exception}
 </span>
 </#if>

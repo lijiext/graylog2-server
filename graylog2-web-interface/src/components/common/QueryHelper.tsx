@@ -51,11 +51,11 @@ const row = (field: CommonFields, description: string) => (
 const defaultExample = (entityName: string) => (
   <>
     <p>
-      Find all {entityName}s with a description containing security:<br />
+      查找全部 {entityName}描述中包含 security: 的 s<br />
       <code>description:security</code><br />
     </p>
     <p>
-      Find a {entityName} with the id 5f4dfb9c69be46153b9a9a7b:<br />
+      查找 {entityName} ID 为 5f4dfb9c69be46153b9a9a7b：<br />
       <code>id:5f4dfb9c69be46153b9a9a7b</code><br />
     </p>
   </>
@@ -63,12 +63,12 @@ const defaultExample = (entityName: string) => (
 
 const queryHelpPopover = (commonFields: Props['commonFields'], fieldMap: Props['fieldMap'], example: Props['example'], entityName: Props['entityName']) => (
   <>
-    <p><strong>Available search fields</strong></p>
+    <p><strong>可用搜索字段</strong></p>
     <Table condensed>
       <thead>
         <tr>
-          <th>Field</th>
-          <th>Description</th>
+          <th>字段</th>
+          <th>描述</th>
         </tr>
       </thead>
       <tbody>
@@ -76,13 +76,13 @@ const queryHelpPopover = (commonFields: Props['commonFields'], fieldMap: Props['
         {Object.keys(fieldMap).map((field: CommonFields) => row(field, fieldMap[field]))}
       </tbody>
     </Table>
-    <p><strong>Examples</strong></p>
+    <p><strong>示例</strong></p>
     {example || defaultExample(entityName)}
   </>
 );
 
 const QueryHelper = ({ commonFields, fieldMap, example, entityName }: Props) => (
-  <OverlayTrigger trigger="click" rootClose placement="right" overlay={queryHelpPopover(commonFields, fieldMap, example, entityName)} title="Search Syntax Help" width={500}>
+  <OverlayTrigger trigger="click" rootClose placement="right" overlay={queryHelpPopover(commonFields, fieldMap, example, entityName)} title="搜索语法帮助" width={500}>
     <QueryHelpButton bsStyle="link"><Icon name="help" /></QueryHelpButton>
   </OverlayTrigger>
 );

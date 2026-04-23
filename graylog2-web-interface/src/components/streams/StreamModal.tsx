@@ -89,20 +89,20 @@ const StreamModal = ({
               <Modal.Title>{modalTitle}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <FormikInput label="Title"
+              <FormikInput label="标题"
                            name="title"
                            id="title"
-                           help="A descriptive name of the new stream" />
-              <FormikInput label={<>Description <InputOptionalInfo /></>}
+                           help="新数据流的描述性名称" />
+              <FormikInput label={<>描述 <InputOptionalInfo /></>}
                            name="description"
                            id="description"
-                           help="What kind of messages are routed into this stream?" />
+                           help="哪些类型的消息被路由到此数据流？" />
 
               <IndexSetSelect indexSets={indexSets} />
 
-              <FormikInput label={<>Remove matches from &lsquo;Default Stream&rsquo;</>}
+              <FormikInput label={<>从“默认数据流”中移除匹配项</>}
                            help={
-                             <span>Don&apos;t assign messages that match this stream to the &lsquo;Default Stream&rsquo;.</span>
+                             <span>不要将匹配此数据流的消息分配给“默认数据流”。</span>
 }
                            name="remove_matches_from_default_stream"
                            id="remove_matches_from_default_stream"

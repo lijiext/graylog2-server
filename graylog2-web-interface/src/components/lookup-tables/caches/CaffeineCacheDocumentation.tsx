@@ -21,32 +21,31 @@ import { Alert } from 'components/bootstrap';
 
 const CaffeineCacheDocumentation = () => (
   <div>
-    <p>The in-memory cache maintains recently used values from data adapters.</p>
-    <p>Please make sure your Graylog servers have enough heap to accomodate the cached entries and monitor the cache efficiency.</p>
+    <p>内存缓存维护来自数据适配器的最近使用值。</p>
+    <p>请确保您的 Graylog 服务器有足够的堆内存来容纳缓存条目，并监控缓存效率。</p>
 
-    <Alert style={{ marginBottom: 10 }} bsStyle="info" title="Implementation details">
-      <p>The cache is local to each Graylog server, they do not share the entries.</p>
-      <p>For example, if you have two servers, they will maintain a completely independent cache from each other.</p>
+    <Alert style={{ marginBottom: 10 }} bsStyle="info" title="实现细节">
+      <p>缓存位于每个 Graylog 服务器本地，它们不共享条目。</p>
+      <p>例如，如果您有两台服务器，它们将维护彼此完全独立的缓存。</p>
     </Alert>
 
     <hr />
 
-    <h3 style={{ marginBottom: 10 }}>Cache size</h3>
-    <p>Every cache has a maximum number of entries, unbounded caches are not supported.</p>
+    <h3 style={{ marginBottom: 10 }}>缓存大小</h3>
+    <p>每个缓存都有最大条目数，不支持无界缓存。</p>
 
-    <h3 style={{ marginBottom: 10 }}>Time-based expiration</h3>
+    <h3 style={{ marginBottom: 10 }}>基于时间的过期</h3>
 
-    <h5 style={{ marginBottom: 10 }}>Expire after access</h5>
+    <h5 style={{ marginBottom: 10 }}>访问后过期</h5>
     <p style={{ marginBottom: 10, padding: 0 }}>
-      The cache will remove entries after a fixed time since they have been used the last time.<br />
-      This results in the cache behaving as a space limited least recently used cache.
+      缓存将在条目上次使用后的固定时间后移除它们。<br />
+      这会导致缓存表现为空间受限的最近最少使用缓存。
     </p>
 
-    <h5 style={{ marginBottom: 10 }}>Expire after write</h5>
+    <h5 style={{ marginBottom: 10 }}>写入后过期</h5>
     <p style={{ marginBottom: 10, padding: 0 }}>
-      The cache will remove entries after a fixed time since they have been entered into the cache.<br />
-      This results in entries that are never older than the given time, which can be important for
-      regularly changing data, such as configuration state of external systems.
+      缓存将在条目进入缓存后经过固定时间后移除它们。<br />
+      这会导致条目永远不会比给定时间更早，这对于经常变化的数据（如外部系统的配置状态）可能很重要。
     </p>
 
   </div>

@@ -41,30 +41,29 @@ const MigrationDatanodeList = ({ showProvisioningState }: Props) => {
     <div>
       {(!dataNodes || dataNodes?.list.length === 0) ? (
         <>
-          <p><StyledIcon name="info" />There are no Data Nodes found.</p>
-          <Alert bsStyle="warning" title="No Data Nodes found">
-            Please start at least a Data Node to continue the migration process. You can find more information on how to start a Data Nodes in our <DocumentationLink page="graylog-data-node" text="documentation" />.
+          <p><StyledIcon name="info" />未找到 Data Node。</p>
+          <Alert bsStyle="warning" title="未找到数据节点">
+            请至少启动一个数据节点以继续迁移过程。有关如何启动数据节点的更多信息，请参见我们的 <DocumentationLink page="graylog-data-node" text="documentation" />.
           </Alert>
           <p><Spinner text="Looking for Data Nodes..." /></p>
         </>
       ) : (
         <>
-          <h4>Data Nodes found: {dataNodes?.list.length}</h4>
+          <h4>找到的数据节点： {dataNodes?.list.length}</h4>
           {dataNodes.list.find((datanode) => !datanode.version_compatible) && (
-            <Alert bsStyle="warning" title="Incompatible Data Nodes found">
-              There are Data Nodes running with versions incompatible to your current Graylog version.
-              Please make sure to use the same version for both Graylog and Data Node.
+            <Alert bsStyle="warning" title="发现不兼容的数据节点">
+              存在与当前 Graylog 版本不兼容的 Data Node 正在运行。请确保 Graylog 和 Data Node 使用相同的版本。
             </Alert>
           )}
           <br />
           <Table bordered condensed striped hover>
             <thead>
               <tr>
-                <th>Hostname</th>
-                <th>Transport address</th>
-                <th>Status</th>
-                <th>Certificate valid until</th>
-                <th>Version</th>
+                <th>主机名</th>
+                <th>传输地址</th>
+                <th>状态</th>
+                <th>证书有效期至</th>
+                <th>版本</th>
               </tr>
             </thead>
             <tbody>
@@ -77,7 +76,7 @@ const MigrationDatanodeList = ({ showProvisioningState }: Props) => {
                   <td>
                     {!datanode.version_compatible && (
                       <Icon name="warning"
-                            title="This version is incompatible with your current Graylog version." />
+                            title="此版本与当前 Graylog 版本不兼容。" />
                     )}
                     {datanode.datanode_version}
                   </td>

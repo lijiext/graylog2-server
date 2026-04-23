@@ -40,8 +40,8 @@ const useMessage = (index: string, id: string, enabled = true): { data: Message 
     },
     queryFn: () => fetchMessage(index, id),
     onError: (error) => {
-      UserNotification.error(`Loading message information failed with status: ${error}`,
-        'Could not load message information');
+      UserNotification.error(`加载消息信息失败，状态码：${error}`,
+        '无法加载消息信息');
     },
     enabled,
   });

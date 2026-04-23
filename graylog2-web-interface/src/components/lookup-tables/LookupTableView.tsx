@@ -97,13 +97,13 @@ const LookupTableView = ({ table, cache, dataAdapter }: Props) => {
         <h2>{table.title}</h2>
         <p>{table.description}</p>
         <dl>
-          <dt>Data adapter</dt>
+          <dt>数据适配器</dt>
           <dd>
             <Link to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.show(dataAdapter.name)}>
               {dataAdapter.title}
             </Link>
           </dd>
-          <dt>Cache</dt>
+          <dt>缓存</dt>
           <dd>
             <Link to={Routes.SYSTEM.LOOKUPTABLES.CACHES.show(cache.name)}>{cache.title}</Link>
           </dd>
@@ -113,58 +113,58 @@ const LookupTableView = ({ table, cache, dataAdapter }: Props) => {
                   onClick={handleEdit(table.name)}
                   role="button"
                   name="edit_square">
-            Edit
+            编辑
           </Button>
         )}
         {(table.default_single_value || table.default_multi_value) && (
           <dl>
-            <dt>Default single value</dt>
+            <dt>默认单值</dt>
             <dd><code>{table.default_single_value}</code>{' '}({table.default_single_value_type.toLowerCase()})</dd>
-            <dt>Default multi value</dt>
+            <dt>默认多值</dt>
             <dd><code>{table.default_multi_value}</code>{' '}({table.default_multi_value_type.toLowerCase()})</dd>
           </dl>
         )}
         <hr />
-        <h2>Purge Cache</h2>
-        <p>You can purge the complete cache for this lookup table or only the cache entry for a single key.</p>
+        <h2>清除缓存</h2>
+        <p>您可以清除此查找表的整个缓存，或仅清除单个键的缓存条目。</p>
         <form onSubmit={handlePurgeKey}>
           <fieldset>
             <Input type="text"
                    id="purge-key"
                    name="purgekey"
-                   placeholder="Insert key which should be purged"
-                   label="Key"
+                   placeholder="插入要清除的键"
+                   label="密钥"
                    onChange={handleInputOnChange}
-                   help="Key to purge from cache"
+                   help="要从缓存中清除的密钥"
                    required
                    value={purgeKey.value} />
             <ButtonToolbar>
-              <Button type="submit" bsStyle="success" disabled={!purgeKey.valid}>Purge key</Button>
-              <Button type="button" bsStyle="info" onClick={hadlePurgeAll}>Purge all</Button>
+              <Button type="submit" bsStyle="success" disabled={!purgeKey.valid}>清除键</Button>
+              <Button type="button" bsStyle="info" onClick={hadlePurgeAll}>清除全部</Button>
             </ButtonToolbar>
           </fieldset>
         </form>
       </Col>
       <Col md={6}>
-        <h2>Test lookup</h2>
-        <p>You can manually query the lookup table using this form. The data will be cached as configured by Graylog.</p>
+        <h2>测试查找</h2>
+        <p>您可以使用此表单手动查询查找表。数据将按 Graylog 的配置进行缓存。</p>
         <form onSubmit={handleLookupKey}>
           <fieldset>
             <Input type="text"
                    id="key"
                    name="lookupkey"
-                   placeholder="Insert key that should be looked up"
-                   label="Key"
+                   placeholder="插入要查找的键"
+                   label="密钥"
                    required
                    onChange={handleInputOnChange}
-                   help="Key to look up a value for."
+                   help="用于查找值的密钥。"
                    value={lookupKey.value} />
-            <Button type="submit" name="lookupbutton" bsStyle="success" disabled={!lookupKey.valid}>Look up</Button>
+            <Button type="submit" name="lookupbutton" bsStyle="success" disabled={!lookupKey.valid}>查找</Button>
           </fieldset>
         </form>
         {lookupResult && (
           <div style={{ marginTop: '16px' }}>
-            <h4>Lookup result</h4>
+            <h4>查找结果</h4>
             <pre>{lookupResult}</pre>
           </div>
         )}

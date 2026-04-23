@@ -99,17 +99,17 @@ const UsersSection = ({ role: { id, name }, role }: Props) => {
   };
 
   return (
-    <SectionComponent title="Users" showLoading={loading}>
-      <h3>Assign Users</h3>
+    <SectionComponent title="用户" showLoading={loading}>
+      <h3>分配用户</h3>
       <Container>
         <UsersSelector onSubmit={_onAssignUser} role={role} />
       </Container>
       <ErrorAlert onClose={setErrors}>
         {errors}
       </ErrorAlert>
-      <h3>Selected Users</h3>
+      <h3>已选用户</h3>
       <Container>
-        <PaginatedItemOverview noDataText="No selected users have been found."
+        <PaginatedItemOverview noDataText="未找到任何选定的用户。"
                                onLoad={_onLoad}
                                overrideList={paginatedUsers}
                                onDeleteItem={_onUnassignUser} />

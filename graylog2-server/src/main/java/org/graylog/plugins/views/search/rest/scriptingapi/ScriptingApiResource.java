@@ -89,7 +89,7 @@ public class ScriptingApiResource extends RestResource implements PluginRestReso
     }
 
     @POST
-    @ApiOperation(value = "Execute query specified by `queryRequestSpec`",
+    @ApiOperation(value = "执行由 `queryRequestSpec` 指定的查询",
                   nickname = "messagesByQueryRequestSpec",
                   response = TabularResponse.class)
     @Path("messages")
@@ -145,7 +145,7 @@ public class ScriptingApiResource extends RestResource implements PluginRestReso
     }
 
     @POST
-    @ApiOperation(value = "Execute aggregation specified by `searchRequestSpec`",
+    @ApiOperation(value = "执行由 `searchRequestSpec` 指定的聚合",
                   nickname = "aggregateSearchRequestSpec",
                   response = TabularResponse.class)
     @Path("aggregate")

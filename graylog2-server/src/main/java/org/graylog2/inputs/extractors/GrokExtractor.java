@@ -63,7 +63,7 @@ public class GrokExtractor extends Extractor {
               conditionType,
               conditionValue);
         if (extractorConfig == null || Strings.isNullOrEmpty((String) extractorConfig.get(CONFIG_GROK_PATTERN))) {
-            throw new ConfigurationException("grok_pattern not set");
+            throw new ConfigurationException("未设置 grok_pattern");
         }
 
         this.grokPatternRegistry = grokPatternRegistry;

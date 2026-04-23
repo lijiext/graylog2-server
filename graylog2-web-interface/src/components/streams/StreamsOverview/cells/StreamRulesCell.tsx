@@ -42,7 +42,7 @@ const StreamRulesCell = ({ stream }: Props) => {
     <StreamCountBadge disabled={stream.rules.length === 0}
                       onClick={toggleRulesSection}
                       ref={buttonRef}
-                      title={`${streamRulesSectionIsOpen ? 'Hide' : 'Show'} stream rules`}>
+                      title={`${streamRulesSectionIsOpen ? 'Hide' : 'Show'} 条数据流规则`}>
       {stream.rules.length}
     </StreamCountBadge>
   );

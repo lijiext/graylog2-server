@@ -59,13 +59,13 @@ const DestinationOutputs = ({ stream }: Props) => {
     .sort((output1, output2) => output1.title.localeCompare(output2.title));
 
   return (
-    <Section title="Outputs"
+    <Section title="输出端"
              collapsible
              defaultClosed
              disableCollapseButton={!hasAssignedOutput}
              headerLeftSection={(
                <>
-                 <DestinationSwitch aria-label="Toggle Output"
+                 <DestinationSwitch aria-label="切换输出端"
                                     name="toggle-indexset"
                                     checked={hasAssignedOutput}
                                     disabled

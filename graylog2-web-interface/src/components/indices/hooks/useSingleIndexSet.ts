@@ -36,8 +36,8 @@ const useSingleIndexSet = (indexSetId: string) : {
     () => fetchIndexSet(indexSetId),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index set with id: ${indexSetId} failed with status: ${errorThrown}`,
-          'Could not load index set');
+        UserNotification.error(`加载 ID 为 ${indexSetId} 的索引集失败，状态为：${errorThrown}`,
+          '无法加载索引集');
       },
       keepPreviousData: true,
     },

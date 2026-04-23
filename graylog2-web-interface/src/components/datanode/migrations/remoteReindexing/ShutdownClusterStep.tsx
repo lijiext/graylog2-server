@@ -22,8 +22,8 @@ import { Space } from 'preflight/components/common';
 
 const ShutdownClusterStep = ({ currentStep, onTriggerStep, hideActions }: MigrationStepComponentProps) => (
   <>
-    <p>The migration from your current <code>OpenSearch</code> to the Data Node is almost done.</p>
-    <p>To finish please shut down your <code>OpenSearch</code> cluster before continuing.</p>
+    <p>从您当前的迁移 <code>OpenSearch</code> 到数据节点的连接即将完成。</p>
+    <p>完成，请关闭您的 <code>OpenSearch</code> 继续之前的集群。</p>
     <Space h="md" />
     <MigrationStepTriggerButtonToolbar hidden={hideActions} nextSteps={currentStep.next_steps} onTriggerStep={onTriggerStep} />
   </>

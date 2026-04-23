@@ -21,10 +21,10 @@ import { Col, Row } from 'components/bootstrap';
 import KeyboardShortcutsList from 'components/hotkeys/KeyboardShortcutsList';
 
 const KeyboardShortcutsPage = () => (
-  <DocumentTitle title="Graylog Keyboard Shortcuts">
-    <PageHeader title="Graylog Keyboard Shortcuts">
+  <DocumentTitle title="Graylog 键盘快捷键">
+    <PageHeader title="Graylog 键盘快捷键">
       <span>
-        A list of all available shortcuts in Graylog
+        Graylog 中所有可用快捷键的列表
       </span>
     </PageHeader>
     <Row className="content">

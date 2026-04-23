@@ -24,7 +24,7 @@ const fieldMap = {
 
 const queryExample = (
   <p>
-    Find grok patterns containing COMMON in the pattern:<br />
+    查找模式中包含 COMMON 的 Grok 模式：<br />
     <kbd>pattern:COMMON</kbd><br />
   </p>
 );

@@ -96,7 +96,7 @@ const SelectedFiltersList = ({ selectedFilters, columnTitle, filterComponents, o
                       )}
                       <IconButton name="delete"
                                   onClick={() => onDelete(filterIndex, value)}
-                                  title={`Delete ${_columnTitle} filter`} />
+                                  title={`删除 ${_columnTitle} 过滤器`} />
                     </ValueActions>
                   </FilterValue>
                 );

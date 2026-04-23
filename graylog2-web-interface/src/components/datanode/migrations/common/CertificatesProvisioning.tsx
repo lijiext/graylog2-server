@@ -39,15 +39,15 @@ const CertificatesProvisioning = ({ currentStep, onTriggerStep, hideActions }: M
     <>
       {isProvisioningOverview && (
       <p>
-        Certificate authority has been configured successfully.<br />
-        You can now provision certificate for your Data Nodes.
+        证书颁发机构已成功配置。<br />
+        您现在可以为数据节点配置证书。
       </p>
       )}
       {(isProvisioningRunning && !haveNextStep) && (
       <Spinner text="Provisioning certificate" />
       )}
       {(isProvisioningRunning && haveNextStep) && (
-      <Alert bsStyle="success">Provisioning the Data Node finished.</Alert>
+      <Alert bsStyle="success">数据节点配置完成。</Alert>
       )}
       <MigrationDatanodeList />
       <br />

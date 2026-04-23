@@ -45,11 +45,11 @@ const ScratchpadToggle = () => {
     <li role="presentation">
       <Toggle bsStyle="link"
               type="button"
-              aria-label="Scratchpad"
+              aria-label="草稿"
               id="scratchpad-toggle"
               onClick={toggleScratchpadVisibility}>
         <NavItemStateIndicator>
-          <Icon name="edit_square" size="lg" title="Scratchpad" />
+          <Icon name="edit_square" size="lg" title="草稿" />
         </NavItemStateIndicator>
       </Toggle>
     </li>

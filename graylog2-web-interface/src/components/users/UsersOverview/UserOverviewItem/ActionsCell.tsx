@@ -49,8 +49,8 @@ const EditTokensAction = ({
   <LinkContainer to={Routes.SYSTEM.USERS.TOKENS.edit(id)}>
     <WrapperComponent id={`edit-tokens-${id}`}
                       bsSize="xs"
-                      title={`Edit tokens of user ${fullName}`}>
-      Edit tokens
+                      title={`编辑用户 ${fullName} 的令牌`}>
+      编辑 Token
     </WrapperComponent>
   </LinkContainer>
 );
@@ -58,14 +58,14 @@ const EditTokensAction = ({
 const ReadOnlyActions = ({ user }: { user: UserOverview }) => {
   const tooltip = (
     <>
-      System users can only be modified in the Graylog configuration file.
+      系统用户只能在 Graylog 配置文件中修改。
     </>
   );
 
   return (
     <>
       <OverlayTrigger placement="left" overlay={tooltip} trigger={['hover']}>
-        <Button bsSize="xs" bsStyle="info" disabled>System user</Button>
+        <Button bsSize="xs" bsStyle="info" disabled>系统用户</Button>
       </OverlayTrigger>
       <EditTokensAction user={user} wrapperComponent={Button} />
     </>
@@ -120,8 +120,8 @@ const EditActions = ({ user, user: { username, id, fullName, accountStatus, exte
     <>
       <IfPermitted permissions={[`users:edit:${username}`]}>
         <LinkContainer to={Routes.SYSTEM.USERS.edit(id)}>
-          <Button id={`edit-user-${id}`} bsSize="xs" title={`Edit user ${fullName}`}>
-            Edit
+          <Button id={`edit-user-${id}`} bsSize="xs" title={`编辑用户 ${fullName}`}>
+            编辑
           </Button>
         </LinkContainer>
       </IfPermitted>
@@ -131,15 +131,15 @@ const EditActions = ({ user, user: { username, id, fullName, accountStatus, exte
           {showEnableDisable && (
             <MenuItem id={`set-status-user-${id}`}
                       onClick={_toggleStatus}
-                      title={`Set new account status for ${fullName}`}>
+                      title={`设置 ${fullName} 的新账户状态`}>
               {accountStatus === 'enabled' ? 'Disable' : 'Enable'}
             </MenuItem>
           )}
           <MenuItem id={`delete-user-${id}`}
-                    title={`Delete user ${fullName}`}
+                    title={`删除用户 ${fullName}`}
                     variant="danger"
                     onClick={_deleteUser}>
-            Delete
+            删除
           </MenuItem>
         </IfPermitted>
       </MoreActions>

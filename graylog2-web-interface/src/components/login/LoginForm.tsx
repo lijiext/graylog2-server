@@ -56,22 +56,22 @@ const LoginForm = ({ onErrorChange }: Props) => {
     <form onSubmit={onSignInClicked}>
       <Input id="username"
              type="text"
-             label="Username"
+             label="用户名"
              autoComplete="username"
              autoFocus
              required />
 
       <Input id="password"
              type="password"
-             label="Password"
+             label="密码"
              autoComplete="current-password"
              required />
 
       <SigninButton displayCancel={false}
                     isSubmitting={isLoading}
                     isAsyncSubmit
-                    submitLoadingText="Signing in..."
-                    submitButtonText="Sign in" />
+                    submitLoadingText="登录中..."
+                    submitButtonText="登录" />
     </form>
   );
 };

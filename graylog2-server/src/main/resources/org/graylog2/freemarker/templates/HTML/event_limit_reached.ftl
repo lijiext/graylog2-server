@@ -1,9 +1,9 @@
 <#if _title>
-    Event limit reached
+    事件数量限制已触发
 </#if>
 
 <#if _description>
     <span>
-        Event limit »${event_limit}« reached for event definition »${event_definition_title}(${event_definition_id})«. Try to use a more specific search query or use aggregations. Otherwise try to raise the limit.
+        事件定义 »${event_definition_title}(${event_definition_id})« 的事件数量限制 »${event_limit}« 已触发。请尝试使用更具体的搜索查询或聚合操作。否则，请尝试提高限制。
     </span>
 </#if>

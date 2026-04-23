@@ -72,7 +72,7 @@ const BulkActions = () => {
             queryClient.invalidateQueries(['eventNotifications', 'overview']);
           }
 
-          UserNotification.error(`${notDeletedNotificationIds.length} out of ${selectedEntities} selected ${descriptor} could not be deleted. Status: ${errorMessages.join()}`);
+          UserNotification.error(`无法删除选定的 ${descriptor} 中的 ${notDeletedNotificationIds.length} 个，共 ${selectedEntities} 个。状态：${errorMessages.join()}`);
 
           return;
         }
@@ -80,14 +80,14 @@ const BulkActions = () => {
         queryClient.invalidateQueries(['eventNotifications', 'overview']);
         setSelectedEntities(notDeletedNotificationIds);
         refetchEventNotifications();
-        UserNotification.success(`${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} deleted successfully.`, 'Success');
+        UserNotification.success(`${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} 删除成功。`, '成功');
       });
     }
   }, [sendTelemetry, pathname, selectedItemsAmount, descriptor, selectedEntities, queryClient, setSelectedEntities, refetchEventNotifications]);
 
   return (
     <BulkActionsDropdown>
-      <MenuItem onSelect={() => onDelete()} variant="danger">Delete</MenuItem>
+      <MenuItem onSelect={() => onDelete()} variant="danger">删除</MenuItem>
     </BulkActionsDropdown>
   );
 };

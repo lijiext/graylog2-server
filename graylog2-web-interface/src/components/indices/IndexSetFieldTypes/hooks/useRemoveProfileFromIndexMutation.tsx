@@ -44,11 +44,11 @@ const useRemoveProfileFromIndexMutation = () => {
 
   const put = useMutation(putRemoveProfileFromIndex, {
     onError: (errorThrown) => {
-      UserNotification.error(`Removing profile from index failed with status: ${errorThrown}`,
-        'Could not remove profile from index');
+      UserNotification.error(`从索引中删除配置文件失败，状态为：${errorThrown}`,
+        '无法从索引中移除配置文件');
     },
     onSuccess: () => {
-      UserNotification.success('Removed profile from index successfully', 'Success!');
+      UserNotification.success('成功从索引中移除配置文件', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetFieldTypes'], type: 'active' });
     },

@@ -182,9 +182,9 @@ public class UsersResource extends RestResource {
     @ApiOperation(value = "Get user details", notes = "The user's permissions are only included if a user asks for his " +
             "own account or for users with the necessary permissions to edit permissions.")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "The user could not be found.")
+            @ApiResponse(code = 404, message = "未找到该用户。")
     })
-    public UserSummary get(@ApiParam(name = "username", value = "The username to return information for.", required = true)
+    public UserSummary get(@ApiParam(name = "username", value = "要返回信息的用户名。", required = true)
                            @PathParam("username") String username,
                            @Context UserContext userContext) {
         // If a user has permissions to edit another user's profile, it should be able to see it.
@@ -205,9 +205,9 @@ public class UsersResource extends RestResource {
     @ApiOperation(value = "Get user details by userId", notes = "The user's permissions are only included if a user asks for his " +
             "own account or for users with the necessary permissions to edit permissions.")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "The user could not be found.")
+            @ApiResponse(code = 404, message = "未找到该用户。")
     })
-    public UserSummary getbyId(@ApiParam(name = "userId", value = "The userId to return information for.", required = true)
+    public UserSummary getbyId(@ApiParam(name = "userId", value = "要返回信息的 userId。", required = true)
                                @PathParam("userId") String userId,
                                @Context UserContext userContext) {
 
@@ -330,12 +330,12 @@ public class UsersResource extends RestResource {
 
     @POST
     @RequiresPermissions(RestPermissions.USERS_CREATE)
-    @ApiOperation("Create a new user account.")
+    @ApiOperation("创建新用户账户。")
     @ApiResponses({
-            @ApiResponse(code = 400, message = "Missing or invalid user details.")
+            @ApiResponse(code = 400, message = "用户详情缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.USER_CREATE)
-    public Response create(@ApiParam(name = "JSON body", value = "Must contain username, full_name, email, password and a list of permissions.", required = true)
+    public Response create(@ApiParam(name = "JSON body", value = "必须包含用户名、全名、电子邮件、密码和权限列表。", required = true)
                            @Valid @NotNull CreateUserRequest cr) throws ValidationException {
         if (userManagementService.load(cr.username()) != null) {
             final String msg = "Cannot create user " + cr.username() + ". Username is already taken.";
@@ -405,15 +405,15 @@ public class UsersResource extends RestResource {
 
     @PUT
     @Path("{userId}")
-    @ApiOperation("Modify user details.")
+    @ApiOperation("修改用户详情。")
     @ApiResponses({
-            @ApiResponse(code = 400, message = "Attempted to modify a read only user account (e.g. built-in or LDAP users)."),
-            @ApiResponse(code = 400, message = "Missing or invalid user details.")
+            @ApiResponse(code = 400, message = "尝试修改只读用户账户（例如内置账户或 LDAP 用户）。"),
+            @ApiResponse(code = 400, message = "用户详情缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.USER_UPDATE)
-    public void changeUser(@ApiParam(name = "userId", value = "The ID of the user to modify.", required = true)
+    public void changeUser(@ApiParam(name = "userId", value = "要修改的用户 ID。", required = true)
                            @PathParam("userId") String userId,
-                           @ApiParam(name = "JSON body", value = "Updated user information.", required = true)
+                           @ApiParam(name = "JSON body", value = "已更新用户信息。", required = true)
                            @Valid @NotNull ChangeUserRequest cr) throws ValidationException {
 
         final User user = loadUserById(userId);
@@ -514,10 +514,10 @@ public class UsersResource extends RestResource {
     @DELETE
     @Path("{username}")
     @RequiresPermissions(USERS_EDIT)
-    @ApiOperation("Removes a user account.")
-    @ApiResponses({@ApiResponse(code = 400, message = "When attempting to remove a read only user (e.g. built-in or LDAP user).")})
+    @ApiOperation("删除用户账户。")
+    @ApiResponses({@ApiResponse(code = 400, message = "尝试删除只读用户时（例如内置用户或 LDAP 用户）。")})
     @AuditEvent(type = AuditEventTypes.USER_DELETE)
-    public void deleteUser(@ApiParam(name = "username", value = "The name of the user to delete.", required = true)
+    public void deleteUser(@ApiParam(name = "username", value = "要删除的用户名称。", required = true)
                            @PathParam("username") String username) {
         if (userManagementService.delete(username) == 0) {
             throw new NotFoundException("Couldn't find user " + username);
@@ -527,10 +527,10 @@ public class UsersResource extends RestResource {
     @DELETE
     @Path("id/{userId}")
     @RequiresPermissions(USERS_EDIT)
-    @ApiOperation("Removes a user account.")
-    @ApiResponses({@ApiResponse(code = 400, message = "When attempting to remove a read only user (e.g. built-in or LDAP user).")})
+    @ApiOperation("删除用户账户。")
+    @ApiResponses({@ApiResponse(code = 400, message = "尝试删除只读用户时（例如内置用户或 LDAP 用户）。")})
     @AuditEvent(type = AuditEventTypes.USER_DELETE)
-    public void deleteUserById(@ApiParam(name = "userId", value = "The id of the user to delete.", required = true)
+    public void deleteUserById(@ApiParam(name = "userId", value = "要删除的用户 ID。", required = true)
                                @PathParam("userId") String userId) {
         if (userManagementService.deleteById(userId) == 0) {
             throw new NotFoundException("Couldn't find user " + userId);
@@ -540,14 +540,14 @@ public class UsersResource extends RestResource {
     @PUT
     @Path("{username}/permissions")
     @RequiresPermissions(RestPermissions.USERS_PERMISSIONSEDIT)
-    @ApiOperation("Update a user's permission set.")
+    @ApiOperation("更新用户的权限集。")
     @ApiResponses({
-            @ApiResponse(code = 400, message = "Missing or invalid permission data.")
+            @ApiResponse(code = 400, message = "权限数据缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.USER_PERMISSIONS_UPDATE)
-    public void editPermissions(@ApiParam(name = "username", value = "The name of the user to modify.", required = true)
+    public void editPermissions(@ApiParam(name = "username", value = "要修改的用户名称。", required = true)
                                 @PathParam("username") String username,
-                                @ApiParam(name = "JSON body", value = "The list of permissions to assign to the user.", required = true)
+                                @ApiParam(name = "JSON body", value = "要分配给用户的权限列表。", required = true)
                                 @Valid @NotNull PermissionEditRequest permissionRequest) throws ValidationException {
         final User user = userManagementService.load(username);
         if (user == null) {
@@ -560,14 +560,14 @@ public class UsersResource extends RestResource {
 
     @PUT
     @Path("{username}/preferences")
-    @ApiOperation("Update a user's preferences set.")
+    @ApiOperation("更新用户的偏好设置。")
     @ApiResponses({
-            @ApiResponse(code = 400, message = "Missing or invalid permission data.")
+            @ApiResponse(code = 400, message = "权限数据缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.USER_PREFERENCES_UPDATE)
-    public void savePreferences(@ApiParam(name = "username", value = "The name of the user to modify.", required = true)
+    public void savePreferences(@ApiParam(name = "username", value = "要修改的用户名称。", required = true)
                                 @PathParam("username") String username,
-                                @ApiParam(name = "JSON body", value = "The map of preferences to assign to the user.", required = true)
+                                @ApiParam(name = "JSON body", value = "要分配给用户的偏好设置映射。", required = true)
                                 UpdateUserPreferences preferencesRequest) throws ValidationException {
         final User user = userManagementService.load(username);
         checkPermission(RestPermissions.USERS_EDIT, username);
@@ -583,12 +583,12 @@ public class UsersResource extends RestResource {
     @DELETE
     @Path("{username}/permissions")
     @RequiresPermissions(RestPermissions.USERS_PERMISSIONSEDIT)
-    @ApiOperation("Revoke all permissions for a user without deleting the account.")
+    @ApiOperation("在不删除账户的情况下撤销用户的所有权限。")
     @ApiResponses({
-            @ApiResponse(code = 500, message = "When saving the user failed.")
+            @ApiResponse(code = 500, message = "保存用户失败。")
     })
     @AuditEvent(type = AuditEventTypes.USER_PERMISSIONS_DELETE)
-    public void deletePermissions(@ApiParam(name = "username", value = "The name of the user to modify.", required = true)
+    public void deletePermissions(@ApiParam(name = "username", value = "要修改的用户名称。", required = true)
                                   @PathParam("username") String username) throws ValidationException {
         final User user = userManagementService.load(username);
         if (user == null) {
@@ -600,18 +600,18 @@ public class UsersResource extends RestResource {
 
     @PUT
     @Path("{userId}/password")
-    @ApiOperation("Update the password for a user.")
+    @ApiOperation("更新用户密码。")
     @ApiResponses({
-            @ApiResponse(code = 204, message = "The password was successfully updated. Subsequent requests must be made with the new password."),
-            @ApiResponse(code = 400, message = "The new password is missing, or the old password is missing or incorrect."),
-            @ApiResponse(code = 403, message = "The requesting user has insufficient privileges to update the password for the given user."),
-            @ApiResponse(code = 404, message = "User does not exist.")
+            @ApiResponse(code = 204, message = "密码已成功更新。后续请求必须使用新密码。"),
+            @ApiResponse(code = 400, message = "新密码缺失，或旧密码缺失或不正确。"),
+            @ApiResponse(code = 403, message = "请求用户权限不足，无法更新指定用户的密码。"),
+            @ApiResponse(code = 404, message = "用户不存在。")
     })
     @AuditEvent(type = AuditEventTypes.USER_PASSWORD_UPDATE)
     public void changePassword(
-            @ApiParam(name = "userId", value = "The id of the user whose password to change.", required = true)
+            @ApiParam(name = "userId", value = "要更改密码的用户 ID。", required = true)
             @PathParam("userId") String userId,
-            @ApiParam(name = "JSON body", value = "The old and new passwords.", required = true)
+            @ApiParam(name = "JSON body", value = "旧密码和新密码。", required = true)
             @Valid ChangePasswordRequest cr) throws ValidationException {
 
         final User user = loadUserById(userId);
@@ -655,7 +655,7 @@ public class UsersResource extends RestResource {
                 userManagementService.changePassword(user, cr.password());
             }
         } else {
-            throw new BadRequestException("Old password is missing or incorrect.");
+            throw new BadRequestException("旧密码缺失或不正确。");
         }
     }
 
@@ -665,7 +665,7 @@ public class UsersResource extends RestResource {
     @ApiOperation("Update the account status for a user")
     @AuditEvent(type = AuditEventTypes.USER_UPDATE)
     public Response updateAccountStatus(
-            @ApiParam(name = "userId", value = "The id of the user whose status to change.", required = true)
+            @ApiParam(name = "userId", value = "要更改状态的用户 ID。", required = true)
             @PathParam("userId") @NotBlank String userId,
             @ApiParam(name = "newStatus", value = "The account status to be set", required = true,
                       defaultValue = "enabled", allowableValues = "enabled,disabled,deleted")
@@ -715,8 +715,8 @@ public class UsersResource extends RestResource {
     @AuditEvent(type = AuditEventTypes.USER_ACCESS_TOKEN_CREATE)
     public Token generateNewToken(
             @ApiParam(name = "userId", required = true) @PathParam("userId") String userId,
-            @ApiParam(name = "name", value = "Descriptive name for this token (e.g. 'cronjob') ", required = true) @PathParam("name") String name,
-            @ApiParam(name = "JSON Body", value = "Placeholder because POST requests should have a body. Set to '{}', the content will be ignored.", defaultValue = "{}") String body) {
+            @ApiParam(name = "name", value = "此令牌的描述性名称（例如 'cronjob'）", required = true) @PathParam("name") String name,
+            @ApiParam(name = "JSON Body", value = "占位符，因为 POST 请求应包含主体。设置为 '{}'，内容将被忽略。", defaultValue = "{}") String body) {
         final User user = loadUserById(userId);
         final String username = user.getName();
         if (!isPermitted(USERS_TOKENCREATE, username)) {

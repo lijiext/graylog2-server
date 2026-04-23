@@ -51,10 +51,10 @@ const CreateTokenForm = ({ creatingToken, disableForm, onCreate }: Props) => {
   return (
     <StyledForm className="form-inline" onSubmit={createToken}>
       <FormGroup controlId="create-token-input">
-        <ControlLabel>Token Name</ControlLabel>
+        <ControlLabel>Token 名称</ControlLabel>
         <FormControl type="text"
                      disabled={disableForm}
-                     placeholder="What is this token for?"
+                     placeholder="此令牌用于什么？"
                      value={tokenName}
                      onChange={(event) => setTokenName((event.target as HTMLInputElement).value)} />
       </FormGroup>

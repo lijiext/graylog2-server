@@ -36,7 +36,7 @@ const StyledH2 = styled.h2(({ theme }) => css`
   margin-bottom: ${theme.spacings.sm};
 `);
 
-const Header = () => <StyledH2>Graylog cluster</StyledH2>;
+const Header = () => <StyledH2>Graylog 集群</StyledH2>;
 
 const ClusterInfo = () => {
   const nodes = useStore(NodesStore);
@@ -49,9 +49,9 @@ const ClusterInfo = () => {
 
   return (
     <StyledDl className="system-dl">
-      <dt>Cluster ID:</dt>
+      <dt>集群 ID：</dt>
       <dd>{clusterId || 'Not available'}</dd>
-      <dt>Number of nodes:</dt>
+      <dt>节点数量:</dt>
       <dd>{nodeCount}</dd>
     </StyledDl>
   );

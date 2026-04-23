@@ -23,16 +23,16 @@ import DocsHelper from 'util/DocsHelper';
 import AuthenticationPageNavigation from 'components/authentication/AuthenticationPageNavigation';
 
 const AuthenticatorsEditPage = () => (
-  <DocumentTitle title="Edit Authenticators">
+  <DocumentTitle title="编辑认证器">
     <AuthenticationPageNavigation />
-    <PageHeader title="Edit Authenticators"
+    <PageHeader title="编辑认证器"
                 actions={<AuthenticatorActionLinks />}
                 documentationLink={{
                   title: 'Authenticators documentation',
                   path: DocsHelper.PAGES.AUTHENTICATORS,
                 }}>
       <span>
-        Configure the trusted header authentication.
+        配置信任标头认证。
       </span>
     </PageHeader>
 

@@ -39,7 +39,7 @@ const ClientCertForm = ({ onCancel }: Props) => {
   return (
     <>
       <Modal.Header closeButton>
-        <Modal.Title>Create client certificate</Modal.Title>
+        <Modal.Title>创建客户端证书</Modal.Title>
       </Modal.Header>
       {!clientCerts && (
         <Formik initialValues={{ principal: '', role: 'all_access', password: '' }} onSubmit={(formValues: ClientCertFormValues) => onSubmit(formValues)}>
@@ -49,27 +49,27 @@ const ClientCertForm = ({ onCancel }: Props) => {
                 <FormikInput id="principal"
                              placeholder="principal"
                              name="principal"
-                             label="Principal"
+                             label="主体"
                              required />
                 <FormikInput id="role"
                              placeholder="role"
                              name="role"
-                             help="Represent OpenSearch roles mapping."
-                             label="Role"
+                             help="表示 OpenSearch 角色映射。"
+                             label="角色"
                              required />
                 <FormikInput id="password"
                              placeholder="*******"
                              name="password"
                              type="password"
-                             label="Password"
+                             label="密码"
                              required />
               </Modal.Body>
               <Modal.Footer>
                 <ModalSubmit onCancel={() => onCancel()}
                              isSubmitting={isSubmitting}
                              isAsyncSubmit
-                             submitButtonText="Create Certificate"
-                             submitLoadingText="Creating certificate..." />
+                             submitButtonText="创建证书"
+                             submitLoadingText="正在创建证书..." />
               </Modal.Footer>
             </Form>
           )}
@@ -82,7 +82,7 @@ const ClientCertForm = ({ onCancel }: Props) => {
           </Modal.Body>
           <Modal.Footer>
             <ButtonToolbar>
-              <Button bsStyle="success" onClick={() => onCancel()}>Close</Button>
+              <Button bsStyle="success" onClick={() => onCancel()}>关闭</Button>
             </ButtonToolbar>
           </Modal.Footer>
         </>

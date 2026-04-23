@@ -65,8 +65,8 @@ const useContentStreamSettings = (): {
     refetch: refetchContentStream,
   } = useQuery<ContentStreamSettingsApi, Error>([CONTENT_STREAM_SETTINGS_KEY], () => getContentStreamUserSettings(currentUser.username), {
     onError: (errorThrown) => {
-      UserNotification.error(`Loading content stream config failed with status: ${errorThrown}`,
-        'Could not load content stream.');
+      UserNotification.error(`加载内容流配置失败，状态码：${errorThrown}`,
+        '无法加载内容数据流。');
     },
   });
   const {
@@ -76,8 +76,8 @@ const useContentStreamSettings = (): {
     error: contentStreamTagError,
   } = useQuery<Array<string>, Error>([CONTENT_STREAM_TAGS_KEY], () => getContentStreamTags(), {
     onError: (errorThrown) => {
-      UserNotification.error(`Loading content stream tag failed with status: ${errorThrown}`,
-        'Could not load content stream tags.');
+      UserNotification.error(`加载内容流标签失败，状态码：${errorThrown}`,
+        '无法加载内容数据流标签。');
     },
   });
   const { mutateAsync: onSaveContentStreamSetting } = useMutation(saveSettings, {
@@ -86,8 +86,8 @@ const useContentStreamSettings = (): {
       queryClient.invalidateQueries(CONTENT_STREAM_CONTENT_KEY);
     },
     onError: (errorThrown) => {
-      UserNotification.error(`Enabling content stream failed with status: ${errorThrown}`,
-        'Could not cancel instant archiving jobs');
+      UserNotification.error(`启用内容流失败，状态码：${errorThrown}`,
+        '无法取消即时归档作业');
     },
   });
 

@@ -52,7 +52,7 @@ const DataAdapter = ({ dataAdapter }: Props) => {
   const plugin = usePluginEntities('lookupTableAdapters').find((p: DataAdapterPluginType) => p.type === dataAdapter.config?.type);
 
   if (!plugin) {
-    return <p>Unknown data adapter type {dataAdapter.config.type}. Is the plugin missing?</p>;
+    return <p>未知的数据适配器类型 {dataAdapter.config.type}。插件是否缺失？</p>;
   }
 
   const { title: adapterTitle, description: adapterDescription, name: adapterName } = dataAdapter;
@@ -68,39 +68,39 @@ const DataAdapter = ({ dataAdapter }: Props) => {
         </h2>
         <ConfigSummaryDefinitionListWrapper>
           <dl>
-            <dt>Description</dt>
-            <dd>{adapterDescription || <em>No description.</em>}</dd>
+            <dt>描述</dt>
+            <dd>{adapterDescription || <em>无描述。</em>}</dd>
           </dl>
         </ConfigSummaryDefinitionListWrapper>
-        <h4>Configuration</h4>
+        <h4>配置</h4>
         <ConfigSummaryDefinitionListWrapper>
           {React.createElement(summary, { dataAdapter: dataAdapter })}
         </ConfigSummaryDefinitionListWrapper>
         {(!loadingScopePermissions && scopePermissions?.is_mutable) && (
           <LinkContainer to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.edit(adapterName)}>
-            <Button bsStyle="success" role="button" name="edit_square">Edit</Button>
+            <Button bsStyle="success" role="button" name="edit_square">编辑</Button>
           </LinkContainer>
         )}
       </Col>
       <Col md={6}>
-        <h3>Test lookup</h3>
-        <p>You can manually trigger the data adapter using this form. The data will be not cached.</p>
+        <h3>测试查找</h3>
+        <p>您可以使用此表单手动触发数据适配器。数据将不会被缓存。</p>
         <form onSubmit={_lookupKey}>
           <fieldset>
             <Input type="text"
                    id="key"
                    name="key"
-                   label="Key"
+                   label="密钥"
                    required
                    onChange={_onChange}
-                   help="Key to look up a value for."
+                   help="用于查找值的密钥。"
                    value={lookupKey} />
-            <Button type="submit" bsStyle="success">Look up</Button>
+            <Button type="submit" bsStyle="success">查找</Button>
           </fieldset>
         </form>
         {lookupResult && (
           <div>
-            <h4>Lookup result</h4>
+            <h4>查找结果</h4>
             <pre>{JSON.stringify(lookupResult, null, 2)}</pre>
           </div>
         )}

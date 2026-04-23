@@ -48,8 +48,8 @@ const fetchRecentActivities = async ({ page }: RequestQuery): Promise<PaginatedR
 
 const useRecentActivity = (pagination: RequestQuery): { data: PaginatedRecentActivity, isFetching: boolean } => useQuery([RECENT_ACTIONS_QUERY_KEY, pagination], () => fetchRecentActivities(pagination), {
   onError: (errorThrown) => {
-    UserNotification.error(`Loading recent activity failed with status: ${errorThrown}`,
-      'Could not load recent activity');
+    UserNotification.error(`加载最近活动失败，状态码：${errorThrown}`,
+      '无法加载最近活动');
   },
   retry: 0,
   initialData: {

@@ -1,10 +1,9 @@
 <#if _title>
-Elasticsearch nodes with too low open file limit
+Elasticsearch 节点打开文件数限制过低
 </#if>
 
 <#if _description>
-There are Elasticsearch nodes in the cluster that have a too low open file limit.
-Current limit: ${max_file_descriptors} on ${hostname} (should be at least 64000).
-This will be causing problems that can be hard to diagnose. Read how to raise the
-maximum number of open files here: https://docs.graylog.org/docs/elasticsearch#configuration
+集群中存在打开文件数限制过低的 Elasticsearch 节点。
+当前限制：${hostname} 上为 ${max_file_descriptors}（应至少为 64000）。
+这将导致难以诊断的问题。请阅读如何提升最大打开文件数：https://docs.graylog.org/docs/elasticsearch#configuration
 </#if>

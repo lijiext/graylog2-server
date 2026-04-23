@@ -57,7 +57,7 @@ const UserMenu = () => {
         <Menu.Item>{label}</Menu.Item>
       </LinkContainer>
       <Menu.Item onClick={onLogoutClicked} leftSection={<Icon name="logout" />}>
-        Log out
+        登出
       </Menu.Item>
     </NavDropdown>
   );

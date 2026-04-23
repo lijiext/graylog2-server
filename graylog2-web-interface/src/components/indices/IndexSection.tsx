@@ -122,11 +122,11 @@ const IndexSection = ({ headline, subheading, indices, indexDetails, indexSetId 
         </Col>
         <Col md={6}>
           <StatList>
-            <dt>Indices:</dt>
+            <dt>索引:</dt>
             <dd>{indices.length}</dd>
-            <dt>Shards:</dt>
+            <dt>分片:</dt>
             <dd>{shards}</dd>
-            <dt>Total Size:</dt>
+            <dt>总大小：</dt>
             <dd>{NumberUtils.formatBytes(size)}</dd>
           </StatList>
         </Col>

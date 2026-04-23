@@ -73,11 +73,11 @@ const LookupTableParameterEdit = ({
     <>
       <Input id={`lookup-table-parameter-table-${identifier}`}
              name="query-param-table-name"
-             label="Lookup Table"
+             label="查找表"
              bsStyle={validationState?.lookupTable?.[0]}
              error={validationState?.lookupTable?.[1]}
-             help="Select the lookup table Graylog should use to get the values.">
-        <Select placeholder="Select lookup table"
+             help="选择 Graylog 应使用的查找表以获取值。">
+        <Select placeholder="选择查找表"
                 inputProps={{ 'aria-label': 'Select lookup table' }}
                 onChange={_handleChange('lookupTable')}
                 options={lookupTableOptions}
@@ -88,20 +88,20 @@ const LookupTableParameterEdit = ({
       </Input>
       <Input type="text"
              id={`lookup-table-parameter-key-${identifier}`}
-             label="Lookup Table Key"
+             label="查找表键"
              name="key"
              defaultValue={tableKey}
              onChange={_handleInputChange('key')}
              bsStyle={validationState?.key?.[0]}
-             help="Select the lookup table key"
+             help="选择查找表键"
              error={validationState?.key?.[0] === 'error' ? validationState?.key?.[1] : undefined}
              spellCheck={false}
              required />
       <Input id={`lookup-table-parameter-default-value-${identifier}`}
              type="text"
              name="defaultValue"
-             label="Default Value"
-             help="Select a default value in case the lookup result is empty"
+             label="默认值"
+             help="如果查找结果为空，请选择默认值"
              defaultValue={defaultValue}
              spellCheck={false}
              onChange={_handleInputChange('defaultValue')} />
@@ -109,32 +109,27 @@ const LookupTableParameterEdit = ({
       <Panel id="lookup-table-parameter-help" defaultExpanded={defaultExpandHelp}>
         <Panel.Heading>
           <Panel.Title toggle>
-            How to use lookup table parameters
+            如何使用查找表参数
           </Panel.Title>
         </Panel.Heading>
         <Panel.Collapse>
           <Panel.Body>
-            <h5>General Usage</h5>
+            <h5>常规用法</h5>
             <p>
-              After declaring it, the parameter
+              声明后，该参数
               <StyledInlineCode>{parameterSyntax}</StyledInlineCode>
-              in your query, will be replaced with the list of results from the lookup table.
-              The list of results will be presented in the form of a Lucene BooleanQuery. E.g.:
+              在您的查询中，将被查找表的结果列表替换。结果列表将以 Lucene BooleanQuery 的形式呈现。例如：
               <StyledInlineCode>(&quot;foo&quot; OR &quot;bar&quot; OR &quot;baz&quot;)</StyledInlineCode>
             </p>
-            <h5>Behaviour on empty lookup result list</h5>
+            <h5>查找结果列表为空时的行为</h5>
             <p>
-              The event definition query is only executed if a value for the parameter is present.
-              If the lookup result is empty, the execution will be skipped and treated as if the <i>Search Query</i> found
-              no messages. If an execution is desired a <i>Default Value</i> that yields the desired search result
-              needs to be provided. For example, (depending on the use case) a wildcard like
+              仅当存在参数的值时才会执行事件定义查询。如果查找结果为空，则跳过执行，并视为 <i>搜索查询</i> 未找到消息。如果需要执行，请 <i>默认值</i> 需要提供能产生预期搜索结果的内容。例如（取决于用例），可以使用通配符，如
               <StyledInlineCode>*</StyledInlineCode>
-              can be a meaningful Default Value.
+              可以是一个有意义的默认值。
             </p>
-            <h5>Limitations</h5>
+            <h5>限制条件</h5>
             <p>
-              Please note that maximum number of supported results is 1024. If the lookup table returns
-              more results, the query is not executed.
+              请注意，支持的最大结果数为 1024。如果查找表返回更多结果，则不执行查询。
             </p>
           </Panel.Body>
         </Panel.Collapse>

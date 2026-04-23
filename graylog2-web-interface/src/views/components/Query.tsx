@@ -38,29 +38,29 @@ const NoWidgetsInfo = () => (
   <StyledJumbotron>
     <h2>
       <IfDashboard>
-        This dashboard has no widgets yet
+        此仪表盘尚无小部件
       </IfDashboard>
       <IfSearch>
-        There are no widgets defined to visualize the search result
+        未定义用于可视化搜索结果的组件
       </IfSearch>
     </h2>
     <br />
     <p>
-      Create a new widget by selecting a widget type in the left sidebar section &quot;Create&quot;.<br />
+      通过在左侧边栏“创建”部分选择一个小部件类型来创建一个新的小部件。<br />
     </p>
     <p>
-      A few tips for creating searches and dashboards
+      创建搜索和仪表盘的一些提示
     </p>
     <ul>
-      <li><p>1. Start with a <b>question</b> you want to answer. Define the problem you want to solve.</p></li>
-      <li><p>2. <b>Limit</b> the data to only the data points you want to see.</p></li>
-      <li><p>3. <b>Visualize</b> the data. Does it answer your question?</p></li>
+      <li><p>1. 从...开始 <b>question</b> 您希望回答的问题。请定义您想要解决的问题。</p></li>
+      <li><p>2. <b>限制</b> 数据仅显示您想要查看的数据点。</p></li>
+      <li><p>3. <b>可视化</b> 数据。它回答了您的问题吗？</p></li>
       <IfDashboard>
-        <li><p>4. <b>Share</b> the dashboard with your colleagues. Prepare it for <b>reuse</b> by using parameters (contained in <a href="https://www.graylog.org/graylog-enterprise-edition" target="_blank" rel="noopener noreferrer">Graylog Enterprise</a>).</p></li>
+        <li><p>4. <b>共享</b> 与您的同事一起使用仪表盘。为其准备 <b>reuse</b> 通过使用参数（包含在 <a href="https://www.graylog.org/graylog-enterprise-edition" target="_blank" rel="noopener noreferrer">Graylog 企业版</a>).</p></li>
       </IfDashboard>
     </ul>
     <p>
-      You can also have a look at the <DocumentationLink page={DocsHelper.PAGES.DASHBOARDS} text="documentation" />, to learn more about the widget creation.
+      您也可以查看 <DocumentationLink page={DocsHelper.PAGES.DASHBOARDS} text="documentation" />，以了解更多关于小部件创建的信息。
     </p>
   </StyledJumbotron>
 );

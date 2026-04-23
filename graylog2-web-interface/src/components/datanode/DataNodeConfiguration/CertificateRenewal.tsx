@@ -61,8 +61,8 @@ const useDataNodes = () => {
     queryKey: ['data-nodes', 'overview'],
     queryFn: fetchDataNodes,
     onError: (errorThrown) => {
-      UserNotification.error(`Loading Data Nodes failed with status: ${errorThrown}`,
-        'Could not load streams');
+      UserNotification.error(`加载数据节点失败，状态：${errorThrown}`,
+        '无法加载数据流');
     },
     keepPreviousData: true,
     refetchInterval: 3000,
@@ -123,10 +123,10 @@ export const CertRenewalButton = ({ nodeId, status }: { nodeId: string, status: 
 
     fetch('POST', qualifyUrl(`/certrenewal/${nodeId}`))
       .then(() => {
-        UserNotification.success(`Certificate ${successActionTitle} successfully`);
+        UserNotification.success(`证书 ${successActionTitle} 成功`);
       })
       .catch((error) => {
-        UserNotification.error(`Certificate ${errorActionTitle} failed with error: ${error}`);
+        UserNotification.error(`证书 ${errorActionTitle} 失败，错误：${error}`);
       })
       .finally(() => {
         setIsRenewing(false);
@@ -151,11 +151,9 @@ const CertificateRenewal = () => {
 
   return (
     <div>
-      <h2>Certificate Renewal & Provisioning</h2>
+      <h2>证书更新与配置</h2>
       <p>
-        Here you can manually trigger the certificate renewal or provisioning for Graylog Data Nodes.
-        It is only necessary to manually provision certificates when the renewal policy mode &quot;Manual&quot; is configured and
-        Data Nodes have been started after the initial certificate provisioning.
+        您可以在这里手动触发 Graylog 数据节点的证书续期或配置。仅在续期策略模式配置为“手动”且数据节点在初始证书配置后已启动时，才需要手动配置证书。
       </p>
 
       {!!sortedDataNodes?.length && (
@@ -174,12 +172,12 @@ const CertificateRenewal = () => {
                   <DataNodeBadge status={status} nodeId={short_node_id} transportAddress={transport_address} />
                 </NodeIdColumn>
                 <DataNodeInfos>
-                  <span title="Transport address">{transport_address}</span>{' – '}
-                  <span title="Hostname">{hostname}</span>
+                  <span title="传输地址">{transport_address}</span>{' – '}
+                  <span title="主机名">{hostname}</span>
                   {error_msg && <Error message={error_msg} />}
                 </DataNodeInfos>
                 <RightCol>
-                  {cert_valid_until && (<span title={cert_valid_until}>valid until {moment(cert_valid_until).from(moment())}{' '}</span>)}
+                  {cert_valid_until && (<span title={cert_valid_until}>有效期至 {moment(cert_valid_until).from(moment())}{' '}</span>)}
                   <CertRenewalButton nodeId={node_id} status={status} />
                 </RightCol>
               </ListGroupItem>
@@ -190,7 +188,7 @@ const CertificateRenewal = () => {
       {isInitialLoadingDataNodes && <Spinner />}
       {(!sortedDataNodes?.length && !isInitialLoadingDataNodes) && (
         <Alert>
-          No Data Nodes have been found.
+          未找到数据节点。
         </Alert>
       )}
     </div>

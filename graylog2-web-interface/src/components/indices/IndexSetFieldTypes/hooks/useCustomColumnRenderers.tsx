@@ -40,7 +40,7 @@ const useCustomColumnRenderers = () => {
       },
       is_reserved: {
         renderCell: (isReserved: boolean) => (isReserved
-          ? <Icon title="Field has reserved field type" name="check" /> : null),
+          ? <Icon title="字段具有保留字段类型" name="check" /> : null),
         staticWidth: 120,
       },
     },

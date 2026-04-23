@@ -56,9 +56,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
     if (connections.length === 0) {
       return (
         <ConnectionWarning bsStyle="danger">
-          This pipeline is currently not connected to any streams. You have to connect a pipeline to at least one
-          stream to make it process incoming messages. Note that this is not required if you intend to use this
-          pipeline only for search result transformation using decorators.
+          此处理管道当前未连接到任何数据流。您必须将处理管道连接到至少一个数据流才能使其处理传入的消息。请注意，如果您仅打算使用此处理管道通过装饰器进行搜索结果转换，则不需要此操作。
         </ConnectionWarning>
       );
     }
@@ -95,7 +93,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
 
     return (
       <span>
-        This pipeline is processing messages from the{' '}
+        此处理管道正在处理来自{' '}
         <Pluralize singular="stream" plural="streams" value={formattedStreams.length} />{' '}
         {streamList}.
       </span>
@@ -131,7 +129,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
                                      streams={streams}
                                      save={onConnectionsChange} />
           </div>
-          <h2>Pipeline connections</h2>
+          <h2>处理管道连接</h2>
           <StyledP>
             <PipelineConnectionsList pipeline={pipeline}
                                      connections={connections}
@@ -147,10 +145,10 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
           <div className="pull-right">
             <StageForm key={stageKey} pipeline={pipeline} create save={_saveStage} />
           </div>
-          <h2>Pipeline Stages</h2>
+          <h2>处理管道阶段</h2>
           <StyledP>
-            Stages are groups of conditions and actions which need to run in order, and provide the necessary{' '}
-            control flow to decide whether or not to run the rest of a pipeline.
+            阶段是条件和操作的分组，需按顺序运行，并提供必要的{' '}
+            用于决定是否运行处理管道其余部分的控制流。
           </StyledP>
         </Col>
       </StyledRow>

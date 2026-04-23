@@ -88,7 +88,7 @@ public class DeflectorResource extends RestResource {
 
     @POST
     @Timed
-    @ApiOperation(value = "Cycle deflector to new/next index")
+    @ApiOperation(value = "将重定向器循环到新/下一个索引")
     @RequiresPermissions(RestPermissions.DEFLECTOR_CYCLE)
     @Path("/cycle")
     @RestrictToLeader
@@ -108,7 +108,7 @@ public class DeflectorResource extends RestResource {
 
     @POST
     @Timed
-    @ApiOperation(value = "Cycle deflector to new/next index in index set")
+    @ApiOperation(value = "将重定向器循环到索引集中的新/下一个索引")
     @RequiresPermissions(RestPermissions.DEFLECTOR_CYCLE)
     @Path("/{indexSetId}/cycle")
     @RestrictToLeader

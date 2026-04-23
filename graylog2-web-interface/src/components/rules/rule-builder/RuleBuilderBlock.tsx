@@ -243,12 +243,12 @@ const RuleBuilderBlock = ({
                             type={type} />
           {Boolean(insertMode) && (
             <Modal show
-                   title="insert rule action"
+                   title="插入规则操作"
                    bsSize="lg"
                    enforceFocus
                    onHide={resetInsertBlock}>
               <Modal.Header closeButton>
-                <Modal.Title>Insert new action {insertMode} action N°{order + 1}</Modal.Title>
+                <Modal.Title>插入新操作 {insertMode} 操作编号{order + 1}</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <RuleBlockForm onAdd={onInsert}

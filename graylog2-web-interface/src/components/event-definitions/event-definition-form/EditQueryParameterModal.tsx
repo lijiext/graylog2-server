@@ -141,11 +141,11 @@ class EditQueryParameterModal extends React.Component<Props, State> {
         </Button>
 
         <BootstrapModalForm show={showModal}
-                            title={`Declare Query Parameter "${queryParameter.name}" from Lookup Table`}
+                            title={`从查找表声明查询参数 "${queryParameter.name}"`}
                             data-telemetry-title="Declare Query Parameter from Lookup Table"
                             onSubmitForm={this._saved}
                             onCancel={this._cleanState}
-                            submitButtonText="Save">
+                            submitButtonText="保存">
           <LookupTableParameterEdit validationState={validationState}
                                     identifier={queryParameter.name}
                                     parameter={queryParameter}

@@ -36,8 +36,8 @@ const fetchLastOpen = async ({ page }: RequestQuery): Promise<PaginatedLastOpene
 
 const useLastOpened = (pagination: RequestQuery): { data: PaginatedLastOpened, isFetching: boolean } => useQuery([LAST_OPEN_QUERY_KEY, pagination], () => fetchLastOpen(pagination), {
   onError: (errorThrown) => {
-    UserNotification.error(`Loading last opened items failed with status: ${errorThrown}`,
-      'Could not load last opened items');
+    UserNotification.error(`加载最近打开的项失败，状态码：${errorThrown}`,
+      '无法加载最近打开的项目');
   },
   retry: 0,
   initialData: {

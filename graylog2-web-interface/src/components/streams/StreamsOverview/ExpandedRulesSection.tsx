@@ -54,7 +54,7 @@ type Props = {
 const ExpandedRulesSection = ({ stream }: Props) => (
   <>
     <p>
-      Must match {verbalMatchingType(stream.matching_type)} of the {stream.rules.length} configured stream <Pluralize value={stream.rules.length} plural="rules" singular="rule" />.
+      必须匹配 {verbalMatchingType(stream.matching_type)} 的 {stream.rules.length} 已配置的数据流 <Pluralize value={stream.rules.length} plural="rules" singular="rule" />.
     </p>
     <StreamRuleList stream={stream} />
   </>

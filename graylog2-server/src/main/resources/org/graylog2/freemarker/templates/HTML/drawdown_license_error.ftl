@@ -1,8 +1,8 @@
-<#if _title>Error during drawdown license checkout!</#if>
+<#if _title>签出许可证时发生错误！</#if>
 
 <#if _description>
 <span>
-There was a checkout error for license with id: ${id}. Details:
+ID 为 ${id} 的许可证签出失败。详细信息：
 ${error_message}
 </span>
 </#if>

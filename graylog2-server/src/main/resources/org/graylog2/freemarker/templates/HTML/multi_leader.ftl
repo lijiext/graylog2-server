@@ -1,8 +1,5 @@
-<#if _title>Multiple Graylog server leaders in the cluster</#if>
+<#if _title>集群中存在多个 Graylog 服务器主节点</#if>
 
 <#if _description><span>
-There were multiple Graylog server instances configured as leader in your Graylog cluster. The cluster handles
-this automatically by launching new nodes as followers if there already is a leader but you should still fix this.
-Check the graylog.conf of every node and make sure that only one instance has  <code>is_leader = true</code>. Close this
-notification if you think you resolved the problem. It will pop back up if you start a second leader node again.
+您的 Graylog 集群中配置了多个作为主节点的 Graylog 服务器实例。集群会自动处理此情况：如果已存在主节点，则会将新启动的节点作为从节点。但仍建议您修复此问题。请检查每个节点的 graylog.conf 文件，确保仅有一个实例设置了 <code>is_leader = true</code>。如果您认为问题已解决，可关闭此通知。若再次启动第二个主节点，该通知将重新弹出。
 </span></#if>

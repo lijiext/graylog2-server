@@ -26,16 +26,16 @@ const ExecutionInfo = () => {
   const result = useAppSelector(selectCurrentQueryResults);
 
   if (isEmpty(result)) {
-    return <i>No query executed yet.</i>;
+    return <i>尚未执行查询。</i>;
   }
 
   const total = result?.searchTypes && Object.values(result?.searchTypes)?.find((e) => e.total)?.total;
 
   return (
     <i>
-      Query executed in{' '}
-      {numeral(result?.duration).format('0,0')}ms at <Timestamp dateTime={result?.timestamp} />
-      {' '}Total results: {numeral(total).format('0,0')}
+      查询执行时间{' '}
+      {numeral(result?.duration).format('0,0')}毫秒 <Timestamp dateTime={result?.timestamp} />
+      {' '}总结果数： {numeral(total).format('0,0')}
     </i>
   );
 };

@@ -106,7 +106,7 @@ public class DocumentationResource extends RestResource {
     @ApiOperation(value = "Get detailed API documentation of a single resource")
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{route: .+}")
-    public Response route(@ApiParam(name = "route", value = "Route to fetch. For example /system", required = true)
+    public Response route(@ApiParam(name = "route", value = "要获取的路由。例如 /system", required = true)
                           @PathParam("route") String route,
                           @Context HttpHeaders httpHeaders) {
         // If the documentation was requested from "cluster global mode", use the HttpExternalUri for the baseUri.

@@ -25,8 +25,8 @@ import type { WizardFormValues, AuthBackendMeta } from './BackendWizard/BackendW
 
 export default (payload: WizardSubmitPayload, formValues: WizardFormValues, serviceType: $PropertyType<AuthBackendMeta, 'serviceType'>, shouldUpdateGroupSync: boolean | undefined = true) => {
   const enterpriseGroupSyncPlugin = getEnterpriseGroupSyncPlugin();
-  const notifyOnSuccess = () => UserNotification.success('Authentication service was created successfully.', 'Success');
-  const notifyOnError = (error) => UserNotification.error(`Creating authentication service failed with status: ${error}`, 'Error');
+  const notifyOnSuccess = () => UserNotification.success('认证服务已成功创建。', '成功');
+  const notifyOnError = (error) => UserNotification.error(`创建认证服务失败，状态：${error}`, '错误');
 
   return AuthenticationActions.create(payload).then((result) => {
     if (result.backend && formValues.synchronizeGroups && enterpriseGroupSyncPlugin && shouldUpdateGroupSync) {

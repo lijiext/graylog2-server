@@ -56,20 +56,20 @@ const MigrationWelcomeStep = ({ currentStep, onTriggerStep, hideActions }: Migra
       <Col md={isRemoteReindexingEnabled ? 6 : 12}>
         {isElasticsearch && !isRemoteReindexingEnabled && (
           <Alert bsStyle="warning">
-            Incompatible search backend. Please upgrade to OpenSearch to be able to use the migration wizard.
+            不兼容的搜索后端。请升级至 OpenSearch 以使用迁移向导。
           </Alert>
         )}
         <MigrationError errorMessage={currentStep.error_message} />
-        <Headline>Data Nodes Migration</Headline>
+        <Headline>数据节点迁移</Headline>
         <p>
-          The Graylog Data Node is a management component designed to configure and optimize OpenSearch for use with Graylog, reducing administrative overhead and simplifying future updates.
+          Graylog 数据节点是一个管理组件，旨在配置和优化 OpenSearch 以供 Graylog 使用，从而减少管理开销并简化未来的更新。
         </p>
-        <p>Deployments earlier than v5.2 or that opted to not install with a Data Node will need to migrate the message databases to Data Nodes.</p>
+        <p>v5.2 之前的部署，或选择不随数据节点安装的部署，需要将消息数据库迁移到数据节点。</p>
         <p>
-          This migration tool will check the compatibility of your components and guide you through to migrate your existing OpenSearch data to a Data Node.<br />
+          此迁移工具将检查您组件的兼容性，并指导您将现有的 OpenSearch 数据迁移到数据节点。<br />
         </p>
-        <p>Migrating to Data Node will require some steps to be performed on the OS, within your current OS/ES cluster, and in your configuration files.</p>
-        <p>You can get more information on the Data Node migration <DocumentationLink page="graylog-data-node" text="documentation" />.</p>
+        <p>迁移到数据节点需要在操作系统、当前操作系统/ES 集群以及配置文件中执行某些步骤。</p>
+        <p>您可以获取有关数据节点迁移的更多信息 <DocumentationLink page="graylog-data-node" text="documentation" />.</p>
         <br />
         <MigrationDatanodeList />
         {!(isElasticsearch && !isRemoteReindexingEnabled) && (
@@ -80,32 +80,23 @@ const MigrationWelcomeStep = ({ currentStep, onTriggerStep, hideActions }: Migra
         <Col md={6}>
           <StyledHelpPanel bsStyle="info">
             <Panel.Heading>
-              <Panel.Title componentClass="h3"><Icon name="info" /> Methods for migration</Panel.Title>
+              <Panel.Title componentClass="h3"><Icon name="info" /> 迁移方法</Panel.Title>
             </Panel.Heading>
             <Panel.Body>
               <p>
-                During the migration, you can choose between two options for migrating your existing ElasticSearch or OpenSearch data to the data nodes.
-                You should choose between them based on your individual prerequisites and requirements.
+                在迁移过程中，您可以选择两种方案将现有的 Elasticsearch 或 OpenSearch 数据迁移到数据节点。您应该根据个人的前提条件和要求在两者之间做出选择。
               </p>
               <p>
-                If you are already running <code>OpenSearch (1.x or 2.x)</code> as your search backend, you can choose <code>in-place migration</code>.
-                In this migration scenario, the data node’s OpenSearch will use the existing data directory of OpenSearch to serve all data previously available in your existing OpenSearch.
-                This is the recommended method if you want to quickly migrate to data node.
+                如果您正在运行 <code>OpenSearch (1.x 或 2.x)</code> 作为您的搜索后端，您可以选择 <code>就地迁移</code>。在此迁移场景中，数据节点的 OpenSearch 将使用现有的 OpenSearch 数据目录，来提供以前现有 OpenSearch 中可用的所有数据。如果您想快速迁移到数据节点，这是推荐的方法。
               </p>
               <p>
-                If you want to selectively migrate data (e.g. if you use your search backend non-exclusively for Graylog),
-                you should choose the <code>remote reindexing migration</code>.
-                In this scenario, all data will be copied from your existing search backend to data node’s OpenSearch.
-                Depending on your setup, this can take some time and imposes additional disk space for the copied data to be available.
-                During the remote reindexing, Graylog is ingesting data into data node and can be used,
-                but will only serve the data from the old search backend as it becomes available.
+                如果您希望选择性迁移数据（例如，如果您非独占地使用搜索后端供 Graylog 使用），您应选择 <code>远程重新索引迁移</code>。在此场景中，所有数据都将从现有的搜索后端复制到数据节点的 OpenSearch。根据您的设置，这可能需要一些时间，并且会为复制的数据占用额外的磁盘空间。在远程重新索引期间，Graylog 正在向数据节点摄取数据并可以使用，但只有当旧搜索后端的数据变为可用时，才会提供这些数据。
               </p>
               <p>
-                If you are running <code>ElasticSearch</code> as your search backend <code>remote reindexing migration</code> will automatically be chosen.
+                如果您正在运行 <code>ElasticSearch</code> 作为您的搜索后端 <code>远程重新索引迁移</code> 将自动选择。
               </p>
               <p>
-                If you don’t plan to migrate any existing data or only want to migrate a small subset of data
-                we recommend you choose the remote reindexing migration and either skip the data migration or choose only the selected indices for migration.
+                如果您不打算迁移任何现有数据，或仅希望迁移一小部分数据，我们建议您选择远程重新索引迁移，并跳过数据迁移，或仅选择要迁移的选定索引。
               </p>
             </Panel.Body>
           </StyledHelpPanel>

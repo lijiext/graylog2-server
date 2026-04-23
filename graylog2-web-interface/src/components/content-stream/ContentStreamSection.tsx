@@ -107,7 +107,7 @@ const ContentStreamSection = () => {
 
   return (
     <SectionGrid $columns="2fr 1fr">
-      <StyledNewsSectionComponent title="News"
+      <StyledNewsSectionComponent title="新闻"
                                   $enabled={contentStreamEnabled}
                                   headerActions={(
                                     <ToggleActionButton onClick={toggleNews}
@@ -120,7 +120,7 @@ const ContentStreamSection = () => {
           </CarouselProvider>
         )}
       </StyledNewsSectionComponent>
-      <StyledReleaseSectionComponent title="Releases"
+      <StyledReleaseSectionComponent title="发布版本"
                                      $enabled={releasesSectionEnabled}
                                      headerActions={(
                                        <ToggleActionButton onClick={toggleRelease}

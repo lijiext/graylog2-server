@@ -123,7 +123,7 @@ const GranteesList = ({ activeShares, onDelete, onCapabilityChange, entityType, 
           }).toArray()}
         </List>
       ) : (
-        <Alert>This {entityTypeTitle || entityType} has no collaborators.</Alert>
+        <Alert>此 {entityTypeTitle || entityType} 无协作者。</Alert>
       )}
       <PaginationWrapper>
         <StyledPagination totalPages={totalPages}

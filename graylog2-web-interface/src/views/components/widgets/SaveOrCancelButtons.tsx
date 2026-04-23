@@ -47,7 +47,7 @@ const SaveOrCancelButtons = ({ onSubmit, onCancel }: Props) => {
   return (
     <ModalSubmit isAsyncSubmit
                  submitButtonText={UPDATE_WIDGET_BTN_TEXT}
-                 submitLoadingText="Updating widget..."
+                 submitLoadingText="正在更新小部件..."
                  onSubmit={_onSubmit}
                  submitButtonType="button"
                  disabledSubmit={disabledSubmit}

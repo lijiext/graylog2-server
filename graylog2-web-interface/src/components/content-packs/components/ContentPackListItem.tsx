@@ -53,7 +53,7 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
   const metadata = contentPackMetadata[pack.id] || {};
   const installed = Object.keys(metadata).find((rev) => metadata[rev].installation_count > 0);
   const states = installed ? ['installed'] : [];
-  const updateButton = states.includes('updatable') ? <Button bsSize="small" bsStyle="primary">Update</Button> : '';
+  const updateButton = states.includes('updatable') ? <Button bsSize="small" bsStyle="primary">更新</Button> : '';
 
   const handleInstall = () => setShowInstallModal(true);
 
@@ -77,28 +77,27 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
         <Col md={9}>
           <h3><Link to={Routes.SYSTEM.CONTENTPACKS.show(pack.id)}>{pack.name}</Link>
             {' '}
-            <small>Latest
-              Version: {pack.rev} <ContentPackStatus contentPackId={pack.id} states={states} />
+            <small>最新版本： {pack.rev} <ContentPackStatus contentPackId={pack.id} states={states} />
             </small>
           </h3>
         </Col>
         <Col md={3} className="text-right">
           <ButtonToolbar className="pull-right">
             {updateButton}
-            <Button bsSize="small" onClick={handleInstall}>Install</Button>
-            <DropdownButton id={`more-actions-${pack.id}`} title="More Actions" bsSize="small" pullRight>
+            <Button bsSize="small" onClick={handleInstall}>安装</Button>
+            <DropdownButton id={`more-actions-${pack.id}`} title="更多操作" bsSize="small" pullRight>
               <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.show(pack.id)}>
-                <MenuItem>Show</MenuItem>
+                <MenuItem>显示</MenuItem>
               </LinkContainer>
               <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.edit(encodeURIComponent(pack.id), encodeURIComponent(pack.rev))}>
-                <MenuItem>Create New Version</MenuItem>
+                <MenuItem>创建新版本</MenuItem>
               </LinkContainer>
               <MenuItem onSelect={handleDownload}>
-                Download
+                下载
               </MenuItem>
               <MenuItem divider />
               <MenuItem onSelect={handleDeleteAllVersions}>
-                Delete All Versions
+                删除所有版本
               </MenuItem>
             </DropdownButton>
           </ButtonToolbar>
@@ -114,7 +113,7 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
                                onHide={onCloseInstallModal}
                                bsSize="large">
           <Modal.Header closeButton>
-            <Modal.Title>Install Content Pack</Modal.Title>
+            <Modal.Title>安装内容包</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <ContentPackInstall ref={installRef}
@@ -122,7 +121,7 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
                                 onInstall={onInstallProp} />
           </Modal.Body>
           <Modal.Footer>
-            <ModalSubmit submitButtonText="Install" onSubmit={onInstall} onCancel={onCloseInstallModal} />
+            <ModalSubmit submitButtonText="安装" onSubmit={onInstall} onCancel={onCloseInstallModal} />
           </Modal.Footer>
         </BootstrapModalWrapper>
       )}

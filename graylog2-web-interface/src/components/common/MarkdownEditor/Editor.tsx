@@ -94,8 +94,8 @@ function Editor({ id, value, height, readOnly, onChange, onFullMode }: Props) {
     <>
       <div style={{ position: 'relative' }}>
         <TabsRow>
-          <Tab $active={!showPreview} onClick={() => setShowPreview(false)}>Edit</Tab>
-          <Tab $active={showPreview} onClick={() => setShowPreview(true)}>Preview</Tab>
+          <Tab $active={!showPreview} onClick={() => setShowPreview(false)}>编辑</Tab>
+          <Tab $active={showPreview} onClick={() => setShowPreview(true)}>预览</Tab>
         </TabsRow>
         {!showPreview && (
           <MDBaseEditor id={id}

@@ -60,8 +60,8 @@ const useStreams = (searchParams: SearchParams, { enabled }: Options = { enabled
     () => fetchStreams(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading streams failed with status: ${errorThrown}`,
-          'Could not load streams');
+        UserNotification.error(`加载数据流失败，状态为：${errorThrown}`,
+          '无法加载数据流');
       },
       keepPreviousData: true,
       enabled,

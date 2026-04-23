@@ -71,7 +71,7 @@ const TableRow = <Entity extends EntityBase>({
   return (
     <tr>
       {displaySelect && (
-        <td aria-label="Select cell">
+        <td aria-label="选择单元格">
           <RowCheckbox onChange={() => toggleEntitySelect(entity.id)}
                        title={title}
                        checked={isSelected}

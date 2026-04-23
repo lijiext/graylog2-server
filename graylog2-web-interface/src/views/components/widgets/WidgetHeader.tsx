@@ -96,7 +96,7 @@ const WidgetHeader = ({
 }: Props) => (
   <Container>
     <Col>
-      {hideDragHandle || <DragHandleContainer className="widget-drag-handle" title={`Drag handle for ${title}`}><WidgetDragHandle name="drag_indicator" /></DragHandleContainer>}
+      {hideDragHandle || <DragHandleContainer className="widget-drag-handle" title={`${title} 的拖动手柄`}><WidgetDragHandle name="drag_indicator" /></DragHandleContainer>}
       {editing ? (
         <TitleInputWrapper>
           <TitleInput type="text"

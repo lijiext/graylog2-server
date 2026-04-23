@@ -49,12 +49,12 @@ const ButtonLabel = () => {
   const { refreshConfig } = useAutoRefresh();
 
   if (!refreshConfig?.enabled) {
-    return <>Not updating</>;
+    return <>未更新</>;
   }
 
   return (
     <>
-      Every <ReadableDuration duration={refreshConfig.interval} />
+      每 <ReadableDuration duration={refreshConfig.interval} />
     </>
   );
 };
@@ -146,7 +146,7 @@ const RefreshControls = ({ disable }: Props) => {
   }, [defaultInterval, dirty, refreshConfig?.enabled, refreshConfig?.interval, sendTelemetry, startAutoRefresh, stopAutoRefresh, submitForm]);
 
   return (
-    <FlexibleButtonGroup aria-label="Refresh Search Controls">
+    <FlexibleButtonGroup aria-label="刷新搜索控件">
       {(refreshConfig?.enabled && !jobIds) && (
         <ProgressAnimation key={`${refreshConfig.interval}`}
                            $animationDuration={refreshConfig.interval}
@@ -171,7 +171,7 @@ const RefreshControls = ({ disable }: Props) => {
               {label}
               {isBelowMinimum && (
                 <HoverForHelp displayLeftMargin>
-                  Interval of <ReadableDuration duration={interval} /> ({interval}) is below configured minimum interval of <ReadableDuration duration={minimumRefreshInterval} /> ({minimumRefreshInterval}).
+                  间隔为 <ReadableDuration duration={interval} /> ({interval}) 低于配置的最小间隔 <ReadableDuration duration={minimumRefreshInterval} /> ({minimumRefreshInterval}).
                 </HoverForHelp>
               )}
             </MenuItem>

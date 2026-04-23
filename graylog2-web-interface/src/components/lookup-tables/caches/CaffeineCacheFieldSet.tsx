@@ -70,13 +70,13 @@ const CaffeineCacheFieldSet = ({ config }: Props, ref: any) => {
     <fieldset ref={ref}>
       <FormikFormGroup type="text"
                        name="config.max_size"
-                       label="* Maximum entries"
+                       label="* 最大条目数"
                        required
                        help={errors.config?.max_size ? null : 'The limit of the number of entries the cache keeps in memory.'}
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9" />
-      <TimeUnitInput label="Expire after access"
-                     help="If enabled, entries are removed from the cache after the specified time from when they were last used."
+      <TimeUnitInput label="访问后过期"
+                     help="如果启用，条目将在上次使用后的指定时间后从缓存中移除。"
                      update={handleUpdate('expire_after_access')}
                      name="config.expire_after_access"
                      unitName="config.expire_after_access_unit"
@@ -85,8 +85,8 @@ const CaffeineCacheFieldSet = ({ config }: Props, ref: any) => {
                      defaultEnabled={config.expire_after_access > 0}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9" />
-      <TimeUnitInput label="Expire after write"
-                     help="If enabled, entries are removed from the cache after the specified time from when they were first used."
+      <TimeUnitInput label="写入后过期"
+                     help="如果启用，条目将在首次使用后的指定时间后从缓存中移除。"
                      update={handleUpdate('expire_after_write')}
                      name="config.expire_after_write"
                      unitName="config.expire_after_write_unit"
@@ -98,13 +98,13 @@ const CaffeineCacheFieldSet = ({ config }: Props, ref: any) => {
       <Input type="checkbox"
              id="ignore_null"
              name="ignore_null"
-             label="Ignore empty results"
+             label="忽略空结果"
              checked={stateConfig.ignore_null}
              onChange={handleIgnoreNullChange}
-             help="When enabled, empty lookup results will be ignored and not cached."
+             help="启用后，空查找结果将被忽略且不予缓存。"
              wrapperClassName="col-md-offset-3 col-md-9" />
-      <TimeUnitInput label="TTL for empty results"
-                     help="Empty results are removed from the cache after the specified time."
+      <TimeUnitInput label="空结果的 TTL"
+                     help="空结果将在指定时间后从缓存中移除。"
                      update={handleUpdate('ttl_empty')}
                      name="config.ttl_empty"
                      unitName="config.ttl_empty_unit"

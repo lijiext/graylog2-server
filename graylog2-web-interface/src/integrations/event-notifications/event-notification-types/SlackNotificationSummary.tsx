@@ -23,7 +23,7 @@ function SlackNotificationSummary({ notification, ...restProps }: SlackNotificat
   return (
     <CommonNotificationSummary {...restProps} notification={notification}>
       <tr>
-        <td>Color</td>
+        <td>颜色</td>
         <td>{notification?.config?.color}</td>
       </tr>
       <tr>
@@ -31,43 +31,43 @@ function SlackNotificationSummary({ notification, ...restProps }: SlackNotificat
         <td>{notification.config.webhook_url}</td>
       </tr>
       <tr>
-        <td>Channel</td>
+        <td>频道</td>
         <td>{notification.config.channel}</td>
       </tr>
       <tr>
-        <td>Include Title</td>
+        <td>包含标题</td>
         <td>{notification.config.include_title}</td>
       </tr>
       <tr>
-        <td>Custom Message</td>
+        <td>自定义消息</td>
         <td>{notification.config.custom_message}</td>
       </tr>
       <tr>
-        <td>Time Zone</td>
+        <td>时区</td>
         <td>{notification.config.time_zone}</td>
       </tr>
       <tr>
-        <td>Message Backlog Limit</td>
+        <td>消息积压限制</td>
         <td>{notification.config.backlog_size}</td>
       </tr>
       <tr>
-        <td>User Name</td>
+        <td>用户名</td>
         <td>{notification.config.user_name}</td>
       </tr>
       <tr>
-        <td>Notify Channel</td>
+        <td>通知通道</td>
         <td>{notification.config.notify_channel ? 'Yes' : 'No'}</td>
       </tr>
       <tr>
-        <td>Link Names</td>
+        <td>链接名称</td>
         <td>{notification.config.link_names ? 'Yes' : 'No'}</td>
       </tr>
       <tr>
-        <td>Icon URL</td>
+        <td>图标 URL</td>
         <td>{notification.config.icon_url}</td>
       </tr>
       <tr>
-        <td>Icon Emoji</td>
+        <td>图标表情</td>
         <td>{notification.config.icon_emoji}</td>
       </tr>
     </CommonNotificationSummary>

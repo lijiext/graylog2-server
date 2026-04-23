@@ -182,7 +182,7 @@ const RuleBlockForm = ({
                 <Col md={12}>
                   <Select id={`existingBlock-select-${type}`}
                           name={`existingBlock-select-${type}`}
-                          placeholder={`Add ${type}`}
+                          placeholder={`添加 ${type}`}
                           options={options}
                           optionRenderer={optionRenderer}
                           clearable={false}
@@ -202,12 +202,12 @@ const RuleBlockForm = ({
                         <OverlayTrigger trigger="click"
                                         rootClose
                                         placement="right"
-                                        title="Function Syntax Help"
+                                        title="函数语法帮助"
                                         width={700}
                                         overlay={<RuleHelperTable entries={[selectedBlockDict]} expanded={{ [selectedBlockDict.name]: true }} />}>
                           <Button bsStyle="link">
                             <Icon name="help"
-                                  title="Function Syntax Help"
+                                  title="函数语法帮助"
                                   data-testid="funcSyntaxHelpIcon" />
                           </Button>
                         </OverlayTrigger>

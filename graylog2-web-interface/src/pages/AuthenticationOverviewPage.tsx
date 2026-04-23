@@ -30,9 +30,9 @@ const AuthenticationOverviewPage = () => {
   const { finishedLoading, activeBackend, backendsTotal } = useActiveBackend([AuthenticationActions.setActiveBackend]);
 
   return (
-    <DocumentTitle title="All Authentication Services">
+    <DocumentTitle title="所有认证服务">
       <AuthenticationPageNavigation />
-      <PageHeader title="All Authentication Services"
+      <PageHeader title="所有认证服务"
                   actions={(
                     <BackendActionLinks activeBackend={activeBackend}
                                         finishedLoading={finishedLoading} />
@@ -41,13 +41,13 @@ const AuthenticationOverviewPage = () => {
                     title: 'Authentication documentation',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
-        <span>Configure Graylog&apos;s authentication services of this Graylog cluster.</span>
+        <span>配置此 Graylog 集群的 Graylog 认证服务。</span>
       </PageHeader>
       {!!(backendsTotal && backendsTotal >= 1 && !activeBackend) && (
         <Row className="content">
           <Col xs={12}>
             <Alert bsStyle="warning">
-              None of the configured authentication services is currently active.
+              当前未激活任何配置的认证服务。
             </Alert>
           </Col>
         </Row>

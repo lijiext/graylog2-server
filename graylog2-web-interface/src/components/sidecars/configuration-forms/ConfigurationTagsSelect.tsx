@@ -37,7 +37,7 @@ const ConfigurationTagsSelect = ({
     <MultiSelect options={tagsOptions}
                  value={tagsValue}
                  onChange={onChange}
-                 placeholder="Choose tags..."
+                 placeholder="选择标签..."
                  allowCreate />
   );
 };

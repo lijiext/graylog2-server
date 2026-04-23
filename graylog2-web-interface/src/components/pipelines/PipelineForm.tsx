@@ -73,19 +73,19 @@ const PipelineForm = ({ pipeline, create, modal, save, onCancel }: Props) => {
       <Input type="text"
              id="title"
              name="title"
-             label="Title"
+             label="标题"
              autoFocus
              required
              onChange={_onChange}
-             help="Pipeline name."
+             help="处理管道名称。"
              value={nextPipeline.title} />
 
       <Input type="text"
              id="description"
              name="description"
-             label="Description"
+             label="描述"
              onChange={_onChange}
-             help="Pipeline description."
+             help="处理管道描述。"
              value={nextPipeline.description} />
     </fieldset>
   );
@@ -99,7 +99,7 @@ const PipelineForm = ({ pipeline, create, modal, save, onCancel }: Props) => {
           {create ? 'Add new pipeline' : 'Edit pipeline details'}
         </Button>
         <BootstrapModalForm show={showModal}
-                            title={`${create ? 'Add new' : 'Edit'} pipeline ${nextPipeline.title}`}
+                            title={`${create ? 'Add new' : 'Edit'} 处理管道 ${nextPipeline.title}`}
                             data-telemetry-title={`${create ? 'Add new' : 'Edit'} pipeline`}
                             onSubmitForm={_handleSubmit}
                             onCancel={_closeModal}

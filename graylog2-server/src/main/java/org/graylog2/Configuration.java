@@ -512,7 +512,7 @@ public class Configuration extends CaConfiguration {
     public void validatePasswordSecret() throws ValidationException {
         final String passwordSecret = getPasswordSecret();
         if (passwordSecret == null || passwordSecret.length() < 16) {
-            throw new ValidationException("The minimum length for \"password_secret\" is 16 characters.");
+            throw new ValidationException("\"password_secret\"的最小长度为 16 个字符。");
         }
     }
 
@@ -520,7 +520,7 @@ public class Configuration extends CaConfiguration {
     @SuppressWarnings("unused")
     public void validateRootUser() throws ValidationException {
         if (getRootPasswordSha2() == null && !isRootUserDisabled()) {
-            throw new ValidationException("Required parameter \"root_password_sha2\" not found.");
+            throw new ValidationException("未找到必需参数 \"root_password_sha2\"。");
         }
     }
 
@@ -530,13 +530,13 @@ public class Configuration extends CaConfiguration {
             return;
         }
         if (lockServiceLockTTL.compareTo(MongoLockService.MIN_LOCK_TTL) < 0) {
-            throw new ValidationException("The minimum valid \"lock_service_lock_ttl\" is 60 seconds");
+            throw new ValidationException("\"lock_service_lock_ttl\"的最小有效值为 60 秒");
         }
         if (leaderElectionLockPollingInterval.compareTo(java.time.Duration.ofSeconds(1)) < 0) {
-            throw new ValidationException("The minimum valid \"leader_election_lock_polling_interval\" is 1 second");
+            throw new ValidationException("\"leader_election_lock_polling_interval\"的最小有效值为 1 秒");
         }
         if (lockServiceLockTTL.compareTo(leaderElectionLockPollingInterval) < 1) {
-            throw new ValidationException("The \"leader_election_lock_polling_interval\" needs to be greater than the \"lock_service_lock_ttl\"!");
+            throw new ValidationException("\"leader_election_lock_polling_interval\" 必须大于 \"lock_service_lock_ttl\"！");
         }
     }
 

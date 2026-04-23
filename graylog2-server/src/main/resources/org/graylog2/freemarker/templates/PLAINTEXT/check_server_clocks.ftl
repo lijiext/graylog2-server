@@ -1,9 +1,8 @@
 <#if _title>
-Check the system clocks of your Graylog server nodes
+检查 Graylog 服务器节点的系统时钟
 </#if>
 
 <#if _description>
-A Graylog server node detected a condition where it was deemed to be inactive immediately after being active.
-This usually indicates either a significant jump in system time, e.g. via NTP, or that a second Graylog server node
-is active on a system that has a different system time. Please make sure that the clocks are synchronized.
+Graylog 服务器节点检测到一种情况：节点在活跃后立即被判定为不活跃。
+这通常表明系统时间发生了显著跳变（例如通过 NTP 同步），或者在同一系统上存在另一个具有不同系统时间的 Graylog 服务器节点。请确保所有时钟已同步。
 </#if>

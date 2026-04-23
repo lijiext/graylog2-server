@@ -58,7 +58,7 @@ const CreateContentPackPage = () => {
     ContentPacksActions.create.triggerPromise(contentPack.toJSON())
       .then(
         () => {
-          UserNotification.success('Content pack imported successfully', 'Success!');
+          UserNotification.success('内容包导入成功', '成功！');
           history.push(Routes.SYSTEM.CONTENTPACKS.LIST);
         },
         (response) => {
@@ -91,18 +91,18 @@ const CreateContentPackPage = () => {
   };
 
   return (
-    <DocumentTitle title="Content packs">
+    <DocumentTitle title="内容包">
       <span>
-        <PageHeader title="Create content packs"
+        <PageHeader title="创建内容包"
                     topActions={(
                       <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.LIST}>
-                        <Button bsStyle="info">Content Packs</Button>
+                        <Button bsStyle="info">内容包</Button>
                       </LinkContainer>
                     )}>
           <span>
-            Content packs accelerate the set up process for a specific data source. A content pack can include inputs/extractors, streams, and dashboards.
+            内容包可加速特定数据源的设置过程。内容包可以包含输入端/提取器、数据流和仪表盘。
             <br />
-            Find more content packs in {' '} <a href="https://marketplace.graylog.org/" target="_blank" rel="noopener noreferrer">the Graylog Marketplace</a>.
+            在以下位置查找更多内容包 {' '} <a href="https://marketplace.graylog.org/" target="_blank" rel="noopener noreferrer">Graylog 应用市场</a>.
           </span>
         </PageHeader>
         <ContentPackEdit contentPack={contentPackState.contentPack}

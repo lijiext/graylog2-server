@@ -53,8 +53,8 @@ const useTemplate = (id: string): {
     () => fetchIndexSetTemplate(id),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index set template failed with status: ${errorThrown}`,
-          'Could not load index set template');
+        UserNotification.error(`加载索引集模板失败，状态为：${errorThrown}`,
+          '无法加载索引集模板');
       },
       keepPreviousData: true,
       enabled: !!id,

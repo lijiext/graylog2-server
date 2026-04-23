@@ -35,16 +35,16 @@ const StreamEditPage = () => {
   }
 
   return (
-    <DocumentTitle title={`Rules of Stream ${stream.title}`}>
+    <DocumentTitle title={`数据流 ${stream.title} 的规则`}>
       <div>
-        <PageHeader title={<span>Rules of Stream &quot;{stream.title}&quot;</span>}
+        <PageHeader title={<span>数据流规则 "{stream.title}&quot;</span>}
                     documentationLink={{
                       title: 'Streams documentation',
                       path: DocsHelper.PAGES.STREAMS,
                     }}>
           <span>
-            This screen is dedicated to an easy and comfortable creation and manipulation of stream rules. You can{' '}
-            see the effect configured stream rules have on message matching here.
+            此屏幕专用于轻松舒适地创建和操作数据流规则。您可以{' '}
+            在此查看配置的流规则对消息匹配产生的效果。
           </span>
         </PageHeader>
 
@@ -58,7 +58,7 @@ const StreamEditPage = () => {
           <div className="row content">
             <div className="col-md-12">
               <Alert bsStyle="danger">
-                The default stream cannot be edited.
+                默认数据流无法编辑。
               </Alert>
             </div>
           </div>

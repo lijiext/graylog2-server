@@ -53,12 +53,12 @@ const PreferencesSection = ({ user: { preferences: databasePreferences, readOnly
   } = preferences;
 
   return (
-    <SectionComponent title="Preferences">
-      <ReadOnlyFormGroup label="Search autocompletion" value={enableSmartSearch ?? false} />
-      <ReadOnlyFormGroup label="Update unfocused" value={updateUnfocussed ?? false} />
-      <ReadOnlyFormGroup label="Pin search sidebar" value={searchSidebarIsPinned ?? false} />
-      <ReadOnlyFormGroup label="Pin dashboard sidebar" value={dashboardSidebarIsPinned ?? false} />
-      <ReadOnlyFormGroup label="Theme mode" value={preferences?.[PREFERENCES_THEME_MODE] ?? 'Not configured'} />
+    <SectionComponent title="首选项">
+      <ReadOnlyFormGroup label="搜索自动补全" value={enableSmartSearch ?? false} />
+      <ReadOnlyFormGroup label="更新未聚焦" value={updateUnfocussed ?? false} />
+      <ReadOnlyFormGroup label="固定搜索侧边栏" value={searchSidebarIsPinned ?? false} />
+      <ReadOnlyFormGroup label="固定仪表盘侧边栏" value={dashboardSidebarIsPinned ?? false} />
+      <ReadOnlyFormGroup label="主题模式" value={preferences?.[PREFERENCES_THEME_MODE] ?? 'Not configured'} />
     </SectionComponent>
   );
 };

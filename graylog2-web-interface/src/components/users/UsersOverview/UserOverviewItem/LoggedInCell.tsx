@@ -41,13 +41,13 @@ const LoggedInCell = ({ lastActivity, sessionActive, clientAddress }: Props) => 
                     overlay={sessionActive
                       ? (
                         <>
-                          <div>Last activity: {lastActivity
+                          <div>最后活动： {lastActivity
                             ? <RelativeTime dateTime={lastActivity} /> : '-'}
                           </div>
-                          <div>Client address: {clientAddress ?? '-'}</div>
+                          <div>客户端地址： {clientAddress ?? '-'}</div>
                         </>
                       )
-                      : <>Not logged in</>}
+                      : <>未登录</>}
                     rootClose>
       <StatusIcon active={sessionActive} />
     </OverlayTrigger>

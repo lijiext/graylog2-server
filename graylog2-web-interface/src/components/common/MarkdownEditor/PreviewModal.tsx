@@ -88,12 +88,12 @@ function PreviewModal({ value, show, onClose }: Props) {
     <Backdrop onClick={() => onClose()}>
       <Content onClick={(e: React.BaseSyntheticEvent) => e.stopPropagation()}>
         <Row>
-          <h2 style={{ marginBottom: '1rem' }}>Markdown Preview</h2>
+          <h2 style={{ marginBottom: '1rem' }}>Markdown 预览</h2>
           <CloseIcon name="close" onClick={() => onClose()} />
         </Row>
         <Preview value={value} height={height} show />
         <Row style={{ justifyContent: 'flex-end', marginTop: '1rem' }}>
-          <Button bsStyle="success" role="button" onClick={() => onClose()}>Close</Button>
+          <Button bsStyle="success" role="button" onClick={() => onClose()}>关闭</Button>
         </Row>
       </Content>
     </Backdrop>

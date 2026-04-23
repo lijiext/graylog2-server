@@ -65,11 +65,11 @@ const ClusterSupportBundleOverview = () => {
       <AlignRightCell>
         <DownloadButton bsSize="xsmall"
                         bsStyle="info"
-                        onClick={() => onDownload(bundle.file_name)}>Download
+                        onClick={() => onDownload(bundle.file_name)}>下载
         </DownloadButton>
         <Button bsSize="xsmall"
                 bsStyle="default"
-                onClick={() => setBundleNameToDelete(bundle.file_name)}>Delete
+                onClick={() => setBundleNameToDelete(bundle.file_name)}>删除
         </Button>
       </AlignRightCell>
     </tr>
@@ -80,9 +80,9 @@ const ClusterSupportBundleOverview = () => {
       <Row className="content">
         <Col xs={12}>
           <Header>
-            <h2>Cluster Support Bundle</h2>
+            <h2>集群支持包</h2>
             <Button bsStyle="success" onClick={onCreate} disabled={isCreating}>
-              Create Support Bundle
+              创建支持包
               {isCreating && <LoadingSpinner text="" delay={0} />}
             </Button>
           </Header>
@@ -94,8 +94,8 @@ const ClusterSupportBundleOverview = () => {
               </colgroup>
               <thead>
                 <tr>
-                  <th>Filename</th>
-                  <AlignRightHeadCell>Size</AlignRightHeadCell>
+                  <th>文件名</th>
+                  <AlignRightHeadCell>大小</AlignRightHeadCell>
                 </tr>
               </thead>
               <tbody>
@@ -104,19 +104,19 @@ const ClusterSupportBundleOverview = () => {
             </Table>
           ) : (
             <NoSearchResult>
-              No Support Bundles have been found.
+              未找到任何支持包。
             </NoSearchResult>
           )}
         </Col>
       </Row>
-      <ConfirmDialog title="Delete Support Bundle"
+      <ConfirmDialog title="删除支持包"
                      show={Boolean(bundleNameToDelete)}
                      onConfirm={() => {
                        onDelete(bundleNameToDelete);
                        setBundleNameToDelete(null);
                      }}
                      onCancel={() => setBundleNameToDelete(null)}>
-        <>Are you sure you want to delete <strong>{bundleNameToDelete}</strong>?</>
+        <>您确定要删除 <strong>{bundleNameToDelete}</strong>?</>
       </ConfirmDialog>
     </div>
   );

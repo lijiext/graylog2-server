@@ -66,8 +66,8 @@ const ActionsCell = ({ roleId, roleName, readOnly }: Props) => {
       <ActionsWrapper>
         <IfPermitted permissions={[`roles:edit:${roleName}`]}>
           <LinkContainer to={Routes.SYSTEM.AUTHZROLES.edit(encodeURIComponent(roleId))}>
-            <Button id={`edit-role-${roleId}`} bsSize="xs" title={`Edit role ${roleName}`} type="button">
-              Edit
+            <Button id={`edit-role-${roleId}`} bsSize="xs" title={`编辑角色 ${roleName}`} type="button">
+              编辑
             </Button>
           </LinkContainer>
         </IfPermitted>
@@ -75,7 +75,7 @@ const ActionsCell = ({ roleId, roleName, readOnly }: Props) => {
           <IfPermitted permissions={[`roles:delete:${roleName}`]}>
             <>
               &nbsp;
-              <Button id={`delete-role-${roleId}`} bsStyle="danger" bsSize="xs" title={`Delete role ${roleName}`} onClick={() => _deleteRole(roleId, roleName, setDeleting)} type="button">
+              <Button id={`delete-role-${roleId}`} bsStyle="danger" bsSize="xs" title={`删除角色 ${roleName}`} onClick={() => _deleteRole(roleId, roleName, setDeleting)} type="button">
                 {deleting ? <Spinner text="Deleting" delay={0} /> : 'Delete'}
               </Button>
             </>

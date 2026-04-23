@@ -35,14 +35,14 @@ export const bulkRemoveDataNode = async (entity_ids: string[], selectBackFailedE
     }
 
     if (failures?.length === entity_ids.length) {
-      UserNotification.error(`Removing Data Node failed with status: ${JSON.stringify(failures)}`, 'Could not remove Data Nodes.');
+      UserNotification.error(`移除数据节点失败，状态为：${JSON.stringify(failures)}`, '无法移除数据节点。');
     }
 
     if (successfully_performed) {
-      UserNotification.success(`${successfully_performed} Data Node${successfully_performed > 1 ? 's' : ''} removed successfully.`);
+      UserNotification.success(`${successfully_performed} 数据节点${successfully_performed > 1 ? 's' : ''} 已成功移除。`);
     }
   } catch (errorThrown) {
-    UserNotification.error(`Removing Data Node failed with status: ${errorThrown}`, 'Could not remove Data Nodes.');
+    UserNotification.error(`移除数据节点失败，状态为：${errorThrown}`, '无法移除数据节点。');
   }
 };
 
@@ -57,14 +57,14 @@ export const bulkStartDataNode = async (entity_ids: string[], selectBackFailedEn
     }
 
     if (failures?.length === entity_ids.length) {
-      UserNotification.error(`Starting Data Node failed with status: ${JSON.stringify(failures)}`, 'Could not start Data Nodes.');
+      UserNotification.error(`启动数据节点失败，状态为：${JSON.stringify(failures)}`, '无法启动数据节点。');
     }
 
     if (successfully_performed) {
-      UserNotification.success(`${successfully_performed} Data Node${successfully_performed > 1 ? 's' : ''} started successfully.`);
+      UserNotification.success(`${successfully_performed} 数据节点${successfully_performed > 1 ? 's' : ''} 已成功启动。`);
     }
   } catch (errorThrown) {
-    UserNotification.error(`Starting Data Node failed with status: ${errorThrown}`, 'Could not start Data Nodes.');
+    UserNotification.error(`启动数据节点失败，状态为：${errorThrown}`, '无法启动数据节点。');
   }
 };
 
@@ -79,14 +79,14 @@ export const bulkStopDataNode = async (entity_ids: string[], selectBackFailedEnt
     }
 
     if (failures?.length === entity_ids.length) {
-      UserNotification.error(`Stopping Data Node failed with status: ${JSON.stringify(failures)}`, 'Could not stop Data Nodes.');
+      UserNotification.error(`停止数据节点失败，状态为：${JSON.stringify(failures)}`, '无法停止数据节点。');
     }
 
     if (successfully_performed) {
-      UserNotification.success(`${successfully_performed} Data Node${successfully_performed > 1 ? 's' : ''} stopped successfully.`);
+      UserNotification.success(`${successfully_performed} 数据节点${successfully_performed > 1 ? 's' : ''} 已成功停止。`);
     }
   } catch (errorThrown) {
-    UserNotification.error(`Stopping Data Node failed with status: ${errorThrown}`, 'Could not stop Data Nodes.');
+    UserNotification.error(`停止数据节点失败，状态为：${errorThrown}`, '无法停止数据节点。');
   }
 };
 
@@ -94,9 +94,9 @@ export const removeDataNode = async (datanodeId: string) => {
   try {
     await fetch('DELETE', qualifyUrl(`/datanode/${datanodeId}`));
 
-    UserNotification.success(`Data Node "${datanodeId}" removed successfully.`);
+    UserNotification.success(`数据节点 "${datanodeId}" 已成功移除。`);
   } catch (errorThrown) {
-    UserNotification.error(`Removing Data Node failed with status: ${errorThrown}`, 'Could not remove the Data Node.');
+    UserNotification.error(`移除数据节点失败，状态为：${errorThrown}`, '无法移除该数据节点。');
   }
 };
 
@@ -104,9 +104,9 @@ export const startDataNode = async (datanodeId: string) => {
   try {
     await fetch('POST', qualifyUrl(`/datanode/${datanodeId}/start`));
 
-    UserNotification.success(`Data Node "${datanodeId}" started successfully.`);
+    UserNotification.success(`数据节点 "${datanodeId}" 已成功启动。`);
   } catch (errorThrown) {
-    UserNotification.error(`Starting Data Node failed with status: ${errorThrown}`, 'Could not start the Data Node.');
+    UserNotification.error(`启动数据节点失败，状态为：${errorThrown}`, '无法启动该数据节点。');
   }
 };
 
@@ -114,9 +114,9 @@ export const stopDataNode = async (datanodeId: string) => {
   try {
     await fetch('POST', qualifyUrl(`/datanode/${datanodeId}/stop`));
 
-    UserNotification.success(`Data Node "${datanodeId}" stopped successfully.`);
+    UserNotification.success(`数据节点 "${datanodeId}" 已成功停止。`);
   } catch (errorThrown) {
-    UserNotification.error(`Stopping Data Node failed with status: ${errorThrown}`, 'Could not stop the Data Node.');
+    UserNotification.error(`停止数据节点失败，状态为：${errorThrown}`, '无法停止该数据节点。');
   }
 };
 
@@ -124,9 +124,9 @@ export const rejoinDataNode = async (datanodeId: string) => {
   try {
     await fetch('POST', qualifyUrl(`/datanode/${datanodeId}/reset`));
 
-    UserNotification.success(`Data Node "${datanodeId}" rejoined successfully.`);
+    UserNotification.success(`数据节点 "${datanodeId}" 已成功重新加入。`);
   } catch (errorThrown) {
-    UserNotification.error(`Rejoining Data Node failed with status: ${errorThrown}`, 'Could not rejoin the Data Node.');
+    UserNotification.error(`重新加入数据节点失败，状态为：${errorThrown}`, '无法重新加入数据节点。');
   }
 };
 
@@ -136,10 +136,10 @@ type Options = {
 
 export const renewDatanodeCertificate = (nodeId: string) => fetch('POST', qualifyUrl(`/certrenewal/${nodeId}`))
   .then(() => {
-    UserNotification.success('Certificate renewed successfully.');
+    UserNotification.success('证书更新成功。');
   })
   .catch((error) => {
-    UserNotification.error(`Certificate renewal failed with error: ${error}`);
+    UserNotification.error(`证书续期失败，错误为：${error}`);
   });
 
 export const fetchDataNodes = async (params: SearchParams) => {
@@ -176,8 +176,8 @@ const useDataNodes = (searchParams: SearchParams = {
     () => fetchDataNodes(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Data Nodes failed with status: ${errorThrown}`,
-          'Could not load Data Nodes.');
+        UserNotification.error(`加载数据节点失败，状态：${errorThrown}`,
+          '无法加载数据节点。');
       },
       notifyOnChangeProps: ['data', 'error'],
       refetchInterval,

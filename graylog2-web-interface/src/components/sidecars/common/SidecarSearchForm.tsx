@@ -23,12 +23,12 @@ import QueryHelper from 'components/common/QueryHelper';
 const queryExamples = (
   <>
     <p>
-      Find sidecars that did not communicate with Graylog since a date:<br />
+      查找自某日期以来未与 Graylog 通信的 Sidecar<br />
       <kbd>{'last_seen:<=2018-04-10'}</kbd><br />
     </p>
     <p>
-      Find sidecars with <code>failing</code> or <code>unknown</code> status:<br />
-      <kbd>status:failing status:unknown</kbd><br />
+      查找具有以下条件的 Sidecar <code>failing</code> or <code>unknown</code> 状态:<br />
+      <kbd>状态：失败 状态：未知</kbd><br />
     </p>
   </>
 );
@@ -55,7 +55,7 @@ const SidecarSearchForm = ({ query, onSearch, onReset, children }: Props) => (
   <SearchForm query={query}
               onSearch={onSearch}
               onReset={onReset}
-              placeholder="Find sidecars"
+              placeholder="查找 Sidecar"
               queryHelpComponent={queryHelp}
               topMargin={0}
               useLoadingState>

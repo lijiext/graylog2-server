@@ -84,7 +84,7 @@ const TimeRangeFilterButtons = ({
                                    displayTitle={false}
                                    onChange={selectRelativeTimeRangePreset}
                                    onToggle={_onPresetSelectToggle}
-                                   header="Select time range"
+                                   header="选择时间范围"
                                    bsSize={null} />
       )}
     </StyledButtonGroup>

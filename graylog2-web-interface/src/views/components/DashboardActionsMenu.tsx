@@ -75,7 +75,7 @@ const DashboardActionsMenu = () => {
     <>
       <MenuItem divider />
       <MenuItem onSelect={() => setDebugOpen(true)} icon="code">
-        Debug
+        调试
       </MenuItem>
     </>
   );
@@ -157,9 +157,9 @@ const DashboardActionsMenu = () => {
             </>
           )}
           <MenuItem onSelect={() => setEditDashboardOpen(true)} disabled={isNewView || !allowedToEdit} icon="edit">
-            Edit metadata
+            编辑元数据
           </MenuItem>
-          <MenuItem onSelect={() => setExportOpen(true)} icon="download">Export</MenuItem>
+          <MenuItem onSelect={() => setExportOpen(true)} icon="download">导出</MenuItem>
           {debugOverlay}
           <MenuItem divider />
           <BigDisplayModeConfiguration view={view} disabled={isNewView} />
@@ -169,16 +169,16 @@ const DashboardActionsMenu = () => {
       {saveNewDashboardOpen && (
         <DashboardPropertiesModal show
                                   view={view.toBuilder().newId().build()}
-                                  title="Save new dashboard"
-                                  submitButtonText="Create dashboard"
+                                  title="保存新仪表盘"
+                                  submitButtonText="创建仪表盘"
                                   onClose={() => setSaveNewDashboardOpen(false)}
                                   onSave={(newDashboard) => _onSaveNewDashboard(newDashboard)} />
       )}
       {editDashboardOpen && (
         <DashboardPropertiesModal show
                                   view={view}
-                                  title="Editing dashboard"
-                                  submitButtonText="Update dashboard"
+                                  title="正在编辑仪表盘"
+                                  submitButtonText="更新仪表盘"
                                   onClose={() => setEditDashboardOpen(false)}
                                   onSave={_onUpdateView} />
       )}
@@ -187,7 +187,7 @@ const DashboardActionsMenu = () => {
         <EntityShareModal entityId={view.id}
                           entityType="dashboard"
                           entityTitle={view.title}
-                          description="Search for a User or Team to add as collaborator on this dashboard."
+                          description="搜索要添加为此仪表板协作者的用户或团队。"
                           onClose={() => setShareViewOpen(false)} />
       )}
       {exportOpen && <ExportModal view={view} closeModal={() => setExportOpen(false)} />}

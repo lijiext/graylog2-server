@@ -176,8 +176,8 @@ const useFiltersWithTitle = (
     () => fetchFilterTitles(payload),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading filter titles failed with status: ${errorThrown}`,
-          'Could not load streams');
+        UserNotification.error(`加载过滤器标题失败，状态为：${errorThrown}`,
+          '无法加载数据流');
       },
       keepPreviousData: true,
       enabled: enabled && !!payload.entities.length,

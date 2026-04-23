@@ -92,7 +92,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Timed
     @Path("/{index}")
-    @ApiOperation(value = "Get information of an index and its shards.")
+    @ApiOperation(value = "获取一个索引及其分片的信息。")
     @Produces(MediaType.APPLICATION_JSON)
     public IndexInfo single(@ApiParam(name = "index") @PathParam("index") String index) {
         checkPermission(RestPermissions.INDICES_READ, index);
@@ -111,7 +111,7 @@ public class IndicesResource extends RestResource {
     @POST
     @Timed
     @Path("/multiple")
-    @ApiOperation(value = "Get information of all specified indices and their shards.")
+    @ApiOperation(value = "获取所有指定索引及其分片的信息。")
     @Produces(MediaType.APPLICATION_JSON)
     @NoAuditEvent("only used to request index information")
     public List<IndexInfo> multiple(@ApiParam(name = "Requested indices", required = true)
@@ -131,7 +131,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Path("/open")
     @Timed
-    @ApiOperation(value = "Get information of all open indices managed by Graylog and their shards.")
+    @ApiOperation(value = "获取Graylog管理的所有打开索引及其分片的信息。")
     @RequiresPermissions(RestPermissions.INDICES_READ)
     @Produces(MediaType.APPLICATION_JSON)
     public OpenIndicesInfo open() {
@@ -147,7 +147,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Timed
     @Path("/closed")
-    @ApiOperation(value = "Get a list of closed indices that can be reopened.")
+    @ApiOperation(value = "获取可重新打开的已关闭索引列表。")
     @Produces(MediaType.APPLICATION_JSON)
     public ClosedIndices closed() {
         final Set<IndexSet> indexSets = indexSetRegistry.getAll();
@@ -164,7 +164,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Timed
     @Path("/reopened")
-    @ApiOperation(value = "Get a list of reopened indices, which will not be cleaned by retention cleaning")
+    @ApiOperation(value = "获取已重新打开的索引列表，这些索引不会被保留清理功能清理")
     @Produces(MediaType.APPLICATION_JSON)
     public ClosedIndices reopened() {
         final Set<IndexSet> indexSets = indexSetRegistry.getAll();
@@ -180,7 +180,7 @@ public class IndicesResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "List all open, closed and reopened indices.")
+    @ApiOperation(value = "列出所有打开、关闭和重新打开的索引。")
     @Produces(MediaType.APPLICATION_JSON)
     public AllIndices all() {
         return AllIndices.create(this.closed(), this.reopened(), this.open());
@@ -189,7 +189,7 @@ public class IndicesResource extends RestResource {
     @POST
     @Timed
     @Path("/{index}/reopen")
-    @ApiOperation(value = "Reopen a closed index. This will also trigger an index ranges rebuild job.")
+    @ApiOperation(value = "重新打开已关闭的索引。这还将触发索引范围重建任务。")
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.ES_INDEX_OPEN)
     public void reopen(@ApiParam(name = "index") @PathParam("index") String index) {
@@ -207,10 +207,10 @@ public class IndicesResource extends RestResource {
     @POST
     @Timed
     @Path("/{index}/close")
-    @ApiOperation(value = "Close an index. This will also trigger an index ranges rebuild job.")
+    @ApiOperation(value = "关闭索引。这还将触发索引范围重建任务。")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 403, message = "You cannot close the current deflector target index.")
+            @ApiResponse(code = 403, message = "无法关闭当前偏转器目标索引。")
     })
     @AuditEvent(type = AuditEventTypes.ES_INDEX_CLOSE)
     public void close(@ApiParam(name = "index") @PathParam("index") @NotNull String index) throws TooManyAliasesException {
@@ -232,10 +232,10 @@ public class IndicesResource extends RestResource {
     @DELETE
     @Timed
     @Path("/{index}")
-    @ApiOperation(value = "Delete an index. This will also trigger an index ranges rebuild job.")
+    @ApiOperation(value = "删除索引。这还将触发索引范围重建任务。")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 403, message = "You cannot delete the current deflector target index.")
+            @ApiResponse(code = 403, message = "无法删除当前偏转器目标索引。")
     })
     @AuditEvent(type = AuditEventTypes.ES_INDEX_DELETE)
     public void delete(@ApiParam(name = "index") @PathParam("index") @NotNull String index) throws TooManyAliasesException {
@@ -259,7 +259,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Timed
     @Path("/{indexSetId}/list")
-    @ApiOperation(value = "List all open, closed and reopened indices.")
+    @ApiOperation(value = "列出所有打开、关闭和重新打开的索引。")
     @Produces(MediaType.APPLICATION_JSON)
     public AllIndices indexSetList(@ApiParam(name = "indexSetId") @PathParam("indexSetId") String indexSetId) {
         return AllIndices.create(this.indexSetClosed(indexSetId), this.indexSetReopened(indexSetId), this.indexSetOpen(indexSetId));
@@ -268,7 +268,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Path("/{indexSetId}/open")
     @Timed
-    @ApiOperation(value = "Get information of all open indices managed by Graylog and their shards.")
+    @ApiOperation(value = "获取Graylog管理的所有打开索引及其分片的信息。")
     @RequiresPermissions(RestPermissions.INDICES_READ)
     @Produces(MediaType.APPLICATION_JSON)
     public OpenIndicesInfo indexSetOpen(@ApiParam(name = "indexSetId") @PathParam("indexSetId") String indexSetId) {
@@ -283,7 +283,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Timed
     @Path("/{indexSetId}/closed")
-    @ApiOperation(value = "Get a list of closed indices that can be reopened.")
+    @ApiOperation(value = "获取可重新打开的已关闭索引列表。")
     @Produces(MediaType.APPLICATION_JSON)
     public ClosedIndices indexSetClosed(@ApiParam(name = "indexSetId") @PathParam("indexSetId") String indexSetId) {
         final IndexSet indexSet = getIndexSet(indexSetRegistry, indexSetId);
@@ -298,7 +298,7 @@ public class IndicesResource extends RestResource {
     @GET
     @Timed
     @Path("/{indexSetId}/reopened")
-    @ApiOperation(value = "Get a list of reopened indices, which will not be cleaned by retention cleaning")
+    @ApiOperation(value = "获取已重新打开的索引列表，这些索引不会被保留清理功能清理")
     @Produces(MediaType.APPLICATION_JSON)
     public ClosedIndices indexSetReopened(@ApiParam(name = "indexSetId") @PathParam("indexSetId") String indexSetId) {
         final IndexSet indexSet = getIndexSet(indexSetRegistry, indexSetId);

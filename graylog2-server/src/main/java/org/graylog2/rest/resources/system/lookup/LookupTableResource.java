@@ -488,7 +488,7 @@ public class LookupTableResource extends RestResource {
     @POST
     @NoAuditEvent("Bulk read call")
     @Path("errorstates")
-    @ApiOperation(value = "Retrieve the runtime error states of the given lookup tables, caches and adapters")
+    @ApiOperation(value = "检索给定查找表、缓存和适配器的运行时错误状态")
     @RequiresPermissions(RestPermissions.LOOKUP_TABLES_READ)
     public ErrorStates errorStates(@ApiParam(name = "request") @Valid ErrorStatesRequest request) {
         final ErrorStates.Builder errorStates = ErrorStates.builder();
@@ -531,7 +531,7 @@ public class LookupTableResource extends RestResource {
     @Path("adapters/{name}/query")
     @ApiOperation(value = "Query a lookup table")
     @ApiResponses({
-            @ApiResponse(code = 404, message = "If the adapter cannot be found (if it failed or doesn't exist at all)")
+            @ApiResponse(code = 404, message = "如果找不到适配器（如果它失败或根本不存在）")
     })
     @RequiresPermissions(RestPermissions.LOOKUP_TABLES_READ)
     public LookupResult performAdapterLookup(@ApiParam(name = "name") @PathParam("name") @NotEmpty String name,
@@ -577,7 +577,7 @@ public class LookupTableResource extends RestResource {
         checkPermission(RestPermissions.LOOKUP_TABLES_DELETE, dto.id());
         boolean unused = dbTableService.findByDataAdapterIds(singleton(dto.id())).isEmpty();
         if (!unused) {
-            throw new BadRequestException("The adapter is still in use, cannot delete.");
+            throw new BadRequestException("适配器仍在使用中，无法删除。");
         }
         dbDataAdapterService.deleteAndPostEvent(idOrName);
 
@@ -727,7 +727,7 @@ public class LookupTableResource extends RestResource {
         checkPermission(RestPermissions.LOOKUP_TABLES_DELETE, dto.id());
         boolean unused = dbTableService.findByCacheIds(singleton(dto.id())).isEmpty();
         if (!unused) {
-            throw new BadRequestException("The cache is still in use, cannot delete.");
+            throw new BadRequestException("缓存仍在使用中，无法删除。");
         }
         dbCacheService.deleteAndPostEvent(idOrName);
 

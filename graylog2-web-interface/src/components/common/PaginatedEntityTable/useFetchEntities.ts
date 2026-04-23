@@ -58,7 +58,7 @@ const useFetchEntities = <T>({
     {
       enabled,
       onError: (error) => {
-        UserNotification.error(`Fetching ${humanName} failed with status: ${error}`, `Could not retrieve ${humanName}`);
+        UserNotification.error(`获取 ${humanName} 失败，状态为：${error}`, `无法检索 ${humanName}`);
       },
       keepPreviousData: true,
       ...fetchOptions,

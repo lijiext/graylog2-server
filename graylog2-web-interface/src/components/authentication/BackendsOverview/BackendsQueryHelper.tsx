@@ -20,7 +20,7 @@ import QueryHelper from 'components/common/QueryHelper';
 
 const queryExample = (
   <p>
-    Find backends with a title containing LDAP:<br />
+    查找标题包含 LDAP 的后端：<br />
     <kbd>title:LDAP</kbd><br />
   </p>
 );

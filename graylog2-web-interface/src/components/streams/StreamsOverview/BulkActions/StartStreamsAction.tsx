@@ -44,7 +44,7 @@ const StartStreamsActions = ({ handleFailures, refetchStreams, descriptor, onSel
       { entity_ids: selectedEntities },
     ).then(({ failures }) => handleFailures(failures, 'started'))
       .catch((error) => {
-        UserNotification.error(`An error occurred while starting streams. ${error}`);
+        UserNotification.error(`启动数据流时发生错误。${error}`);
       })
       .finally(() => {
         refetchStreams();
@@ -52,7 +52,7 @@ const StartStreamsActions = ({ handleFailures, refetchStreams, descriptor, onSel
   }, [handleFailures, onSelect, refetchStreams, selectedEntities]);
 
   return (
-    <MenuItem onSelect={onStartStreams}>Start {descriptor}</MenuItem>
+    <MenuItem onSelect={onStartStreams}>开始 {descriptor}</MenuItem>
   );
 };
 

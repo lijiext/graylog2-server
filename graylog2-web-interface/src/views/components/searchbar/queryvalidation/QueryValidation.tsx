@@ -195,7 +195,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
       <Popover.Target>
         <Container ref={explanationTriggerRef}>
           {hasExplanations ? (
-            <ExplanationTrigger title={`Toggle validation ${isInfo ? 'information' : 'error explanation'}`}
+            <ExplanationTrigger title={`切换验证 ${isInfo ? 'information' : 'error explanation'}`}
                                 onClick={toggleShow}
                                 $clickable
                                 tabIndex={0}
@@ -204,7 +204,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
             </ExplanationTrigger>
           ) : (
             <DocumentationLink page={DocsHelper.PAGES.SEARCH_QUERY_LANGUAGE}
-                               title="Search query syntax documentation"
+                               title="搜索查询语法文档"
                                text={<Icon name="lightbulb_circle" />} />
           )}
         </Container>
@@ -219,7 +219,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
                 <span><b>{errorTitle}</b>: {errorMessage}</span>
                 {errorType && (
                   <DocumentationLink page={DocsHelper.PAGES.SEARCH_QUERY_ERRORS}
-                                     title="Query error documentation"
+                                     title="查询错误文档"
                                      text={<DocumentationIcon name="lightbulb_circle" />} />
                 )}
               </Explanation>

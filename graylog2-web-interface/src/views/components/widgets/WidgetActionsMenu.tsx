@@ -237,7 +237,7 @@ const WidgetActionsMenu = ({
         <ExtraMenuWidgetActions widget={widget} />
         {isFocused && (
           <IconButton name="fullscreen_exit"
-                      title="Un-focus widget"
+                      title="取消聚焦小部件"
                       onClick={unsetWidgetFocusing} />
         )}
         {!isFocused && (
@@ -247,42 +247,42 @@ const WidgetActionsMenu = ({
                                      onStretch={onPositionsChange}
                                      position={position} />
             <IconButton name="fullscreen"
-                        title="Focus this widget"
+                        title="聚焦此小部件"
                         onClick={focusWidget} />
           </>
         )}
 
         <IconButton name="edit_square"
-                    title="Edit"
+                    title="编辑"
                     iconType="regular"
                     onClick={toggleEdit} />
 
         <WidgetActionDropdown>
           <MenuItem onSelect={onDuplicate}>
-            Duplicate
+            复制
           </MenuItem>
           <IfSearch>
             <MenuItem onSelect={() => setShowCopyToDashboard(true)}>
-              Copy to Dashboard
+              复制到仪表盘
             </MenuItem>
           </IfSearch>
           <IfDashboard>
             <MenuItem onSelect={() => setShowMoveWidgetToTab(true)}>
-              Move to Page
+              移至页面
             </MenuItem>
           </IfDashboard>
           <ExtraDropdownWidgetActions widget={widget} />
           <MenuItem divider />
           <MenuItem onSelect={onDelete}>
-            Delete
+            删除
           </MenuItem>
         </WidgetActionDropdown>
 
         {showCopyToDashboard && (
           <CopyToDashboard onCopyToDashboard={(dashboardId) => onCopyToDashboard(widget.id, dashboardId)}
                            onCancel={() => setShowCopyToDashboard(false)}
-                           submitLoadingText="Copying widget..."
-                           submitButtonText="Copy widget"
+                           submitLoadingText="正在复制小部件..."
+                           submitButtonText="复制小部件"
                            onCreateNewDashboard={onCreateNewDashboard} />
         )}
 

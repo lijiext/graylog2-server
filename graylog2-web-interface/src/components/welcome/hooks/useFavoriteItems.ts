@@ -34,8 +34,8 @@ const fetchFavoriteItems = async ({ page }: RequestQuery): Promise<PaginatedFavo
 
 const useFavoriteItems = (pagination: RequestQuery): { data: PaginatedFavoriteItems, isFetching: boolean } => useQuery([FAVORITE_ITEMS_QUERY_KEY, pagination], () => fetchFavoriteItems(pagination), {
   onError: (errorThrown) => {
-    UserNotification.error(`Loading favorite items failed with status: ${errorThrown}`,
-      'Could not load favorite items');
+    UserNotification.error(`加载收藏项失败，状态码：${errorThrown}`,
+      '无法加载收藏项目');
   },
   retry: 0,
   initialData: {

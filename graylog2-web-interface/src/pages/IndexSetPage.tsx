@@ -48,14 +48,12 @@ const ElasticsearchUnavailableInformation = () => (
     <Col md={8} mdOffset={2}>
       <div className="top-margin">
         <Panel bsStyle="danger"
-               header={<span><Icon name="warning" /> Indices overview unavailable</span>}>
+               header={<span><Icon name="warning" /> 索引概览不可用</span>}>
           <p>
-            We could not get the indices overview information. This usually means there was a problem
-            connecting to Elasticsearch, and <strong>you should ensure Elasticsearch is up and reachable from Graylog</strong>.
+            无法获取索引概述信息。这通常意味着连接 Elasticsearch 时出现问题，并且 <strong>您应确保 Elasticsearch 已启动且可从 Graylog 访问</strong>.
           </p>
           <p>
-            Graylog will continue storing your messages in its journal, but you will not be able to search on them
-            until Elasticsearch is reachable again.
+            Graylog 将继续在日志中存储您的消息，但在 Elasticsearch 再次可访问之前，您将无法搜索这些消息。
           </p>
         </Panel>
       </div>
@@ -149,7 +147,7 @@ class IndexSetPage extends React.Component<Props, State> {
     const { indexSet, indexerOverview, indexerOverviewError, params: { indexSetId }, indexDetails: { indices: indexDetailsIndices, closedIndices: indexDetailsClosedIndices } } = this.props;
 
     const pageHeader = indexSet && (
-      <PageHeader title={`Index Set: ${indexSet.title}`}
+      <PageHeader title={`索引集：${indexSet.title}`}
                   documentationLink={{
                     title: 'Index model documentation',
                     path: DocsHelper.PAGES.INDEX_MODEL,
@@ -157,15 +155,14 @@ class IndexSetPage extends React.Component<Props, State> {
                   actions={(
                     <ButtonToolbar>
                       <LinkContainer to={Routes.SYSTEM.INDEX_SETS.CONFIGURATION(indexSet.id, 'details')}>
-                        <Button bsStyle="info">Edit Index Set</Button>
+                        <Button bsStyle="info">编辑索引集</Button>
                       </LinkContainer>
                       <IndicesMaintenanceDropdown indexSetId={indexSetId} indexSet={indexSet} />
                       <IndicesConfigurationDropdown indexSetId={indexSetId} />
                     </ButtonToolbar>
                   )}>
         <span>
-          This is an overview of all indices (message stores) in this index set Graylog is currently taking in account
-          for searches and analysis.
+          这是 Graylog 当前用于搜索和分析的索引集中所有索引（消息存储）的概览。
         </span>
       </PageHeader>
     );
@@ -188,9 +185,8 @@ class IndexSetPage extends React.Component<Props, State> {
       indicesInfo = (
         <span>
           <Alert bsStyle="success" style={{ marginTop: '10' }}>
-            {this._totalIndexCount()} indices with a total of{' '}
-            {numeral(indexerOverview.counts.events).format('0,0')} messages under management,
-            current write-active index is <i>{deflectorInfo.current_target}</i>.
+            {this._totalIndexCount()} 索引，总计{' '}
+            {numeral(indexerOverview.counts.events).format('0,0')} 正在管理的消息数，当前写入活动索引为 <i>{deflectorInfo.current_target}</i>.
           </Alert>
           <HideOnCloud>
             <IndexerClusterHealthSummary health={indexerOverview.indexer_cluster.health} />
@@ -209,7 +205,7 @@ class IndexSetPage extends React.Component<Props, State> {
     }
 
     return (
-      <DocumentTitle title={`Index Set - ${indexSet ? indexSet.title : ''}`}>
+      <DocumentTitle title={`索引集 - ${indexSet ? indexSet.title : ''}`}>
         <IndicesPageNavigation />
         <div>
           {pageHeader}

@@ -43,7 +43,7 @@ const useUserLayoutPreferences = (entityId: string): { data: TableLayoutPreferen
     () => fetchUserLayoutPreferences(entityId),
     {
       onError: (error) => {
-        UserNotification.error(`Loading layout preferences for "${entityId}" overview failed with ${error}`);
+        UserNotification.error(`加载 "${entityId}" 概览的布局偏好设置失败，错误为：${error}`);
       },
       keepPreviousData: true,
       staleTime: 60 * (60 * 1000), // 1 hour

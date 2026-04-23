@@ -231,12 +231,12 @@ class ExpandableListItem extends React.Component<Props, State> {
           {selectable && (
           <Checkbox inputRef={(ref) => { this._checkbox = ref; }}
                     inline
-                    title="Select item"
+                    title="选择项目"
                     checked={checked}
                     {...inputProps} />
           )}
           {expandable && (
-            <Toggle role="button" tabIndex={0} onClick={this._toggleExpand} title={`${expanded ? 'Shrink' : 'Expand'} list item`}>
+            <Toggle role="button" tabIndex={0} onClick={this._toggleExpand} title={`${expanded ? 'Shrink' : 'Expand'} 列表项`}>
               <IconContainer>
                 <Icon name={expanded ? 'expand_circle_up' : 'expand_circle_down'} />
               </IconContainer>

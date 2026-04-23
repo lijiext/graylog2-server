@@ -81,13 +81,13 @@ export const PreferencesStore = singletonStore(
       const promise = fetch('PUT', url, { preferences: convertedPreferences })
         .then(() => {
           if (displaySuccessNotification) {
-            UserNotification.success('User preferences successfully saved');
+            UserNotification.success('用户偏好设置已成功保存');
           }
 
           callback(preferences);
         }, (errorThrown) => {
-          UserNotification.error(`Saving of preferences for "${userName}" failed with status: ${errorThrown}`,
-            'Could not save user preferences');
+          UserNotification.error(`保存"${userName}"的偏好设置失败，状态为：${errorThrown}`,
+            '无法保存用户偏好设置');
         });
 
       PreferencesActions.saveUserPreferences.promise(promise);

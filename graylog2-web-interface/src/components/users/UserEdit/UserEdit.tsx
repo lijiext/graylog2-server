@@ -62,10 +62,9 @@ const UserEdit = ({ user }: Props) => {
       <IfPermitted permissions={`users:edit:${user.username}`}>
         <div>
           {user.external && (
-            <SectionComponent title="External User">
+            <SectionComponent title="外部用户">
               <Alert bsStyle="warning">
-                This user was synced from an external server, therefore neither
-                the profile nor the password can be changed. Please contact your administrator for more information.
+                此用户是从外部服务器同步的，因此无法修改其个人资料或密码。请联系您的管理员以获取更多信息。
               </Alert>
             </SectionComponent>
           )}

@@ -26,8 +26,8 @@ const useStreamRuleTypes = (): { data: Array<StreamRuleType> | undefined } => {
     () => StreamRulesStore.types(),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading stream rule types failed with status: ${errorThrown}`,
-          'Could not load stream rule types');
+        UserNotification.error(`加载数据流规则类型失败，状态为：${errorThrown}`,
+          '无法加载数据流规则类型');
       },
       keepPreviousData: true,
       staleTime: 60 * (60 * 1000), // 1 hour

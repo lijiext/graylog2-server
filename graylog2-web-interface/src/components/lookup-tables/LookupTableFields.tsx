@@ -60,7 +60,7 @@ const LookupTableFields = ({ onTableNameChange, onKeyChange, selectedTableName, 
     return (
       <Row>
         <Col md={6} lg={5}>
-          <p>No Lookup Tables found.</p>
+          <p>未找到任何查找表。</p>
         </Col>
       </Row>
     );
@@ -92,7 +92,7 @@ const LookupTableFields = ({ onTableNameChange, onKeyChange, selectedTableName, 
         <FormGroup controlId="lookup-provider-table" validationState={nameValidation ? 'error' : null}>
           <ControlLabel>{lookupTableNameLabel || 'Select Lookup Table'}</ControlLabel>
           <Select name="event-field-table-name"
-                  placeholder="Select Lookup Table"
+                  placeholder="选择查找表"
                   onChange={onTableNameChange}
                   options={formatLookupTables(lookupTables.tables)}
                   value={selectedTableName}
@@ -112,7 +112,7 @@ const LookupTableFields = ({ onTableNameChange, onKeyChange, selectedTableName, 
           <FormGroup controlId="lookup-provider-table" validationState={keyValidation ? 'error' : null}>
             <ControlLabel>{lookupTableKeyLabel || 'Lookup Table Key Field'}</ControlLabel>
             <Select name="lookup-provider-key"
-                    placeholder="Select Field"
+                    placeholder="选择字段"
                     onChange={onKeyChange}
                     options={formatMessageFields(allFieldTypes)}
                     value={selectedKeyName}

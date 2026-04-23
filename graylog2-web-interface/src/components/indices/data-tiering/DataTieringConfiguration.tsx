@@ -151,29 +151,29 @@ const DataTieringConfiguration = <ValuesPrefix extends string | undefined, >({ v
     <>
       <FormikInput type="number"
                    id="data-tiering-index-lifetime-max"
-                   label="Max. days in storage"
+                   label="存储最大天数"
                    name={fieldName('index_lifetime_max')}
                    min={0}
-                   help="After how many days your data should be deleted."
+                   help="您的数据应在多少天后删除。"
                    validate={validateMaxDaysInStorage}
                    required />
       <FormikInput type="number"
                    id="data-tiering-index-lifetime-min"
-                   label="Min. days in storage"
+                   label="存储中的最少天数"
                    name={fieldName('index_lifetime_min')}
                    min={0}
                    max={formValue('index_lifetime_max')}
                    validate={validateMinDaysInStorage}
-                   help="How many days at minumum your data should be stored."
+                   help="数据至少应存储的天数。"
                    required />
 
       {dataTieringPlugin && (
         <>
           <FormikInput type="checkbox"
                        id="data_tiering-archive-before-deletion"
-                       label="Archive before deletion"
+                       label="删除前归档"
                        name={fieldName('archive_before_deletion')}
-                       help="Archive this index before it is deleted?" />
+                       help="在删除此索引前对其进行归档？" />
           <dataTieringPlugin.TiersConfigurationFields valuesPrefix={valuesPrefix} />
         </>
       )}

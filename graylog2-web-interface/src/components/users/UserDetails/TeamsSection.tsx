@@ -31,7 +31,7 @@ const TeamsSection = ({ user }: Props) => {
   const UserTeamsAssignment = teamsPlugin?.[0]?.UserTeamsAssignment;
 
   return (
-    <SectionComponent title="Teams">
+    <SectionComponent title="团队">
       {UserTeamsAssignment ? <UserTeamsAssignment user={user} readOnly /> : <EnterprisePluginNotFound featureName="teams" />}
     </SectionComponent>
   );

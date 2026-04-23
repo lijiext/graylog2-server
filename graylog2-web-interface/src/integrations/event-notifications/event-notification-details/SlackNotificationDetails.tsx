@@ -32,21 +32,21 @@ const NewExampleWell = styled(Well)(({ theme }) => css`
 const SlackNotificationDetails = ({ notification }: SlackNotificationSummaryType) => (
   <>
     <ReadOnlyFormGroup label="Webhook URL" value={notification.config.webhook_url} />
-    <ReadOnlyFormGroup label="Channel" value={notification.config.channel} />
-    <ReadOnlyFormGroup label="Custom Message Template "
+    <ReadOnlyFormGroup label="频道" value={notification.config.channel} />
+    <ReadOnlyFormGroup label="自定义消息模板 "
                        value={(
                          <NewExampleWell bsSize="small">
-                           {notification.config.custom_message || <em>Empty body</em>}
+                           {notification.config.custom_message || <em>空主体</em>}
                          </NewExampleWell>
                      )} />
-    <ReadOnlyFormGroup label="Message Backlog Limit" value={notification.config.backlog_size} />
-    <ReadOnlyFormGroup label="User Name" value={notification.config.user_name} />
-    <ReadOnlyFormGroup label="Include Title" value={notification.config.include_title} />
-    <ReadOnlyFormGroup label="Notify Channel" value={notification.config.notify_channel} />
-    <ReadOnlyFormGroup label="Link Names" value={notification.config.link_names} />
-    <ReadOnlyFormGroup label="Icon URL" value={notification.config.icon_url} />
-    <ReadOnlyFormGroup label="Icon Emoji" value={notification.config.icon_emoji} />
-    <ReadOnlyFormGroup label="Time Zone" value={notification.config.time_zone} />
+    <ReadOnlyFormGroup label="消息积压限制" value={notification.config.backlog_size} />
+    <ReadOnlyFormGroup label="用户名" value={notification.config.user_name} />
+    <ReadOnlyFormGroup label="包含标题" value={notification.config.include_title} />
+    <ReadOnlyFormGroup label="通知通道" value={notification.config.notify_channel} />
+    <ReadOnlyFormGroup label="链接名称" value={notification.config.link_names} />
+    <ReadOnlyFormGroup label="图标 URL" value={notification.config.icon_url} />
+    <ReadOnlyFormGroup label="图标表情" value={notification.config.icon_emoji} />
+    <ReadOnlyFormGroup label="时区" value={notification.config.time_zone} />
   </>
 );
 

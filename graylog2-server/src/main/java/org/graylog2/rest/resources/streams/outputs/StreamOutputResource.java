@@ -78,9 +78,9 @@ public class StreamOutputResource extends RestResource {
     @ApiOperation(value = "Get a list of all outputs for a stream")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such stream on this node.")
+            @ApiResponse(code = 404, message = "此节点不存在此类数据流。")
     })
-    public OutputListResponse get(@ApiParam(name = "streamid", value = "The id of the stream whose outputs we want.", required = true)
+    public OutputListResponse get(@ApiParam(name = "streamid", value = "我们要其输出端的数据流 ID。", required = true)
                                   @PathParam("streamid") String streamid) throws NotFoundException {
         checkPermission(RestPermissions.STREAMS_READ, streamid);
         checkPermission(RestPermissions.STREAM_OUTPUTS_READ);
@@ -109,10 +109,10 @@ public class StreamOutputResource extends RestResource {
     @ApiOperation(value = "Get specific output of a stream")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such stream/output on this node.")
+            @ApiResponse(code = 404, message = "此节点不存在此类数据流/输出端。")
     })
-    public OutputSummary get(@ApiParam(name = "streamid", value = "The id of the stream whose outputs we want.", required = true) @PathParam("streamid") String streamid,
-                             @ApiParam(name = "outputId", value = "The id of the output we want.", required = true) @PathParam("outputId") String outputId) throws NotFoundException {
+    public OutputSummary get(@ApiParam(name = "streamid", value = "我们要其输出端的数据流 ID。", required = true) @PathParam("streamid") String streamid,
+                             @ApiParam(name = "outputId", value = "我们要的输出 ID。", required = true) @PathParam("outputId") String outputId) throws NotFoundException {
         checkPermission(RestPermissions.STREAMS_READ, streamid);
         checkPermission(RestPermissions.STREAM_OUTPUTS_READ, outputId);
 
@@ -129,10 +129,10 @@ public class StreamOutputResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid output specification in input.")
+            @ApiResponse(code = 400, message = "输入中的输出规格无效。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_OUTPUT_ASSIGNMENT_CREATE)
-    public Response add(@ApiParam(name = "streamid", value = "The id of the stream whose outputs we want.", required = true)
+    public Response add(@ApiParam(name = "streamid", value = "我们要其输出端的数据流 ID。", required = true)
                         @PathParam("streamid") String streamid,
                         @ApiParam(name = "JSON body", required = true)
                         @Valid @NotNull AddOutputRequest aor) throws NotFoundException {
@@ -164,10 +164,10 @@ public class StreamOutputResource extends RestResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Delete output of a stream")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such stream/output on this node.")
+            @ApiResponse(code = 404, message = "此节点不存在此类数据流/输出端。")
     })
     @AuditEvent(type = AuditEventTypes.STREAM_OUTPUT_ASSIGNMENT_DELETE)
-    public void remove(@ApiParam(name = "streamid", value = "The id of the stream whose outputs we want.", required = true)
+    public void remove(@ApiParam(name = "streamid", value = "我们要其输出端的数据流 ID。", required = true)
                        @PathParam("streamid") String streamid,
                        @ApiParam(name = "outputId", value = "The id of the output that should be deleted", required = true)
                        @PathParam("outputId") String outputId) throws NotFoundException {

@@ -65,7 +65,7 @@ public class DebugEventsResource extends RestResource {
     @POST
     @Path("/cluster")
     @Consumes(MediaType.TEXT_PLAIN)
-    @ApiOperation(value = "Create and send a cluster debug event.")
+    @ApiOperation(value = "创建并发送集群调试事件。")
     @NoAuditEvent("only used to create a debug event")
     public void generateClusterDebugEvent(@ApiParam(name = "text", defaultValue = "Cluster Test") @Nullable String text) {
         clusterEventBus.post(DebugEvent.create(nodeId.getNodeId(), isNullOrEmpty(text) ? "Cluster Test" : text));
@@ -75,7 +75,7 @@ public class DebugEventsResource extends RestResource {
     @POST
     @Path("/local")
     @Consumes(MediaType.TEXT_PLAIN)
-    @ApiOperation(value = "Create and send a local debug event.")
+    @ApiOperation(value = "创建并发送本地调试事件。")
     @NoAuditEvent("only used to create a debug event")
     public void generateDebugEvent(@ApiParam(name = "text", defaultValue = "Local Test") @Nullable String text) {
         serverEventBus.post(DebugEvent.create(nodeId.getNodeId(), isNullOrEmpty(text) ? "Local Test" : text));
@@ -84,7 +84,7 @@ public class DebugEventsResource extends RestResource {
     @Timed
     @GET
     @Path("/cluster")
-    @ApiOperation(value = "Show last received cluster debug event.", response = DebugEvent.class)
+    @ApiOperation(value = "显示最后接收的集群调试事件。", response = DebugEvent.class)
     public DebugEvent showLastClusterDebugEvent() {
         return DebugEventHolder.getClusterDebugEvent();
     }
@@ -92,7 +92,7 @@ public class DebugEventsResource extends RestResource {
     @Timed
     @GET
     @Path("/local")
-    @ApiOperation(value = "Show last received local debug event.", response = DebugEvent.class)
+    @ApiOperation(value = "显示最后接收的本地调试事件。", response = DebugEvent.class)
     public DebugEvent showLastDebugEvent() {
         return DebugEventHolder.getLocalDebugEvent();
     }

@@ -38,11 +38,9 @@ const WaitingForStartup = () => {
   }, [serverIsAvailable]);
 
   return (
-    <Section title="Configuration successful">
+    <Section title="配置成功">
       <P>
-        The Graylog server is currently starting. Depending on your setup it may take a few minutes.
-        This page will automatically refresh once the Graylog server is reachable.
-        You can always refresh manually, please be aware that this page will not be visible afterwards.
+        Graylog 服务器正在启动。根据您的设置，可能需要几分钟时间。一旦 Graylog 服务器可访问，此页面将自动刷新。您也可以随时手动刷新，请注意刷新后此页面将不再可见。
       </P>
 
       <Space h="md" />

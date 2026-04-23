@@ -28,7 +28,7 @@ const ErrorComponent = ({ error }: Props) => {
     console.error(error);
   }, [error]);
 
-  return <div>Loading component failed: {error.message}</div>;
+  return <div>组件加载失败： {error.message}</div>;
 };
 
 type ComponentSupplier<TProps> = () => Promise<{ default: React.ComponentType<TProps> }>;

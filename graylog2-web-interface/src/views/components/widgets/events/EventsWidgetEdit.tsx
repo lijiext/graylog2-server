@@ -174,11 +174,11 @@ const EventsWidgetEdit = ({ children, onCancel, config, onChange, onSubmit }: Ed
                 <Container>
                   <StickyBottomActions actions={<SaveOrCancelButtons onCancel={onCancel} onSubmit={onSubmit} />}
                                        alignActionsAtBottom>
-                    <DescriptionBox description="Visualization">
+                    <DescriptionBox description="可视化">
                       <WidgetModeConfiguration name="mode" onChange={onChangeType} options={WIDGET_MODE_OPTIONS} />
                     </DescriptionBox>
                     {values.mode === LIST_MODE && (
-                      <DescriptionBox description="Columns">
+                      <DescriptionBox description="列">
                         <ColumnsConfiguration columns={columns}
                                               createSelectPlaceholder="Select a new column"
                                               name="fields"
@@ -186,14 +186,14 @@ const EventsWidgetEdit = ({ children, onCancel, config, onChange, onSubmit }: Ed
                                               columnTitle={columnTitle} />
                       </DescriptionBox>
                     )}
-                    <DescriptionBox description="Filter">
+                    <DescriptionBox description="过滤器">
                       <FiltersConfiguration columnTitle={columnTitle}
                                             name="filters"
                                             filterComponents={filterComponents} />
                     </DescriptionBox>
 
                     {values.mode === LIST_MODE && (
-                      <DescriptionBox description="Sorting">
+                      <DescriptionBox description="排序">
                         <SortConfiguration columns={sortableColumns}
                                            name="sort"
                                            columnTitle={columnTitle}

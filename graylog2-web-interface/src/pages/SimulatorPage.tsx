@@ -38,16 +38,15 @@ const SimulatorPage = () => {
   const content = !streams ? <Spinner /> : <ProcessorSimulator streams={streams} />;
 
   return (
-    <DocumentTitle title="Simulate processing">
+    <DocumentTitle title="模拟处理">
       <PipelinesPageNavigation />
-      <PageHeader title="Simulate processing"
+      <PageHeader title="模拟处理"
                   documentationLink={{
                     title: 'Pipelines documentation',
                     path: DocsHelper.PAGES.PIPELINE_RULES,
                   }}>
         <span>
-          Processing messages can be complex. Use this page to simulate the result of processing an incoming
-          message using your current set of pipelines and rules.
+          处理消息可能很复杂。使用此页面模拟使用当前的一组处理管道和规则处理传入消息的结果。
         </span>
       </PageHeader>
 

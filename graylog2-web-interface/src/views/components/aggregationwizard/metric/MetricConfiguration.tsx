@@ -102,7 +102,7 @@ const Metric = ({ index }: Props) => {
         <Field name={`metrics.${index}.function`}>
           {({ field: { name, value }, meta: { error } }) => (
             <Input id="metric-function-select"
-                   label="Function"
+                   label="函数"
                    error={error}
                    labelClassName="col-sm-3"
                    wrapperClassName="col-sm-9">
@@ -110,7 +110,7 @@ const Metric = ({ index }: Props) => {
                       clearable={false}
                       name={name}
                       value={value}
-                      aria-label="Select a function"
+                      aria-label="选择函数"
                       size="small"
                       menuPortalTarget={document.body}
                       onChange={onFunctionChange} />
@@ -124,7 +124,7 @@ const Metric = ({ index }: Props) => {
             <Field name={`metrics.${index}.field`}>
               {({ field: { name, value, onChange }, meta: { error } }) => (
                 <Input id="metric-field"
-                       label="Field"
+                       label="字段"
                        error={error}
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9">
@@ -154,7 +154,7 @@ const Metric = ({ index }: Props) => {
           <Field name={`metrics.${index}.percentile`}>
             {({ field: { name, value, onChange }, meta: { error } }) => (
               <Input id="metric-percentile-select"
-                     label="Percentile"
+                     label="百分位数"
                      error={error}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9">
@@ -162,7 +162,7 @@ const Metric = ({ index }: Props) => {
                         clearable={false}
                         name={name}
                         value={value}
-                        aria-label="Select percentile"
+                        aria-label="选择百分位数"
                         size="small"
                         menuPortalTarget={document.body}
                         onChange={(newValue) => onChange({ target: { name, value: newValue } })} />
@@ -177,7 +177,7 @@ const Metric = ({ index }: Props) => {
             <Field name={`metrics.${index}.strategy`}>
               {({ field: { name, value, onChange }, meta: { error } }) => (
                 <Input id="metric-percentage-strategy-select"
-                       label="Strategy"
+                       label="策略"
                        error={error}
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9">
@@ -185,7 +185,7 @@ const Metric = ({ index }: Props) => {
                           clearable={false}
                           name={name}
                           value={value ?? 'COUNT'}
-                          aria-label="Select strategy"
+                          aria-label="选择策略"
                           size="small"
                           menuPortalTarget={document.body}
                           onChange={(newValue) => onChange({ target: { name, value: newValue } })} />
@@ -197,7 +197,7 @@ const Metric = ({ index }: Props) => {
             <Field name={`metrics.${index}.field`}>
               {({ field: { name, value, onChange }, meta: { error } }) => (
                 <Input id="metric-field"
-                       label="Field"
+                       label="字段"
                        error={error}
                        labelClassName="col-sm-3"
                        wrapperClassName="col-sm-9">
@@ -218,9 +218,9 @@ const Metric = ({ index }: Props) => {
       )}
       <Col sm={11}>
         <FormikInput id="name"
-                     label={<>Name <Opt /></>}
+                     label={<>名称 <Opt /></>}
                      bsSize="small"
-                     placeholder="Specify display name"
+                     placeholder="指定显示名称"
                      name={`metrics.${index}.name`}
                      labelClassName="col-sm-3"
                      wrapperClassName="col-sm-9" />

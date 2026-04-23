@@ -57,7 +57,7 @@ const SystemJobsList = ({ jobs }): React.ReactElement => {
     (formattedJobs.length === 0)
       ? (
         <StyledAlert bsStyle="info">
-          No active system jobs.
+          无活动的系统作业。
         </StyledAlert>
       )
       : (

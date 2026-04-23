@@ -23,16 +23,15 @@ import MigrationDatanodeList from 'components/datanode/migrations/MigrationDatan
 
 const RestartGraylog = ({ currentStep, onTriggerStep, hideActions }: MigrationStepComponentProps) => (
   <>
-    <p>Almost there!</p>
-    <p>Please remove the <code>elasticsearch_hosts</code> line from your <code>server.conf</code></p>
-    <p>E.g., <code>elasticsearch_hosts = https://admin:admin@opensearch1:9200,https://admin:admin@opensearch2:9200,https://admin:admin@opensearch3:9200</code></p>
+    <p>即将完成！</p>
+    <p>请移除 <code>elasticsearch_hosts</code> 来自您的 <code>server.conf</code></p>
+    <p>例如， <code>elasticsearch_hosts = https://admin:admin@opensearch1:9200,https://admin:admin@opensearch2:9200,https://admin:admin@opensearch3:9200</code></p>
     <Space h="md" />
     <MigrationDatanodeList showProvisioningState={false} />
-    <p>Please wait for all data nodes to become &apos;AVAILABLE&apos;. Please check the data node&apos;s log if they do
-      not become available within 1-2 minutes.
+    <p>请等待所有数据节点变为'AVAILABLE'。如果它们在 1-2 分钟内未变为可用，请检查数据节点的日志。
     </p>
     {/* eslint-disable-next-line react/no-unescaped-entities */}
-    <p>Once that's done, please restart Graylog to finish the migration.</p>
+    <p>完成后，请重启 Graylog 以完成迁移。</p>
     <MigrationStepTriggerButtonToolbar hidden={hideActions} nextSteps={currentStep.next_steps} onTriggerStep={onTriggerStep} />
   </>
 );

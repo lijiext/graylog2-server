@@ -31,11 +31,11 @@ const EventTypeFilter = ({ onSelect, selectedValues }: Props) => {
     <ListGroup className="no-bm">
       <ListGroupItem onClick={() => !disabledAlertOption && onSelect('true')}
                      disabled={disabledAlertOption}>
-        Alert
+        告警
       </ListGroupItem>
       <ListGroupItem onClick={() => !disabledEventOption && onSelect('false')}
                      disabled={disabledEventOption}>
-        Event
+        事件
       </ListGroupItem>
     </ListGroup>
   );

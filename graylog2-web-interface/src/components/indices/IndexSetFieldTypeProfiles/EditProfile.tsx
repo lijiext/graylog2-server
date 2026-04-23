@@ -66,7 +66,7 @@ const EditProfile = ({
   const initialValues = useMemo(() => omit(profile, ['id', 'indexSetIds']), [profile]);
 
   return (
-    <ProfileForm onCancel={onCancel} submitButtonText="Update profile" submitLoadingText="Updating profile..." onSubmit={onSubmit} initialValues={initialValues} />
+    <ProfileForm onCancel={onCancel} submitButtonText="更新个人资料" submitLoadingText="正在更新配置文件..." onSubmit={onSubmit} initialValues={initialValues} />
   );
 };
 

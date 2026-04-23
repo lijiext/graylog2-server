@@ -27,7 +27,7 @@ const CertificateRenewalStep = ({ currentStep, onTriggerStep, hideActions }: Mig
     <MigrationError errorMessage={currentStep.error_message} />
     <CertificateRenewalPolicyConfig />
     <Space h="xs" />
-    {(currentStep.next_steps.length <= 0) && (<p>Please create a certificate renewal policy before proceeding.</p>)}
+    {(currentStep.next_steps.length <= 0) && (<p>请继续操作前创建证书续期策略。</p>)}
     <MigrationStepTriggerButtonToolbar hidden={hideActions} nextSteps={currentStep.next_steps} onTriggerStep={onTriggerStep} />
   </>
 );

@@ -30,11 +30,11 @@ type Props = {
 
 const SavedSearchesModal = ({ toggleModal, deleteSavedSearch, activeSavedSearchId }: Props) => (
   <Modal show
-         title="Saved searches"
+         title="已保存的搜索"
          bsSize="large"
          onHide={toggleModal}>
     <Modal.Header closeButton>
-      <Modal.Title>Saved Searches</Modal.Title>
+      <Modal.Title>已保存的搜索</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       <SavedSearchesOverview deleteSavedSearch={deleteSavedSearch}
@@ -42,7 +42,7 @@ const SavedSearchesModal = ({ toggleModal, deleteSavedSearch, activeSavedSearchI
                              onLoadSavedSearch={toggleModal} />
     </Modal.Body>
     <Modal.Footer>
-      <Button onClick={toggleModal}>Cancel</Button>
+      <Button onClick={toggleModal}>取消</Button>
     </Modal.Footer>
   </Modal>
 );

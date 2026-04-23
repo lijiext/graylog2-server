@@ -55,12 +55,12 @@ const ContentPackDownloadControl = ({ contentPackId, revision, show, onHide }: P
         <p>{infoText}</p>
         <p>
           <a href={getDownloadUrl()} target="_blank" rel="noopener noreferrer">
-            <Icon name="download" />{' '}Download
+            <Icon name="download" />{' '}下载
           </a>
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={closeModal}>Close</Button>
+        <Button onClick={closeModal}>关闭</Button>
       </Modal.Footer>
     </BootstrapModalWrapper>
   );

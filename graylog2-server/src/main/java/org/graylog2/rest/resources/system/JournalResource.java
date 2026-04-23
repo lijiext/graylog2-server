@@ -63,7 +63,7 @@ public class JournalResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Get current state of the journal on this node.")
+    @ApiOperation(value = "获取此节点上日志的当前状态。")
     @RequiresPermissions(RestPermissions.JOURNAL_READ)
     public JournalSummaryResponse show() {
         if (!journalEnabled) {

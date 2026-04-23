@@ -128,7 +128,7 @@ public class EntitySharesResource extends RestResourceWithOwnerCheck {
     }
 
     @POST
-    @ApiOperation(value = "Create / update shares for an entity or collection")
+    @ApiOperation(value = "为实体或集合创建/更新共享")
     @Path("entities/{entityGRN}")
     @NoAuditEvent("Audit events are created within EntitySharesService")
     public Response updateEntityShares(@ApiParam(name = "entityGRN", required = true) @PathParam("entityGRN") @NotBlank String entityGRN,

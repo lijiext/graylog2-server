@@ -26,12 +26,12 @@ type Props = {
 const NotFoundPage = ({ displayPageLayout }: Props) => {
   const description = (
     <>
-      <p>The party gorilla was just here, but had another party to rock.</p>
-      <p>Oh, party gorilla! How we miss you! Will we ever see you again?</p>
+      <p>派对大猩猩刚才还在这里，但还有另一场派对要去狂欢。</p>
+      <p>哦，派对大猩猩！我们多么想念你！我们还能再见到你吗？</p>
     </>
   );
 
-  return (<ErrorPage title="Page not found" description={description} displayPageLayout={displayPageLayout} />);
+  return (<ErrorPage title="未找到页面" description={description} displayPageLayout={displayPageLayout} />);
 };
 
 NotFoundPage.propTypes = {

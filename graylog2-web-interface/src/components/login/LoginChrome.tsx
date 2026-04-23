@@ -104,7 +104,7 @@ type Props = {
 const LoginChrome = ({ children }: Props) => (
   <LoginContainer>
     <LoginBox>
-      <WelcomeMessage>Welcome to Graylog</WelcomeMessage>
+      <WelcomeMessage>欢迎使用 Graylog</WelcomeMessage>
       {children}
     </LoginBox>
     <Background>
@@ -116,7 +116,7 @@ const LoginChrome = ({ children }: Props) => (
           <LogoContainer>
             <Logo color="#ffffff" />
           </LogoContainer>
-          <Claim>Data. Insights. <Highlight>Answers.</Highlight></Claim>
+          <Claim>数据。洞察。 <Highlight>答案。</Highlight></Claim>
         </TextContainer>
       </BackgroundText>
     </Background>

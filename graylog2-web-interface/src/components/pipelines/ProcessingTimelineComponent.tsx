@@ -156,10 +156,10 @@ const ProcessingTimelineComponent = () => {
       .sort(naturalSort)
       .map((usedStage) => {
         if (stageNumbers.indexOf(usedStage) === -1) {
-          return <PipelineStage key={`${pipeline.id}-stage${usedStage}`} $idle>Idle</PipelineStage>;
+          return <PipelineStage key={`${pipeline.id}-stage${usedStage}`} $idle>空闲</PipelineStage>;
         }
 
-        return <PipelineStage key={`${pipeline.id}-stage${usedStage}`}>Stage {usedStage}</PipelineStage>;
+        return <PipelineStage key={`${pipeline.id}-stage${usedStage}`}>阶段 {usedStage}</PipelineStage>;
       });
   };
 
@@ -193,15 +193,15 @@ const ProcessingTimelineComponent = () => {
                                    connections={connections}
                                    streams={streams}
                                    streamsFormatter={_formatConnectedStreams}
-                                   noConnectionsMessage={<em>Not connected</em>} />
+                                   noConnectionsMessage={<em>未连接</em>} />
         </StreamListTD>
         <td>{_formatStages(pipeline, stages)}</td>
         <td>
           <ButtonToolbar>
             <LinkContainer to={Routes.SYSTEM.PIPELINES.PIPELINE(id)}>
-              <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:edit')} bsSize="xsmall">Edit</Button>
+              <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:edit')} bsSize="xsmall">编辑</Button>
             </LinkContainer>
-            <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:delete')} bsStyle="danger" bsSize="xsmall" onClick={_deletePipeline(pipeline)}>Delete</Button>
+            <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:delete')} bsStyle="danger" bsSize="xsmall" onClick={_deletePipeline(pipeline)}>删除</Button>
           </ButtonToolbar>
         </td>
       </tr>
@@ -221,7 +221,7 @@ const ProcessingTimelineComponent = () => {
                    customFilter={searchFilter}
                    filterKeys={[]}
                    filterLabel="Filter Pipelines"
-                   noDataText="No pipelines have been found"
+                   noDataText="未找到处理管道"
                    dataRowFormatter={_pipelineFormatter} />
       </StyledPaginatedList>
     </div>

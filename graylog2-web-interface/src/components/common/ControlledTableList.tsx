@@ -26,7 +26,7 @@ const ControlledTableList = ({ children }: { children: Array<React.ReactNode>}) 
   let effectiveChildren;
 
   if (children.length === 0) {
-    effectiveChildren = <ControlledTableListItem>No items to display</ControlledTableListItem>;
+    effectiveChildren = <ControlledTableListItem>无项目可显示</ControlledTableListItem>;
   } else {
     effectiveChildren = children;
   }

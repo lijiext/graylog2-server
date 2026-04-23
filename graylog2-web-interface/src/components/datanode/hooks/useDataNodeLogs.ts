@@ -32,8 +32,8 @@ const useDataNodeLogs = (hostname: string, enabled: boolean) : {
     () => fetchDataNodeLogsStdout(hostname),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Data Node stdout logs failed with status: ${errorThrown}`,
-          'Could not load Data Node stdout logs');
+        UserNotification.error(`加载数据节点标准输出日志失败，状态码：${errorThrown}`,
+          '无法加载数据节点 stdout 日志');
       },
       enabled,
     },
@@ -44,8 +44,8 @@ const useDataNodeLogs = (hostname: string, enabled: boolean) : {
     () => fetchDataNodeLogsStderr(hostname),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading Data Node stderr logs failed with status: ${errorThrown}`,
-          'Could not load Data Node stderr logs');
+        UserNotification.error(`加载数据节点标准错误日志失败，状态码：${errorThrown}`,
+          '无法加载数据节点 stderr 日志');
       },
       enabled,
     },

@@ -1,12 +1,12 @@
 <#if _title>
-Elasticsearch cluster unavailable
+Elasticsearch 集群不可用
 </#if>
 
 <#if _description>
 <span>
-Graylog could not successfully connect to the Elasticsearch cluster. If you are using multicast, check that
-it is working in your network and that Elasticsearch is accessible. Also check that the cluster name setting
-is correct. Read how to fix this in
-<a href="https://docs.graylog.org/docs/elasticsearch#configuration" target="_blank" rel="noreferrer">the Elasticsearch setup documentation.</a>
+Graylog 无法成功连接到 Elasticsearch 集群。如果您正在使用组播，请检查
+它是否在网络中正常工作，以及 Elasticsearch 是否可访问。同时请检查集群名称设置
+是否正确。阅读如何修复此问题的说明：
+<a href="https://docs.graylog.org/docs/elasticsearch#configuration" target="_blank" rel="noreferrer">Elasticsearch 设置文档。</a>
 </span>
 </#if>

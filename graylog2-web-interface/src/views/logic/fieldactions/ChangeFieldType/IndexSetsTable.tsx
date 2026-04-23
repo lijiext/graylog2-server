@@ -127,7 +127,7 @@ const IndexSetsTable = ({ field, setIndexSetSelection, fieldTypes, initialSelect
                      useQueryParameter={false}>
         {!list?.length && (
           <NoEntitiesExist>
-            No index sets have been found.
+            未找到任何索引集。
           </NoEntitiesExist>
         )}
         {list.length && (

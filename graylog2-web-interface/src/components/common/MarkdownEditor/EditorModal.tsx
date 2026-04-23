@@ -108,7 +108,7 @@ function EditorModal({ value, readOnly, onChange, show, onClose, onDone, helpBlo
       <Backdrop onClick={() => onClose()}>
         <Content onClick={(e: React.BaseSyntheticEvent) => e.stopPropagation()}>
           <Row>
-            <h2 style={{ marginBottom: '1rem' }}>Markdown Editor</h2>
+            <h2 style={{ marginBottom: '1rem' }}>Markdown 编辑器</h2>
             <CloseIcon name="close" onClick={() => onClose()} />
           </Row>
           {helpBlock && <Row>{helpBlock}</Row>}
@@ -129,8 +129,8 @@ function EditorModal({ value, readOnly, onChange, show, onClose, onDone, helpBlo
             )}
           </Row>
           <Row style={{ justifyContent: 'flex-end', marginTop: '1rem' }}>
-            <Button onClick={() => onClose()}>Cancel</Button>
-            <Button bsStyle="success" onClick={handleOnDone}>Done</Button>
+            <Button onClick={() => onClose()}>取消</Button>
+            <Button bsStyle="success" onClick={handleOnDone}>完成</Button>
           </Row>
         </Content>
       </Backdrop>

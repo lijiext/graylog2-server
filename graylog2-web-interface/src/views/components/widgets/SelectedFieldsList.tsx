@@ -97,7 +97,7 @@ const ListItem = forwardRef<HTMLDivElement, ListItemProps>(({
                          ariaLabel="Fields"
                          name="add-field-select"
                          value={item.id}
-                         aria-label={`Edit ${item.title} field`} />
+                         aria-label={`编辑 ${item.title} 字段`} />
       )}
 
       {!isEditing && (
@@ -108,8 +108,8 @@ const ListItem = forwardRef<HTMLDivElement, ListItemProps>(({
           <FieldTitle>{item.title}</FieldTitle>
           <Actions>
             {showUnit && <FieldUnit field={item.title} />}
-            <IconButton name="edit_square" title={`Edit ${item.title} field`} onClick={() => setIsEditing(true)} />
-            <IconButton name="delete" title={`Remove ${item.title} field`} onClick={onRemove} />
+            <IconButton name="edit_square" title={`编辑 ${item.title} 字段`} onClick={() => setIsEditing(true)} />
+            <IconButton name="delete" title={`移除 ${item.title} 字段`} onClick={onRemove} />
           </Actions>
         </>
       )}

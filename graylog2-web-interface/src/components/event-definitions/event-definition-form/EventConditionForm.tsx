@@ -131,21 +131,20 @@ const EventConditionForm = ({ action, entityTypes, eventDefinition, validation, 
   return (
     <Row>
       <Col md={7} lg={6}>
-        <h2 className={commonStyles.title}>Event Condition</h2>
+        <h2 className={commonStyles.title}>事件条件</h2>
 
         {!canEditCondition ? (
           <p>
-            The conditions of this event definition type cannot be edited.
+            此事件定义类型的条件无法编辑。
           </p>
         ) : (
           <>
             <p>
-              Configure how Graylog should create Events of this kind. You can later use those Events as input on other
-              Conditions, making it possible to build powerful Conditions based on others.
+              配置 Graylog 应如何创建此类事件。您稍后可以将这些事件用作其他条件的输入，从而基于其他条件构建强大的条件。
             </p>
             <FormGroup validationState={validation.errors.config ? 'error' : null}>
-              <ControlLabel htmlFor="event-condition-type-select">Condition Type</ControlLabel>
-              <Select placeholder="Select a Condition Type"
+              <ControlLabel htmlFor="event-condition-type-select">条件类型</ControlLabel>
+              <Select placeholder="选择条件类型"
                       inputId="event-condition-type-select"
                       options={formattedEventDefinitionTypes()}
                       value={eventDefinition.config.type}
@@ -165,7 +164,7 @@ const EventConditionForm = ({ action, entityTypes, eventDefinition, validation, 
         <>
           <Col md={5} lg={5} lgOffset={1}>
             <HelpPanel className={styles.conditionTypesInfo}
-                       title="Available Conditions">
+                       title="可用条件">
               {renderConditionTypeDescriptions()}
             </HelpPanel>
           </Col>

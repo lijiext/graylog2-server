@@ -197,7 +197,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
     const { config, validation } = this.props;
     const { isBacklogSizeEnabled, backlogSize } = this.state;
     const url = 'https://docs.graylog.org/docs/alerts#notifications';
-    const element = <p>Adaptive Card to post to Teams. See <a href={url} rel="noopener noreferrer" target="_blank">docs </a>for more details.</p>;
+    const element = <p>要发布到 Teams 的自适应卡片。请参阅 <a href={url} rel="noopener noreferrer" target="_blank">docs </a>更多详细信息。</p>;
 
     return (
       <>
@@ -208,7 +208,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
                            url={config.webhook_url || ''}
                            autofocus={false} />
         <FormGroup>
-          <ControlLabel>Adaptive Card Template</ControlLabel>
+          <ControlLabel>自适应卡片模板</ControlLabel>
           <SourceCodeEditor id="notification-adaptiveCard"
                             mode="text"
                             theme="light"
@@ -221,15 +221,15 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
         </FormGroup>
         <FormGroup>
           <Input id="notification-time-zone"
-                 help="Time zone used for timestamps in the notification body."
-                 label="Time zone for date/time values">
+                 help="通知正文中时间戳使用的时区。"
+                 label="日期/时间值的时区">
             <TimezoneSelect className="timezone-select"
                             name="time_zone"
                             value={config.time_zone}
                             onChange={this.handleTimeZoneChange}
                             clearable={false} />
           </Input>
-          <ControlLabel>Message Backlog Limit (optional)</ControlLabel>
+          <ControlLabel>消息积压限制（可选）</ControlLabel>
           <InputGroup>
             <InputGroup.Addon>
               <input id="toggle_backlog_size"
@@ -245,7 +245,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
                          min="0"
                          disabled={!isBacklogSizeEnabled} />
           </InputGroup>
-          <HelpBlock>Limit the number of backlog messages sent as part of the Microsoft Teams notification.  If set to 0, no limit will be enforced.</HelpBlock>
+          <HelpBlock>限制作为 Microsoft Teams 通知一部分发送的积压消息数量。如果设置为 0，则不强制执行限制。</HelpBlock>
         </FormGroup>
       </>
     );

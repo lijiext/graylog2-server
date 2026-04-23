@@ -28,16 +28,16 @@ const IndexSetTemplateEditPage = () => {
   const { data, isFetching, isSuccess, isError } = useTemplate(templateId);
 
   return (
-    <DocumentTitle title="Edit Index Set Template">
+    <DocumentTitle title="编辑索引集模板">
       <IndicesPageNavigation />
-      <PageHeader title="Edit Index Set Template">
-        <span>Edit an existing Index Set Template. This is a set of configuration that can be applied when creating a new Index Set.</span>
+      <PageHeader title="编辑索引集模板">
+        <span>编辑现有的索引集模板。这是一组可以在创建新索引集时应用的配置。</span>
       </PageHeader>
       <Row className="content">
         <Col md={12}>
           {isFetching && <Spinner />}
           {isSuccess && <EditTemplate template={data} />}
-          {isError && <p>There was an error when loading the template.</p>}
+          {isError && <p>加载模板时发生错误。</p>}
         </Col>
       </Row>
     </DocumentTitle>

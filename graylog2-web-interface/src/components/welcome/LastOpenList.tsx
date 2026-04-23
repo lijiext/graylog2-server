@@ -33,10 +33,9 @@ const LastOpenList = () => {
   if (lastOpened.length === 0) {
     return (
       <NoSearchResult>
-        You have not opened any searches/dashboards yet.
+        您尚未打开任何搜索/仪表盘。
         <br />
-        From now on, whenever you open a saved search/dashboard, it will show up here.
-        In the meantime, you can start a new <Link to={Routes.SEARCH}>Search</Link> or <Link to={Routes.pluginRoute('DASHBOARDS_NEW')}>Dashboard</Link>.
+        从现在开始，每次打开保存的搜索/仪表盘时，它都会显示在此处。在此期间，您可以开始新的 <Link to={Routes.SEARCH}>搜索</Link> or <Link to={Routes.pluginRoute('DASHBOARDS_NEW')}>仪表盘</Link>.
       </NoSearchResult>
     );
   }

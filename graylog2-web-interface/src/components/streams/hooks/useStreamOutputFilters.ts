@@ -80,8 +80,8 @@ const useStreamOutputFilters = (streamId: string, destinationType: string, pagin
     () => fetchStreamOutputFilters(streamId, { ...pagination, query: `destination_type:${destinationType}` }),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading stream output filters failed with status: ${errorThrown}`,
-          'Could not load stream output filters');
+        UserNotification.error(`加载数据流输出过滤器失败，状态：${errorThrown}`,
+          '无法加载数据流输出过滤器');
       },
       keepPreviousData: true,
     },

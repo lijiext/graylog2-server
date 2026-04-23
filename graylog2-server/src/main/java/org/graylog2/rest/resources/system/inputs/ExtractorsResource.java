@@ -110,10 +110,10 @@ public class ExtractorsResource extends RestResource {
     @ApiOperation(value = "Add an extractor to an input",
                   response = ExtractorCreated.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
-            @ApiResponse(code = 400, message = "No such extractor type."),
-            @ApiResponse(code = 400, message = "Field the extractor should write on is reserved."),
-            @ApiResponse(code = 400, message = "Missing or invalid configuration.")
+            @ApiResponse(code = 404, message = "此节点不存在此类输入端。"),
+            @ApiResponse(code = 400, message = "不存在此类提取器类型。"),
+            @ApiResponse(code = 400, message = "提取器应写入的字段已被保留。"),
+            @ApiResponse(code = 400, message = "配置缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.EXTRACTOR_CREATE)
     public Response create(@ApiParam(name = "inputId", required = true)
@@ -153,11 +153,11 @@ public class ExtractorsResource extends RestResource {
     @ApiOperation(value = "Update an extractor")
     @Path("/{extractorId}")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
-            @ApiResponse(code = 404, message = "No such extractor on this input."),
-            @ApiResponse(code = 400, message = "No such extractor type."),
-            @ApiResponse(code = 400, message = "Field the extractor should write on is reserved."),
-            @ApiResponse(code = 400, message = "Missing or invalid configuration.")
+            @ApiResponse(code = 404, message = "此节点不存在此类输入端。"),
+            @ApiResponse(code = 404, message = "此输入端不存在此类提取器。"),
+            @ApiResponse(code = 400, message = "不存在此类提取器类型。"),
+            @ApiResponse(code = 400, message = "提取器应写入的字段已被保留。"),
+            @ApiResponse(code = 400, message = "配置缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.EXTRACTOR_UPDATE)
     public ExtractorSummary update(@ApiParam(name = "inputId", required = true)
@@ -190,7 +190,7 @@ public class ExtractorsResource extends RestResource {
     @Timed
     @ApiOperation(value = "List all extractors of an input")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node.")
+            @ApiResponse(code = 404, message = "此节点不存在此类输入端。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     public ExtractorSummaryList list(@ApiParam(name = "inputId", required = true)
@@ -211,8 +211,8 @@ public class ExtractorsResource extends RestResource {
     @ApiOperation(value = "Get information of a single extractor of an input")
     @Path("/{extractorId}")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
-            @ApiResponse(code = 404, message = "No such extractor on this input.")
+            @ApiResponse(code = 404, message = "此节点不存在此类输入端。"),
+            @ApiResponse(code = 404, message = "此输入端不存在此类提取器。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     public ExtractorSummary single(
@@ -239,9 +239,9 @@ public class ExtractorsResource extends RestResource {
     @ApiOperation(value = "Delete an extractor")
     @Path("/{extractorId}")
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid request."),
-            @ApiResponse(code = 404, message = "Input not found."),
-            @ApiResponse(code = 404, message = "Extractor not found.")
+            @ApiResponse(code = 400, message = "请求无效。"),
+            @ApiResponse(code = 404, message = "未找到输入端。"),
+            @ApiResponse(code = 404, message = "未找到提取器。")
     })
     @Produces(MediaType.APPLICATION_JSON)
     @AuditEvent(type = AuditEventTypes.EXTRACTOR_DELETE)
@@ -274,11 +274,11 @@ public class ExtractorsResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Update extractor order of an input")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node.")
+            @ApiResponse(code = 404, message = "此节点不存在此类输入端。")
     })
     @Path("order")
     @AuditEvent(type = AuditEventTypes.EXTRACTOR_ORDER_UPDATE)
-    public void order(@ApiParam(name = "inputId", value = "Persist ID (!) of input.", required = true)
+    public void order(@ApiParam(name = "inputId", value = "输入端的持久化 ID (!)。", required = true)
                       @PathParam("inputId") String inputPersistId,
                       @ApiParam(name = "JSON body", required = true) OrderExtractorsRequest oer) throws NotFoundException {
         checkPermission(RestPermissions.INPUTS_EDIT, inputPersistId);

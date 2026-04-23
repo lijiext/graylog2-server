@@ -80,7 +80,7 @@ const ConvertToSourceCodeModal = ({ show, onHide, onNavigateAway, rule }: Props)
                     await onNavigateAway(rule);
                     history.push(Routes.SYSTEM.PIPELINES.RULE('new'));
                   }}>
-            Create new Rule from Code
+            从代码创建新规则
           </Button>
           <Button type="button"
                   bsStyle="info"
@@ -92,10 +92,10 @@ const ConvertToSourceCodeModal = ({ show, onHide, onNavigateAway, rule }: Props)
                     });
 
                     copyToClipboard(rule.source);
-                    UserNotification.success('Rule source code copied to clipboard!');
+                    UserNotification.success('规则源代码已复制到剪贴板！');
                     onHide();
                   }}>
-            Copy & Close
+            复制并关闭
           </Button>
         </ModalButtonToolbar>
       </Modal.Footer>

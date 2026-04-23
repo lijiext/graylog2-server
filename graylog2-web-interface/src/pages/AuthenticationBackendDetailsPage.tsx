@@ -66,7 +66,7 @@ const AuthenticationBackendDetailsPage = ({ params: { backendId } }: Props) => {
                     <LinkContainer to={Routes.SYSTEM.AUTHENTICATION.BACKENDS.edit(authBackend?.id)}>
                       <Button bsStyle="success"
                               type="button">
-                        Edit Service
+                        编辑服务
                       </Button>
                     </LinkContainer>
                   )}
@@ -74,7 +74,7 @@ const AuthenticationBackendDetailsPage = ({ params: { backendId } }: Props) => {
                     title: 'Authentication documentation',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
-        <span>Configure Graylog&apos;s authentication services of this Graylog cluster.</span>
+        <span>配置此 Graylog 集群的 Graylog 认证服务。</span>
       </PageHeader>
       <BackendDetails authenticationBackend={authBackend} />
     </DocumentTitle>

@@ -128,24 +128,24 @@ class TeamsNotificationForm extends React.Component<TeamsNotificationFormType, a
     const { config, validation } = this.props;
     const { isBacklogSizeEnabled, backlogSize } = this.state;
     const url = 'https://docs.graylog.org/docs/alerts#notifications';
-    const element = <p>Custom message to be appended below the alert title. See <a href={url} rel="noopener noreferrer" target="_blank">docs </a>for more details.</p>;
+    const element = <p>要附加在告警标题下方的自定义消息。请参阅 <a href={url} rel="noopener noreferrer" target="_blank">docs </a>更多详细信息。</p>;
 
     return (
       <>
 
         <FormGroup controlId="color">
-          <ControlLabel>Configuration color</ControlLabel>
+          <ControlLabel>配置颜色</ControlLabel>
           <div>
             <ColorLabel color={config.color} />
             <div style={{ display: 'inline-block', marginLeft: 15 }}>
               <ColorPickerPopover id="color"
                                   color={config.color || '#f06292'}
                                   placement="right"
-                                  triggerNode={<Button bsSize="xsmall">Change color</Button>}
+                                  triggerNode={<Button bsSize="xsmall">更改颜色</Button>}
                                   onChange={this.handleColorChange} />
             </div>
           </div>
-          <HelpBlock>Choose a color to use for this configuration.</HelpBlock>
+          <HelpBlock>为此配置选择一种颜色。</HelpBlock>
         </FormGroup>
         <Input id="notification-webhookUrl"
                name="webhook_url"
@@ -158,7 +158,7 @@ class TeamsNotificationForm extends React.Component<TeamsNotificationFormType, a
                required />
         <Input id="notification-customMessage"
                name="custom_message"
-               label="Custom Message (optional)"
+               label="自定义消息（可选）"
                type="textarea"
                bsStyle={validation.errors.custom_message ? 'error' : null}
                help={get(validation, 'errors.custom_message[0]', element)}
@@ -167,15 +167,15 @@ class TeamsNotificationForm extends React.Component<TeamsNotificationFormType, a
 
         <FormGroup>
           <Input id="notification-time-zone"
-                 help="Time zone used for timestamps in the notification body."
-                 label="Time zone for date/time values">
+                 help="通知正文中时间戳使用的时区。"
+                 label="日期/时间值的时区">
             <TimezoneSelect className="timezone-select"
                             name="time_zone"
                             value={config.time_zone}
                             onChange={this.handleTimeZoneChange}
                             clearable={false} />
           </Input>
-          <ControlLabel>Message Backlog Limit (optional)</ControlLabel>
+          <ControlLabel>消息积压限制（可选）</ControlLabel>
           <InputGroup>
             <InputGroup.Addon>
               <input id="toggle_backlog_size"
@@ -191,12 +191,12 @@ class TeamsNotificationForm extends React.Component<TeamsNotificationFormType, a
                          min="0"
                          disabled={!isBacklogSizeEnabled} />
           </InputGroup>
-          <HelpBlock>Limit the number of backlog messages sent as part of the Microsoft Teams notification.  If set to 0, no limit will be enforced.</HelpBlock>
+          <HelpBlock>限制作为 Microsoft Teams 通知一部分发送的积压消息数量。如果设置为 0，则不强制执行限制。</HelpBlock>
         </FormGroup>
 
         <Input id="notification-iconUrl"
                name="icon_url"
-               label="Icon URL (optional)"
+               label="图标 URL（可选）"
                type="text"
                bsStyle={validation.errors.icon_url ? 'error' : null}
                help={get(validation, 'errors.icon_url[0]', 'Image to use as the icon for this message')}

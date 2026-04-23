@@ -65,12 +65,12 @@ const DestinationIndexSetSection = ({ indexSet, stream }: Props) => {
   });
 
   return (
-    <Section title="Index Set"
+    <Section title="索引集"
              collapsible
              defaultClosed
              headerLeftSection={(
                <>
-                 <DestinationSwitch aria-label="Toggle index set"
+                 <DestinationSwitch aria-label="切换索引集"
                                     name="toggle-indexset"
                                     checked
                                     label={title}
@@ -85,17 +85,17 @@ const DestinationIndexSetSection = ({ indexSet, stream }: Props) => {
                                    stream={stream} />
             )}>
       <Alert bsStyle="default">
-        Messages routed to the <b>Search Cluster</b> will be searchable in Graylog and count towards Graylog License usage.<br />
-        These messages will be stored in the defined Index Set until the retention policy criteria is met.<br />
-        Note: Messages not routed to the <b>Search Cluster</b> will not be searchable in Graylog.
+        路由到 <b>搜索集群</b> 将在 Graylog 中可搜索并计入 Graylog 许可证使用情况。<br />
+        这些消息将存储在定义的索引集中，直到满足保留策略条件。<br />
+        注意：未路由到 <b>搜索集群</b> 将在 Graylog 中不可搜索。
       </Alert>
       <Table>
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Total size</td>
-            <td>Oldest Message (date)</td>
-            <td colSpan={2}>Archiving</td>
+            <td>名称</td>
+            <td>总大小</td>
+            <td>最旧的消息 (日期)</td>
+            <td colSpan={2}>归档中</td>
           </tr>
         </thead>
         <tbody>
@@ -113,7 +113,7 @@ const DestinationIndexSetSection = ({ indexSet, stream }: Props) => {
                   <Button bsStyle="default"
                           bsSize="xsmall"
                           onClick={() => {}}
-                          title="View index set">
+                          title="查看索引集">
                     <Icon name="pageview" type="regular" />
                   </Button>
                 </LinkContainer>

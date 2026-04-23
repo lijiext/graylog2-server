@@ -25,15 +25,15 @@ import HideOnCloud from 'util/conditional/HideOnCloud';
 import DocsHelper from 'util/DocsHelper';
 
 const DataNodesPage = () => (
-  <DocumentTitle title="Data Nodes">
+  <DocumentTitle title="数据节点">
     <DataNodesPageNavigation />
-    <PageHeader title="Data Nodes"
+    <PageHeader title="数据节点"
                 documentationLink={{
                   title: 'Data Nodes documentation',
                   path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
                 }}>
       <span>
-        Graylog data nodes offer a better integration with Graylog and simplify future updates. They allow you to index and search through all the messages in your Graylog message database.
+        Graylog 数据节点与 Graylog 的集成更紧密，并简化了未来的更新。它们允许您索引和搜索 Graylog 消息数据库中的所有消息。
       </span>
     </PageHeader>
     <HideOnCloud>

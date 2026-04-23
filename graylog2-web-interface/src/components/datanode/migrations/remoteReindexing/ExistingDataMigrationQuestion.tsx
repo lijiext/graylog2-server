@@ -23,12 +23,12 @@ import MigrationStepTriggerButtonToolbar from '../common/MigrationStepTriggerBut
 
 const ExistingDataMigrationQuestion = ({ currentStep, onTriggerStep, hideActions }: MigrationStepComponentProps) => (
   <>
-    <p>Do you want to migrate your existing data?</p>
+    <p>您想迁移现有数据吗？</p>
     <Space h="md" />
-    <p>Please remove the <code>elasticsearch_hosts</code> line from your Graylog configuration file (<code>server.conf</code>).</p>
-    <p>E.g., <code>elasticsearch_hosts = https://admin:admin@opensearch1:9200,https://admin:admin@opensearch2:9200,https://admin:admin@opensearch3:9200</code></p>
+    <p>请移除 <code>elasticsearch_hosts</code> 来自您的 Graylog 配置文件 (<code>server.conf</code>).</p>
+    <p>例如， <code>elasticsearch_hosts = https://admin:admin@opensearch1:9200,https://admin:admin@opensearch2:9200,https://admin:admin@opensearch3:9200</code></p>
     <Space h="md" />
-    <p>Once that is done please restart Graylog to finish the migration.</p>
+    <p>完成后，请重启 Graylog 以完成迁移。</p>
     <Space h="md" />
     <MigrationStepTriggerButtonToolbar hidden={hideActions} nextSteps={currentStep.next_steps} onTriggerStep={onTriggerStep} />
   </>

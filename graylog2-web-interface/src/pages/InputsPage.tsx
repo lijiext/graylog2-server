@@ -38,22 +38,20 @@ const InputsPage = () => {
   }, []);
 
   return (
-    <DocumentTitle title="Inputs">
+    <DocumentTitle title="输入端">
       <div>
-        <PageHeader title="Inputs">
+        <PageHeader title="输入端">
           {isCloud
             ? (
               <>
-                <p> Graylog cloud accepts data via inputs. There are many types of inputs to choose from, but only some
-                  can run directly in the cloud. You can launch and terminate them on this page.
+                <p> Graylog 云通过输入端接收数据。有多种输入端类型可供选择，但只有部分可直接在云端运行。您可以在本页面启动和终止它们。
                 </p>
                 <p>
-                  If you are missing an input type on this page&apos;s list of available inputs, you can start the input
-                  on a <Link to={Routes.pluginRoute('SYSTEM_FORWARDERS')}>Forwarder</Link>.
+                  如果您在此页面的可用输入端列表中缺少某种输入类型，您可以在 <Link to={Routes.pluginRoute('SYSTEM_FORWARDERS')}>转发器</Link>.
                 </p>
               </>
             )
-            : <span>Graylog nodes accept data via inputs. Launch or terminate as many inputs as you want here.</span>}
+            : <span>Graylog 节点通过输入端接收数据。在此处可启动或终止任意数量的输入端。</span>}
         </PageHeader>
         <InputsList permissions={currentUser.permissions} />
       </div>

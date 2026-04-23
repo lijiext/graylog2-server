@@ -44,7 +44,7 @@ public class CsvConverter extends Converter {
         try {
             String columnHeader = (String) config.get("column_header");
             if (columnHeader == null || columnHeader.isEmpty()) {
-                throw new ConfigurationException("Missing column headers.");
+                throw new ConfigurationException("缺少列标题。");
             }
             separator = firstCharOrDefault(config.get("separator"), CSVParser.DEFAULT_SEPARATOR);
             quoteChar = firstCharOrDefault(config.get("quote_char"), CSVParser.DEFAULT_QUOTE_CHARACTER);
@@ -55,7 +55,7 @@ public class CsvConverter extends Converter {
             final CSVParser parser = getCsvParser();
             fieldNames = parser.parseLine(columnHeader);
             if (fieldNames.length == 0) {
-                throw new ConfigurationException("No field names found.");
+                throw new ConfigurationException("未找到字段名。");
             }
         } catch (Exception e) {
             throw new ConfigurationException("Invalid configuration for CsvConverter");

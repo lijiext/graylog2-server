@@ -77,8 +77,8 @@ export type PaginatedPipelineResponse = PaginatedListJSON & {
 export type PaginatedPipelines = PaginatedList<PipelineType>;
 
 const listFailCallback = (error: Error) => {
-  UserNotification.error(`Fetching pipelines failed with status: ${error.message}`,
-    'Could not retrieve processing pipelines');
+  UserNotification.error(`获取处理管道失败，状态为：${error.message}`,
+    '无法检索处理管道');
 };
 
 export const PipelinesStore = singletonStore(
@@ -142,8 +142,8 @@ export const PipelinesStore = singletonStore(
 
     get(pipelineId) {
       const failCallback = (error) => {
-        UserNotification.error(`Fetching pipeline failed with status: ${error.message}`,
-          `Could not retrieve processing pipeline "${pipelineId}"`);
+        UserNotification.error(`获取处理管道失败，状态为：${error.message}`,
+          `无法检索处理管道 "${pipelineId}"`);
       };
 
       const url = qualifyUrl(ApiRoutes.PipelinesController.get(pipelineId).url);
@@ -154,8 +154,8 @@ export const PipelinesStore = singletonStore(
 
     save(pipelineSource) {
       const failCallback = (error) => {
-        UserNotification.error(`Saving pipeline failed with status: ${error.message}`,
-          'Could not save processing pipeline');
+        UserNotification.error(`保存处理管道失败，状态为：${error.message}`,
+          '无法保存处理管道');
       };
 
       const url = qualifyUrl(ApiRoutes.PipelinesController.create().url);
@@ -169,7 +169,7 @@ export const PipelinesStore = singletonStore(
       promise.then(
         (response) => {
           this._updatePipelinesState(response);
-          UserNotification.success(`Pipeline "${pipeline.title}" created successfully`);
+          UserNotification.success(`处理管道 "${pipeline.title}" 创建成功`);
         },
         failCallback,
       );
@@ -179,8 +179,8 @@ export const PipelinesStore = singletonStore(
 
     update(pipelineSource) {
       const failCallback = (error) => {
-        UserNotification.error(`Updating pipeline failed with status: ${error.message}`,
-          'Could not update processing pipeline');
+        UserNotification.error(`更新处理管道失败，状态为：${error.message}`,
+          '无法更新处理管道');
       };
 
       const url = qualifyUrl(ApiRoutes.PipelinesController.update(pipelineSource.id).url);
@@ -195,7 +195,7 @@ export const PipelinesStore = singletonStore(
       promise.then(
         (response) => {
           this._updatePipelinesState(response);
-          UserNotification.success(`Pipeline "${pipeline.title}" updated successfully`);
+          UserNotification.success(`处理管道 "${pipeline.title}" 更新成功`);
         },
         failCallback,
       );
@@ -204,8 +204,8 @@ export const PipelinesStore = singletonStore(
     },
     delete(pipelineId) {
       const failCallback = (error) => {
-        UserNotification.error(`Deleting pipeline failed with status: ${error.message}`,
-          `Could not delete processing pipeline "${pipelineId}"`);
+        UserNotification.error(`删除处理管道失败，状态为：${error.message}`,
+          `无法删除处理管道 "${pipelineId}"`);
       };
 
       const url = qualifyUrl(ApiRoutes.PipelinesController.delete(pipelineId).url);
@@ -215,7 +215,7 @@ export const PipelinesStore = singletonStore(
 
         this.pipelines = updatedPipelines.filter((el) => el.id !== pipelineId);
         this.trigger({ pipelines: this.pipelines });
-        UserNotification.success(`Pipeline "${pipelineId}" deleted successfully`);
+        UserNotification.success(`处理管道 "${pipelineId}" 已成功删除`);
       }, failCallback);
 
       PipelinesActions.delete.promise(promise);

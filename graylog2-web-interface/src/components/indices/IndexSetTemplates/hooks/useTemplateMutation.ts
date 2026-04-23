@@ -67,11 +67,11 @@ const useTemplate = () => {
 
   const post = useMutation(postTemplate, {
     onError: (errorThrown) => {
-      UserNotification.error(`Creating index set template failed with status: ${errorThrown}`,
-        'Could not create index set template');
+      UserNotification.error(`创建索引集模板失败，状态为：${errorThrown}`,
+        '无法创建索引集模板');
     },
     onSuccess: () => {
-      UserNotification.success('Index set template has been successfully created.', 'Success!');
+      UserNotification.success('索引集模板已成功创建。', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetTemplates'], type: 'active' });
     },
@@ -79,11 +79,11 @@ const useTemplate = () => {
 
   const put = useMutation(putTemplate, {
     onError: (errorThrown) => {
-      UserNotification.error(`Updating index set template failed with status: ${errorThrown}`,
-        'Could not update index set template');
+      UserNotification.error(`更新索引集模板失败，状态为：${errorThrown}`,
+        '无法更新索引集模板');
     },
     onSuccess: () => {
-      UserNotification.success('Index set template has been successfully updated.', 'Success!');
+      UserNotification.success('索引集模板已成功更新。', '成功！');
       queryClient.invalidateQueries(['indexSetTemplate']);
 
       return queryClient.refetchQueries({ queryKey: ['indexSetTemplates'], type: 'active' });
@@ -92,11 +92,11 @@ const useTemplate = () => {
 
   const setAsDefault = useMutation(putTemplateDefault, {
     onError: (errorThrown) => {
-      UserNotification.error(`Setting template as default failed with status: ${errorThrown}`,
-        'Could set template as default');
+      UserNotification.error(`设置模板为默认值失败，状态为：${errorThrown}`,
+        '可以将模板设置为默认');
     },
     onSuccess: () => {
-      UserNotification.success('Template has successfully been set as default.', 'Success!');
+      UserNotification.success('模板已成功设置为默认值。', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetTemplates'], type: 'active' });
     },
@@ -104,11 +104,11 @@ const useTemplate = () => {
 
   const remove = useMutation(deleteProfile, {
     onError: (errorThrown) => {
-      UserNotification.error(`Deleting index set template failed with status: ${errorThrown}`,
-        'Could not delete index set template');
+      UserNotification.error(`删除索引集模板失败，状态为：${errorThrown}`,
+        '无法删除索引集模板');
     },
     onSuccess: () => {
-      UserNotification.success('Index set template has been successfully deleted.', 'Success!');
+      UserNotification.success('索引集模板已成功删除。', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetTemplates'], type: 'active' });
     },

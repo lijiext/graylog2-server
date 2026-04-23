@@ -110,7 +110,7 @@ const Trend = React.forwardRef<HTMLSpanElement, Props>(({ current, previous, tre
   return (
     <Background trend={backgroundTrend} data-testid="trend-background">
       <TextContainer trend={backgroundTrend} ref={ref}>
-        <StyledIcon name={trendIcon} trend={backgroundTrend} data-testid="trend-icon" /> <span data-testid="trend-value" title={`Previous value: ${previous}`}>{absoluteDifference} / {relativeDifference}</span>
+        <StyledIcon name={trendIcon} trend={backgroundTrend} data-testid="trend-icon" /> <span data-testid="trend-value" title={`上一个值：${previous}`}>{absoluteDifference} / {relativeDifference}</span>
       </TextContainer>
     </Background>
   );

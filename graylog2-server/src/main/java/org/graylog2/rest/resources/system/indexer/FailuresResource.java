@@ -65,14 +65,14 @@ public class FailuresResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Total count of failed index operations since the given date.")
+    @ApiOperation(value = "自给定日期以来失败的索引操作总数。")
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid date parameter provided.")
+            @ApiResponse(code = 400, message = "提供的日期参数无效。")
     })
     @RequiresPermissions(RestPermissions.INDICES_FAILURES)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("count")
-    public FailureCount count(@ApiParam(name = "since", value = "ISO8601 date", required = true)
+    public FailureCount count(@ApiParam(name = "since", value = "ISO8601 日期", required = true)
                               @QueryParam("since") @NotEmpty String since) {
         final DateTime sinceDate;
         try {
@@ -88,7 +88,7 @@ public class FailuresResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Get a list of failed index operations.")
+    @ApiOperation(value = "获取失败的索引操作列表。")
     @RequiresPermissions(RestPermissions.INDICES_FAILURES)
     @Produces(MediaType.APPLICATION_JSON)
     public Map<String, Object> single(@ApiParam(name = "limit", value = "Limit", required = true)

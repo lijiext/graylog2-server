@@ -56,7 +56,7 @@ const StaticColorPicker = () => (
     {({ field: { name, value, onChange }, meta }) => (
       <Input id={name}
              error={meta?.error}
-             label="Color">
+             label="颜色">
         <ColorPickerPopover id="formatting-rule-color"
                             placement="right"
                             color={value}
@@ -118,7 +118,7 @@ const GradientColorPicker = () => (
           {({ field: { name, value, onChange }, meta }) => (
             <Input id={`${name}-name`}
                    error={meta?.error}
-                   label="Gradient Name">
+                   label="渐变名称">
               <Select options={GRADIENTS}
                       inputProps={{ 'aria-label': 'Select gradient colors' }}
                       value={value}
@@ -129,26 +129,26 @@ const GradientColorPicker = () => (
         <Field name="color.lower">
           {({ field: { name, value, onChange }, meta }) => (
             <Input id={name}
-                   aria-label="Specify lowest value"
-                   label="Lowest Value"
+                   aria-label="指定最低值"
+                   label="最低值"
                    type="number"
                    value={value}
                    error={meta?.error}
                    onChange={onChange}
-                   help="The lowest value expected in the field/series."
+                   help="字段/系列中预期的最低值。"
                    required />
           )}
         </Field>
         <Field name="color.upper">
           {({ field: { name, value, onChange }, meta }) => (
             <Input id={name}
-                   aria-label="Specify highest value"
-                   label="Highest Value"
+                   aria-label="指定最高值"
+                   label="最高值"
                    type="number"
                    value={value}
                    error={meta?.error}
                    onChange={onChange}
-                   help="The highest value expected in the field/series."
+                   help="字段/系列中预期的最高值。"
                    required />
           )}
         </Field>
@@ -220,13 +220,13 @@ const HighlightingColorForm = ({ field }: Props) => {
       {({ field: { name, value }, meta }) => (
         <>
           <Input id={`${name}-coloring`}
-                 label="Coloring"
+                 label="着色"
                  error={meta?.error}>
             <Container>
               <Input checked={value === 'static'}
                      formGroupClassName=""
                      id={name}
-                     label="Static Color"
+                     label="静态颜色"
                      onChange={onChangeType}
                      type="radio"
                      value="static" />
@@ -234,7 +234,7 @@ const HighlightingColorForm = ({ field }: Props) => {
                      formGroupClassName=""
                      id={name}
                      disabled={!isNumeric}
-                     label="Gradient"
+                     label="渐变"
                      onChange={onChangeType}
                      type="radio"
                      value="gradient" />

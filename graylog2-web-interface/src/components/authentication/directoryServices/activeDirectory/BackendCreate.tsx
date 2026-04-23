@@ -29,36 +29,36 @@ export const HELP = {
   // server config help
   systemUserDn: (
     <span>
-      The username for the initial connection to the Active Directory server, e.g. <code>ldapbind@some.domain</code>.<br />
-      This needs to match the <code>userPrincipalName</code> of that user.
+      用于初始连接到 Active Directory 服务器的用户名，例如： <code>ldapbind@some.domain</code>.<br />
+      这必须匹配 <code>userPrincipalName</code> 该用户。
     </span>
   ),
   systemUserPassword: 'The password for the initial connection to the Active Directory server.',
   // user sync help
   userSearchBase: (
     <span>
-      The base tree to limit the Active Directory search query to, e.g. <code>cn=users,dc=example,dc=com</code>.
+      限制 Active Directory 搜索查询的基础树，例如 <code>cn=users,dc=example,dc=com</code>.
     </span>
   ),
   userSearchPattern: (
     <span>
-      For example <code className="text-nowrap">{'(&(objectClass=user)(|(sAMAccountName={0})(userPrincipalName={0})))'}</code>.{' '}
-      The string <code>{'{0}'}</code> will be replaced by the entered username.
+      例如 <code className="text-nowrap">{'(&(objectClass=user)(|(sAMAccountName={0})(userPrincipalName={0})))'}</code>.{' '}
+      该字符串 <code>{'{0}'}</code> 将被输入的用户名替换。
     </span>
   ),
   userNameAttribute: (
     <span>
-      Which Active Directory attribute to use for the full name of the user in Graylog, e.g. <code>userPrincipalName</code>.<br />
-      Try to load a test user in the sidebar section <i>User Login Test</i>, if you are unsure which attribute to use.
+      用于 Graylog 中用户全名的 Active Directory 属性，例如： <code>userPrincipalName</code>.<br />
+      尝试在侧边栏部分加载测试用户 <i>用户登录测试</i>，如果您不确定要使用哪个属性。
     </span>
   ),
   userFullNameAttribute: (
     <span>
-      Which Active Directory attribute to use for the full name of a synchronized Graylog user, e.g. <code>displayName</code>.<br />
+      用于同步的 Graylog 用户全名的 Active Directory 属性，例如： <code>displayName</code>.<br />
     </span>
   ),
   defaultRoles: (
-    <span>The default Graylog roles synchronized user will obtain. All users need the <code>Reader</code> role, to use the Graylog web interface</span>
+    <span>同步用户将获得的默认 Graylog 角色。所有用户都需要 <code>读取器</code> 角色，以使用 Graylog Web 界面</span>
   ),
 };
 
@@ -90,7 +90,7 @@ const BackendCreate = () => {
   const excludedFields = { ...groupSyncExcludedFields, userUniqueIdAttribute: true, emailAttributes: true };
 
   return (
-    <DocumentTitle title="Create Active Directory Authentication Services">
+    <DocumentTitle title="创建 Active Directory 认证服务">
       <WizardPageHeader />
       <BackendWizard authBackendMeta={AUTH_BACKEND_META}
                      help={help}

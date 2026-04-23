@@ -150,14 +150,14 @@ const IndexSetsComponent = () => {
     const actions = (
       <ButtonToolbar>
         <LinkContainer to={Routes.SYSTEM.INDEX_SETS.CONFIGURATION(indexSet.id)}>
-          <Button>Edit</Button>
+          <Button>编辑</Button>
         </LinkContainer>
-        <DropdownButton title="More Actions" id={`index-set-dropdown-${indexSet.id}`} pullRight>
+        <DropdownButton title="更多操作" id={`index-set-dropdown-${indexSet.id}`} pullRight>
           <MenuItem onSelect={onSetDefault(indexSet)}
-                    disabled={!indexSet.can_be_default || indexSet.default}>Set as default
+                    disabled={!indexSet.can_be_default || indexSet.default}>设为默认
           </MenuItem>
           <MenuItem divider />
-          <MenuItem onSelect={onDelete(indexSet)} variant="danger">Delete</MenuItem>
+          <MenuItem onSelect={onDelete(indexSet)} variant="danger">删除</MenuItem>
         </DropdownButton>
       </ButtonToolbar>
     );
@@ -185,7 +185,7 @@ const IndexSetsComponent = () => {
     const isDefault = indexSet.default
       ? <Label key={`index-set-${indexSet.id}-default-label`} bsStyle="primary">default</Label> : '';
     const isReadOnly = !indexSet.writable
-      ? <Label key={`index-set-${indexSet.id}-readOnly-label`} bsStyle="info">read only</Label> : '';
+      ? <Label key={`index-set-${indexSet.id}-readOnly-label`} bsStyle="info">只读</Label> : '';
     let { description } = indexSet;
 
     if (indexSet.default) {
@@ -224,12 +224,12 @@ const IndexSetsComponent = () => {
                       wrapperClass="has-bm"
                       onReset={onSearchReset}
                       query={searchTerm}
-                      placeholder="Find index sets" />
+                      placeholder="查找索引集" />
         </Col>
       </Row>
       <Toolbar>
         <GlobalStatsCol md={3}>
-          <GlobalStats><strong>Stats for all indices:</strong> {statsEnabled
+          <GlobalStats><strong>所有索引的统计信息:</strong> {statsEnabled
             ? formatStatsString(globalIndexSetStats)
             : <StatsInfoText>{statsDisabledText}</StatsInfoText>}
           </GlobalStats>

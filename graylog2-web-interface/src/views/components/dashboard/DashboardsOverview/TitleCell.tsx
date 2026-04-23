@@ -49,7 +49,7 @@ const TitleCell = ({ dashboard: { id, requires, title }, requirementsProvided }:
     return (
       <>
         {title}
-        <HoverForHelp title="Missing Requirements"><RequirementsList requirements={_missingRequirements} /></HoverForHelp>
+        <HoverForHelp title="缺少要求"><RequirementsList requirements={_missingRequirements} /></HoverForHelp>
       </>
     );
   }

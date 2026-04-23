@@ -36,7 +36,7 @@ const Direction = ({ groupingIndex }: Props) => (
   <Field name={`groupBy.groupings.${groupingIndex}.direction`}>
     {({ field: { name, value, onChange, onBlur }, meta: { error } }) => (
       <Input id="group-by-direction"
-             label="Direction"
+             label="方向"
              error={error}
              labelClassName="col-sm-3"
              wrapperClassName="col-sm-7">
@@ -44,7 +44,7 @@ const Direction = ({ groupingIndex }: Props) => (
           <Input checked={value === 'row'}
                  formGroupClassName=""
                  id={name}
-                 label="Row"
+                 label="行"
                  onBlur={onBlur}
                  onChange={onChange}
                  type="radio"
@@ -52,7 +52,7 @@ const Direction = ({ groupingIndex }: Props) => (
           <Input checked={value === 'column'}
                  formGroupClassName=""
                  id={name}
-                 label="Column"
+                 label="列"
                  onBlur={onBlur}
                  onChange={onChange}
                  type="radio"

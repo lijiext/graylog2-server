@@ -157,11 +157,11 @@ const LegendEntry = ({ value, labelsWithField }: LegendEntryProps) => {
     <LegendEntryContainer>
       <Popover position="top" withArrow opened={showPopover}>
         <Popover.Target>
-          <ColorHint aria-label="Color Hint"
+          <ColorHint aria-label="颜色提示"
                      onClick={togglePopover}
                      color={colors.get(value, defaultColor)} />
         </Popover.Target>
-        <Popover.Dropdown title={`Configuration for ${humanLabel}`}>
+        <Popover.Dropdown title={`${humanLabel} 的配置`}>
           <ColorPicker color={colors.get(value, defaultColor)}
                        colors={defaultColors}
                        onChange={_onColorSelect} />

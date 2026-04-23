@@ -64,15 +64,15 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
 
   const renderDetails = () => (
     <>
-      <h3 className={commonStyles.title}>Details</h3>
+      <h3 className={commonStyles.title}>详情</h3>
       <dl>
-        <dt>Title</dt>
+        <dt>标题</dt>
         <dd>{eventDefinition.title || 'No title given'}</dd>
-        <dt>Description</dt>
+        <dt>描述</dt>
         <dd>{eventDefinition.description || 'No description given'}</dd>
-        <dt>Priority</dt>
+        <dt>优先级</dt>
         <dd>{upperFirst(EventDefinitionPriorityEnum.properties[eventDefinition.priority].name)}</dd>
-        <dt style={{ margin: '16px 0 0' }}>Remediation Steps</dt>
+        <dt style={{ margin: '16px 0 0' }}>补救步骤</dt>
         <dd>
           <MarkdownPreview show
                            withFullView
@@ -99,7 +99,7 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
         config,
         currentUser,
       })
-      : <p>Condition plugin <em>{config.type}</em> does not provide a summary.</p>
+      : <p>条件插件 <em>{config.type}</em> 不提供摘要。</p>
     );
 
     return (
@@ -112,7 +112,7 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
 
   const renderField = (fieldName: string, config: EventDefinition['field_spec'][string], keys: string[]) => {
     if (!config.providers || config.providers.length === 0) {
-      return <span key={fieldName}>No field value provider configured.</span>;
+      return <span key={fieldName}>未配置字段值提供程序。</span>;
     }
 
     const provider = config.providers[0];
@@ -126,14 +126,14 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
         key: fieldName,
         currentUser,
       })
-      : <p key={fieldName}>Provider plugin <em>{provider.type}</em> does not provide a summary.</p>
+      : <p key={fieldName}>提供程序插件 <em>{provider.type}</em> 不提供摘要。</p>
     );
   };
 
   const renderFieldList = (fieldNames: string[], fields: EventDefinition['field_spec'], keys: EventDefinition['key_spec']) => (
     <>
       <dl>
-        <dt>Keys</dt>
+        <dt>密钥</dt>
         <dd>{keys.length > 0 ? keys.join(', ') : 'No Keys configured for Events based on this Definition.'}</dd>
       </dl>
       {fieldNames.sort(naturalSort).map((fieldName) => renderField(fieldName, fields[fieldName], keys))}
@@ -145,9 +145,9 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
 
     return (
       <>
-        <h3 className={commonStyles.title}>Fields</h3>
+        <h3 className={commonStyles.title}>字段</h3>
         {fieldNames.length === 0
-          ? <p>No Fields configured for Events based on this Definition.</p>
+          ? <p>未基于此事件定义配置任何字段。</p>
           : renderFieldList(fieldNames, fields, keys)}
       </>
     );
@@ -167,12 +167,12 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
           notification,
           definitionNotification,
         })
-        : <p>Notification plugin <em>{notification.config.type}</em> does not provide a summary.</p>
+        : <p>通知插件 <em>{notification.config.type}</em> 不提供摘要。</p>
       );
     } else {
       content = (
         <p>
-          Could not find information for Notification <em>{definitionNotification.notification_id}</em>.
+          无法找到通知信息 <em>{definitionNotification.notification_id}</em>.
         </p>
       );
     }
@@ -198,7 +198,7 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
 
     return (
       <>
-        <h4>Settings</h4>
+        <h4>设置</h4>
         <dl>
           <dd>{formattedGracePeriod}</dd>
           <dd>{formattedBacklogSize}</dd>
@@ -215,7 +215,7 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
     const warning = notificationsWithMissingPermissions.length > 0
       ? (
         <Alert bsStyle="warning">
-          Missing Notifications Permissions for:<br />
+          缺少以下通知权限：<br />
           {notificationsWithMissingPermissions.map((n) => n.notification_id).join(', ')}
         </Alert>
       )
@@ -223,12 +223,12 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
 
     return (
       <>
-        <h3 className={commonStyles.title}>Notifications</h3>
+        <h3 className={commonStyles.title}>通知</h3>
         <p>
           {warning}
         </p>
         {effectiveDefinitionNotifications.length === 0 && notificationsWithMissingPermissions.length <= 0
-          ? <p>This Event is not configured to trigger any Notifications.</p>
+          ? <p>此事件未配置为触发任何通知。</p>
           : (
             <>
               {renderNotificationSettings(notificationSettings)}
@@ -244,7 +244,7 @@ const EventDefinitionSummary = ({ eventDefinition, notifications, validation, cu
   return (
     <Row className={styles.eventSummary}>
       <Col md={12}>
-        <h2 className={commonStyles.title}>Event Summary</h2>
+        <h2 className={commonStyles.title}>事件摘要</h2>
         {showValidation && <EventDefinitionValidationSummary validation={validation} />}
         <Row>
           <Col md={5}>

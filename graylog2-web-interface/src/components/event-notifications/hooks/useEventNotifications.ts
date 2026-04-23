@@ -52,8 +52,8 @@ const useEventNotifications = (searchParams: SearchParams, { enabled }: Options 
     () => fetchEventNotifications(searchParams),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading event notifications failed with status: ${errorThrown}`,
-          'Could not load event notifications');
+        UserNotification.error(`加载事件通知失败，状态：${errorThrown}`,
+          '无法加载事件通知');
       },
       keepPreviousData: true,
       enabled,

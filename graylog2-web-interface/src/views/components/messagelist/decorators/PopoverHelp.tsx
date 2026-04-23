@@ -26,18 +26,17 @@ import DecoratorStyles from './decoratorStyles.css';
 const PopoverHelp = () => (
   <Popover width={275} position="right" withArrow withinPortal>
     <Popover.Target>
-      <Button bsStyle="link" className={DecoratorStyles.helpLink}>What are message decorators?</Button>
+      <Button bsStyle="link" className={DecoratorStyles.helpLink}>消息装饰器是什么？</Button>
     </Popover.Target>
     <Popover.Dropdown>
       <p className="description">
-        Decorators can modify messages shown in the search results on the fly. These changes are not stored, but only
-        shown in the search results. Decorator config is stored <strong>per stream</strong>.
+        装饰器可以实时修改搜索结果中显示的消息。这些更改不会被存储，仅在搜索结果中显示。装饰器配置被存储 <strong>每个数据流</strong>.
       </p>
       <p className="description">
-        Use drag and drop to modify the order in which decorators are processed.
+        使用拖放功能修改装饰器的处理顺序。
       </p>
       <p>
-        Read more about message decorators in the <DocumentationLink page={DocsHelper.PAGES.DECORATORS}
+        阅读有关消息装饰器的更多信息 <DocumentationLink page={DocsHelper.PAGES.DECORATORS}
                                                                      text="documentation" />.
       </p>
     </Popover.Dropdown>

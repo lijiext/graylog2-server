@@ -32,7 +32,7 @@ public class SplitAndCountConverter extends Converter {
 
         final String splitBy = (String) config.get("split_by");
         if (isNullOrEmpty(splitBy)) {
-            throw new ConfigurationException("Missing config [split_by].");
+            throw new ConfigurationException("缺少配置 [split_by]。");
         }
 
         splitByEscaped = Pattern.quote(splitBy);

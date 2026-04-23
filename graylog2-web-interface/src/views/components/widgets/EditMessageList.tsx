@@ -83,13 +83,13 @@ const EditMessageList = ({ children, config, fields, onChange, onCancel, onSubmi
       <FullHeightCol md={3}>
         <StickyBottomActions actions={<SaveOrCancelButtons onCancel={onCancel} onSubmit={onSubmit} />}
                              alignActionsAtBottom>
-          <DescriptionBox description="Fields">
+          <DescriptionBox description="字段">
             <FieldsConfiguration onChange={(newFields) => _onFieldSelectionChanged(newFields, config, onChange)}
                                  menuPortalTarget={document.body}
                                  selectedFields={config.fields} />
 
           </DescriptionBox>
-          <DescriptionBox description="Message Preview">
+          <DescriptionBox description="消息预览">
             {sortedMessagePreviewOptions.map((option) => (
               <PreviewOptionCheckbox key={option.title} checked={option.isChecked(config)} onChange={() => option.onChange(config, onChange)} disabled={option.isDisabled(config)}>
                 {option.title}
@@ -101,15 +101,15 @@ const EditMessageList = ({ children, config, fields, onChange, onCancel, onSubmi
               </PreviewOptionCheckbox>
             ))}
           </DescriptionBox>
-          <DescriptionBox description="Sorting">
+          <DescriptionBox description="排序">
             <FieldSortSelect fields={fields} sort={sort} onChange={(data) => _onSortChange(data, config, onChange)} />
           </DescriptionBox>
-          <DescriptionBox description="Direction">
+          <DescriptionBox description="方向">
             <SortDirectionSelect disabled={!sort || sort.length === 0}
                                  direction={sortDirection && sortDirection.direction}
                                  onChange={(data) => _onSortDirectionChange(data, config, onChange)} />
           </DescriptionBox>
-          <DescriptionBox description="Decorators">
+          <DescriptionBox description="装饰器">
             <DecoratorSidebar decorators={config.decorators}
                               onChange={onDecoratorsChange} />
           </DescriptionBox>

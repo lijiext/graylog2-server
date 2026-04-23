@@ -1,15 +1,13 @@
 <#if _title>
-    Index ranges recalculation required
+    需要重新计算索引范围
 </#if>
 
 <#if _description>
     <span>
-The index ranges are out of sync. Please go to System/Indices and trigger a index range recalculation from
-the Maintenance menu of
+索引范围已不同步。请前往 System/Indices，并从
         <#if index_sets??>
-            the following index sets: ${index_sets}
-        <#else>all index sets
+            以下索引集的维护菜单中触发索引范围重新计算：${index_sets}
+        <#else>所有索引集
         </#if>
     </span>
 </#if>
-

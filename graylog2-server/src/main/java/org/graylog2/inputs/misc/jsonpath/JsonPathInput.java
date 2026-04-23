@@ -96,10 +96,10 @@ public class JsonPathInput extends MessageInput {
         if (configuration.stringIsSet(CK_HTTP_METHOD)
                 && (PUT.equals(configuration.getString(CK_HTTP_METHOD)) || POST.equals(configuration.getString(CK_HTTP_METHOD)))) {
             if (!configuration.stringIsSet(CK_CONTENT_TYPE)) {
-                throw new ConfigurationException("HTTP content type must be selected if using POST or PUT.");
+                throw new ConfigurationException("如果使用了 POST 或 PUT，必须选择 HTTP 内容类型。");
             }
             if (!configuration.stringIsSet(CK_HTTP_BODY)) {
-                throw new ConfigurationException("HTTP body must be filled if using POST or PUT.");
+                throw new ConfigurationException("如果使用 POST 或 PUT，必须填写 HTTP 正文。");
             }
         }
     }

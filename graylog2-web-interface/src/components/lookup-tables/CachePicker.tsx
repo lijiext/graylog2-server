@@ -36,14 +36,14 @@ const CachePicker = ({ caches }: Props) => {
   return (
     <fieldset>
       <Input id="cache-select"
-             label="Cache"
+             label="缓存"
              required
              autoFocus
              bsStyle={errorMessage ? 'error' : undefined}
              help={errorMessage || 'Select an existing cache'}
              labelClassName="col-sm-3"
              wrapperClassName="col-sm-9">
-        <Select placeholder="Select a cache"
+        <Select placeholder="选择缓存"
                 clearable={false}
                 options={sortedCaches}
                 matchProp="label"

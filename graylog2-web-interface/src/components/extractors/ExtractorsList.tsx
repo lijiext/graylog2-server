@@ -64,7 +64,7 @@ const ExtractorsList = ({ input, node }: Props) => {
   if (extractors?.length > 1) {
     sortExtractorsButton = (
       <Button bsSize="xsmall" bsStyle="primary" className="pull-right" onClick={_openSortModal}>
-        Sort extractors
+        排序提取器
       </Button>
     );
   }
@@ -84,7 +84,7 @@ const ExtractorsList = ({ input, node }: Props) => {
         <Col md={12}>
           <Row className="row-sm">
             <Col md={8}>
-              <h2>Configured extractors</h2>
+              <h2>已配置的提取器</h2>
             </Col>
             <Col md={4}>
               {sortExtractorsButton}

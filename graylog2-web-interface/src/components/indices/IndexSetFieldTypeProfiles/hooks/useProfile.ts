@@ -55,8 +55,8 @@ const useProfile = (id: string): {
     () => fetchIndexSetFieldTypeProfile(id),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading index field type profile failed with status: ${errorThrown}`,
-          'Could not load index field type profile');
+        UserNotification.error(`加载索引字段类型配置文件失败，状态：${errorThrown}`,
+          '无法加载索引字段类型配置');
       },
       keepPreviousData: true,
       enabled: !!id,

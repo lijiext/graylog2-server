@@ -71,7 +71,7 @@ const HumanReadableStreamRule = ({ streamRule, inputs = [] }: Props) => {
 
   if (streamRule.type === STREAM_RULE_TYPES.ALWAYS_MATCHES) {
     return (
-      <span>Rule always matches</span>
+      <span>规则始终匹配</span>
     );
   }
 

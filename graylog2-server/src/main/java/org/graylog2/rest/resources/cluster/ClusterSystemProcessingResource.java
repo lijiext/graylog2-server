@@ -79,7 +79,7 @@ public class ClusterSystemProcessingResource extends ProxiedResource {
                           "you might lose messages from inputs which cannot buffer themselves, like AMQP or Kafka-based inputs.")
     @Path("pause")
     @NoAuditEvent("proxy resource, audit event will be emitted on target node")
-    public void pause(@ApiParam(name = "nodeId", value = "The id of the node where processing will be paused.", required = true)
+    public void pause(@ApiParam(name = "nodeId", value = "处理将暂停的节点 ID。", required = true)
                       @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Response response = this.getRemoteSystemProcessingResource(nodeId).pause().execute();
         if (!response.isSuccessful()) {
@@ -93,7 +93,7 @@ public class ClusterSystemProcessingResource extends ProxiedResource {
     @ApiOperation(value = "Resume message processing on node")
     @Path("resume")
     @NoAuditEvent("proxy resource, audit event will be emitted on target node")
-    public void resume(@ApiParam(name = "nodeId", value = "The id of the node where processing will be resumed.", required = true)
+    public void resume(@ApiParam(name = "nodeId", value = "处理将恢复的节点 ID。", required = true)
                        @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Response response = this.getRemoteSystemProcessingResource(nodeId).resume().execute();
         if (!response.isSuccessful()) {

@@ -48,7 +48,7 @@ const StreamDataRoutingProcessing = ({ stream }: Props) => {
   return (
     <>
       {StreamIlluminateProcessingSection && (<StreamIlluminateProcessingSection stream={stream} />)}
-      <Section title="Pipelines"
+      <Section title="处理管道"
                actions={(
                  <IfPermitted permissions="streams:create">
                    <StreamPipelinesConnectionForm streamId={streamId}
@@ -59,7 +59,7 @@ const StreamDataRoutingProcessing = ({ stream }: Props) => {
         <Table condensed striped hover>
           <thead>
             <tr>
-              <th colSpan={2}>Pipeline</th>
+              <th colSpan={2}>处理管道</th>
             </tr>
           </thead>
           <tbody>
@@ -74,7 +74,7 @@ const StreamDataRoutingProcessing = ({ stream }: Props) => {
                     <LinkContainer to={Routes.SYSTEM.PIPELINES.PIPELINE(pipeline.id)}>
                       <Button bsStyle="default"
                               bsSize="xsmall"
-                              title="View">
+                              title="查看">
                         <Icon name="pageview" type="regular" />
                       </Button>
                     </LinkContainer>
@@ -84,7 +84,7 @@ const StreamDataRoutingProcessing = ({ stream }: Props) => {
             ))}
             {!hasConnectedPipelines && (
             <tr>
-              <td colSpan={2}>This stream is not connected to any Pipeline.</td>
+              <td colSpan={2}>此数据流未连接任何处理管道。</td>
             </tr>
             )}
           </tbody>

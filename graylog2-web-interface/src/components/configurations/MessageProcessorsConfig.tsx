@@ -78,15 +78,15 @@ const MessageProcessorsConfig = () => {
   return (
     <div>
       <GlobalProcessingView gracePeriod={viewConfig.grace_period} />
-      <h2>Message Processors Configuration</h2>
-      <p>The following message processors are executed in order. Disabled processors will be skipped.</p>
+      <h2>消息处理器配置</h2>
+      <p>以下消息处理器按顺序执行。禁用的处理器将被跳过。</p>
 
       <Table striped bordered condensed className="top-margin">
         <thead>
           <tr>
             <th>#</th>
-            <th>Processor</th>
-            <th>Status</th>
+            <th>消息处理器</th>
+            <th>状态</th>
           </tr>
         </thead>
         <tbody>
@@ -95,7 +95,7 @@ const MessageProcessorsConfig = () => {
       </Table>
 
       <IfPermitted permissions="clusterconfigentry:edit">
-        <Button bsStyle="info" bsSize="xs" onClick={openModal}>Edit configuration</Button>
+        <Button bsStyle="info" bsSize="xs" onClick={openModal}>编辑配置</Button>
       </IfPermitted>
       {showConfigModal && (
         <ProcessingConfigModalForm closeModal={closeModal}

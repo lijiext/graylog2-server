@@ -158,8 +158,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
     const promise = fetch('GET', qualifyUrl(url))
       .then((result: StreamSummaryResponse) => result.streams)
       .catch((errorThrown) => {
-        UserNotification.error(`Loading streams failed with status: ${errorThrown}`,
-          'Could not load streams');
+        UserNotification.error(`加载数据流失败，状态为：${errorThrown}`,
+          '无法加载数据流');
       });
 
     StreamsActions.listStreams.promise(promise);
@@ -185,8 +185,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
   },
   pause(streamId: string, callback: (() => void)) {
     const failCallback = (errorThrown) => {
-      UserNotification.error(`Pausing Stream failed with status: ${errorThrown}`,
-        'Could not pause Stream');
+      UserNotification.error(`暂停数据流失败，状态为：${errorThrown}`,
+        '无法暂停数据流');
     };
 
     const url = qualifyUrl(ApiRoutes.StreamsApiController.pause(streamId).url);
@@ -205,8 +205,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
   },
   resume(streamId: string, callback: (() => void)) {
     const failCallback = (errorThrown) => {
-      UserNotification.error(`Resuming Stream failed with status: ${errorThrown}`,
-        'Could not resume Stream');
+      UserNotification.error(`恢复数据流失败，状态为：${errorThrown}`,
+        '无法恢复数据流');
     };
 
     const url = qualifyUrl(ApiRoutes.StreamsApiController.resume(streamId).url);
@@ -225,8 +225,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
   },
   save(stream: any, callback: ((streamId: string) => void)) {
     const failCallback = (errorThrown) => {
-      UserNotification.error(`Saving Stream failed with status: ${errorThrown}`,
-        'Could not save Stream');
+      UserNotification.error(`保存数据流失败，状态为：${errorThrown}`,
+        '无法保存数据流');
     };
 
     const url = qualifyUrl(ApiRoutes.StreamsApiController.create().url);
@@ -242,8 +242,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
   },
   update(streamId: string, data: any, callback: ((stream: Stream) => void)) {
     const failCallback = (errorThrown) => {
-      UserNotification.error(`Updating Stream failed with status: ${errorThrown}`,
-        'Could not update Stream');
+      UserNotification.error(`更新数据流失败，状态为：${errorThrown}`,
+        '无法更新数据流');
     };
 
     const url = qualifyUrl(ApiRoutes.StreamsApiController.update(streamId).url);
@@ -258,8 +258,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
   },
   cloneStream(streamId: string, data: any, callback: ((streamId: string) => void)) {
     const failCallback = (errorThrown) => {
-      UserNotification.error(`Cloning Stream failed with status: ${errorThrown}`,
-        'Could not clone Stream');
+      UserNotification.error(`克隆数据流失败，状态为：${errorThrown}`,
+        '无法克隆数据流');
     };
 
     const url = qualifyUrl(ApiRoutes.StreamsApiController.cloneStream(streamId).url);
@@ -278,8 +278,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
 
     const promise = fetch('DELETE', url)
       .then(callback, (errorThrown) => {
-        UserNotification.error(`Removing output from stream failed with status: ${errorThrown}`,
-          'Could not remove output from stream');
+        UserNotification.error(`从数据流移除输出失败，状态为：${errorThrown}`,
+          '无法从数据流中移除输出端');
       })
       .then(this._emitChange.bind(this));
 
@@ -292,8 +292,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
 
     const promise = fetch('POST', url, { outputs: [outputId] })
       .then(callback, (errorThrown) => {
-        UserNotification.error(`Adding output to stream failed with status: ${errorThrown}`,
-          'Could not add output to stream');
+        UserNotification.error(`向数据流添加输出失败，状态为：${errorThrown}`,
+          '无法将输出端添加到数据流');
       })
       .then(this._emitChange.bind(this));
 
@@ -306,8 +306,8 @@ const StreamsStore = singletonStore('Streams', () => Reflux.createStore({
 
     const promise = fetch('POST', url, message)
       .then(callback, (error) => {
-        UserNotification.error(`Testing stream rules of stream failed with status: ${error.message}`,
-          'Could not test stream rules of stream');
+        UserNotification.error(`测试数据流规则失败，状态为：${error.message}`,
+          '无法测试数据流的数据流规则');
       });
 
     StreamsActions.testMatch.promise(promise);

@@ -53,10 +53,10 @@ const ExportExtractors = ({ id }: Props) => {
       <Col md={12}>
         <Row>
           <Col md={8}>
-            <h2>Extractors JSON</h2>
+            <h2>提取器 JSON</h2>
           </Col>
           <Col md={4}>
-            <ClipboardButton title="Copy extractors" className="pull-right" text={formattedJSON} />
+            <ClipboardButton title="复制提取器" className="pull-right" text={formattedJSON} />
           </Col>
         </Row>
         <Row>

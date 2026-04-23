@@ -40,9 +40,9 @@ const HTTPHeaderAuthConfigSection = () => {
 
   return (
     <SectionComponent title={sectionTitle}>
-      <p>This authenticator enables you to login a user, based on a HTTP header without further interaction.</p>
-      <ReadOnlyFormGroup label="Enabled" value={loadedConfig.enabled} />
-      <ReadOnlyFormGroup label="Username header" value={loadedConfig.usernameHeader} />
+      <p>此身份验证器允许您基于 HTTP 头登录用户，无需进一步交互。</p>
+      <ReadOnlyFormGroup label="已启用" value={loadedConfig.enabled} />
+      <ReadOnlyFormGroup label="用户名头" value={loadedConfig.usernameHeader} />
     </SectionComponent>
   );
 };

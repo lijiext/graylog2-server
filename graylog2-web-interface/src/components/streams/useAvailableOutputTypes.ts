@@ -62,8 +62,8 @@ const useAvailableOutputTypes = ({ enabled }: Options = { enabled: true }): {
     () => fetchOutputsTypes(),
     {
       onError: (errorThrown) => {
-        UserNotification.error(`Loading stream outputs failed with status: ${errorThrown}`,
-          'Could not load stream outputs');
+        UserNotification.error(`加载数据流输出失败，状态为：${errorThrown}`,
+          '无法加载数据流输出端');
       },
       keepPreviousData: true,
       enabled,

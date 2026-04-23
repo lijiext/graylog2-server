@@ -41,7 +41,7 @@ const hotspots = [
   },
 ];
 const Overview = () => (
-  <DocumentTitle title="Overview">
+  <DocumentTitle title="概述">
     <TeaserSearch viewJson={viewJson} searchJson={searchJson} searchJobResult={resultJson} hotspots={hotspots} />
   </DocumentTitle>
 );

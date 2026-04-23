@@ -129,14 +129,14 @@ const CacheTableEntry = ({ cache }: Props) => {
                       onClick={handleEdit}
                       role="button"
                       name="edit_square">
-                Edit
+                编辑
               </Button>
               <Button bsSize="xsmall"
                       bsStyle="danger"
                       onClick={handleDelete}
                       role="button"
                       name="delete">
-                Delete
+                删除
               </Button>
             </Actions>
           )}

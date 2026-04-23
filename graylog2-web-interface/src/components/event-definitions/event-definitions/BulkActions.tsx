@@ -124,11 +124,11 @@ const BulkActions = () => {
         setSelectedEntities(notUpdatedDefinitionIds);
       } else {
         setSelectedEntities([]);
-        UserNotification.success(`${selectedItemsAmount} ${getDescriptor(selectedItemsAmount)} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionType}d successfully.`, 'Success');
+        UserNotification.success(`${selectedItemsAmount} ${getDescriptor(selectedItemsAmount)} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionType} 成功。`, '成功');
       }
     })
       .catch((error) => {
-        UserNotification.error(`An error occurred while ${actionType} event definition. ${error}`);
+        UserNotification.error(`${actionType} 事件定义时发生错误。${error}`);
       }).finally(() => {
         refetchEventDefinitions();
       });
@@ -142,9 +142,9 @@ const BulkActions = () => {
   return (
     <>
       <BulkActionsDropdown>
-        <MenuItem onSelect={() => handleAction(ACTION_TYPES.ENABLE)}>Enable</MenuItem>
-        <MenuItem onSelect={() => handleAction(ACTION_TYPES.DISABLE)}>Disable</MenuItem>
-        <MenuItem onSelect={() => handleAction(ACTION_TYPES.DELETE)} variant="danger">Delete</MenuItem>
+        <MenuItem onSelect={() => handleAction(ACTION_TYPES.ENABLE)}>启用</MenuItem>
+        <MenuItem onSelect={() => handleAction(ACTION_TYPES.DISABLE)}>禁用</MenuItem>
+        <MenuItem onSelect={() => handleAction(ACTION_TYPES.DELETE)} variant="danger">删除</MenuItem>
       </BulkActionsDropdown>
       {showDialog && (
         <ConfirmDialog title={ACTION_TEXT[actionType]?.dialogTitle}

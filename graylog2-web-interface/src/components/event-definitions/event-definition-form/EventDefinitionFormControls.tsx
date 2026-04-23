@@ -34,7 +34,7 @@ const EventDefinitionFormControls = ({
     return (
       <ModalSubmit onCancel={onCancel}
                    onSubmit={onSubmit}
-                   submitButtonText={`${action === 'edit' ? 'Update' : 'Create'} event definition`} />
+                   submitButtonText={`${action === 'edit' ? 'Update' : 'Create'} 事件定义`} />
     );
   }
 
@@ -43,12 +43,12 @@ const EventDefinitionFormControls = ({
       <Button bsStyle="info"
               onClick={onOpenPrevPage}
               disabled={activeStepIndex === 0}>
-        Previous
+        上一个
       </Button>
       <div className="pull-right">
         <Button bsStyle="info"
                 onClick={onOpenNextPage}>
-          Next
+          下一步
         </Button>
       </div>
     </div>

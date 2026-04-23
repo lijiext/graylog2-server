@@ -37,7 +37,7 @@ const ArchivingsCell = ({ stream, indexSets }: Props) => {
   const archivingEnabled = (indexSet?.use_legacy_rotation && indexSet?.retention_strategy_class === ARCHIVE_RETENTION_STRATEGY) || indexSet?.data_tiering?.archive_before_deletion;
 
   return (
-    <Tooltip withArrow position="right" label={`Archiving is ${archivingEnabled ? 'enabled' : 'disabled'}`}>
+    <Tooltip withArrow position="right" label={`归档状态为 ${archivingEnabled ? 'enabled' : 'disabled'}`}>
       <StatusIcon active={archivingEnabled} />
     </Tooltip>
   );

@@ -74,9 +74,9 @@ const DataNodeBulkActions = () => {
   return (
     <>
       <BulkActionsDropdown>
-        <MenuItem onSelect={handleBulkStartDatanode}>Start</MenuItem>
-        <MenuItem onSelect={() => setShowDialogType('STOP')}>Stop</MenuItem>
-        <MenuItem onSelect={() => setShowDialogType('REMOVE')}>Remove</MenuItem>
+        <MenuItem onSelect={handleBulkStartDatanode}>开始</MenuItem>
+        <MenuItem onSelect={() => setShowDialogType('STOP')}>停止</MenuItem>
+        <MenuItem onSelect={() => setShowDialogType('REMOVE')}>移除</MenuItem>
       </BulkActionsDropdown>
       {showDialogType && (
       <ConfirmDialog title={CONFIRM_DIALOG[showDialogType].dialogTitle}

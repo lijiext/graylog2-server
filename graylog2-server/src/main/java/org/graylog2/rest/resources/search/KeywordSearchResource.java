@@ -74,23 +74,23 @@ public class KeywordSearchResource extends SearchResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Message search with keyword as timerange.",
+    @ApiOperation(value = "使用关键字作为时间范围搜索消息。",
                   notes = "Search for messages in a timerange defined by a keyword like \"yesterday\" or \"2 weeks ago to wednesday\".")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid keyword provided.")
+            @ApiResponse(code = 400, message = "提供的关键词无效。")
     })
     public SearchResponse searchKeyword(
-            @ApiParam(name = "query", value = "Query (Lucene syntax)", required = true)
+            @ApiParam(name = "query", value = "查询（Lucene 语法）", required = true)
             @QueryParam("query") @NotEmpty String query,
             @ApiParam(name = "keyword", value = "Range keyword", required = true)
             @QueryParam("keyword") @NotEmpty String keyword,
             @QueryParam("timezone") @NotEmpty String timezone,
-            @ApiParam(name = "limit", value = "Maximum number of messages to return.") @QueryParam("limit") int limit,
+            @ApiParam(name = "limit", value = "返回的最大消息数。") @QueryParam("limit") int limit,
             @ApiParam(name = "offset", value = "Offset") @QueryParam("offset") int offset,
             @ApiParam(name = "filter", value = "Filter") @QueryParam("filter") String filter,
             @ApiParam(name = "fields", value = "Comma separated list of fields to return") @QueryParam("fields") String fields,
-            @ApiParam(name = "sort", value = "Sorting (field:asc / field:desc)") @QueryParam("sort") String sort,
+            @ApiParam(name = "sort", value = "排序 (field:asc / field:desc)") @QueryParam("sort") String sort,
             @ApiParam(name = "decorate", value = "Run decorators on search result") @QueryParam("decorate") @DefaultValue("true") boolean decorate,
             @Context SearchUser searchUser) {
         checkSearchPermission(filter, RestPermissions.SEARCHES_KEYWORD);
@@ -105,21 +105,21 @@ public class KeywordSearchResource extends SearchResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Message search with keyword as timerange.",
+    @ApiOperation(value = "使用关键字作为时间范围搜索消息。",
                   notes = "Search for messages in a timerange defined by a keyword like \"yesterday\" or \"2 weeks ago to wednesday\".")
     @Produces(MoreMediaTypes.TEXT_CSV)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid keyword provided.")
+            @ApiResponse(code = 400, message = "提供的关键词无效。")
     })
     public ChunkedOutput<ResultChunk> searchKeywordChunked(
-            @ApiParam(name = "query", value = "Query (Lucene syntax)", required = true)
+            @ApiParam(name = "query", value = "查询（Lucene 语法）", required = true)
             @QueryParam("query") @NotEmpty String query,
             @ApiParam(name = "keyword", value = "Range keyword", required = true)
             @QueryParam("keyword") @NotEmpty String keyword,
             @QueryParam("timezone") @NotEmpty String timezone,
-            @ApiParam(name = "limit", value = "Maximum number of messages to return.", required = false) @QueryParam("limit") int limit,
+            @ApiParam(name = "limit", value = "返回的最大消息数。", required = false) @QueryParam("limit") int limit,
             @ApiParam(name = "offset", value = "Offset", required = false) @QueryParam("offset") int offset,
-            @ApiParam(name = "batch_size", value = "Batch size for the backend storage export request.", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
+            @ApiParam(name = "batch_size", value = "后端存储导出请求的批处理大小。", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
             @ApiParam(name = "filter", value = "Filter", required = false) @QueryParam("filter") String filter,
             @ApiParam(name = "fields", value = "Comma separated list of fields to return", required = true)
             @QueryParam("fields") @NotEmpty String fields) {
@@ -136,21 +136,21 @@ public class KeywordSearchResource extends SearchResource {
     @GET
     @Path("/export")
     @Timed
-    @ApiOperation(value = "Export message search with keyword as timerange.",
+    @ApiOperation(value = "导出以关键字作为时间范围的邮件搜索。",
                   notes = "Search for messages in a timerange defined by a keyword like \"yesterday\" or \"2 weeks ago to wednesday\".")
     @Produces(MoreMediaTypes.TEXT_CSV)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid keyword provided.")
+            @ApiResponse(code = 400, message = "提供的关键词无效。")
     })
     public Response exportSearchKeywordChunked(
-            @ApiParam(name = "query", value = "Query (Lucene syntax)", required = true)
+            @ApiParam(name = "query", value = "查询（Lucene 语法）", required = true)
             @QueryParam("query") @NotEmpty String query,
             @ApiParam(name = "keyword", value = "Range keyword", required = true)
             @QueryParam("keyword") @NotEmpty String keyword,
             @QueryParam("timezone") @NotEmpty String timezone,
-            @ApiParam(name = "limit", value = "Maximum number of messages to return.", required = false) @QueryParam("limit") int limit,
+            @ApiParam(name = "limit", value = "返回的最大消息数。", required = false) @QueryParam("limit") int limit,
             @ApiParam(name = "offset", value = "Offset", required = false) @QueryParam("offset") int offset,
-            @ApiParam(name = "batch_size", value = "Batch size for the backend storage export request.", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
+            @ApiParam(name = "batch_size", value = "后端存储导出请求的批处理大小。", required = false) @QueryParam("batch_size") @DefaultValue(DEFAULT_SCROLL_BATCH_SIZE) int batchSize,
             @ApiParam(name = "filter", value = "Filter", required = false) @QueryParam("filter") String filter,
             @ApiParam(name = "fields", value = "Comma separated list of fields to return", required = true)
             @QueryParam("fields") @NotEmpty String fields) {

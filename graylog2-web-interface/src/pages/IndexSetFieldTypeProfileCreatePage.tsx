@@ -36,17 +36,15 @@ const IndexSetFieldTypeProfileCreatePage = () => {
   }, [hasMappingPermission, navigate]);
 
   return (
-    <DocumentTitle title="Create Index Set Field Type Profile">
+    <DocumentTitle title="创建索引集字段类型配置文件">
       <IndicesPageNavigation />
-      <PageHeader title="Create Index Set Field Type Profile"
+      <PageHeader title="创建索引集字段类型配置文件"
                   documentationLink={{
                     title: 'Index model documentation',
                     path: DocsHelper.PAGES.INDEX_MODEL,
                   }}>
         <span>
-          With index set field type profiles you can bundle up custom field types into profiles.
-          Then you can assign this profile to any index set.
-          On this page you can create a new profile.
+          通过索引集字段类型配置文件，您可以将自定义字段类型打包为配置文件。然后，您可以将此配置文件分配给任何索引集。在此页面上，您可以创建新的配置文件。
         </span>
       </PageHeader>
       <Row className="content">

@@ -90,8 +90,8 @@ const StreamPipelinesConnectionForm = ({ streamId, pipelines, connectedPipelines
 
   const pipelinesHelp = (
     <span>
-      Select the pipelines you want to connect to this stream, or create one in the{' '}
-      <Link to={Routes.SYSTEM.PIPELINES.OVERVIEW}>Pipelines page</Link>.
+      选择要连接到此数据流的处理管道，或在...中创建一个{' '}
+      <Link to={Routes.SYSTEM.PIPELINES.OVERVIEW}>处理管道页面</Link>.
     </span>
   );
 
@@ -100,17 +100,17 @@ const StreamPipelinesConnectionForm = ({ streamId, pipelines, connectedPipelines
       <Button disabled={!isPermitted(currentUser.permissions, 'pipeline_connection:edit')}
               onClick={openModal}
               bsStyle="info">
-        Edit pipelines connection
+        编辑处理管道连接
       </Button>
       {showModal && (
       <BootstrapModalForm show={showModal}
-                          title={<span>Edit connections for <em>stream</em></span>}
+                          title={<span>编辑连接于 <em>stream</em></span>}
                           onSubmitForm={onSave}
                           onCancel={onCancel}
-                          submitButtonText="Update connections">
+                          submitButtonText="更新连接">
         <fieldset>
           <FormGroup id="pipelinesConnections">
-            <ControlLabel>Pipelines</ControlLabel>
+            <ControlLabel>处理管道</ControlLabel>
             <SelectableList options={formatPipelines(notConnectedPipelines)}
                             onChange={onPipelineChange}
                             selectedOptionsType="object"

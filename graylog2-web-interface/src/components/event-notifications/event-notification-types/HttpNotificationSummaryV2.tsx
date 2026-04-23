@@ -36,24 +36,24 @@ const HttpNotificationSummaryV2 = ({ type, notification, definitionNotification 
       <td><code>{notification.config.url}</code></td>
     </tr>
     <tr>
-      <td>Method</td>
+      <td>方法</td>
       <td><code>{notification.config.method}</code></td>
     </tr>
     {notification.config.content_type && (
     <tr>
-      <td>Content Type</td>
+      <td>内容类型</td>
       <td><code>{notification.config.content_type}</code></td>
     </tr>
     )}
     {notification.config.headers && (
     <tr>
-      <td>Headers</td>
+      <td>标头</td>
       <td><code>{notification.config.headers}</code></td>
     </tr>
     )}
     {notification.config.body_template && (
     <tr>
-      <td>Body Template</td>
+      <td>正文模板</td>
       <td>
         <Well bsSize="small" className={styles.bodyPreview}>
           {notification.config.body_template}

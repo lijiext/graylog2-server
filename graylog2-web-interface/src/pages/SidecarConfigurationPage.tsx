@@ -24,16 +24,15 @@ import CollectorListContainer from 'components/sidecars/configurations/Collector
 import SidecarsPageNavigation from 'components/sidecars/common/SidecarsPageNavigation';
 
 const SidecarConfigurationPage = () => (
-  <DocumentTitle title="Collectors Configuration">
+  <DocumentTitle title="采集器配置">
     <SidecarsPageNavigation />
-    <PageHeader title="Collectors Configuration"
+    <PageHeader title="采集器配置"
                 documentationLink={{
                   title: 'Sidecar documentation',
                   path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                 }}>
       <span>
-        The Collector Sidecar runs next to your favourite log collector and configures it for you. Here you can
-        manage the Sidecar configurations.
+        Collector Sidecar 运行在您首选的日志采集器旁边，并为您配置它。您可以在这里管理 Sidecar 配置。
       </span>
     </PageHeader>
 

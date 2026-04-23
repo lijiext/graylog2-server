@@ -27,11 +27,11 @@ type Props = {
 const DataTieringSummary = ({ config } : Props) => (
   <div>
     <dl>
-      <dt>Rotation strategy:</dt>
-      <dd>Data Tiering</dd>
-      <dt>Max. in storage:</dt>
+      <dt>轮转策略：</dt>
+      <dd>数据分层</dd>
+      <dt>存储最大：</dt>
       <dd>{durationToRoundedDays(config.index_lifetime_max)} days</dd>
-      <dt>Min. in storage:</dt>
+      <dt>存储中的最少天数：</dt>
       <dd>{durationToRoundedDays(config.index_lifetime_min)} days</dd>
     </dl>
   </div>

@@ -87,7 +87,7 @@ const SystemJob = ({ job }) => {
     e.preventDefault();
 
     SystemJobsActions.acknowledgeJob(job.id).catch((error) => {
-      UserNotification.error(error.responseMessage, 'Unable to acknowledge the job');
+      UserNotification.error(error.responseMessage, '无法确认作业');
     });
   };
 
@@ -97,7 +97,7 @@ const SystemJob = ({ job }) => {
     // eslint-disable-next-line no-alert
     if (window.confirm(`Are you sure you want to cancel system job "${job.info}"?`)) {
       SystemJobsActions.cancelJob(job.id).catch((error) => {
-        UserNotification.error(error.responseMessage, 'Unable to cancel the job');
+        UserNotification.error(error.responseMessage, '无法取消作业');
       });
     }
   };
@@ -107,14 +107,14 @@ const SystemJob = ({ job }) => {
       <JobWrap>
         <Icon name="settings" />{' '}
         <span data-toggle="tooltip" title={job.name}>{job.info}</span>{' '}
-        - on <LinkToNode nodeId={job.node_id} />{' '}
+        - 在 <LinkToNode nodeId={job.node_id} />{' '}
         <RelativeTime dateTime={job.started_at} />{' '}
-        <span data-toggle="tooltip" title={`runtime: ${job.execution_duration}`}>
+        <span data-toggle="tooltip" title={`运行时间：${job.execution_duration}`}>
           <StatusBadge status={mappedJobStatus}>{mappedJobStatus}</StatusBadge>
         </span>
         {!jobIsOver && job.is_cancelable
-          ? (<Button type="button" bsSize="xs" bsStyle="primary" className="pull-right" onClick={_onCancel()}>Cancel</Button>)
-          : (<AcknowledgeButton type="button" bsStyle="link" onClick={_onAcknowledge()} bsSize="xs" className="pull-right" title="Acknowledge"><Icon name="close" /></AcknowledgeButton>)}
+          ? (<Button type="button" bsSize="xs" bsStyle="primary" className="pull-right" onClick={_onCancel()}>取消</Button>)
+          : (<AcknowledgeButton type="button" bsStyle="link" onClick={_onAcknowledge()} bsSize="xs" className="pull-right" title="确认"><Icon name="close" /></AcknowledgeButton>)}
       </JobWrap>
 
       {!jobIsOver && job.provides_progress && <StyledProgressBar bars={[{ value: job.percent_complete, bsStyle: 'info', animated: true }]} />}

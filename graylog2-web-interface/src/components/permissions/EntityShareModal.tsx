@@ -97,7 +97,7 @@ const EntityShareModal = ({
                            onConfirm={_handleSave}
                            onCancel={onClose}
                            showModal
-                           title={<>Sharing {entityTypeTitle ?? entityType}: <i>{entityTitle}</i></>}>
+                           title={<>共享中 {entityTypeTitle ?? entityType}: <i>{entityTitle}</i></>}>
       {(entityShareState && entityShareState.entity === entityGRN) ? (
         <EntityShareSettings description={description}
                              entityGRN={entityGRN}

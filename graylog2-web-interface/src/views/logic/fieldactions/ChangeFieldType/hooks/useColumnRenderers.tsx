@@ -38,14 +38,14 @@ export const useColumnRenderers = (fieldTypes: FieldTypes) => {
         renderCell: (items: Array<TypeHistoryItem>) => {
           const latest = fieldTypes[last(items)] || last(items);
           const rest = take(items, items.length - 1).map((item) => fieldTypes[item] || item);
-          if (!latest) return <i>type is not defined</i>;
+          if (!latest) return <i>未定义类型</i>;
 
           return (
             <div>
               <span><b>{latest}</b></span>
               {!!rest.length && (
               <RestTypesContainer>
-                (previous values:
+                (旧值：
                   {' '}
                   {rest.join(', ')}
                 )

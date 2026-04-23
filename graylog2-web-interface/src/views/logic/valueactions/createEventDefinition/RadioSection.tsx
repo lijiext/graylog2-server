@@ -38,7 +38,7 @@ const RadioSection = ({ strategy, onChange, strategyAvailabilities }: Props) => 
 
   return (
     <>
-      <b>Strategy by:</b>
+      <b>策略由:</b>
       <Container>
         {
       Object.entries(strategiesLabels).map(([curStrategy, { label }]) => {
@@ -58,7 +58,7 @@ const RadioSection = ({ strategy, onChange, strategyAvailabilities }: Props) => 
     }
       </Container>
       <p>
-        <b>Description: </b><i>{description}</i>
+        <b>描述： </b><i>{description}</i>
       </p>
     </>
   );

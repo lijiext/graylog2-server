@@ -58,7 +58,7 @@ const CreateTemplate = () => {
   }, [history, sendTelemetry, telemetryPathName]);
 
   return (
-    <TemplateForm onCancel={onCancel} submitButtonText="Create template" submitLoadingText="Creating template..." onSubmit={onSubmit} />
+    <TemplateForm onCancel={onCancel} submitButtonText="创建模板" submitLoadingText="正在创建模板..." onSubmit={onSubmit} />
   );
 };
 

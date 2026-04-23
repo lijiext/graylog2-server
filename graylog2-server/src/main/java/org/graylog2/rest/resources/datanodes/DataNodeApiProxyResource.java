@@ -72,7 +72,7 @@ public class DataNodeApiProxyResource extends RestResource {
     }
 
     @GET
-    @ApiOperation(value = "GET request to Data Node's API")
+    @ApiOperation(value = "向数据节点API发送GET请求")
     @AuditEvent(type = DATANODE_API_REQUEST)
     public Response requestGet(@ApiParam(name = "path", required = true)
                                        @PathParam("path") String path,
@@ -83,7 +83,7 @@ public class DataNodeApiProxyResource extends RestResource {
     }
 
     @POST
-    @ApiOperation(value = "POST request to Data Node's API")
+    @ApiOperation(value = "向数据节点 API 发送 POST 请求")
     @AuditEvent(type = DATANODE_API_REQUEST)
     public Response requestPost(@ApiParam(name = "path", required = true)
                                         @PathParam("path") String path,
@@ -94,7 +94,7 @@ public class DataNodeApiProxyResource extends RestResource {
     }
 
     @PUT
-    @ApiOperation(value = "PUT request to Data Node's API")
+    @ApiOperation(value = "向数据节点 API 发送 PUT 请求")
     @AuditEvent(type = DATANODE_API_REQUEST)
     public Response requestPut(@ApiParam(name = "path", required = true)
                                @PathParam("path") String path,
@@ -105,7 +105,7 @@ public class DataNodeApiProxyResource extends RestResource {
     }
 
     @DELETE
-    @ApiOperation(value = "DELETE request to Data Node's API")
+    @ApiOperation(value = "向数据节点 API 发送 DELETE 请求")
     @AuditEvent(type = DATANODE_API_REQUEST)
     public Response requestDelete(@ApiParam(name = "path", required = true)
                                   @PathParam("path") String path,
