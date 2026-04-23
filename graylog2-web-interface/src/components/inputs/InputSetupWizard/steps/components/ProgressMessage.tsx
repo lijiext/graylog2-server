@@ -108,7 +108,7 @@ const ProgressMessage = ({
         {details ||
           (errorMessage && (
             <p>
-              <strong>Details:</strong> {details ?? errorMessage.message}
+              <strong>详情:</strong> {details ?? errorMessage.message}
             </p>
           ))}
       </>

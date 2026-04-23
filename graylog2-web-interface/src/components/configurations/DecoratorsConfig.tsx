@@ -61,8 +61,8 @@ const DecoratorsConfig = () => {
     (newDecorators: Array<Decorator>) =>
       DecoratorsUpdater(newDecorators, decorators)
         .then(
-          () => UserNotification.success('Updated decorators configuration.', 'Success!'),
-          (error) => UserNotification.error(`Unable to save new decorators: ${error}`, 'Saving decorators failed'),
+          () => UserNotification.success('已更新装饰器配置。', '成功！'),
+          (error) => UserNotification.error(`无法保存新装饰器：${error}`, '保存装饰器失败'),
         )
         .then(() => refetchDecorators())
         .then(closeModal),
@@ -75,7 +75,7 @@ const DecoratorsConfig = () => {
     }
 
     if (!decorators || decorators.length === 0) {
-      return <i>No decorators currently configured.</i>;
+      return <i>当前未配置任何装饰器。</i>;
     }
 
     const decoratorsGroupedByStream = groupBy(decorators, (decorator) => decorator.stream || DEFAULT_SEARCH_ID);
@@ -107,12 +107,12 @@ const DecoratorsConfig = () => {
 
   return (
     <div>
-      <h2>Decorators Configuration</h2>
-      <p>These are the currently configured decorators grouped by stream:</p>
+      <h2>装饰器配置</h2>
+      <p>这些是按数据流分组的当前配置的装饰器：</p>
       <p>{decoratorMap}</p>
       <IfPermitted permissions="decorators:edit">
         <Button bsStyle="info" bsSize="xs" onClick={openModal}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
       <DecoratorsConfigUpdate

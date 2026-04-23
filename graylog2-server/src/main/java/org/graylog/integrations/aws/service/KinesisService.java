@@ -317,7 +317,7 @@ public class KinesisService {
             try {
                 return Tools.decompressGzip(recordData).contains(CONTROL_MESSAGE_TOKEN);
             } catch (IOException e) {
-                throw new BadRequestException("Failed to decode message from CloudWatch and check if it's a control message.");
+                throw new BadRequestException("无法从 CloudWatch 解码消息并检查其是否为控制消息。");
             }
         }
         return false;
@@ -362,7 +362,7 @@ public class KinesisService {
         try {
             payload = objectMapper.writeValueAsBytes(logEvent);
         } catch (JsonProcessingException e) {
-            throw new BadRequestException("Encoding the message to bytes failed.", e);
+            throw new BadRequestException("将消息编码为字节失败。", e);
         }
 
         final Message fullyParsedMessage = codec.decodeSafe(new RawMessage(payload)).orElseThrow(() ->

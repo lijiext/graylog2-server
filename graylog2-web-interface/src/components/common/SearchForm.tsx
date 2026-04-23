@@ -228,7 +228,7 @@ const SearchForm = ({
             <InputFeedback ref={inputFeedbackContainer}>
               {isLoading && <Spinner text="" />}
               {query && typeof onReset === 'function' && (
-                <IconButton name="close" title="Reset search" onClick={handleReset} />
+                <IconButton name="close" title="重置搜索" onClick={handleReset} />
               )}
               {queryHelpComponent}
             </InputFeedback>

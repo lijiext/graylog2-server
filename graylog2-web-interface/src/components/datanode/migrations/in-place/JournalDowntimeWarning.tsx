@@ -36,27 +36,26 @@ const JournalDowntimeWarning = ({ currentStep, onTriggerStep, hideActions }: Mig
 
   return (
     <>
-      <h3>Journal downtime size warning</h3>
+      <h3>Journal 停机大小警告</h3>
       <p>
-        Please note that during migration data processing will stop on your {productName} node, this will result in the
-        journal growing in size.
+        请注意，在迁移期间，您的数据将停止处理 {productName} 节点，这将导致日志文件的大小增长。
       </p>
-      <p>Therefore you might need to increase your journal volume size.</p>
+      <p>因此，您可能需要增加日志卷的大小。</p>
       <p>
-        Your current journal size is: <b>{data.journal_size_MB} MB</b> and your current journal throughput is:{' '}
-        <b>{data.KBs_per_minute} KB/min</b>
+        您当前的日志大小是： <b>{data.journal_size_MB} MB</b> 且您当前的日志吞吐量为:{' '}
+        <b>{data.KBs_per_minute} KB/分钟</b>
       </p>
       <p>
-        Your current maximum downtime for reconfiguring {productName} to point to the data node is:{' '}
+        您重新配置时的当前最大停机时间 {productName} 指向数据节点的地址是:{' '}
         <b>{data.max_downtime_duration}</b>
       </p>
       {isError && (
         <MigrationError
-          errorMessage={`There was an error while estimating your journal throughput: ${error?.message}`}
+          errorMessage={`估算日志吞吐量时出错：${error?.message}`}
         />
       )}
       <DownsizeWarning bsStyle="warning">
-        Please make sure your journal volume size is sufficient before proceeding.
+        请在继续之前确保您的日志卷大小足够。
       </DownsizeWarning>
       <MigrationStepTriggerButtonToolbar
         hidden={hideActions}

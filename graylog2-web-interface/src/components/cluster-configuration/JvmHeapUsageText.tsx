@@ -67,17 +67,17 @@ const JvmHeapUsageText = ({ nodeId }: Props) => {
   }, [metrics, nodeId]);
 
   const { usedPercentage, committedPercentage, usedMemory, committedMemory, maxMemory } = extractedMetrics;
-  let detail = <span>Loading heap usage information...</span>;
+  let detail = <span>正在加载堆使用情况信息...</span>;
 
   if (usedPercentage || committedPercentage) {
     if (Object.keys(extractedMetrics).length === 0) {
-      detail = <span>Heap information unavailable.</span>;
+      detail = <span>堆信息不可用。</span>;
     } else {
       detail = (
         <span>
-          The JVM is using
+          JVM 正在使用
           <strong> {NumberUtils.formatBytes(usedMemory)}</strong> of
-          <strong> {NumberUtils.formatBytes(committedMemory)}</strong> heap space and will not attempt to use more than{' '}
+          <strong> {NumberUtils.formatBytes(committedMemory)}</strong> 堆空间，且不会尝试使用更多{' '}
           <strong> {NumberUtils.formatBytes(maxMemory)}</strong>.
         </span>
       );

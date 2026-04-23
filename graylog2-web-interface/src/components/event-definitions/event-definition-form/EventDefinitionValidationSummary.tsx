@@ -42,8 +42,8 @@ const EventDefinitionValidationSummary = ({
   return (
     <Row>
       <Col md={12}>
-        <Alert bsStyle="danger" className={commonStyles.validationSummary} title="We found some errors!">
-          <p>Please correct the following errors before saving this Event Definition:</p>
+        <Alert bsStyle="danger" className={commonStyles.validationSummary} title="发现了一些错误！">
+          <p>在保存此事件定义之前，请修正以下错误：</p>
           <ul>
             {fieldsWithErrors.map((field) =>
               validation.errors[field].map((error) => {

@@ -27,7 +27,7 @@ const IndexSizeSummary = ({ index }: Props) => {
   if (index.size) {
     return (
       <span>
-        ({NumberUtils.formatBytes(index.size.bytes)} / {numeral(index.size.events).format('0,0')} messages){' '}
+        ({NumberUtils.formatBytes(index.size.bytes)} / {numeral(index.size.events).format('0,0')} 消息){' '}
       </span>
     );
   }

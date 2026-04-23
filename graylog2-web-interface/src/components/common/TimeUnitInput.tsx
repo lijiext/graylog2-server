@@ -188,7 +188,7 @@ const TimeUnitInput = ({
         <StyledInputGroup>
           {!required && !hideCheckbox && !disabled && (
             <InputGroupAddon>
-              <input type="checkbox" checked={getCheckedValue()} onChange={handleCheckedChange} title="Toggle time" />
+              <input type="checkbox" checked={getCheckedValue()} onChange={handleCheckedChange} title="切换时间" />
             </InputGroupAddon>
           )}
           <FormControl

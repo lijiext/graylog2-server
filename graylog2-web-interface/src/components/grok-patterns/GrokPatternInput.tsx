@@ -68,7 +68,7 @@ class GrokPatternInput extends React.Component<
             }}
             type="textarea"
             id="pattern-input"
-            label="Pattern"
+            label="模式"
             help="The pattern which will match the log line e.g: '%{IP:client}' or '.*?'"
             rows={9}
             onChange={this._onPatternChange}

@@ -52,16 +52,16 @@ const AWSCustomEndpoints = ({ onChange }: AWSCustomEndpointsProps) => {
   };
 
   return (
-    <AdditionalFields title="Optional AWS VPC Endpoints" visible={isAWSCustomEndpointsVisible} onToggle={handleToggle}>
+    <AdditionalFields title="可选的 AWS VPC 端点" visible={isAWSCustomEndpointsVisible} onToggle={handleToggle}>
       <StyledSectionTitle>
-        Overrides the default AWS API endpoint URL that {productName} communicates with.
+        覆盖默认的 AWS API 端点 URL {productName} 与...通信。
       </StyledSectionTitle>
       <StyledSectionNote>
-        Only specify these if you are using{' '}
+        仅在使用时指定这些{' '}
         <ExternalLink href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">
-          VPC Endpoints
+          VPC 端点
         </ExternalLink>{' '}
-        for AWS services.
+        用于 AWS 服务。
       </StyledSectionNote>
 
       <ValidatedInput
@@ -69,7 +69,7 @@ const AWSCustomEndpoints = ({ onChange }: AWSCustomEndpointsProps) => {
         type="text"
         fieldData={awsEndpointCloudWatch}
         onChange={onChange}
-        label="CloudWatch API Endpoint Override"
+        label="CloudWatch API 端点覆盖"
         placeholder={INPUT_PLACEHOLDER}
         pattern={INPUT_PATTERN}
         title={INPUT_MESSAGE}
@@ -80,7 +80,7 @@ const AWSCustomEndpoints = ({ onChange }: AWSCustomEndpointsProps) => {
         type="text"
         fieldData={awsEndpointIAM}
         onChange={onChange}
-        label="IAM API Endpoint Override"
+        label="IAM API 端点覆盖"
         placeholder={INPUT_PLACEHOLDER}
         pattern={INPUT_PATTERN}
         title={INPUT_MESSAGE}
@@ -91,7 +91,7 @@ const AWSCustomEndpoints = ({ onChange }: AWSCustomEndpointsProps) => {
         type="text"
         fieldData={awsEndpointDynamoDB}
         onChange={onChange}
-        label="DynamoDB API Endpoint Override"
+        label="DynamoDB API 端点覆盖"
         placeholder={INPUT_PLACEHOLDER}
         pattern={INPUT_PATTERN}
         title={INPUT_MESSAGE}
@@ -102,7 +102,7 @@ const AWSCustomEndpoints = ({ onChange }: AWSCustomEndpointsProps) => {
         type="text"
         fieldData={awsEndpointKinesis}
         onChange={onChange}
-        label="Kinesis API Endpoint Override"
+        label="Kinesis API 端点覆盖"
         placeholder={INPUT_PLACEHOLDER}
         pattern={INPUT_PATTERN}
         title={INPUT_MESSAGE}

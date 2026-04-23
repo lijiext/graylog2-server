@@ -79,7 +79,7 @@ class LinkToNode extends React.PureComponent<
       return <Link to={Routes.SYSTEM.CLUSTER.NODE_SHOW(this.props.nodeId)}>{content}</Link>;
     }
 
-    return <i>Unknown Node</i>;
+    return <i>未知节点</i>;
   }
 }
 

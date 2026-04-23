@@ -113,7 +113,7 @@ const ActionDropdown = ({
           <MenuItem divider />
         </>
       )}
-      <MenuItem header>Actions</MenuItem>
+      <MenuItem header>操作</MenuItem>
       {internalActions.map((action) => (
         <ActionMenuItem
           action={action}

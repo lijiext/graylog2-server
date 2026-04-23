@@ -54,7 +54,7 @@ const ShowReceivedMessagesButton = ({ input }: Props) => {
               app_action_value: 'show-received-messages',
             });
           }}>
-          Show received messages
+          显示接收到的消息
         </Button>
       </LinkContainer>
     );

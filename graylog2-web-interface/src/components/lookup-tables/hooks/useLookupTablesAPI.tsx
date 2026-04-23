@@ -75,7 +75,7 @@ export function useCreateLookupTable() {
   const { mutateAsync, isPending: isLoading } = useMutation({
     mutationFn: createLookupTable,
     onSuccess: () => {
-      UserNotification.success('Lookup Table created successfully');
+      UserNotification.success('查找表创建成功');
       queryClient.invalidateQueries({
         queryKey: ['lookup-tables'],
         refetchType: 'active',
@@ -100,7 +100,7 @@ export function useUpdateLookupTable() {
   const { mutateAsync, isPending: isLoading } = useMutation({
     mutationFn: updateLookupTable,
     onSuccess: () => {
-      UserNotification.success('Lookup Table updated successfully');
+      UserNotification.success('查找表更新成功');
       queryClient.invalidateQueries({
         queryKey: ['lookup-tables'],
         refetchType: 'active',
@@ -123,7 +123,7 @@ export function usePurgeLookupTableKey() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: purgeLookupTableKey,
     onSuccess: () => {
-      UserNotification.success('Lookup table key purged successfully');
+      UserNotification.success('查找表键已成功清除');
     },
     onError: (error: Error) => UserNotification.error(error.message),
   });
@@ -138,7 +138,7 @@ export function usePurgeAllLookupTableKey() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: purgeAllLookupTableKey,
     onSuccess: () => {
-      UserNotification.success('Lookup table purged successfully');
+      UserNotification.success('查找表已成功清除');
     },
     onError: (error: Error) => UserNotification.error(error.message),
   });
@@ -181,7 +181,7 @@ export function useDeleteLookupTable() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: deleteLookupTable,
     onSuccess: () => {
-      UserNotification.success('Lookup table deleted successfully');
+      UserNotification.success('查找表删除成功');
       refetch();
     },
     onError: (error: Error) => UserNotification.error(error.message),
@@ -258,7 +258,7 @@ export function useCreateCache() {
   const { mutateAsync, isPending: isLoading } = useMutation({
     mutationFn: createCache,
     onSuccess: () => {
-      UserNotification.success('Cache created successfully');
+      UserNotification.success('缓存创建成功');
       queryClient.invalidateQueries({
         queryKey: ['caches'],
         refetchType: 'active',
@@ -287,7 +287,7 @@ export function useUpdateCache() {
   const { mutateAsync, isPending: isLoading } = useMutation({
     mutationFn: updateCache,
     onSuccess: () => {
-      UserNotification.success('Cache updated successfully');
+      UserNotification.success('缓存更新成功');
       queryClient.invalidateQueries({
         queryKey: ['caches'],
         refetchType: 'active',
@@ -316,7 +316,7 @@ export function useDeleteCache() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: deleteCache,
     onSuccess: () => {
-      UserNotification.success('Cache deleted successfully');
+      UserNotification.success('缓存已成功删除');
       refetch();
     },
     onError: (error: Error) => UserNotification.error(error.message),
@@ -384,7 +384,7 @@ export function useCreateAdapter() {
   const { mutateAsync, isPending: isLoading } = useMutation({
     mutationFn: createDataAdapter,
     onSuccess: () => {
-      UserNotification.success('Data Adapter created successfully');
+      UserNotification.success('数据适配器创建成功');
       queryClient.invalidateQueries({
         queryKey: ['adapters'],
         refetchType: 'active',
@@ -413,7 +413,7 @@ export function useUpdateAdapter() {
   const { mutateAsync, isPending: isLoading } = useMutation({
     mutationFn: updateDataAdapter,
     onSuccess: () => {
-      UserNotification.success('Data Adapter updated successfully');
+      UserNotification.success('数据适配器更新成功');
       queryClient.invalidateQueries({
         queryKey: ['adapters'],
         refetchType: 'active',
@@ -451,7 +451,7 @@ export function useDeleteDataAdapter() {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: deleteDataAdapter,
     onSuccess: () => {
-      UserNotification.success('Data Adapter deleted successfully');
+      UserNotification.success('数据适配器删除成功');
       refetch();
     },
     onError: (error: Error) => UserNotification.error(error.message),

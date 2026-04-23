@@ -82,7 +82,7 @@ const BufferUsage = ({ nodeId, bufferType, title }: Props) => {
     <div>
       <LinkContainer to={Routes.filtered_metrics(nodeId, _metricFilter(bufferType))}>
         <Button bsSize="xsmall" className="pull-right">
-          Metrics
+          指标
         </Button>
       </LinkContainer>
       <h3>{title}</h3>
@@ -98,7 +98,7 @@ const BufferUsage = ({ nodeId, bufferType, title }: Props) => {
         />
       </NodeBufferUsage>
       <span>
-        <strong>{usage} messages</strong> in {title.toLowerCase()}, {percentLabel} utilized.
+        <strong>{usage} messages</strong> in {title.toLowerCase()}, {percentLabel} 已使用。
       </span>
     </div>
   );

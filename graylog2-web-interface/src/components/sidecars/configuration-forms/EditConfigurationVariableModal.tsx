@@ -161,7 +161,7 @@ class EditConfigurationVariableModal extends React.Component<
     if (create) {
       triggerButtonContent = 'Create Variable';
     } else {
-      triggerButtonContent = <span>Edit</span>;
+      triggerButtonContent = <span>编辑</span>;
     }
 
     return (
@@ -177,19 +177,19 @@ class EditConfigurationVariableModal extends React.Component<
           show={showModal}
           title={
             <>
-              {create ? 'Create' : 'Edit'} Variable $&#123;user.{formData.name}&#125;
+              {create ? 'Create' : 'Edit'} 变量 $&#123;user.{formData.name}&#125;
             </>
           }
           data-telemetry-title={`${create ? 'Create' : 'Edit'} Variable user`}
           onSubmitForm={this._save}
           onCancel={this.closeModal}
           submitButtonDisabled={this._hasErrors()}
-          submitButtonText="Save">
+          submitButtonText="保存">
           <fieldset>
             <Input
               type="text"
               id={this._getId('variable-name')}
-              label="Name"
+              label="名称"
               name="name"
               defaultValue={formData.name}
               onChange={this._handleInputChange}
@@ -204,19 +204,19 @@ class EditConfigurationVariableModal extends React.Component<
               id={this._getId('variable-description')}
               label={
                 <span>
-                  Description <small className="text-muted">(Optional)</small>
+                  描述 <small className="text-muted">（可选）</small>
                 </span>
               }
               name="description"
               defaultValue={formData.description}
               onChange={this._handleInputChange}
-              help="Type a description for this variable"
+              help="为此变量输入描述"
               spellCheck={false}
             />
             <Input
               type="textarea"
               id={this._getId('variable-content')}
-              label="Content"
+              label="内容"
               name="content"
               rows={10}
               className={ConfigurationHelperStyle.monoSpaceFont}

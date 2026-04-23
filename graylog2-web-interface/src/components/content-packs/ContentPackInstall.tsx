@@ -165,17 +165,17 @@ class ContentPackInstall extends React.Component<ContentPackInstallProps, State>
           maxLength={512}
           value={this.state.comment}
           onChange={this._getComment}
-          label="Install Comment"
-          help="This comment will be stored with the content pack installation and can be used to describe the reason for this installation."
+          label="安装注释"
+          help="此注释将随内容包安装一起存储，可用于描述此安装的原因。"
         />
         {parameterInputs.length > 0 && (
           <>
-            <strong>Configure Parameter(s):</strong>
+            <strong>配置参数：</strong>
             {parameterInputs}
           </>
         )}
         <EntityCreateShareFormGroup
-          description="Search for a User or Team to add as collaborator on entities of this content pack."
+          description="搜索用户或团队，将其添加为此内容包实体的协作者。"
           entityType="content pack"
           entityTitle=""
           onSetEntityShare={this._setShareRequest}

@@ -40,15 +40,15 @@ const ThreadDumpPage = () => {
   }
 
   return (
-    <DocumentTitle title={`Thread dump of node ${node.short_node_id} / ${node.hostname}`}>
+    <DocumentTitle title={`节点 ${node.short_node_id} / ${node.hostname} 的线程转储`}>
       <div>
         <PageHeader
           title={
             <span>
-              Thread dump of node {node.short_node_id} / {node.hostname}
+              节点线程转储 {node.short_node_id} / {node.hostname}
               &nbsp;
               <small>
-                Taken at <Timestamp dateTime={new Date()} />
+                采集时间 <Timestamp dateTime={new Date()} />
               </small>
             </span>
           }

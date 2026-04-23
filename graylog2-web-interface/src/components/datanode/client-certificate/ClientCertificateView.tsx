@@ -47,30 +47,30 @@ const ClientCertificateView = ({ clientCerts }: Props) => (
   <>
     <dt>Principal:</dt>
     <dd>{clientCerts.principal}</dd>
-    <dt>Role:</dt>
+    <dt>角色:</dt>
     <dd>{clientCerts.role}</dd>
     <dt>
-      CA certificate{' '}
+      CA 证书{' '}
       <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.ca_certificate)}>
-        Copy to clipboard
+        复制到剪贴板
       </Button>
     </dt>
     <dd>
       <Textarea id="ca_certificate" value={clientCerts.ca_certificate} spellCheck={false} />
     </dd>
     <dt>
-      Private key{' '}
+      私钥{' '}
       <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.private_key)}>
-        Copy to clipboard
+        复制到剪贴板
       </Button>
     </dt>
     <dd>
       <Textarea id="private_key" value={clientCerts.private_key} spellCheck={false} />
     </dd>
     <dt>
-      Certificate{' '}
+      证书{' '}
       <Button bsStyle="info" bsSize="xs" onClick={() => copyToClipboard(clientCerts.certificate)}>
-        Copy to clipboard
+        复制到剪贴板
       </Button>
     </dt>
     <dd>

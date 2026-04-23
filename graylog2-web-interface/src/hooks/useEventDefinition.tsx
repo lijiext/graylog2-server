@@ -120,8 +120,8 @@ const useEventDefinition = (
         if (onErrorHandler) onErrorHandler(errorThrown);
 
         UserNotification.error(
-          `Loading event definition failed with status: ${errorThrown}`,
-          'Could not load event definition',
+          `加载事件定义失败，状态为：${errorThrown}`,
+          '无法加载事件定义',
         );
       }),
 

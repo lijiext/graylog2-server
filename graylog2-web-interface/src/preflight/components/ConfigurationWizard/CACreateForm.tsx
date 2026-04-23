@@ -37,12 +37,12 @@ const CACreateForm = () => {
     mutationFn: createCA,
 
     onSuccess: () => {
-      UserNotification.success('CA created successfully');
+      UserNotification.success('CA 创建成功');
       queryClient.invalidateQueries({ queryKey: DATA_NODES_CA_QUERY_KEY });
     },
 
     onError: (error) => {
-      UserNotification.error(`CA creation failed with error: ${error}`);
+      UserNotification.error(`CA 创建失败，错误：${error}`);
     },
   });
 
@@ -60,7 +60,7 @@ const CACreateForm = () => {
         onSubmit={(formValues: FormValues) => onSubmit(formValues)}>
         {({ isSubmitting, isValid }) => (
           <Form>
-            <FormikInput placeholder="Organization Name" name="organization" label="Organization Name" required />
+            <FormikInput placeholder="组织名称" name="organization" label="组织名称" required />
             <Space h="md" />
             <Button bsStyle="info" disabled={isSubmitting || !isValid} type="submit">
               {isSubmitting ? 'Creating CA...' : 'Create CA'}

@@ -151,7 +151,7 @@ const EventNotificationForm = ({
           <Input
             id="notification-title"
             name="title"
-            label="Title"
+            label="标题"
             type="text"
             bsStyle={validation.errors.title ? 'error' : null}
             help={get(validation, 'errors.title[0]', 'Title to identify this Notification.')}
@@ -166,18 +166,18 @@ const EventNotificationForm = ({
             name="description"
             label={
               <span>
-                Description <small className="text-muted">(Optional)</small>
+                描述 <small className="text-muted">（可选）</small>
               </span>
             }
             type="textarea"
-            help="Longer description for this Notification."
+            help="此通知的较长描述。"
             value={notification.description}
             onChange={handleChange}
             rows={2}
           />
 
           <FormGroup controlId="notification-type" validationState={validation.errors.config ? 'error' : null}>
-            <ControlLabel>Notification Type</ControlLabel>
+            <ControlLabel>通知类型</ControlLabel>
             <Select
               id="notification-type"
               options={formattedEventNotificationTypes()}
@@ -194,7 +194,7 @@ const EventNotificationForm = ({
           {notificationFormComponent && (
             <FormGroup>
               <ControlLabel>
-                Test Notification <small className="text-muted">(Optional)</small>
+                测试通知 <small className="text-muted">（可选）</small>
               </ControlLabel>
               <FormControl.Static>
                 <Button bsStyle="info" bsSize="small" disabled={testResult.isLoading} onClick={handleTestTrigger}>
@@ -208,12 +208,12 @@ const EventNotificationForm = ({
                   {testResult.message}
                 </Alert>
               )}
-              <HelpBlock>Execute this Notification with a test Alert.</HelpBlock>
+              <HelpBlock>使用测试告警执行此通知。</HelpBlock>
             </FormGroup>
           )}
           {isNew && (
             <EntityCreateShareFormGroup
-              description="Search for a User or Team to add as collaborator on this notification."
+              description="搜索用户或团队以将其添加为此通知的协作者。"
               entityType="notification"
               entityTitle=""
               onSetEntityShare={handleEntityShareChange}
@@ -223,7 +223,7 @@ const EventNotificationForm = ({
           {!embedded && (
             <FormSubmit
               disabledSubmit={!isSubmitEnabled}
-              submitButtonText={`${isNew ? 'Create' : 'Update'} notification`}
+              submitButtonText={`${isNew ? 'Create' : 'Update'} 通知`}
               onCancel={onCancel}
             />
           )}

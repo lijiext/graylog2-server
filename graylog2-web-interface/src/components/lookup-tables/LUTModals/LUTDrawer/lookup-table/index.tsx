@@ -77,15 +77,15 @@ function LookupTableView({ table, cache, dataAdapter }: Props) {
       <Col $gap="lg" $width={double ? '50%' : '100%'} style={{ flexShrink: 0 }}>
         <LookupTableDetails table={table} canEdit={canEdit} />
         <Col $gap="xs">
-          <h2>Attached</h2>
+          <h2>已附加</h2>
           <DataWell style={{ overflow: 'auto' }}>
             <Col $gap="xs">
               <Row>
-                <span style={{ width: 100, flexShrink: 0 }}>Cache</span>
+                <span style={{ width: 100, flexShrink: 0 }}>缓存</span>
                 <Row $justify="space-between" $align="center">
                   {cache ? (
                     <>
-                      <LinkSpan role="link" aria-label="cache details" onClick={handleShowAttached('cache-details')}>
+                      <LinkSpan role="link" aria-label="缓存详情" onClick={handleShowAttached('cache-details')}>
                         {cache.title}
                       </LinkSpan>
                       <Description>
@@ -94,19 +94,19 @@ function LookupTableView({ table, cache, dataAdapter }: Props) {
                     </>
                   ) : (
                     <i>
-                      <Description>No cache</Description>
+                      <Description>无缓存</Description>
                     </i>
                   )}
                 </Row>
               </Row>
               <Row>
-                <span style={{ width: 100, flexShrink: 0 }}>Data Adapter</span>
+                <span style={{ width: 100, flexShrink: 0 }}>数据适配器</span>
                 <Row $justify="space-between" $align="center">
                   {dataAdapter ? (
                     <>
                       <LinkSpan
                         role="link"
-                        aria-label="adapter details"
+                        aria-label="适配器详情"
                         onClick={handleShowAttached('adapter-details')}>
                         {dataAdapter.title}
                       </LinkSpan>
@@ -116,7 +116,7 @@ function LookupTableView({ table, cache, dataAdapter }: Props) {
                     </>
                   ) : (
                     <i>
-                      <Description>No data adapter</Description>
+                      <Description>无数据适配器</Description>
                     </i>
                   )}
                 </Row>

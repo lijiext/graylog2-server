@@ -39,7 +39,7 @@ const ViewDescription = ({ results }: Props) => {
 
   const resultsSection = (
     <>
-      <SectionSubheadline>Execution</SectionSubheadline>
+      <SectionSubheadline>执行</SectionSubheadline>
 
       <SearchResultOverview results={results} />
     </>
@@ -48,7 +48,7 @@ const ViewDescription = ({ results }: Props) => {
   if (isAdHocSearch) {
     return (
       <>
-        <SectionInfo>Save the search or export it to a dashboard to add a custom summary and description.</SectionInfo>
+        <SectionInfo>保存搜索或将其导出到仪表盘，以添加自定义摘要和描述。</SectionInfo>
         {resultsSection}
       </>
     );
@@ -58,14 +58,13 @@ const ViewDescription = ({ results }: Props) => {
     <>
       {(!viewMetadata.summary || !viewMetadata.description) && (
         <SectionInfo>
-          To add a description and summary for this {viewTypeLabel} click on the <Icon name="more_horiz" /> icon in the
-          search bar to open its action menu. The action menu includes the option &quot;Edit metadata&quot;.
+          为此添加描述和摘要 {viewTypeLabel} 点击 <Icon name="more_horiz" /> 搜索栏中的图标，用于打开其操作菜单。操作菜单包含“编辑元数据”选项。
         </SectionInfo>
       )}
       {resultsSection}
-      <SectionSubheadline>Search</SectionSubheadline>
-      <p>{viewMetadata.summary || <i>This {viewTypeLabel} has no summary.</i>}</p>
-      <p>{viewMetadata.description || <i>This {viewTypeLabel} has no description.</i>}</p>
+      <SectionSubheadline>搜索</SectionSubheadline>
+      <p>{viewMetadata.summary || <i>此 {viewTypeLabel} 无摘要。</i>}</p>
+      <p>{viewMetadata.description || <i>此 {viewTypeLabel} 无描述。</i>}</p>
     </>
   );
 };

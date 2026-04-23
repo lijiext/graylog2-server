@@ -53,7 +53,7 @@ const LegacyNotificationDetails = ({ notification }: LegacyNotificationDetailsPr
     <>
       {!typeData && (
         <Alert bsStyle="danger" className={notificationStyles.legacyNotificationAlert}>
-          Error in {notification.title || 'Legacy Alarm Callback'}: Unknown type <code>{callbackType}</code>, please
+          错误 {notification.title || 'Legacy Alarm Callback'}: 未知类型 <code>{callbackType}</code>, please
           ensure the plugin is installed.
         </Alert>
       )}
@@ -65,7 +65,7 @@ const LegacyNotificationDetails = ({ notification }: LegacyNotificationDetailsPr
                 label={value.human_name}
                 value={
                   <Well bsSize="small" className={emailStyles.bodyPreview}>
-                    {configurationValues[key] || <em>Empty body</em>}
+                    {configurationValues[key] || <em>空主体</em>}
                   </Well>
                 }
               />

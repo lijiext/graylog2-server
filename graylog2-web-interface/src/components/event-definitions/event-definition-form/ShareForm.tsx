@@ -41,10 +41,10 @@ const ShareForm = ({ onChange, eventDefinition }: Props) => {
     <Row>
       <Col md={6} lg={6}>
         <h2 className={commonStyles.title}>
-          Share <small>(optional)</small>
+          分享 <small>（可选）</small>
         </h2>
         <EntityCreateShareFormGroup
-          description="Search for a User or Team to add as collaborator on this event definition."
+          description="搜索用户或团队以将其添加为此事件定义的协作者。"
           onSetEntityShare={handleEntityShareSet}
           entityType="event_definition"
           entityTitle=""

@@ -169,7 +169,7 @@ const PaginatedEntityTable = <T extends EntityBase, M = unknown>({
             onSearch={onSearch}
             onReset={onSearchReset}
             query={fetchOptions.query}
-            placeholder={searchPlaceholder ?? `Search for ${humanName}`}
+            placeholder={searchPlaceholder ?? `搜索 ${humanName}`}
             queryHelpComponent={queryHelpComponent}>
             <div style={{ marginBottom: 5 }}>
               <EntityFilters
@@ -186,7 +186,7 @@ const PaginatedEntityTable = <T extends EntityBase, M = unknown>({
         {MiddleSection ? <MiddleSection searchParams={fetchOptions} setFilters={onChangeFilters} /> : null}
         <div>
           {list?.length === 0 ? (
-            <NoSearchResult>No {humanName} have been found.</NoSearchResult>
+            <NoSearchResult>否 {humanName} 已找到。</NoSearchResult>
           ) : (
             <EntityDataTable<T, M>
               entities={list}

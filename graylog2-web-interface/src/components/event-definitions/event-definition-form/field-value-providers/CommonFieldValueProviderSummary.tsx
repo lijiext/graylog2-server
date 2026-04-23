@@ -48,11 +48,11 @@ const CommonFieldValueProviderSummary = ({ fieldName, config, keys, children }: 
           <Table condensed hover className={styles.fixedTable}>
             <tbody>
               <tr>
-                <td>Is Key?</td>
+                <td>是键吗？</td>
                 <td>{keys.includes(fieldName) ? 'Yes' : 'No'}</td>
               </tr>
               <tr>
-                <td>Data Type</td>
+                <td>数据类型</td>
                 <td>{config.data_type}</td>
               </tr>
               {children}

@@ -1,9 +1,8 @@
-<#if _title>There was no leader node detected in the cluster</#if>
+<#if _title>集群中未检测到主节点</#if>
 
 <#if _description><span>
-Certain operations of the server require the presence of a leader node, but no such leader was started.
-Please ensure that one of your server nodes contains the setting <code>is_leader = true</code> in its
-configuration and that it is running. Until this is resolved index cycling will not be able to run, which
-means that the index retention mechanism is also not running, leading to increased index sizes. Certain
-maintenance functions as well as a variety of web interface pages (e.g. Dashboards) are unavailable.
+服务器的某些操作需要主节点存在，但未启动此类主节点。
+请确保您的服务器节点之一在其配置中包含设置 <code>is_leader = true</code> 且正在运行。
+在问题解决之前，索引轮转将无法运行，这意味着索引保留机制也无法运行，导致索引大小增加。
+某些维护功能以及多种 Web 界面页面（例如仪表盘）将不可用。
 </span></#if>

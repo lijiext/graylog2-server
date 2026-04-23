@@ -118,7 +118,7 @@ class ScrollButton extends React.Component<
     }
 
     return (
-      <ScrollBtn title="Back to top" type="button" className={position} onClick={this.scrollToTop}>
+      <ScrollBtn title="返回顶部" type="button" className={position} onClick={this.scrollToTop}>
         <ArrowUpIcon name="keyboard_arrow_up" />
       </ScrollBtn>
     );

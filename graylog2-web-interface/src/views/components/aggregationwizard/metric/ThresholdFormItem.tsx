@@ -76,39 +76,39 @@ const ThresholdFormItem = ({ metricIndex, thresholdIndex, onRemove }: Props) => 
         <FormikInput
           key={`metrics-${metricIndex}-thresholds-${thresholdIndex}-name`}
           id="thresholdName"
-          label="Title"
+          label="标题"
           bsSize="small"
-          placeholder="Specify threshold name"
+          placeholder="指定阈值名称"
           name={`metrics.${metricIndex}.thresholds.${thresholdIndex}.name`}
           labelClassName="col-sm-3"
           wrapperClassName="col-sm-9"
         />
       </Col>
       <Col sm={1}>
-        <IconButton size="sm" onClick={onRemove} name="delete" title="Remove threshold" />
+        <IconButton size="sm" onClick={onRemove} name="delete" title="移除阈值" />
       </Col>
       <Col sm={11}>
         <FormikInput
           key={`metrics-${metricIndex}-thresholds-${thresholdIndex}-value`}
           id="thresholdValue"
-          label="Value"
+          label="值"
           bsSize="small"
           type="number"
-          placeholder="Specify threshold value"
+          placeholder="指定阈值"
           name={`metrics.${metricIndex}.thresholds.${thresholdIndex}.value`}
           labelClassName="col-sm-3"
           wrapperClassName="col-sm-9"
-          help={curUnitName && `Value is in ${curUnitName}s`}
+          help={curUnitName && `值为 ${curUnitName} 秒`}
         />
       </Col>
       <Col sm={1}>
         <Popover position="top" withArrow opened={showPopover}>
           <Popover.Target>
             <ColorHintWrapper>
-              <ColorHint aria-label="Color Hint" onClick={togglePopover} color={curColor} />
+              <ColorHint aria-label="颜色提示" onClick={togglePopover} color={curColor} />
             </ColorHintWrapper>
           </Popover.Target>
-          <Popover.Dropdown title="Color configuration for threshold">
+          <Popover.Dropdown title="阈值颜色配置">
             <ColorPicker color={curColor} colors={defaultColors} onChange={_onColorSelect} />
           </Popover.Dropdown>
         </Popover>

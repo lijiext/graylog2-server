@@ -66,7 +66,7 @@ const IndexDetails = ({ index, indexName, indexRange, indexSetId, isDeflector }:
       return (
         <span>
           <Button bsStyle="danger" bsSize="xs" disabled>
-            Active write index cannot be deleted
+            活动写入索引无法删除
           </Button>
         </span>
       );
@@ -75,10 +75,10 @@ const IndexDetails = ({ index, indexName, indexRange, indexSetId, isDeflector }:
     return (
       <span>
         <Button bsStyle="warning" bsSize="xs" onClick={_onRecalculateIndex}>
-          Recalculate index ranges
+          重新计算索引范围
         </Button>{' '}
         <Button bsStyle="danger" bsSize="xs" onClick={_onDeleteIndex}>
-          Delete index
+          删除索引
         </Button>
       </span>
     );
@@ -92,15 +92,15 @@ const IndexDetails = ({ index, indexName, indexRange, indexSetId, isDeflector }:
     <div className="index-info">
       <IndexRangeSummary indexRange={indexRange} />{' '}
       <HideOnCloud>
-        {NumberUtils.formatNumber(index.all_shards.segments)} segments,{' '}
-        {NumberUtils.formatNumber(index.all_shards.open_search_contexts)} open search contexts,{' '}
-        {NumberUtils.formatNumber(index.all_shards.documents.deleted)} deleted messages
+        {NumberUtils.formatNumber(index.all_shards.segments)} 段，{' '}
+        {NumberUtils.formatNumber(index.all_shards.open_search_contexts)} 打开搜索上下文，{' '}
+        {NumberUtils.formatNumber(index.all_shards.documents.deleted)} 已删除的消息
         <Row style={{ marginBottom: '10' }}>
           <Col md={4} className="shard-meters">
-            <ShardMeter title="Primary shard operations" shardMeter={index.primary_shards} />
+            <ShardMeter title="主分片操作" shardMeter={index.primary_shards} />
           </Col>
           <Col md={4} className="shard-meters">
-            <ShardMeter title="Total shard operations" shardMeter={index.all_shards} />
+            <ShardMeter title="分片操作总数" shardMeter={index.all_shards} />
           </Col>
         </Row>
         <ShardRoutingOverview routing={index.routing} indexName={indexName} />

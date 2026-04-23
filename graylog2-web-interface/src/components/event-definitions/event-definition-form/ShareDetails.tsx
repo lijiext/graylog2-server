@@ -99,8 +99,8 @@ const ShareDetails = ({ shareState = null }: Props) => {
 
   return (
     <>
-      <h3>Share</h3>
-      <p>Collaborators</p>
+      <h3>分享</h3>
+      <p>协作者</p>
       {showPageSizeSelect && (
         <StyledPageSizeSelect onChange={(newPageSize) => setPageSize(newPageSize)} pageSize={pageSize} />
       )}
@@ -123,7 +123,7 @@ const ShareDetails = ({ shareState = null }: Props) => {
             .toArray()}
         </List>
       ) : (
-        <Alert>This Event definition has no collaborators.</Alert>
+        <Alert>此事件定义没有协作者。</Alert>
       )}
       <PaginationWrapper>
         <StyledPagination totalPages={totalPages} currentPage={currentPage} onChange={setCurrentPage} />

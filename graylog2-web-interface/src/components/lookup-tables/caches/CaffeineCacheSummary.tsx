@@ -28,23 +28,23 @@ type Props = {
 const CaffeineCacheSummary = ({ cache }: Props) => (
   <SummaryContainer>
     <SummaryRow>
-      <Title>Maximum entries:</Title>
+      <Title>最大条目数：</Title>
       <Value style={{ borderBottom: '1px solid #eee' }}>{cache.config.max_size}</Value>
     </SummaryRow>
     <SummaryRow>
-      <Title>Expire after access:</Title>
+      <Title>访问后过期:</Title>
       <Value style={{ borderBottom: '1px solid #eee' }}>
         <TimeUnit value={cache.config.expire_after_access} unit={cache.config.expire_after_access_unit} />
       </Value>
     </SummaryRow>
     <SummaryRow>
-      <Title>Expire after write:</Title>
+      <Title>写入后过期:</Title>
       <Value>
         <TimeUnit value={cache.config.expire_after_write} unit={cache.config.expire_after_write_unit} />
       </Value>
     </SummaryRow>
     <SummaryRow>
-      <Title>TTL for empty results:</Title>
+      <Title>空结果的TTL:</Title>
       <Value>
         <TimeUnit value={cache.config.ttl_empty || 0} unit={cache.config.ttl_empty_unit || 'SECONDS'} />
       </Value>

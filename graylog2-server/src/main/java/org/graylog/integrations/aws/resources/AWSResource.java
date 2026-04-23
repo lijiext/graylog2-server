@@ -92,7 +92,7 @@ public class AWSResource extends AbstractInputsResource implements PluginRestRes
     @POST
     @Timed
     @Path("/cloudwatch/log_groups")
-    @ApiOperation(value = "Get all available AWS CloudWatch log groups names for the specified region.")
+    @ApiOperation(value = "获取指定区域中所有可用的 AWS CloudWatch 日志组名称。")
     @RequiresPermissions(AWSPermissions.AWS_READ)
     @NoAuditEvent("This does not change any data")
     public LogGroupsResponse getLogGroupNames(@ApiParam(name = "JSON body", required = true) @Valid @NotNull AWSRequestImpl request) {
@@ -102,7 +102,7 @@ public class AWSResource extends AbstractInputsResource implements PluginRestRes
     @POST
     @Timed
     @Path("/kinesis/streams")
-    @ApiOperation(value = "Get all available Kinesis streams for the specified region.")
+    @ApiOperation(value = "获取指定区域中所有可用的 Kinesis 数据流。")
     @RequiresPermissions(AWSPermissions.AWS_READ)
     @NoAuditEvent("This does not change any data")
     public StreamsResponse getKinesisStreams(@ApiParam(name = "JSON body", required = true) @Valid @NotNull AWSRequestImpl request) throws ExecutionException {
@@ -112,7 +112,7 @@ public class AWSResource extends AbstractInputsResource implements PluginRestRes
     @POST
     @Timed
     @Path("/kinesis/stream_arn")
-    @ApiOperation(value = "Get stream ARN for the specified stream and region.")
+    @ApiOperation(value = "获取指定数据流和区域的流 ARN。")
     @RequiresPermissions(AWSPermissions.AWS_READ)
     @NoAuditEvent("This does not change any data")
     public Response getStreamArn(@ApiParam(name = "JSON body", required = true) @Valid @NotNull KinesisRequest request) {
@@ -130,7 +130,7 @@ public class AWSResource extends AbstractInputsResource implements PluginRestRes
     @Timed
     @Path("/kinesis/health_check")
     @ApiOperation(
-            value = "Attempt to retrieve logs from the indicated AWS log group with the specified credentials.",
+            value = "使用指定的凭据尝试从指定的 AWS 日志组检索日志。",
             response = KinesisHealthCheckResponse.class
     )
     @RequiresPermissions(AWSPermissions.AWS_READ)
@@ -144,7 +144,7 @@ public class AWSResource extends AbstractInputsResource implements PluginRestRes
     @POST
     @Timed
     @Path("/inputs")
-    @ApiOperation(value = "Create a new AWS input.")
+    @ApiOperation(value = "创建新的 AWS 输入端。")
     @AuditEvent(type = IntegrationsAuditEventTypes.KINESIS_INPUT_CREATE)
     @RequiresPermissions({RestPermissions.INPUTS_CREATE, RestPermissions.INPUT_TYPES_CREATE + ":org.graylog.integrations.aws.inputs.AWSInput"})
     public Response create(@ApiParam @QueryParam("setup_wizard") @DefaultValue("false") boolean isSetupWizard,

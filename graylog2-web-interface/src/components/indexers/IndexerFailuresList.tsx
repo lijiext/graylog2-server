@@ -28,7 +28,7 @@ const IndexerFailuresList = ({ failures }: Props) => {
   if (failures.length === 0) {
     return (
       <Alert bsStyle="success">
-        <StatusIcon active /> Hurray! There are not any indexer failures.
+        <StatusIcon active /> 太好了！没有任何索引器故障。
       </Alert>
     );
   }
@@ -38,10 +38,10 @@ const IndexerFailuresList = ({ failures }: Props) => {
       <Table className="indexer-failures" striped hover condensed>
         <thead>
           <tr>
-            <th style={{ width: 200 }}>Timestamp</th>
-            <th>Index</th>
-            <th>Letter ID</th>
-            <th>Error message</th>
+            <th style={{ width: 200 }}>时间戳</th>
+            <th>索引</th>
+            <th>字母 ID</th>
+            <th>错误消息</th>
           </tr>
         </thead>
         <tbody>

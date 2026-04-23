@@ -1,0 +1,3955 @@
+{
+  "generatedAt": "2026-04-23T03:15:59.447Z",
+  "totalJavaFiles": 4200,
+  "totalUnique": 297,
+  "totalOccurrences": 433,
+  "strings": [
+    {
+      "id": "0f0138c6",
+      "source": "\"http_external_uri\" must end with a slash (\"/\")",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/HttpConfiguration.java",
+          "line": 259,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "a3d46c26",
+      "source": "\"http_publish_uri\" must end with a slash (\"/\")",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/HttpConfiguration.java",
+          "line": 251,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "1e50a82f",
+      "source": "(Re-)Start specified input on this node",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputStatesResource.java",
+          "line": 109,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "650e946b",
+      "source": "A few details about the Graylog node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/HelloWorldResource.java",
+          "line": 53,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "acb56360",
+      "source": "Add a stream routing rule to the default routing pipeline.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/pipelineprocessor/rest/PipelineResource.java",
+          "line": 269,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1c4c6ab8",
+      "source": "Assigned index set must be writable!",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/streams/StreamServiceImpl.java",
+          "line": 543,
+          "kind": "throw:ValidationException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 713,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "0d268721",
+      "source": "Attempt to retrieve logs from the indicated AWS log group with the specified credentials.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/AWSResource.java",
+          "line": 132,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "7b315840",
+      "source": "Attempted to modify a read only user account (e.g. built-in or LDAP users).",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 527,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4a0fa07b",
+      "source": "Basic realm=\"Graylog Server\"",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/security/ShiroAuthenticationFilter.java",
+          "line": 58,
+          "kind": "throw:NotAuthorizedException"
+        }
+      ]
+    },
+    {
+      "id": "ad04bf42",
+      "source": "Batch size for the backend storage export request.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 126,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 159,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 124,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 157,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 129,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 164,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f3a053fe",
+      "source": "Can optionally contain the token's TTL.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 837,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "66307303",
+      "source": "Cannot decode message to class FakeHttpRawMessageGenerator.GeneratorState",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/codecs/RandomHttpMessageCodec.java",
+          "line": 68,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "f793a5b2",
+      "source": "Check if a url is allowlisted.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/UrlAllowlistResource.java",
+          "line": 89,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4041a8fa",
+      "source": "Close an index. This will also trigger an index ranges rebuild job.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 210,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d0b1ce7b",
+      "source": "Cluster status information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterStatsResource.java",
+          "line": 51,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2e06395e",
+      "source": "Collector still in use, cannot delete.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/CollectorResource.java",
+          "line": 268,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "8282627a",
+      "source": "Comma separated list of streams categories to search in (can be empty)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 134,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "ce07486c",
+      "source": "Comma separated list of streams to search in (can be empty)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 133,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b42cc1df",
+      "source": "Configuration still in use, cannot change collector type.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/ConfigurationResource.java",
+          "line": 321,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "7aa45681",
+      "source": "Configuration still in use, cannot delete.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/ConfigurationResource.java",
+          "line": 353,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "d42d13b6",
+      "source": "Content Stream settings for the specified user.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/contentstream/rest/ContentStreamResource.java",
+          "line": 88,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "0e99f68c",
+      "source": "Could not decode CEF message.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/cef/codec/CEFCodec.java",
+          "line": 125,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "75566956",
+      "source": "Could not decode message.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 145,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "cdd95c05",
+      "source": "Could not decode PaloAlto9x message.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/inputs/paloalto9/PaloAlto9xCodec.java",
+          "line": 141,
+          "kind": "factory:InputProcessingException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/inputs/paloalto/PaloAltoCodec.java",
+          "line": 103,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "d8a28096",
+      "source": "Could not deserialize CloudTrail record.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/aws/inputs/cloudtrail/CloudTrailCodec.java",
+          "line": 66,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "81d1d780",
+      "source": "Could not deserialize Syslog message.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/codecs/SyslogCodec.java",
+          "line": 104,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "c96b0288",
+      "source": "Could not parse JSON.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/codecs/JsonPathCodec.java",
+          "line": 93,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "095ab848",
+      "source": "Couldn't convert IP subnets <null> to string.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/utilities/IPSubnetConverter.java",
+          "line": 51,
+          "kind": "throw:ParameterException"
+        }
+      ]
+    },
+    {
+      "id": "2258ced7",
+      "source": "Couldn't decode beats 2 message",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/beats/Beats2Codec.java",
+          "line": 83,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "1da7a2d9",
+      "source": "Couldn't decode beats message",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/beats/BeatsCodec.java",
+          "line": 65,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "2eb172ba",
+      "source": "Couldn't deserialize log data",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/codecs/AbstractKinesisCodec.java",
+          "line": 64,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "87cfa285",
+      "source": "Couldn't find current user!",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 103,
+          "kind": "throw:NotFoundException"
+        }
+      ]
+    },
+    {
+      "id": "199ffbed",
+      "source": "Couldn't send legacy notification - legacy notifications cannot be retried!",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/events/legacy/LegacyAlarmCallbackEventNotification.java",
+          "line": 68,
+          "kind": "throw:PermanentEventNotificationException"
+        }
+      ]
+    },
+    {
+      "id": "9df7c9f1",
+      "source": "Create / update shares for an entity or collection",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/security/rest/EntitySharesResource.java",
+          "line": 155,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "96ded7e1",
+      "source": "Create a new AWS input.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/AWSResource.java",
+          "line": 147,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f04b1c92",
+      "source": "Create a new user account.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 377,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "ad09afa6",
+      "source": "Create and send a cluster debug event.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/DebugEventsResource.java",
+          "line": 68,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "503804dd",
+      "source": "Create and send a local debug event.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/DebugEventsResource.java",
+          "line": 78,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "82b169c0",
+      "source": "Create/update a Sidecar registration",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/SidecarResource.java",
+          "line": 209,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "223029bb",
+      "source": "Credentials. The default",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/SessionsResource.java",
+          "line": 118,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3bda7d8a",
+      "source": "Current user not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 74,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 83,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "612c664e",
+      "source": "Cycle deflector to new/next index",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/DeflectorResource.java",
+          "line": 91,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "39043675",
+      "source": "Cycle deflector to new/next index in index set",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/DeflectorResource.java",
+          "line": 111,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2d54bfd4",
+      "source": "Decoded message is null or empty!",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/beats/Beats2Codec.java",
+          "line": 77,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "95325f7f",
+      "source": "Delete an index. This will also trigger an index ranges rebuild job.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 235,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "5526f7a6",
+      "source": "DELETE request to Data Node's API",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeRestApiProxyResource.java",
+          "line": 107,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeApiProxyResource.java",
+          "line": 108,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "aeccba8e",
+      "source": "Descriptive name for this token (e.g. 'cronjob')",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 836,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "e751c632",
+      "source": "Dismiss auto-showing getting started guide for this version",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/GettingStartedResource.java",
+          "line": 65,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "068846ec",
+      "source": "Elasticsearch information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterStatsResource.java",
+          "line": 60,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "23b53fa7",
+      "source": "Encoding the message to bytes failed.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/service/KinesisService.java",
+          "line": 365,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "8553ac3d",
+      "source": "Error handling OpenTelemetry message. No payload set.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/inputs/otel/codec/OTelCodec.java",
+          "line": 88,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "adba7d9d",
+      "source": "Event notification is invalid.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/events/rest/EventNotificationsResource.java",
+          "line": 298,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "ec775bc3",
+      "source": "Event notification not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/events/rest/EventNotificationsResource.java",
+          "line": 277,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6aece0f3",
+      "source": "Execute aggregation specified by `searchRequestSpec`",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 114,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "bb1b77f3",
+      "source": "Execute query specified by `queryRequestSpec`",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 68,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "5980c33b",
+      "source": "Export message search with absolute timerange.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 148,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "de60faff",
+      "source": "Export message search with keyword as timerange.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 143,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3a00942c",
+      "source": "Export message search with relative timerange.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 145,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8b3ff118",
+      "source": "Extractor not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 244,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6190ce06",
+      "source": "Failed to decode message from CloudWatch and check if it's a control message.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/service/KinesisService.java",
+          "line": 320,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "1edda8ed",
+      "source": "Field the extractor should write on is reserved.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 112,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 157,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "fe86277b",
+      "source": "Field/Key is reserved.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/StaticFieldsResource.java",
+          "line": 78,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f1f11ed1",
+      "source": "Filesystem information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/StatsResource.java",
+          "line": 62,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "0463e3f9",
+      "source": "For paging results. Starting from result",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 93,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "687a348f",
+      "source": "Generates a regex that can be used as a value for a allowlist entry.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/UrlAllowlistResource.java",
+          "line": 102,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "03d5d32b",
+      "source": "Get a list of all streams, excluding security streams",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 300,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c1602688",
+      "source": "Get a list of closed indices that can be reopened.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 150,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 286,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "755de012",
+      "source": "Get a list of failed index operations.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/FailuresResource.java",
+          "line": 91,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2b20ff1b",
+      "source": "Get a list of reopened indices, which will not be cleaned by retention cleaning",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 167,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 301,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "203730cc",
+      "source": "Get a nodes' Support Bundle Manifest",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/bundle/SupportBundleResource.java",
+          "line": 70,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6efa914b",
+      "source": "Get a single message.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 97,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "5c2da260",
+      "source": "Get all available AWS CloudWatch log groups names for the specified region.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/AWSResource.java",
+          "line": 95,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "fe521590",
+      "source": "Get all available Kinesis streams for the specified region.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/AWSResource.java",
+          "line": 105,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2447ed68",
+      "source": "Get all available user permissions.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/PermissionsResource.java",
+          "line": 65,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6afd6bbc",
+      "source": "Get all metrics keys/names",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/rest/resources/system/MetricsResource.java",
+          "line": 82,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3c162890",
+      "source": "Get all metrics keys/names from node",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterNodeMetricsResource.java",
+          "line": 82,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "da445975",
+      "source": "Get current state of the journal on this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/JournalResource.java",
+          "line": 66,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6a236e1d",
+      "source": "Get information about currently active stream router engine.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/DebugStreamsResource.java",
+          "line": 49,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "02461b6f",
+      "source": "Get information of all open indices managed by Graylog and their shards.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 134,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 271,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1910f7ee",
+      "source": "Get information of all specified indices and their shards.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 114,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "27df8fdb",
+      "source": "Get information of an index and its shards.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 95,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "dfba7098",
+      "source": "Get journal size estimate (bytes/minute)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/storage/migration/state/rest/MigrationStateResource.java",
+          "line": 107,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6dab39f7",
+      "source": "Get overview of current indexing state for the given index set, including deflector config, cluster state, index ranges & message counts.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexerOverviewResource.java",
+          "line": 116,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "46f31c80",
+      "source": "Get overview of current indexing state, including deflector config, cluster state, index ranges & message counts.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexerOverviewResource.java",
+          "line": 98,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8d9955be",
+      "source": "Get preferences for user's entity list",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/entities/preferences/EntityListPreferencesResource.java",
+          "line": 93,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "76c183fd",
+      "source": "GET request to Data Node's API",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeRestApiProxyResource.java",
+          "line": 74,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeApiProxyResource.java",
+          "line": 75,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4b948e96",
+      "source": "Get status of this Graylog server node for load balancers.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/rest/resources/system/LoadBalancerStatusResource.java",
+          "line": 66,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "93d70a97",
+      "source": "Get stream ARN for the specified stream and region.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/AWSResource.java",
+          "line": 115,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "16b95b30",
+      "source": "Get telemetry information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 65,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "bc4d6003",
+      "source": "Get timerange-based histogram of queries durations and percentage in recent query population",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/monitoring/MonitoringResource.java",
+          "line": 81,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "92ebb123",
+      "source": "Get url allowlist.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/UrlAllowlistResource.java",
+          "line": 68,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "14d347d3",
+      "source": "Gets built-in templates",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetTemplateResource.java",
+          "line": 128,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4e9fea79",
+      "source": "Gets list of all field_name-field_type pairs for given index set",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsMappingResource.java",
+          "line": 107,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "a0eb77ce",
+      "source": "Gets list of all profiles (their ids and names only)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexFieldTypeProfileResource.java",
+          "line": 104,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "a4e82205",
+      "source": "Gets list of field_name-field_type pairs for given index set, paginated",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsMappingResource.java",
+          "line": 79,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "15700d4a",
+      "source": "grok_pattern not set",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/extractors/GrokExtractor.java",
+          "line": 66,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "273f71e1",
+      "source": "Group aggregation by fields/limits.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 136,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "01094b1c",
+      "source": "How many log messages should be returned. 0 returns all existing messages.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterLoggersResource.java",
+          "line": 130,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/logs/LoggersResource.java",
+          "line": 222,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "af763e8e",
+      "source": "HTTP body must be filled if using POST or PUT.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/misc/jsonpath/JsonPathInput.java",
+          "line": 102,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "d7324aea",
+      "source": "HTTP content type must be selected if using POST or PUT.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/misc/jsonpath/JsonPathInput.java",
+          "line": 99,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "35bcb1b0",
+      "source": "If the adapter cannot be found (if it failed or doesn't exist at all)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/lookup/LookupTableResource.java",
+          "line": 565,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2388f056",
+      "source": "Include index set stats.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 139,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 169,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "ba664391",
+      "source": "Include only graylog open indices.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 141,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "62970fc4",
+      "source": "Index positions cannot be casted to Integer.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/extractors/SubstringExtractor.java",
+          "line": 58,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "524023a5",
+      "source": "Index set default template id.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetDefaultsResource.java",
+          "line": 62,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "10b5210c",
+      "source": "Index set not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 677,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b88c6b31",
+      "source": "Information about a node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterResource.java",
+          "line": 95,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b9262b76",
+      "source": "Information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterResource.java",
+          "line": 85,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8b956150",
+      "source": "Input not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 243,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1e53fbc8",
+      "source": "Invalid credentials.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/SessionsResource.java",
+          "line": 147,
+          "kind": "throw:NotAuthorizedException"
+        }
+      ]
+    },
+    {
+      "id": "ee306594",
+      "source": "Invalid date parameter provided.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/FailuresResource.java",
+          "line": 70,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "cdae577c",
+      "source": "Invalid JSON Body.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 111,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "abecca04",
+      "source": "Invalid keyword provided.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 81,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 114,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 147,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "60a2a4bf",
+      "source": "Invalid NetFlowV9 entry found, cannot parse the messages",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/netflow/codecs/NetFlowCodec.java",
+          "line": 157,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "8372f0ec",
+      "source": "Invalid ObjectId.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 355,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 372,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 395,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 195,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f72faaf2",
+      "source": "Invalid or missing Stream id.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 482,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 505,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 529,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 570,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "83140427",
+      "source": "Invalid output specification in input.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/outputs/OutputResource.java",
+          "line": 119,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 129,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b496ecc9",
+      "source": "Invalid pattern contained. Did not save any patterns.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/GrokResource.java",
+          "line": 201,
+          "kind": "throw:ValidationException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/GrokResource.java",
+          "line": 233,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "b22be92d",
+      "source": "Invalid request.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 242,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "984780a1",
+      "source": "Invalid timerange parameters provided.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 83,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 117,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 150,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 83,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 118,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 153,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "90f47831",
+      "source": "ISO8601 date",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/FailuresResource.java",
+          "line": 75,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "25d84569",
+      "source": "Job accepted.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/jobs/SystemJobResource.java",
+          "line": 157,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "a1174b3d",
+      "source": "Job not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/jobs/SystemJobResource.java",
+          "line": 126,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "98e4f5d3",
+      "source": "JSON contains type not supported by flatten method.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/codecs/JsonPathCodec.java",
+          "line": 90,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "c495151f",
+      "source": "JSON is null/could not be parsed (invalid JSON)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/codecs/GelfDecoder.java",
+          "line": 88,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "5962f05d",
+      "source": "JSON-RPC endpoint for MCP clients to connect to",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/mcp/server/McpRestResource.java",
+          "line": 88,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "5b6a9107",
+      "source": "JVM information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/StatsResource.java",
+          "line": 71,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "dc90ec98",
+      "source": "List all active nodes in this cluster.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterResource.java",
+          "line": 71,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "440a7b95",
+      "source": "List all installed plugins on this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/rest/resources/system/SystemPluginResource.java",
+          "line": 54,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1a04befa",
+      "source": "List all open, closed and reopened indices.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 183,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 262,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "54dffb43",
+      "source": "Maximum concurrency level of this systemjob type reached.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/jobs/SystemJobResource.java",
+          "line": 159,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "70963d8b",
+      "source": "Maximum number of fields to return. Set to 0 for all fields.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/SystemFieldsResource.java",
+          "line": 78,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "22726d22",
+      "source": "Maximum number of messages to return.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 91,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 124,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 157,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 89,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 122,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 155,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 92,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 127,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 162,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4ae3f8b2",
+      "source": "Memory appender is broken.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterLoggersResource.java",
+          "line": 125,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/logs/LoggersResource.java",
+          "line": 216,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d1e23769",
+      "source": "Memory appender is disabled.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterLoggersResource.java",
+          "line": 124,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/logs/LoggersResource.java",
+          "line": 215,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2eebf6b2",
+      "source": "Memory appender is disabled. Please refer to the example log4j.xml file.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/logs/LoggersResource.java",
+          "line": 228,
+          "kind": "throw:NotFoundException"
+        },
+        {
+          "file": "data-node/src/main/java/org/graylog/datanode/rest/LogsController.java",
+          "line": 72,
+          "kind": "throw:NotFoundException"
+        }
+      ]
+    },
+    {
+      "id": "b80713bc",
+      "source": "Memory appender is not an instance of MemoryAppender. Please refer to the example log4j.xml file.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/logs/LoggersResource.java",
+          "line": 232,
+          "kind": "throw:InternalServerErrorException"
+        },
+        {
+          "file": "data-node/src/main/java/org/graylog/datanode/rest/LogsController.java",
+          "line": 76,
+          "kind": "throw:InternalServerErrorException"
+        }
+      ]
+    },
+    {
+      "id": "76607143",
+      "source": "Message does not exist.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 100,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "a86089e7",
+      "source": "Message search with absolute timerange.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 78,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 113,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "10f894a3",
+      "source": "Message search with keyword as timerange.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 77,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 110,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "56d31798",
+      "source": "Message search with relative timerange.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 79,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 112,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f44a2761",
+      "source": "Metrics to be used.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 137,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "0006e6c5",
+      "source": "Missing column headers.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/converters/CsvConverter.java",
+          "line": 47,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "244e8667",
+      "source": "Missing config [date_format].",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/converters/DateConverter.java",
+          "line": 45,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "fd682921",
+      "source": "Missing config [split_by].",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/converters/SplitAndCountConverter.java",
+          "line": 35,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "089e9c6f",
+      "source": "Missing configuration fields. Required: begin_index, end_index",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/extractors/SubstringExtractor.java",
+          "line": 51,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "0127cb1d",
+      "source": "Missing configuration fields. Required: index, split_by",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/extractors/SplitAndIndexExtractor.java",
+          "line": 50,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "bf6f116d",
+      "source": "Missing or invalid configuration.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/StaticFieldsResource.java",
+          "line": 79,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 113,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 158,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "46351701",
+      "source": "Missing or invalid input configuration.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/InputServiceImpl.java",
+          "line": 559,
+          "kind": "throw:BadRequestException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/service/AWSService.java",
+          "line": 163,
+          "kind": "throw:BadRequestException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 241,
+          "kind": "throw:BadRequestException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 272,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b6dc7e00",
+      "source": "Missing or invalid permission data.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 662,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 682,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "bfaf754e",
+      "source": "Missing or invalid user details.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 379,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 528,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "09e91301",
+      "source": "Missing regex configuration field: regex_value",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/extractors/RegexExtractor.java",
+          "line": 49,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "73d5b19a",
+      "source": "Missing required parameter `fields`",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/SearchResource.java",
+          "line": 120,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "29b2937a",
+      "source": "Modify user details.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 525,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "344cc6fb",
+      "source": "MongoDB information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterStatsResource.java",
+          "line": 69,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8501c15f",
+      "source": "mongodb_uri is not a valid MongoDB connection string",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/MongoDbConfiguration.java",
+          "line": 68,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "e0a2f41d",
+      "source": "Must contain username, full_name, email, password and a list of permissions.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 382,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "a6436a42",
+      "source": "Networking information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/StatsResource.java",
+          "line": 80,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c381e34c",
+      "source": "No field names found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/converters/CsvConverter.java",
+          "line": 58,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "bbf5565b",
+      "source": "No http_publish_uri.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/HttpConfiguration.java",
+          "line": 151,
+          "kind": "throw:ParameterException"
+        },
+        {
+          "file": "data-node/src/main/java/org/graylog/datanode/Configuration.java",
+          "line": 629,
+          "kind": "throw:ParameterException"
+        }
+      ]
+    },
+    {
+      "id": "d7daca94",
+      "source": "No such extractor on this input.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 155,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 215,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6330869f",
+      "source": "No such extractor type.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 111,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 156,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3400f048",
+      "source": "No such input on this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/StaticFieldsResource.java",
+          "line": 77,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/StaticFieldsResource.java",
+          "line": 132,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 251,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 271,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputStatesResource.java",
+          "line": 95,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputStatesResource.java",
+          "line": 111,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputStatesResource.java",
+          "line": 130,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputStatesResource.java",
+          "line": 149,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 110,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 154,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 193,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 214,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 279,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4636ea65",
+      "source": "No such input type registered.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/rest/resources/system/inputs/InputTypesResource.java",
+          "line": 107,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "0b74ddb9",
+      "source": "No such input.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterInputStatesResource.java",
+          "line": 82,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterInputStatesResource.java",
+          "line": 94,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterInputStatesResource.java",
+          "line": 106,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 129,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 145,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 171,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "95c32dd2",
+      "source": "No such notification type.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/NotificationsResource.java",
+          "line": 92,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/NotificationsResource.java",
+          "line": 106,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2566189f",
+      "source": "No such output on this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/outputs/OutputResource.java",
+          "line": 105,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/outputs/OutputResource.java",
+          "line": 188,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "e8eceb4d",
+      "source": "No such static field.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/StaticFieldsResource.java",
+          "line": 133,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "e46c037a",
+      "source": "No such stream on this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 78,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "7de1e178",
+      "source": "No such stream/output on this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/outputs/OutputResource.java",
+          "line": 162,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 109,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 163,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "dae2579c",
+      "source": "No such subsystem.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterLoggersResource.java",
+          "line": 94,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/logs/LoggersResource.java",
+          "line": 172,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b9488e36",
+      "source": "Node not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/ClusterResource.java",
+          "line": 99,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "0dae1bff",
+      "source": "Notification IDs don't match",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/events/rest/EventNotificationsResource.java",
+          "line": 218,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "33ee71e5",
+      "source": "Old password is missing or incorrect.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 776,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "5ce60cf0",
+      "source": "Only global inputs are allowed!",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 310,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "bcac4aad",
+      "source": "Only one attribute out of 'limit', 'timeunit' or 'scaling' can be specified",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/request/Grouping.java",
+          "line": 54,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "ec8a3c66",
+      "source": "OS information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/StatsResource.java",
+          "line": 89,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "387c5d21",
+      "source": "Override load balancer status of this Graylog server node. Next lifecycle",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/rest/resources/system/LoadBalancerStatusResource.java",
+          "line": 93,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f09c281c",
+      "source": "Override load balancer status of this graylog-server node. Next lifecycle",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterLoadBalancerStatusResource.java",
+          "line": 73,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f7ec02e1",
+      "source": "Parameters cannot be casted.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/inputs/extractors/SplitAndIndexExtractor.java",
+          "line": 57,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "efb3ad62",
+      "source": "Path list must not be null.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/converters/SortedPathSetConverter.java",
+          "line": 39,
+          "kind": "throw:ParameterException"
+        }
+      ]
+    },
+    {
+      "id": "857b441d",
+      "source": "Patterns invalid.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/grok/GrokPatternServiceImpl.java",
+          "line": 87,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "7bd1e86f",
+      "source": "Persist ID (!) of input.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/ExtractorsResource.java",
+          "line": 283,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "e29e387e",
+      "source": "Pipeline name is reserved and cannot be used.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/pipelineprocessor/rest/PipelineResource.java",
+          "line": 346,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "e6741d31",
+      "source": "Placeholder because PUT requests should have a body. Set to '{}', the content will be ignored.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/roles/RolesResource.java",
+          "line": 254,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "9bb874cd",
+      "source": "POST request to Data Node's API",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeRestApiProxyResource.java",
+          "line": 85,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeApiProxyResource.java",
+          "line": 86,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1c683e86",
+      "source": "Preferences not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/entities/preferences/EntityListPreferencesResource.java",
+          "line": 96,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "5b81e1b8",
+      "source": "Preview the entries in a lookup table.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/lookup/LookupTableResource.java",
+          "line": 421,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3cb07661",
+      "source": "Process information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/StatsResource.java",
+          "line": 98,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3bd409ce",
+      "source": "Purge Lookup Table Cache on the cluster-wide level",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterLookupTableResource.java",
+          "line": 81,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8671f61a",
+      "source": "PUT request to Data Node's API",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeRestApiProxyResource.java",
+          "line": 96,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/datanodes/DataNodeApiProxyResource.java",
+          "line": 97,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "71f7ffab",
+      "source": "Query (Lucene syntax)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 87,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 120,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 153,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 84,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 117,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 150,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 86,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 121,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 156,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 86,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 132,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1dc4c93a",
+      "source": "Rebuild/sync index range information for the given index set.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 169,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d3bb92ad",
+      "source": "Rebuild/sync index range information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 149,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 190,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d9b61df5",
+      "source": "Rebuild/sync system job triggered.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 195,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "113d109f",
+      "source": "Rebuild/sync systemjob triggered.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 154,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 174,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "645796ff",
+      "source": "Relative timeframe to search in. See method description.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 89,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 122,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 155,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "014c8577",
+      "source": "Removes a user account.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 630,
+          "kind": "swagger:short"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 644,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "ba2f51b7",
+      "source": "Reopen a closed index. This will also trigger an index ranges rebuild job.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 192,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c85130d1",
+      "source": "Request is only allowed against leader nodes.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/security/RestrictToLeaderFilter.java",
+          "line": 49,
+          "kind": "throw:ForbiddenException"
+        }
+      ]
+    },
+    {
+      "id": "5457b623",
+      "source": "Required parameter \"root_password_sha2\" not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/Configuration.java",
+          "line": 564,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "3a3e10e4",
+      "source": "Reset the whole migration to the first step, start over",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/storage/migration/state/rest/MigrationStateResource.java",
+          "line": 97,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c57495d9",
+      "source": "Retrieve a user's telemetry settings.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 72,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "1a052c33",
+      "source": "Retrieve the nodes' server logfile",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/bundle/SupportBundleResource.java",
+          "line": 78,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "912e8ddf",
+      "source": "Retrieve the role's members",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/roles/RolesResource.java",
+          "line": 195,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "10e535d8",
+      "source": "Retrieve the runtime error states of the given lookup tables, caches and adapters",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/lookup/LookupTableResource.java",
+          "line": 522,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "984185e5",
+      "source": "Revoke all permissions for a user without deleting the account.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 703,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "d64dd366",
+      "source": "Route to fetch. For example /system",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/rest/resources/documentation/DocumentationResource.java",
+          "line": 109,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c63abbaf",
+      "source": "Sender or subject are missing or invalid.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/alarmcallbacks/EmailAlarmCallback.java",
+          "line": 250,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "895a9948",
+      "source": "Show last received cluster debug event.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/DebugEventsResource.java",
+          "line": 87,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8855dca3",
+      "source": "Show last received local debug event.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/debug/DebugEventsResource.java",
+          "line": 95,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "08c23fb5",
+      "source": "SMTP over SSL (SMTPS) and SMTP with STARTTLS cannot be used at the same time.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/EmailConfiguration.java",
+          "line": 115,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "98197b49",
+      "source": "Sort order - asc/desc",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 92,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c9a9d299",
+      "source": "Sorting (field:asc / field:desc)",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/RelativeSearchResource.java",
+          "line": 96,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/KeywordSearchResource.java",
+          "line": 94,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 97,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1297b490",
+      "source": "Specified codec does not exist.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 144,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6e474826",
+      "source": "Specified index does not exist.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 99,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 197,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3803bda4",
+      "source": "Step 1: Attempt to create a new kinesis stream and wait for it to be ready.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/KinesisSetupResource.java",
+          "line": 77,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "e142ed9f",
+      "source": "Step 2: Create AWS IAM policy needed for CloudWatch to write logs to Kinesis",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/KinesisSetupResource.java",
+          "line": 95,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "451adc6c",
+      "source": "Step 3: Subscribe a Kinesis stream to a CloudWatch log group",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/resources/KinesisSetupResource.java",
+          "line": 107,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d2c44576",
+      "source": "Strategy to apply when importing.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/GrokResource.java",
+          "line": 194,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/GrokResource.java",
+          "line": 223,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "9c4edf4e",
+      "source": "Stream not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 354,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 371,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 394,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 481,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 504,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 528,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/StreamResource.java",
+          "line": 569,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2942b6b9",
+      "source": "Stream or stream rule not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 110,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "ce99d58a",
+      "source": "Stream rule not found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 194,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "51af0c09",
+      "source": "String list of Paths must not be null.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/converters/SortedPathSetConverter.java",
+          "line": 52,
+          "kind": "throw:ParameterException"
+        },
+        {
+          "file": "data-node/src/main/java/org/graylog/datanode/PathListConverter.java",
+          "line": 46,
+          "kind": "throw:ParameterException"
+        }
+      ]
+    },
+    {
+      "id": "7d2cef8f",
+      "source": "System information about this node.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/StatsResource.java",
+          "line": 53,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3e27abb7",
+      "source": "System rules cannot be assigned to other pipelines.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/pipelineprocessor/rest/PipelineUtils.java",
+          "line": 86,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "a027309b",
+      "source": "The \"leader_election_lock_polling_interval\" needs to be greater than the \"lock_service_lock_ttl\"!",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/Configuration.java",
+          "line": 580,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "36806d09",
+      "source": "The adapter is still in use, cannot delete.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/lookup/LookupTableResource.java",
+          "line": 617,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "b506a5b6",
+      "source": "The analyzer to use.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 202,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "9d114ee8",
+      "source": "The cache is still in use, cannot delete.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/lookup/LookupTableResource.java",
+          "line": 781,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "be00acdf",
+      "source": "The event notification id to send a test alert for.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/events/rest/EventNotificationsResource.java",
+          "line": 281,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "bf8c28ee",
+      "source": "The filter ID in the URL doesn't match the one in the payload",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/destinations/filters/StreamDestinationFiltersResource.java",
+          "line": 168,
+          "kind": "throw:BadRequestException"
+        }
+      ]
+    },
+    {
+      "id": "5a0075e8",
+      "source": "The id of the node to get a process buffer dump.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterSystemResource.java",
+          "line": 127,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "fcd32749",
+      "source": "The id of the node to get a thread dump.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterSystemResource.java",
+          "line": 106,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f17d24ac",
+      "source": "The id of the node to get message journal information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterJournalResource.java",
+          "line": 72,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d7487955",
+      "source": "The id of the node to retrieve JVM information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterSystemResource.java",
+          "line": 85,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "9d8af3da",
+      "source": "The id of the node where processing will be paused.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterSystemProcessingResource.java",
+          "line": 82,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterSystemPluginResource.java",
+          "line": 70,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b22fce6f",
+      "source": "The id of the node where processing will be resumed.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterSystemProcessingResource.java",
+          "line": 96,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "455696f2",
+      "source": "The id of the node whose metrics we want.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterNodeMetricsResource.java",
+          "line": 84,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterNodeMetricsResource.java",
+          "line": 102,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/cluster/ClusterNodeMetricsResource.java",
+          "line": 121,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "3a688d1a",
+      "source": "The id of the output we want.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/outputs/OutputResource.java",
+          "line": 107,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 112,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "437b8b33",
+      "source": "The id of the stream whose outputs we want.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 80,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 111,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 132,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/outputs/StreamOutputResource.java",
+          "line": 166,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "89100e67",
+      "source": "The id of the stream whose stream rule we want.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 182,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1be8b2ca",
+      "source": "The id of the stream whose stream rules we want.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 167,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f6dcf00a",
+      "source": "The id of the user to delete.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 647,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "91db96d5",
+      "source": "The ID of the user to modify.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 531,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "608dea44",
+      "source": "The id of the user whose password to change.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 729,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4d3ebe59",
+      "source": "The id of the user whose status to change.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 786,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2ad5c82d",
+      "source": "The id this Sidecar is registering as.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/SidecarResource.java",
+          "line": 216,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/ActionResource.java",
+          "line": 90,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "cadf77fc",
+      "source": "The index the message containing the string is stored in.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 200,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "08f8a94b",
+      "source": "The index this message is stored in.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 102,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "68193c00",
+      "source": "The list of permissions to assign to the user.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 667,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b88b6d1c",
+      "source": "The map of preferences to assign to the user.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 687,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1b1138d2",
+      "source": "The maximum number of elements to return.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 137,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 167,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "19b36ea0",
+      "source": "The minimum length for \"password_secret\" is 16 characters.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/Configuration.java",
+          "line": 556,
+          "kind": "throw:ValidationException"
+        },
+        {
+          "file": "data-node/src/main/java/org/graylog/datanode/Configuration.java",
+          "line": 447,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "bce8b11a",
+      "source": "The minimum valid \"leader_election_lock_polling_interval\" is 1 second",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/Configuration.java",
+          "line": 577,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "86dd412d",
+      "source": "The minimum valid \"lock_service_lock_ttl\" is 60 seconds",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/Configuration.java",
+          "line": 574,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "4f0226cf",
+      "source": "The name of the Graylog-managed Elasticsearch index",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 128,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/IndexRangesResource.java",
+          "line": 200,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "19ac0224",
+      "source": "The name of the user to delete.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 633,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4135d61f",
+      "source": "The name of the user to modify.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 665,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 685,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 708,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "cf75858d",
+      "source": "The new password is missing, or the old password is missing or incorrect.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 723,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "168ff73f",
+      "source": "The number of elements to skip (offset).",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 135,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 163,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndexSetsResource.java",
+          "line": 165,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "618f6b32",
+      "source": "The old and new passwords.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 731,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "1b3ad2b8",
+      "source": "The password was successfully updated. Subsequent requests must be made with the new password.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 722,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2bef7519",
+      "source": "The requesting user has insufficient privileges to update the password for the given user.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 724,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "04c01727",
+      "source": "The sidecar user could not be found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/SidecarResource.java",
+          "line": 307,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "bb23c814",
+      "source": "The stream id this new rule belongs to.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 83,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 198,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 219,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d3481596",
+      "source": "The stream id this rule belongs to.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/streams/rules/StreamRuleResource.java",
+          "line": 116,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "9b134330",
+      "source": "The string to analyze.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/messages/MessageResource.java",
+          "line": 204,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8a54312b",
+      "source": "The supplied action is not valid.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/AdministrationResource.java",
+          "line": 163,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/ActionResource.java",
+          "line": 88,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "83515a3c",
+      "source": "The supplied request is not valid.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/sidecar/rest/resources/SidecarResource.java",
+          "line": 212,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "a6e3ebdb",
+      "source": "The telemetry settings to assign to the user.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 85,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "0a1387ee",
+      "source": "The user could not be found.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 203,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 226,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 254,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "fa095ce0",
+      "source": "The userId to return information for.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 228,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 256,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "2dde27ce",
+      "source": "The username to return information for.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 205,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "f8533069",
+      "source": "There is no such input type registered.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/integrations/aws/service/AWSService.java",
+          "line": 160,
+          "kind": "throw:NotFoundException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/inputs/InputsResource.java",
+          "line": 238,
+          "kind": "throw:NotFoundException"
+        }
+      ]
+    },
+    {
+      "id": "a07d0c23",
+      "source": "There is no such systemjob type.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/jobs/SystemJobResource.java",
+          "line": 158,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "d0be1af1",
+      "source": "Timeframe to search in. See method description.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 89,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/plugins/views/search/rest/scriptingapi/ScriptingApiResource.java",
+          "line": 135,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "4c05c91f",
+      "source": "Timerange end. See description for date format",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 90,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 125,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 160,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "186031d4",
+      "source": "Timerange start. See description for date format",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 88,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 123,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/search/AbsoluteSearchResource.java",
+          "line": 158,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "e03b1d74",
+      "source": "Total count of failed index operations since the given date.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/FailuresResource.java",
+          "line": 68,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "910f9f05",
+      "source": "Unable to decode raw message due to an unexpected error.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/shared/buffers/processors/DecodingProcessor.java",
+          "line": 167,
+          "kind": "factory:InputProcessingException"
+        }
+      ]
+    },
+    {
+      "id": "c7259dd3",
+      "source": "Update a user's permission set.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 660,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "6f4bee9c",
+      "source": "Update a user's preferences set.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 680,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "1937f406",
+      "source": "Update a user's telemetry settings.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/telemetry/rest/TelemetryResource.java",
+          "line": 82,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "08820823",
+      "source": "Update the password for a user.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 720,
+          "kind": "swagger:short"
+        }
+      ]
+    },
+    {
+      "id": "7759bf7a",
+      "source": "Update url allowlist.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/UrlAllowlistResource.java",
+          "line": 77,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "61e7dbe5",
+      "source": "Updated user information.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 533,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "88e1aec2",
+      "source": "Updates the AWS default configuration.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog/aws/config/AWSConfigurationResource.java",
+          "line": 59,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "ad7e338b",
+      "source": "URI List must not be null.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/converters/URIListConverter.java",
+          "line": 38,
+          "kind": "throw:ParameterException"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/configuration/converters/URIListConverter.java",
+          "line": 54,
+          "kind": "throw:ParameterException"
+        }
+      ]
+    },
+    {
+      "id": "a407fef7",
+      "source": "URL parameter is missing.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/alarmcallbacks/HTTPAlarmCallback.java",
+          "line": 134,
+          "kind": "throw:ConfigurationException"
+        }
+      ]
+    },
+    {
+      "id": "a26d8949",
+      "source": "User does not exist.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 725,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "8fe44293",
+      "source": "Validation failed.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/users/RoleServiceImpl.java",
+          "line": 192,
+          "kind": "throw:ValidationException"
+        }
+      ]
+    },
+    {
+      "id": "4641d119",
+      "source": "When attempting to remove a read only user (e.g. built-in or LDAP user).",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 631,
+          "kind": "swagger"
+        },
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 645,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "638fe26c",
+      "source": "When saving the user failed.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/users/UsersResource.java",
+          "line": 705,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "b0879345",
+      "source": "Whether the traffic should include up to the current date/time (in UTC).",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/TrafficResource.java",
+          "line": 58,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "c585a2fe",
+      "source": "You cannot close the current deflector target index.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 213,
+          "kind": "swagger"
+        }
+      ]
+    },
+    {
+      "id": "6e761f93",
+      "source": "You cannot delete the current deflector target index.",
+      "occurrences": [
+        {
+          "file": "graylog2-server/src/main/java/org/graylog2/rest/resources/system/indexer/IndicesResource.java",
+          "line": 238,
+          "kind": "swagger"
+        }
+      ]
+    }
+  ]
+}

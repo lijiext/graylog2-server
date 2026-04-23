@@ -155,32 +155,32 @@ const HighlightForm = ({ onClose, rule = undefined, onSubmit: onSubmitProp }: Pr
           <BootstrapModalWrapper showModal onHide={onClose}>
             <Form className="form" data-testid={`${headerPrefix}-highlighting-rule-dialog`}>
               <Modal.Header>
-                <Modal.Title>{headerPrefix} Highlighting Rule</Modal.Title>
+                <Modal.Title>{headerPrefix} 高亮规则</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <Field name="field" validate={_isRequired('Field')}>
                   {({ field: { name, value, onChange }, meta }) => (
-                    <Input id="field_type_controls" error={meta?.error} label="Field">
+                    <Input id="field_type_controls" error={meta?.error} label="字段">
                       <Select
                         inputId="field-select"
                         onChange={(newValue) => onChange({ target: { name, value: newValue } })}
                         options={fieldOptions}
                         allowCreate
                         value={value}
-                        placeholder="Select or type field name"
+                        placeholder="选择或输入字段名称"
                       />
                     </Input>
                   )}
                 </Field>
                 <Field name="condition" validate={_isRequired('Condition')}>
                   {({ field: { name, value, onChange }, meta }) => (
-                    <Input id="condition-controls" error={meta?.error} label="Condition">
+                    <Input id="condition-controls" error={meta?.error} label="条件">
                       <Select
                         inputId="condition-select"
                         onChange={(newValue) => onChange({ target: { name, value: newValue } })}
                         options={isNumeric ? numberConditionOptions : otherConditionOptions}
                         value={value}
-                        placeholder="Choose a condition"
+                        placeholder="选择条件"
                       />
                     </Input>
                   )}
@@ -193,7 +193,7 @@ const HighlightForm = ({ onClose, rule = undefined, onSubmit: onSubmitProp }: Pr
                       error={meta?.error}
                       onChange={onChange}
                       value={value ?? ''}
-                      label="Value"
+                      label="值"
                     />
                   )}
                 </Field>
@@ -203,7 +203,7 @@ const HighlightForm = ({ onClose, rule = undefined, onSubmit: onSubmitProp }: Pr
                 <ModalSubmit
                   onCancel={onClose}
                   disabledSubmit={!isValid}
-                  submitButtonText={`${submitButtonPrefix} rule`}
+                  submitButtonText={`${submitButtonPrefix} 规则`}
                 />
               </Modal.Footer>
             </Form>

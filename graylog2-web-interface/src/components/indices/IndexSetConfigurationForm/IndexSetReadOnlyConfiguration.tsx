@@ -45,8 +45,7 @@ const IndexSetReadOnlyConfiguration = ({
 }) => {
   const indexPrefixHelp = (
     <span>
-      A <strong>unique</strong> prefix used in Elasticsearch indices belonging to this index set. The prefix must start
-      with a letter or number, and can only contain letters, numbers, &apos;_&apos;, &apos;-&apos; and &apos;+&apos;.
+      A <strong>unique</strong> 此索引集所属 Elasticsearch 索引的前缀。前缀必须以字母或数字开头，且只能包含字母、数字、'_'、'-' 和 '+'。
     </span>
   );
 
@@ -55,7 +54,7 @@ const IndexSetReadOnlyConfiguration = ({
       <FormikInput
         type="text"
         id="index-prefix"
-        label="Index prefix"
+        label="索引前缀"
         name="index_prefix"
         help={indexPrefixHelp}
         validate={_validateIndexPrefix}
@@ -65,9 +64,9 @@ const IndexSetReadOnlyConfiguration = ({
         <FormikInput
           type="text"
           id="index-analyzer"
-          label="Analyzer"
+          label="分析器"
           name="index_analyzer"
-          help="Elasticsearch analyzer for this index set."
+          help="此索引集的 Elasticsearch 分析器。"
           required
           disabled={immutableFields.includes('index_analyzer') && !ignoreFieldRestrictions}
         />

@@ -62,7 +62,7 @@ const IndicesMaintenanceDropdown = ({ indexSet, indexSetId }: Props) => {
     () =>
       indexSet?.writable ? (
         <MenuItem eventKey="2" onClick={onCycleDeflector}>
-          Rotate active write index
+          轮换活动写入索引
         </MenuItem>
       ) : null,
     [indexSet?.writable, onCycleDeflector],
@@ -70,9 +70,9 @@ const IndicesMaintenanceDropdown = ({ indexSet, indexSetId }: Props) => {
 
   return (
     <ButtonGroup>
-      <DropdownButton bsStyle="info" title="Maintenance" id="indices-maintenance-actions" pullRight>
+      <DropdownButton bsStyle="info" title="维护" id="indices-maintenance-actions" pullRight>
         <MenuItem eventKey="1" onClick={onRecalculateIndexRange}>
-          Recalculate index ranges
+          重新计算索引范围
         </MenuItem>
         {cycleButton}
         {indexSet?.data_tiering_status?.has_failed_snapshot && dataTieringPlugin && (

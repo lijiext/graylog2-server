@@ -24,6 +24,6 @@ type Props = {
 };
 
 const EventTypeLabel = ({ isAlert }: Props) =>
-  isAlert ? <Label bsStyle="warning">Alert</Label> : <Label bsStyle="info">Event</Label>;
+  isAlert ? <Label bsStyle="warning">告警</Label> : <Label bsStyle="info">事件</Label>;
 
 export default EventTypeLabel;

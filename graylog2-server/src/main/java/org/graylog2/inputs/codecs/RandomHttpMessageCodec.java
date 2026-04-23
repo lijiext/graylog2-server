@@ -66,7 +66,7 @@ public class RandomHttpMessageCodec extends AbstractCodec {
             return Optional.of(FakeHttpRawMessageGenerator.generateMessage(messageFactory, state));
         } catch (Exception e) {
             throw InputProcessingException.create(
-                    "Cannot decode message to class FakeHttpRawMessageGenerator.GeneratorState",
+                    "无法将消息解码为类 FakeHttpRawMessageGenerator.GeneratorState",
                     rawMessage, new String(rawMessage.getPayload(), charset));
         }
     }

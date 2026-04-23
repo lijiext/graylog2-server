@@ -18,15 +18,14 @@ import React from 'react';
 
 const EventKeyHelpPopover = () => (
   <>
-    Event Keys are Fields used to arrange Events into groups. A group is created for each unique Key, resulting in as
-    many Events as unique Keys are found. Example:
+    事件键是用于将事件分组排列的字段。为每个唯一键创建一个组，生成的事件数量等于找到的唯一键数量。示例：
     <p />
-    <b>No Event Keys:</b> One Event for each <em>Login failure</em> message.
+    <b>无事件键:</b> 每个事件一个 <em>登录失败</em> 消息。
     <br />
     <b>
-      Event Key <code>username</code>:
+      事件键 <code>username</code>:
     </b>{' '}
-    One Event for each username with a <em>Login failure</em> message.
+    每个用户名一个事件，包含 <em>登录失败</em> 消息。
   </>
 );
 

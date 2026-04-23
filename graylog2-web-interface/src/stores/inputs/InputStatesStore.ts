@@ -94,18 +94,18 @@ export const InputStatesStore = singletonStore('core.InputStates', () =>
 
       if (failedNodes.length === 0) {
         UserNotification.success(
-          `Request to ${action.toLowerCase()} input '${input.title}' was sent successfully.`,
-          `Input '${input.title}' will be ${actionText()} shortly`,
+          `向 ${action.toLowerCase()} 输入 '${input.title}' 的请求已成功发送。`,
+          `输入 '${input.title}' 将很快变为 ${actionText()}`,
         );
       } else if (failedNodes.length === nodes.length) {
         UserNotification.error(
           `Request to ${action.toLowerCase()} input '${input.title}' failed. Check your Graylog logs for more information.`,
-          `Input '${input.title}' could not be ${actionText()}`,
+          `输入 '${input.title}' 无法 ${actionText()}`,
         );
       } else {
         UserNotification.warning(
-          `Request to ${action.toLowerCase()} input '${input.title}' failed in some nodes. Check your Graylog logs for more information.`,
-          `Input '${input.title}' could not be ${actionText()} in all nodes`,
+          `向 ${action.toLowerCase()} 输入 '${input.title}' 的请求在某些节点上失败。请检查您的 Graylog 日志以获取更多信息。`,
+          `输入 '${input.title}' 无法在所有节点上 ${actionText()}`,
         );
       }
     },
@@ -122,8 +122,8 @@ export const InputStatesStore = singletonStore('core.InputStates', () =>
         },
         (error) => {
           UserNotification.error(
-            `Error starting input '${input.title}': ${error}`,
-            `Input '${input.title}' could not be started`,
+            `启动输入 '${input.title}' 时出错：${error}`,
+            `输入 '${input.title}' 无法启动`,
           );
         },
       );
@@ -141,8 +141,8 @@ export const InputStatesStore = singletonStore('core.InputStates', () =>
         },
         (error) => {
           UserNotification.error(
-            `Error stopping input '${input.title}': ${error}`,
-            `Input '${input.title}' could not be stopped`,
+            `停止输入 '${input.title}' 时出错：${error}`,
+            `无法停止输入 '${input.title}'`,
           );
         },
       );
@@ -160,8 +160,8 @@ export const InputStatesStore = singletonStore('core.InputStates', () =>
         },
         (error) => {
           UserNotification.error(
-            `Error entering setup mode '${input.title}': ${error}`,
-            `Input '${input.title}' could not set to setup mode`,
+            `进入设置模式 '${input.title}' 时出错：${error}`,
+            `输入 '${input.title}' 无法设置为设置模式`,
           );
         },
       );

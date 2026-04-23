@@ -34,7 +34,7 @@ export const HELP = {
   // server config help
   systemUserDn: (
     <span>
-      The username for the initial connection to the LDAP server, e.g. <code>cn=admin,dc=example,dc=com</code>, this
+      用于初始连接 LDAP 服务器的用户名，例如 <code>cn=admin,dc=example,dc=com</code>, this
       might be optional depending on your LDAP server.
     </span>
   ),
@@ -42,41 +42,40 @@ export const HELP = {
   // user sync help
   userSearchBase: (
     <span>
-      The base tree to limit the LDAP search query to, e.g. <code>cn=users,dc=example,dc=com</code>.
+      LDAP 搜索查询的基准树，例如 <code>cn=users,dc=example,dc=com</code>.
     </span>
   ),
   userSearchPattern: (
     <span>
-      For example <code className="text-nowrap">{'(&(uid={0})(objectClass=inetOrgPerson))'}</code>. The string{' '}
-      <code>{'{0}'}</code> will be replaced by the entered username.
+      例如 <code className="text-nowrap">{'(&(uid={0})(objectClass=inetOrgPerson))'}</code>。该字符串{' '}
+      <code>{'{0}'}</code> 将被输入的用户名替换。
     </span>
   ),
   userNameAttribute: (
     <span>
-      Which LDAP attribute to use for the username of the synchronized user, e.g <code>uid</code>.<br />
-      Try to load a test user in the sidebar section <i>User Login Test</i>, if you are unsure which attribute to use.
+      要使用哪个 LDAP 属性作为同步用户的用户名，例如 <code>uid</code>.<br />
+      尝试在侧边栏部分加载测试用户 <i>用户登录测试</i>, if you are unsure which attribute to use.
     </span>
   ),
   userFullNameAttribute: (
     <span>
-      Which LDAP attribute to use for the full name of a synchronized user, e.g. <code>cn</code>.<br />
+      要使用哪个 LDAP 属性作为同步用户的完整姓名，例如 <code>cn</code>.<br />
     </span>
   ),
   userUniqueIdAttribute: (
     <span>
-      Which LDAP attribute to use for the ID of a synchronized user, e.g. <code>entryUUID</code>.<br />
+      要使用哪个 LDAP 属性作为同步用户的 ID，例如 <code>entryUUID</code>.<br />
     </span>
   ),
   defaultRoles: (
     <span>
-      The default roles synchronized user will obtain. All users need the <code>Reader</code> role, to use the web
-      interface
+      同步用户将获得的默认角色。所有用户都需要 <code>阅读器</code> 角色，以使用 Web 界面
     </span>
   ),
   emailAttributes: (
     <span>
-      Which LDAP attribute to use for the user&apos;s email address, e.g. <code>mail</code>.<br />
-      You can specify multiple attributes, type <kbd>Tab</kbd> or <kbd>Enter</kbd> to accept your value.
+      要使用哪个 LDAP 属性作为用户的电子邮件地址，例如 <code>mail</code>.<br />
+      您可以指定多个属性，类型 <kbd>标签页</kbd> or <kbd>输入</kbd> 接受您的值。
     </span>
   ),
 };
@@ -101,7 +100,7 @@ const BackendCreate = () => {
   const initialValues = { ...INITIAL_VALUES, ...initialGroupSyncValues };
 
   return (
-    <DocumentTitle title="Create LDAP Authentication Service">
+    <DocumentTitle title="创建 LDAP 认证服务">
       <WizardPageHeader />
       <BackendWizard
         onSubmit={handleCreate}

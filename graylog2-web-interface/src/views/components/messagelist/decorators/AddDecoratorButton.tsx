@@ -106,7 +106,7 @@ const AddDecoratorButton = ({
       <ConfigurationForm<Decorator['config']>
         key="configuration-form-output"
         configFields={typeDefinition.requested_configuration}
-        title={`Create new ${typeDefinition.name}`}
+        title={`创建新的 ${typeDefinition.name}`}
         typeName={typeName}
         includeTitleField={false}
         wrapperComponent={wrapperComponent as React.ComponentProps<typeof ConfigurationForm>['wrapperComponent']}
@@ -120,7 +120,7 @@ const AddDecoratorButton = ({
       <div className={`${DecoratorStyles.decoratorBox} ${DecoratorStyles.addDecoratorButtonContainer}`}>
         <div className={DecoratorStyles.addDecoratorSelect}>
           <Select
-            placeholder="Select decorator"
+            placeholder="选择装饰器"
             onChange={_onTypeChange}
             options={decoratorTypeOptions}
             disabled={disabled}

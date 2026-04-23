@@ -90,7 +90,7 @@ class MetricsList extends React.Component<Props> {
         {metrics.length > 0 ? (
           metrics
         ) : (
-          <li>No metrics match the given filter. Please ensure you use a valid regular expression</li>
+          <li>没有指标匹配给定的过滤器。请确保使用有效的正则表达式</li>
         )}
       </MetricListWrap>
     );

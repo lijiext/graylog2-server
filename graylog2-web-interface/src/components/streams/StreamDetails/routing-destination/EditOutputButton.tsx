@@ -48,18 +48,18 @@ const EditOutputButton = ({ output, disabled = false, onUpdate, getTypeDefinitio
 
   return (
     <IfPermitted permissions={`outputs:edit:${output.id}`}>
-      <Button bsStyle="link" disabled={disabled} bsSize="xsmall" onClick={onClick} title="Edit Output">
+      <Button bsStyle="link" disabled={disabled} bsSize="xsmall" onClick={onClick} title="编辑输出端">
         <Icon name="edit_square" />
       </Button>
       <ConfigurationForm<Output['configuration']>
         ref={configFormRef}
         key={`configuration-form-output-${output.id}`}
         configFields={typeDefinition}
-        title={`Editing Output ${output.title}`}
+        title={`编辑输出 ${output.title}`}
         typeName={output.type}
         titleHelpText="Select a name of your new output that describes it."
         submitAction={handleUpdate}
-        submitButtonText="Update output"
+        submitButtonText="更新输出端"
         values={output.configuration}
         titleValue={output.title}
       />

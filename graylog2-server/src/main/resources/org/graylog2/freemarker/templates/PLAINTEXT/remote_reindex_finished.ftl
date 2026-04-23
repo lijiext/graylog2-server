@@ -1,6 +1,6 @@
-<#if _title>Remote Reindex Migration has finished</#if>
+<#if _title>远程重新索引迁移已完成</#if>
 
 <#if _description><span>
-    Remote reindexing your existing data into the data node has finished <#if status == 'FINISHED'>sucessfully<#else>with errors</#if>.
-    Please visit the data node migration wizard to finalize the migration.
+    将现有数据远程重新索引到数据节点的操作已完成<#if status == 'FINISHED'>成功<#else>出现错误</#if>。
+    请访问数据节点迁移向导以完成迁移。
 </#if>

@@ -70,7 +70,7 @@ const AuthenticationBackendDetailsPage = ({ params: { backendId } }: Props) => {
         actions={
           <LinkContainer to={Routes.SYSTEM.AUTHENTICATION.BACKENDS.edit(authBackend?.id)}>
             <Button bsStyle="primary" type="button">
-              Edit Service
+              编辑服务
             </Button>
           </LinkContainer>
         }
@@ -78,7 +78,7 @@ const AuthenticationBackendDetailsPage = ({ params: { backendId } }: Props) => {
           title: 'Authentication documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>Configure authentication services of this cluster.</span>
+        <span>配置此集群的认证服务。</span>
       </PageHeader>
       <BackendDetails authenticationBackend={authBackend} />
     </DocumentTitle>

@@ -18,7 +18,7 @@ import React from 'react';
 
 const SpamhausEDROPAdapterSummary = () => (
   <dl>
-    <i>No configuration required.</i>
+    <i>无需配置。</i>
   </dl>
 );
 

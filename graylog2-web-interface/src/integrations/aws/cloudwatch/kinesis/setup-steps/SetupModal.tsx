@@ -62,16 +62,14 @@ const SetupModal = ({ onSubmit, onCancel, groupName, streamName }: SetupModalPro
 
         {agreed && success && (
           <Alert key="delayedLogs" bsStyle="warning">
-            It may take up to ten minutes for the first messages to arrive in the Kinesis stream. The Kinesis Health
-            Check in the following step will not complete successfully until messages are present in the stream. Please
-            see the official{' '}
+            Kinesis 数据流中的第一条消息可能需要长达十分钟才能到达。在下一步中，Kinesis 健康检查在消息出现在数据流中之前将无法成功完成。请参阅官方{' '}
             <a
               href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html"
               target="_blank"
               rel="noopener noreferrer">
-              CloudWatch Subscriptions
+              CloudWatch 订阅
             </a>{' '}
-            documentation for more information.
+            文档以获取更多信息。
           </Alert>
         )}
       </Modal.Body>
@@ -83,7 +81,7 @@ const SetupModal = ({ onSubmit, onCancel, groupName, streamName }: SetupModalPro
           </Button>
         ) : (
           <ModalSubmit
-            submitButtonText="I Agree! Create these AWS resources now."
+            submitButtonText="我同意！立即创建这些 AWS 资源。"
             onSubmit={() => setAgreed(true)}
             submitButtonType="button"
             onCancel={onCancel}

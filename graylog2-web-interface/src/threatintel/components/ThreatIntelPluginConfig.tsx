@@ -79,12 +79,12 @@ const ThreatIntelPluginConfig = ({ config: initialConfig = defaultConfig, update
 
   return (
     <div>
-      <h3>Threat Intelligence Lookup Configuration</h3>
+      <h3>威胁情报查找配置</h3>
 
-      <p>Configuration for threat intelligence lookup plugin.</p>
+      <p>威胁情报查找插件的配置。</p>
 
       <dl className="deflist">
-        <dt>Tor exit nodes:</dt>
+        <dt>Tor 出口节点:</dt>
         <dd>{config.tor_enabled === true ? 'Enabled' : 'Disabled'}</dd>
 
         <dt>Spamhaus:</dt>
@@ -93,22 +93,22 @@ const ThreatIntelPluginConfig = ({ config: initialConfig = defaultConfig, update
 
       <IfPermitted permissions="clusterconfigentry:edit">
         <Button bsStyle="info" bsSize="xs" onClick={_openModal}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
 
       <BootstrapModalForm
         show={showModal}
-        title="Update Threat Intelligence plugin Configuration"
+        title="更新威胁情报插件配置"
         onSubmitForm={_saveConfig}
         onCancel={_resetConfig}
-        submitButtonText="Update configuration">
+        submitButtonText="更新配置">
         <fieldset>
           <Input
             type="checkbox"
             id="tor-checkbox"
-            label="Allow Tor exit node lookups?"
-            help="Enable to include Tor exit node lookup in global pipeline function, disabling also stops refreshing the data."
+            label="允许 Tor 出口节点查找？"
+            help="启用以在全局管道函数中包含 Tor 出口节点查找，禁用也会停止刷新数据。"
             name="tor_enabled"
             checked={config.tor_enabled}
             onChange={_onCheckboxClick}
@@ -117,8 +117,8 @@ const ThreatIntelPluginConfig = ({ config: initialConfig = defaultConfig, update
           <Input
             type="checkbox"
             id="spamhaus-checkbox"
-            label="Allow Spamhaus DROP/EDROP lookups?"
-            help="Enable to include Spamhaus lookup in global pipeline function, disabling also stops refreshing the data."
+            label="是否允许 Spamhaus DROP/EDROP 查找？"
+            help="启用以在全局管道函数中包含 Spamhaus 查找，禁用也会停止刷新数据。"
             name="spamhaus_enabled"
             checked={config.spamhaus_enabled}
             onChange={_onCheckboxClick}

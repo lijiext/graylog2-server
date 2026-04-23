@@ -38,14 +38,13 @@ const MissingRequirements = ({ view, missingRequirements }: Props) => {
           {capitalize(view.type)}: <em>{view.title}</em>
         </h1>
         <p>
-          Unfortunately executing this {view.type?.toLowerCase()} is not possible. It uses the following capabilities
-          which are not available:
+          执行此操作时出现意外 {view.type?.toLowerCase()} 不可能。它使用了以下不可用的功能：
         </p>
 
         <ul>
           {Object.entries(missingRequirements).map(([require, plugin]: [string, PluginMetadata]) => (
             <li key={require}>
-              <strong>{require}</strong> - included in
+              <strong>{require}</strong> - 包含于
               <a href={plugin.url} target="_blank" rel="noopener noreferrer">
                 {plugin.name}
               </a>
@@ -56,7 +55,7 @@ const MissingRequirements = ({ view, missingRequirements }: Props) => {
 
       <Col md={1} mdOffset={8}>
         <Button bsStyle="primary" onClick={() => history.goBack()}>
-          Back
+          返回
         </Button>
       </Col>
     </Row>

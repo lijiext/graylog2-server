@@ -50,7 +50,7 @@ const Navigation = () => (
       <Group gap="xs">
         <NavigationBrand />
         <StyledText fw={500} size="xs" mr={1}>
-          Graylog Initial Setup
+          Graylog 初始设置
         </StyledText>
       </Group>
       <Group justify="flex-end">

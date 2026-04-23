@@ -38,12 +38,12 @@ const queryHelpComponent = (
     commonFields={['id', 'title', 'name', 'description']}
     example={
       <p>
-        searching without a field name matches against the <code>title</code> field:
+        在不指定字段名的情况下搜索将匹配 <code>title</code> 字段:
         <br />
         <kbd>geoip</kbd> <br />
-        is the same as
+        与...相同
         <br />
-        <kbd>title:geoip</kbd>
+        <kbd>标题：GeoIP</kbd>
       </p>
     }
   />

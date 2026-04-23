@@ -106,9 +106,9 @@ const GranteesSelector = ({
               <SubmitButton
                 bsStyle="primary"
                 disabled={isSubmitting || !isValid}
-                title="Add Collaborator"
+                title="添加协作者"
                 type="submit">
-                Add Collaborator
+                添加协作者
               </SubmitButton>
             </FormElements>
             {errors && (

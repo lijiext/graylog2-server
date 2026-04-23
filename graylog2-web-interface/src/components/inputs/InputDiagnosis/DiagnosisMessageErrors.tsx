@@ -85,27 +85,26 @@ const DiagnosisMessageErrors = ({ messageErrors, inputId }: Props) => {
       preHeaderSection={<StatusColorIndicator radius="50%" bsStyle={hasError ? 'danger' : 'gray'} />}
       headerLeftSection={
         <HelpPopoverButton
-          helpText={`Message Error at Input:
+          helpText={`输入处的消息错误:
             ${DIAGNOSIS_HELP.MESSAGE_ERROR_AT_INPUT(productName)}
 
-            Message Failed to Process:
+            消息处理失败:
             ${DIAGNOSIS_HELP.MESSAGE_FAILED_TO_PROCESS}
 
-            Message Errors:
+            消息错误:
             ${DIAGNOSIS_HELP.MESSAGE_FAILED_TO_INDEX}
             `}
         />
       }
-      title="Message Errors">
+      title="消息错误">
       <StyledP>
-        Messages can fail to process at the Input, at the processing pipeline, or when being indexed to the Search
-        Cluster. Click on a category to view the associated messages.
+        消息可能在输入端、处理管道或索引到搜索集群时处理失败。点击类别以查看相关消息。
       </StyledP>
       <StyledListGroup>
         <StyledListGroupItem>
           <StyledTitle>
             <LinkCompoment failureType="input" inputId={inputId}>
-              Message Error at Input:
+              输入端消息错误:
             </LinkCompoment>
           </StyledTitle>
           {messageErrors.failures_inputs_codecs}
@@ -113,7 +112,7 @@ const DiagnosisMessageErrors = ({ messageErrors, inputId }: Props) => {
         <StyledListGroupItem>
           <StyledTitle>
             <LinkCompoment failureType="processing" inputId={inputId}>
-              Message failed to process:
+              消息处理失败：
             </LinkCompoment>
           </StyledTitle>
           {messageErrors.failures_processing}
@@ -121,7 +120,7 @@ const DiagnosisMessageErrors = ({ messageErrors, inputId }: Props) => {
         <StyledListGroupItem>
           <StyledTitle>
             <LinkCompoment failureType="indexing" inputId={inputId}>
-              Message failed to index:
+              消息索引失败：
             </LinkCompoment>
           </StyledTitle>
           {messageErrors.failures_indexing}

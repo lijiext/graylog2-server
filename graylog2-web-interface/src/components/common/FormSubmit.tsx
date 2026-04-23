@@ -90,10 +90,10 @@ const FormSubmit = ({ ...props }: Props) => {
           type="button"
           bsSize={bsSize}
           onClick={props.onCancel}
-          title="Cancel"
-          aria-label="Cancel"
+          title="取消"
+          aria-label="取消"
           disabled={props.disabledCancel || submittingAsync}>
-          Cancel
+          取消
         </Button>
       )}
       {centerCol}

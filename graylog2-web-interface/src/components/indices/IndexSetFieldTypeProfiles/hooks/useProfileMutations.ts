@@ -63,13 +63,13 @@ const useProfileMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Creating index set field type profile failed with status: ${errorThrown}`,
-        'Could not create index set field type profile',
+        `创建索引集字段类型配置文件失败，状态为：${errorThrown}`,
+        '无法创建索引集字段类型配置文件',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Index set field type profile has been successfully created.', 'Success!');
+      UserNotification.success('索引集字段类型配置文件已成功创建。', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetFieldTypeProfiles'], type: 'active' });
     },
@@ -79,13 +79,13 @@ const useProfileMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Updating index set field type profile failed with status: ${errorThrown}`,
-        'Could not update index set field type profile',
+        `更新索引集字段类型配置文件失败，状态为：${errorThrown}`,
+        '无法更新索引集字段类型配置文件',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Index set field type profile has been successfully updated.', 'Success!');
+      UserNotification.success('索引集字段类型配置文件已成功更新。', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetFieldTypeProfiles'], type: 'active' });
     },
@@ -95,13 +95,13 @@ const useProfileMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Deleting index set field type profile failed with status: ${errorThrown}`,
-        'Could not delete index set field type profile',
+        `删除索引集字段类型配置文件失败，状态为：${errorThrown}`,
+        '无法删除索引集字段类型配置文件',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Index set field type profile has been successfully deleted.', 'Success!');
+      UserNotification.success('索引集字段类型配置文件已成功删除。', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetFieldTypeProfiles'], type: 'active' });
     },

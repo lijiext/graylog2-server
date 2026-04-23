@@ -35,7 +35,7 @@ const _sessionTimeout = (sessionTimeout: { value: number; unitString: string }, 
   if (sessionTimeout) {
     const globalTimeoutLink = (
       <IfPermitted permissions={['clusterconfigentry:read']}>
-        (<Link to={Routes.SYSTEM.CONFIGURATIONS}>globally set</Link>)
+        (<Link to={Routes.SYSTEM.CONFIGURATIONS}>全局设置</Link>)
       </IfPermitted>
     );
 
@@ -65,7 +65,7 @@ const StartpageValue = ({ type, id }: { type: string | null | undefined; id: str
   }, [id, type]);
 
   if (!type || !id) {
-    return <span>No start page set</span>;
+    return <span>未设置起始页面</span>;
   }
 
   const route = type === 'stream' ? Routes.stream_search(id) : Routes.dashboard_show(id);
@@ -81,11 +81,11 @@ const SettingsSection = ({ user: { timezone, serviceAccount, sessionTimeout, sta
   const isGlobalTimeoutEnabled = useIsGlobalTimeoutEnabled();
 
   return (
-    <SectionComponent title="Settings">
-      <ReadOnlyFormGroup label="Sessions Timeout" value={_sessionTimeout(sessionTimeout, isGlobalTimeoutEnabled)} />
-      <ReadOnlyFormGroup label="Service Account" value={serviceAccount} />
-      <ReadOnlyFormGroup label="Timezone" value={timezone} />
-      <ReadOnlyFormGroup label="Startpage" value={<StartpageValue type={startpage?.type} id={startpage?.id} />} />
+    <SectionComponent title="设置">
+      <ReadOnlyFormGroup label="会话超时" value={_sessionTimeout(sessionTimeout, isGlobalTimeoutEnabled)} />
+      <ReadOnlyFormGroup label="服务账户" value={serviceAccount} />
+      <ReadOnlyFormGroup label="时区" value={timezone} />
+      <ReadOnlyFormGroup label="起始页" value={<StartpageValue type={startpage?.type} id={startpage?.id} />} />
     </SectionComponent>
   );
 };

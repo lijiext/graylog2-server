@@ -46,7 +46,7 @@ public class DebugStreamsResource extends RestResource {
 
     @GET
     @Path("/router_engine_info")
-    @ApiOperation(value = "Get information about currently active stream router engine.")
+    @ApiOperation(value = "获取当前活动数据流路由器引擎的信息。")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getEngineFingerprint() {
         return Response.status(Response.Status.OK)

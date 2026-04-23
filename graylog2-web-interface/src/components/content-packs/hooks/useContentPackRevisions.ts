@@ -35,7 +35,7 @@ const fetchContentPackRevisions = async (id: string) => {
 };
 
 const defaultErrorHandler = (error: Error) =>
-  UserNotification.error(`Error while fetching content pack revisions: ${error}`, 'Unable to fetch content pack');
+  UserNotification.error(`获取内容包修订版时出错：${error}`, '无法获取内容包');
 
 const useContentPackRevisions = (id: string, onFetchError: (e: Error) => void = defaultErrorHandler) =>
   useQuery({

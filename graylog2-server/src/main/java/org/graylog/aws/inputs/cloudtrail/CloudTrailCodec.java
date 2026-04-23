@@ -63,7 +63,7 @@ public class CloudTrailCodec extends AbstractCodec {
 
             return Optional.of(message);
         } catch (Exception e) {
-            throw InputProcessingException.create("Could not deserialize CloudTrail record.",
+            throw InputProcessingException.create("无法反序列化 CloudTrail 记录。",
                     e, rawMessage, new String(rawMessage.getPayload(), charset));
         }
     }

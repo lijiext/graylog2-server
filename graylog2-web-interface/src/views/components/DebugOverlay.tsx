@@ -31,14 +31,14 @@ const DebugOverlay = ({ show, onClose }: Props) => {
   return (
     <BootstrapModalWrapper showModal={show} onHide={onClose}>
       <Modal.Header>
-        <Modal.Title>Debug information</Modal.Title>
+        <Modal.Title>调试信息</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <textarea disabled style={{ height: '80vh', width: '100%' }} value={JSON.stringify(fullState, null, 2)} />
       </Modal.Body>
       <Modal.Footer>
         <Button type="button" onClick={() => onClose()}>
-          Close
+          关闭
         </Button>
       </Modal.Footer>
     </BootstrapModalWrapper>

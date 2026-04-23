@@ -38,13 +38,13 @@ const createRule = async (rule: RuleBuilderRule) => {
   try {
     const result = await fetch('POST', qualifyUrl(ApiRoutes.RuleBuilderController.create().url), rule);
 
-    UserNotification.success(`Rule "${rule.title}" created successfully`);
+    UserNotification.success(`规则 "${rule.title}" 创建成功`);
 
     return result;
   } catch (errorThrown) {
     UserNotification.error(
-      `Creating the Rule Builder Rule failed with status: ${errorThrown}`,
-      'Could not Create the Rule Builder Rule.',
+      `创建规则构建器规则失败，状态为：${errorThrown}`,
+      '无法创建规则构建器规则。',
     );
 
     return null;
@@ -58,11 +58,11 @@ const updateRule = async (rule: RuleBuilderRule) => {
   try {
     await fetch('PUT', qualifyUrl(ApiRoutes.RuleBuilderController.update(rule.id).url), ruleToUpdate);
 
-    UserNotification.success(`Rule "${rule.title}" updated successfully`);
+    UserNotification.success(`规则 "${rule.title}" 更新成功`);
   } catch (errorThrown) {
     UserNotification.error(
-      `Updating the Rule Builder Rule failed with status: ${errorThrown}`,
-      'Could not Update the Rule Builder Rule.',
+      `更新规则构建器规则失败，状态为：${errorThrown}`,
+      '无法更新规则构建器规则。',
     );
   }
 };

@@ -82,8 +82,8 @@ const CreateProfile = () => {
     <ProfileForm
       initialValues={initialValues}
       onCancel={onCancel}
-      submitButtonText="Create profile"
-      submitLoadingText="Creating profile..."
+      submitButtonText="创建配置文件"
+      submitLoadingText="正在创建配置文件..."
       onSubmit={onSubmit}
     />
   );

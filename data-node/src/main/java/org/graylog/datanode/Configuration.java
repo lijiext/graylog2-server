@@ -444,7 +444,7 @@ public class Configuration implements CommonNodeConfiguration, NativeLibPathConf
     @SuppressWarnings("unused")
     public void validatePasswordSecret() throws ValidationException {
         if (passwordSecret == null || passwordSecret.length() < 16) {
-            throw new ValidationException("The minimum length for \"password_secret\" is 16 characters.");
+            throw new ValidationException("\"password_secret\"的最小长度为 16 个字符。");
         }
     }
 
@@ -626,7 +626,7 @@ public class Configuration implements CommonNodeConfiguration, NativeLibPathConf
                 }
             } catch (Exception e) {
                 LOG.error("Could not guess primary network address for \"http_publish_uri\". Please configure it in your Graylog configuration.", e);
-                throw new ParameterException("No http_publish_uri.", e);
+                throw new ParameterException("没有 http_publish_uri。", e);
             }
 
             try {

@@ -53,7 +53,7 @@ class IpAnonymizerConverterConfiguration extends React.Component<
         <Input
           type="checkbox"
           id={`enable-${this.props.type}-converter`}
-          label="Anonymize IPv4 addresses by replacing last octet"
+          label="通过替换最后一个八位组来匿名化 IPv4 地址"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked
           onChange={this._toggleConverter}

@@ -102,11 +102,9 @@ const MarkdownConfig = () => {
 
   return (
     <div>
-      <h2>Markdown Configuration</h2>
+      <h2>Markdown 配置</h2>
       <p>
-        These settings can be used to configure Markdown rendering in different parts of the product, including the
-        Text/Markdown widget. When changing settings for allowed image sources, the page will be reloaded afterwards to
-        make sure they are applied.
+        这些设置可用于配置产品中不同部分的 Markdown 渲染，包括文本/Markdown 小部件。更改允许的图像源设置后，页面将重新加载以确保其生效。
       </p>
 
       {!viewConfig ? (
@@ -114,9 +112,9 @@ const MarkdownConfig = () => {
       ) : (
         <>
           <StyledDefList>
-            <dt>Allow images from all sources:</dt>
+            <dt>允许来自所有来源的图像:</dt>
             <dd>{viewConfig.allow_all_image_sources ? 'Enabled' : 'Disabled'}</dd>
-            <dt>Allowed imaged sources (comma-separated):</dt>
+            <dt>允许的镜像源（逗号分隔）：</dt>
             <dd>{viewConfig.allowed_image_sources || '-'}</dd>
           </StyledDefList>
 
@@ -129,7 +127,7 @@ const MarkdownConfig = () => {
                 onClick={() => {
                   setShowModal(true);
                 }}>
-                Edit configuration
+                编辑配置
               </Button>
             </p>
           </IfPermitted>
@@ -150,9 +148,9 @@ const MarkdownConfig = () => {
                             type="checkbox"
                             name="allow_all_image_sources"
                             id="allow_all_image_sources"
-                            label={<LabelSpan>Allow images from all sources</LabelSpan>}
+                            label={<LabelSpan>允许来自所有来源的图像</LabelSpan>}
                           />
-                          <InputDescription help="If enabled, images can be embedded from all sources." />
+                          <InputDescription help="如果启用，则可以从所有来源嵌入图像。" />
                         </Col>
                         <Col sm={12}>
                           <FormikInput
@@ -160,9 +158,9 @@ const MarkdownConfig = () => {
                             name="allowed_image_sources"
                             id="allowed_image_sources"
                             disabled={values.allow_all_image_sources === true}
-                            label={<LabelSpan>Allowed images sources (comma-separated)</LabelSpan>}
+                            label={<LabelSpan>允许的图像源（逗号分隔）</LabelSpan>}
                           />
-                          <InputDescription help="Allowed image sources for image embedding markdown documents." />
+                          <InputDescription help="允许用于嵌入 Markdown 文档的图像源。" />
                         </Col>
                       </Row>
                     </div>
@@ -173,8 +171,8 @@ const MarkdownConfig = () => {
                       onCancel={resetConfig}
                       isSubmitting={isSubmitting}
                       isAsyncSubmit
-                      submitLoadingText="Update configuration"
-                      submitButtonText="Update configuration"
+                      submitLoadingText="更新配置"
+                      submitButtonText="更新配置"
                     />
                   </Modal.Footer>
                 </Form>

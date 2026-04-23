@@ -59,7 +59,7 @@ const ClientCertForm = ({ onCancel }: Props) => {
   return (
     <>
       <Modal.Header>
-        <Modal.Title>Create client certificate</Modal.Title>
+        <Modal.Title>创建客户端证书</Modal.Title>
       </Modal.Header>
       {!clientCerts && (
         <Formik
@@ -76,13 +76,13 @@ const ClientCertForm = ({ onCancel }: Props) => {
           {({ isSubmitting, values, setFieldValue }) => (
             <Form>
               <Modal.Body>
-                <FormikInput id="principal" placeholder="principal" name="principal" label="Principal" required />
+                <FormikInput id="principal" placeholder="principal" name="principal" label="主体" required />
                 <FormikInput
                   id="role"
                   placeholder="role"
                   name="role"
-                  help="Represent OpenSearch roles mapping."
-                  label="Role"
+                  help="表示 OpenSearch 角色映射。"
+                  label="角色"
                   required
                 />
                 <Checkbox
@@ -91,19 +91,19 @@ const ClientCertForm = ({ onCancel }: Props) => {
                   name="client_certificate_unencrypted"
                   checked={isUnencrypted}
                   onChange={() => onToggleUnencrypted(setFieldValue)}>
-                  Unencrypted
+                  未加密
                 </Checkbox>
                 <FormikInput
                   id="password"
                   placeholder="*******"
                   name="password"
                   type="password"
-                  label="Password"
+                  label="密码"
                   disabled={isUnencrypted}
                   required={!isUnencrypted}
                 />
                 <TimeUnitInput
-                  label="Certificate Lifetime"
+                  label="证书有效期"
                   update={(value, unit) => {
                     setFieldValue('lifetimeValue', value);
                     setFieldValue('lifetimeUnit', unit);
@@ -120,8 +120,8 @@ const ClientCertForm = ({ onCancel }: Props) => {
                   onCancel={() => onCancel()}
                   isSubmitting={isSubmitting}
                   isAsyncSubmit
-                  submitButtonText="Create Certificate"
-                  submitLoadingText="Creating certificate..."
+                  submitButtonText="创建证书"
+                  submitLoadingText="正在创建证书..."
                 />
               </Modal.Footer>
             </Form>
@@ -136,7 +136,7 @@ const ClientCertForm = ({ onCancel }: Props) => {
           <Modal.Footer>
             <ButtonToolbar>
               <Button bsStyle="primary" onClick={() => onCancel()}>
-                Close
+                关闭
               </Button>
             </ButtonToolbar>
           </Modal.Footer>

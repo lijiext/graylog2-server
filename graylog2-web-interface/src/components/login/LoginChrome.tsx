@@ -142,7 +142,7 @@ const LoginChrome = ({ children }: Props) => {
   return (
     <LoginContainer>
       <LoginBox>
-        <WelcomeMessage>Welcome to {productName}</WelcomeMessage>
+        <WelcomeMessage>欢迎使用 {productName}</WelcomeMessage>
         {children}
       </LoginBox>
       <Background>

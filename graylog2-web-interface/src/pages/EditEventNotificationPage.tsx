@@ -78,9 +78,9 @@ class EditEventDefinitionPage extends React.Component<
 
     if (!notification) {
       return (
-        <DocumentTitle title="Edit Notification">
+        <DocumentTitle title="编辑通知">
           <span>
-            <PageHeader title="Edit Notification">
+            <PageHeader title="编辑通知">
               <Spinner text="Loading Notification information..." />
             </PageHeader>
           </span>
@@ -89,10 +89,10 @@ class EditEventDefinitionPage extends React.Component<
     }
 
     return (
-      <DocumentTitle title={`Edit "${notification.title}" Notification`}>
+      <DocumentTitle title={`编辑“${notification.title}”通知`}>
         <EventsPageNavigation />
         <PageHeader
-          title={`Edit "${notification.title}" Notification`}
+          title={`编辑“${notification.title}”通知`}
           actions={<EventNotificationActionLinks notificationId={notification.id} />}
           documentationLink={{
             title: 'Alerts documentation',

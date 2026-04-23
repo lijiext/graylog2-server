@@ -199,16 +199,16 @@ const EventDefinitionActions = ({ eventDefinition }: Props) => {
               deselectEntity(currentDefinition.id);
 
               UserNotification.success(
-                'Event Definition deleted successfully',
-                `Event Definition "${eventDefinition.title}" was deleted successfully.`,
+                '事件定义删除成功',
+                `事件定义 "${eventDefinition.title}" 已成功删除。`,
               );
             },
             (error) => {
               const errorStatus = error?.additional?.body?.errors?.dependency.join(' ') || error;
 
               UserNotification.error(
-                `Deleting Event Definition "${eventDefinition.title}" failed with status: ${errorStatus}`,
-                'Could not delete Event Definition',
+                `删除事件定义 "${eventDefinition.title}" 失败，状态为：${errorStatus}`,
+                '无法删除事件定义',
               );
             },
           )
@@ -261,12 +261,12 @@ const EventDefinitionActions = ({ eventDefinition }: Props) => {
         <MoreActions>
           <IfPermitted permissions={`eventdefinitions:edit:${eventDefinition.id}`}>
             <MenuItem onClick={onEditEventDefinition} data-testid="edit-button">
-              Edit
+              编辑
             </MenuItem>
           </IfPermitted>
           <IfPermitted permissions="eventdefinitions:create">
             {!isSystemEventDefinition(eventDefinition) && !isSigmaEventDefinition(eventDefinition) && (
-              <MenuItem onClick={() => handleAction(DIALOG_TYPES.COPY, eventDefinition)}>Duplicate</MenuItem>
+              <MenuItem onClick={() => handleAction(DIALOG_TYPES.COPY, eventDefinition)}>复制</MenuItem>
             )}
             <MenuItem divider />
           </IfPermitted>
@@ -311,7 +311,7 @@ const EventDefinitionActions = ({ eventDefinition }: Props) => {
                 <MenuItem divider />
               </IfPermitted>
               <LinkContainer to={Routes.ALERTS.DEFINITIONS.replay_search(eventDefinition.id)}>
-                <MenuItem>Replay search</MenuItem>
+                <MenuItem>重放搜索</MenuItem>
               </LinkContainer>
             </>
           )}
@@ -332,7 +332,7 @@ const EventDefinitionActions = ({ eventDefinition }: Props) => {
           entityType="event_definition"
           entityTypeTitle="event definition"
           entityTitle={eventDefinition.title}
-          description="Search for a User or Team to add as collaborator on this event definition."
+          description="搜索用户或团队以将其添加为此事件定义的协作者。"
           onClose={() => setShowEntityShareModal(false)}
         />
       )}

@@ -74,7 +74,7 @@ const DetailsStreamRule = ({ stream, streamRule, onSubmit = () => {}, onDelete =
         queryKey: STREAM_QUERY_KEY,
       });
       setShowConfirmDelete(false);
-      UserNotification.success('Stream rule has been successfully deleted.', 'Success');
+      UserNotification.success('数据流规则已成功删除。', '成功');
     });
   };
 
@@ -87,7 +87,7 @@ const DetailsStreamRule = ({ stream, streamRule, onSubmit = () => {}, onDelete =
       queryClient.invalidateQueries({
         queryKey: STREAM_QUERY_KEY,
       });
-      UserNotification.success('Stream rule has been successfully updated.', 'Success');
+      UserNotification.success('数据流规则已成功更新。', '成功');
     });
 
   const _formatActionItems = () => (
@@ -96,10 +96,10 @@ const DetailsStreamRule = ({ stream, streamRule, onSubmit = () => {}, onDelete =
         bsStyle="default"
         bsSize="xsmall"
         onClick={() => setShowStreamRuleForm(true)}
-        title="Edit stream rule">
+        title="编辑数据流规则">
         <Icon name="edit_square" type="regular" />
       </StyledDeleteButton>
-      <Button bsStyle="danger" bsSize="xsmall" onClick={() => setShowConfirmDelete(true)} title="Delete stream rule">
+      <Button bsStyle="danger" bsSize="xsmall" onClick={() => setShowConfirmDelete(true)} title="删除数据流规则">
         <Icon name="delete" type="regular" />
       </Button>
     </ActionButtonsWrap>
@@ -120,9 +120,9 @@ const DetailsStreamRule = ({ stream, streamRule, onSubmit = () => {}, onDelete =
         <StreamRuleModal
           initialValues={streamRule}
           onClose={() => setShowStreamRuleForm(false)}
-          title="Edit Stream Rule"
-          submitButtonText="Update Rule"
-          submitLoadingText="Updating Rule..."
+          title="编辑数据流规则"
+          submitButtonText="更新规则"
+          submitLoadingText="正在更新规则..."
           onSubmit={_onSubmit}
         />
       )}
@@ -131,9 +131,9 @@ const DetailsStreamRule = ({ stream, streamRule, onSubmit = () => {}, onDelete =
           show={showConfirmDelete}
           onConfirm={onConfirmDelete}
           onCancel={() => setShowConfirmDelete(false)}
-          title="Delete stream rule."
+          title="删除数据流规则。"
           btnConfirmText="Ok">
-          Do you really want to delete this stream rule?
+          您确定要删除此数据流规则吗？
         </ConfirmDialog>
       )}
     </tr>

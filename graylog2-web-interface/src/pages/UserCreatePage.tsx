@@ -25,20 +25,20 @@ import UserCreate from 'components/users/UserCreate';
 import UsersPageNavigation from 'components/users/navigation/UsersPageNavigation';
 
 const UserCreatePage = () => (
-  <DocumentTitle title="Create New User">
+  <DocumentTitle title="创建新用户">
     <UsersPageNavigation />
     <PageHeader
-      title="Create New User"
+      title="创建新用户"
       actions={
         <LinkContainer to={Routes.SYSTEM.USERS.CREATE}>
-          <Button bsStyle="primary">Create user</Button>
+          <Button bsStyle="primary">创建用户</Button>
         </LinkContainer>
       }
       documentationLink={{
         title: 'Permissions documentation',
         path: DocsHelper.PAGES.USERS_ROLES,
       }}>
-      <span>Use this page to create new users for the web interface or the REST API.</span>
+      <span>使用此页面为 Web 界面或 REST API 创建新用户。</span>
     </PageHeader>
 
     <UserCreate />

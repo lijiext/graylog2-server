@@ -1,11 +1,9 @@
 <#if _title>
-Deflector exists as an index and is not an alias
+Deflector 已作为索引存在，而非别名
 </#if>
 
 <#if _description>
 <span>
-The deflector is meant to be an alias but exists as an index. Multiple failures of infrastructure can lead
-to this. Your messages are still indexed but searches and all maintenance tasks will fail or produce incorrect
-results. It is strongly recommend that you act as soon as possible.
+Deflector 本应作为别名存在，但实际已作为索引存在。基础设施的多次故障可能导致此情况。您的消息仍会被索引，但搜索和所有维护任务将失败或产生错误结果。强烈建议您尽快采取行动。
 </span>
 </#if>

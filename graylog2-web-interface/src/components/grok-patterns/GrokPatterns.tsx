@@ -199,7 +199,7 @@ class GrokPatterns extends React.Component<
                 bsStyle="danger"
                 bsSize="xs"
                 onClick={() => this.confirmedRemove(pattern)}>
-                Delete
+                删除
               </Button>
             </IfPermitted>
           </ButtonToolbar>
@@ -217,7 +217,7 @@ class GrokPatterns extends React.Component<
     return (
       <div>
         <PageHeader
-          title="Grok patterns"
+          title="Grok 模式"
           actions={
             <IfPermitted permissions="inputs:edit">
               <ButtonToolbar>
@@ -237,8 +237,7 @@ class GrokPatterns extends React.Component<
             </IfPermitted>
           }>
           <span>
-            This is a list of grok patterns you can use in your grok extractors. You can add your own manually or import
-            a whole list of patterns from a so called pattern file.
+            这是您可以在 Grok 提取器中使用的 Grok 模式列表。您可以手动添加自己的模式，或从所谓的模式文件导入整个模式列表。
           </span>
         </PageHeader>
 
@@ -265,7 +264,7 @@ class GrokPatterns extends React.Component<
                       headerCellFormatter={_headerCellFormatter}
                       sortByKey="name"
                       rows={patterns}
-                      noDataText="No grok patterns have been found."
+                      noDataText="未找到任何 Grok 模式。"
                       dataRowFormatter={this._patternFormatter}
                     />
                   </PaginatedList>

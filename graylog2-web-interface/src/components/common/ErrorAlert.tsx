@@ -58,7 +58,7 @@ const ErrorAlert = ({
       <Alert bsStyle={finalBsStyle}>
         <StyledRow>
           <Col md={11}>
-            {runtimeError && <h4>Runtime Error</h4>}
+            {runtimeError && <h4>运行时错误</h4>}
             {children}
           </Col>
           <Col md={1}>

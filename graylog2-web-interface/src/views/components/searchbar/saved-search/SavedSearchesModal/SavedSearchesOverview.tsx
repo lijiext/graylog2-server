@@ -100,10 +100,10 @@ const SavedSearchesOverview = ({ activeSavedSearchId, deleteSavedSearch, onLoadS
         />
       </div>
       {pagination?.total === 0 && !searchParams.query && (
-        <NoEntitiesExist>No saved searches have been created yet.</NoEntitiesExist>
+        <NoEntitiesExist>尚未创建任何保存的搜索。</NoEntitiesExist>
       )}
       {pagination?.total === 0 && searchParams.query && (
-        <NoSearchResult>No saved searches have been found.</NoSearchResult>
+        <NoSearchResult>未找到已保存的搜索。</NoSearchResult>
       )}
       {!!savedSearches?.length && (
         <EntityDataTable<View>

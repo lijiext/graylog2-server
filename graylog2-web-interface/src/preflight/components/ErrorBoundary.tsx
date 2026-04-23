@@ -50,10 +50,9 @@ class ErrorBoundary extends React.Component<Props, State> {
     if (error) {
       return (
         <div>
-          <Section title="Something went wrong" titleOrder={1}>
+          <Section title="出错了" titleOrder={1}>
             <p>
-              An unknown error has occurred. Please have a look at the following message and the <ProductName /> server
-              log for more information.
+              发生未知错误。请查看以下消息和 <ProductName /> 服务器日志以获取更多信息。
             </p>
             <pre className="content">
               {error.error.message}

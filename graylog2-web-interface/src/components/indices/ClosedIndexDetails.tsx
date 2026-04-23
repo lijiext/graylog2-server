@@ -52,14 +52,14 @@ class ClosedIndexDetails extends React.Component<
       <div className="index-info">
         <IndexRangeSummary indexRange={indexRange} />
         <Alert bsStyle="info">
-          This index is closed. Index information is not available at the moment, please reopen the index and try again.
+          该索引已关闭。当前无法获取索引信息，请重新打开索引并重试。
         </Alert>
         <hr style={{ marginBottom: '5', marginTop: '10' }} />
         <Button bsStyle="warning" bsSize="xs" onClick={this._onReopen}>
-          Reopen index
+          重新打开索引
         </Button>{' '}
         <Button bsStyle="danger" bsSize="xs" onClick={this._onDeleteIndex}>
-          Delete index
+          删除索引
         </Button>
       </div>
     );

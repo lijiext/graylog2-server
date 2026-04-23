@@ -51,7 +51,7 @@ const SyncedUsersOverviewItem = ({ user: { fullName, id, roles: userRolesIds, us
         <ActionsWrapper>
           <LinkContainer to={Routes.SYSTEM.USERS.edit(id)}>
             <Button type="button" bsStyle="info" bsSize="xs">
-              Edit
+              编辑
             </Button>
           </LinkContainer>
         </ActionsWrapper>

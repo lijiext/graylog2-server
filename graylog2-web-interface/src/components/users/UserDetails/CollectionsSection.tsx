@@ -30,7 +30,7 @@ const CollectionsSection = ({ user }: Props) => {
   const Collections = collectionsPlugin?.[0]?.UserCollections;
 
   return (
-    <SectionComponent title="Collections">
+    <SectionComponent title="集合">
       {Collections ? <Collections userId={user.id} /> : <EnterprisePluginNotFound featureName="collections" />}
     </SectionComponent>
   );

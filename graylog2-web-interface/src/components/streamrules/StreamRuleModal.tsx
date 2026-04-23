@@ -135,7 +135,7 @@ const StreamRuleModal = ({
                           <TypeAheadFieldInput
                             id={name}
                             onBlur={onBlur}
-                            label="Field"
+                            label="字段"
                             name={name}
                             error={error && touched ? error : undefined}
                             defaultValue={value}
@@ -147,7 +147,7 @@ const StreamRuleModal = ({
 
                     <Field name="type">
                       {({ field: { name, value, onChange, onBlur }, meta: { error, touched } }) => (
-                        <Input label="Type" id="type" error={error && touched ? error : undefined}>
+                        <Input label="类型" id="type" error={error && touched ? error : undefined}>
                           <Select
                             onBlur={onBlur}
                             onChange={(newValue: number) => {
@@ -165,7 +165,7 @@ const StreamRuleModal = ({
                             }}
                             options={streamRuleTypesOptions}
                             inputId={name}
-                            placeholder="Select a type"
+                            placeholder="选择类型"
                             value={value}
                           />
                         </Input>
@@ -176,7 +176,7 @@ const StreamRuleModal = ({
                       (values.type === STREAM_RULE_TYPES.MATCH_INPUT ? (
                         <Field name="value">
                           {({ field: { name, value, onChange, onBlur }, meta: { error, touched } }) => (
-                            <Input id="value" label="Input" error={error && touched ? error : undefined}>
+                            <Input id="value" label="输入端" error={error && touched ? error : undefined}>
                               <Select
                                 onBlur={onBlur}
                                 onChange={(newValue: string) => {
@@ -184,23 +184,23 @@ const StreamRuleModal = ({
                                 }}
                                 options={inputOptions}
                                 inputId={name}
-                                placeholder="Select an input"
-                                aria-label="Select an input"
+                                placeholder="选择输入端"
+                                aria-label="选择输入端"
                                 value={value}
                               />
                             </Input>
                           )}
                         </Field>
                       ) : (
-                        <FormikInput id="value" label="Value" name="value" />
+                        <FormikInput id="value" label="值" name="value" />
                       ))}
 
-                    <FormikInput id="inverted" label="Inverted" name="inverted" type="checkbox" />
+                    <FormikInput id="inverted" label="反向" name="inverted" type="checkbox" />
                     <FormikInput
                       id="description"
                       label={
                         <>
-                          Description <InputOptionalInfo />
+                          描述 <InputOptionalInfo />
                         </>
                       }
                       name="description"
@@ -208,12 +208,12 @@ const StreamRuleModal = ({
                     />
 
                     <p>
-                      <strong>Result:</strong> <HumanReadableStreamRule streamRule={values} inputs={inputs} />
+                      <strong>结果:</strong> <HumanReadableStreamRule streamRule={values} inputs={inputs} />
                     </p>
                   </Col>
                   <Col md={4}>
                     <Well bsSize="small" className="matcher-github">
-                      The server will try to convert to strings or numbers based on the matcher type as well as it can.
+                      服务器将尝试根据匹配器类型尽可能将其转换为字符串或数字。
                       {enabled && (
                         <>
                           <br />
@@ -222,16 +222,16 @@ const StreamRuleModal = ({
                           &nbsp;
                           <a href={url} target="_blank" rel="noopener noreferrer">
                             {' '}
-                            Take a look at the matcher code on GitHub
+                            查看 GitHub 上的匹配器代码
                           </a>
                         </>
                       )}
                       <br />
                       <br />
-                      Regular expressions use Java syntax.{' '}
+                      正则表达式使用 Java 语法。{' '}
                       <DocumentationLink
                         page={DocsHelper.PAGES.STREAMS}
-                        title="More information"
+                        title="更多信息"
                         text={<Icon name="lightbulb_circle" type="regular" />}
                       />
                     </Well>

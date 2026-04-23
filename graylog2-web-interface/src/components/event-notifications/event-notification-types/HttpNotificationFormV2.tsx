@@ -206,8 +206,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
     ];
     const helpElement = (
       <p>
-        Custom POST/PUT body. See <DocumentationLink page={DocsHelper.PAGES.ALERTS} text="docs " /> for more details. An
-        empty POST/PUT body will send the full event details.
+        自定义 POST/PUT 主体。参见 <DocumentationLink page={DocsHelper.PAGES.ALERTS} text="docs " /> 更多详情。空的 POST/PUT 主体将发送完整的事件详情。
       </p>
     );
 
@@ -227,20 +226,20 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
           name="skip_tls_verification"
           onChange={this.handleChange}
           checked={config.skip_tls_verification}>
-          Skip TLS verification
+          跳过 TLS 验证
         </Checkbox>
         <Row>
           <Col md={12}>
             {basic_auth?.keep_value ? (
               <>
-                <ControlLabel>Basic authentication</ControlLabel>
+                <ControlLabel>基本认证</ControlLabel>
                 <StyledButton
                   bsStyle="default"
                   type="button"
                   onClick={() => {
                     this.resetSecret('basic_auth');
                   }}>
-                  Reset Secret
+                  重置密钥
                 </StyledButton>
               </>
             ) : (
@@ -248,14 +247,14 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
                 id="basicAuth"
                 label={
                   <span>
-                    Basic authentication <small className="text-muted">(Optional)</small>
+                    基本认证 <small className="text-muted">（可选）</small>
                   </span>
                 }
                 name="basic_auth"
                 type="password"
                 onChange={this.handleSecretInputChange}
                 value={this.state.basic_auth || ''}
-                help="The Basic authentication string needs to follow this format: '<username>:<password>'"
+                help="Basic 认证字符串需要遵循以下格式：'<username>:<password>'"
                 buttonAfter={
                   reset.basic_auth ? (
                     <Button
@@ -263,7 +262,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
                       onClick={() => {
                         this.undoResetSecret('basic_auth');
                       }}>
-                      Undo Reset
+                      撤销重置
                     </Button>
                   ) : undefined
                 }
@@ -278,7 +277,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
               name="api_key"
               label={
                 <span>
-                  API Key <small className="text-muted">(Optional)</small>
+                  API 密钥 <small className="text-muted">（可选）</small>
                 </span>
               }
               type="text"
@@ -292,20 +291,20 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
               name="api_key_as_header"
               onChange={this.handleChange}
               checked={config.api_key_as_header}>
-              Send API Key/Secret as Header
+              将 API 密钥/密钥作为请求头发送
             </Checkbox>
           </Col>
           <Col md={6}>
             {api_secret?.keep_value ? (
               <>
-                <ControlLabel>API Secret</ControlLabel>
+                <ControlLabel>API 密钥</ControlLabel>
                 <StyledButton
                   bsStyle="default"
                   type="button"
                   onClick={() => {
                     this.resetSecret('api_secret');
                   }}>
-                  Reset Secret
+                  重置密钥
                 </StyledButton>
               </>
             ) : (
@@ -313,7 +312,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
                 id="apiSecret"
                 label={
                   <span>
-                    API Secret <small className="text-muted">(Optional)</small>
+                    API 密钥 <small className="text-muted">（可选）</small>
                   </span>
                 }
                 name="api_secret"
@@ -329,7 +328,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
                       onClick={() => {
                         this.undoResetSecret('api_secret');
                       }}>
-                      Undo Reset
+                      撤销重置
                     </Button>
                   ) : undefined
                 }
@@ -344,7 +343,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
               name="headers"
               label={
                 <span>
-                  Headers <small className="text-muted">(Optional)</small>
+                  表头 <small className="text-muted">（可选）</small>
                 </span>
               }
               type="text"
@@ -359,7 +358,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
         </Row>
         <Row>
           <Col md={4}>
-            <Input help="HTTP method used for the notification" id="notification-method" label="HTTP Method">
+            <Input help="用于通知的 HTTP 方法" id="notification-method" label="HTTP 方法">
               <Select
                 id="method"
                 name="method"
@@ -372,9 +371,9 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
           </Col>
           <Col md={4}>
             <Input
-              help="HTTP content type used for POST/PUT notifications"
+              help="用于 POST/PUT 通知的 HTTP 内容类型"
               id="notification-content-type"
-              label="Content Type">
+              label="内容类型">
               <Select
                 id="content-type"
                 name="content-type"
@@ -389,8 +388,8 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
           <Col md={4}>
             <Input
               id="notification-time-zone"
-              help="Time zone used for timestamps in the notification body"
-              label={<>Time zone for date/time values</>}>
+              help="通知正文中时间戳使用的时区"
+              label={<>日期/时间值的时区</>}>
               <TimezoneSelect
                 className="timezone-select"
                 name="time_zone"
@@ -408,7 +407,7 @@ class HttpNotificationFormV2 extends React.Component<Props, any> {
               <FormGroup
                 controlId="notification-body-template"
                 validationState={validation.errors.body_template ? 'error' : null}>
-                <ControlLabel>Body Template</ControlLabel>
+                <ControlLabel>主体模板</ControlLabel>
                 <SourceCodeEditor
                   id="notification-body-template"
                   mode="text"

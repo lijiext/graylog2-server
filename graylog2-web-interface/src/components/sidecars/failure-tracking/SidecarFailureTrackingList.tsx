@@ -127,7 +127,7 @@ const EmptyList = ({ query, onlyActive }: { query: string; onlyActive: boolean }
     return <NoMatchingListAlert onlyActive={onlyActive} query={query} />;
   }
 
-  return <NoEntitiesExist>There are no sidecars with failures.</NoEntitiesExist>;
+  return <NoEntitiesExist>没有存在故障的 Sidecar。</NoEntitiesExist>;
 };
 
 const SidecarFailureTrackingList = ({
@@ -161,7 +161,7 @@ const SidecarFailureTrackingList = ({
       <div>
         <SidecarSearchForm query={query} onSearch={onQueryChange} onReset={onQueryChange}>
           <Button bsStyle="primary" onClick={toggleShowInactive}>
-            {showOrHideInactive} inactive sidecars
+            {showOrHideInactive} 未激活的 Sidecar
           </Button>
         </SidecarSearchForm>
       </div>

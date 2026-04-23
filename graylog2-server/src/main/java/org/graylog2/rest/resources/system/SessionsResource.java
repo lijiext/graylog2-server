@@ -115,7 +115,7 @@ public class SessionsResource extends RestResource {
                   response = SessionResponse.class)
     @NoAuditEvent("dispatches audit events in the method body")
     public Response newSession(@Context ContainerRequestContext requestContext,
-                               @ApiParam(name = "Login request", value = "Credentials. The default " +
+                               @ApiParam(name = "Login request", value = "凭据。默认值" +
                                        "implementation requires presence of two properties: 'username' and " +
                                        "'password'. However a plugin may customize which kind of credentials " +
                                        "are accepted and therefore expect different properties.",
@@ -144,7 +144,7 @@ public class SessionsResource extends RestResource {
                         .cookie(cookieFactory.createAuthenticationCookie(token, requestContext))
                         .build();
             } else {
-                throw new NotAuthorizedException("Invalid credentials.", "Basic realm=\"Graylog Server session\"");
+                throw new NotAuthorizedException("凭证无效。", "Basic realm=\"Graylog Server session\"");
             }
         } catch (AuthenticationServiceUnavailableException e) {
             throw new ServiceUnavailableException("Authentication service unavailable");

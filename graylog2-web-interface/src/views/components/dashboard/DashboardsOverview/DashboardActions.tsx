@@ -102,13 +102,13 @@ const DashboardDeleteAction = ({
     if (result) {
       ViewManagementActions.delete(dashboard)
         .then(() => {
-          UserNotification.success(`Deleting dashboard "${dashboard.title}" was successful!`, 'Success!');
+          UserNotification.success(`删除仪表盘 "${dashboard.title}" 成功！`, '成功！');
           deselectEntity(dashboard.id);
           refetchDashboards();
           paginationQueryParameter.resetPage();
         })
         .catch((error) => {
-          UserNotification.error(`Deleting dashboard failed: ${_extractErrorMessage(error)}`, 'Error!');
+          UserNotification.error(`删除仪表盘失败：${_extractErrorMessage(error)}`, '错误！');
         });
     }
   }, [dashboard, deselectEntity, refetchDashboards, paginationQueryParameter]);
@@ -151,7 +151,7 @@ const DashboardActions = ({ dashboard, hideDelete = false, hideShare = false }: 
         <EntityShareModal
           entityId={dashboard.id}
           entityType="dashboard"
-          description={`Search for a User or Team to add as collaborator on this ${ViewTypeLabel({ type: dashboard.type })}.`}
+          description={`搜索要添加为此 ${ViewTypeLabel({ type: dashboard.type })} 协作人的用户或团队。`}
           entityTitle={dashboard.title}
           onClose={() => setShowShareModal(false)}
         />

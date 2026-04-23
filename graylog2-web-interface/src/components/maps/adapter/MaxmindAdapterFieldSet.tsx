@@ -97,7 +97,7 @@ const MaxmindAdapterFieldSet = ({
           type="text"
           id="path"
           name="path"
-          label="File path"
+          label="文件路径"
           autoFocus
           required
           onChange={handleFormEvent}
@@ -110,14 +110,14 @@ const MaxmindAdapterFieldSet = ({
       )}
       <Input
         id="database-type-select"
-        label="Database type"
+        label="数据库类型"
         required
         autoFocus
-        help="Select the type of the database file"
+        help="选择数据库文件的类型"
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9">
         <Select
-          placeholder="Select the type of database file"
+          placeholder="选择数据库文件的类型"
           clearable={false}
           options={databaseTypes}
           onChange={onDbTypeSelect}
@@ -125,8 +125,8 @@ const MaxmindAdapterFieldSet = ({
         />
       </Input>
       <TimeUnitInput
-        label="Refresh file"
-        help="If enabled, the database file is checked for modifications and refreshed when it changed on disk."
+        label="刷新文件"
+        help="如果启用，将检查数据库文件是否被修改，并在磁盘上发生更改时进行刷新。"
         update={updateCheckInterval}
         value={config.check_interval}
         unit={config.check_interval_unit || 'MINUTES'}

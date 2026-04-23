@@ -96,7 +96,7 @@ const HotkeysModal = ({ onToggle }: Props) => {
   return (
     <Modal onHide={onToggle} show bsSize="large">
       <Modal.Header>
-        <Modal.Title>Keyboard shortcuts</Modal.Title>
+        <Modal.Title>键盘快捷键</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -111,9 +111,9 @@ const HotkeysModal = ({ onToggle }: Props) => {
       <Modal.Footer>
         <Footer>
           <Link to={Routes.KEYBOARD_SHORTCUTS} target="_blank">
-            View all keyboard shortcuts
+            查看所有键盘快捷键
           </Link>
-          <Button onClick={() => onToggle()}>Close</Button>
+          <Button onClick={() => onToggle()}>关闭</Button>
         </Footer>
       </Modal.Footer>
     </Modal>

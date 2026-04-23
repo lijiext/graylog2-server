@@ -98,7 +98,7 @@ const TimeRangeAddToQuickListForm = ({ children = undefined, addTimerange, toggl
   return (
     <Popover position="left" withArrow opened={show} withinPortal={false}>
       <Popover.Target>{children}</Popover.Target>
-      <Popover.Dropdown title="Save as preset" id="time-range-preset-popover" data-testid="time-range-preset-popover">
+      <Popover.Dropdown title="保存为预设" id="time-range-preset-popover" data-testid="time-range-preset-popover">
         <Formik<FormValues> onSubmit={onSubmit} initialValues={{ description: '' }} validate={validate}>
           {({ isValid, submitForm }) => (
             <Form>
@@ -106,16 +106,16 @@ const TimeRangeAddToQuickListForm = ({ children = undefined, addTimerange, toggl
                 type="text"
                 name="description"
                 id="time-range-preset-description"
-                placeholder="Add description..."
-                aria-label="Time range description"
+                placeholder="添加描述..."
+                aria-label="时间范围描述"
                 formGroupClassName=""
               />
               {!!equalTimerange && (
                 <p>
                   <Icon name="warning" />
-                  You already have similar time range in{' '}
+                  您已存在类似的时间范围{' '}
                   <Link to={Routes.SYSTEM.CONFIGURATIONS} target="_blank">
-                    Range configuration
+                    范围配置
                   </Link>
                   <br />
                   <i>({equalTimerange.description})</i>
@@ -125,7 +125,7 @@ const TimeRangeAddToQuickListForm = ({ children = undefined, addTimerange, toggl
                 disabledSubmit={!isValid}
                 submitButtonType="button"
                 onSubmit={submitForm}
-                submitButtonText="Save preset"
+                submitButtonText="保存预设"
                 isAsyncSubmit={false}
                 displayCancel
                 onCancel={toggleModal}
@@ -197,11 +197,11 @@ const SaveTimeRangeAsPresetButton = () => {
     <TimeRangeAddToQuickListForm show={showForm} addTimerange={addTimerange} toggleModal={toggleModal}>
       <Button
         disabled={!isValidTimeRange}
-        title="Save current time range as preset"
+        title="将当前时间范围保存为预设"
         ref={formTarget}
         bsSize="small"
         onClick={toggleModal}>
-        Save as preset
+        保存为预设
       </Button>
     </TimeRangeAddToQuickListForm>
   );

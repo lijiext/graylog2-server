@@ -55,14 +55,14 @@ const useEventDefinitionMutations = () => {
     mutationFn: createEventDefinition,
     onError: (errorThrown) => {
       UserNotification.error(
-        `Saving EventDefinition failed with status: ${errorThrown}`,
-        'Could not save EventDefinition',
+        `保存事件定义失败，状态为：${errorThrown}`,
+        '无法保存事件定义',
       );
     },
     onSuccess: (eventDefinition: EventDefinition) => {
       UserNotification.success(
-        'Event Definition created successfully',
-        `Event Definition "${eventDefinition.title}" was created successfully.`,
+        '事件定义创建成功',
+        `事件定义 "${eventDefinition.title}" 已成功创建。`,
       );
     },
   });

@@ -73,17 +73,17 @@ const ErrorFallback = ({ error, resetErrorBoundary }: ErrorFallbackProps) => {
   return (
     <Alert bsStyle="danger">
       {isCloud ? (
-        <p>Error loading login screen, please contact your {productName} account manager.</p>
+        <p>加载登录屏幕时出错，请联系您的 {productName} 账户管理员。</p>
       ) : (
         <>
           <p>
-            Error using active authentication service login. Please check its configuration or contact your{' '}
+            使用活动认证服务登录时出错。请检查其配置或联系您的{' '}
             {productName}
-            account manager. Error details:
+            账户管理器。错误详情:
           </p>
           <StyledPre>{error.message}</StyledPre>
           <Button bsStyle="danger" onClick={resetErrorBoundary}>
-            Login with default method
+            使用默认方法登录
           </Button>
         </>
       )}
@@ -172,7 +172,7 @@ const LoginPage = () => {
     hasCustomLogin && enableExternalBackend && !isCloud && loginFormState === LOGIN_INITIALIZED_STATE;
 
   return (
-    <DocumentTitle title="Sign in">
+    <DocumentTitle title="登录">
       <LoginChrome>
         <LastError />
         <PluggableLoginForm />

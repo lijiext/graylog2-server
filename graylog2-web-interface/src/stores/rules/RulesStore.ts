@@ -145,8 +145,8 @@ export const RulesStore = singletonStore('core.Rules', () =>
     list() {
       const failCallback = (error: Error) => {
         UserNotification.error(
-          `Fetching rules failed with status: ${error.message}`,
-          'Could not retrieve processing rules',
+          `获取规则失败，状态为：${error.message}`,
+          '无法检索处理规则',
         );
       };
 
@@ -174,7 +174,7 @@ export const RulesStore = singletonStore('core.Rules', () =>
 
       promise.catch((error: FetchError) => {
         if (!error.additional || error.additional.status !== 404) {
-          UserNotification.error(`Loading rules list failed with status: ${error}`, 'Could not load rules.');
+          UserNotification.error(`加载规则列表失败，状态为：${error}`, '无法加载规则。');
         }
       });
 
@@ -186,8 +186,8 @@ export const RulesStore = singletonStore('core.Rules', () =>
     get(ruleId: string) {
       const failCallback = (error: Error) => {
         UserNotification.error(
-          `Fetching rule "${ruleId}" failed with status: ${error.message}`,
-          `Could not retrieve processing rule "${ruleId}"`,
+          `获取规则 "${ruleId}" 失败，状态为：${error.message}`,
+          `无法检索处理规则 "${ruleId}"`,
         );
       };
 
@@ -203,8 +203,8 @@ export const RulesStore = singletonStore('core.Rules', () =>
     save(ruleSource: RuleType) {
       const failCallback = (error: Error) => {
         UserNotification.error(
-          `Saving rule "${ruleSource.title}" failed with status: ${error.message}`,
-          `Could not save processing rule "${ruleSource.title}"`,
+          `保存规则 "${ruleSource.title}" 失败，状态为：${error.message}`,
+          `无法保存处理规则 "${ruleSource.title}"`,
         );
       };
 
@@ -219,7 +219,7 @@ export const RulesStore = singletonStore('core.Rules', () =>
 
       promise.then((response) => {
         this._updateRulesState(response);
-        UserNotification.success(`Rule "${response.title}" created successfully`);
+        UserNotification.success(`规则 "${response.title}" 创建成功`);
 
         return response;
       }, failCallback);
@@ -232,8 +232,8 @@ export const RulesStore = singletonStore('core.Rules', () =>
     update(ruleSource: RuleType) {
       const failCallback = (error) => {
         UserNotification.error(
-          `Updating rule "${ruleSource.title}" failed with status: ${error.message}`,
-          `Could not update processing rule "${ruleSource.title}"`,
+          `更新规则 "${ruleSource.title}" 失败，状态为：${error.message}`,
+          `无法更新处理规则 "${ruleSource.title}"`,
         );
       };
 
@@ -249,7 +249,7 @@ export const RulesStore = singletonStore('core.Rules', () =>
 
       promise.then((response) => {
         this._updateRulesState(response);
-        UserNotification.success(`Rule "${response.title}" updated successfully`);
+        UserNotification.success(`规则 "${response.title}" 更新成功`);
 
         return response;
       }, failCallback);
@@ -261,8 +261,8 @@ export const RulesStore = singletonStore('core.Rules', () =>
     delete(rule) {
       const failCallback = (error: Error) => {
         UserNotification.error(
-          `Deleting rule "${rule.title}" failed with status: ${error.message}`,
-          `Could not delete processing rule "${rule.title}"`,
+          `删除规则 "${rule.title}" 失败，状态为：${error.message}`,
+          `无法删除处理规则 "${rule.title}"`,
         );
       };
 
@@ -271,7 +271,7 @@ export const RulesStore = singletonStore('core.Rules', () =>
       const promise = fetch('DELETE', url).then(() => {
         this.rules = this.rules?.filter((el) => el.id !== rule.id);
         this.trigger({ rules: this.rules, functionDescriptors: this.functionDescriptors });
-        UserNotification.success(`Rule "${rule.title}" was deleted successfully`);
+        UserNotification.success(`规则 "${rule.title}" 已成功删除`);
       }, failCallback);
 
       RulesActions.delete.promise(promise);
@@ -364,8 +364,8 @@ export const RulesStore = singletonStore('core.Rules', () =>
         },
         (error) => {
           UserNotification.error(
-            `Couldn't load rule metrics config: ${error.message}`,
-            "Couldn't load rule metrics config",
+            `无法加载规则指标配置：${error.message}`,
+            "无法加载规则指标配置",
           );
         },
       );
@@ -384,12 +384,12 @@ export const RulesStore = singletonStore('core.Rules', () =>
             functionDescriptors: this.functionDescriptors,
             metricsConfig: this.metricsConfig,
           });
-          UserNotification.success('Successfully updated rule metrics config');
+          UserNotification.success('规则指标配置更新成功');
         },
         (error) => {
           UserNotification.error(
-            `Couldn't update rule metrics config: ${error.message}`,
-            "Couldn't update rule metrics config",
+            `无法更新规则指标配置：${error.message}`,
+            "无法更新规则指标配置",
           );
         },
       );

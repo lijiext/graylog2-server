@@ -38,7 +38,7 @@ const SaveViewButton = ({ title, onClick, disabled = false }: Props, ref: React.
 
   return (
     <Button title={title} ref={ref} onClick={onClick} disabled={disabled}>
-      <StyledIcon name="save" type={isDirty ? 'solid' : 'regular'} $isDirty={!disabled && isDirty} /> Save
+      <StyledIcon name="save" type={isDirty ? 'solid' : 'regular'} $isDirty={!disabled && isDirty} /> 保存
     </Button>
   );
 };

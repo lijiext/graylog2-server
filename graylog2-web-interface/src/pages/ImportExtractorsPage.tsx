@@ -43,16 +43,16 @@ const ImportExtractorsPage = ({ params }: Props) => {
   }
 
   return (
-    <DocumentTitle title={`Import extractors to ${input.title}`}>
+    <DocumentTitle title={`将提取器导入到 ${input.title}`}>
       <div>
         <PageHeader
           title={
             <span>
-              Import extractors to <em>{input.title}</em>
+              导入提取器到 <em>{input.title}</em>
             </span>
           }>
           <span>
-            Exported extractors can be imported to an input.{' '}
+            导出的提取器可以导入到输入端。{' '}
             <MarketplaceLink
               prefix={`All you need is the JSON export of extractors from any
             other ${productName} setup or from`}

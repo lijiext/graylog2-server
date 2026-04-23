@@ -99,7 +99,7 @@ const CreateNewWidgetModal = ({ onCancel, position }: Props) => {
         };
 
         return (
-          <CreateWidgetButton key={title} type="button" title={`Create ${title} Widget`} onClick={onClick}>
+          <CreateWidgetButton key={title} type="button" title={`创建 ${title} 小部件`} onClick={onClick}>
             <ButtonInner>
               <HugeIcon>
                 <WidgetIcon />
@@ -122,7 +122,7 @@ const CreateNewWidgetModal = ({ onCancel, position }: Props) => {
       </Modal.Body>
       <Modal.Footer>
         <Button type="button" onClick={onCancel}>
-          Cancel
+          取消
         </Button>
       </Modal.Footer>
     </Modal>

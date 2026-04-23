@@ -23,15 +23,15 @@ import useProductName from 'brand-customization/useProductName';
 const queryExamples = (
   <>
     <p>
-      Find sidecars that have not communicated since a specific date:
+      查找自特定日期以来未通信的 Sidecar：
       <br />
       <kbd>{'last_seen:<=2018-04-10'}</kbd>
       <br />
     </p>
     <p>
-      Find sidecars with <code>failing</code> or <code>unknown</code> status:
+      查找带有 <code>failing</code> or <code>unknown</code> 状态:
       <br />
-      <kbd>status:failing status:unknown</kbd>
+      <kbd>状态：失败 状态：未知</kbd>
       <br />
     </p>
   </>
@@ -69,7 +69,7 @@ const SidecarSearchForm = ({ query, onSearch, onReset, children = undefined }: P
     query={query}
     onSearch={onSearch}
     onReset={onReset}
-    placeholder="Find sidecars"
+    placeholder="查找 Sidecar"
     queryHelpComponent={<SidecarQueryHelper />}
     topMargin={0}
     useLoadingState>

@@ -45,7 +45,7 @@ const useUpdateUserLayoutPreferences = <T>(entityTableId: string) => {
   const { mutate } = useMutation({
     mutationFn,
     onError: (error) => {
-      UserNotification.error(`Updating table layout preferences failed with error: ${error}`);
+      UserNotification.error(`更新表格布局偏好设置失败，错误为：${error}`);
     },
     onSuccess: () => refetch(),
   });

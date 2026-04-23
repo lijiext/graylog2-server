@@ -69,11 +69,11 @@ public class LogsController {
     public Response getOpensearchInternal() {
         final Appender appender = getAppender(MEMORY_APPENDER_NAME);
         if (appender == null) {
-            throw new NotFoundException("Memory appender is disabled. Please refer to the example log4j.xml file.");
+            throw new NotFoundException("内存记录器已禁用。请参考示例 log4j.xml 文件。");
         }
 
         if (!(appender instanceof MemoryAppender memoryAppender)) {
-            throw new InternalServerErrorException("Memory appender is not an instance of MemoryAppender. Please refer to the example log4j.xml file.");
+            throw new InternalServerErrorException("内存附加器不是 MemoryAppender 的实例。请参考示例 log4j.xml 文件。");
         }
         var mediaType = MediaType.valueOf(MediaType.TEXT_PLAIN);
 

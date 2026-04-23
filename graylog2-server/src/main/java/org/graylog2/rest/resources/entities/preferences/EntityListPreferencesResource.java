@@ -90,10 +90,10 @@ public class EntityListPreferencesResource {
     @GET
     @Path("/{entity_list_id}")
     @Timed
-    @ApiOperation(value = "Get preferences for user's entity list", response = EntityListPreferences.class)
+    @ApiOperation(value = "获取用户实体列表的偏好设置", response = EntityListPreferences.class)
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Preferences not found.")
+            @ApiResponse(code = 404, message = "未找到首选项。")
     })
     public EntityListPreferences get(@ApiParam(name = "entity_list_id", required = true) @PathParam("entity_list_id") @NotEmpty String entityListId,
                                      @Context UserContext userContext) throws NotFoundException {

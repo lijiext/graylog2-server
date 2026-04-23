@@ -1,9 +1,7 @@
-<#if _title>Data Node version mismatch</#if>
+<#if _title>数据节点版本不匹配</#if>
 
 <#if _description><
-    You are running at least one Data Node which runs on a different version than your server.
-    While this might not impose a problem, it is recommended to run server and Data Nodes on the same version.
-    For instructions on how to upgrade your data nodes, please go to the Data Node upgrade page found in
-    System/Cluster Configuration menu.
+    您至少运行了一个与服务器版本不同的数据节点。
+    虽然这可能不会造成问题，但建议将服务器和数据节点运行在相同的版本上。
+    有关如何升级数据节点的说明，请前往“系统/集群配置”菜单中的“数据节点升级”页面。
 </#if>
-

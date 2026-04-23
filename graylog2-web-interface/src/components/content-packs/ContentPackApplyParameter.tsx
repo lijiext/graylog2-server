@@ -69,7 +69,7 @@ class ContentPackApplyParameter extends React.Component<
           onClick={() => {
             this._parameterClear(paramMap.configKey);
           }}>
-          Clear
+          清除
         </Button>
       </td>
     ) : (
@@ -169,7 +169,7 @@ class ContentPackApplyParameter extends React.Component<
                 type="select"
                 value={this.state.config_key}
                 onChange={this._bindValue}
-                label="Config Key"
+                label="配置键"
                 required>
                 {configOptions}
               </Input>
@@ -181,7 +181,7 @@ class ContentPackApplyParameter extends React.Component<
                 type="select"
                 value={this.state.parameter}
                 onChange={this._bindValue}
-                label="Parameter"
+                label="参数"
                 required>
                 {parameterOptions}
               </Input>
@@ -191,7 +191,7 @@ class ContentPackApplyParameter extends React.Component<
           <Row>
             <Col smOffset={10} sm={2}>
               <Button bsStyle="primary" disabled={!this._valuesSelected()} type="submit">
-                Apply
+                应用
               </Button>
             </Col>
           </Row>

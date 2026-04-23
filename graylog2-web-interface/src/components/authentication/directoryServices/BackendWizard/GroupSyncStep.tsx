@@ -79,7 +79,7 @@ const GroupSyncStep = ({
 
               onSubmitAll(false);
             }}>
-            Finish & Save Service
+            完成并保存服务
           </Button>
         </ButtonToolbar>
       </>

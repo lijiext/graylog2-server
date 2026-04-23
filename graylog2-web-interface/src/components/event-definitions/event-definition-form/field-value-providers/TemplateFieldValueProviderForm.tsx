@@ -57,9 +57,8 @@ class TemplateFieldValueProviderForm extends React.Component<
 
     const helpText = (
       <span>
-        Type a literal text to set to this Field or use{' '}
-        <ExternalLink href="https://cdn.rawgit.com/DJCordhose/jmte/master/doc/index.html">JMTE syntax</ExternalLink> to
-        add a dynamic Value.
+        输入要设置到此字段的文本，或使用{' '}
+        <ExternalLink href="https://cdn.rawgit.com/DJCordhose/jmte/master/doc/index.html">JMTE 语法</ExternalLink> 添加动态值。
       </span>
     );
 
@@ -70,7 +69,7 @@ class TemplateFieldValueProviderForm extends React.Component<
             id="template-provider-template"
             name="template"
             type="text"
-            label="Template"
+            label="模板"
             onChange={this.handleChange}
             value={provider.template || ''}
             bsStyle={validation.errors.template ? 'error' : null}
@@ -83,9 +82,9 @@ class TemplateFieldValueProviderForm extends React.Component<
               name="require_values"
               checked={provider.require_values}
               onChange={this.handleChange}>
-              Require all template values to be set
+              所有模板值都必须设置
             </Checkbox>
-            <HelpBlock>Check this option to validate that all variables used in the Template have values.</HelpBlock>
+            <HelpBlock>选中此选项以验证模板中使用的变量是否都有值。</HelpBlock>
           </FormGroup>
         </Col>
         <Col md={5} lgOffset={1}>

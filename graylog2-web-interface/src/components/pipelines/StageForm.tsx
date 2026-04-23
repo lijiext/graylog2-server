@@ -104,8 +104,8 @@ const StageForm = ({
 
   const rulesHelp = (
     <span>
-      Select the rules evaluated on this stage, or create one in the{' '}
-      <Link to={Routes.SYSTEM.PIPELINES.RULES}>Pipeline Rules page</Link>.
+      选择在此阶段评估的规则，或在{' '}
+      <Link to={Routes.SYSTEM.PIPELINES.RULES}>管道规则页面</Link>.
     </span>
   );
 
@@ -119,7 +119,7 @@ const StageForm = ({
       </Button>
       <BootstrapModalForm
         show={showModal}
-        title={`${create ? 'Add new' : 'Edit'} stage ${nextStage.stage}`}
+        title={`${create ? 'Add new' : 'Edit'} 阶段 ${nextStage.stage}`}
         data-telemetry-title={`${create ? 'Add new' : 'Edit'} stage`}
         onSubmitForm={_handleSave}
         onCancel={_closeModal}
@@ -129,7 +129,7 @@ const StageForm = ({
             type="number"
             id="stage"
             name="stage"
-            label="Stage"
+            label="阶段"
             autoFocus
             min={NumberUtils.JAVA_INTEGER_MIN_VALUE + 1}
             max={NumberUtils.JAVA_INTEGER_MAX_VALUE}
@@ -144,7 +144,7 @@ const StageForm = ({
           />
 
           <FormGroup>
-            <ControlLabel>Continue processing on next stage when</ControlLabel>
+            <ControlLabel>在下一阶段继续处理</ControlLabel>
           </FormGroup>
 
           <Input
@@ -152,7 +152,7 @@ const StageForm = ({
             id="match_all"
             name="match"
             value="ALL"
-            label="All rules on this stage match the message"
+            label="此阶段的所有规则均匹配该消息"
             onChange={_onChange}
             checked={nextStage.match === 'ALL'}
           />
@@ -162,7 +162,7 @@ const StageForm = ({
             id="match_any"
             name="match"
             value="EITHER"
-            label="At least one of the rules on this stage matches the message"
+            label="此阶段的至少一条规则与消息匹配"
             onChange={_onChange}
             checked={nextStage.match === 'EITHER'}
           />
@@ -172,12 +172,12 @@ const StageForm = ({
             id="match_pass"
             name="match"
             value="PASS"
-            label="None or more rules on this stage match"
+            label="此阶段匹配零条或多条规则"
             onChange={_onChange}
             checked={nextStage.match === 'PASS'}
           />
 
-          <Input id="stage-rules-select" label="Stage rules" help={rulesHelp}>
+          <Input id="stage-rules-select" label="暂存规则" help={rulesHelp}>
             <SelectableList
               options={_getFormattedOptions()}
               onChange={_onRulesChange}

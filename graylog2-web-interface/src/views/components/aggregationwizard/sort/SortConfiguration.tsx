@@ -96,7 +96,7 @@ const Sort = React.memo(({ index }: Props) => {
     <div data-testid={`sort-element-${index}`}>
       <Field name={`sort.${index}.field`}>
         {({ field: { name, onChange }, meta: { error } }) => (
-          <Input id="field-select" label="Field" error={error} labelClassName="col-sm-3" wrapperClassName="col-sm-9">
+          <Input id="field-select" label="字段" error={error} labelClassName="col-sm-3" wrapperClassName="col-sm-9">
             <Select
               options={invalidSort ? [{ label: currentSort.field, value: 0 }] : numberIndexedOptions}
               disabled={invalidSort}
@@ -104,8 +104,8 @@ const Sort = React.memo(({ index }: Props) => {
               clearable={false}
               name={name}
               value={invalidSort ? 0 : selectedOption}
-              placeholder="Specify field/metric to be sorted on"
-              aria-label="Select field for sorting"
+              placeholder="指定要排序的字段/指标"
+              aria-label="选择用于排序的字段"
               size="small"
               onChange={(newValue: Option['value']) => {
                 const option = options[newValue];
@@ -121,7 +121,7 @@ const Sort = React.memo(({ index }: Props) => {
         {({ field: { name, value, onChange }, meta: { error } }) => (
           <Input
             id="direction-select"
-            label="Direction"
+            label="方向"
             error={error}
             labelClassName="col-sm-3"
             wrapperClassName="col-sm-9">
@@ -130,7 +130,7 @@ const Sort = React.memo(({ index }: Props) => {
               disabled={invalidSort}
               clearable={false}
               name={name}
-              aria-label="Select direction for sorting"
+              aria-label="选择排序方向"
               value={value}
               size="small"
               onChange={(newValue) => {

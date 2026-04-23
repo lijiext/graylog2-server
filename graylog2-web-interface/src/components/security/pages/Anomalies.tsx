@@ -48,7 +48,7 @@ const hotspots = [
   },
 ];
 const Anomalies = () => (
-  <DocumentTitle title="Anomalies">
+  <DocumentTitle title="异常">
     <TeaserSearch
       viewJson={viewJson}
       searchJson={searchJson as SearchJson}

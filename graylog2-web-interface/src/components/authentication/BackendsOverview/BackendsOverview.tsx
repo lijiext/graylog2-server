@@ -129,10 +129,10 @@ const BackendsOverview = () => {
   return (
     <Row className="content">
       <Col xs={12}>
-        <h2>Configured Authentication Services</h2>
+        <h2>已配置的认证服务</h2>
         <Header>{loading && <LoadingSpinner text="" delay={0} />}</Header>
         <p className="description">
-          Found {paginatedBackends.pagination.total} configured authentication services on the system.
+          已找到 {paginatedBackends.pagination.total} 系统上配置的认证服务。
         </p>
         <PaginatedList totalItems={paginatedBackends.pagination.total}>
           <DataTable

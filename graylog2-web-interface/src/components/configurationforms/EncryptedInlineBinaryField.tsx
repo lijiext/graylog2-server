@@ -92,7 +92,7 @@ const EncryptedInlineBinaryField = ({
     if (isValuePresent) {
       return (
         <Button type="button" onClick={handleReset}>
-          Reset
+          重置
         </Button>
       );
     }
@@ -105,7 +105,7 @@ const EncryptedInlineBinaryField = ({
 
     return (
       <Button type="button" onClick={handleUndoReset}>
-        Undo Reset
+        撤销重置
       </Button>
     );
   };
@@ -119,7 +119,7 @@ const EncryptedInlineBinaryField = ({
             setFileName(undefined);
             onChange(title, '');
           }}>
-          Remove
+          移除
         </Button>
       );
     }

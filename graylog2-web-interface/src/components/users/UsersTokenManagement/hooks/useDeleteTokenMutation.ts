@@ -34,11 +34,11 @@ const useDeleteTokenMutation = (userId: string, tokenId: string) => {
     mutationFn: () => deleteToken(userId, tokenId),
 
     onError: (errorThrown) => {
-      UserNotification.error(`Token deletion failed: ${errorThrown}`, 'Could not delete token');
+      UserNotification.error(`令牌删除失败：${errorThrown}`, '无法删除令牌');
     },
 
     onSuccess: () => {
-      UserNotification.success('Token has been successfully deleted.', 'Success!');
+      UserNotification.success('Token 已成功删除。', '成功！');
 
       queryClient.invalidateQueries({
         queryKey: ['token-management', 'overview'],

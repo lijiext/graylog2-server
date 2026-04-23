@@ -46,7 +46,7 @@ const SelectField = ({ name, field, title, error, value, onChange }: FieldCompon
     <Input id={`${name}-select`} label={title} error={error} labelClassName="col-sm-3" wrapperClassName="col-sm-9">
       <Select
         options={makeOptions(field.options)}
-        aria-label={`Select ${field.title}`}
+        aria-label={`选择 ${field.title}`}
         clearable={!field.required}
         name={name}
         value={value}

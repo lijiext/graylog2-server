@@ -57,7 +57,7 @@ const Stage = ({ stage, pipeline, isLastStage, onUpdate, onDelete, disableEdit =
       key={`delete-stage-${stage}`}
       bsStyle="danger"
       onClick={onDelete}>
-      Delete
+      删除
     </Button>,
     <StageForm
       key={`edit-stage-${stage}`}
@@ -93,7 +93,7 @@ const Stage = ({ stage, pipeline, isLastStage, onUpdate, onDelete, disableEdit =
 
     description = (
       <span>
-        Messages satisfying <strong>{matchText}</strong> in this stage, will continue to the next stage.
+        满足条件的消息 <strong>{matchText}</strong> 在此阶段，将继续进入下一阶段。
       </span>
     );
   }
@@ -118,7 +118,7 @@ const Stage = ({ stage, pipeline, isLastStage, onUpdate, onDelete, disableEdit =
 
   return (
     <EntityListItem
-      title={`Stage ${stage.stage}`}
+      title={`阶段 ${stage.stage}`}
       titleSuffix={suffix}
       actions={actions}
       description={block}

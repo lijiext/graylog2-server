@@ -47,22 +47,20 @@ const TimesList = () => {
   return (
     <Row className="content">
       <Col md={12}>
-        <h2>Time configuration</h2>
+        <h2>时间配置</h2>
 
         <p className="description">
-          Dealing with timezones can be confusing. Here you can see the timezone applied to different components of your
-          system. You can check timezone settings of specific {productName} server nodes on their respective detail
-          page.
+          处理时区可能令人困惑。在此您可以查看应用于系统不同组件的时区。您可以检查特定组件的时区设置 {productName} 服务器节点在其各自的详情页面。
         </p>
 
         <dl className="system-dl">
           <dt>
-            User <em>{currentUser.username}</em>:
+            用户 <em>{currentUser.username}</em>:
           </dt>
           <dd>
             <Timestamp dateTime={time} format={timeFormat} />
           </dd>
-          <dt>Your web browser:</dt>
+          <dt>您的 Web 浏览器:</dt>
           <dd>
             <BrowserTime dateTime={time} format={timeFormat} />
           </dd>

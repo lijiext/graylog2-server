@@ -109,11 +109,11 @@ const OnClickPopoverValueGroups = ({ metricValue, rowPivotValues, columnPivotVal
     <StyledListGroup>
       {metricValue && (
         <>
-          <Label>Metric</Label>
+          <Label>指标</Label>
           <Group group={[metricValue]} keyPrefix="metricValue" setFieldData={setFieldData} />
         </>
       )}
-      {!!(showMultipleAction || rowPivotValues?.length || columnPivotValues?.length) && <Label>Groupings</Label>}
+      {!!(showMultipleAction || rowPivotValues?.length || columnPivotValues?.length) && <Label>分组</Label>}
       {showMultipleAction && (
         <GroupingActions
           columnPivotValues={columnPivotValues}

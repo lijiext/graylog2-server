@@ -48,14 +48,14 @@ public class SubstringExtractor extends Extractor {
         super(metricRegistry, id, title, order, Type.SUBSTRING, cursorStrategy, sourceField, targetField, extractorConfig, creatorUserId, converters, conditionType, conditionValue);
 
         if (extractorConfig == null || extractorConfig.get("begin_index") == null || extractorConfig.get("end_index") == null) {
-            throw new ConfigurationException("Missing configuration fields. Required: begin_index, end_index");
+            throw new ConfigurationException("缺少配置字段。必需项：begin_index, end_index");
         }
 
         try {
             beginIndex = (Integer) extractorConfig.get("begin_index");
             endIndex = (Integer) extractorConfig.get("end_index");
         } catch (ClassCastException e) {
-            throw new ConfigurationException("Index positions cannot be casted to Integer.");
+            throw new ConfigurationException("索引位置无法转换为整数。");
         }
     }
 

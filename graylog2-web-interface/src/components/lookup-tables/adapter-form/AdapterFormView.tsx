@@ -47,7 +47,7 @@ const DataAdapterFormView = ({ saved = undefined, onCancel, adapter = undefined,
             adapterConfigType={dataAdapter ? dataAdapter.config.type : null}
             onAdapterChange={setDataAdapter}
           />
-          {isStep && <UseExistingButton onClick={onCancel}>Use Existing Data Adapter</UseExistingButton>}
+          {isStep && <UseExistingButton onClick={onCancel}>使用现有数据适配器</UseExistingButton>}
         </RowContainer>
       )}
       {dataAdapter && (
@@ -55,7 +55,7 @@ const DataAdapterFormView = ({ saved = undefined, onCancel, adapter = undefined,
           dataAdapter={dataAdapter}
           type={dataAdapter?.config?.type}
           create={isCreate}
-          title="Configure Adapter"
+          title="配置适配器"
           saved={saved}
           onCancel={onCancel}
         />

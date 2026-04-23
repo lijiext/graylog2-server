@@ -65,15 +65,15 @@ const SidecarEditConfigurationPage = ({ params }: SidecarEditConfigurationPagePr
   }
 
   return (
-    <DocumentTitle title="Collector Configuration">
+    <DocumentTitle title="采集器配置">
       <SidecarsPageNavigation />
       <PageHeader
-        title="Collector Configuration"
+        title="采集器配置"
         documentationLink={{
           title: 'Sidecar documentation',
           path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
         }}>
-        <span>Some words about collector configurations.</span>
+        <span>关于采集器配置的一些说明。</span>
       </PageHeader>
       <ConfigurationForm configuration={configuration} configurationSidecars={configurationSidecars} />
     </DocumentTitle>

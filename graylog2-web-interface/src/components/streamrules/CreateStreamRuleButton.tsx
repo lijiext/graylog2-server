@@ -55,7 +55,7 @@ const CreateStreamRuleButton = ({
   const onSaveStreamRule = useCallback(
     (_streamRuleId: string, streamRule: StreamRule) =>
       StreamRulesStore.create(streamId, streamRule, () => {
-        UserNotification.success('Stream rule was created successfully.', 'Success');
+        UserNotification.success('数据流规则创建成功。', '成功');
         queryClient.invalidateQueries({
           queryKey: ['stream', streamId],
         });
@@ -79,9 +79,9 @@ const CreateStreamRuleButton = ({
       {showCreateModal && (
         <StreamRuleModal
           onClose={toggleCreateModal}
-          title="New Stream Rule"
-          submitButtonText="Create Rule"
-          submitLoadingText="Creating Rule..."
+          title="新建数据流规则"
+          submitButtonText="创建规则"
+          submitLoadingText="正在创建规则..."
           onSubmit={onSaveStreamRule}
         />
       )}

@@ -51,7 +51,7 @@ function LUTDataAdaptersFormPage() {
         pageDescription="Data adapters provide the actual values for lookup tables."
         actions={
           <Button bsStyle="primary" onClick={navigateBack}>
-            Back to list
+            返回列表
           </Button>
         }>
         <Row className="content" style={{ flexGrow: 1 }}>

@@ -18,9 +18,7 @@ import * as React from 'react';
 
 const PageDescription = () => (
   <span>
-    Notifications alert you of any configured Event when they occur. Notifications can be sent directly to you or to
-    other systems you use for that purpose. Remember to assign Notifications while creating or editing an Event
-    Definition.
+    通知会在任何配置的事件发生时提醒您。通知可以直接发送给您，也可以发送给您用于此目的的其他系统。在创建或编辑事件定义时，请记得分配通知。
   </span>
 );
 

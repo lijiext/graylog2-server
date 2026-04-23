@@ -170,7 +170,7 @@ const ContentColumn = ({
                 <OverlayToggle $sidebarIsPinned={sidebarIsPinned}>
                   <IconButton
                     onClick={() => toggleSidebarPinning(searchPageLayout)}
-                    title={`Display sidebar ${sidebarIsPinned ? 'as overlay' : 'inline'}`}
+                    title={`显示侧边栏 ${sidebarIsPinned ? 'as overlay' : 'inline'}`}
                     name="keep"
                   />
                 </OverlayToggle>

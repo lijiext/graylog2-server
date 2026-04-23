@@ -57,7 +57,7 @@ const UsersSelectField = ({ value, onChange }: Props) => {
     <PaginatedSelect
       id="user-select-list"
       value={value}
-      placeholder="Select user(s)..."
+      placeholder="选择用户..."
       onLoadOptions={loadUsers}
       multi
       onChange={onChange}

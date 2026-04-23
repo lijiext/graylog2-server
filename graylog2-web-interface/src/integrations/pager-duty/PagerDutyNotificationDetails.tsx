@@ -28,17 +28,17 @@ type PagerDutyNotificationDetailsProps = {
 
 const PagerDutyNotificationDetails = ({ notification }: PagerDutyNotificationDetailsProps) => (
   <>
-    <ReadOnlyFormGroup label="Routing Key" value={notification.config?.routing_key} />
-    <ReadOnlyFormGroup label="Incident Title" value={notification.config?.pager_duty_title} />
-    <ReadOnlyFormGroup label="Custom Incident" value={notification.config?.custom_incident} />
+    <ReadOnlyFormGroup label="路由键" value={notification.config?.routing_key} />
+    <ReadOnlyFormGroup label="事件标题" value={notification.config?.pager_duty_title} />
+    <ReadOnlyFormGroup label="自定义事件" value={notification.config?.custom_incident} />
     {notification?.config?.custom_incident && notification.config?.key_prefix && (
-      <ReadOnlyFormGroup label="Key Prefix" value={notification.config?.key_prefix} />
+      <ReadOnlyFormGroup label="键前缀" value={notification.config?.key_prefix} />
     )}
     {notification?.config?.custom_incident && notification.config?.incident_key && (
-      <ReadOnlyFormGroup label="Incident Key" value={notification.config?.incident_key} />
+      <ReadOnlyFormGroup label="事件键" value={notification.config?.incident_key} />
     )}
-    <ReadOnlyFormGroup label="Client Name" value={notification.config?.client_name} />
-    <ReadOnlyFormGroup label="Client URL" value={notification.config?.client_url} />
+    <ReadOnlyFormGroup label="客户端名称" value={notification.config?.client_name} />
+    <ReadOnlyFormGroup label="客户端 URL" value={notification.config?.client_url} />
   </>
 );
 

@@ -74,7 +74,7 @@ class LookupTableExtractorConfiguration extends React.Component<
 
     promise.then((result) => {
       if (result.error) {
-        UserNotification.warning(`We were not able to run the lookup: ${result.error_message}`);
+        UserNotification.warning(`无法运行查找表：${result.error_message}`);
 
         return;
       }
@@ -101,7 +101,7 @@ class LookupTableExtractorConfiguration extends React.Component<
 
     const helpMessage = (
       <span>
-        Lookup tables can be created <Link to={Routes.SYSTEM.LOOKUPTABLES.OVERVIEW}>here</Link>.
+        可以创建查找表 <Link to={Routes.SYSTEM.LOOKUPTABLES.OVERVIEW}>here</Link>.
       </span>
     );
 
@@ -109,14 +109,14 @@ class LookupTableExtractorConfiguration extends React.Component<
       <div>
         <Input
           id="lookup_table_name"
-          label="Lookup Table"
+          label="查找表"
           labelClassName="col-md-2"
           wrapperClassName="col-md-10"
           help={helpMessage}>
           <Row className="row-sm">
             <Col md={11}>
               <Select
-                placeholder="Select a lookup table"
+                placeholder="选择查找表"
                 clearable={false}
                 options={lookupTables}
                 onChange={this._onSelect('lookup_table_name')}

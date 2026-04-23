@@ -72,7 +72,7 @@ const useApplyAllWidgetChanges = (
 
     return onSubmit(newWidget, hasChanges)
       .catch((error) => {
-        UserNotification.error(`Applying widget changes failed with status: ${error}`);
+        UserNotification.error(`应用小部件更改失败，状态为：${error}`);
 
         return error;
       })

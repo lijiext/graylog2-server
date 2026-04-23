@@ -155,7 +155,7 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
           return response;
         },
         (error) => {
-          UserNotification.error(`Fetching index sets list failed: ${error.message}`, 'Could not retrieve index sets.');
+          UserNotification.error(`获取索引集列表失败：${error.message}`, '无法检索索引集。');
         },
       );
 
@@ -178,8 +178,8 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
         },
         (error) => {
           UserNotification.error(
-            `Fetching index sets list failed: ${this._errorMessage(error)}`,
-            'Could not retrieve index sets.',
+            `获取索引集列表失败：${this._errorMessage(error)}`,
+            '无法检索索引集。',
           );
         },
       );
@@ -203,8 +203,8 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
         },
         (error) => {
           UserNotification.error(
-            `Fetching index sets list failed: ${this._errorMessage(error)}`,
-            'Could not retrieve index sets.',
+            `获取索引集列表失败：${this._errorMessage(error)}`,
+            '无法检索索引集。',
           );
         },
       );
@@ -226,8 +226,8 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
         },
         (error) => {
           UserNotification.error(
-            `Fetching index set '${indexSetId}' failed with status: ${this._errorMessage(error)}`,
-            'Could not retrieve index set.',
+            `获取索引集 '${indexSetId}' 失败，状态为：${this._errorMessage(error)}`,
+            '无法检索索引集。',
           );
         },
       );
@@ -241,7 +241,7 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
 
       promise.then(
         (response: IndexSet) => {
-          UserNotification.success(`Successfully updated index set '${indexSet.title}'`, 'Success');
+          UserNotification.success(`成功更新索引集 '${indexSet.title}'`, '成功');
 
           this.indexSet = response;
 
@@ -251,8 +251,8 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
         },
         (error) => {
           UserNotification.error(
-            `Updating index set '${indexSet.title}' failed with status: ${this._errorMessage(error)}`,
-            'Could not update index set.',
+            `更新索引集 '${indexSet.title}' 失败，状态为：${this._errorMessage(error)}`,
+            '无法更新索引集。',
           );
         },
       );
@@ -266,7 +266,7 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
 
       promise.then(
         (response: IndexSet) => {
-          UserNotification.success(`Successfully created index set '${indexSet.title}'`, 'Success');
+          UserNotification.success(`成功创建索引集 '${indexSet.title}'`, '成功');
 
           this.indexSet = response;
 
@@ -276,8 +276,8 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
         },
         (error) => {
           UserNotification.error(
-            `Creating index set '${indexSet.title}' failed with status: ${this._errorMessage(error)}`,
-            'Could not create index set.',
+            `创建索引集 '${indexSet.title}' 失败，状态为：${this._errorMessage(error)}`,
+            '无法创建索引集。',
           );
         },
       );
@@ -291,12 +291,12 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Successfully deleted index set '${indexSet.title}'`, 'Success');
+          UserNotification.success(`已成功删除索引集 '${indexSet.title}'`, '成功');
         },
         (error) => {
           UserNotification.error(
-            `Deleting index set '${indexSet.title}' failed with status: ${this._errorMessage(error)}`,
-            'Could not delete index set.',
+            `删除索引集 '${indexSet.title}' 失败，状态为：${this._errorMessage(error)}`,
+            '无法删除索引集。',
           );
         },
       );
@@ -310,12 +310,12 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Successfully set index set '${indexSet.title}' as default`, 'Success');
+          UserNotification.success(`已成功将索引集 '${indexSet.title}' 设置为默认值`, '成功');
         },
         (error) => {
           UserNotification.error(
-            `Setting index set '${indexSet.title}' as default failed with status: ${this._errorMessage(error)}`,
-            'Could not set default index set.',
+            `将索引集 '${indexSet.title}' 设置为默认值失败，状态为：${this._errorMessage(error)}`,
+            '无法设置默认索引集。',
           );
         },
       );
@@ -341,8 +341,8 @@ export const IndexSetsStore = singletonStore('core.IndexSets', () =>
         },
         (error) => {
           UserNotification.error(
-            `Fetching global index stats failed: ${error.message}`,
-            'Could not retrieve global index stats.',
+            `获取全局索引统计失败：${error.message}`,
+            '无法检索全局索引统计信息。',
           );
         },
       );

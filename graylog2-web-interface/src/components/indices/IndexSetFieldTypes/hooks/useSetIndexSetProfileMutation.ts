@@ -45,13 +45,13 @@ const useSetIndexSetProfileMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Setting index set profile failed with status: ${errorThrown}`,
-        'Could not set index set profile',
+        `设置索引集配置文件失败，状态为：${errorThrown}`,
+        '无法设置索引集配置文件',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Set index set profile successfully', 'Success!');
+      UserNotification.success('成功设置索引集配置文件', '成功！');
 
       return queryClient.refetchQueries({ queryKey: ['indexSetFieldTypes'], type: 'active' });
     },

@@ -59,7 +59,7 @@ const isConnecting = (status: DataNodeStatus) => status === 'STARTING';
 const ConnectingSpinner = () => <Spinner text="" />;
 
 const DataNodeBadge = ({ nodeId, transportAddress, status }: NodeProps) => (
-  <NodeId color={colorByState(status, transportAddress)} title="Short node id">
+  <NodeId color={colorByState(status, transportAddress)} title="节点短标识">
     <SecureIcon name={lockIcon(transportAddress)} />
     {nodeId}
     {isConnecting(status) ? (

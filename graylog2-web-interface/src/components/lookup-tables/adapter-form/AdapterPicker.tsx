@@ -51,7 +51,7 @@ function DataAdapterPicker({ onCreateClick, dataAdapters = [] }: Props) {
     <fieldset>
       <Input
         id="data-adapter-select"
-        label="Data Adapter"
+        label="数据适配器"
         required
         bsStyle={errorMessage ? 'error' : undefined}
         labelClassName="d-block mb-1"
@@ -59,15 +59,15 @@ function DataAdapterPicker({ onCreateClick, dataAdapters = [] }: Props) {
         formGroupClassName="mb-3">
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <StyledSelect
-            placeholder="Select a data adapter"
+            placeholder="选择数据适配器"
             clearable={false}
             options={sortedAdapters}
             onBlur={() => setTouched(true)}
             onChange={(v) => setValue(v)}
             value={value}
           />
-          <StyledButton type="button" aria-label="Create Data Adapter" onClick={onCreateClick}>
-            Create Data Adapter
+          <StyledButton type="button" aria-label="创建数据适配器" onClick={onCreateClick}>
+            创建数据适配器
           </StyledButton>
         </div>
         <div className={`mb-1 ${errorMessage ? 'text-danger' : 'text-muted'}`}>

@@ -130,7 +130,7 @@ const Configuration = ({
     });
 
   if (formattedItems.length < 1) {
-    formattedItems.push(<li key="placeholder">-- no configuration --</li>);
+    formattedItems.push(<li key="placeholder">-- 无配置 --</li>);
   }
 
   return <ul>{formattedItems}</ul>;

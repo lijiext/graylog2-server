@@ -43,10 +43,10 @@ const FavoriteItemsList = () => {
   if (favorites.length === 0) {
     return (
       <NoSearchResult>
-        You do not have any favorite items yet.
+        您还没有任何收藏项。
         <br />
-        Make any <Link to={Routes.SEARCH}>Search</Link> or{' '}
-        <Link to={Routes.pluginRoute('DASHBOARDS_NEW')}>Dashboard</Link> favorite to show up here.
+        生成任意 <Link to={Routes.SEARCH}>搜索</Link> or{' '}
+        <Link to={Routes.pluginRoute('DASHBOARDS_NEW')}>仪表盘</Link> 收藏显示在此处。
       </NoSearchResult>
     );
   }

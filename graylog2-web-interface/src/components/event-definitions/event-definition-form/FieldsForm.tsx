@@ -111,21 +111,20 @@ const FieldsForm = ({ currentUser, eventDefinition, validation, onChange, canEdi
     <Row>
       <Col md={12}>
         <h2 className={commonStyles.title}>
-          Event Fields <small>(optional)</small>
+          事件字段 <small>（可选）</small>
         </h2>
 
         {!canEditCondition ? (
-          <p>The event fields of this event definition type cannot be edited.</p>
+          <p>此事件定义类型的事件字段无法编辑。</p>
         ) : (
           <>
             <p>
-              Include additional information in Events generated from this Event Definition by adding custom Fields.
-              That can help you search Events or having more context when receiving Notifications.
+              通过添加自定义字段，在由此事件定义生成的事件中包含附加信息。这有助于您搜索事件，或在接收通知时获得更多上下文。
             </p>
 
             {errors.length > 0 && (
-              <Alert bsStyle="danger" className={commonStyles.validationSummary} title="Fields with errors">
-                <p>Please correct the following errors before saving this Event Definition:</p>
+              <Alert bsStyle="danger" className={commonStyles.validationSummary} title="存在错误的字段">
+                <p>在保存此事件定义之前，请修正以下错误：</p>
                 <ul>
                   {errors.map((error) => (
                     <li key={error}>{error}</li>
@@ -137,8 +136,8 @@ const FieldsForm = ({ currentUser, eventDefinition, validation, onChange, canEdi
             {Object.keys(eventDefinition.field_spec).length > 0 && (
               <dl>
                 <dt>
-                  Keys
-                  <HoverForHelp title="More about Event Keys" trigger={['click', 'hover']} placement="right">
+                  密钥
+                  <HoverForHelp title="有关事件键的更多信息" trigger={['click', 'hover']} placement="right">
                     <EventKeyHelpPopover />
                   </HoverForHelp>
                 </dt>

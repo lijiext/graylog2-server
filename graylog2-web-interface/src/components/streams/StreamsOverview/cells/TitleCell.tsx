@@ -43,7 +43,7 @@ const TitleCell = ({ stream }: Props) => (
     <Link to={Routes.stream_search(stream.id)}>{stream.title}</Link>
     {stream.is_default && (
       <DefaultLabel bsStyle="primary" bsSize="xsmall">
-        Default
+        默认
       </DefaultLabel>
     )}
     <StyledText>{stream.description}</StyledText>

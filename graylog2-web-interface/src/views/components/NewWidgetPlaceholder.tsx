@@ -83,7 +83,7 @@ const NewWidgetPlaceholder = (
     <div style={containerStyle} ref={ref}>
       <PlaceholderBox onClick={onClick}>
         <HugeIcon name="add_circle" />
-        Create a new widget here
+        在此处创建新的小部件
       </PlaceholderBox>
       {show && <Component onCancel={onCancel} position={position} />}
     </div>

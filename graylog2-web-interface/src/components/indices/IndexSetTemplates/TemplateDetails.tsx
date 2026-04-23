@@ -121,7 +121,7 @@ const TemplateDetails = ({ template, showDescription = false }: Props) => {
         {template.description && showDescription && (
           <Row>
             <Col md={12}>
-              <Section title="Description">
+              <Section title="描述">
                 <p>{template.description}</p>
               </Section>
             </Col>
@@ -130,25 +130,25 @@ const TemplateDetails = ({ template, showDescription = false }: Props) => {
         <Row>
           <Col md={12}>
             <Grid>
-              <Section title="Details">
+              <Section title="详情">
                 <dl>
-                  <dt>Index Analyzer:</dt>
+                  <dt>索引分析器:</dt>
                   <dd>{template.index_set_config.index_analyzer}</dd>
-                  <dt>Index Shards:</dt>
+                  <dt>索引分片:</dt>
                   <dd>{template.index_set_config.shards}</dd>
                   <dt>Index Replica:</dt>
                   <dd>{template.index_set_config.replicas}</dd>
-                  <dt>Maximum Number of Segments:</dt>
+                  <dt>最大分段数:</dt>
                   <dd>{template.index_set_config.index_optimization_max_num_segments}</dd>
-                  <dt>Index Optimization after Rotation:</dt>
+                  <dt>轮转后的索引优化:</dt>
                   <dd>
                     <StatusIcon active={!template.index_set_config.index_optimization_disabled} />
                   </dd>
-                  <dt>Field Type Refresh Interval:</dt>
+                  <dt>字段类型刷新间隔:</dt>
                   <dd>{formatRefreshInterval(template.index_set_config.field_type_refresh_interval)}</dd>
                 </dl>
               </Section>
-              <Section title="Rotation & Retention">
+              <Section title="轮转与保留">
                 {template.index_set_config.use_legacy_rotation ? (
                   <>
                     <RotationSummaryWrapper>

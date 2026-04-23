@@ -89,7 +89,7 @@ export const MIGRATION_STATE = {
     key: 'RESTART_GRAYLOG',
     description: (
       <>
-        Update configuration file and restart <ProductName />
+        更新配置文件并重启 <ProductName />
       </>
     ),
   },

@@ -77,15 +77,15 @@ const ServerInputSelect = ({ inputs, selectedInputId, onInputSelect }: Subtract<
       name="inputSelect"
       label={
         <>
-          Message input <small>(optional)</small>
+          消息输入 <small>（可选）</small>
         </>
       }
-      help="Select the message input ID that should be assigned to the parsed message.">
+      help="选择应分配给解析后消息的消息输入端 ID。">
       <Select
         inputId="inputSelect"
         name="inputSelect"
-        aria-label="Message input"
-        placeholder="Select input"
+        aria-label="消息输入"
+        placeholder="选择输入端"
         options={_formatInputSelectOptions()}
         onChange={onInputSelect}
         value={selectedInputId}
@@ -101,10 +101,10 @@ const ForwarderInputSelect = ({ onInputSelect }: Pick<InputSelectProps, 'onInput
     <>
       <ForwarderInputDropdown
         onLoadMessage={onInputSelect}
-        label="Forwarder Input selection (optional)"
+        label="转发器输入端选择（可选）"
         autoLoadMessage
       />
-      <p className="description">Select an Input profile from the list below then select an then select an Input.</p>
+      <p className="description">从下方列表选择一个输入配置文件，然后选择一个，再选择一个输入。</p>
     </>
   );
 };
@@ -123,19 +123,19 @@ const InputSelect = ({ inputs, selectedInputId, onInputSelect, show }: InputSele
 
   return ForwarderInputDropdown ? (
     <fieldset>
-      <legend>Input selection (optional)</legend>
+      <legend>输入端选择（可选）</legend>
       <Input
         id="inputTypeSelect"
         type="select"
-        label="Select an Input type (optional)"
-        help="Select the Input type you want to load the message from."
+        label="选择输入类型（可选）"
+        help="选择要从中加载消息的输入端类型。"
         value={selectedInputType ?? 'placeholder'}
         onChange={(e) => setSelectedInputType(e.target.value as 'server' | 'forwarder')}>
         <option value="placeholder" disabled>
-          Select an Input type
+          选择输入端类型
         </option>
-        <option value="server">Server Input</option>
-        <option value="forwarder">Forwarder Input</option>
+        <option value="server">服务器输入端</option>
+        <option value="forwarder">转发器输入端</option>
       </Input>
 
       {selectedInputType === 'server' && (
@@ -185,13 +185,13 @@ const parseRawMessage = (
         UserNotification.error(
           'Please ensure the selected codec and its configuration are right. ' +
             'Check your server logs for more information.',
-          'Could not load raw message',
+          '无法加载原始消息',
         );
 
         return;
       }
 
-      UserNotification.error(`Loading raw message failed with status: ${error}`, 'Could not load raw message');
+      UserNotification.error(`加载原始消息失败，状态为：${error}`, '无法加载原始消息');
     },
   );
 };
@@ -359,7 +359,7 @@ const RawMessageLoader = ({
               id="message"
               name="message"
               type="textarea"
-              label="Raw message"
+              label="原始消息"
               value={message}
               onChange={_onMessageChange}
               rows={3}
@@ -371,10 +371,10 @@ const RawMessageLoader = ({
               type="text"
               label={
                 <span>
-                  Source IP address <small>(optional)</small>
+                  源 IP 地址 <small>（可选）</small>
                 </span>
               }
-              help={`Remote IP address to use as message source. ${productName} will use ${DEFAULT_REMOTE_ADDRESS} by default.`}
+              help={`用作消息源的远程IP地址。${productName} 默认将使用 ${DEFAULT_REMOTE_ADDRESS}。`}
               value={remoteAddress}
               onChange={_onRemoteAddressChange}
             />
@@ -386,17 +386,17 @@ const RawMessageLoader = ({
             show={inputIdSelector}
           />
           <fieldset>
-            <legend>Codec configuration</legend>
+            <legend>编解码器配置</legend>
             <Input
               id="codec"
               name="codec"
-              label="Message codec"
-              help="Select the codec that should be used to decode the message."
+              label="消息编解码器"
+              help="选择用于解码消息的编解码器。"
               required>
               <Select
                 id="codec"
-                aria-label="Message codec"
-                placeholder="Select codec"
+                aria-label="消息编解码器"
+                placeholder="选择编解码器"
                 options={_formatSelectOptions()}
                 onChange={_onCodecSelect}
                 value={codec}
@@ -405,8 +405,8 @@ const RawMessageLoader = ({
             {codecConfigurationOptions}
           </fieldset>
           <FormSubmit
-            submitButtonText="Load message"
-            submitLoadingText="Loading message..."
+            submitButtonText="加载消息"
+            submitLoadingText="正在加载消息..."
             isSubmitting={loading}
             isAsyncSubmit
             disabledSubmit={_isSubmitDisabled}

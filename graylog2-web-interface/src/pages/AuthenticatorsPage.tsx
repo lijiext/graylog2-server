@@ -23,16 +23,16 @@ import { PageHeader, DocumentTitle } from 'components/common';
 import DocsHelper from 'util/DocsHelper';
 
 const AuthenticatorsPage = () => (
-  <DocumentTitle title="Authenticators Details">
+  <DocumentTitle title="认证器详情">
     <AuthenticationPageNavigation />
     <PageHeader
-      title="Authenticators Details"
+      title="认证器详情"
       actions={<AuthenticatorActionLinks />}
       documentationLink={{
         title: 'Authenticators documentation',
         path: DocsHelper.PAGES.AUTHENTICATORS,
       }}>
-      <span>Configure the trusted header authentication.</span>
+      <span>配置可信头认证。</span>
     </PageHeader>
 
     <AuthenticatorsDetails />

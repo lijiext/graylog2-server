@@ -51,7 +51,7 @@ export const ClusterOverviewStore = singletonStore('core.ClusterOverview', () =>
           this.trigger({ clusterOverview: this.clusterOverview });
         },
         (error) =>
-          UserNotification.error(`Getting cluster overview failed: ${error}`, 'Could not get cluster overview'),
+          UserNotification.error(`获取集群概览失败：${error}`, '无法获取集群概览'),
       );
 
       return promise;
@@ -62,8 +62,8 @@ export const ClusterOverviewStore = singletonStore('core.ClusterOverview', () =>
         (response) => response.threaddump,
         (error) =>
           UserNotification.error(
-            `Getting thread dump for node '${nodeId}' failed: ${error}`,
-            'Could not get thread dump',
+            `获取节点 '${nodeId}' 的线程转储失败：${error}`,
+            '无法获取线程转储',
           ),
       );
 
@@ -75,8 +75,8 @@ export const ClusterOverviewStore = singletonStore('core.ClusterOverview', () =>
         (response) => response.processbuffer_dump,
         (error) =>
           UserNotification.error(
-            `Getting process buffer dump for node '${nodeId}' failed: ${error}`,
-            'Could not get process buffer dump',
+            `获取节点 '${nodeId}' 的进程缓冲区转储失败：${error}`,
+            '无法获取进程缓冲区转储',
           ),
       );
 
@@ -91,8 +91,8 @@ export const ClusterOverviewStore = singletonStore('core.ClusterOverview', () =>
         (response) => response,
         (error) =>
           UserNotification.error(
-            `Getting system log messages for node '${nodeId}' failed: ${error}`,
-            'Could not get system log messages',
+            `获取节点 '${nodeId}' 的系统日志消息失败：${error}`,
+            '无法获取系统日志消息',
           ),
       );
 
@@ -104,8 +104,8 @@ export const ClusterOverviewStore = singletonStore('core.ClusterOverview', () =>
 
       promise.catch((error) =>
         UserNotification.error(
-          `Getting JVM information for node '${nodeId}' failed: ${error}`,
-          'Could not get JVM information',
+          `获取节点 '${nodeId}' 的 JVM 信息失败：${error}`,
+          '无法获取 JVM 信息',
         ),
       );
 

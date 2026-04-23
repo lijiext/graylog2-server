@@ -79,27 +79,27 @@ const McpConfig = () => {
   return (
     <div>
       <h2>
-        MCP Server Configuration <BetaBadge />
+        MCP 服务器配置 <BetaBadge />
       </h2>
       <br />
-      <p>Activate MCP (Model Context Protocol) to enable LLM-powered communication and automation with your cluster.</p>
+      <p>激活 MCP（模型上下文协议）以启用与集群的基于 LLM 的通信和自动化。</p>
       <p>
-        See the{' '}
+        查看{' '}
         <DocumentationLink text="MCP connection documentation" page={DocsHelper.PAGES.MCP_SERVER} displayIcon={false} />{' '}
-        for client setup instructions.
+        用于客户端设置说明。
       </p>
       <hr />
       <dl className="deflist">
-        <dt>Remote MCP access</dt>
+        <dt>远程 MCP 访问</dt>
         <dd>{viewConfig.enable_remote_access ? 'Enabled' : 'Disabled'}</dd>
         <br />
-        <dt>Output schema</dt>
+        <dt>输出模式</dt>
         <dd>{viewConfig.enable_output_schema ? 'Enabled' : 'Disabled'}</dd>
       </dl>
 
       <IfPermitted permissions="clusterconfigentry:edit">
         <Button bsStyle="info" bsSize="xs" onClick={openModal}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
 
@@ -107,15 +107,15 @@ const McpConfig = () => {
         <BootstrapModalForm
           show
           bsSize="large"
-          title="Update MCP Server Configuration"
+          title="更新 MCP 服务器配置"
           onSubmitForm={onModalSave}
           onCancel={onModalCancel}
-          submitButtonText="Update configuration">
+          submitButtonText="更新配置">
           <fieldset>
             <Input
               id="enable-remote-access-checkbox"
               type="checkbox"
-              label="Enable remote MCP access"
+              label="启用远程 MCP 访问"
               name="enabled"
               checked={modalConfig.enable_remote_access}
               onChange={onModalClickEnableRemoteAccess}
@@ -124,7 +124,7 @@ const McpConfig = () => {
               id="enable-output-schema-checkbox"
               disabled={!modalConfig.enable_remote_access}
               type="checkbox"
-              label="Enable Output Schema generation"
+              label="启用输出架构生成"
               name="output-schema-enabled"
               checked={modalConfig.enable_output_schema}
               onChange={onModalClickEnableOutputSchema}

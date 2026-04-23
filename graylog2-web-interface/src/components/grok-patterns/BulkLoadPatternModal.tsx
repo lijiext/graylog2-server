@@ -68,7 +68,7 @@ class BulkLoadPatternModal extends React.Component<
       const request = loaded.target.result;
 
       GrokPatternsStore.bulkImport(request, importStrategy).then(() => {
-        UserNotification.success('Grok Patterns imported successfully', 'Success!');
+        UserNotification.success('Grok 模式导入成功', '成功！');
         this._closeModal();
 
         this.props.sendTelemetry(TELEMETRY_EVENT_TYPE.GROK_PATTERN.IMPORTED, {
@@ -89,13 +89,13 @@ class BulkLoadPatternModal extends React.Component<
     return (
       <span>
         <Button bsStyle="info" style={{ marginRight: 5 }} onClick={this._openModal}>
-          Import pattern file
+          导入模式文件
         </Button>
 
         <BootstrapModalForm
           show={this.state.showModal}
-          title="Import Grok patterns from file"
-          submitButtonText="Upload"
+          title="从文件导入 Grok 模式"
+          submitButtonText="上传"
           onCancel={this._closeModal}
           onSubmitForm={this._onSubmit}>
           <Input
@@ -105,8 +105,8 @@ class BulkLoadPatternModal extends React.Component<
               this.patternFile = patternFile;
             }}
             name="patterns"
-            label="Pattern file"
-            help="A file containing Grok patterns, one per line. Name and patterns should be separated by whitespace."
+            label="模式文件"
+            help="包含 Grok 模式的文件，每行一个。名称和模式之间应以空白字符分隔。"
             required
           />
           <Input
@@ -114,7 +114,7 @@ class BulkLoadPatternModal extends React.Component<
             type="radio"
             name="import-strategy"
             value="ABORT_ON_CONFLICT"
-            label="Abort import if a pattern with the same name already exists"
+            label="如果已存在同名模式，则中止导入"
             defaultChecked
             onChange={(e) => this._onImportStrategyChange(e)}
           />
@@ -123,7 +123,7 @@ class BulkLoadPatternModal extends React.Component<
             type="radio"
             name="import-strategy"
             value="REPLACE_ON_CONFLICT"
-            label="Replace existing patterns with the same name"
+            label="用相同名称替换现有模式"
             onChange={(e) => this._onImportStrategyChange(e)}
           />
           <Input
@@ -131,7 +131,7 @@ class BulkLoadPatternModal extends React.Component<
             type="radio"
             name="import-strategy"
             value="DROP_ALL_EXISTING"
-            label="Drop all existing patterns before import"
+            label="导入前删除所有现有模式"
             onChange={(e) => this._onImportStrategyChange(e)}
           />
         </BootstrapModalForm>

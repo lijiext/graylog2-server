@@ -68,7 +68,7 @@ public class ClusterResource extends RestResource {
     @GET
     @Timed
     @Path("/nodes")
-    @ApiOperation(value = "List all active nodes in this cluster.")
+    @ApiOperation(value = "列出此集群中的所有活动节点。")
     public NodeSummaryList nodes() {
         final Map<String, Node> nodes = nodeService.allActive();
         final List<NodeSummary> nodeList = new ArrayList<>(nodes.size());
@@ -82,7 +82,7 @@ public class ClusterResource extends RestResource {
     @GET
     @Timed
     @Path("/node")
-    @ApiOperation(value = "Information about this node.",
+    @ApiOperation(value = "有关此节点的信息。",
                   notes = "This is returning information of this node in context to its state in the cluster. " +
                           "Use the system API of the node itself to get system information.")
     public NodeSummary node() throws NodeNotFoundException {
@@ -92,11 +92,11 @@ public class ClusterResource extends RestResource {
     @GET
     @Timed
     @Path("/nodes/{nodeId}")
-    @ApiOperation(value = "Information about a node.",
+    @ApiOperation(value = "关于节点的信息。",
                   notes = "This is returning information of a node in context to its state in the cluster. " +
                           "Use the system API of the node itself to get system information.")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Node not found.")
+            @ApiResponse(code = 404, message = "未找到节点。")
     })
     public NodeSummary node(@ApiParam(name = "nodeId", required = true) @PathParam("nodeId") @NotEmpty String nodeId) throws NodeNotFoundException {
         return nodeSummary(nodeService.byNodeId(nodeId));

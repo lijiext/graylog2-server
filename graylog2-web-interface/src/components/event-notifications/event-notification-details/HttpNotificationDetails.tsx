@@ -31,12 +31,12 @@ const HttpNotificationDetails = ({ notification }: HttpNotificationDetailsProps)
     <>
       <ReadOnlyFormGroup label="URL" value={notification.config.url} />
       <ReadOnlyFormGroup
-        label="Basic Authentication"
+        label="基本认证"
         value={notification.config.basic_auth?.is_set ? '******' : null}
       />
-      <ReadOnlyFormGroup label="API Key/Secret Sent As" value={apiKeySet ? apiSentAs : null} />
-      <ReadOnlyFormGroup label="API Key" value={notification.config.api_key} />
-      <ReadOnlyFormGroup label="API Secret" value={apiKeySet ? '******' : null} />
+      <ReadOnlyFormGroup label="API 密钥/密钥作为" value={apiKeySet ? apiSentAs : null} />
+      <ReadOnlyFormGroup label="API 密钥" value={notification.config.api_key} />
+      <ReadOnlyFormGroup label="API 密钥" value={apiKeySet ? '******' : null} />
     </>
   );
 };

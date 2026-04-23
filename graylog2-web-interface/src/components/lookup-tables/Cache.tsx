@@ -39,7 +39,7 @@ const Cache = ({ cache, noEdit = false }: Props) => {
   const canEdit = !noEdit && !loadingScopePermissions && scopePermissions?.is_mutable;
 
   if (!plugin) {
-    return <p>Unknown cache type {cache.config.type}. Is the plugin missing?</p>;
+    return <p>未知的缓存类型 {cache.config.type}。插件是否缺失？</p>;
   }
 
   const handleEdit = () => {
@@ -53,17 +53,17 @@ const Cache = ({ cache, noEdit = false }: Props) => {
           <Label>{plugin.displayName}</Label>
           {canEdit && (
             <Button bsStyle="primary" onClick={handleEdit} role="button" name="edit_square">
-              Edit
+              编辑
             </Button>
           )}
         </div>
 
         <SummaryRow>
-          <Title>Description:</Title>
-          <Value>{cache.description || <em>No description.</em>}</Value>
+          <Title>描述:</Title>
+          <Value>{cache.description || <em>无描述。</em>}</Value>
         </SummaryRow>
 
-        <h4>Configuration</h4>
+        <h4>配置</h4>
         <div>{React.createElement(plugin.summaryComponent, { cache: cache })}</div>
       </Col>
     </Row>

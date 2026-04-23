@@ -61,14 +61,14 @@ const SuggestReloadIfVersionChanged = ({ reload = defaultReload }: Props) => {
       radius="md"
       position={{ top: 55, right: 20 }}>
       <p>
-        <strong>{productName} Version Changed</strong>
+        <strong>{productName} 版本已更改</strong>
       </p>
       <p>
-        Your {productName} version has changed from <strong>{version}</strong> to <strong>{newVersion}</strong>.
+        您的 {productName} 版本已从 <strong>{version}</strong> to <strong>{newVersion}</strong>.
       </p>
-      <p>Please save your work and reload the page to avoid running into errors.</p>
+      <p>请保存您的工作并重新加载页面，以避免出现错误。</p>
       <ButtonContainer>
-        <Button onClick={reload}>Reload now</Button>
+        <Button onClick={reload}>立即重新加载</Button>
       </ButtonContainer>
     </Dialog>
   ) : null;

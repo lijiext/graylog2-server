@@ -1,12 +1,12 @@
 <#if _title>
-Indexer cluster unhealthy (RED)
+索引器集群不健康 (RED)
 </#if>
 
 <#if _description>
 <span>
-The Indexer cluster state is RED which means shards are unassigned.
-This usually indicates a crashed and corrupt cluster and needs to be investigated. Messages will be written
-into the local disk journal. Read how to fix this
-<a href="https://docs.graylog.org/docs/elasticsearch#cluster-status-explained" target="_blank" rel="noreferrer">here</a>
+索引器集群状态为 RED，表示存在未分配的分片。
+这通常表明集群已崩溃或损坏，需要进一步调查。消息将写入本地磁盘日志。
+请查看如何修复此问题
+<a href="https://docs.graylog.org/docs/elasticsearch#cluster-status-explained" target="_blank" rel="noreferrer">此处</a>
 </span>
 </#if>

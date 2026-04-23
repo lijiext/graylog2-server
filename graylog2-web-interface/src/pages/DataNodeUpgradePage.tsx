@@ -86,7 +86,7 @@ const getClusterHealthStyle = (status: string) => {
 
 const upgradeInstructionsDocumentationMessage = (
   <p>
-    To upgrade your Data Nodes manually, please follow the instructions in the&nbsp;
+    若要手动升级您的数据节点，请遵循以下说明 
     <DocumentationLink text="documentation" page={DocsHelper.PAGES.GRAYLOG_DATA_NODE} />.
   </p>
 );
@@ -119,12 +119,11 @@ const DataNodeUpgradePage = () => {
   const manualUpgradeAlert = (nodeInProgress: string) => (
     <Alert bsStyle="warning">
       <p>
-        Once you have completed the manual upgrade of {nodeInProgress ? <b>{nodeInProgress}</b> : 'your Data Node'} on
-        the system, wait until it reconnects and apears in the <b>Upgraded Nodes</b> panel, then click on&nbsp;
+        完成手动升级后 {nodeInProgress ? <b>{nodeInProgress}</b> : 'your Data Node'} 在系统上，等待其重新连接并出现在 <b>已升级节点</b> 面板，然后单击 
         <Button onClick={confirmNodeUpgrade} bsStyle="link" bsSize="large">
-          <b>Confirm Upgrade</b>
+          <b>确认升级</b>
         </Button>
-        &nbsp; and continue with next node.
+          并继续到下一个节点。
       </p>
       {upgradeInstructionsDocumentationMessage}
     </Alert>
@@ -137,17 +136,16 @@ const DataNodeUpgradePage = () => {
   const showRollingUpgrade = upgradeMethod === 'rolling-upgrade' && (!!nodeInProgress || numberOfNodes > 2);
 
   return (
-    <DocumentTitle title="Data Node Upgrade">
+    <DocumentTitle title="数据节点升级">
       <ClusterConfigurationPageNavigation />
       <PageHeader
-        title="Data Node Upgrade"
+        title="数据节点升级"
         documentationLink={{
           title: 'Data Nodes documentation',
           path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
         }}>
         <span>
-          Graylog Data Nodes offer a better integration with Graylog and simplify future updates. They allow you to
-          index and search through all the messages in your Graylog message database.
+          Graylog 数据节点与 Graylog 的集成更紧密，并简化了未来的更新。它们允许您对 Graylog 消息数据库中的所有消息进行索引和搜索。
         </span>
       </PageHeader>
       {isInitialLoading ? (
@@ -164,37 +162,30 @@ const DataNodeUpgradePage = () => {
               {upgradeMethod === 'cluster-restart' && (
                 <>
                   <p>
-                    When using the cluster restart method, you will upgrade all Data Nodes at once. During this time,
-                    messages will be buffered in the journal and processed as the Data Node cluster comes back online,
-                    leading to no data loss provided your journal size is configured for the message volume which is
-                    expected during the Data Node downtime.
+                    使用集群重启方法时，您将一次性升级所有数据节点。在此期间，消息将在日志中缓冲，并在数据节点集群重新上线时进行处理，只要您的日志大小已针对数据节点停机期间预期的消息量进行配置，就不会导致数据丢失。
                   </p>
                   <p>
-                    If you are running a Data Node cluster with less than three nodes, the cluster restart method is the
-                    only method available.
+                    如果您运行的数据节点集群节点数少于三个，则集群重启方法是唯一可用的方法。
                   </p>
                   <p>
-                    If you are running a Data Node cluster with three or more nodes, you can choose to use the cluster
-                    restart method after consideration of your journal size and your message throughput.
+                    如果您正在运行包含三个或更多节点的数据节点集群，在考虑您的日志大小和消息吞吐量后，您可以选择使用集群重启方法。
                   </p>
                 </>
               )}
               {upgradeMethod === 'rolling-upgrade' && (
                 <>
                   <p>
-                    Rolling upgrades can be performed on a running Data Node cluster only with{' '}
-                    <b>three or more nodes</b>, with virtually no downtime.
+                    滚动升级仅可在运行的数据节点集群上执行，且必须{' '}
+                    <b>三个或更多节点</b>, with virtually no downtime.
                   </p>
                   <p>
-                    Data Nodes are individually stopped and upgraded in place. Alternatively, Data Nodes can be stopped
-                    and replaced, one at a time, by hosts running the new version. During this process you can continue
-                    to index and query data in your cluster.
+                    数据节点可单独就地停止并升级。或者，可以逐个停止数据节点，并由运行新版本的主机替换它们。在此过程中，您可以继续在集群中索引和查询数据。
                   </p>
                 </>
               )}
             </Alert>
             {!data?.outdated_nodes?.length && data?.up_to_date_nodes?.length > 0 && (
-              <Alert bsStyle="success">All your Data Nodes are Up-to-date.</Alert>
+              <Alert bsStyle="success">您的所有数据节点均为最新。</Alert>
             )}
             {!data?.shard_replication_enabled && manualUpgradeAlert(nodeInProgress)}
             {(data?.warnings?.length || 0) > 0 && (
@@ -214,18 +205,15 @@ const DataNodeUpgradePage = () => {
               <HelpPopoverButton
                 helpText={
                   <>
-                    <p>How does my cluster change state during the rolling upgrade?</p>
+                    <p>集群在滚动升级期间状态如何变化？</p>
                     <p>
-                      RED - if you are using indices with no replication and upgrade the node hosting the shards of
-                      these indices, the cluster will go to a red state and no data will be ingested into or searchable
-                      from these indices.
+                      RED - 如果您正在使用无副本的索引，并升级托管这些索引分片的节点，集群将进入红色状态，且无法向这些索引摄入数据或从中搜索数据。
                     </p>
                     <p>
-                      YELLOW - after starting the upgrade of a node, shard allocation will be set to no replication to
-                      allow OpenSearch to use only the available shards.
+                      黄色 - 在开始升级节点后，分片分配将设置为无复制，以允许 OpenSearch 仅使用可用的分片。
                     </p>
                     <p>
-                      After a node has been upgraded and you click on <em>Confirm Upgrade</em>, shard replication will
+                      节点升级后，当您点击 <em>确认升级</em>, shard replication will
                       be re-enabled and all shards that were unavailable due to the node being upgraded will be
                       re-allocated and the cluster will return to a GREEN state.
                     </p>
@@ -234,22 +222,22 @@ const DataNodeUpgradePage = () => {
               />
             </h3>
             <StyledHorizontalDl>
-              <dt>Server Version:</dt>
+              <dt>服务器版本:</dt>
               <ServerVersion>
                 <b>{data?.server_version?.version || ''}</b>
               </ServerVersion>
               {upgradeMethod === 'rolling-upgrade' && (
                 <>
-                  <dt>Shard Replication:</dt>
+                  <dt>分片复制:</dt>
                   <dd>
                     <ShardReplicationContainer>
                       {data?.shard_replication_enabled ? (
                         <Label bsStyle="success" bsSize="xs">
-                          Enabled
+                          已启用
                         </Label>
                       ) : (
                         <Label bsStyle="warning" bsSize="xs">
-                          Disabled
+                          已禁用
                         </Label>
                       )}
                       &nbsp;
@@ -257,17 +245,16 @@ const DataNodeUpgradePage = () => {
                         helpText={
                           <>
                             <p>
-                              After you click on{' '}
+                              点击后{' '}
                               <em>
-                                <b>Start Upgrade Process</b>
+                                <b>开始升级流程</b>
                               </em>{' '}
-                              of a node, shard allocation will be set to no replication to allow OpenSearch to use only
-                              the available shards.
+                              对于节点，分片分配将设置为无复制，以允许 OpenSearch 仅使用可用的分片。
                             </p>
                             <p>
-                              After a node has been upgraded and you click on{' '}
+                              节点升级后，当您点击{' '}
                               <em>
-                                <b>Confirm Upgrade</b>
+                                <b>确认升级</b>
                               </em>
                               , shard replication will be re-enabled and all shards that were unavailable due to the
                               node being upgraded will be re-allocated.
@@ -277,7 +264,7 @@ const DataNodeUpgradePage = () => {
                               onClick={data?.shard_replication_enabled ? stopShardReplication : startShardReplication}
                               bsStyle="warning"
                               bsSize="xsmall">
-                              Force {data?.shard_replication_enabled ? 'Disabled' : 'Enabled'}
+                              强制 {data?.shard_replication_enabled ? 'Disabled' : 'Enabled'}
                             </Button>
                           </>
                         }
@@ -286,18 +273,18 @@ const DataNodeUpgradePage = () => {
                   </dd>
                 </>
               )}
-              <dt>Cluster Manager:</dt>
+              <dt>集群管理器:</dt>
               <dd>{data?.cluster_state?.manager_node?.name}</dd>
-              <dt>Number of Nodes:</dt>
+              <dt>节点数量:</dt>
               <dd>
-                {numberOfNodes} ({data?.outdated_nodes?.length || 0} outdated, {data?.up_to_date_nodes?.length || 0}{' '}
-                upgraded)
+                {numberOfNodes} ({data?.outdated_nodes?.length || 0} 过时， {data?.up_to_date_nodes?.length || 0}{' '}
+                已升级)
               </dd>
-              <dt>Number of Shards:</dt>
+              <dt>分片数量:</dt>
               <dd>
-                {data?.cluster_state?.active_shards || 0} active,&nbsp;
-                {data?.cluster_state?.initializing_shards || 0} initializing,&nbsp;
-                {data?.cluster_state?.relocating_shards || 0} relocating,&nbsp;
+                {data?.cluster_state?.active_shards || 0} 活动, 
+                {data?.cluster_state?.initializing_shards || 0} 初始化中， 
+                {data?.cluster_state?.relocating_shards || 0} 正在重新定位， 
                 {data?.cluster_state?.unassigned_shards || 0} unassigned
               </dd>
             </StyledHorizontalDl>
@@ -307,7 +294,7 @@ const DataNodeUpgradePage = () => {
             <Col xs={12}>
               <Row>
                 <Col sm={6}>
-                  <h3>Outdated Nodes</h3>
+                  <h3>过时的节点</h3>
                   <br />
                   <Table>
                     <tbody>
@@ -341,21 +328,21 @@ const DataNodeUpgradePage = () => {
                               disabled={!outdated_node?.upgrade_possible}
                               bsSize="sm"
                               bsStyle="primary">
-                              Start Upgrade Process
+                              开始升级流程
                             </Button>
                           </td>
                         </tr>
                       ))}
                       {!data?.outdated_nodes?.length && (
                         <tr>
-                          <td>No outdated nodes found.</td>
+                          <td>未找到过时的节点。</td>
                         </tr>
                       )}
                     </tbody>
                   </Table>
                 </Col>
                 <Col sm={6}>
-                  <h3>Upgraded Nodes</h3>
+                  <h3>已升级节点</h3>
                   <br />
                   <Table>
                     <tbody ref={upgradeListRef}>
@@ -385,14 +372,14 @@ const DataNodeUpgradePage = () => {
                           </td>
                           <td align="right">
                             <Label bsStyle="success" bsSize="xs">
-                              Upgraded <Icon name="check" />
+                              已升级 <Icon name="check" />
                             </Label>
                           </td>
                         </tr>
                       ))}
                       {!data?.up_to_date_nodes?.length && (
                         <tr>
-                          <td>No upgraded nodes found.</td>
+                          <td>未找到已升级的节点。</td>
                         </tr>
                       )}
                     </tbody>
@@ -404,7 +391,7 @@ const DataNodeUpgradePage = () => {
           {openUpgradeConfirmDialog && nodeInProgress && (
             <Modal show backdrop={false} onHide={() => setOpenUpgradeConfirmDialog(false)}>
               <Modal.Header>
-                <Modal.Title>Data Node Manual Upgrade</Modal.Title>
+                <Modal.Title>数据节点手动升级</Modal.Title>
               </Modal.Header>
 
               <Modal.Body>{manualUpgradeAlert(nodeInProgress)}</Modal.Body>

@@ -30,12 +30,12 @@ export const SystemLoadBalancerStore = singletonStore('core.SystemLoadBalancer',
       return fetch('PUT', URLUtils.qualifyUrl(`${this.sourceUrl(nodeId)}/override/${status}`)).then(
         () => {
           this.trigger({});
-          UserNotification.success(`Load balancer status successfully changed do '${status}' in node '${nodeId}'`);
+          UserNotification.success(`负载均衡器状态已成功更改为 '${status}'，节点为 '${nodeId}'`);
         },
         (error) => {
           UserNotification.error(
-            `Changing load balancer status in '${nodeId}' failed: ${error}`,
-            `Could not change load balancer status to '${status}' in node '${nodeId}'`,
+            `在 '${nodeId}' 中更改负载均衡器状态失败：${error}`,
+            `无法将节点 '${nodeId}' 中的负载均衡器状态更改为 '${status}'`,
           );
         },
       );

@@ -42,17 +42,17 @@ const CompatibilityCheckStep = ({ currentStep, onTriggerStep, hideActions }: Mig
 
   return (
     <>
-      <h3>Directory compatibility check</h3>
+      <h3>目录兼容性检查</h3>
       {isCompatible && !warnings.length && (
         <CompatibilityAlert bsStyle="success">
-          <h4>Your existing OpenSearch data can be migrated to Data Node.</h4>
+          <h4>您现有的 OpenSearch 数据可以迁移到数据节点。</h4>
         </CompatibilityAlert>
       )}
       {(!isCompatible || isError) && (
         <CompatibilityAlert bsStyle="danger">
           {!isError && !isCompatible && (
             <>
-              <h4>Your existing OpenSearch data cannot be migrated to Data Node.</h4>
+              <h4>您现有的 OpenSearch 数据无法迁移到数据节点。</h4>
               <br />
               {errors.map((error) => (
                 <dd key={error}>{error}</dd>
@@ -61,7 +61,7 @@ const CompatibilityCheckStep = ({ currentStep, onTriggerStep, hideActions }: Mig
           )}
           {isError && (
             <>
-              <h4>There was an error checking the compatibility</h4>
+              <h4>检查兼容性时发生错误</h4>
               <p>{requestError.message}</p>
             </>
           )}
@@ -76,7 +76,7 @@ const CompatibilityCheckStep = ({ currentStep, onTriggerStep, hideActions }: Mig
       )}
       <br />
       {!isCompatible && (
-        <p>Your OpenSearch cluster cannot be migrated to this Data Node version because it&apos;s not compatible.</p>
+        <p>您的 OpenSearch 集群无法迁移到此数据节点版本，因为不兼容。</p>
       )}
       {isCompatible &&
         data &&

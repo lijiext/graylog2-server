@@ -30,25 +30,25 @@ type TimingMetricsProps = {
 
 const TimingMetrics = ({ timing }: TimingMetricsProps) => (
   <dl className="metric-def metric-timer">
-    <dt>95th percentile:</dt>
+    <dt>第 95 百分位数:</dt>
     <dd>{numeral(timing['95th_percentile']).format('0,0.[00]')}&#956;s</dd>
 
-    <dt>98th percentile:</dt>
+    <dt>第 98 百分位数:</dt>
     <dd>{numeral(timing['98th_percentile']).format('0,0.[00]')}&#956;s</dd>
 
-    <dt>99th percentile:</dt>
+    <dt>第 99 百分位数:</dt>
     <dd>{numeral(timing['99th_percentile']).format('0,0.[00]')}&#956;s</dd>
 
-    <dt>Standard deviation:</dt>
+    <dt>标准差:</dt>
     <dd>{numeral(timing.std_dev).format('0,0.[00]')}&#956;s</dd>
 
-    <dt>Mean:</dt>
+    <dt>平均值:</dt>
     <dd>{numeral(timing.mean).format('0,0.[00]')}&#956;s</dd>
 
-    <dt>Minimum:</dt>
+    <dt>最小值:</dt>
     <dd>{numeral(timing.min).format('0,0.[00]')}&#956;s</dd>
 
-    <dt>Maximum:</dt>
+    <dt>最大值:</dt>
     <dd>{numeral(timing.max).format('0,0.[00]')}&#956;s</dd>
   </dl>
 );
@@ -63,7 +63,7 @@ const Metrics = ({ metrics }: MetricsProps) => {
   if (metrics.total.rate) {
     totalRate = (
       <div className="meter" style={{ marginBottom: 10 }}>
-        {numeral(metrics.total.rate.total).format('0,0')} total invocations since boot, averages:{' '}
+        {numeral(metrics.total.rate.total).format('0,0')} 启动以来总调用次数，平均值:{' '}
         {numeral(metrics.total.rate.one_minute).format('0,0.[00]')},{' '}
         {numeral(metrics.total.rate.five_minute).format('0,0.[00]')},{' '}
         {numeral(metrics.total.rate.fifteen_minute).format('0,0.[00]')}.
@@ -73,7 +73,7 @@ const Metrics = ({ metrics }: MetricsProps) => {
 
   const conditionCounts = (
     <div className="meter" style={{ marginBottom: 10 }}>
-      {metrics.condition_hits} hits, {metrics.condition_misses} misses
+      {metrics.condition_hits} 命中， {metrics.condition_misses} misses
     </div>
   );
 
@@ -115,22 +115,22 @@ const Metrics = ({ metrics }: MetricsProps) => {
       {conditionCounts}
       <Row>
         <Col md={6}>
-          <h4 style={{ display: 'inline' }}>Total time</h4>
+          <h4 style={{ display: 'inline' }}>总时间</h4>
           <br />
           {totalTime}
         </Col>
         <Col md={6}>
-          <h4 style={{ display: 'inline' }}>Condition time</h4>
+          <h4 style={{ display: 'inline' }}>条件时间</h4>
           <br />
           {conditionTime}
         </Col>
         <Col md={6}>
-          <h4 style={{ display: 'inline' }}>Execution time</h4>
+          <h4 style={{ display: 'inline' }}>执行时间</h4>
           <br />
           {executionTime}
         </Col>
         <Col md={6}>
-          <h4 style={{ display: 'inline' }}>Converter time</h4>
+          <h4 style={{ display: 'inline' }}>转换器时间</h4>
           <br />
           {convertersTime}
         </Col>
@@ -179,8 +179,8 @@ class ExtractorsListItem extends React.Component<
 
     return (
       <span>
-        Trying to extract data from <em>{extractor.source_field}</em> into <em>{extractor.target_field}</em>,{' '}
-        {extractor.cursor_strategy === 'cut' && 'not'} leaving the original intact.
+        正在从...提取数据 <em>{extractor.source_field}</em> into <em>{extractor.target_field}</em>,{' '}
+        {extractor.cursor_strategy === 'cut' && 'not'} 保留原始内容。
       </span>
     );
   };
@@ -194,10 +194,10 @@ class ExtractorsListItem extends React.Component<
 
     return (
       <div className="configuration-section">
-        <h4>Condition</h4>
+        <h4>条件</h4>
         <ul>
           <li>
-            Will only attempt to run if the message{' '}
+            仅当消息满足条件时才会尝试运行{' '}
             {extractor.condition_type === 'string' ? 'includes the string' : 'matches the regular expression'}{' '}
             <em>{extractor.condition_value}</em>
           </li>
@@ -212,7 +212,7 @@ class ExtractorsListItem extends React.Component<
 
     actions.push(
       <Button key={`extractor-details-${extractor.id}`} bsStyle="info" onClick={this._toggleDetails}>
-        Details
+        详情
       </Button>,
     );
 
@@ -220,13 +220,13 @@ class ExtractorsListItem extends React.Component<
       <LinkContainer
         key={`edit-extractor-${extractor.id}`}
         to={Routes.edit_input_extractor(nodeId, inputId, extractor.id)}>
-        <Button>Edit</Button>
+        <Button>编辑</Button>
       </LinkContainer>,
     );
 
     actions.push(
       <Button key="delete-extractor-" bsStyle="danger" onClick={this._deleteExtractor}>
-        Delete
+        删除
       </Button>,
     );
 
@@ -249,12 +249,12 @@ class ExtractorsListItem extends React.Component<
     let formattedOptions: React.ReactElement | Array<React.ReactElement> = this._formatOptions(extractorConfig);
 
     if (formattedOptions.length === 0) {
-      formattedOptions = <li>No configuration options</li>;
+      formattedOptions = <li>无配置选项</li>;
     }
 
     return (
       <div className="configuration-section">
-        <h4>Configuration</h4>
+        <h4>配置</h4>
         <ul>{formattedOptions}</ul>
       </div>
     );
@@ -279,7 +279,7 @@ class ExtractorsListItem extends React.Component<
 
     return (
       <div className="configuration-section">
-        <h4>Converters</h4>
+        <h4>转换器</h4>
         <ul>{formattedConverters}</ul>
       </div>
     );
@@ -299,7 +299,7 @@ class ExtractorsListItem extends React.Component<
         </Col>
         <Col md={4}>
           <div className="graylog-input-metrics">
-            <h3>Metrics</h3>
+            <h3>指标</h3>
             <Metrics metrics={extractor.metrics} />
           </div>
         </Col>

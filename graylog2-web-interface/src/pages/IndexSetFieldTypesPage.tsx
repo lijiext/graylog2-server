@@ -48,18 +48,17 @@ const IndexSetFieldTypesPage = () => {
   const indexFieldTypeChangeAllowed = useMemo(() => isIndexFieldTypeChangeAllowed(indexSet), [indexSet]);
 
   return (
-    <DocumentTitle title={`Index Set - ${indexSet ? indexSet.title : ''}`}>
+    <DocumentTitle title={`索引集 - ${indexSet ? indexSet.title : ''}`}>
       <IndicesPageNavigation />
       <PageHeader
-        title={`Configure ${indexSet ? indexSet.title : 'Index Set'} Field Types`}
+        title={`配置 ${indexSet ? indexSet.title : 'Index Set'} 字段类型`}
         documentationLink={{
           title: 'Index model documentation',
           path: DocsHelper.PAGES.INDEX_MODEL,
         }}
         actions={indexFieldTypeChangeAllowed && <ChangeFieldTypeButton indexSetId={indexSetId} />}>
         <span>
-          The data represents field types from 2 last indices and the fields with custom field type. You can modify the
-          current field types configuration for this index set.
+          数据表示来自最后 2 个索引的字段类型以及具有自定义字段类型的字段。您可以修改此索引集的当前字段类型配置。
         </span>
       </PageHeader>
 

@@ -108,12 +108,11 @@ const RuleHelper = ({ functionDescriptors = undefined, paginationQueryParameter,
   const pagedEntries = ruleDescriptors.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   return (
-    <Panel header="Rules quick reference">
+    <Panel header="规则快速参考">
       <Row className="row-sm rule-ref-descriptions">
         <Col md={12}>
           <p className={RuleHelperStyle.marginQuickReferenceText}>
-            Read the <DocumentationLink page={DocsHelper.PAGES.PIPELINE_RULES} text="full documentation" /> to gain a
-            better understanding of how pipeline rules work.
+            阅读 <DocumentationLink page={DocsHelper.PAGES.PIPELINE_RULES} text="full documentation" /> 为了更好地理解管道规则的工作原理。
           </p>
         </Col>
       </Row>
@@ -134,12 +133,11 @@ const RuleHelper = ({ functionDescriptors = undefined, paginationQueryParameter,
         ) : (
           <Col md={12}>
             <Tabs id="functionsHelper" defaultActiveKey={1} animation={false}>
-              <Tab eventKey={1} title="Functions">
+              <Tab eventKey={1} title="函数">
                 <Row className="rule-ref-descriptions">
                   <Col sm={12}>
                     <p className={RuleHelperStyle.marginTab}>
-                      This is a list of all available functions in pipeline rules. Click on a row to see more
-                      information about the function parameters.
+                      这是管道规则中所有可用函数的列表。点击某一行可查看该函数参数的更多信息。
                     </p>
                   </Col>
                 </Row>
@@ -147,7 +145,7 @@ const RuleHelper = ({ functionDescriptors = undefined, paginationQueryParameter,
                   <Col sm={12}>
                     <SearchForm
                       onSearch={filterDescriptors}
-                      label="Filter rules"
+                      label="过滤规则"
                       topMargin={0}
                       onReset={onFilterReset}
                     />
@@ -167,9 +165,9 @@ const RuleHelper = ({ functionDescriptors = undefined, paginationQueryParameter,
                   </Col>
                 </Row>
               </Tab>
-              <Tab eventKey={2} title="Example">
+              <Tab eventKey={2} title="示例">
                 <p className={RuleHelperStyle.marginTab}>
-                  Do you want to see how a pipeline rule looks like? Take a look at this example:
+                  您想查看管道规则的示例吗？请查看以下示例：
                 </p>
                 <pre className={`${RuleHelperStyle.marginTab} ${RuleHelperStyle.exampleFunction}`}>{ruleTemplate}</pre>
               </Tab>

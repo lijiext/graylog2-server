@@ -221,7 +221,7 @@ const UrlAllowListForm = ({ urls = [], onUpdate = () => {}, disabled = false, ne
             <Select
               clearable={false}
               options={options}
-              placeholder="Select url type"
+              placeholder="选择 URL 类型"
               onChange={(option: string) => _onUpdateType(idx, option)}
               value={url.type}
             />
@@ -230,7 +230,7 @@ const UrlAllowListForm = ({ urls = [], onUpdate = () => {}, disabled = false, ne
         <td>
           <Button onClick={(event) => _onRemove(event, idx)}>
             <Icon name="delete" />
-            <span className="sr-only">Delete entry</span>
+            <span className="sr-only">删除条目</span>
           </Button>
         </td>
       </tr>
@@ -268,28 +268,28 @@ const UrlAllowListForm = ({ urls = [], onUpdate = () => {}, disabled = false, ne
       <Input
         type="checkbox"
         id="allowlist-disabled"
-        label="Disable Allowlist"
+        label="禁用白名单"
         checked={config.disabled}
         onChange={() => setConfig({ ...config, disabled: !config.disabled })}
-        help={`Disable the allowlist functionality. Warning: Disabling this option will allow users to enter any URL in ${productName} entities, which may pose a security risk.`}
+        help={`禁用白名单功能。警告：禁用此选项将允许用户在 ${productName} 实体中输入任何 URL，这可能会带来安全风险。`}
       />
       <Button bsSize="sm" onClick={(event) => _onAdd(event)}>
-        Add Url
+        添加 URL
       </Button>
       <StyledTable striped bordered>
         <thead>
           <tr>
             <th>#</th>
-            <th>Title</th>
+            <th>标题</th>
             <th>URL</th>
-            <th>Type</th>
-            <th>Actions</th>
+            <th>类型</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>{_getSummary()}</tbody>
       </StyledTable>
       <Button bsSize="sm" onClick={(event) => _onAdd(event)}>
-        Add Url
+        添加 URL
       </Button>
     </>
   );

@@ -33,11 +33,11 @@ const ConfigurationFinished = ({
 }: Props) => {
   const description = isSkippingProvisioning ? (
     <>
-      You&apos;ve finished the configuration successfully. You can still{' '}
+      配置已成功完成。您仍然可以{' '}
       <Button onClick={() => setIsSkippingProvisioning(false)} bsSize="xs">
-        go back
+        返回
       </Button>{' '}
-      to provision the certificates.
+      配置证书。
     </>
   ) : (
     'The provisioning has been successful and all data nodes are secured and reachable.'
@@ -45,7 +45,7 @@ const ConfigurationFinished = ({
 
   return (
     <div>
-      <Title order={3}>Configuration finished</Title>
+      <Title order={3}>配置完成</Title>
       <p>{description}</p>
       <Space h="md" />
       <ResumeStartupButton setIsWaitingForStartup={setIsWaitingForStartup} />

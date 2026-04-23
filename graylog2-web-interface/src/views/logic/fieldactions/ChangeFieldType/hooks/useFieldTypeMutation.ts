@@ -42,13 +42,13 @@ const usePutFieldTypeMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Changing the field type failed with status: ${errorThrown}`,
-        'Could not change the field type',
+        `更改字段类型失败，状态为：${errorThrown}`,
+        '无法更改字段类型',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('The field type changed successfully', 'Success!');
+      UserNotification.success('字段类型已成功更改', '成功！');
     },
   });
 

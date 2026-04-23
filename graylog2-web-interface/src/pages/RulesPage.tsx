@@ -106,12 +106,12 @@ const RulesPage = () => {
     if (metricsConfig && metricsConfig.metrics_enabled) {
       return (
         <Button bsStyle="warning" onClick={toggleMetricsConfig}>
-          Debug Metrics: ON
+          调试指标：开启
         </Button>
       );
     }
 
-    return <Button onClick={toggleMetricsConfig}>Debug Metrics</Button>;
+    return <Button onClick={toggleMetricsConfig}>调试指标</Button>;
   };
 
   // eslint-disable-next-line react/no-unstable-nested-components
@@ -128,7 +128,7 @@ const RulesPage = () => {
 
           history.push(`${Routes.SYSTEM.PIPELINES.RULE('new')}?rule_builder=true`);
         }}>
-        Create Rule
+        创建规则
       </Button>
       {renderDebugMetricsButton()}
     </ButtonToolbar>
@@ -155,18 +155,17 @@ const RulesPage = () => {
   );
 
   return (
-    <DocumentTitle title="Pipeline rules">
+    <DocumentTitle title="管道规则">
       <PipelinesPageNavigation />
       <PageHeader
-        title="Pipeline Rules"
+        title="管道规则"
         actions={<RulesButtonToolbar />}
         documentationLink={{
           title: 'Pipeline rules documentation',
           path: DocsHelper.PAGES.PIPELINE_RULES,
         }}>
         <span>
-          Rules are a way of applying changes to messages. A rule consists of a condition and a list of actions. The
-          condition is evaluated against a message, and the actions are executed if the condition is satisfied.
+          规则是应用于消息更改的一种方式。规则由条件和操作列表组成。条件针对消息进行求值，如果条件满足，则执行操作。
         </span>
       </PageHeader>
 

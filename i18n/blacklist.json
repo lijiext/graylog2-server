@@ -1,0 +1,108 @@
+{
+  "$schema": "AST 抽取黑名单：匹配任一规则的字符串不翻译",
+  "version": 1,
+
+  "filePatterns": [
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.spec.ts",
+    "**/*.stories.tsx",
+    "**/__mocks__/**",
+    "**/fixtures/**",
+    "**/test/**",
+    "**/@types/**",
+    "**/generator/**",
+    "**/polyfill.ts",
+    "**/webpack-entry.ts"
+  ],
+
+  "callSites": {
+    "$schema": "这些函数调用里的字符串不翻译",
+    "functions": [
+      "console.log",
+      "console.error",
+      "console.warn",
+      "console.info",
+      "console.debug",
+      "console.trace",
+      "logger.log",
+      "logger.error",
+      "logger.warn",
+      "logger.info",
+      "logger.debug",
+      "Logger.getLogger",
+      "LoggerFactory.getLogger",
+      "throw new Error",
+      "throw new TypeError",
+      "throw new RangeError",
+      "Promise.reject",
+      "assert",
+      "invariant",
+      "it",
+      "test",
+      "describe",
+      "expect",
+      "jest.fn",
+      "require",
+      "import"
+    ]
+  },
+
+  "attributes": {
+    "$schema": "这些 JSX 属性里的字符串不翻译",
+    "names": [
+      "className",
+      "id",
+      "key",
+      "ref",
+      "name",
+      "type",
+      "href",
+      "src",
+      "to",
+      "target",
+      "rel",
+      "data-testid",
+      "data-test",
+      "data-cy",
+      "role",
+      "autoComplete",
+      "autoCapitalize",
+      "autoCorrect",
+      "dir",
+      "lang",
+      "htmlFor",
+      "form",
+      "method",
+      "action",
+      "encType",
+      "accept",
+      "accept-charset",
+      "xmlns"
+    ]
+  },
+
+  "stringPatterns": {
+    "$schema": "字符串内容匹配这些正则则不翻译",
+    "regex": [
+      "^[a-z][a-zA-Z0-9_]*$",
+      "^[A-Z][A-Z0-9_]*$",
+      "^https?://",
+      "^/[a-z]",
+      "^[a-z]+://",
+      "^\\s*$",
+      "^\\d+([.,]\\d+)*\\s*[A-Za-z%]*$",
+      "^#[0-9a-fA-F]{3,8}$",
+      "^rgba?\\(",
+      "^\\$\\{",
+      "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9_.-]+\\.[a-zA-Z]{2,}$",
+      "^[0-9a-f]{24}$",
+      "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$",
+      "^\\{[^}]+\\}$",
+      "^\\[[^\\]]+\\]$"
+    ],
+    "maxLengthSkip": 1,
+    "minLengthTranslate": 2
+  }
+}

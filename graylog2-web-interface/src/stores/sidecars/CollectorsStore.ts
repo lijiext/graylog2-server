@@ -97,7 +97,7 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
           errorMessage = `Unable to find a collector with ID <${collectorId}>, please ensure it was not deleted.`;
         }
 
-        UserNotification.error(errorMessage, 'Could not retrieve Collector');
+        UserNotification.error(errorMessage, '无法获取采集器');
       });
 
       CollectorsActions.getCollector.promise(promise);
@@ -126,7 +126,7 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
           return response.collectors;
         },
         (error) => {
-          UserNotification.error(`Fetching collectors failed with status: ${error}`, 'Could not retrieve collectors');
+          UserNotification.error(`获取收集器失败，状态为：${error}`, '无法检索采集器');
         },
       );
 
@@ -154,7 +154,7 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
           return response.collectors;
         },
         (error) => {
-          UserNotification.error(`Fetching collectors failed with status: ${error}`, 'Could not retrieve collectors');
+          UserNotification.error(`获取收集器失败，状态为：${error}`, '无法检索采集器');
         },
       );
 
@@ -170,14 +170,14 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
 
       promise.then(
         (response) => {
-          UserNotification.success('', 'Collector successfully created');
+          UserNotification.success('', '采集器创建成功');
           this.collectors = response.collectors;
           this.propagateChanges();
 
           return this.collectors;
         },
         (error) => {
-          UserNotification.error(`Fetching collectors failed with status: ${error}`, 'Could not retrieve collectors');
+          UserNotification.error(`获取收集器失败，状态为：${error}`, '无法检索采集器');
         },
       );
 
@@ -189,14 +189,14 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
 
       promise.then(
         (response) => {
-          UserNotification.success('', 'Collector successfully updated');
+          UserNotification.success('', '采集器更新成功');
           this.collectors = response.collectors;
           this.propagateChanges();
 
           return this.collectors;
         },
         (error) => {
-          UserNotification.error(`Fetching collectors failed with status: ${error}`, 'Could not retrieve collectors');
+          UserNotification.error(`获取收集器失败，状态为：${error}`, '无法检索采集器');
         },
       );
 
@@ -209,15 +209,15 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
 
       promise.then(
         (response) => {
-          UserNotification.success('', `Collector "${collector.name}" successfully deleted`);
+          UserNotification.success('', `收集器 "${collector.name}" 已成功删除`);
           this.refreshList();
 
           return response;
         },
         (error) => {
           UserNotification.error(
-            `Deleting Collector failed: ${error.status === 400 ? error.responseMessage : error.message}`,
-            `Could not delete Collector "${collector.name}"`,
+            `删除收集器失败：${error.status === 400 ? error.responseMessage : error.message}`,
+            `无法删除收集器 "${collector.name}"`,
           );
         },
       );
@@ -233,15 +233,15 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
 
       promise.then(
         (response) => {
-          UserNotification.success('', `Collector "${name}" successfully copied`);
+          UserNotification.success('', `收集器 "${name}" 已成功复制`);
           this.refreshList();
 
           return response;
         },
         (error) => {
           UserNotification.error(
-            `Saving collector "${name}" failed with status: ${error.message}`,
-            'Could not save Collector',
+            `保存收集器 "${name}" 失败，状态为：${error.message}`,
+            '无法保存采集器',
           );
         },
       );
@@ -266,8 +266,8 @@ export const CollectorsStore = singletonStore('core.Collectors', () =>
         (response) => response,
         (error) =>
           UserNotification.error(
-            `Validating collector "${payload.name}" failed with status: ${error.message}`,
-            'Could not validate collector',
+            `验证收集器 "${payload.name}" 失败，状态为：${error.message}`,
+            '无法验证采集器',
           ),
       );
 

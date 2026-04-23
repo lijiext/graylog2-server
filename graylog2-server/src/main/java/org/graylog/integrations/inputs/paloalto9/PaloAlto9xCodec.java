@@ -138,7 +138,7 @@ public class PaloAlto9xCodec implements Codec, DefinesEventSourceProduct {
 
             return Optional.of(message);
         } catch (Exception e) {
-            throw InputProcessingException.create("Could not decode PaloAlto9x message.", e, rawMessage, s);
+            throw InputProcessingException.create("无法解码 PaloAlto9x 消息。", e, rawMessage, s);
         }
     }
 

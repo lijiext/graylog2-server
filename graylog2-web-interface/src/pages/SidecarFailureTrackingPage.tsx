@@ -26,14 +26,13 @@ const SidecarFailureTrackingPage = () => (
   <DocumentTitle title="Sidecars">
     <SidecarsPageNavigation />
     <PageHeader
-      title="Failure Tracking"
+      title="故障跟踪"
       documentationLink={{
         title: 'Sidecar documentation',
         path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
       }}>
       <span>
-        The Sidecar Failure Tracking provides additional useful information about failure reasons, that can help you
-        decrease troubleshooting time and get your collectors back online faster.
+        Sidecar 故障跟踪提供了有关故障原因的额外有用信息，可帮助您缩短故障排除时间，使采集器更快恢复在线。
       </span>
     </PageHeader>
 

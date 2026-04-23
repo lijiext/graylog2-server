@@ -87,7 +87,7 @@ const IndexSetRotationRetentionConfigurationSection = ({
 
   if (!dataTieringFieldsRenderable())
     return (
-      <Section title="Rotation & Retention">
+      <Section title="轮转与保留">
         <IndexSetRotationRetentionLegacyConfiguration
           indexSet={indexSet}
           values={values}
@@ -103,7 +103,7 @@ const IndexSetRotationRetentionConfigurationSection = ({
 
   if (!legacyRenderable())
     return (
-      <Section title="Rotation & Retention">
+      <Section title="轮转与保留">
         <IndexSetRotationRetentionDataTieringConfiguration
           values={values}
           hiddenFields={hiddenFields}
@@ -114,7 +114,7 @@ const IndexSetRotationRetentionConfigurationSection = ({
     );
 
   return (
-    <Section title="Rotation & Retention">
+    <Section title="轮转与保留">
       <>
         <SegmentedControl<RetentionConfigSegment>
           data={retentionConfigSegments}

@@ -37,8 +37,7 @@ const formatNodeDetails = (details: NodeDetails) => {
   if (!details) {
     return (
       <p>
-        Node details are currently unavailable. Please wait a moment and ensure the sidecar is correctly connected to
-        the server.
+        节点详情当前不可用。请稍等片刻，并确保 sidecar 已正确连接到服务器。
       </p>
     );
   }
@@ -47,17 +46,17 @@ const formatNodeDetails = (details: NodeDetails) => {
 
   return (
     <dl className={`${commonStyles.deflist} ${commonStyles.topMargin}`}>
-      <dt>IP Address</dt>
+      <dt>IP 地址</dt>
       <dd>{defaultTo(details.ip, 'Not available')}</dd>
-      <dt>Operating System</dt>
+      <dt>操作系统</dt>
       <dd>{defaultTo(details.operating_system, 'Not available')}</dd>
-      <dt>CPU Idle</dt>
+      <dt>CPU 空闲</dt>
       <dd>{isNumber(metrics?.cpu_idle) ? `${metrics?.cpu_idle}%` : 'Not available'}</dd>
-      <dt>Load</dt>
+      <dt>加载</dt>
       <dd>{defaultTo(metrics?.load_1, 'Not available')}</dd>
-      <dt>Volumes &gt; 75% full</dt>
+      <dt>卷 &gt; 75% 已满</dt>
       {metrics?.disks_75 === undefined ? (
-        <dd>Not available</dd>
+        <dd>不可用</dd>
       ) : (
         <dd>{metrics?.disks_75.length > 0 ? metrics?.disks_75.join(', ') : 'None'}</dd>
       )}
@@ -73,8 +72,7 @@ const formatCollectorStatus = (
   if (!details || !collectors) {
     return (
       <p>
-        Collectors status are currently unavailable. Please wait a moment and ensure the sidecar is correctly connected
-        to the server.
+        采集器状态当前不可用。请稍后片刻，并确保 Sidecar 已正确连接到服务器。
       </p>
     );
   }
@@ -82,8 +80,7 @@ const formatCollectorStatus = (
   if (!details.status) {
     return (
       <p>
-        Did not receive collectors status, set the option <code>send_status: true</code> in the sidecar configuration to
-        see this information.
+        未收到采集器状态，请设置该选项 <code>发送状态：true</code> 在 sidecar 配置中查看此信息。
       </p>
     );
   }
@@ -91,7 +88,7 @@ const formatCollectorStatus = (
   const collectorStatuses = details.status.collectors;
 
   if (collectorStatuses.length === 0) {
-    return <p>There are no collectors configured in this sidecar.</p>;
+    return <p>此 Sidecar 中未配置任何采集器。</p>;
   }
 
   const statuses = [];
@@ -118,7 +115,7 @@ const formatCollectorStatus = (
         if (status.verbose_message) {
           verboseButton = (
             <Button bsStyle="link" bsSize="xs" onClick={() => _onShowVerbose(collector.name, status.verbose_message)}>
-              Show Details
+              显示详情
             </Button>
           );
         }
@@ -171,13 +168,13 @@ const SidecarStatus = ({ sidecar, collectors }: Props) => {
     <div>
       <Row className="content">
         <Col md={12}>
-          <h2>Node details</h2>
+          <h2>节点详情</h2>
           {formatNodeDetails(sidecar.node_details)}
         </Col>
       </Row>
       <Row className="content">
         <Col md={12}>
-          <h2>Collectors status</h2>
+          <h2>采集器状态</h2>
           <div className={commonStyles.topMargin}>
             {formatCollectorStatus(sidecar.node_details, collectors, _onShowVerbose)}
           </div>
@@ -185,8 +182,8 @@ const SidecarStatus = ({ sidecar, collectors }: Props) => {
       </Row>
       <Row className="content" hidden={logFileList.length === 0}>
         <Col md={12}>
-          <h2>Log Files</h2>
-          <p className={commonStyles.topMargin}>Recently modified files will be highlighted in blue.</p>
+          <h2>日志文件</h2>
+          <p className={commonStyles.topMargin}>最近修改的文件将以蓝色高亮显示。</p>
           <div>
             <SidecarStatusFileList files={logFileList} />
           </div>

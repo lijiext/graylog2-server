@@ -92,7 +92,7 @@ public class InputStatesResource extends AbstractInputsResource {
     @Timed
     @ApiOperation(value = "Get input state for specified input id on this node")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
     })
     public InputStateSummary get(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) {
         checkPermission(RestPermissions.INPUTS_READ, inputId);
@@ -106,9 +106,9 @@ public class InputStatesResource extends AbstractInputsResource {
     @PUT
     @Path("/{inputId}")
     @Timed
-    @ApiOperation(value = "(Re-)Start specified input on this node")
+    @ApiOperation(value = "(重新) 启动此节点上的指定输入端")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_START)
     public InputCreated start(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) throws org.graylog2.database.NotFoundException {
@@ -127,7 +127,7 @@ public class InputStatesResource extends AbstractInputsResource {
     @Timed
     @ApiOperation(value = "Switch specified input to setup mode")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_SETUP)
     public InputSetup setup(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) throws org.graylog2.database.NotFoundException {
@@ -146,7 +146,7 @@ public class InputStatesResource extends AbstractInputsResource {
     @Timed
     @ApiOperation(value = "Stop specified input on this node")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_STOP)
     public InputDeleted stop(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) throws org.graylog2.database.NotFoundException {

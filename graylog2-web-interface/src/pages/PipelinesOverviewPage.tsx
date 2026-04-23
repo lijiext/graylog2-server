@@ -24,18 +24,17 @@ import CreatePipelineButton from 'components/pipelines/CreatePipelineButton';
 import PipelinesPageNavigation from 'components/pipelines/PipelinesPageNavigation';
 
 const PipelinesOverviewPage = () => (
-  <DocumentTitle title="Pipelines">
+  <DocumentTitle title="处理管道">
     <PipelinesPageNavigation />
     <PageHeader
-      title="Pipelines overview"
+      title="处理管道概览"
       actions={<CreatePipelineButton />}
       documentationLink={{
         title: 'Pipelines documentation',
         path: DocsHelper.PAGES.PIPELINES,
       }}>
       <span>
-        Pipelines let you transform and process messages coming from streams. Pipelines consist of stages where rules
-        are evaluated and applied. Messages can go through one or more stages.
+        处理管道允许您转换和处理来自数据流的消息。处理管道由阶段组成，在这些阶段中评估并应用规则。消息可以经过一个或多个阶段。
       </span>
     </PageHeader>
     <Row className="content">

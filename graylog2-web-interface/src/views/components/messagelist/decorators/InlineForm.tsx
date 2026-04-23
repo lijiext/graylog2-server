@@ -52,7 +52,7 @@ const InlineForm = (submitTitle: string = 'Create'): React.ComponentType<Props> 
           {submitTitle}
         </Button>{' '}
         <Button type="button" disabled={disabled} onClick={onCancel}>
-          Cancel
+          取消
         </Button>
       </form>
     );

@@ -87,8 +87,8 @@ const PipelineConnectionsForm = ({ pipeline, connections, streams, save, disable
 
   const streamsHelp = (
     <span>
-      Select the streams you want to connect to this pipeline, or create one in the{' '}
-      <Link to={Routes.STREAMS}>Streams page</Link>.
+      选择要连接到此处理管道的数据流，或在其中创建一个{' '}
+      <Link to={Routes.STREAMS}>数据流页面</Link>.
     </span>
   );
 
@@ -98,22 +98,22 @@ const PipelineConnectionsForm = ({ pipeline, connections, streams, save, disable
         disabled={!isPermitted(currentUser.permissions, 'pipeline_connection:edit') || disableEdit}
         onClick={_openModal}
         bsStyle="info">
-        <span>Edit connections</span>
+        <span>编辑连接</span>
       </Button>
       <BootstrapModalForm
         show={showModal}
         title={
           <span>
-            Edit connections for <em>{pipeline.title}</em>
+            编辑连接的 <em>{pipeline.title}</em>
           </span>
         }
         data-telemetry-title="Edit connections for pipeline"
         onSubmitForm={_save}
         onCancel={_closeModal}
-        submitButtonText="Update connections">
+        submitButtonText="更新连接">
         <fieldset>
           <FormGroup id="streamsConnections">
-            <ControlLabel>Streams</ControlLabel>
+            <ControlLabel>数据流</ControlLabel>
             <SelectableList
               options={formatStreams(notConnectedStreams)}
               onChange={_onStreamsChange}

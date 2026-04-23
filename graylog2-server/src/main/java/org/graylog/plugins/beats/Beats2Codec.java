@@ -74,13 +74,13 @@ public class Beats2Codec extends AbstractCodec {
             final JsonNode event;
             event = objectMapper.readTree(payload);
             if (event == null || event.isMissingNode()) {
-                throw InputProcessingException.create("Decoded message is null or empty!", rawMessage);
+                throw InputProcessingException.create("解码后的消息为空或为空！", rawMessage);
             }
             return Optional.of(parseEvent(event));
         } catch (InputProcessingException e) {
             throw e;
         } catch (Exception e) {
-            throw InputProcessingException.create("Couldn't decode beats 2 message",
+            throw InputProcessingException.create("无法解码 beats 2 消息",
                     e, rawMessage, new String(rawMessage.getPayload(), charset));
         }
     }

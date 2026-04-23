@@ -93,13 +93,13 @@ const EventListItem = ({ done, event, onClick, selected, removeItem, markItemAsD
 
   return (
     <StyledItem key={`event-replay-list-${event?.id}`} $selected={selected} onClick={onClick}>
-      <Summary $done={done}>{event?.message ?? <i>Unknown</i>}</Summary>
+      <Summary $done={done}>{event?.message ?? <i>未知</i>}</Summary>
 
       <ButtonGroup>
-        <IconButton onClick={_removeItem} title={`Remove event "${event?.id}" from list`} name="delete" />
+        <IconButton onClick={_removeItem} title={`从列表中移除事件 "${event?.id}"`} name="delete" />
         <CompletedButton
           onClick={_markItemAsDone}
-          title={`Mark event "${event?.id}" as ${done ? 'not' : ''} reviewed`}
+          title={`将事件 "${event?.id}" 标记为 ${done ? 'not' : ''} 已审核`}
           name="verified"
           iconType={done ? 'solid' : 'regular'}
           $done={done}

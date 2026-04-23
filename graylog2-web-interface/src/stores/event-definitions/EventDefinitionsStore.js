@@ -148,8 +148,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         })
         .catch((error) => {
           UserNotification.error(
-            `Fetching event definitions failed with status: ${error}`,
-            'Could not retrieve event definitions',
+            `获取事件定义失败，状态为：${error}`,
+            '无法检索事件定义',
           );
         });
 
@@ -195,8 +195,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         .catch((error) => {
           if (error.status === 404) {
             UserNotification.error(
-              `Unable to find Event Definition with id <${eventDefinitionId}>, please ensure it wasn't deleted.`,
-              'Could not retrieve Event Definition',
+              `找不到 ID 为 <${eventDefinitionId}> 的事件定义，请确保其未被删除。`,
+              '无法检索事件定义',
             );
           }
         });
@@ -234,8 +234,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
       promise.then(
         (response) => {
           UserNotification.success(
-            'Event Definition created successfully',
-            `Event Definition "${eventDefinition.title}" was created successfully.`,
+            '事件定义创建成功',
+            `事件定义 "${eventDefinition.title}" 已成功创建。`,
           );
 
           this.refresh();
@@ -245,8 +245,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
             UserNotification.error(
-              `Creating Event Definition "${eventDefinition.title}" failed with status: ${error}`,
-              'Could not save Event Definition',
+              `创建事件定义 "${eventDefinition.title}" 失败，状态为：${error}`,
+              '无法保存事件定义',
             );
           }
         },
@@ -261,8 +261,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
       promise.then(
         (response) => {
           UserNotification.success(
-            'Event Definition duplicated successfully',
-            `Event Definition "${response.title}" was created successfully.`,
+            '事件定义复制成功',
+            `事件定义 "${response.title}" 已成功创建。`,
           );
 
           this.refresh();
@@ -272,8 +272,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
             UserNotification.error(
-              `Duplicating Event Definition "${eventDefinition.title}" failed with status: ${error}`,
-              'Could not duplicate Event Definition',
+              `复制事件定义 "${eventDefinition.title}" 失败，状态为：${error}`,
+              '无法复制事件定义',
             );
           }
         },
@@ -293,8 +293,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
       promise.then(
         (response) => {
           UserNotification.success(
-            'Event Definition updated successfully',
-            `Event Definition "${eventDefinition.title}" was updated successfully.`,
+            '事件定义更新成功',
+            `事件定义 "${eventDefinition.title}" 已成功更新。`,
           );
 
           this.refresh();
@@ -304,8 +304,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
             UserNotification.error(
-              `Updating Event Definition "${eventDefinition.title}" failed with status: ${error}`,
-              'Could not update Event Definition',
+              `更新事件定义 "${eventDefinition.title}" 失败，状态为：${error}`,
+              '无法更新事件定义',
             );
           }
         },
@@ -326,8 +326,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
       promise.then(
         (response) => {
           UserNotification.success(
-            'Event Definition successfully enabled',
-            `Event Definition "${eventDefinition.title}" was successfully enabled.`,
+            '事件定义已成功启用',
+            `事件定义 "${eventDefinition.title}" 已成功启用。`,
           );
 
           this.refresh();
@@ -337,8 +337,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
             UserNotification.error(
-              `Enabling Event Definition "${eventDefinition.title}" failed with status: ${error}`,
-              'Could not enable Event Definition',
+              `启用事件定义 "${eventDefinition.title}" 失败，状态为：${error}`,
+              '无法启用事件定义',
             );
           }
         },
@@ -353,8 +353,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
       promise.then(
         (response) => {
           UserNotification.success(
-            'Event Definition successfully disabled',
-            `Event Definition "${eventDefinition.title}" was successfully disabled.`,
+            '事件定义已成功禁用',
+            `事件定义 "${eventDefinition.title}" 已成功禁用。`,
           );
 
           this.refresh();
@@ -364,8 +364,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
             UserNotification.error(
-              `Disabling Event Definition "${eventDefinition.title}" failed with status: ${error}`,
-              'Could not disable Event Definition',
+              `禁用事件定义 "${eventDefinition.title}" 失败，状态为：${error}`,
+              '无法禁用事件定义',
             );
           }
         },
@@ -382,7 +382,7 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
 
       promise.then(
         (response) => {
-          UserNotification.success('Queued notifications cleared.', 'Queued notifications were successfully cleared.');
+          UserNotification.success('已清除待处理的通知。', '排队的通知已成功清除。');
 
           this.refresh();
 
@@ -391,8 +391,8 @@ export const EventDefinitionsStore = singletonStore('core.EventDefinitions', () 
         (error) => {
           if (error.status !== 400 || !error.additional.body || !error.additional.body.failed) {
             UserNotification.error(
-              `Clearing queued notifications failed with status: ${error}`,
-              'Could not clear queued notifications',
+              `清除待处理的通知失败，状态为：${error}`,
+              '无法清除待处理的告警',
             );
           }
         },

@@ -43,18 +43,18 @@ const BulkActions = () => {
             const notDeletedSavedSearchIds = failures.map(({ entity_id }) => entity_id);
             setSelectedEntities(notDeletedSavedSearchIds);
             UserNotification.error(
-              `${notDeletedSavedSearchIds.length} out of ${selectedItemsAmount} selected ${descriptor} could not be deleted.`,
+              `${notDeletedSavedSearchIds.length} 个选定的 ${descriptor} 中的 ${selectedItemsAmount} 个无法删除。`,
             );
           } else {
             setSelectedEntities([]);
             UserNotification.success(
-              `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} deleted successfully.`,
-              'Success',
+              `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} 已成功删除。`,
+              '成功',
             );
           }
         })
         .catch((error) => {
-          UserNotification.error(`An error occurred while deleting saved searches. ${error}`);
+          UserNotification.error(`删除保存的搜索时发生错误。${error}`);
         })
         .finally(() => {
           queryClient.invalidateQueries({
@@ -66,7 +66,7 @@ const BulkActions = () => {
 
   return (
     <BulkActionsDropdown>
-      <DeleteMenuItem onSelect={onDelete}>Delete</DeleteMenuItem>
+      <DeleteMenuItem onSelect={onDelete}>删除</DeleteMenuItem>
     </BulkActionsDropdown>
   );
 };

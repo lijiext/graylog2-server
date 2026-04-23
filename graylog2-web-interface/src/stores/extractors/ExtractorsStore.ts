@@ -246,14 +246,14 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
 
       promise
         .then(() => {
-          UserNotification.success(`Extractor ${extractor.title} created successfully`);
+          UserNotification.success(`提取器 ${extractor.title} 创建成功`);
 
           if (this.extractor) {
             ExtractorsActions.get.triggerPromise(inputId, extractor.id);
           }
         })
         .catch((error) => {
-          UserNotification.error(`Creating extractor failed: ${error}`, 'Could not create extractor');
+          UserNotification.error(`创建提取器失败：${error}`, '无法创建提取器');
         });
 
       if (!calledFromMethod) {
@@ -270,14 +270,14 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
 
       promise
         .then(() => {
-          UserNotification.success(`Extractor "${extractor.title}" updated successfully`);
+          UserNotification.success(`提取器 "${extractor.title}" 更新成功`);
 
           if (this.extractor) {
             ExtractorsActions.get.triggerPromise(inputId, extractor.id);
           }
         })
         .catch((error) => {
-          UserNotification.error(`Updating extractor failed: ${error}`, 'Could not update extractor');
+          UserNotification.error(`更新提取器失败：${error}`, '无法更新提取器');
         });
 
       if (!calledFromMethod) {
@@ -294,7 +294,7 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
 
       promise
         .then(() => {
-          UserNotification.success(`Extractor "${extractor.title}" deleted successfully`);
+          UserNotification.success(`提取器 "${extractor.title}" 删除成功`);
 
           if (this.extractors) {
             ExtractorsActions.list.triggerPromise(inputId);
@@ -302,8 +302,8 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
         })
         .catch((error) => {
           UserNotification.error(
-            `Deleting extractor failed: ${error}`,
-            `Could not delete extractor ${extractor.title}`,
+            `删除提取器失败：${error}`,
+            `无法删除提取器 ${extractor.title}`,
           );
         });
 
@@ -321,7 +321,7 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
       const promise = fetch('POST', url, { order: orderedExtractorsMap });
 
       promise.then(() => {
-        UserNotification.success('Extractor positions updated successfully');
+        UserNotification.success('提取器位置更新成功');
 
         if (this.extractors) {
           ExtractorsActions.list.triggerPromise(inputId);
@@ -329,7 +329,7 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
       });
 
       promise.catch((error) => {
-        UserNotification.error(`Changing extractor positions failed: ${error}`, 'Could not update extractor positions');
+        UserNotification.error(`更改提取器位置失败：${error}`, '无法更新提取器位置');
       });
 
       ExtractorsActions.order.promise(promise);
@@ -357,15 +357,15 @@ export const ExtractorsStore = singletonStore('core.Extractors', () =>
       Promise.allSettled(promises).then(() => {
         if (failedImports === 0) {
           UserNotification.success(
-            `Import results: ${successfulImports} extractor(s) imported.`,
-            'Import operation successful',
+            `导入结果：已导入 ${successfulImports} 个提取器。`,
+            '导入操作成功',
           );
 
           this.propagateState();
         } else {
           UserNotification.warning(
-            `Import results: ${successfulImports} extractor(s) imported, ${failedImports} error(s).`,
-            'Import operation completed',
+            `导入结果：已导入 ${successfulImports} 个提取器，${failedImports} 个错误。`,
+            '导入操作已完成',
           );
         }
       });

@@ -104,7 +104,7 @@ const PipelineDetailsPage = () => {
     'New pipeline'
   ) : (
     <span>
-      Pipeline <em>{pipeline.title}</em>
+      处理管道 <em>{pipeline.title}</em>
     </span>
   );
 
@@ -134,11 +134,9 @@ const PipelineDetailsPage = () => {
             path: DocsHelper.PAGES.PIPELINES,
           }}>
           <span>
-            Pipelines let you transform and process messages coming from streams. Pipelines consist of stages where
-            rules are evaluated and applied. Messages can go through one or more stages.
+            处理管道允许您转换和处理来自数据流的消息。处理管道由阶段组成，在这些阶段中评估并应用规则。消息可以经过一个或多个阶段。
             <br />
-            After each stage is completed, you can decide if messages matching all or one of the rules continue to the
-            next stage.
+            每个阶段完成后，您可以决定匹配所有或任一规则的消息是否继续进入下一阶段。
           </span>
         </PageHeader>
 

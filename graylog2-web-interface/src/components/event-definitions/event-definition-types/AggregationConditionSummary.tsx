@@ -40,7 +40,7 @@ const Expression = ({ expression = null, series }: ExpressionProps) => {
           {selectedSeries.percentile ? `, ${selectedSeries.percentile}` : null})
         </var>
       ) : (
-        <span>No series selected</span>
+        <span>未选择系列</span>
       );
     case '&&':
     case '||':

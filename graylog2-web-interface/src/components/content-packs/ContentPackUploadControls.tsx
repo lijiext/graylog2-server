@@ -46,7 +46,7 @@ const ContentPackUploadControls = () => {
 
       ContentPacksActions.create.triggerPromise(request as string).then(
         () => {
-          UserNotification.success('Content pack imported successfully', 'Success!');
+          UserNotification.success('内容包导入成功', '成功！');
           ContentPacksActions.list();
         },
         (response) => {
@@ -75,20 +75,20 @@ const ContentPackUploadControls = () => {
         id="upload-content-pack-button"
         bsStyle="info"
         onClick={openModal}>
-        Upload
+        上传
       </Button>
       <BootstrapModalForm
         onCancel={closeModal}
         show={isOpen}
         onSubmitForm={save}
-        title="Upload Content Pack"
-        submitButtonText="Upload">
+        title="上传内容包"
+        submitButtonText="上传">
         <Input
           ref={uploadInputRef}
           id="upload-content-pack"
-          label="Choose File"
+          label="选择文件"
           type="file"
-          help="Choose Content Pack from disk"
+          help="从磁盘选择内容包"
         />
       </BootstrapModalForm>
     </span>

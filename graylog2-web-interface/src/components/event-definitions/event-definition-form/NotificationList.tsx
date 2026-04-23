@@ -53,11 +53,11 @@ class NotificationList extends React.Component<
       return (
         <tr>
           <td colSpan={2}>
-            Could not find information for Notification <em>{notification.title}</em>
+            未找到通知信息 <em>{notification.title}</em>
           </td>
           <td className="actions">
             <Button bsStyle="danger" bsSize="xsmall" onClick={this.handleRemoveClick(notification.title)}>
-              Delete
+              删除
             </Button>
           </td>
         </tr>
@@ -72,7 +72,7 @@ class NotificationList extends React.Component<
         <td>{plugin?.displayName || notification.config.type}</td>
         <td className="actions">
           <Button bsStyle="danger" bsSize="xsmall" onClick={this.handleRemoveClick(notification.id)}>
-            Delete
+            删除
           </Button>
         </td>
       </tr>
@@ -91,14 +91,14 @@ class NotificationList extends React.Component<
     );
     const addNotificationButton = (
       <Button bsStyle="primary" onClick={onAddNotificationClick}>
-        Add notification
+        添加通知
       </Button>
     );
 
     if (definitionNotifications.length === 0) {
       return (
         <>
-          <p>This Event is not configured to trigger any Notifications yet.</p>
+          <p>此事件尚未配置为触发任何通知。</p>
           {addNotificationButton}
         </>
       );

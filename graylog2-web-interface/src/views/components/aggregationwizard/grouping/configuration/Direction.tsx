@@ -38,7 +38,7 @@ const Direction = ({ groupingIndex, groupingId }: Props) => (
     {({ field: { name, value, onChange, onBlur }, meta: { error } }) => (
       <Input
         id="group-by-direction"
-        label="Direction"
+        label="方向"
         error={error}
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-7">
@@ -48,7 +48,7 @@ const Direction = ({ groupingIndex, groupingId }: Props) => (
             formGroupClassName=""
             id={`${name}-row`}
             name={`direction-${groupingId}`}
-            label="Row"
+            label="行"
             onBlur={onBlur}
             onChange={() => onChange({ target: { name, value: 'row' } })}
             type="radio"
@@ -59,7 +59,7 @@ const Direction = ({ groupingIndex, groupingId }: Props) => (
             formGroupClassName=""
             id={`${name}-column`}
             name={`direction-${groupingId}`}
-            label="Column"
+            label="列"
             onBlur={onBlur}
             onChange={() => onChange({ target: { name, value: 'column' } })}
             type="radio"

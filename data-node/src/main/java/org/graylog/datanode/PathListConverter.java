@@ -43,7 +43,7 @@ public class PathListConverter implements Converter<List<Path>> {
     @Override
     public String convertTo(List<Path> value) {
         if (value == null) {
-            throw new ParameterException("String list of Paths must not be null.");
+            throw new ParameterException("路径字符串列表不能为空。");
         }
 
         return value.stream().map(Path::toString).collect(Collectors.joining(DELIMITER));

@@ -199,7 +199,7 @@ const RuleBlockForm = ({
         <span>
           {option.deprecated && (
             <Label bsStyle="warning" bsSize="xs">
-              Deprecated
+              已弃用
             </Label>
           )}
         </span>
@@ -219,7 +219,7 @@ const RuleBlockForm = ({
                   <Select
                     id={`existingBlock-select-${type}`}
                     name={`existingBlock-select-${type}`}
-                    placeholder={`Add ${type}`}
+                    placeholder={`添加 ${type}`}
                     options={options}
                     optionRenderer={optionRenderer}
                     clearable={false}
@@ -240,7 +240,7 @@ const RuleBlockForm = ({
                           trigger="click"
                           rootClose
                           placement="right"
-                          title="Function Syntax Help"
+                          title="函数语法帮助"
                           width={700}
                           overlay={
                             <RuleHelperTable
@@ -249,14 +249,14 @@ const RuleBlockForm = ({
                             />
                           }>
                           <Button bsStyle="link">
-                            <Icon name="help" title="Function Syntax Help" data-testid="funcSyntaxHelpIcon" />
+                            <Icon name="help" title="函数语法帮助" data-testid="funcSyntaxHelpIcon" />
                           </Button>
                         </OverlayTrigger>
                         {selectedBlockDict.deprecated && (
                           <DeprecatedLabel>
                             &nbsp;
                             <Label bsStyle="warning" bsSize="xs">
-                              Deprecated
+                              已弃用
                             </Label>
                           </DeprecatedLabel>
                         )}

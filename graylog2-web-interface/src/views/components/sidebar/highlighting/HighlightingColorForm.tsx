@@ -54,7 +54,7 @@ export type ColorType = StaticColorObject['type'] | GradientColorObject['type'];
 const StaticColorPicker = () => (
   <Field name="color.color">
     {({ field: { name, value, onChange }, meta }) => (
-      <Input id={name} error={meta?.error} label="Color">
+      <Input id={name} error={meta?.error} label="颜色">
         <ColorPickerPopover
           id="formatting-rule-color"
           placement="right"
@@ -124,10 +124,10 @@ const GradientColorPicker = () => (
       <>
         <Field name="color.gradient">
           {({ field: { name, value, onChange }, meta }) => (
-            <Input id={`${name}-name`} error={meta?.error} label="Gradient Name">
+            <Input id={`${name}-name`} error={meta?.error} label="渐变名称">
               <Select
                 options={GRADIENTS}
-                placeholder="Select gradient colors"
+                placeholder="选择渐变颜色"
                 value={value}
                 onChange={(newGradient) => onChange({ target: { name, value: newGradient } })}
               />
@@ -138,13 +138,13 @@ const GradientColorPicker = () => (
           {({ field: { name, value, onChange }, meta }) => (
             <Input
               id={name}
-              placeholder="Specify lowest value"
-              label="Lowest Value"
+              placeholder="指定最低值"
+              label="最低值"
               type="number"
               value={value}
               error={meta?.error}
               onChange={onChange}
-              help="The lowest value expected in the field/series."
+              help="字段/系列中预期的最低值。"
               required
             />
           )}
@@ -153,13 +153,13 @@ const GradientColorPicker = () => (
           {({ field: { name, value, onChange }, meta }) => (
             <Input
               id={name}
-              aria-label="Specify highest value"
-              label="Highest Value"
+              aria-label="指定最高值"
+              label="最高值"
               type="number"
               value={value}
               error={meta?.error}
               onChange={onChange}
-              help="The highest value expected in the field/series."
+              help="字段/系列中预期的最高值。"
               required
             />
           )}
@@ -238,13 +238,13 @@ const HighlightingColorForm = ({ field }: Props) => {
     <Field name="color.type" validate={(value) => validateColoringType(value, isNumeric)}>
       {({ field: { name, value }, meta }) => (
         <>
-          <Input id={`${name}-coloring`} label="Coloring" error={meta?.error}>
+          <Input id={`${name}-coloring`} label="着色" error={meta?.error}>
             <Container>
               <Input
                 checked={value === 'static'}
                 formGroupClassName=""
                 id={name}
-                label="Static Color"
+                label="静态颜色"
                 onChange={onChangeType}
                 type="radio"
                 value="static"
@@ -254,7 +254,7 @@ const HighlightingColorForm = ({ field }: Props) => {
                 formGroupClassName=""
                 id={name}
                 disabled={!isNumeric}
-                label="Gradient"
+                label="渐变"
                 onChange={onChangeType}
                 type="radio"
                 value="gradient"

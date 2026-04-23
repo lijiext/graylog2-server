@@ -69,7 +69,7 @@ const LocaleSelect = (
 
   const _locales = _formatLocales(locales);
 
-  return <Select {...props} placeholder="Pick a locale" options={_locales} optionRenderer={_renderOption} />;
+  return <Select {...props} placeholder="选择区域设置" options={_locales} optionRenderer={_renderOption} />;
 };
 
 export default LocaleSelect;

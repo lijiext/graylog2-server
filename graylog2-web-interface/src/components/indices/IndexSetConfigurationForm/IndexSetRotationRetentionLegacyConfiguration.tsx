@@ -74,11 +74,11 @@ const RotationStrategies = ({
 
   return (
     <IndexMaintenanceStrategiesConfiguration
-      title="Index Rotation Configuration"
+      title="索引轮转配置"
       name="rotation"
-      description="Multiple indices are used to store documents, and you can configure the strategy to determine when to rotate the currently active write index."
+      description="使用多个索引存储文档，您可以配置策略以确定何时轮换当前活动的写入索引。"
       selectPlaceholder="Select rotation strategy"
-      label="Rotation strategy"
+      label="轮转策略"
       pluginExports={PluginStore.exports('indexRotationConfig')}
       strategies={rotationStrategies}
       activeConfig={{
@@ -103,11 +103,11 @@ const RetentionConfig = ({
 
   return (
     <IndexMaintenanceStrategiesConfiguration
-      title="Index Retention Configuration"
+      title="索引保留配置"
       name="retention"
-      description="A retention strategy is used to clean up old indices"
+      description="保留策略用于清理旧索引"
       selectPlaceholder="Select retention strategy"
-      label="Retention strategy"
+      label="保留策略"
       pluginExports={PluginStore.exports('indexRetentionConfig')}
       strategies={retentionStrategies}
       retentionStrategiesContext={retentionStrategiesContext}

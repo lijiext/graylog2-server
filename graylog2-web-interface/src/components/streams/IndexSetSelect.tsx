@@ -57,7 +57,7 @@ const IndexSetSelect = ({
             }
             options={indexSetOptions}
             inputId={name}
-            placeholder="Select an index set"
+            placeholder="选择索引集"
             value={value}
           />
         </Input>

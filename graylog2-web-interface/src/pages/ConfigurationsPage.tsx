@@ -181,9 +181,9 @@ const ConfigurationsPage = () => {
   );
 
   return (
-    <DocumentTitle title="Configurations">
-      <PageHeader title="Configurations">
-        <span>You can configure system settings for different sub systems on this page.</span>
+    <DocumentTitle title="配置">
+      <PageHeader title="配置">
+        <span>您可以在本页配置不同子系统的系统设置。</span>
       </PageHeader>
 
       <ConfigletRow className="content">

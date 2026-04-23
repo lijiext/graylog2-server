@@ -38,7 +38,7 @@ const FormAdvancedOptions = ({ onChange }: FormAdvancedOptionsProps) => {
   };
 
   return (
-    <AdditionalFields title="Advanced Options" visible={isAdvancedOptionsVisible} onToggle={handleToggle}>
+    <AdditionalFields title="高级选项" visible={isAdvancedOptionsVisible} onToggle={handleToggle}>
       <ThrottlingCheckbox
         id="awsCloudWatchThrottleEnabled"
         defaultChecked={awsCloudWatchThrottleEnabled?.value}
@@ -51,8 +51,8 @@ const FormAdvancedOptions = ({ onChange }: FormAdvancedOptionsProps) => {
         value="enable-logprefix"
         defaultChecked={awsCloudWatchAddFlowLogPrefix && awsCloudWatchAddFlowLogPrefix.value}
         onChange={onChange}
-        label="Add Flow Log field name prefix"
-        help='Add field with the Flow Log prefix e. g. "src_addr" -> "flow_log_src_addr".'
+        label="添加流日志字段名称前缀"
+        help='添加带有 Flow Log 前缀的字段，例如 "src_addr" -> "flow_log_src_addr"。'
       />
 
       <Input
@@ -60,8 +60,8 @@ const FormAdvancedOptions = ({ onChange }: FormAdvancedOptionsProps) => {
         type="text"
         value={overrideSource?.value}
         onChange={onChange}
-        label="Override Source (optional)"
-        help="The message source is set to aws-kinesis-raw-logs by default. If desired, you may override it with a custom value."
+        label="覆盖源（可选）"
+        help="消息源默认设置为 aws-kinesis-raw-logs。如有需要，您可以使用自定义值覆盖它。"
       />
 
       <Input
@@ -69,8 +69,8 @@ const FormAdvancedOptions = ({ onChange }: FormAdvancedOptionsProps) => {
         type="number"
         value={awsCloudWatchBatchSize.value || awsCloudWatchBatchSize.defaultValue}
         onChange={onChange}
-        label="Kinesis Record batch size"
-        help="The number of Kinesis records to fetch at a time. Each record may be up to 1MB in size. The AWS default is 10,000. Enter a smaller value to process smaller chunks at a time."
+        label="Kinesis 记录批次大小"
+        help="每次获取的 Kinesis 记录数。每条记录大小可达 1MB。AWS 默认值为 10,000。输入较小的值可分批次处理较小的数据块。"
       />
     </AdditionalFields>
   );

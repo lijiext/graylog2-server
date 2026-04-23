@@ -202,12 +202,12 @@ const NumberRefExpression = ({
   return (
     <Col md={6}>
       <FormGroup controlId="aggregation-function" validationState={validation.message ? 'error' : null}>
-        {renderLabel && <ControlLabel>If</ControlLabel>}
+        {renderLabel && <ControlLabel>如果</ControlLabel>}
         <Row className="row-sm">
           <Col md={12 / elements}>
             <Select
               className="aggregation-function"
-              placeholder="Select Function"
+              placeholder="选择函数"
               onChange={handleAggregationFunctionChange}
               options={formatFunctions(aggregationFunctions)}
               clearable={false}
@@ -218,7 +218,7 @@ const NumberRefExpression = ({
             <Col md={12 / elements}>
               <Select
                 className="aggregation-function-strategy"
-                placeholder="Select Strategy (Optional)"
+                placeholder="选择策略（可选）"
                 onChange={(newValue) => handleFieldChange('strategy', newValue)}
                 options={percentageStrategyOptions}
                 value={series.strategy}
@@ -229,7 +229,7 @@ const NumberRefExpression = ({
             <Select
               className="aggregation-function-field"
               ignoreAccents={false}
-              placeholder="Select Field (Optional)"
+              placeholder="选择字段（可选）"
               onChange={handleAggregationFieldChange}
               options={fieldOptions}
               optionRenderer={optionRenderer}
@@ -241,7 +241,7 @@ const NumberRefExpression = ({
             <Col md={12 / elements}>
               <Select
                 className="aggregation-function-percentile"
-                placeholder="Select Percentile"
+                placeholder="选择百分位数"
                 onChange={(newValue) => handleFieldChange('percentile', newValue)}
                 options={percentileOptions}
                 value={series.percentile}

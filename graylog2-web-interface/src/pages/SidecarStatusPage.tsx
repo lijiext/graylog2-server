@@ -82,14 +82,14 @@ class SidecarStatusPage extends React.Component<
 
     if (isLoading) {
       return (
-        <DocumentTitle title="Sidecar status">
+        <DocumentTitle title="Sidecar 状态">
           <Spinner />
         </DocumentTitle>
       );
     }
 
     return (
-      <DocumentTitle title={`Sidecar ${sidecar.node_name} status`}>
+      <DocumentTitle title={`Sidecar ${sidecar.node_name} 状态`}>
         <SidecarsPageNavigation />
         <PageHeader
           title={
@@ -101,7 +101,7 @@ class SidecarStatusPage extends React.Component<
             title: 'Sidecars documentation',
             path: DocsHelper.PAGES.COLLECTOR_STATUS,
           }}>
-          <span>A status overview of the Sidecar.</span>
+          <span>Sidecar 的状态概览。</span>
         </PageHeader>
 
         <SidecarStatus sidecar={sidecar} collectors={collectors} />

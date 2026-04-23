@@ -33,11 +33,10 @@ const Welcome = ({ currentStep, onTriggerStep, hideActions }: MigrationStepCompo
     <>
       <Row>
         <Col md={6}>
-          <h3>Welcome</h3>
-          <p>An In-Place migration will migrate the data folder of your existing cluster to a Data Node cluster.</p>
+          <h3>欢迎</h3>
+          <p>就地迁移将把现有集群的数据文件夹迁移到数据节点集群。</p>
           <p>
-            To start please install Data Node on every OS/ES node from your previous setup. You can find more
-            information on how to download and install the Data Node{' '}
+            要开始，请从您之前的设置中在每台 OS/ES 节点上安装数据节点。您可以找到有关如何下载和安装数据节点的更多信息{' '}
             <DocumentationLink page="graylog-data-node" text="here" />.
           </p>
           <MigrationDatanodeList />

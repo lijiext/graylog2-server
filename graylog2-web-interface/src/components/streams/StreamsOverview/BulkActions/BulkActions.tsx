@@ -62,13 +62,13 @@ const BulkActions = ({ indexSets }: Props) => {
         const notDeletedStreamIds = failures.map(({ entity_id }) => entity_id);
         setSelectedEntities(notDeletedStreamIds);
         UserNotification.error(
-          `${notDeletedStreamIds.length} out of ${selectedItemsAmount} selected ${descriptor} could not be ${actionPastTense}.`,
+          `${notDeletedStreamIds.length} 个选定的 ${descriptor} 无法 ${actionPastTense}，共 ${selectedItemsAmount} 个。`,
         );
       } else {
         setSelectedEntities([]);
         UserNotification.success(
-          `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionPastTense} successfully.`,
-          'Success',
+          `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionPastTense} 成功。`,
+          '成功',
         );
       }
     },
@@ -83,7 +83,7 @@ const BulkActions = ({ indexSets }: Props) => {
       fetch('POST', qualifyUrl(ApiRoutes.StreamsApiController.bulk_delete().url), { entity_ids: selectedEntities })
         .then(({ failures }) => handleFailures(failures, 'deleted'))
         .catch((error) => {
-          UserNotification.error(`An error occurred while deleting streams. ${error}`);
+          UserNotification.error(`删除数据流时发生错误。${error}`);
         })
         .finally(() => {
           refetchStreams();
@@ -103,7 +103,7 @@ const BulkActions = ({ indexSets }: Props) => {
       )}
       <BulkActionsDropdown>
         <IfPermitted permissions="indexsets:read">
-          <MenuItem onSelect={toggleAssignIndexSetModal}>Assign index set</MenuItem>
+          <MenuItem onSelect={toggleAssignIndexSetModal}>分配索引集</MenuItem>
         </IfPermitted>
         <SearchStreamsAction />
         <StartStreamsAction handleFailures={handleFailures} refetchStreams={refetchStreams} descriptor={descriptor} />

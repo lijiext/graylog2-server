@@ -47,13 +47,13 @@ const useStreamOutputRuleMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Creating stream output filter rule failed with status: ${errorThrown}`,
-        'Could not create stream output filter rule',
+        `创建数据流输出过滤器规则失败，状态为：${errorThrown}`,
+        '无法创建数据流输出过滤规则',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Stream Output filter rule has been successfully created.', 'Success!');
+      UserNotification.success('数据流输出过滤规则已成功创建。', '成功！');
       invalidateStreamQueries();
     },
   });
@@ -62,13 +62,13 @@ const useStreamOutputRuleMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Updating stream output filter rule failed with status: ${errorThrown}`,
-        'Could not update stream output filter rule',
+        `更新数据流输出过滤器规则失败，状态为：${errorThrown}`,
+        '无法更新数据流输出过滤规则',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Stream Output filter rule has been successfully updated.', 'Success!');
+      UserNotification.success('数据流输出过滤器规则已成功更新。', '成功！');
       invalidateStreamQueries();
     },
   });
@@ -77,13 +77,13 @@ const useStreamOutputRuleMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Deleting stream output filter rule failed with status: ${errorThrown}`,
-        'Could not delete stream output filter rule',
+        `删除数据流输出过滤器规则失败，状态为：${errorThrown}`,
+        '无法删除数据流输出过滤规则',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Stream Output filter rule has been successfully removed.', 'Success!');
+      UserNotification.success('数据流输出过滤规则已成功移除。', '成功！');
       invalidateStreamQueries();
     },
   });

@@ -46,7 +46,7 @@ class IndexSummary extends React.Component<Props, { showDetails: boolean }> {
     if (index.is_deflector) {
       labels.push(
         <Label key={`${this.props.name}-deflector-label`} bsStyle="primary">
-          active write index
+          活动写入索引
         </Label>,
       );
     }
@@ -74,7 +74,7 @@ class IndexSummary extends React.Component<Props, { showDetails: boolean }> {
     if (this.props.isDeflector) {
       return (
         <span>
-          Contains messages up to <RelativeTime dateTime={new Date()} />
+          包含最多 <RelativeTime dateTime={new Date()} />
         </span>
       );
     }
@@ -97,14 +97,14 @@ class IndexSummary extends React.Component<Props, { showDetails: boolean }> {
     if (this.props.indexRange.begin === 0) {
       return (
         <span>
-          Contains messages up to <RelativeTime dateTime={this.props.indexRange.end} />
+          包含最多 <RelativeTime dateTime={this.props.indexRange.end} />
         </span>
       );
     }
 
     return (
       <span>
-        Contains messages from <RelativeTime dateTime={this.props.indexRange.begin} /> up to{' '}
+        包含来自的日志消息 <RelativeTime dateTime={this.props.indexRange.begin} /> 最多{' '}
         <RelativeTime dateTime={this.props.indexRange.end} />
       </span>
     );
@@ -114,14 +114,14 @@ class IndexSummary extends React.Component<Props, { showDetails: boolean }> {
     if (this.state.showDetails) {
       return (
         <span className="index-more-actions">
-          <Icon name="arrow_drop_down" /> Hide Details / Actions
+          <Icon name="arrow_drop_down" /> 隐藏详情/操作
         </span>
       );
     }
 
     return (
       <span className="index-more-actions">
-        <Icon name="arrow_right" /> Show Details / Actions
+        <Icon name="arrow_right" /> 显示详细信息 / 操作
       </span>
     );
   };

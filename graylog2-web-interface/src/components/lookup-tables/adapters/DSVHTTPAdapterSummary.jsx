@@ -21,31 +21,31 @@ const DSVHTTPAdapterSummary = ({ dataAdapter }) => {
 
   return (
     <dl>
-      <dt>File URL</dt>
+      <dt>文件 URL</dt>
       <dd>{config.url}</dd>
-      <dt>Separator</dt>
+      <dt>分隔符</dt>
       <dd>
         <code>{config.separator}</code>
       </dd>
-      <dt>Line Separator</dt>
+      <dt>行分隔符</dt>
       <dd>
         <code>{config.line_separator}</code>
       </dd>
-      <dt>Quote character</dt>
+      <dt>引号字符</dt>
       <dd>
         <code>{config.quotechar}</code>
       </dd>
-      <dt>Ignore lines starting with</dt>
+      <dt>忽略以开头的行</dt>
       <dd>
         <code>{config.ignorechar}</code>
       </dd>
-      <dt>Key column</dt>
+      <dt>键列</dt>
       <dd>{config.key_column}</dd>
-      <dt>Value column</dt>
+      <dt>值列</dt>
       <dd>{config.value_column}</dd>
-      <dt>Check interval</dt>
+      <dt>检查间隔</dt>
       <dd>{config.check_interval} seconds</dd>
-      <dt>Case-insensitive lookup</dt>
+      <dt>不区分大小写的查找</dt>
       <dd>{config.case_insensitive_lookup ? 'yes' : 'no'}</dd>
     </dl>
   );

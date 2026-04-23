@@ -81,7 +81,7 @@ const MultiSelectField = ({ name, field, title, error, value, onChange, values }
         value={selectedValue}
         multi
         onChange={onSelect}
-        aria-label={`Select ${field.title}`}
+        aria-label={`选择 ${field.title}`}
         displayKey="key"
         inputId="multi-select-visualization"
       />

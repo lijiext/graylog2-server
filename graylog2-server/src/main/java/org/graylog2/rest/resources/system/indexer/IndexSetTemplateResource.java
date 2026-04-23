@@ -125,7 +125,7 @@ public class IndexSetTemplateResource extends RestResource {
     @GET
     @Path("/built-in")
     @Timed
-    @ApiOperation(value = "Gets built-in templates")
+    @ApiOperation(value = "获取内置模板")
     public List<IndexSetTemplateResponse> builtIns(@ApiParam(name = "warm_tier_enabled")
                                                    @QueryParam("warm_tier_enabled") boolean warmTierEnabled) {
         checkPermission(RestPermissions.INDEX_SET_TEMPLATES_READ);

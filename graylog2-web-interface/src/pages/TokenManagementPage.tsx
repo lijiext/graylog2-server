@@ -25,10 +25,10 @@ const TokenManagementPage = () => {
   const productName = useProductName();
 
   return (
-    <DocumentTitle title="Token Management">
+    <DocumentTitle title="令牌管理">
       <UsersPageNavigation />
-      <PageHeader title="Token Management">
-        <span>Access tokens overview configured for {productName}.</span>
+      <PageHeader title="令牌管理">
+        <span>为配置了访问令牌概览 {productName}.</span>
       </PageHeader>
 
       <TokenManagement />

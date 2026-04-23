@@ -104,10 +104,10 @@ const InputStateBadge = ({ input }: Props) => {
         placement="bottom"
         overlay={popOverText}
         rootClose
-        title={`Input States for ${input.title}`}>
+        title={`${input.title} 的输入状态`}>
         <Label
           bsStyle={_labelClassForState(sorted)}
-          title="Click to show details"
+          title="点击显示详细信息"
           bsSize="xsmall"
           style={{ cursor: 'pointer' }}>
           {_textForState(sorted)}

@@ -60,7 +60,7 @@ const ListItem = forwardRef<HTMLDivElement, ListItemProps>(
       </DragHandle>
       <ColumnTitle>{item.title === 'unknown' ? <UnknownAttributeTitle /> : item.title}</ColumnTitle>
       <div>
-        <IconButton name="delete" title={`Remove ${item.title} column`} onClick={onRemove} />
+        <IconButton name="delete" title={`移除 ${item.title} 列`} onClick={onRemove} />
       </div>
     </ListItemContainer>
   ),

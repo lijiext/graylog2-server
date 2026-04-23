@@ -55,15 +55,15 @@ const JournalState = ({ nodeId }: Props) => {
   const _metrics = MetricsExtractor.getValuesForNode(nodeMetrics, metricNames);
 
   if (Object.keys(_metrics).length === 0) {
-    return <span>Journal metrics unavailable.</span>;
+    return <span>Journal 指标不可用。</span>;
   }
 
   return (
     <span>
-      The journal contains <strong>{numeral(_metrics.entriesUncommitted).format('0,0')} unprocessed messages</strong> in{' '}
+      日志包含 <strong>{numeral(_metrics.entriesUncommitted).format('0,0')} 未处理的日志消息</strong> in{' '}
       {_metrics.segments} <Pluralize value={_metrics.segments} singular="segment" plural="segments" />.{' '}
-      <strong>{numeral(_metrics.append).format('0,0')} messages</strong> appended,{' '}
-      <strong>{numeral(_metrics.read).format('0,0')} messages</strong> read in the last second.
+      <strong>{numeral(_metrics.append).format('0,0')} messages</strong> 已附加，{' '}
+      <strong>{numeral(_metrics.read).format('0,0')} messages</strong> 最近一秒内读取。
     </span>
   );
 };

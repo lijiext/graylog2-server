@@ -46,7 +46,7 @@ type Props = React.PropsWithChildren<{ onBackClick?: (() => void) | false }>;
 
 const PopoverTitle = ({ children = null, onBackClick = false }: Props) => (
   <Title>
-    {onBackClick && <StyledIconButton size="xs" name="arrow_back" title="Back" onClick={onBackClick} />}
+    {onBackClick && <StyledIconButton size="xs" name="arrow_back" title="返回" onClick={onBackClick} />}
     <StyledLabel>{children}</StyledLabel>
   </Title>
 );

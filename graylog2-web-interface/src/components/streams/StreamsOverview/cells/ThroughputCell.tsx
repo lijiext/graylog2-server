@@ -50,7 +50,7 @@ const ThroughputCell = ({ stream }: Props) => {
     })
     .reduce((throughput1, throughput2) => throughput1 + throughput2, 0);
 
-  return <>{throughput} msg/s</>;
+  return <>{throughput} 条/秒</>;
 };
 
 export default ThroughputCell;

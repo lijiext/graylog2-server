@@ -218,7 +218,7 @@ const RelativeRangeSelectInner = ({
         name={`relative-timerange-${fieldName}-unit`}
         onChange={_onChangeUnit}
         options={availableRangeTypes}
-        placeholder="Select a range length"
+        placeholder="选择范围长度"
         value={unit}
       />
 

@@ -48,18 +48,17 @@ const IndexSetProfileConfiguration = ({
   return (
     <div>
       <StyledAlert>
-        With index set field type{' '}
+        使用索引集字段类型{' '}
         <Link target="_blank" to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.OVERVIEW}>
           profiles
         </Link>{' '}
-        you can bundle up custom field types into profiles. You can assign any profile to this index set. To see and use
-        profile setting for index set, you have to rotate indices.
+        您可以将自定义字段类型打包到配置文件中。您可以将任何配置文件分配到此索引集。要查看和使用索引集的配置文件设置，您必须轮转索引。
       </StyledAlert>
       <Row>
         <Col md={12}>
-          <Input id={name} label="Index field type mapping profile (optional)">
+          <Input id={name} label="索引字段类型映射配置文件（可选）">
             <StyledSelect
-              placeholder="Select index field type profile"
+              placeholder="选择索引字段类型配置文件"
               inputId={name}
               options={options}
               value={value}

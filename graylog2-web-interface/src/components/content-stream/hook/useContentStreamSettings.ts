@@ -105,8 +105,8 @@ const useContentStreamSettings = (): {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Enabling content stream failed with status: ${errorThrown}`,
-        'Could not cancel instant archiving jobs',
+        `启用内容流失败，状态为：${errorThrown}`,
+        '无法取消即时归档任务',
       );
     },
   });

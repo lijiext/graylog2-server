@@ -167,10 +167,10 @@ const NodeListItem = ({
   if (nodeId) {
     return (
       <StyledListGroupItem>
-        <StyledTitle>Node ID:</StyledTitle> <Link to={Routes.SYSTEM.CLUSTER.NODE_SHOW(nodeId)}>{nodeId}</Link>
+        <StyledTitle>节点 ID:</StyledTitle> <Link to={Routes.SYSTEM.CLUSTER.NODE_SHOW(nodeId)}>{nodeId}</Link>
         {detailedMessage && (
           <>
-            <StyledTitle>Message:</StyledTitle>
+            <StyledTitle>消息:</StyledTitle>
             <InputMessage>{detailedMessage}</InputMessage>
           </>
         )}
@@ -182,7 +182,7 @@ const NodeListItem = ({
     <StyledListGroupItem key={detailedMessage}>
       {detailedMessage && (
         <>
-          <StyledTitle>Message:</StyledTitle>
+          <StyledTitle>消息:</StyledTitle>
           <InputMessage>{detailedMessage}</InputMessage>
         </>
       )}
@@ -237,52 +237,52 @@ const InputDiagnosisPage = () => {
     <>
       <Header>
         <Button onClick={() => navigate(Routes.SYSTEM.INPUTS)}>
-          <Icon name="arrow_left_alt" size="sm" /> Back
+          <Icon name="arrow_left_alt" size="sm" /> 返回
         </Button>
         <LeftCol>
-          <h1>Input Diagnosis: {input?.name}</h1>
+          <h1>输入诊断: {input?.name}</h1>
 
-          <p>Input Diagnosis can be used to test inputs and parsing without writing any data to the search cluster.</p>
+          <p>输入诊断可用于测试输入和解析，而无需向搜索集群写入任何数据。</p>
         </LeftCol>
       </Header>
       {input && (
         <StyledSectionGrid $columns="1fr 1fr" $rows="1fr 1fr">
           <StyledSectionGrid $columns="1fr" $rows="1fr 1fr">
             <Section
-              title="Information"
+              title="信息"
               preHeaderSection={<StatusColorIndicator radius="50%" />}
               headerLeftSection={
                 <HelpPopoverButton
-                  helpText={`This Input Is Listening On:
+                  helpText={`此输入正在监听:
                         ${DIAGNOSIS_HELP.INPUT_LISTENING_ON(productName)}
             
-                        This Input is Listening For:
+                        此输入正在监听:
                         ${DIAGNOSIS_HELP.INPUT_LISTENING_FOR}
                         `}
                 />
               }>
-              <StyledP>The address on which the Input is being run.</StyledP>
+              <StyledP>输入端运行的地址。</StyledP>
               <StyledListGroup>
                 <StyledListGroupItem>
-                  <StyledTitle>Input Title:</StyledTitle>
+                  <StyledTitle>输入标题:</StyledTitle>
                   {input.title}
                 </StyledListGroupItem>
                 <StyledListGroupItem>
-                  <StyledTitle>Input Type:</StyledTitle>
+                  <StyledTitle>输入类型:</StyledTitle>
                   {input.name}
                 </StyledListGroupItem>
                 <StyledListGroupItem>
-                  <StyledTitle>This Input is running on:</StyledTitle>
+                  <StyledTitle>此输入端运行于:</StyledTitle>
                   {input.global ? `all ${productName} nodes` : <LinkToNode nodeId={input.node} />}
                 </StyledListGroupItem>
                 {input.attributes?.bind_address && input.attributes?.port && (
                   <>
                     <StyledListGroupItem>
-                      <StyledTitle>This Input is listening on:</StyledTitle>Bind address{' '}
-                      {input.attributes?.bind_address}, Port {input.attributes?.port}.
+                      <StyledTitle>此输入端正在监听:</StyledTitle>绑定地址{' '}
+                      {input.attributes?.bind_address}，端口 {input.attributes?.port}.
                     </StyledListGroupItem>
                     <StyledListGroupItem>
-                      <StyledTitle>This Input is listening for:</StyledTitle>
+                      <StyledTitle>此输入端正在监听:</StyledTitle>
                       {'tcp_keepalive' in (input.attributes || {}) ? 'TCP Traffic.' : 'UDP Traffic.'}
                     </StyledListGroupItem>
                   </>
@@ -290,7 +290,7 @@ const InputDiagnosisPage = () => {
               </StyledListGroup>
             </Section>
             <Section
-              title="State"
+              title="状态"
               preHeaderSection={
                 <StatusColorIndicator
                   radius="50%"
@@ -300,83 +300,68 @@ const InputDiagnosisPage = () => {
               }
               headerLeftSection={<HelpPopoverButton helpText={DIAGNOSIS_HELP.INPUT_STATE} />}>
               <StyledP>
-                Number of {productName} nodes the Input is configured to run, and on how many it is running. If any are
-                not running, click to see any associated error messages.
+                数量 {productName} 输入端配置的节点数量，以及实际运行的节点数量。如果有任何节点未运行，请点击以查看相关的错误消息。
               </StyledP>
               <StyledListGroup>
                 {Object.keys(inputNodeStates.states).map((state: InputState) => (
                   <StateListItem key={state} state={state} inputNodeStates={inputNodeStates} />
                 ))}
                 {Object.keys(inputNodeStates.states).length === 0 && (
-                  <StyledListGroupItem>Input is not running.</StyledListGroupItem>
+                  <StyledListGroupItem>输入端未运行。</StyledListGroupItem>
                 )}
               </StyledListGroup>
             </Section>
           </StyledSectionGrid>
-          <Section title="Troubleshooting">
+          <Section title="故障排查">
             <TroubleshootingContainer>
               <Alert>
                 <p>
-                  <strong>If Input is in a failed state.</strong>
+                  <strong>如果输入端处于失败状态。</strong>
                 </p>
                 <StyledList>
                   <li>
-                    When an Input fails on one or more {productName} nodes, the Message field of the State panel will
-                    show a short error message; a full length error message may be found in the {productName} server.log
-                    file.
+                    当一个输入端在一个或多个节点上失败时 {productName} 节点，状态面板的消息字段将显示简短的错误消息；完整长度的错误消息可在 {productName} server.log 文件。
                   </li>
                   <li>
-                    An input configured to use a specified port will fail if that port is privileged (and {productName}{' '}
-                    is not running as root), or already in use by another Input or application.
+                    配置为使用指定端口的输入端如果该端口是特权端口将会失败（且 {productName}{' '}
+                    不是以 root 身份运行)，或已被另一个输入端或应用程序占用。
                   </li>
-                  <li>An input will fail if it is unable to route to the specified IP.</li>
+                  <li>如果无法将输入路由到指定的 IP，则输入将失败。</li>
                   <li>
-                    An input that requires an internet connection in order to connect to an API will fail if it has no
-                    internet connection or else is unable to route to that API.
+                    需要互联网连接才能连接到 API 的输入端，如果无法连接互联网或无法路由到该 API，将会失败。
                   </li>
-                  <li>A TCP input will fail if it has an invalid or expired certificate.</li>
+                  <li>如果 TCP 输入端具有无效或过期的证书，则将会失败。</li>
                   <li>
-                    Inputs that connect to an external API (for example, the Microsoft Azure Input) require
-                    configuration changes at the source to enable {productName} to collect logs. The steps required will
-                    be detailed on the appropriate documentation sub-page for that Input. An input that connects to an
-                    external API will fail if incorrectly configured at either the {productName} side, or (as
-                    applicable) the side hosting the API.
+                    连接到外部 API（例如 Microsoft Azure 输入端）的输入端需要在源端进行配置更改以启用 {productName} 用于收集日志。所需步骤将在该输入端对应的文档子页中详细说明。如果连接到外部 API 的输入端配置错误，将会失败，无论错误出现在 {productName} 侧，或（如适用）托管 API 的侧。
                   </li>
                 </StyledList>
                 <br />
                 <p>
-                  <strong>If Input is running on all nodes, but messages are not reaching the Input.</strong>
+                  <strong>如果输入端在所有节点上运行，但消息未到达输入端。</strong>
                 </p>
                 <StyledList>
                   <li>
-                    Check the Network I/O field of the Received Traffic panel. If no traffic is showing here, that
-                    suggests a connectivity problem.
+                    检查“接收流量”面板中的网络 I/O 字段。如果此处未显示任何流量，则表明存在连接问题。
                     <StyledList>
                       <li>
-                        If no traffic is showing, first troubleshoot network connectivity between the {productName}{' '}
-                        server(s) and the log source. This may be achieved by running ping, telnet or tracert commands.
+                        如果未显示任何流量，请首先排查之间的网络连接问题 {productName}{' '}
+                        服务器和日志源。这可以通过运行 ping、telnet 或 tracert 命令来实现。
                       </li>
                       <li>
-                        For Inputs that connect to an external API, check the {productName} server.log file -
-                        authentication failures (invalid logins or permissions to perform the action on the API) will be
-                        printed in full here.
+                        对于连接到外部 API 的输入端，请检查 {productName} server.log 文件 - 认证失败（无效的登录或执行 API 操作所需的权限）将在此处完整打印。
                       </li>
                     </StyledList>
                   </li>
 
                   <li>
-                    If traffic is showing on the Network I/O field of the Received Traffic panel, but no messages have
-                    been received, this suggests the messages are not being sent in a format appropriate to the Input.
+                    如果“接收流量”面板中的网络 I/O 字段显示有流量，但未收到任何消息，则表明消息未以适合输入端的格式发送。
                     <StyledList>
-                      <li>TCP input cannot read UDP traffic, and vice versa.</li>
+                      <li>TCP 输入端无法读取 UDP 流量，反之亦然。</li>
                       <li>
-                        A message with no content will be discarded. This can be monitored via the Empty Messages
-                        Discarded field.
+                        内容为空的消息将被丢弃。可通过“已丢弃的空消息”字段进行监控。
                       </li>
                       <li>
-                        Listener Inputs expect messages in a limited range of formats and may be unable to read messages
-                        in foreign formats. For troubleshooting purposes, the Raw Text Input has the most permissive
-                        requirements.
+                        监听器输入端期望消息以有限的格式范围接收，可能无法读取其他格式的消息。出于故障排查目的，原始文本输入端的要求最为宽松。
                       </li>
                     </StyledList>
                   </li>
@@ -384,16 +369,12 @@ const InputDiagnosisPage = () => {
                 <br />
                 <p>
                   <strong>
-                    If Input is running on all nodes, messages are reaching the Input, but some (or all) are showing as
-                    Message Errors.
+                    如果输入端在所有节点上运行，消息已到达输入端，但部分（或全部）显示为消息错误。
                   </strong>
                 </p>
                 <StyledList>
                   <li>
-                    On Licensed Enterprise clusters, Failure Processing can be enabled to allow storage of messages that
-                    error at each stage - input, processing, and writing to the search cluster, along with details of
-                    the failure - see the failure_cause and failure_details fields. Navigate to the Message Error panel
-                    and click on the message count to examine individual failed messages.
+                    在已授权的 Enterprise 集群上，可启用故障处理功能，以存储在各阶段（输入、处理和写入搜索集群）出错的日志消息，并记录故障详情——请查看 failure_cause 和 failure_details 字段。导航至消息错误面板，点击消息数量以检查单个失败的日志消息。
                   </li>
                 </StyledList>
               </Alert>
@@ -406,38 +387,38 @@ const InputDiagnosisPage = () => {
               }
               headerLeftSection={
                 <HelpPopoverButton
-                  helpText={`Empty Messages discarded:
+                  helpText={`丢弃的空消息:
                 ${DIAGNOSIS_HELP.EMPTY_MESSAGES_DISCARDED}
 
-                Network I/O:
+                网络 I/O:
                 ${DIAGNOSIS_HELP.NETWORK_IO}`}
                 />
               }
-              title="Received Traffic">
+              title="接收流量">
               <StyledP>
-                Messages and network traffic that has reached the input. Note: metrics show the last 15 minutes only.
+                到达输入端的消息和网络流量。注意：指标仅显示最近 15 分钟的数据。
               </StyledP>
               {inputMetrics && (
                 <StyledListGroup>
                   <StyledListGroupItem>
-                    <StyledTitle>Total Messages received by Input:</StyledTitle>
+                    <StyledTitle>输入端接收的总消息数:</StyledTitle>
                     {inputMetrics.incomingMessagesTotal} events
                   </StyledListGroupItem>
                   <StyledListGroupItem>
-                    <StyledTitle>Empty Messages discarded:</StyledTitle>
+                    <StyledTitle>丢弃的空消息：</StyledTitle>
                     {inputMetrics.emptyMessages}
                   </StyledListGroupItem>
                   {Number.isInteger(inputMetrics.open_connections) &&
                     Number.isInteger(inputMetrics.total_connections) && (
                       <StyledListGroupItem>
                         <StyledTitle>Active Connections:</StyledTitle>
-                        {inputMetrics.open_connections}&nbsp; ({inputMetrics.total_connections} total)
+                        {inputMetrics.open_connections}&nbsp; ({inputMetrics.total_connections} 总计)
                       </StyledListGroupItem>
                     )}
                   {Number.isInteger(inputMetrics.read_bytes_1sec) &&
                     Number.isInteger(inputMetrics.read_bytes_total) && (
                       <StyledListGroupItem>
-                        <StyledTitle>Network I/O:</StyledTitle>
+                        <StyledTitle>网络 I/O:</StyledTitle>
                         <NetworkStats
                           readBytes1Sec={inputMetrics.read_bytes_1sec}
                           readBytesTotal={inputMetrics.read_bytes_total}
@@ -453,12 +434,11 @@ const InputDiagnosisPage = () => {
           </StyledSectionGrid>
           <Section
             preHeaderSection={<StatusColorIndicator radius="50%" bsStyle={hasReceivedMessage ? 'success' : 'gray'} />}
-            title="Received Message count by Stream"
+            title="按数据流统计的接收消息数"
             headerLeftSection={<HelpPopoverButton helpText={DIAGNOSIS_HELP.RECEIVED_MESSAGE_COUNT_BY_STREAM} />}
             actions={<ShowReceivedMessagesButton input={input} />}>
             <StyledP>
-              Messages successfully ingested from this Input in the last 15 minutes. Click on the Stream to inspect the
-              messages.
+              过去 15 分钟内从此输入端成功摄入的消息。点击数据流以检查消息。
             </StyledP>
             {inputMetrics.stream_message_count?.length ? (
               <StyledListGroup>
@@ -476,7 +456,7 @@ const InputDiagnosisPage = () => {
               </StyledListGroup>
             ) : (
               <StyledP>
-                <em>No messages from this Input were routed into Streams in the last 15 minutes.</em>
+                <em>过去 15 分钟内，此输入端没有消息被路由到数据流。</em>
               </StyledP>
             )}
           </Section>

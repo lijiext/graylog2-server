@@ -1,15 +1,15 @@
 <#if _title>
-An input has failed
+输入失败
 </#if>
 
 <#if _description>
-Input ${input_id} is failing on node ${node_id} for this reason:
-   »${reason}«.
-This means that you are unable to receive any messages from this input.
-This is mostly an indication of a misconfiguration or an error.
+输入端 ${input_id} 在节点 ${node_id} 上失败，原因如下：
+   »${reason}«。
+这意味着您无法从该输入端接收任何消息。
+这通常表示配置错误或发生了错误。
     <#if _cloud == false>
         <#if SYSTEM_INPUTS?has_content>
-Click here to solve this: ${SYSTEM_INPUTS}
+点击此处解决此问题：${SYSTEM_INPUTS}
         </#if>
     </#if>
 </#if>

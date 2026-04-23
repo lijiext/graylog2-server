@@ -74,9 +74,9 @@ public class StaticFieldsResource extends RestResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Add a static field to an input")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
-            @ApiResponse(code = 400, message = "Field/Key is reserved."),
-            @ApiResponse(code = 400, message = "Missing or invalid configuration.")
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
+            @ApiResponse(code = 400, message = "字段/键已保留。"),
+            @ApiResponse(code = 400, message = "配置缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.STATIC_FIELD_CREATE)
     public Response create(@ApiParam(name = "inputId", required = true)
@@ -129,8 +129,8 @@ public class StaticFieldsResource extends RestResource {
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(value = "Remove static field of an input")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
-            @ApiResponse(code = 404, message = "No such static field.")
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
+            @ApiResponse(code = 404, message = "不存在静态字段。")
     })
     @Path("/{key}")
     @AuditEvent(type = AuditEventTypes.STATIC_FIELD_DELETE)

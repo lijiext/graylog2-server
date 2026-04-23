@@ -109,11 +109,11 @@ class FieldsList extends React.Component<
           <ButtonToolbar>
             {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             <Button bsStyle="danger" bsSize="xsmall" onClick={this.handleRemoveClick(fieldName)}>
-              Remove Field
+              移除字段
             </Button>
             {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             <Button bsStyle="primary" bsSize="xsmall" onClick={this.handleEditClick(fieldName)}>
-              Edit
+              编辑
             </Button>
           </ButtonToolbar>
         </td>
@@ -127,14 +127,14 @@ class FieldsList extends React.Component<
     const fieldNames = Object.keys(fields).sort(naturalSort);
     const addCustomFieldButton = (
       <Button bsStyle="primary" onClick={this.handleAddFieldClick}>
-        Add custom field
+        添加自定义字段
       </Button>
     );
 
     if (fieldNames.length === 0) {
       return (
         <>
-          <p>This Event does not have any custom Fields yet.</p>
+          <p>此事件尚未有任何自定义字段。</p>
           {addCustomFieldButton}
         </>
       );

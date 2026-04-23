@@ -131,7 +131,7 @@ public class HTTPAlarmCallback implements AlarmCallback {
     public void checkConfiguration() throws ConfigurationException {
         final String url = configuration.getString(CK_URL);
         if (isNullOrEmpty(url)) {
-            throw new ConfigurationException("URL parameter is missing.");
+            throw new ConfigurationException("缺少 URL 参数。");
         }
 
         try {

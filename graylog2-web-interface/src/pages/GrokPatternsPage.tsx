@@ -20,7 +20,7 @@ import GrokPatterns from 'components/grok-patterns/GrokPatterns';
 import { DocumentTitle } from 'components/common';
 
 const GrokPatternsPage = () => (
-  <DocumentTitle title="Grok patterns">
+  <DocumentTitle title="Grok 模式">
     <GrokPatterns />
   </DocumentTitle>
 );

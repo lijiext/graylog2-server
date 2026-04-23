@@ -20,7 +20,7 @@ import ActionDropdown from 'views/components/common/ActionDropdown';
 import { IconButton } from 'components/common';
 
 const WidgetActionDropdown = ({ children }: React.PropsWithChildren) => {
-  const widgetActionDropdownCaret = <IconButton name="keyboard_arrow_down" title="Open actions dropdown" />;
+  const widgetActionDropdownCaret = <IconButton name="keyboard_arrow_down" title="打开操作下拉菜单" />;
 
   return <ActionDropdown element={widgetActionDropdownCaret}>{children}</ActionDropdown>;
 };

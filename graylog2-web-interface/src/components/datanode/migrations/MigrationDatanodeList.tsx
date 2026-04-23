@@ -45,11 +45,10 @@ const MigrationDatanodeList = ({ showProvisioningState = true }: Props) => {
         <>
           <p>
             <StyledIcon name="info" />
-            There are no Data Nodes found.
+            未找到任何数据节点。
           </p>
-          <Alert bsStyle="warning" title="No Data Nodes found">
-            Please start at least a Data Node to continue the migration process. You can find more information on how to
-            start a Data Nodes in our <DocumentationLink page="graylog-data-node" text="documentation" />.
+          <Alert bsStyle="warning" title="未找到数据节点">
+            请至少启动一个数据节点以继续迁移过程。您可以在我们的 <DocumentationLink page="graylog-data-node" text="documentation" />.
           </Alert>
           <p>
             <Spinner text="Looking for Data Nodes..." />
@@ -57,22 +56,21 @@ const MigrationDatanodeList = ({ showProvisioningState = true }: Props) => {
         </>
       ) : (
         <>
-          <h4>Data Nodes found: {dataNodes?.list.length}</h4>
+          <h4>发现的数据节点: {dataNodes?.list.length}</h4>
           {dataNodes.list.find((datanode) => !datanode.version_compatible) && (
-            <Alert bsStyle="warning" title="Incompatible Data Nodes found">
-              There are Data Nodes running with versions incompatible to your current {productName} version. Please make
-              sure to use the same version for both {productName} and Data Node.
+            <Alert bsStyle="warning" title="发现不兼容的数据节点">
+              当前有数据节点运行的版本与您的版本不兼容 {productName} 版本。请确保两者使用相同的版本 {productName} 和数据节点。
             </Alert>
           )}
           <br />
           <Table bordered condensed striped hover>
             <thead>
               <tr>
-                <th>Hostname</th>
-                <th>Transport address</th>
-                <th>Status</th>
-                <th>Certificate valid until</th>
-                <th>Version</th>
+                <th>主机名</th>
+                <th>传输地址</th>
+                <th>状态</th>
+                <th>证书有效期至</th>
+                <th>版本</th>
               </tr>
             </thead>
             <tbody>
@@ -88,7 +86,7 @@ const MigrationDatanodeList = ({ showProvisioningState = true }: Props) => {
                     {!datanode.version_compatible && (
                       <Icon
                         name="warning"
-                        title={`This version is incompatible with your current ${productName} version.`}
+                        title={`此版本与您当前的 ${productName} 版本不兼容。`}
                       />
                     )}
                     {datanode.datanode_version}

@@ -104,7 +104,7 @@ public class InputTypesResource extends RestResource {
     @Path("{inputType}")
     @ApiOperation(value = "Get information about a single input type")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input type registered.")
+            @ApiResponse(code = 404, message = "未注册此类输入端。")
     })
     public InputTypeInfo info(@ApiParam(name = "inputType", required = true) @PathParam("inputType") String inputType) {
         final InputDescription description = messageInputFactory.getAvailableInputs().get(inputType);

@@ -32,6 +32,6 @@ const OPTIONS = [
   { value: `${MS_DAY}`, label: 'Days' },
 ];
 
-const TimeoutUnitSelect = (props) => <TimeoutSelect {...props} aria-label="Timeout unit" options={OPTIONS} />;
+const TimeoutUnitSelect = (props) => <TimeoutSelect {...props} aria-label="超时单位" options={OPTIONS} />;
 
 export default TimeoutUnitSelect;

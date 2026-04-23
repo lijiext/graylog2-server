@@ -33,7 +33,7 @@ function LUTDataAdaptersPage() {
       pageDescription="Data adapters provide the actual values for lookup tables."
       actions={
         <Button bsStyle="primary" onClick={() => navigate(Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.CREATE)}>
-          Create data adapter
+          创建数据适配器
         </Button>
       }>
       <DataAdaptersOverview />

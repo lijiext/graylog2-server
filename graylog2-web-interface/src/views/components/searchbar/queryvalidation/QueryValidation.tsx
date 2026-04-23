@@ -227,7 +227,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
         <Container ref={explanationTriggerRef}>
           {hasExplanations ? (
             <ExplanationTrigger
-              title={`Toggle validation ${validationTitle()}`}
+              title={`切换验证 ${validationTitle()}`}
               onClick={toggleShow}
               $clickable
               tabIndex={0}
@@ -237,7 +237,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
           ) : (
             <DocumentationLink
               page={DocsHelper.PAGES.SEARCH_QUERY_LANGUAGE}
-              title="Search query syntax documentation"
+              title="搜索查询语法文档"
               text={<Icon name="lightbulb_circle" />}
             />
           )}
@@ -257,7 +257,7 @@ const QueryValidation = ({ validationExplanations = [] }: Props) => {
                 {errorType && (
                   <DocumentationLink
                     page={DocsHelper.PAGES.SEARCH_QUERY_ERRORS}
-                    title="Query error documentation"
+                    title="查询错误文档"
                     text={<DocumentationIcon name="lightbulb_circle" />}
                   />
                 )}

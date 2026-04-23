@@ -77,10 +77,10 @@ const FilterRuleEditButton = ({ streamId, filterRule, destinationType }: Props) 
 
   return (
     <>
-      <StyledButton bsStyle={isNew ? 'default' : 'default'} bsSize={isNew ? 'sm' : 'xs'} onClick={onClick} title="Edit">
+      <StyledButton bsStyle={isNew ? 'default' : 'default'} bsSize={isNew ? 'sm' : 'xs'} onClick={onClick} title="编辑">
         {isNew ? (
           <>
-            <Icon name="add" size="sm" /> Create rule
+            <Icon name="add" size="sm" /> 创建规则
           </>
         ) : (
           <Icon name="edit_square" />

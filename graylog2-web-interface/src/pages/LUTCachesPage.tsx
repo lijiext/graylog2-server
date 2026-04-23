@@ -33,7 +33,7 @@ function LUTCachesPage() {
       pageDescription="Caches provide the actual values for lookup tables."
       actions={
         <Button bsStyle="primary" onClick={() => navigate(Routes.SYSTEM.LOOKUPTABLES.CACHES.CREATE)}>
-          Create cache
+          创建缓存
         </Button>
       }>
       <CachesOverview />

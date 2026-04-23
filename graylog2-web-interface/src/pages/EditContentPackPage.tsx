@@ -131,7 +131,7 @@ const EditContentPackPage = () => {
   const _onSave = () => {
     ContentPacksActions.create(contentPack.toJSON()).then(
       () => {
-        UserNotification.success('Content pack imported successfully', 'Success!');
+        UserNotification.success('内容包导入成功', '成功！');
         history.push(Routes.SYSTEM.CONTENTPACKS.LIST);
       },
       (response) => {
@@ -165,18 +165,17 @@ const EditContentPackPage = () => {
   };
 
   return (
-    <DocumentTitle title="Content packs">
+    <DocumentTitle title="内容包">
       <span>
         <PageHeader
-          title="Edit content pack"
+          title="编辑内容包"
           topActions={
             <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.LIST}>
-              <Button bsStyle="info">Content Packs</Button>
+              <Button bsStyle="info">内容包</Button>
             </LinkContainer>
           }>
           <span>
-            Content packs accelerate the set up process for a specific data source. A content pack can include
-            inputs/extractors, streams, and dashboards.
+            内容包可加速特定数据源的设置过程。内容包可包含输入端/提取器、数据流和仪表盘。
             <br />
             <MarketplaceLink prefix="Find more content packs in" />
           </span>

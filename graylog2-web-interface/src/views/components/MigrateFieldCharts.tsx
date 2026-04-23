@@ -235,21 +235,19 @@ const MigrateFieldCharts = () => {
   return (
     <Row>
       <Col>
-        <Alert bsStyle="warning" title="Migrate existing search page charts">
+        <Alert bsStyle="warning" title="迁移现有搜索页面图表">
           {/* Should we inform the user here about the backend migrations? */}
           <br />
-          We found {chartAmount} chart(s), created for an older version of the search. Do you want to migrate these
-          chart(s) for the current search?
+          我们找到了 {chartAmount} 为旧版搜索创建的图表。是否要将这些图表迁移到当前搜索？
           <br />
-          When you have run the migration and want to keep the newly created charts, you will have to save the current
-          search as a new dashboard. Otherwise the charts will get lost, when leaving the search page.
+          运行迁移后，如果您希望保留新创建的图表，则必须将当前搜索保存为新的仪表盘。否则，在离开搜索页面时，这些图表将会丢失。
           <br />
           <Actions>
             <Button bsStyle="primary" onClick={onMigrate} disabled={migrating} className="save-button-margin">
-              Migrate {migrating && <Spinner text="" />}
+              迁移 {migrating && <Spinner text="" />}
             </Button>
             <Button onClick={() => _onCancel(setMigrationFinished)} disabled={migrating}>
-              Discard charts
+              丢弃图表
             </Button>
           </Actions>
         </Alert>

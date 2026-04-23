@@ -48,10 +48,10 @@ const InputInUseAlert = ({ inputId }: Props = { inputId: undefined }) => {
   return (
     <Row>
       <Col md={12}>
-        <StyledAlert bsStyle="danger" title="Input already in use - Message Duplication Risk!">
+        <StyledAlert bsStyle="danger" title="输入端已被使用 - 消息重复风险!">
           {inputReferencesData.stream_refs.length > 0 && (
             <StreamListWrapper>
-              This Input is already referenced within the Stream Rules of the following Streams:
+              此输入端已在以下数据流的管道规则中被引用：
               <StyledList>
                 {inputReferencesData.stream_refs.map((stream) => (
                   <li key={stream.id}>
@@ -65,7 +65,7 @@ const InputInUseAlert = ({ inputId }: Props = { inputId: undefined }) => {
           )}
           {inputReferencesData.pipeline_refs.length > 0 && (
             <>
-              This Input is already referenced within the Pipeline Rules of the following Pipelines:
+              此输入端已在以下处理管道的管道规则中被引用：
               <StyledList>
                 {inputReferencesData.pipeline_refs.map((pipeline) => (
                   <li key={pipeline.id}>
@@ -77,7 +77,7 @@ const InputInUseAlert = ({ inputId }: Props = { inputId: undefined }) => {
               </StyledList>
             </>
           )}
-          To prevent potential duplication, remove any existing routing before continuing.
+          为防止潜在重复，请在继续之前删除任何现有路由。
         </StyledAlert>
       </Col>
     </Row>

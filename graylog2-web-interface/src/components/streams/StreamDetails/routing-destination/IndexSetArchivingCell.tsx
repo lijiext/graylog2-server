@@ -34,7 +34,7 @@ const IndexSetArchivingCell = ({ isArchivingEnabled, streamId }: Props) => {
 
   return (
     <StyledDiv>
-      <Tooltip withArrow position="right" label={`Archiving is ${isArchivingEnabled ? 'enabled' : 'disabled'}`}>
+      <Tooltip withArrow position="right" label={`归档功能已${isArchivingEnabled ? 'enabled' : 'disabled'}`}>
         <StatusIcon active={isArchivingEnabled} />
       </Tooltip>
       {StreamIndexSetDataLakeWarning && (

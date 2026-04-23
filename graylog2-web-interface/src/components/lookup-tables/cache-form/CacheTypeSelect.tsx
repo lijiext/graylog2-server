@@ -77,9 +77,9 @@ function CacheTypeSelect({ cacheConfigType, onCacheChange }: Props) {
   );
 
   return (
-    <Input id="cache-type-select" label="Cache Type" required help="The type of cache to configure.">
+    <Input id="cache-type-select" label="缓存类型" required help="要配置的缓存类型。">
       <Select
-        placeholder="Select Cache Type"
+        placeholder="选择缓存类型"
         clearable={false}
         options={sortedCaches}
         onChange={handleTypeSelect}

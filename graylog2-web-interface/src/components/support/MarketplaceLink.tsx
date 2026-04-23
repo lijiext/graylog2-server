@@ -29,7 +29,7 @@ const MarketplaceLink = ({ prefix = '', suffix = '.' }: { prefix?: React.ReactNo
     <>
       {prefix}{' '}
       <a href={url} rel="noopener noreferrer" target="_blank">
-        the {productName} Marketplace
+        the {productName} 市场
       </a>
       {suffix}
     </>

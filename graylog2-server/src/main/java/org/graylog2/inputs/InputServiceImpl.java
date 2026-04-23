@@ -556,7 +556,7 @@ public class InputServiceImpl extends PersistedServiceImpl implements InputServi
             saveWithoutEvents(input);
         } catch (ValidationException e) {
             LOG.error("Missing or invalid input configuration.", e);
-            throw new BadRequestException("Missing or invalid input configuration.", e);
+            throw new BadRequestException("输入配置缺失或无效。", e);
         }
     }
 

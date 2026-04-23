@@ -106,7 +106,7 @@ const Augment: Renderer = ({ html, transformer }) => {
 
 const UnsupportedImageWarning = () => (
   <span>
-    Images are not supported for security reasons. Please enable allowed sources{' '}
+    出于安全原因不支持图像。请启用允许的源{' '}
     <Link to={Routes.SYSTEM.configurationsSection('Markdown')}>here</Link>
   </span>
 );

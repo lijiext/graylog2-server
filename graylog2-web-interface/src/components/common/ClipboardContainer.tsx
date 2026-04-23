@@ -61,7 +61,7 @@ const ClipboardContainer = ({ children, text }: Props) => (
   <Copy value={text} timeout={2000}>
     {({ copied, copy }) =>
       copied ? (
-        <Tooltip label="Copied!" withArrow position="top" opened>
+        <Tooltip label="已复制！" withArrow position="top" opened>
           {children({ copy })}
         </Tooltip>
       ) : (

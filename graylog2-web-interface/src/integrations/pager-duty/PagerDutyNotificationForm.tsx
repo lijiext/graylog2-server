@@ -63,7 +63,7 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-routing_key"
         name="routing_key"
-        label="Routing Key"
+        label="路由键"
         type="text"
         bsStyle={validation.errors.routing_key ? 'error' : null}
         help={validation.errors?.routing_key?.[0] ?? 'The Pager Duty integration Routing Key.'}
@@ -74,12 +74,12 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-pager_duty_title"
         name="pager_duty_title"
-        label="Incident Title"
+        label="事件标题"
         type="text"
         bsStyle={validation.errors.pager_duty_title ? 'error' : null}
         help={
           validation.errors?.pager_duty_title?.[0] ??
-          `Custom title for the incident in Pager Duty. Will be the event title as shown in ${productName} if not set.`
+          `Pager Duty 中事件的自定义标题。如果未设置，将显示为 ${productName} 中显示的事件标题。`
         }
         value={config.pager_duty_title}
         onChange={handleChange}
@@ -87,7 +87,7 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-custom_incident"
         name="custom_incident"
-        label="Use Custom Incident Key"
+        label="使用自定义事件键"
         type="checkbox"
         bsStyle={validation.errors.custom_incident ? 'error' : null}
         help={validation.errors?.custom_incident?.[0] ?? 'Generate a custom incident key.'}
@@ -97,7 +97,7 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-key_prefix"
         name="key_prefix"
-        label="Incident Key Prefix"
+        label="事件键前缀"
         type="text"
         bsStyle={validation.errors.key_prefix ? 'error' : null}
         help={
@@ -110,7 +110,7 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-incident_key"
         name="incident_key"
-        label="Incident Key"
+        label="事件键"
         type="text"
         bsStyle={validation.errors.incident_key ? 'error' : null}
         help={
@@ -123,12 +123,12 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-client_name"
         name="client_name"
-        label="Client Name"
+        label="客户端名称"
         type="text"
         bsStyle={validation.errors.client_name ? 'error' : null}
         help={
           validation.errors?.client_name?.[0] ??
-          `The name of the ${productName} system that is triggering the PagerDuty event.`
+          `触发 PagerDuty 事件的 ${productName} 系统的名称。`
         }
         value={config.client_name}
         onChange={handleChange}
@@ -137,12 +137,12 @@ const PagerDutyNotificationForm = ({ config, validation, onChange }: PagerDutyNo
       <Input
         id="pagerduty-notification-v2-client_url"
         name="client_url"
-        label="Client URL"
+        label="客户端 URL"
         type="text"
         bsStyle={validation.errors.client_url ? 'error' : null}
         help={
           validation.errors?.client_url?.[0] ??
-          `The URL of the ${productName} system that is triggering the PagerDuty event.`
+          `${productName} 系统触发 PagerDuty 事件的 URL。`
         }
         value={config.client_url}
         onChange={handleChange}

@@ -1,9 +1,7 @@
 <#if _title>
-Elasticsearch cluster unavailable
+Elasticsearch 集群不可用
 </#if>
 
 <#if _description>
-We could not successfully connect to the Indexer cluster. If you are using multicast, check that
-it is working in your network and that Indexer is accessible. Also check that the cluster name setting
-is correct. Read how to fix this here: https://docs.graylog.org/docs/elasticsearch#configuration
+我们无法成功连接到索引器集群。如果您正在使用组播，请检查它在您的网络中是否正常工作，并且索引器是否可访问。同时请检查集群名称设置是否正确。请阅读此处了解如何修复此问题：https://docs.graylog.org/docs/elasticsearch#configuration
 </#if>

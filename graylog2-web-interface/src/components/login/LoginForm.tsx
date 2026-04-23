@@ -40,16 +40,16 @@ const LoginForm = ({ onErrorChange }: Props) => {
 
   return (
     <form onSubmit={onSignInClicked}>
-      <Input id="username" type="text" label="Username" autoComplete="username" autoFocus required />
+      <Input id="username" type="text" label="用户名" autoComplete="username" autoFocus required />
 
-      <Input id="password" type="password" label="Password" autoComplete="current-password" required />
+      <Input id="password" type="password" label="密码" autoComplete="current-password" required />
 
       <ModalSubmit
         displayCancel={false}
         isSubmitting={isLoading}
         isAsyncSubmit
-        submitLoadingText="Signing in..."
-        submitButtonText="Sign in"
+        submitLoadingText="登录中..."
+        submitButtonText="登录"
       />
     </form>
   );

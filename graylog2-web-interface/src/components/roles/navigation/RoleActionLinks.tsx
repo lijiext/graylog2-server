@@ -28,10 +28,10 @@ type Props = {
 const RoleActionLinks = ({ roleId }: Props) => (
   <ButtonToolbar>
     <LinkContainer to={Routes.SYSTEM.AUTHZROLES.show(roleId)}>
-      <Button>View Details</Button>
+      <Button>查看详情</Button>
     </LinkContainer>
     <LinkContainer to={Routes.SYSTEM.AUTHZROLES.edit(roleId)}>
-      <Button bsStyle="primary">Edit Role</Button>
+      <Button bsStyle="primary">编辑角色</Button>
     </LinkContainer>
   </ButtonToolbar>
 );

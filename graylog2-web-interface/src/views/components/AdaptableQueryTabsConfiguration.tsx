@@ -65,7 +65,7 @@ const ListItem = ({
       onChange={(newTitle) => onUpdateTitle(id, newTitle)}
     />
     <div>
-      <IconButton title={`Remove page ${title}`} name="delete" onClick={() => onRemove(id)} disabled={disableDelete} />
+      <IconButton title={`删除页面 ${title}`} name="delete" onClick={() => onRemove(id)} disabled={disableDelete} />
     </div>
   </ListItemContainer>
 );
@@ -179,14 +179,14 @@ const AdaptableQueryTabsConfiguration = ({ show, setShow, queriesList, activeQue
   return (
     <BootstrapModalConfirm
       showModal={show}
-      title="Update Dashboard Pages Configuration"
+      title="更新仪表盘页面配置"
       onConfirm={onConfirmPagesConfiguration}
       onCancel={onPagesConfigurationModalClose}
       confirmButtonText="Update configuration">
       <>
-        <h3>Order</h3>
+        <h3>排序</h3>
         <p>
-          Use drag and drop to change the order of the dashboard pages. Double-click on a dashboard title to change it.
+          使用拖放功能更改仪表板页面的顺序。双击仪表板标题可更改其名称。
         </p>
         <SortableList<PageListItem>
           items={nextQueriesList.toArray()}

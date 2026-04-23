@@ -53,7 +53,7 @@ class SyslogPriFacilityConverterConfiguration extends React.Component<
         <Input
           type="checkbox"
           id={`enable-${this.props.type}-converter`}
-          label="Convert from PRI to syslog facility"
+          label="从 PRI 转换为 syslog 设施"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked
           onChange={this._toggleConverter}

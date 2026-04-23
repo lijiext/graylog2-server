@@ -123,43 +123,43 @@ const LookupTableView = ({ table, cache, dataAdapter }: Props) => {
   return (
     <Row className="content">
       <Col md={12} className="gap-3">
-        <h2>Description</h2>
+        <h2>描述</h2>
         <Description>{table.description}</Description>
         {!loadingScopePermissions && scopePermissions?.is_mutable && (
           <Button bsStyle="primary" onClick={handleEdit(table.name)} role="button" name="edit_square">
-            Edit
+            编辑
           </Button>
         )}
         {(table.default_single_value || table.default_multi_value) && (
           <dl>
-            <dt>Default single value</dt>
+            <dt>默认单个值</dt>
             <dd>
               <code>{table.default_single_value}</code> ({table.default_single_value_type.toLowerCase()})
             </dd>
-            <dt>Default multi value</dt>
+            <dt>默认多值</dt>
             <dd>
               <code>{table.default_multi_value}</code> ({table.default_multi_value_type.toLowerCase()})
             </dd>
           </dl>
         )}
         <hr />
-        <h2>Attached</h2>
+        <h2>已附加</h2>
         <DataWell>
           <StyledRow>
-            <span style={{ display: 'flex', flex: 1 }}>Cache</span>
+            <span style={{ display: 'flex', flex: 1 }}>缓存</span>
             <StyledLink to={Routes.SYSTEM.LOOKUPTABLES.CACHES.show(cache.name)}>{cache.title}</StyledLink>
           </StyledRow>
           <StyledRow>
-            <span style={{ display: 'flex', flex: 1 }}>Data adapter</span>
+            <span style={{ display: 'flex', flex: 1 }}>数据适配器</span>
             <StyledLink to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.show(dataAdapter.name)}>
               {dataAdapter.title}
             </StyledLink>
           </StyledRow>
         </DataWell>
         <hr />
-        <h2>Purge Cache</h2>
+        <h2>清除缓存</h2>
         <Description>
-          You can purge the complete cache for this lookup table or only the cache entry for a single key.
+          您可以清除此查找表的整个缓存，或仅清除单个键的缓存条目。
         </Description>
         <form onSubmit={handlePurgeKey}>
           <fieldset>
@@ -167,27 +167,27 @@ const LookupTableView = ({ table, cache, dataAdapter }: Props) => {
               type="text"
               id="purge-key"
               name="purgekey"
-              placeholder="Insert key which should be purged"
-              label="Key"
+              placeholder="插入应被清除的密钥"
+              label="键"
               onChange={handleInputOnChange}
-              help="Key to purge from cache"
+              help="要清除的缓存键"
               required
               value={purgeKey.value}
             />
             <ButtonToolbar>
               <Button type="submit" bsStyle="info" disabled={!purgeKey.valid}>
-                Purge key
+                清除密钥
               </Button>
               <Button type="button" bsStyle="primary" onClick={hadlePurgeAll}>
-                Purge all
+                清除全部
               </Button>
             </ButtonToolbar>
           </fieldset>
         </form>
         <hr />
-        <h2>Test lookup</h2>
+        <h2>测试查找表</h2>
         <Description>
-          You can manually query the lookup table using this form. The data will be cached as configured by{' '}
+          您可以使用此表单手动查询查找表。数据将按配置进行缓存{' '}
           {productName}.
         </Description>
         <form onSubmit={handleLookupKey}>
@@ -196,21 +196,21 @@ const LookupTableView = ({ table, cache, dataAdapter }: Props) => {
               type="text"
               id="key"
               name="lookupkey"
-              placeholder="Insert key that should be looked up"
-              label="Key"
+              placeholder="插入要查找的键"
+              label="键"
               required
               onChange={handleInputOnChange}
-              help="Key to look up a value for."
+              help="用于查找值的键。"
               value={lookupKey.value}
             />
             <Button type="submit" name="lookupbutton" bsStyle="info" disabled={!lookupKey.valid}>
-              Look up
+              查找
             </Button>
           </fieldset>
         </form>
         {lookupResult && (
           <div style={{ marginTop: '16px' }}>
-            <h4>Lookup result</h4>
+            <h4>查找结果</h4>
             <pre>{lookupResult}</pre>
           </div>
         )}

@@ -211,9 +211,8 @@ const SetupRoutingStep = () => {
       {selectedStreamId && streamHasConnectedPipelines && (
         <Row>
           <Col md={12}>
-            <StyledAlert bsStyle="warning" title="Pipelines connected to target Stream">
-              We recommending checking the impact of these prior to completing the Input Setup. The target Stream has
-              the following Pipelines connected to it:
+            <StyledAlert bsStyle="warning" title="连接到目标数据流的管道">
+              我们建议在完成输入端设置之前检查这些影响。目标数据流已连接以下处理管道：
               <StyledList>
                 {streamPipelinesData.map((pipeline) => (
                   <li key={pipeline.title}>
@@ -232,18 +231,15 @@ const SetupRoutingStep = () => {
           <Row>
             <DescriptionCol md={12}>
               <StyledList>
-                <li>Select a destination Stream to route messages from this input to.</li>
+                <li>选择一个目标数据流，将来自此输入端的消息路由到该数据流。</li>
                 <li>
-                  <strong>We recommend creating a new stream for each new input.</strong> This will help categorise your
-                  messages into a basic schema.
+                  <strong>我们建议为每个新输入端创建新的数据流。</strong> 这将有助于将您的消息分类为基本架构。
                 </li>
                 <li>
-                  Messages that are not routed to any Stream will be routed to the <strong>Default Stream</strong>.
+                  未路由到任何数据流的日志消息将路由到 <strong>默认数据流</strong>.
                 </li>
                 <li>
-                  Pipeline rules can be automatically created and attached to the <strong>Default Stream</strong> by
-                  this Wizard. These rules will be placed in the system managed Default Routing Pipeline, and will be
-                  automatically renamed (or deleted) to accurately reflect the state of this Input.
+                  管道规则可以自动创建并附加到 <strong>默认数据流</strong> 通过此向导。这些规则将放置在系统管理的默认路由处理管道中，并会自动重命名（或删除）以准确反映此输入端的状态。
                 </li>
               </StyledList>
             </DescriptionCol>
@@ -252,17 +248,17 @@ const SetupRoutingStep = () => {
           <Row>
             {!selectedStreamId && (
               <CreateStreamCol md={6}>
-                <StyledHeading>Route to a new Stream</StyledHeading>
-                <RecommendedTooltip opened withArrow position="bottom" label="Recommended!">
+                <StyledHeading>路由到新的数据流</StyledHeading>
+                <RecommendedTooltip opened withArrow position="bottom" label="推荐！">
                   <Button onClick={handleCreateStream} bsStyle="primary">
-                    Create Stream
+                    创建数据流
                   </Button>
                 </RecommendedTooltip>
               </CreateStreamCol>
             )}
             <ExistingStreamCol md={selectedStreamId ? 12 : 6}>
-              <StyledHeading>Route to an existing Stream</StyledHeading>
-              <Button onClick={handleSelectStream}>Select Stream</Button>
+              <StyledHeading>路由到现有数据流</StyledHeading>
+              <Button onClick={handleSelectStream}>选择数据流</Button>
             </ExistingStreamCol>
           </Row>
         </>
@@ -271,7 +267,7 @@ const SetupRoutingStep = () => {
       {showNewStreamSection && (
         <Row>
           <Col md={12}>
-            <StyledHeading>Create new Stream</StyledHeading>
+            <StyledHeading>创建新数据流</StyledHeading>
             <CreateStreamForm
               submitForm={submitStreamCreation}
               handleBackClick={handleBackClick}
@@ -285,11 +281,11 @@ const SetupRoutingStep = () => {
         <>
           <Row>
             <DescriptionCol md={12}>
-              <StyledLabel htmlFor="streams">Choose an existing Stream</StyledLabel>
+              <StyledLabel htmlFor="streams">选择一个现有的数据流</StyledLabel>
               <StyledList>
-                <li>Route messages from this input to an existing stream is selected.</li>
+                <li>已选择从此输入端将消息路由到现有数据流。</li>
                 <li>
-                  Pipeline Rules will be created when the <strong>Start Input</strong> button is pressed.
+                  管道规则将在以下情况创建 <strong>启动输入端</strong> 按钮已按下。
                 </li>
               </StyledList>
             </DescriptionCol>
@@ -301,9 +297,9 @@ const SetupRoutingStep = () => {
                   inputId="streams"
                   onChange={handleStreamSelect}
                   options={options}
-                  aria-label="Default Stream"
+                  aria-label="默认数据流"
                   clearable
-                  placeholder="Default Stream"
+                  placeholder="默认数据流"
                   value={selectedStreamId ?? getStepData(stepsData, currentStepName, 'streamId')}
                 />
                 {!isDefaultStream && (
@@ -331,10 +327,10 @@ const SetupRoutingStep = () => {
       {(((hasPreviousStep || hasNextStep) && !showNewStreamSection) || showSelectStreamSection) && (
         <Row>
           <ButtonCol md={12}>
-            {(hasPreviousStep || showSelectStreamSection) && <Button onClick={handleBackClick}>Back</Button>}
+            {(hasPreviousStep || showSelectStreamSection) && <Button onClick={handleBackClick}>返回</Button>}
             {hasNextStep && (
               <Button disabled={!isStepValid()} onClick={onNextStep} bsStyle="primary">
-                Next
+                下一步
               </Button>
             )}
           </ButtonCol>

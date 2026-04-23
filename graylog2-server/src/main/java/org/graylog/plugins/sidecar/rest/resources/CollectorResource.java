@@ -265,7 +265,7 @@ public class CollectorResource extends RestResource implements PluginRestResourc
                 .filter(configuration -> configuration.collectorId().equals(id))
                 .count();
         if (configurationsForCollector > 0) {
-            throw new BadRequestException("Collector still in use, cannot delete.");
+            throw new BadRequestException("采集器仍在使用中，无法删除。");
         }
 
         int deleted = collectorService.delete(id);

@@ -65,7 +65,7 @@ const MessageFieldDescription = ({
       <div className="field-value">{renderForDisplay(fieldName)}</div>
       {shouldShowTerms && (
         <Alert bsStyle="info" onDismiss={() => setMessageTerms(Immutable.List())}>
-          Field terms: &nbsp;{formattedTerms}
+          字段术语:  {formattedTerms}
         </Alert>
       )}
     </dd>

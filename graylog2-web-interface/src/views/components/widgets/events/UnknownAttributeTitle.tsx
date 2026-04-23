@@ -33,7 +33,7 @@ const ErrorIcon = styled(Icon)(
 
 const UnknownAttributeTitle = () => (
   <UnknownFieldTitleContainer>
-    Unknown
+    未知
     <OverlayTrigger
       overlay="This attribute is currently not available, because it requires a valid license."
       placement="bottom">

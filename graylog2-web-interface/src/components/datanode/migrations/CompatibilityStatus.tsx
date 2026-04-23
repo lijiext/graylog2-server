@@ -57,10 +57,10 @@ const CompatibilityStatus = ({ hostname, opensearchVersion, nodeInfo }: Props) =
     <Grid>
       <div>
         <StyledSpan>
-          <strong>Datanode OpenSearch version</strong>: {opensearchVersion}
+          <strong>数据节点 OpenSearch 版本</strong>: {opensearchVersion}
         </StyledSpan>
         <StyledSpan>
-          <strong>OpenSearch data location</strong>: {opensearchLocation}
+          <strong>OpenSearch 数据位置</strong>: {opensearchLocation}
         </StyledSpan>
       </div>
       <div>
@@ -77,10 +77,10 @@ const CompatibilityStatus = ({ hostname, opensearchVersion, nodeInfo }: Props) =
               <Table striped bordered condensed>
                 <thead>
                   <tr>
-                    <th>Indices</th>
-                    <th>Creation date</th>
-                    <th>Index version</th>
-                    <th>Shards</th>
+                    <th>索引</th>
+                    <th>创建日期</th>
+                    <th>索引版本</th>
+                    <th>分片</th>
                   </tr>
                 </thead>
                 <tbody>

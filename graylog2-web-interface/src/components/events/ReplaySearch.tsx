@@ -130,7 +130,7 @@ const LoadingBarrier = ({
       forceSidebarPinned={forceSidebarPinned}
     />
   ) : (
-    <Center>Cannot replay this event: {canReplay} Please select a different one.</Center>
+    <Center>无法重播此事件: {canReplay} 请选择其他选项。</Center>
   );
 };
 

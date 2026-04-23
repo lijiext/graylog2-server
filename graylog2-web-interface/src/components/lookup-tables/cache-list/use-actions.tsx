@@ -63,20 +63,20 @@ function Actions({ cache }: ActionsProps) {
         buttonTitle={cache.id}
         noCaret
         pullRight>
-        <MenuItem onSelect={handleEdit}>Edit</MenuItem>
+        <MenuItem onSelect={handleEdit}>编辑</MenuItem>
         <MenuItem divider />
-        <DeleteMenuItem onSelect={() => setShowDeleteModal(true)}>Delete</DeleteMenuItem>
+        <DeleteMenuItem onSelect={() => setShowDeleteModal(true)}>删除</DeleteMenuItem>
       </DropdownButton>
       {showDeleteModal && (
         <BootstrapModalConfirm
           showModal
-          title="Delete Cache"
+          title="删除缓存"
           onCancel={() => setShowDeleteModal(false)}
           onConfirm={handleDelete}
           cancelButtonDisabled={deletingCache}
           confirmButtonDisabled={deletingCache}
           confirmButtonText="Delete">
-          <p>Are you sure you want to delete the cache &quot;{cache.title}&quot;?</p>
+          <p>您确定要删除缓存 "{cache.title}&quot;?</p>
         </BootstrapModalConfirm>
       )}
     </>

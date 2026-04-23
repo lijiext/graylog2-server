@@ -44,17 +44,16 @@ const StyledCol = styled(Col)`
 `;
 
 const DataNodesClusterManagementPage = () => (
-  <DocumentTitle title="Data Node Dashboard">
+  <DocumentTitle title="数据节点仪表盘">
     <ClusterConfigurationPageNavigation />
     <PageHeader
-      title="Data Node Dashboard"
+      title="数据节点仪表盘"
       documentationLink={{
         title: 'Data Nodes documentation',
         path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
       }}>
       <span>
-        Graylog Data Nodes offer a better integration with Graylog and simplify future updates. They allow you to index
-        and search through all the messages in your Graylog message database.
+        Graylog 数据节点与 Graylog 的集成更紧密，并简化了未来的更新。它们允许您对 Graylog 消息数据库中的所有消息进行索引和搜索。
       </span>
     </PageHeader>
     <Row className="content">

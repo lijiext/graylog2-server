@@ -120,7 +120,7 @@ function EditorModal({
         <Backdrop onClick={() => onClose()}>
           <Content onClick={(e: React.BaseSyntheticEvent) => e.stopPropagation()}>
             <Row>
-              <h2 style={{ marginBottom: '1rem' }}>Markdown Editor</h2>
+              <h2 style={{ marginBottom: '1rem' }}>Markdown 编辑器</h2>
               <CloseIcon name="close" onClick={() => onClose()} />
             </Row>
             {helpBlock && <Row>{helpBlock}</Row>}
@@ -143,9 +143,9 @@ function EditorModal({
               )}
             </Row>
             <Row style={{ justifyContent: 'flex-end', marginTop: '1rem' }}>
-              <Button onClick={() => onClose()}>Cancel</Button>
+              <Button onClick={() => onClose()}>取消</Button>
               <Button bsStyle="primary" onClick={handleOnDone}>
-                Done
+                完成
               </Button>
             </Row>
           </Content>

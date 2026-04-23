@@ -36,14 +36,14 @@ const HttpNotificationSummaryV2 = ({ type, notification, definitionNotification 
       </td>
     </tr>
     <tr>
-      <td>Method</td>
+      <td>方法</td>
       <td>
         <code>{notification.config.method}</code>
       </td>
     </tr>
     {notification.config.content_type && (
       <tr>
-        <td>Content Type</td>
+        <td>内容类型</td>
         <td>
           <code>{notification.config.content_type}</code>
         </td>
@@ -51,7 +51,7 @@ const HttpNotificationSummaryV2 = ({ type, notification, definitionNotification 
     )}
     {notification.config.headers && (
       <tr>
-        <td>Headers</td>
+        <td>表头</td>
         <td>
           <code>{notification.config.headers}</code>
         </td>
@@ -59,7 +59,7 @@ const HttpNotificationSummaryV2 = ({ type, notification, definitionNotification 
     )}
     {notification.config.body_template && (
       <tr>
-        <td>Body Template</td>
+        <td>主体模板</td>
         <td>
           <Well bsSize="small" className={styles.bodyPreview}>
             {notification.config.body_template}

@@ -59,9 +59,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
     if (connections.length === 0) {
       return (
         <ConnectionWarning bsStyle="danger">
-          This pipeline is currently not connected to any streams. You have to connect a pipeline to at least one stream
-          to make it process incoming messages. Note that this is not required if you intend to use this pipeline only
-          for search result transformation using decorators.
+          此处理管道当前未连接任何数据流。您必须将处理管道连接到至少一个数据流，以便处理传入的消息。请注意，如果您仅打算使用此处理管道通过装饰器转换搜索结果，则不需要此操作。
         </ConnectionWarning>
       );
     }
@@ -107,7 +105,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
 
     return (
       <span>
-        This pipeline is processing messages from the{' '}
+        此处理管道正在处理来自{' '}
         <Pluralize singular="stream" plural="streams" value={formattedStreams.length} /> {streamList}.
       </span>
     );
@@ -139,7 +137,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
 
   return (
     <div>
-      {isManaged && <Alert bsStyle="warning">This pipeline is system managed</Alert>}
+      {isManaged && <Alert bsStyle="warning">此处理管道由系统管理</Alert>}
       {_connectionsWarning()}
       <PipelineDetails pipeline={pipeline} onChange={onPipelineChange} disableEdit={isManaged} />
       <StyledRow className="row-sm">
@@ -153,7 +151,7 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
               disableEdit={isManaged}
             />
           </div>
-          <h2>Pipeline connections</h2>
+          <h2>处理管道连接</h2>
           <StyledP>
             <PipelineConnectionsList
               pipeline={pipeline}
@@ -171,10 +169,9 @@ const Pipeline = ({ pipeline, connections, streams, onConnectionsChange, onStage
           <div className="pull-right">
             <StageForm key={stageKey} pipeline={pipeline} create save={_saveStage} disableEdit={isManaged} />
           </div>
-          <h2>Pipeline Stages</h2>
+          <h2>处理管道阶段</h2>
           <StyledP>
-            Stages are groups of conditions and actions which need to run in order, and provide the necessary control
-            flow to decide whether or not to run the rest of a pipeline.
+            阶段是条件和操作的组，需要按顺序运行，并提供必要的控制流以决定是否运行管道的其余部分。
           </StyledP>
         </Col>
       </StyledRow>

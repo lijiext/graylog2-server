@@ -99,7 +99,7 @@ const WidgetGridItem = ({ onPositionsChange, positions, widgetId, focusedWidget,
       <ScrollToHint
         autoScroll
         scrollContainer={{ current: document.body }}
-        title="Scroll to new widget"
+        title="滚动到新小部件"
         ifTrue={isNewWidget}
       />
       <WidgetComponent

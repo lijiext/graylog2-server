@@ -77,24 +77,23 @@ const SavedSearchForm = ({
   return (
     <Popover position="left" width={500} opened={show} withArrow withinPortal>
       <Popover.Target>{children}</Popover.Target>
-      <StyledPopoverDropdown title="Name of search" id="saved-search-popover">
+      <StyledPopoverDropdown title="搜索名称" id="saved-search-popover">
         <form onSubmit={stopEvent}>
           {formDirty && (
             <Alert compact noIcon bsStyle="warning">
-              There are unconfirmed changes to the search parameters (time range, streams, or query). Saving now will
-              discard them. If this is not intentional, execute the search to apply your changes before saving.{' '}
+              搜索参数（时间范围、数据流或查询）存在未确认的更改。现在保存将丢弃这些更改。如果这不是故意的，请在保存前执行搜索以应用您的更改。{' '}
             </Alert>
           )}
           <FormGroup>
-            <ControlLabel htmlFor="title">Title</ControlLabel>
-            <FormControl type="text" value={title} id="title" placeholder="Enter title" onChange={onChangeTitle} />
+            <ControlLabel htmlFor="title">标题</ControlLabel>
+            <FormControl type="text" value={title} id="title" placeholder="输入标题" onChange={onChangeTitle} />
           </FormGroup>
           {pluggableSaveViewControls?.map(
             ({ component: Component, id }) => Component && <Component key={id} disabledViewCreation={disableSaveAs} />,
           )}
           {!disableSaveAs && (
             <EntityCreateShareFormGroup
-              description="Search for a User or Team to add as collaborator on this search."
+              description="搜索用户或团队以将其添加为此搜索的协作者。"
               entityType="search"
               entityTitle=""
               entityId={isCreateNew ? null : viewId}
@@ -109,9 +108,9 @@ const SavedSearchForm = ({
                 className={styles.button}
                 type="submit"
                 bsSize="sm"
-                title="Save search"
+                title="保存搜索"
                 onClick={_saveSearch}>
-                Save
+                保存
               </Button>
             )}
             <Button
@@ -125,7 +124,7 @@ const SavedSearchForm = ({
               {createNewTitle}
             </Button>
             <Button className={styles.button} onClick={toggleModal} bsSize="sm">
-              Cancel
+              取消
             </Button>
           </ButtonToolbar>
         </form>

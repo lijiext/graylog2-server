@@ -98,9 +98,9 @@ const ContentPacksList = ({
 
   const noContentMessage =
     contentPacks.length <= 0 ? (
-      <NoEntitiesExist>No content packs found. Please create or upload one</NoEntitiesExist>
+      <NoEntitiesExist>未找到内容包。请创建或上传一个</NoEntitiesExist>
     ) : (
-      <NoSearchResult>No matching content packs have been found</NoSearchResult>
+      <NoSearchResult>未找到匹配的内容包</NoSearchResult>
     );
 
   const content =
@@ -119,7 +119,7 @@ const ContentPacksList = ({
         <Col md={5}>
           <TypeAheadDataFilter
             id="content-packs-filter"
-            label="Filter"
+            label="过滤器"
             data={contentPacks}
             onDataFiltered={filterContentPacks}
             searchInKeys={['name', 'summary']}

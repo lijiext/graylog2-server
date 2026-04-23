@@ -85,7 +85,7 @@ public class ContentStreamResource extends RestResource {
     @AuditEvent(type = AuditEventTypes.CONTENT_STREAM_USER_SETTINGS_UPDATE)
     public ContentStreamSettings setContentStreamUserSettings(
             @ApiParam(name = "username") @PathParam("username") String username,
-            @ApiParam(name = "JSON body", value = "Content Stream settings for the specified user.", required = true)
+            @ApiParam(name = "JSON body", value = "指定用户的“内容流”设置。", required = true)
             @Valid @NotNull ContentStreamSettings settings
     ) throws NotFoundException {
         if (isPermitted(USERS_EDIT, username)) {

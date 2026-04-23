@@ -52,7 +52,7 @@ const CollectorRow = ({ collector, onClone, onDelete, validateCollector }: Props
       <td>
         <ButtonToolbar>
           <LinkContainer to={Routes.SYSTEM.SIDECARS.EDIT_COLLECTOR(collector.id)}>
-            <Button bsSize="xsmall">Edit</Button>
+            <Button bsSize="xsmall">编辑</Button>
           </LinkContainer>
           <MoreActions>
             <CopyCollectorModal collector={collector} validateCollector={validateCollector} copyCollector={onClone} />

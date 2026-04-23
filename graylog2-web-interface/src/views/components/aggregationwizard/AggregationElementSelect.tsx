@@ -37,7 +37,7 @@ const AggregationElementSelect = ({ aggregationElements, onSelect, formValues }:
     ));
 
   return (
-    <DropdownButton id="add-aggregation-element" title="Add" buttonTitle="Add an element">
+    <DropdownButton id="add-aggregation-element" title="添加" buttonTitle="Add an element">
       {menuItems}
     </DropdownButton>
   );

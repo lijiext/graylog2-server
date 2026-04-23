@@ -61,7 +61,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
     <fieldset>
       <Input
         id="indicator"
-        label="Indicator"
+        label="指标"
         required
         onChange={handleFormEvent}
         help={validationMessage('indicator', 'The OTX indicator type that should be used for lookups.')}
@@ -69,7 +69,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9">
         <Select
-          placeholder="Select indicator"
+          placeholder="选择指标"
           clearable={false}
           options={OTX_INDICATORS}
           onChange={handleSelect('indicator')}
@@ -80,7 +80,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
         type="text"
         id="api_key"
         name="api_key"
-        label="OTX API Key"
+        label="OTX API 密钥"
         onChange={handleFormEvent}
         help={validationMessage('api_key', 'Your OTX API key.')}
         bsStyle={validationState('api_key')}
@@ -104,7 +104,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
         type="text"
         id="http_user_agent"
         name="http_user_agent"
-        label="HTTP User-Agent"
+        label="HTTP 用户代理"
         required
         onChange={handleFormEvent}
         help={validationMessage('http_user_agent', 'The User-Agent header that should be used for the HTTP request.')}
@@ -117,7 +117,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
         type="number"
         id="http_connect_timeout"
         name="http_connect_timeout"
-        label="HTTP Connect Timeout"
+        label="HTTP 连接超时"
         required
         onChange={handleFormEvent}
         help={validationMessage('http_connect_timeout', 'HTTP connection timeout in milliseconds.')}
@@ -130,7 +130,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
         type="number"
         id="http_write_timeout"
         name="http_write_timeout"
-        label="HTTP Write Timeout"
+        label="HTTP 写入超时"
         required
         onChange={handleFormEvent}
         help={validationMessage('http_write_timeout', 'HTTP write timeout in milliseconds.')}
@@ -143,7 +143,7 @@ const OTXAdapterFieldSet = ({ updateConfig, config, handleFormEvent, validationS
         type="number"
         id="http_read_timeout"
         name="http_read_timeout"
-        label="HTTP Read Timeout"
+        label="HTTP 读取超时"
         required
         onChange={handleFormEvent}
         help={validationMessage('http_read_timeout', 'HTTP read timeout in milliseconds.')}

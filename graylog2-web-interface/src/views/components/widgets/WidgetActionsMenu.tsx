@@ -251,7 +251,7 @@ const WidgetActionsMenu = ({ isFocused, onPositionsChange, position, title, togg
           />
         </IfDashboard>
         <ExtraMenuWidgetActions widget={widget} />
-        {isFocused && <IconButton name="fullscreen_exit" title="Un-focus widget" onClick={unsetWidgetFocusing} />}
+        {isFocused && <IconButton name="fullscreen_exit" title="取消聚焦小部件" onClick={unsetWidgetFocusing} />}
         {!isFocused && (
           <>
             <WidgetHorizontalStretch
@@ -260,19 +260,19 @@ const WidgetActionsMenu = ({ isFocused, onPositionsChange, position, title, togg
               onStretch={onPositionsChange}
               position={position}
             />
-            <IconButton name="fullscreen" title="Focus this widget" onClick={focusWidget} />
+            <IconButton name="fullscreen" title="聚焦此小部件" onClick={focusWidget} />
           </>
         )}
 
-        <IconButton name="edit_square" title="Edit" iconType="regular" onClick={toggleEdit} />
+        <IconButton name="edit_square" title="编辑" iconType="regular" onClick={toggleEdit} />
 
         <WidgetActionDropdown>
-          <MenuItem onSelect={onDuplicate}>Duplicate</MenuItem>
+          <MenuItem onSelect={onDuplicate}>复制</MenuItem>
           <IfSearch>
-            <MenuItem onSelect={() => setShowCopyToDashboard(true)}>Copy to Dashboard</MenuItem>
+            <MenuItem onSelect={() => setShowCopyToDashboard(true)}>复制到仪表盘</MenuItem>
           </IfSearch>
           <IfDashboard>
-            <MenuItem onSelect={() => setShowMoveWidgetToTab(true)}>Move to Page</MenuItem>
+            <MenuItem onSelect={() => setShowMoveWidgetToTab(true)}>移动到页面</MenuItem>
           </IfDashboard>
           <ExtraDropdownWidgetActions widget={widget} setComponents={setOverflowingComponents} />
           <MenuItem divider />
@@ -283,8 +283,8 @@ const WidgetActionsMenu = ({ isFocused, onPositionsChange, position, title, togg
           <CopyToDashboard
             onCopyToDashboard={(dashboardId) => onCopyToDashboard(widget.id, dashboardId)}
             onCancel={() => setShowCopyToDashboard(false)}
-            submitLoadingText="Copying widget..."
-            submitButtonText="Copy widget"
+            submitLoadingText="正在复制小部件..."
+            submitButtonText="复制小部件"
             onCreateNewDashboard={onCreateNewDashboard}
           />
         )}

@@ -57,7 +57,7 @@ const TitleCol = ({ adapter, children }: { adapter: DataAdapterEntity; children:
 
   return (
     <TitleRow>
-      {adapterErrorText && <ErrorPopover placement="right" errorText={adapterErrorText} title="Data Adapter problem" />}
+      {adapterErrorText && <ErrorPopover placement="right" errorText={adapterErrorText} title="数据适配器问题" />}
       <Title onClick={onClick}>{children}</Title>
     </TitleRow>
   );

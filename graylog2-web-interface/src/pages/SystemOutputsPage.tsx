@@ -27,12 +27,12 @@ const SystemOutputsPage = () => {
   const productName = useProductName();
 
   return (
-    <DocumentTitle title="Outputs">
+    <DocumentTitle title="输出端">
       <span>
-        <PageHeader title="Outputs in Cluster">
+        <PageHeader title="集群中的输出端">
           <span>
-            {productName} nodes can forward messages via outputs. Launch or terminate as many outputs as you want here{' '}
-            <strong>and then assign them to streams to forward all messages of a stream in real-time.</strong>
+            {productName} 节点可以通过输出端转发消息。在此处启动或终止任意数量的输出端{' '}
+            <strong>然后将其分配给数据流，以实时转发该数据流的所有消息。</strong>
             <br />
             <MarketplaceLink prefix="You can find output plugins in" />
           </span>

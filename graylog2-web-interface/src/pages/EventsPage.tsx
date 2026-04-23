@@ -44,17 +44,16 @@ const AlertsPageComponent = () => {
 };
 
 const EventsPage = () => (
-  <DocumentTitle title="Alerts &amp; Events">
+  <DocumentTitle title="告警与事件">
     <EventsPageNavigation />
     <PageHeader
-      title="Alerts &amp; Events"
+      title="告警与事件"
       documentationLink={{
         title: 'Alerts documentation',
         path: DocsHelper.PAGES.ALERTS,
       }}>
       <span>
-        Define Events through different conditions. Add Notifications to Events that require your attention to create
-        Alerts.
+        通过不同条件定义事件。为需要您关注的事件添加通知以创建告警。
       </span>
     </PageHeader>
 

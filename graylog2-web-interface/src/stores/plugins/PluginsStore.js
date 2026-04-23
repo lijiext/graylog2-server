@@ -30,7 +30,7 @@ export const PluginsStore = singletonStore('core.Plugins', () =>
       const promise = fetch('GET', URLUtils.qualifyUrl(this.sourceUrl(nodeId))).then(
         (response) => response.plugins,
         (error) =>
-          UserNotification.error(`Getting plugins on node "${nodeId}" failed: ${error}`, 'Could not get plugins'),
+          UserNotification.error(`在节点 "${nodeId}" 上获取插件失败：${error}`, '无法获取插件'),
       );
 
       return promise;

@@ -56,7 +56,7 @@ const EventsMetrics = ({ children = undefined, expanded: initialExpanded, onExpa
   return (
     <Container>
       <HeadlineContainer>
-        <h2>Metrics</h2>
+        <h2>指标</h2>
         <IconButton title={expandTitle} name={expandIcon} onClick={onClick} />
       </HeadlineContainer>
       {expanded ? children : null}

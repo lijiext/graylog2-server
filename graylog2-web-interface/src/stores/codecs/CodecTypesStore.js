@@ -46,7 +46,7 @@ export const CodecTypesStore = singletonStore('core.CodecTypes', () =>
           this.trigger(this.getInitialState());
         },
         (error) => {
-          UserNotification.error(`Fetching codec types failed with status: ${error}`, 'Could not retrieve codec types');
+          UserNotification.error(`获取编解码器类型失败，状态为：${error}`, '无法获取编解码器类型');
         },
       );
 

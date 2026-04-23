@@ -35,25 +35,25 @@ const KeySecret = ({ onChange, awsKey = undefined, awsSecret = undefined }: KeyS
     <ValidatedInput
       id="awsAccessKey"
       type="text"
-      label="AWS Access Key"
+      label="AWS 访问密钥"
       placeholder="AK****************"
       onChange={onChange}
       fieldData={awsKey}
       autoComplete="off"
       maxLength={512}
-      help='Your AWS Key should be a 20-character long, alphanumeric string that starts with the letters "AK".'
+      help='您的 AWS Key 应为以字母 "AK" 开头的 20 位字母数字字符串。'
       required
     />
 
     <StyledMaskedInput
       id="awsSecretKey"
-      label="AWS Secret Key"
+      label="AWS 密钥"
       placeholder="***********"
       onChange={onChange}
       fieldData={awsSecret}
       autoComplete="off"
       maxLength={512}
-      help="Your AWS Secret is usually a 40-character long, base-64 encoded string."
+      help="您的 AWS Secret 通常是一个 40 字符长、base-64 编码的字符串。"
       required
     />
   </>

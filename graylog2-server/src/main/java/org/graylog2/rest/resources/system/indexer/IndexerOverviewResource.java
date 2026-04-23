@@ -95,7 +95,7 @@ public class IndexerOverviewResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Get overview of current indexing state, including deflector config, cluster state, index ranges & message counts.")
+    @ApiOperation(value = "获取当前索引状态的概览，包括偏转器配置、集群状态、索引范围及消息数量。")
     @Produces(MediaType.APPLICATION_JSON)
     @Deprecated
     public IndexerOverview index() throws TooManyAliasesException {
@@ -113,7 +113,7 @@ public class IndexerOverviewResource extends RestResource {
     @GET
     @Timed
     @Path("/{indexSetId}")
-    @ApiOperation(value = "Get overview of current indexing state for the given index set, including deflector config, cluster state, index ranges & message counts.")
+    @ApiOperation(value = "获取给定索引集的当前索引状态概览，包括偏转器配置、集群状态、索引范围及消息计数。")
     @Produces(MediaType.APPLICATION_JSON)
     public IndexerOverview index(@ApiParam(name = "indexSetId") @PathParam("indexSetId") String indexSetId) throws TooManyAliasesException {
         if (!cluster.isConnected()) {

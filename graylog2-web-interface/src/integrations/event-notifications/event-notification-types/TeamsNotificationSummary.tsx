@@ -24,7 +24,7 @@ function TeamsNotificationSummary({ notification, ...restProps }: TeamsNotificat
   return (
     <CommonNotificationSummary {...restProps} notification={notification}>
       <tr>
-        <td>Color</td>
+        <td>颜色</td>
         <td>{notification?.config?.color}</td>
       </tr>
       <tr>
@@ -33,19 +33,19 @@ function TeamsNotificationSummary({ notification, ...restProps }: TeamsNotificat
       </tr>
 
       <tr>
-        <td>Custom Message</td>
+        <td>自定义消息</td>
         <td>{notification.config.custom_message}</td>
       </tr>
       <tr>
-        <td>Time Zone</td>
+        <td>时区</td>
         <td>{notification.config.time_zone}</td>
       </tr>
       <tr>
-        <td>Message Backlog Limit</td>
+        <td>消息积压限制</td>
         <td>{notification.config.backlog_size}</td>
       </tr>
       <tr>
-        <td>Icon URL</td>
+        <td>图标 URL</td>
         <td>{notification.config.icon_url}</td>
       </tr>
     </CommonNotificationSummary>

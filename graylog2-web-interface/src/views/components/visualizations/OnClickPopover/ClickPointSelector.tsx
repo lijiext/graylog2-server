@@ -36,7 +36,7 @@ type Props = {
 };
 
 const ClickPointSelector = ({ clickPointsInRadius, onSelect, metricMapper }: Props) => (
-  <Popover.Dropdown title={<PopoverTitle>Metrics</PopoverTitle>}>
+  <Popover.Dropdown title={<PopoverTitle>指标</PopoverTitle>}>
     <StyledListGroup>
       {clickPointsInRadius.map((clickPoint: ClickPoint) => {
         const { value, metric } = metricMapper(clickPoint);

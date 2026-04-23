@@ -164,20 +164,19 @@ const EventConditionForm = ({
   return (
     <Row>
       <Col md={7} lg={6}>
-        <h2 className={commonStyles.title}>Event Condition</h2>
+        <h2 className={commonStyles.title}>事件条件</h2>
 
         {!canEditCondition ? (
-          <p>The conditions of this event definition type cannot be edited.</p>
+          <p>此事件定义类型的条件无法编辑。</p>
         ) : (
           <>
             <p>
-              Define how Events of this type should be created. You can later use those Events as input on other
-              Conditions, making it possible to build powerful Conditions based on others.
+              定义此类事件应如何创建。稍后，您可以将这些事件用作其他条件的输入，从而能够基于其他事件构建强大的条件。
             </p>
             <FormGroup validationState={validation.errors.config ? 'error' : null}>
-              <ControlLabel htmlFor="event-condition-type-select">Condition Type</ControlLabel>
+              <ControlLabel htmlFor="event-condition-type-select">条件类型</ControlLabel>
               <Select
-                placeholder="Select a Condition Type"
+                placeholder="选择条件类型"
                 inputId="event-condition-type-select"
                 options={formattedEventDefinitionTypes}
                 value={eventDefinition.config.type}
@@ -197,7 +196,7 @@ const EventConditionForm = ({
       {canEditCondition && !disabledSelect && (
         <>
           <Col md={5} lg={5} lgOffset={1}>
-            <HelpPanel className={styles.conditionTypesInfo} title="Available Conditions">
+            <HelpPanel className={styles.conditionTypesInfo} title="可用条件">
               <ConditionTypeDescriptions eventDefinitionTypes={sortedEventDefinitionTypes} />
             </HelpPanel>
           </Col>

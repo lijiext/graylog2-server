@@ -31,8 +31,8 @@ export const JournalStore = singletonStore('core.Journal', () =>
 
       promise.catch((error) => {
         UserNotification.error(
-          `Getting journal information on node ${nodeId} failed: ${error}`,
-          'Could not get journal information',
+          `在节点 ${nodeId} 上获取日志信息失败：${error}`,
+          '无法获取日志信息',
         );
       });
 

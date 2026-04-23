@@ -18,7 +18,7 @@ import React from 'react';
 
 const GreyNoiseAdapterSummary = () => (
   <dl>
-    <dt>API Token</dt>
+    <dt>API 令牌</dt>
     <dd>******</dd>
   </dl>
 );

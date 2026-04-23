@@ -74,13 +74,13 @@ const HTTPHeaderAuthConfigSection = () => {
 
   return (
     <SectionComponent title={sectionTitle}>
-      <p>This authenticator enables you to login a user, based on a HTTP header without further interaction.</p>
+      <p>此身份验证器允许您基于 HTTP 头登录用户，无需进一步交互。</p>
       <Formik onSubmit={_onSubmit} initialValues={loadedConfig.toJSON()}>
         {({ isSubmitting, isValid }) => (
           <Form className="form form-horizontal">
-            <Input id="enable-http-header-auth" labelClassName="col-sm-3" wrapperClassName="col-sm-9" label="Enabled">
+            <Input id="enable-http-header-auth" labelClassName="col-sm-3" wrapperClassName="col-sm-9" label="已启用">
               <FormikFormGroup
-                label="Enable single sign-on via HTTP header"
+                label="通过 HTTP 头启用单点登录"
                 name="enabled"
                 formGroupClassName="form-group no-bm"
                 wrapperClassName="col-xs-12"
@@ -88,16 +88,15 @@ const HTTPHeaderAuthConfigSection = () => {
               />
             </Input>
             <FormikFormGroup
-              label="Username header"
+              label="用户名头"
               name="username_header"
               required
-              help="HTTP header containing the implicitly trusted name of the user. (The header match is ignoring case sensitivity)"
+              help="包含隐式信任的用户名的 HTTP 请求头。（请求头匹配不区分大小写）"
             />
             <Row>
               <Col mdOffset={3} md={9}>
                 <Alert bsStyle="info">
-                  Please configure the <code>trusted_proxies</code> setting in the {productName} server configuration
-                  file.
+                  请配置 <code>trusted_proxies</code> 设置中的 {productName} 服务器配置文件。
                 </Alert>
               </Col>
             </Row>
@@ -105,8 +104,8 @@ const HTTPHeaderAuthConfigSection = () => {
             <Row className="no-bm">
               <Col xs={12}>
                 <div className="pull-right">
-                  <Button bsStyle="primary" disabled={isSubmitting || !isValid} title="Update Config" type="submit">
-                    Update Config
+                  <Button bsStyle="primary" disabled={isSubmitting || !isValid} title="更新配置" type="submit">
+                    更新配置
                   </Button>
                 </div>
               </Col>

@@ -89,7 +89,7 @@ export const ErrorMessage = ({ fullMessage, niceMessage = null }: ErrorMessagePr
       <ErrorOutput>{niceMessage || fullMessage}</ErrorOutput>
       {niceMessage && (
         <ErrorToggleInfo onClick={() => toggleExpanded(!expanded)}>
-          More Info <MoreIcon name="chevron_right" $expanded={expanded} />
+          更多信息 <MoreIcon name="chevron_right" $expanded={expanded} />
         </ErrorToggleInfo>
       )}
     </>
@@ -101,7 +101,7 @@ export const ErrorMessage = ({ fullMessage, niceMessage = null }: ErrorMessagePr
 
   return (
     <Panel header={Header} bsStyle="danger" collapsible expanded={expanded}>
-      <strong>Additional Information: </strong>
+      <strong>附加信息: </strong>
       {fullMessage}
     </Panel>
   );

@@ -88,13 +88,13 @@ const ContentPackVersionItem = ({
         <ButtonToolbar className="pull-right">
           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
           <Button bsStyle="primary" bsSize="small" onClick={() => handleDownload()}>
-            Download
+            下载
           </Button>
-          <DropdownButton id={`action-${pack.rev}`} title="Actions" bsSize="small">
-            <MenuItem onClick={() => handleInstall()}>Install</MenuItem>
+          <DropdownButton id={`action-${pack.rev}`} title="操作" bsSize="small">
+            <MenuItem onClick={() => handleInstall()}>安装</MenuItem>
             <LinkContainer
               to={Routes.SYSTEM.CONTENTPACKS.edit(encodeURIComponent(pack.id), encodeURIComponent(pack.rev))}>
-              <MenuItem>Create New From Revision</MenuItem>
+              <MenuItem>从修订版创建新项</MenuItem>
             </LinkContainer>
             <MenuItem divider />
             <DeleteMenuItem
@@ -108,13 +108,13 @@ const ContentPackVersionItem = ({
       {showInstallModal && (
         <BootstrapModalWrapper showModal={showInstallModal} onHide={onCloseInstallModal} bsSize="large">
           <Modal.Header>
-            <Modal.Title>Install Content Pack</Modal.Title>
+            <Modal.Title>安装内容包</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <ContentPackInstall ref={installRef} contentPack={pack} onInstall={onInstallProp} />
           </Modal.Body>
           <Modal.Footer>
-            <ModalSubmit submitButtonText="Install" onSubmit={onInstall} onCancel={onCloseInstallModal} />
+            <ModalSubmit submitButtonText="安装" onSubmit={onInstall} onCancel={onCloseInstallModal} />
           </Modal.Footer>
         </BootstrapModalWrapper>
       )}

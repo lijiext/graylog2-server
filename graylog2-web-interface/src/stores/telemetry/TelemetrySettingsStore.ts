@@ -87,7 +87,7 @@ export const TelemetrySettingsStore = singletonStore('telemetry.settings.store',
           return response;
         },
         (error) => {
-          UserNotification.error(`Update failed: ${error}`, 'Could not update telemetry settings.');
+          UserNotification.error(`更新失败：${error}`, '无法更新遥测设置。');
         },
       );
 

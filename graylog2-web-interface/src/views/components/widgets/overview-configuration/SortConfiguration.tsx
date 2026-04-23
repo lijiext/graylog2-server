@@ -66,10 +66,10 @@ const SortConfiguration = ({
     <Container>
       <Field name={`${attributeName}.field`}>
         {({ field: { value, onChange, name } }) => (
-          <Input id="sort-configuration-column" label="Column" labelClassName="col-sm-3" wrapperClassName="col-sm-9">
+          <Input id="sort-configuration-column" label="列" labelClassName="col-sm-3" wrapperClassName="col-sm-9">
             <Select
               id="sort-configuration-column-select"
-              placeholder="Select a column"
+              placeholder="选择列"
               options={columnOptions}
               clearable={false}
               size="small"
@@ -84,12 +84,12 @@ const SortConfiguration = ({
         {({ field: { value, onChange, name } }) => (
           <Input
             id="sort-configuration-direction"
-            label="Direction"
+            label="方向"
             labelClassName="col-sm-3"
             wrapperClassName="col-sm-9">
             <Select
               id="sort-configuration-direction-select"
-              placeholder="Select a direction"
+              placeholder="选择方向"
               options={directionOptions}
               clearable={false}
               size="small"

@@ -59,10 +59,10 @@ const EventDefinitionTypeRenderer = ({ type }: { type: string }) => {
 };
 
 const FieldsRenderer = ({ fields }: { fields: { [fieldName: string]: string } }) =>
-  isEmpty(fields) ? <em>No additional Fields added to this Event.</em> : <EventFields fields={fields} />;
+  isEmpty(fields) ? <em>未向此事件添加其他字段。</em> : <EventFields fields={fields} />;
 
 const GroupByFieldsRenderer = ({ groupByFields }: { groupByFields: Record<string, string> }) =>
-  isEmpty(groupByFields) ? <em>No group-by fields on this Event.</em> : <EventFields fields={groupByFields} />;
+  isEmpty(groupByFields) ? <em>此事件没有分组字段。</em> : <EventFields fields={groupByFields} />;
 
 const RemediationStepRenderer = ({
   eventDefinitionId,
@@ -77,7 +77,7 @@ const RemediationStepRenderer = ({
   return eventDefinitionContext?.remediation_steps ? (
     <MarkdownPreview show withFullView noBorder noBackground value={eventDefinitionContext.remediation_steps} />
   ) : (
-    <em>No remediation steps</em>
+    <em>无修复步骤</em>
   );
 };
 
@@ -117,7 +117,7 @@ const TimeRangeRenderer = ({ eventData }: { eventData: Event }) =>
       <Timestamp dateTime={new Date(eventData.timerange_end)} />
     </div>
   ) : (
-    <em>No time range</em>
+    <em>无时间范围</em>
   );
 
 const ValidSecurityLicense = () => {
@@ -138,7 +138,7 @@ export const getGeneralEventAttributeRenderers = <T extends EntityBase, M = unkn
     renderCell: (message: string, event) => <MessageRenderer message={message} eventId={event.id} />,
   },
   key: {
-    renderCell: (key: string) => <span>{key || <em>No Key set for this Event.</em>}</span>,
+    renderCell: (key: string) => <span>{key || <em>此事件未设置密钥。</em>}</span>,
     staticWidth: 200,
   },
   id: {

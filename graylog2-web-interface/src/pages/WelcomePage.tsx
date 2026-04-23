@@ -20,7 +20,7 @@ import { DocumentTitle } from 'components/common';
 import Welcome from 'components/welcome/Welcome';
 
 const WelcomePage = () => (
-  <DocumentTitle title="Welcome">
+  <DocumentTitle title="欢迎">
     <Welcome />
   </DocumentTitle>
 );

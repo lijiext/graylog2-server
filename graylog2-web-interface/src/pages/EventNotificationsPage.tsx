@@ -26,14 +26,14 @@ import EventsPageNavigation from 'components/events/EventsPageNavigation';
 import PageDescription from 'components/event-notifications/PageDescription';
 
 const EventNotificationsPage = () => (
-  <DocumentTitle title="Notifications">
+  <DocumentTitle title="通知">
     <EventsPageNavigation />
     <PageHeader
-      title="Notifications"
+      title="通知"
       actions={
         <IfPermitted permissions="eventnotifications:create">
           <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.CREATE}>
-            <Button bsStyle="primary">Create notification</Button>
+            <Button bsStyle="primary">创建通知</Button>
           </LinkContainer>
         </IfPermitted>
       }

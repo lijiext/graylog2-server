@@ -71,7 +71,7 @@ const ContentStreamReleasesSection = () => {
     return (
       <Alert bsStyle="info">
         <p>
-          Unable to load RSS feed at the moment ! You can read more on{' '}
+          当前无法加载 RSS 源！您可以阅读更多{' '}
           <ExternalLink href="https://www.graylog.org/post/tag/release-info">Graylog.org</ExternalLink>.
         </p>
       </Alert>

@@ -35,7 +35,7 @@ const InputDiagnosisStep = ({ onClose }: Props) => {
     <StepWrapper>
       <Row>
         <DescriptionCol md={12}>
-          <p>Test inputs and parsing without writing any data to the search cluster.</p>
+          <p>测试输入和解析，无需向搜索集群写入任何数据。</p>
         </DescriptionCol>
       </Row>
       {input?.id && (
@@ -43,12 +43,12 @@ const InputDiagnosisStep = ({ onClose }: Props) => {
           bsSize="xs"
           bsStyle="primary"
           onClick={() => window.open(Routes.SYSTEM.INPUT_DIAGNOSIS(input?.id), '_blank')}>
-          Go to Input Diagnosis
+          前往输入端诊断
         </Button>
       )}
       <Row>
         <ButtonCol md={12}>
-          <Button onClick={onClose}>Finish</Button>
+          <Button onClick={onClose}>完成</Button>
         </ButtonCol>
       </Row>
     </StepWrapper>

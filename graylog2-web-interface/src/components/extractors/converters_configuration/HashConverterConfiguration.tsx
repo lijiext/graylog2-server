@@ -53,7 +53,7 @@ class HashConverterConfiguration extends React.Component<
         <Input
           type="checkbox"
           id={`enable-${this.props.type}-converter`}
-          label="Build MD5 hash from value"
+          label="从值构建 MD5 哈希"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked
           onChange={this._toggleConverter}

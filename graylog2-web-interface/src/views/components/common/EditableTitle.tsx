@@ -95,11 +95,11 @@ const EditableTitle = ({ disabled = false, value: propsValue, onChange }: Props)
   return editing ? (
     <span>
       <form onSubmit={_onSubmit} className={styles.inlineForm}>
-        <StyledInput autoFocus type="text" value={value} onBlur={_onBlur} title="Edit title" onChange={_onChange} />
+        <StyledInput autoFocus type="text" value={value} onBlur={_onBlur} title="编辑标题" onChange={_onChange} />
       </form>
     </span>
   ) : (
-    <Title onDoubleClick={_toggleEditing} title={`${value} - Double click the title to edit it.`}>
+    <Title onDoubleClick={_toggleEditing} title={`${value} - 双击标题以进行编辑。`}>
       {value}
     </Title>
   );

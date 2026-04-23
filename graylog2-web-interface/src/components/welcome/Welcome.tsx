@@ -43,18 +43,18 @@ const ChangeStartPageHelper = ({ readOnly, userId, startpage }: HelperProps) => 
   const defaultPageIsDefined = startpage !== null;
 
   if (defaultPageIsDefined || readOnly) {
-    return <span>This is your personal page, allowing easy access to the content most relevant for you.</span>;
+    return <span>这是您的个人页面，可让您轻松访问最相关的内容。</span>;
   }
 
   return (
     <>
-      <span>This is your personal start page, allowing easy access to the content most relevant for you.</span>
+      <span>这是您的个人起始页，可让您轻松访问最相关的内容。</span>
       <span>
         {' '}
-        You can change your personal start page on the <Link to={Routes.SYSTEM.USERS.edit(userId)}>
-          edit profile
+        您可以在以下位置更改您的个人起始页面 <Link to={Routes.SYSTEM.USERS.edit(userId)}>
+          编辑个人资料
         </Link>{' '}
-        page.
+        页面。
       </span>
     </>
   );
@@ -67,20 +67,20 @@ const Welcome = () => {
 
   return (
     <>
-      <PageHeader title={`Welcome to ${productName}!`}>
+      <PageHeader title={`欢迎使用 ${productName}！`}>
         <ChangeStartPageHelper userId={userId} readOnly={readOnly} startpage={startpage} />
       </PageHeader>
       <SectionGrid>
-        <StyledSectionComponent title="Last Opened">
-          <p className="description">Overview of recently visited saved searches and dashboards.</p>
+        <StyledSectionComponent title="上次打开">
+          <p className="description">最近访问的保存搜索和仪表盘的概览。</p>
           <LastOpenList />
         </StyledSectionComponent>
-        <StyledSectionComponent title="Favorite Items">
-          <p className="description">Overview of your favorite saved searches and dashboards.</p>
+        <StyledSectionComponent title="收藏项">
+          <p className="description">您最喜欢的保存搜索和仪表盘的概览。</p>
           <FavoriteItemsList />
         </StyledSectionComponent>
       </SectionGrid>
-      <StyledSectionComponent title="Recent Activity">
+      <StyledSectionComponent title="最近活动">
         <p className="description">
           {isAdmin
             ? 'This list includes all actions users performed, like creating or sharing an entity.'

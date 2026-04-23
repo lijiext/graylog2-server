@@ -68,11 +68,11 @@ const CreateTokenForm = ({
   return (
     <StyledForm className="form-inline" onSubmit={createToken}>
       <FormGroup controlId="create-token-input">
-        <ControlLabel>Token Name</ControlLabel>
+        <ControlLabel>令牌名称</ControlLabel>
         <FormControl
           type="text"
           disabled={disableForm}
-          placeholder="What is this token for?"
+          placeholder="此令牌用于什么？"
           value={tokenName}
           onChange={(event) => setTokenName((event.target as HTMLInputElement).value)}
         />
@@ -82,7 +82,7 @@ const CreateTokenForm = ({
           id="token_creation_ttl"
           duration={tokenTtl}
           update={(value) => setTokenTtl(value)}
-          label="Token TTL"
+          label="令牌 TTL"
           help=""
           validator={ttlValidator}
           errorText="invalid (min: 1 minute)"
@@ -98,7 +98,7 @@ const CreateTokenForm = ({
         {creatingToken ? <Spinner text="Creating..." /> : 'Create Token'}
       </Button>
       <HelpBlock>
-        TTL Syntax Examples: for 60 seconds: PT60S, for 60 minutes: PT60M, for 24 hours: PT24H, for 30 days: P30D
+        TTL 语法示例：60 秒：PT60S，60 分钟：PT60M，24 小时：PT24H，30 天：P30D
       </HelpBlock>
     </StyledForm>
   );

@@ -74,7 +74,7 @@ const IndexSetUpdateForm = ({ initialValues, indexSets, stream }: Props) => {
 
   const onSave = (values: FormValues) => {
     StreamsStore.update(stream.id, values, (response) => {
-      UserNotification.success(`IndexSet of stream'${stream.title}' was updated successfully.`, 'Success');
+      UserNotification.success(`数据流'${stream.title}'的索引集已成功更新。`, '成功');
       setShowModal(false);
       queryClient.invalidateQueries({
         queryKey: ['stream', stream.id],
@@ -90,8 +90,8 @@ const IndexSetUpdateForm = ({ initialValues, indexSets, stream }: Props) => {
         disabled={!isPermitted(currentUser.permissions, `streams:edit:${stream.id}`)}
         bsSize="sm"
         onClick={openModal}
-        title="Edit index set">
-        <Icon name="add" /> Edit Index Set
+        title="编辑索引集">
+        <Icon name="add" /> 编辑索引集
       </Button>
 
       {showModal && (
@@ -100,15 +100,15 @@ const IndexSetUpdateForm = ({ initialValues, indexSets, stream }: Props) => {
             {({ isSubmitting, isValidating }) => (
               <Form>
                 <Modal.Header>
-                  <Modal.Title>Edit Stream IndexSet</Modal.Title>
+                  <Modal.Title>编辑数据流索引集</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                   <IndexSetSelect indexSets={indexSets} />
                 </Modal.Body>
                 <Modal.Footer>
                   <ModalSubmit
-                    submitButtonText="Update"
-                    submitLoadingText="Saving stream"
+                    submitButtonText="更新"
+                    submitLoadingText="正在保存数据流"
                     onCancel={onCloseModal}
                     disabledSubmit={isValidating}
                     isSubmitting={isSubmitting}

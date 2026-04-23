@@ -24,7 +24,7 @@ import type { DefaultLayout } from 'components/common/EntityDataTable/types';
 import { isPermitted } from 'util/PermissionsMixin';
 import useCurrentUser from 'hooks/useCurrentUser';
 
-const noDetails = <em>No further details</em>;
+const noDetails = <em>无更多详情</em>;
 
 type Props = {
   defaultLayout: DefaultLayout;

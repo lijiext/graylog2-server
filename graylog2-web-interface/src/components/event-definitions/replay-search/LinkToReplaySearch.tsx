@@ -39,7 +39,7 @@ const LinkToReplaySearch = ({ isEvent = false, id = undefined, onClick = undefin
       searchLink={searchLink}
       onClick={onClick}
       component={isMenuitem ? MenuItem : undefined}>
-      Replay search
+      重放搜索
     </ReplaySearchButtonComponent>
   );
 };

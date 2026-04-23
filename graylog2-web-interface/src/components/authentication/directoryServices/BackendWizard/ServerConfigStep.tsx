@@ -144,21 +144,21 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
       validateOnMount={validateOnMount}>
       {({ isSubmitting, setFieldValue, values, validateForm }) => (
         <Form className="form form-horizontal">
-          <FormikFormGroup help={help.title} label="Title" name="title" placeholder="Title" />
+          <FormikFormGroup help={help.title} label="标题" name="title" placeholder="标题" />
 
           <FormikFormGroup
             help={help.description}
             label={
               <>
-                Description <Opt />
+                描述 <Opt />
               </>
             }
             type="textarea"
             name="description"
-            placeholder="Description"
+            placeholder="描述"
           />
 
-          <Input id="uri-host" label="Server Address" labelClassName="col-sm-3" wrapperClassName="col-sm-9">
+          <Input id="uri-host" label="服务器地址" labelClassName="col-sm-3" wrapperClassName="col-sm-9">
             <>
               <ServerUrl className="input-group">
                 <FormikInput
@@ -166,7 +166,7 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
                   name="serverHost"
                   id="serverHost"
                   error={backendValidationErrors?.serverHost}
-                  placeholder="Hostname"
+                  placeholder="主机名"
                   validate={validateField(FORM_VALIDATION.serverHost)}
                 />
                 <span className="input-group-addon input-group-separator">:</span>
@@ -175,7 +175,7 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
                   name="serverPort"
                   id="serverPort"
                   error={backendValidationErrors?.serverPort}
-                  placeholder="Port"
+                  placeholder="端口"
                   type="number"
                   validate={validateField(FORM_VALIDATION.serverPort)}
                 />
@@ -189,7 +189,7 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
                         defaultChecked={value === 'none'}
                         formGroupClassName=""
                         id={name}
-                        label="None"
+                        label="无"
                         onBlur={onBlur}
                         onChange={(e) => _onTransportSecurityChange(e, values, setFieldValue, onChange)}
                         type="radio"
@@ -221,7 +221,7 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
 
                 <FormikInput
                   formGroupClassName=""
-                  label="Verify Certificates"
+                  label="验证证书"
                   name="verifyCertificates"
                   id="verifyCertificates"
                   type="checkbox"
@@ -232,10 +232,10 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
           <FormikFormGroup
             help={help.systemUserDn}
             error={backendValidationErrors?.systemUserDn}
-            label="System User DN"
+            label="系统用户 DN"
             name="systemUserDn"
             validate={validateField(FORM_VALIDATION.systemUserDn)}
-            placeholder="System User DN"
+            placeholder="系统用户 DN"
             required
           />
 
@@ -244,13 +244,13 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
               id="systemPassword"
               label={
                 <>
-                  System Password <Opt />
+                  系统密码 <Opt />
                 </>
               }
               labelClassName="col-sm-3"
               wrapperClassName="col-sm-9">
               <Button type="button" onClick={() => setFieldValue('systemUserPassword', '')}>
-                Reset Password
+                重置密码
               </Button>
             </Input>
           ) : (
@@ -259,19 +259,19 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
               buttonAfter={
                 backendHasPassword && values.systemUserPassword !== undefined ? (
                   <Button type="button" onClick={() => setFieldValue('systemUserPassword', undefined)}>
-                    Undo Reset
+                    撤销重置
                   </Button>
                 ) : undefined
               }
               help={help.systemUserPassword}
               label={
                 <>
-                  System Password <Opt />
+                  系统密码 <Opt />
                 </>
               }
               name="systemUserPassword"
               error={backendValidationErrors?.systemUserPassword}
-              placeholder="System Password"
+              placeholder="系统密码"
               validate={validateField(FORM_VALIDATION.systemUserPassword)}
               type="password"
             />
@@ -281,7 +281,7 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
 
           <ButtonToolbar className="pull-right">
             <Button disabled={isSubmitting} onClick={() => _onSubmitAll(validateForm)} type="button">
-              Finish & Save Service
+              完成并保存服务
             </Button>
             <Button
               bsStyle="primary"
@@ -294,7 +294,7 @@ const ServerConfigStep = ({ formRef, help = {}, onSubmit, onSubmitAll, submitAll
                 });
               }}
               type="submit">
-              Next: User Synchronization
+              下一步：用户同步
             </Button>
           </ButtonToolbar>
         </Form>

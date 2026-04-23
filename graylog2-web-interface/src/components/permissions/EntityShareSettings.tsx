@@ -119,7 +119,7 @@ const EntityShareSettings = ({
   return (
     <>
       <Section>
-        <GranteesSelectorHeadline>Add Collaborator</GranteesSelectorHeadline>
+        <GranteesSelectorHeadline>添加协作者</GranteesSelectorHeadline>
         <p>{description}</p>
         <GranteesSelector
           availableGrantees={filteredGrantees}
@@ -136,11 +136,11 @@ const EntityShareSettings = ({
         onDelete={_handleDeletion}
         onCapabilityChange={_handleSelection}
         selectedGrantees={selectedGrantees}
-        title="Direct Collaborators"
+        title="直接协作者"
       />
       {CollectionGranteeList && (
         <CollectionGranteeList
-          title="Shared via Collections"
+          title="通过集合共享"
           entityType={entityType}
           entityTypeTitle={entityTypeTitle}
           entityGRN={entityGRN}

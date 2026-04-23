@@ -31,7 +31,7 @@ const EventActions = ({ event }: { event: Event }) => {
     <>
       <ButtonToolbar>
         <Button bsSize="xs" onClick={toggleExtraSection}>
-          Details
+          详情
         </Button>
         {moreActions.length ? <MoreActions>{moreActions}</MoreActions> : null}
       </ButtonToolbar>

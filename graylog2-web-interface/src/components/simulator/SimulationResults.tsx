@@ -135,11 +135,11 @@ class SimulationResults extends React.Component<
     ) : null;
 
     const errorMessage = error ? (
-      <Alert bsStyle="danger" title="Error simulating message processing">
+      <Alert bsStyle="danger" title="模拟消息处理时出错">
         <p>
-          Could not simulate processing of message <em>{originalMessage.id}</em> in stream <em>{stream.title}</em>.
+          无法模拟消息处理 <em>{originalMessage.id}</em> 在数据流中 <em>{stream.title}</em>.
           <br />
-          Please try loading the message again, or use another message for the simulation.
+          请尝试重新加载该消息，或使用另一条消息进行模拟。
         </p>
       </Alert>
     ) : null;
@@ -150,21 +150,21 @@ class SimulationResults extends React.Component<
           <hr />
         </Col>
         <Col md={6}>
-          <h1>Original message</h1>
+          <h1>原始消息</h1>
           <div className="message-preview-wrapper">{originalMessagePreview}</div>
         </Col>
         <Col md={6}>
           <div className="pull-right">
             <DropdownButton
               id="simulation-view-options"
-              title="More results"
+              title="更多结果"
               bsStyle="default"
               bsSize="small"
               pullRight>
               {this._getViewOptionsMenuItems()}
             </DropdownButton>
           </div>
-          <h1>Simulation results</h1>
+          <h1>仿真结果</h1>
           <p>
             {isLoading
               ? 'Simulating message processing, please wait a moment.'

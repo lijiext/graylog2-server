@@ -98,10 +98,10 @@ const TimeRange = ({ timerange }: { timerange: TimeRangeType | null | undefined 
   return (
     <>
       <span data-testid="from">
-        From: <b>{from}</b>
+        发件人: <b>{from}</b>
       </span>
       <span data-testid="to">
-        Until: <b>{until}</b>
+        直到: <b>{until}</b>
       </span>
     </>
   );
@@ -114,10 +114,10 @@ type Props = {
 
 const TimeRangeDisplay = ({ timerange, toggleDropdownShow = undefined }: Props) => (
   <TimeRangeWrapper
-    aria-label="Search Time Range, Opens Time Range Selector On Click"
+    aria-label="搜索时间范围，点击时打开时间范围选择器"
     role="button"
     onClick={toggleDropdownShow}>
-    {isNoTimeRangeOverride(timerange) ? <span>No Override</span> : <TimeRange timerange={timerange} />}
+    {isNoTimeRangeOverride(timerange) ? <span>不覆盖</span> : <TimeRange timerange={timerange} />}
   </TimeRangeWrapper>
 );
 

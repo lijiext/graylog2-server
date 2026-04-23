@@ -59,7 +59,7 @@ const SystemJobsList = ({ jobs }: SystemJobsListProps): React.ReactElement => {
   const formattedJobs = jobs.map(formatSystemJob);
 
   return formattedJobs.length === 0 ? (
-    <StyledAlert bsStyle="info">No active system jobs.</StyledAlert>
+    <StyledAlert bsStyle="info">无活动的系统任务。</StyledAlert>
   ) : (
     <span>{formattedJobs}</span>
   );

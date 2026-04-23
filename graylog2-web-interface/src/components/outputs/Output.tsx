@@ -144,7 +144,7 @@ class Output extends React.Component<
 
     const { output } = this.props;
     const contentPack = output.content_pack ? (
-      <span title="Created from content pack">
+      <span title="源自内容包">
         <Icon name="redeem" />
       </span>
     ) : null;
@@ -155,8 +155,7 @@ class Output extends React.Component<
     if (this._typeNotAvailable()) {
       alert = (
         <Alert bsStyle="danger">
-          The plugin required for this output is not loaded. Editing it is not possible. Please load the plugin or
-          delete the output.
+          此输出所需的插件未加载。无法对其进行编辑。请加载插件或删除该输出。
         </Alert>
       );
     } else {
@@ -177,7 +176,7 @@ class Output extends React.Component<
       deleteFromStreamButton = (
         <IfPermitted permissions="stream_outputs:delete">
           <Button bsStyle="info" onClick={this._onDeleteFromStream}>
-            Delete from stream
+            从数据流中删除
           </Button>
         </IfPermitted>
       );
@@ -194,7 +193,7 @@ class Output extends React.Component<
                 {output.title} {contentPack}
                 <small>ID: {output.id}</small>
               </h2>
-              Type: {output.type}
+              类型: {output.type}
             </Col>
             <Col md={6}>
               <NodeRowInfo className="text-right pull-right">
@@ -207,7 +206,7 @@ class Output extends React.Component<
                 {deleteFromStreamButton}
                 <IfPermitted permissions="outputs:terminate">
                   <Button bsStyle="danger" onClick={this._onDeleteGlobally}>
-                    Delete globally
+                    全局删除
                   </Button>
                 </IfPermitted>
               </NodeRowInfo>

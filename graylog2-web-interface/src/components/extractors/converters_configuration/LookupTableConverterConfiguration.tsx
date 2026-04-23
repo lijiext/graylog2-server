@@ -81,7 +81,7 @@ class LookupTableConverterConfiguration extends React.Component<Props, { lookupT
 
     const helpMessage = (
       <span>
-        Lookup tables can be created <Link to={Routes.SYSTEM.LOOKUPTABLES.OVERVIEW}>here</Link>.
+        可以创建查找表 <Link to={Routes.SYSTEM.LOOKUPTABLES.OVERVIEW}>here</Link>.
       </span>
     );
 
@@ -93,7 +93,7 @@ class LookupTableConverterConfiguration extends React.Component<Props, { lookupT
             this.converterEnabled = converterEnabled;
           }}
           id={`enable-${this.props.type}-converter`}
-          label="Convert value by using lookup table"
+          label="使用查找表转换值"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked
           onChange={this._toggleConverter}
@@ -104,13 +104,13 @@ class LookupTableConverterConfiguration extends React.Component<Props, { lookupT
             <div className="xtrc-converter-subfields">
               <Input
                 id="lookup_table_name"
-                label="Lookup Table"
+                label="查找表"
                 labelClassName="col-md-3"
                 wrapperClassName="col-md-9"
                 required={this.converterEnabled && this.converterEnabled.getChecked()}
                 help={helpMessage}>
                 <Select
-                  placeholder="Select a lookup table"
+                  placeholder="选择查找表"
                   clearable={false}
                   options={lookupTables}
                   onChange={this._onSelect('lookup_table_name')}

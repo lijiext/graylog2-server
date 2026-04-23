@@ -32,13 +32,13 @@ const TimeBasedRotationStrategySummary = ({ config }: Props) => {
   return (
     <div>
       <dl>
-        <dt>Index rotation strategy:</dt>
-        <dd>Index Time</dd>
-        <dt>Rotation period:</dt>
+        <dt>索引轮转策略:</dt>
+        <dd>索引时间</dd>
+        <dt>轮转周期:</dt>
         <dd>
           {config.rotation_period} ({humanizedPeriod()})
         </dd>
-        <dt>Rotate empty index set:</dt>
+        <dt>轮换空索引集:</dt>
         <dd>{config.rotate_empty_index_set ? 'Yes' : 'No'}</dd>
       </dl>
     </div>

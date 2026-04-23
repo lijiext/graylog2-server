@@ -25,7 +25,7 @@ const ViewsExecutionInfo = () => {
   const result = useViewsSelector(selectCurrentQueryResults);
 
   if (isEmpty(result)) {
-    return <i>No query executed yet.</i>;
+    return <i>尚未执行任何查询。</i>;
   }
 
   const total = result?.searchTypes && Object.values(result?.searchTypes)?.find((e) => e.total)?.total;

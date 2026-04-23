@@ -100,14 +100,14 @@ class EventDefinitionDescription extends React.Component<
   static renderNotificationsInformation = (definition) => {
     let notificationsInformation = (
       <span>
-        Does <b>not</b> trigger any Notifications.
+        是否 <b>not</b> 触发任何通知。
       </span>
     );
 
     if (definition.notifications.length > 0) {
       notificationsInformation = (
         <span>
-          Triggers {definition.notifications.length}{' '}
+          触发器 {definition.notifications.length}{' '}
           <Pluralize singular="Notification" plural="Notifications" value={definition.notifications.length} />.
         </span>
       );
@@ -141,7 +141,7 @@ class EventDefinitionDescription extends React.Component<
     const scheduleCtx = context?.scheduler?.[definition.id] ?? null;
 
     if (!scheduleCtx.is_scheduled) {
-      return <p>Event definition is not scheduled, no details available.</p>;
+      return <p>事件定义未安排，无详细信息。</p>;
     }
 
     let timerange = null;
@@ -152,7 +152,7 @@ class EventDefinitionDescription extends React.Component<
 
       timerange = (
         <>
-          <DetailTitle>Next timerange:</DetailTitle>
+          <DetailTitle>下一个时间范围:</DetailTitle>
           <DetailValue>
             <Timestamp dateTime={from} /> <Icon name="arrow_circle_right" /> <Timestamp dateTime={to} />
           </DetailValue>
@@ -164,11 +164,11 @@ class EventDefinitionDescription extends React.Component<
       <Row>
         <Col md={6}>
           <DetailsList>
-            <DetailTitle>Status:</DetailTitle>
+            <DetailTitle>状态:</DetailTitle>
             <DetailValue>{scheduleCtx.status}</DetailValue>
             {scheduleCtx.triggered_at && (
               <>
-                <DetailTitle>Last execution:</DetailTitle>
+                <DetailTitle>上次执行:</DetailTitle>
                 <DetailValue>
                   <Timestamp dateTime={scheduleCtx.triggered_at} />
                 </DetailValue>
@@ -176,14 +176,14 @@ class EventDefinitionDescription extends React.Component<
             )}
             {scheduleCtx.next_time && (
               <>
-                <DetailTitle>Next execution:</DetailTitle>
+                <DetailTitle>下次执行:</DetailTitle>
                 <DetailValue>
                   <Timestamp dateTime={scheduleCtx.next_time} />
                 </DetailValue>
               </>
             )}
             {timerange}
-            <DetailTitle>Queued notifications:</DetailTitle>
+            <DetailTitle>待处理的告警:</DetailTitle>
             <DetailValue>
               {scheduleCtx.queued_notifications}
               {scheduleCtx.queued_notifications > 0 && (

@@ -53,7 +53,7 @@ class TokenizerConverterConfiguration extends React.Component<
         <Input
           type="checkbox"
           id={`enable-${this.props.type}-converter`}
-          label="Add Key=Value pairs as fields"
+          label="添加键值对作为字段"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked
           onChange={this._toggleConverter}

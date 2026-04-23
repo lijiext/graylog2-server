@@ -161,7 +161,7 @@ const FilterRulesFields = ({ type }: Props) => {
       </Panel.Collapse>
       {blockToDelete && (
         <ConfirmDialog
-          title={`Delete ${blockToDelete.type}`}
+          title={`删除 ${blockToDelete.type}`}
           show
           onConfirm={() => {
             deleteBlock(blockToDelete.orderIndex, blockToDelete.type);
@@ -169,9 +169,9 @@ const FilterRulesFields = ({ type }: Props) => {
           }}
           onCancel={() => setBlockToDelete(null)}>
           <>
-            Are you sure you want to delete{' '}
+            您确定要删除吗{' '}
             <strong>
-              {blockToDelete.type} N° {blockToDelete.orderIndex + 1}
+              {blockToDelete.type} 编号 {blockToDelete.orderIndex + 1}
             </strong>
             ?
           </>

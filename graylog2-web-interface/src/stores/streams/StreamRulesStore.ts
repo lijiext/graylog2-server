@@ -48,7 +48,7 @@ export const StreamRulesStore = singletonStore('core.StreamRules', () =>
     },
     update(streamId: string, streamRuleId: string, data: StreamRule, callback: () => void) {
       const failCallback = (error) => {
-        UserNotification.error(`Updating Stream Rule failed with status: ${error}`, 'Could not update Stream Rule');
+        UserNotification.error(`更新数据流规则失败，状态为：${error}`, '无法更新数据流规则');
       };
 
       const url = URLUtils.qualifyUrl(ApiRoutes.StreamRulesApiController.update(streamId, streamRuleId).url);
@@ -64,7 +64,7 @@ export const StreamRulesStore = singletonStore('core.StreamRules', () =>
     },
     remove(streamId: string, streamRuleId: string, callback: () => void) {
       const failCallback = (error) => {
-        UserNotification.error(`Deleting Stream Rule failed with status: ${error}`, 'Could not delete Stream Rule');
+        UserNotification.error(`删除数据流规则失败，状态为：${error}`, '无法删除数据流规则');
       };
 
       const url = URLUtils.qualifyUrl(ApiRoutes.StreamRulesApiController.delete(streamId, streamRuleId).url);
@@ -73,7 +73,7 @@ export const StreamRulesStore = singletonStore('core.StreamRules', () =>
     },
     create(streamId: string, data: StreamRule, callback: () => void) {
       const failCallback = (error) => {
-        UserNotification.error(`Creating Stream Rule failed with status: ${error}`, 'Could not create Stream Rule');
+        UserNotification.error(`创建数据流规则失败，状态为：${error}`, '无法创建数据流规则');
       };
 
       const url = URLUtils.qualifyUrl(ApiRoutes.StreamRulesApiController.create(streamId).url);

@@ -25,9 +25,9 @@ type Props = {
 };
 
 const ProfileSection = ({ role: { name, description } }: Props) => (
-  <SectionComponent title="Profile">
-    <ReadOnlyFormGroup label="Name" value={name} />
-    <ReadOnlyFormGroup label="Description" value={description} />
+  <SectionComponent title="个人资料">
+    <ReadOnlyFormGroup label="名称" value={name} />
+    <ReadOnlyFormGroup label="描述" value={description} />
   </SectionComponent>
 );
 

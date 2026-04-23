@@ -73,12 +73,12 @@ const CreateExtractorsPage = () => {
   const stringifiedExampleMessage = StringUtils.stringify(exampleMessage.fields[field]);
 
   return (
-    <DocumentTitle title={`New extractor for input ${input.title}`}>
+    <DocumentTitle title={`为输入 ${input.title} 创建新的提取器`}>
       <div>
         <PageHeader
           title={
             <span>
-              New extractor for input <em>{input.title}</em>
+              为输入端创建新提取器 <em>{input.title}</em>
             </span>
           }
           documentationLink={{
@@ -86,8 +86,7 @@ const CreateExtractorsPage = () => {
             path: DocsHelper.PAGES.EXTRACTORS,
           }}>
           <span>
-            Extractors are applied on every message that is received by an input. Use them to extract and transform any
-            text data into fields that allow you easy filtering and analysis later on.
+            提取器应用于输入端接收到的每条消息。使用它们将任何文本数据提取并转换为字段，以便您稍后进行轻松的过滤和分析。
           </span>
         </PageHeader>
         <EditExtractor

@@ -29,11 +29,11 @@ const ClosingRetentionStrategySummary = ({
 }: ClosingRetentionStrategySummaryProps) => (
   <div>
     <dl>
-      <dt>Index retention strategy:</dt>
-      <dd>Close</dd>
+      <dt>索引保留策略:</dt>
+      <dd>关闭</dd>
       {rotationStrategyClass !== TIME_BASED_SIZE_OPTIMIZING_ROTATION_STRATEGY && (
         <>
-          <dt>Max number of indices:</dt>
+          <dt>最大索引数:</dt>
           <dd>{config.max_number_of_indices}</dd>
         </>
       )}

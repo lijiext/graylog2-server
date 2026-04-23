@@ -71,7 +71,7 @@ function AdapterFormFields() {
       <FormikFormGroup
         type="text"
         name="title"
-        label="* Title"
+        label="* 标题"
         required
         onChange={handleTitleChange}
         help={touched.title && errors.title ? null : 'A short title for this data adapter.'}
@@ -81,15 +81,15 @@ function AdapterFormFields() {
       <FormikFormGroup
         type="text"
         name="description"
-        label="Description"
-        help="Data adapter description."
+        label="描述"
+        help="数据适配器描述。"
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9"
       />
       <FormikFormGroup
         type="text"
         name="name"
-        label="* Name"
+        label="* 名称"
         required
         error={touched.name && errors.name ? errors.name : null}
         onChange={() => setGenerateName(!touched.name)}
@@ -102,8 +102,8 @@ function AdapterFormFields() {
         wrapperClassName="col-sm-9"
       />
       <TimeUnitInput
-        label="Custom Error TTL"
-        help="Define a custom TTL for caching erroneous results. Otherwise the default of 5 seconds is used"
+        label="自定义错误 TTL"
+        help="为缓存错误结果定义自定义 TTL。否则将使用默认的 5 秒"
         update={updateCustomErrorTTL}
         value={values.custom_error_ttl}
         unit={values.custom_error_ttl_unit || 'MINUTES'}

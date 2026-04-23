@@ -61,7 +61,7 @@ public abstract class AbstractKinesisCodec extends AbstractCodec {
                         e, rawMessage, new String(rawMessage.getPayload(), charset));
             }
         } catch (Exception e) {
-            throw InputProcessingException.create("Couldn't deserialize log data",
+            throw InputProcessingException.create("无法反序列化日志数据",
                     e, rawMessage, new String(rawMessage.getPayload(), charset));
         }
     }

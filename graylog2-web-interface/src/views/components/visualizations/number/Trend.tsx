@@ -165,7 +165,7 @@ const Trend = React.forwardRef<HTMLSpanElement, Props>(
       <Background $trend={backgroundTrend} data-testid="trend-background">
         <TextContainer $trend={backgroundTrend} ref={ref}>
           <StyledIcon name={trendIcon} $trend={backgroundTrend} data-testid="trend-icon" />{' '}
-          <span data-testid="trend-value" title={`Previous value: ${previousConverted}`}>
+          <span data-testid="trend-value" title={`前一个值：${previousConverted}`}>
             {absoluteDifference} / {relativeDifference}
           </span>
         </TextContainer>

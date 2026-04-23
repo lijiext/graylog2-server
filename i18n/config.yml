@@ -1,0 +1,65 @@
+# Graylog 中文本地化配置
+# 所有脚本读取此文件，避免硬编码
+
+version: 1
+branch: 7.0.6-zh
+baseTag: 7.0.6
+
+paths:
+  frontend:
+    root: graylog2-web-interface/src
+    include:
+      - "**/*.tsx"
+      - "**/*.jsx"
+      - "**/*.js"
+      - "**/*.ts"
+    exclude:
+      - "**/*.test.tsx"
+      - "**/*.test.jsx"
+      - "**/*.test.js"
+      - "**/*.test.ts"
+      - "**/*.spec.tsx"
+      - "**/*.spec.jsx"
+      - "**/*.spec.js"
+      - "**/*.stories.tsx"
+      - "**/__mocks__/**"
+      - "**/@types/**"
+      - "**/test/**"
+      - "**/fixtures/**"
+  backend:
+    javaRoots:
+      - graylog2-server/src/main/java
+      - graylog-storage-elasticsearch7/src/main/java
+      - graylog-storage-opensearch2/src/main/java
+      - data-node/src/main/java
+    resources:
+      - graylog2-server/src/main/resources/ValidationMessages.properties
+    freemarker:
+      - graylog2-server/src/main/resources/org/graylog2/freemarker/templates/**/*.ftl
+
+output:
+  strings: i18n/strings.json
+  translations: i18n/translations.json
+  report: i18n/report.md
+
+terminology: i18n/terminology.json
+whitelist: i18n/whitelist.json
+blacklist: i18n/blacklist.json
+
+gemini:
+  binary: gemini
+  # model: 留空则用 gemini CLI 默认模型（oauth-personal 下为 gemini-2.0-flash）。
+  # 显式指定如 "gemini-2.5-flash" 时需确保账号可访问。
+  model: ""
+  outputFormat: text
+  batchSize: 1           # 清扫
+  rateLimitRpm: 8        # Qwen 并发模式下不生效（无 sleep）
+  retries: 3
+  backoffMs: 3000
+  timeoutMs: 300000      # 单次 gemini 调用 5 分钟超时
+  systemPromptFile: i18n/gemini_system_prompt.txt
+
+commit:
+  perBatch: true
+  messagePrefix: "i18n(zh):"
+  groupBy: module        # module | directory | none

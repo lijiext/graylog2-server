@@ -98,7 +98,7 @@ const CartesianOnClickPopoverDropdown = ({
 
   return (
     <Popover.Dropdown
-      title={<PopoverTitle onBackClick={showBackButton && onBackToTraces}>Related values</PopoverTitle>}>
+      title={<PopoverTitle onBackClick={showBackButton && onBackToTraces}>相关值</PopoverTitle>}>
       <DivContainer>
         <OnClickPopoverValueGroups
           columnPivotValues={columnPivotValues}

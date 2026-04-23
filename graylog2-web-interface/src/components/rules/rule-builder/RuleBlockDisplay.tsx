@@ -174,7 +174,7 @@ const RuleBlockDisplay = ({
                     e.target.blur();
                     onNegate();
                   }}>
-                  Not
+                  非
                 </NegationButton>
               )}
               {highlightedOutput ? highlightedRuleTitle(highlightedOutput, block?.step_title) : block?.step_title}
@@ -182,7 +182,7 @@ const RuleBlockDisplay = ({
                 <span>
                   &nbsp;
                   <DeprecatedLabel bsStyle="warning" bsSize="xs">
-                    Deprecated
+                    已弃用
                   </DeprecatedLabel>
                 </span>
               )}
@@ -205,30 +205,30 @@ const RuleBlockDisplay = ({
       <Col xs={3} md={2} className="text-right">
         {showActions && type === 'condition' && (
           <ActionsContainer>
-            <IconButton name="edit_square" onClick={onEdit} title="Edit" />
-            <IconButton name="delete" onClick={onDelete} title="Delete" />
+            <IconButton name="edit_square" onClick={onEdit} title="编辑" />
+            <IconButton name="delete" onClick={onDelete} title="删除" />
           </ActionsContainer>
         )}
         {showActions && type === 'action' && (
           <ActionsContainer>
-            <EditIconButton name="edit_square" onClick={onEdit} title="Edit" />
+            <EditIconButton name="edit_square" onClick={onEdit} title="编辑" />
             <OverlayDropdownButton
               title={MORE_ACTIONS_TITLE}
               buttonTitle={MORE_ACTIONS_HOVER_TITLE}
               bsSize="xsmall"
               onToggle={handleDropdownToggle}
               dropdownZIndex={1500}>
-              <MenuItem onClick={onEdit}>Edit</MenuItem>
+              <MenuItem onClick={onEdit}>编辑</MenuItem>
               <MenuItem
                 onClick={() => {
                   onDuplicate();
                   handleDropdownToggle();
                 }}>
-                Duplicate
+                复制
               </MenuItem>
               <MenuItem divider />
-              <MenuItem onClick={onInsertAbove}>Insert above</MenuItem>
-              <MenuItem onClick={onInsertBelow}>Insert below</MenuItem>
+              <MenuItem onClick={onInsertAbove}>插入上方</MenuItem>
+              <MenuItem onClick={onInsertBelow}>插入下方</MenuItem>
               <MenuItem divider />
               <DeleteMenuItem onClick={onDelete} />
             </OverlayDropdownButton>

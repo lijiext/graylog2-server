@@ -215,14 +215,14 @@ class AggregationConditionExpression extends React.Component<
               <FormGroup>
                 <div className={renderLabel ? styles.formControlNoLabel : undefined}>
                   <ButtonToolbar>
-                    <Button bsSize="sm" onClick={this.handleDeleteExpression} title="Delete Expression">
+                    <Button bsSize="sm" onClick={this.handleDeleteExpression} title="删除表达式">
                       <Icon name="remove" />
                     </Button>
-                    <Button bsSize="sm" onClick={this.handleAddExpression} title="Add Expression">
+                    <Button bsSize="sm" onClick={this.handleAddExpression} title="添加表达式">
                       <Icon name="add" />
                     </Button>
                     <Button bsSize="sm" onClick={this.handleAddGroup}>
-                      Add Group
+                      添加组
                     </Button>
                   </ButtonToolbar>
                 </div>
@@ -237,7 +237,7 @@ class AggregationConditionExpression extends React.Component<
         <>
           <BooleanOperatorSelector
             initialText="Messages must meet"
-            placeholder="Global boolean operator"
+            placeholder="全局布尔运算符"
             operator={this.getEffectiveGlobalGroupOperator()}
             onOperatorChange={this.handleOperatorChange}
           />

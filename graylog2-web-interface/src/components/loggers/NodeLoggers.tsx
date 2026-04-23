@@ -90,13 +90,13 @@ const NodeLoggers = ({ nodeId, subsystems }: Props) => {
                     event_details: { showing: !showDetails },
                   });
                 }}>
-                <Icon name="speed" /> {showDetails ? 'Hide' : 'Show'} log level metrics
+                <Icon name="speed" /> {showDetails ? 'Hide' : 'Show'} 日志级别指标
               </Button>
             </div>
             <h2>
               <LinkToNode nodeId={nodeId} />{' '}
               <small>
-                Has written a total of <strong>{_formattedThroughput} internal log messages.</strong>
+                已写入总数 <strong>{_formattedThroughput} 内部日志消息。</strong>
               </small>
             </h2>
           </div>

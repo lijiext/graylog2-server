@@ -58,7 +58,7 @@ const useInputReferences = (
     queryFn: () =>
       onError(fetchInputReferences(inputId), (errorThrown: FetchError) => {
         if (!(errorThrown.status === 404)) {
-          UserNotification.error(`Loading input references failed with: ${errorThrown}`);
+          UserNotification.error(`加载输入引用失败：${errorThrown}`);
         }
       }),
 

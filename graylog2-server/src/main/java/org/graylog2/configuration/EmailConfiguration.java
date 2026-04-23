@@ -112,7 +112,7 @@ public class EmailConfiguration {
     @SuppressWarnings("unused")
     public void validateTlsSsl() throws ValidationException {
         if (isUseTls() && isUseSsl()) {
-            throw new ValidationException("SMTP over SSL (SMTPS) and SMTP with STARTTLS cannot be used at the same time.");
+            throw new ValidationException("SMTP over SSL (SMTPS) 和带 STARTTLS 的 SMTP 不能同时使用。");
         }
     }
 

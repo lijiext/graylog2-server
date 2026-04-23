@@ -89,7 +89,7 @@ public class NotificationsResource extends RestResource {
     @ApiOperation(value = "Delete a notification by type")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such notification type.")
+            @ApiResponse(code = 404, message = "不存在此类通知类型。")
     })
     @AuditEvent(type = AuditEventTypes.SYSTEM_NOTIFICATION_DELETE)
     public void deleteNotification(@ApiParam(name = "notificationType")
@@ -103,7 +103,7 @@ public class NotificationsResource extends RestResource {
     @ApiOperation(value = "Delete a notification by type and key")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such notification type.")
+            @ApiResponse(code = 404, message = "不存在此类通知类型。")
     })
     @AuditEvent(type = AuditEventTypes.SYSTEM_NOTIFICATION_DELETE)
     public void deleteKeyedNotification(@ApiParam(name = "notificationType") @PathParam("notificationType") String notificationType,

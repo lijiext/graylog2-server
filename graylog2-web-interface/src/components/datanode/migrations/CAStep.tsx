@@ -27,7 +27,7 @@ const CaStep = ({ currentStep, onTriggerStep, hideActions }: MigrationStepCompon
     <MigrationError errorMessage={currentStep.error_message} />
     <CAConfiguration />
     <Space h="xs" />
-    {currentStep.next_steps.length <= 0 && <p>Please create a certificate Authority before proceeding.</p>}
+    {currentStep.next_steps.length <= 0 && <p>请在继续之前创建证书颁发机构。</p>}
     <MigrationStepTriggerButtonToolbar
       hidden={hideActions}
       nextSteps={currentStep.next_steps}

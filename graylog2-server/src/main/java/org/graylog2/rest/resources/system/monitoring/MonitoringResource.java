@@ -78,7 +78,7 @@ public class MonitoringResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Get timerange-based histogram of queries durations and percentage in recent query population")
+    @ApiOperation(value = "获取最近查询群体中查询持续时间和百分比的基于时间范围的直方图")
     @Path("query_duration_histogram")
     @Produces({MediaType.APPLICATION_JSON, MoreMediaTypes.TEXT_CSV})
     @RequiresPermissions({RestPermissions.MONITORING_READ})

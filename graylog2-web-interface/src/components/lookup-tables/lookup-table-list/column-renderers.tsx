@@ -72,7 +72,7 @@ const TitleCol = ({
 
   return (
     <TitleRow>
-      {tableErrorText && <ErrorPopover placement="right" errorText={tableErrorText} title="Lookup Table problem" />}
+      {tableErrorText && <ErrorPopover placement="right" errorText={tableErrorText} title="查找表问题" />}
       <Title onClick={onClick}>{children}</Title>
     </TitleRow>
   );
@@ -88,13 +88,13 @@ const CacheCol = ({ cacheId, caches }: { cacheId: string; caches: CachesMap }) =
     setEntity(<Cache cache={caches[cacheId]} />);
   }, [cacheId, caches, setModal, setTitle, setEntity]);
 
-  if (!caches || !cacheId || !caches[cacheId]) return <i>No cache</i>;
+  if (!caches || !cacheId || !caches[cacheId]) return <i>无缓存</i>;
 
   const cacheErrorText = errors?.cacheErrors[caches[cacheId].name];
 
   return (
     <TitleRow>
-      {cacheErrorText && <ErrorPopover placement="bottom" errorText={cacheErrorText} title="Cache problem" />}
+      {cacheErrorText && <ErrorPopover placement="bottom" errorText={cacheErrorText} title="缓存问题" />}
       <Title onClick={onClick}>{caches[cacheId].title}</Title>
     </TitleRow>
   );
@@ -110,14 +110,14 @@ const DataAdapterCol = ({ dataAdapterId, dataAdapters }: { dataAdapterId: string
     setEntity(<DataAdapter dataAdapter={dataAdapters[dataAdapterId]} />);
   }, [dataAdapterId, dataAdapters, setModal, setTitle, setEntity]);
 
-  if (!dataAdapters || !dataAdapterId || !dataAdapters[dataAdapterId]) return <i>No data adapters</i>;
+  if (!dataAdapters || !dataAdapterId || !dataAdapters[dataAdapterId]) return <i>无数据适配器</i>;
 
   const adapterErrorText = errors?.adapterErrors[dataAdapters[dataAdapterId].name];
 
   return (
     <TitleRow>
       {adapterErrorText && (
-        <ErrorPopover placement="bottom" errorText={adapterErrorText} title="Data Adapter problem" />
+        <ErrorPopover placement="bottom" errorText={adapterErrorText} title="数据适配器问题" />
       )}
       <Title onClick={onClick}>{dataAdapters[dataAdapterId].title}</Title>
     </TitleRow>

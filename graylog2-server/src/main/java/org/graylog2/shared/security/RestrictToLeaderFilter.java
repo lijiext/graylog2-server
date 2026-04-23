@@ -46,7 +46,7 @@ public class RestrictToLeaderFilter implements ContainerRequestFilter {
     public void filter(ContainerRequestContext requestContext) throws IOException {
         if (!leaderElectionService.isLeader()) {
             LOG.warn("Rejected request to <{}> which is only allowed against leader nodes.", requestContext.getUriInfo().getPath());
-            throw new ForbiddenException("Request is only allowed against leader nodes.");
+            throw new ForbiddenException("仅允许向主节点发起请求。");
         }
     }
 }

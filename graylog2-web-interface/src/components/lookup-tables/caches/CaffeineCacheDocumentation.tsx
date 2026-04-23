@@ -27,26 +27,25 @@ const CaffeineCacheDocumentation = () => {
     {
       value: 'cache_size',
       label: 'Cache Size',
-      content: <p>Every cache has a maximum number of entries, unbounded caches are not supported.</p>,
+      content: <p>每个缓存都有最大条目数，不支持无界缓存。</p>,
     },
     {
       value: 'time_based_expiration',
       label: 'Time Based Expiration',
       content: (
         <div>
-          <h5 style={{ marginBottom: 10 }}>Expire after access</h5>
+          <h5 style={{ marginBottom: 10 }}>访问后过期</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
-            The cache will remove entries after a fixed time since they have been used the last time.
+            缓存将在自上次使用以来的固定时间后移除条目。
             <br />
-            This results in the cache behaving as a space limited least recently used cache.
+            这会导致缓存表现为空间受限的最近最少使用缓存。
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>Expire after write</h5>
+          <h5 style={{ marginBottom: 10 }}>写入后过期</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
-            The cache will remove entries after a fixed time since they have been entered into the cache.
+            缓存将在条目进入缓存后经过固定时间将其移除。
             <br />
-            This results in entries that are never older than the given time, which can be important for regularly
-            changing data, such as configuration state of external systems.
+            这会导致生成的条目不会早于给定的时间，这对于经常变化的数据（例如外部系统的配置状态）可能非常重要。
           </p>
         </div>
       ),
@@ -55,14 +54,13 @@ const CaffeineCacheDocumentation = () => {
 
   return (
     <div>
-      <p>The in-memory cache maintains recently used values from data adapters.</p>
+      <p>内存缓存维护来自数据适配器的最近使用值。</p>
       <p>
-        Please make sure your {productName} servers have enough heap to accommodate the cached entries and monitor the
-        cache efficiency.
+        请确保您的 {productName} 服务器有足够的堆内存来容纳缓存条目并监控缓存效率。
       </p>
 
-      <p>The cache is local to each {productName} server, they do not share the entries.</p>
-      <p>For example, if you have two servers, they will maintain a completely independent cache from each other.</p>
+      <p>缓存对每个都是本地的 {productName} 服务器，它们不共享条目。</p>
+      <p>例如，如果您有两台服务器，它们将维护彼此完全独立的缓存。</p>
 
       <hr />
 

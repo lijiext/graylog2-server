@@ -48,7 +48,7 @@ const ContentPacksPage = () => {
       if (window.confirm('You are about to delete this Content Pack, are you sure?')) {
         ContentPacksActions.delete(contentPackId).then(
           () => {
-            UserNotification.success('Content Pack deleted successfully.', 'Success');
+            UserNotification.success('内容包删除成功。', '成功');
             refetch();
           },
           (error) => {
@@ -59,7 +59,7 @@ const ContentPacksPage = () => {
               err_message = error.additional.body.message;
             }
 
-            UserNotification.error(`Deleting bundle failed: ${err_message}`, 'Error');
+            UserNotification.error(`删除捆绑包失败：${err_message}`, '错误');
           },
         );
       }
@@ -71,12 +71,12 @@ const ContentPacksPage = () => {
     (contentPackId: string, contentPackRev: number, parameters: unknown, shareRequest: EntitySharePayload) => {
       ContentPacksActions.install(contentPackId, contentPackRev, parameters, shareRequest).then(
         () => {
-          UserNotification.success('Content Pack installed successfully.', 'Success');
+          UserNotification.success('内容包安装成功。', '成功');
           refetch();
         },
         (error) => {
-          UserNotification.error(`Installing content pack failed with status: ${error}.
-         Could not install Content Pack with ID: ${contentPackId}`);
+          UserNotification.error(`安装内容包失败，状态为：${error}。
+         无法安装 ID 为 ${contentPackId} 的内容包`);
         },
       );
     },
@@ -90,22 +90,21 @@ const ContentPacksPage = () => {
   const { content_packs: contentPacks, content_packs_metadata: contentPackMetadata } = data;
 
   return (
-    <DocumentTitle title="Content Packs">
+    <DocumentTitle title="内容包">
       <span>
         <PageHeader
-          title="Content Packs"
-          topActions={<Button bsStyle="info">Content Packs</Button>}
+          title="内容包"
+          topActions={<Button bsStyle="info">内容包</Button>}
           actions={
             <ButtonToolbar>
               <ContentPackUploadControls />
               <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.CREATE}>
-                <Button bsStyle="primary">Create a content pack</Button>
+                <Button bsStyle="primary">创建内容包</Button>
               </LinkContainer>
             </ButtonToolbar>
           }>
           <span>
-            Content Packs accelerate the set up process for a specific data source. A Content Pack can include
-            inputs/extractors, streams, and dashboards.
+            内容包可加速特定数据源的设置过程。内容包可包含输入端/提取器、数据流和仪表盘。
             <br />
             <MarketplaceLink prefix="Find more Content Packs in" />
           </span>

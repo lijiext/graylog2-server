@@ -58,10 +58,10 @@ const RuleHelperTable = ({ entries, expanded = {}, onFunctionClick = undefined }
               <Table condensed striped hover>
                 <thead>
                   <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Required</th>
-                    <th>Description</th>
+                    <th>参数</th>
+                    <th>类型</th>
+                    <th>必需</th>
+                    <th>描述</th>
                   </tr>
                 </thead>
                 <tbody>{parameters(d)}</tbody>
@@ -83,7 +83,7 @@ const RuleHelperTable = ({ entries, expanded = {}, onFunctionClick = undefined }
               {d.deprecated && (
                 <span>
                   <Label bsStyle="warning" bsSize="xs">
-                    Deprecated
+                    已弃用
                   </Label>
                   &nbsp;
                 </span>
@@ -101,8 +101,8 @@ const RuleHelperTable = ({ entries, expanded = {}, onFunctionClick = undefined }
     <Table condensed>
       <thead>
         <tr>
-          <th>Function</th>
-          <th>Description</th>
+          <th>函数</th>
+          <th>描述</th>
         </tr>
       </thead>
       {renderFunctions(entries)}

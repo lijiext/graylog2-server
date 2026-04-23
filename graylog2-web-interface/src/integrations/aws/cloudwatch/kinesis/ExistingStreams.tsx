@@ -81,17 +81,14 @@ const KinesisStreams = ({ onChange, onSubmit, toggleSetup = () => {} }: KinesisS
 
   useEffect(() => {
     setSidebar(
-      <Panel bsStyle="info" header={<span>Don&apos;t see the stream you need?</span>}>
+      <Panel bsStyle="info" header={<span>未找到所需的数据流？</span>}>
         <AutoSetupContent>
           <p>
-            At least one Kinesis stream must exist in the specified region in order to continue with the setup. The log
-            stream must contain at least a few log messages.
+            在指定区域中必须至少存在一个 Kinesis 数据流，才能继续设置。日志流必须包含至少几条日志消息。
           </p>
 
           <p>
-            {productName} also supports the ability to create a Kinesis stream for you and subscribe it to a CloudWatch
-            log group of your choice. Please be aware that this option will create additional resources in your AWS
-            environment that will incur billing charges.
+            {productName} 还支持为您创建 Kinesis 数据流并将其订阅到您选择的 CloudWatch 日志组。请注意，此选项将在您的 AWS 环境中创建额外资源并产生计费费用。
           </p>
         </AutoSetupContent>
 
@@ -101,7 +98,7 @@ const KinesisStreams = ({ onChange, onSubmit, toggleSetup = () => {} }: KinesisS
             toggleSetup();
           }}
           type="button">
-          Setup Kinesis Automatically
+          自动设置 Kinesis
         </Button>
       </Panel>,
     );
@@ -114,7 +111,7 @@ const KinesisStreams = ({ onChange, onSubmit, toggleSetup = () => {} }: KinesisS
       setFormError({
         full_message: logDataStatus.error,
         nice_message: (
-          <span>We were unable to find any logs in this Kinesis stream. Please select a different Kinesis stream.</span>
+          <span>在此 Kinesis 数据流中未找到任何日志。请选择不同的 Kinesis 数据流。</span>
         ),
       });
     }
@@ -129,7 +126,7 @@ const KinesisStreams = ({ onChange, onSubmit, toggleSetup = () => {} }: KinesisS
       <Modal show={logDataStatus.loading} bsSize="small" onHide={() => {}} closable={false}>
         <LoadingContent>
           <StyledSpinner />
-          <LoadingMessage>This request may take a few moments.</LoadingMessage>
+          <LoadingMessage>此请求可能需要几分钟。</LoadingMessage>
         </LoadingContent>
       </Modal>
 
@@ -139,17 +136,17 @@ const KinesisStreams = ({ onChange, onSubmit, toggleSetup = () => {} }: KinesisS
         loading={logDataStatus.loading}
         error={formError}
         disabled={formValidation.isFormValid(['awsCloudWatchKinesisStream'], formData)}
-        title="Select Kinesis Stream"
+        title="选择 Kinesis 数据流"
         description={
           <>
-            <p>Below is a list of all Kinesis streams found within the specified AWS account.</p>
+            <p>以下是指定 AWS 账户中找到的所有 Kinesis 数据流列表。</p>
             <p>
-              Please select the stream you would like to read messages from, or follow the&nbsp;
+              请选择您要从中读取消息的数据流，或关注 
               <DocumentationLink
                 page={DocsRoutes.INTEGRATIONS.AWS.AWS_KINESIS_CLOUDWATCH_INPUTS}
                 text="AWS Kinesis/CloudWatch Input "
               />
-              documentation for more details on this set up.
+              有关此设置的详细文档。
             </p>
           </>
         }>
@@ -158,7 +155,7 @@ const KinesisStreams = ({ onChange, onSubmit, toggleSetup = () => {} }: KinesisS
           type="select"
           fieldData={formData.awsCloudWatchKinesisStream}
           onChange={onChange}
-          label="Select Stream"
+          label="选择数据流"
           required>
           {renderOptions(availableStreams, 'Select Kinesis Stream')}
         </ValidatedInput>

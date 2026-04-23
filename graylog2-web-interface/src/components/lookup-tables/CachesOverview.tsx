@@ -35,19 +35,19 @@ const ScrollContainer = styled.div`
 const queryExamples = (
   <>
     <p>
-      Find caches by parts of their names:
+      按名称部分查找缓存：
       <br />
-      <kbd>name:guava</kbd>
+      <kbd>名称：guava</kbd>
       <br />
       <kbd>name:gua</kbd>
     </p>
     <p>
-      Searching without a field name matches against the <code>title</code> field:
+      在不指定字段名的情况下搜索将匹配 <code>title</code> 字段:
       <br />
       <kbd>guava</kbd> <br />
-      is the same as
+      与...相同
       <br />
-      <kbd>title:guava</kbd>
+      <kbd>标题：guava</kbd>
     </p>
   </>
 );
@@ -57,9 +57,9 @@ const NoResults = ({ query }: { query: string }) => (
     <tr>
       <td colSpan={7}>
         {query ? (
-          <NoSearchResult>No caches found with title &quot;{query}&quot;</NoSearchResult>
+          <NoSearchResult>未找到标题为 " 的缓存{query}&quot;</NoSearchResult>
         ) : (
-          <NoEntitiesExist>There are no caches to list</NoEntitiesExist>
+          <NoEntitiesExist>没有要列出的缓存</NoEntitiesExist>
         )}
       </td>
     </tr>
@@ -129,7 +129,7 @@ const CachesOverview = ({ caches, pagination, paginationQueryParameter }: Props)
     <Row className="content">
       <Col md={12}>
         <h2 style={{ marginBottom: 16 }}>
-          Configured lookup Caches <small>{pagination.total} total</small>
+          配置的查找缓存 <small>{pagination.total} total</small>
         </h2>
         <PaginatedList
           activePage={localPagination.currentPage}
@@ -141,13 +141,13 @@ const CachesOverview = ({ caches, pagination, paginationQueryParameter }: Props)
             <Table condensed hover className={Styles.overviewTable}>
               <thead>
                 <tr>
-                  <th className={Styles.rowTitle}>Title</th>
-                  <th className={Styles.rowDescription}>Description</th>
-                  <th className={Styles.rowName}>Name</th>
-                  <th>Entries</th>
-                  <th>Hit rate</th>
-                  <th>Throughput</th>
-                  <th className={Styles.rowActions}>Actions</th>
+                  <th className={Styles.rowTitle}>标题</th>
+                  <th className={Styles.rowDescription}>描述</th>
+                  <th className={Styles.rowName}>名称</th>
+                  <th>条目</th>
+                  <th>命中率</th>
+                  <th>吞吐量</th>
+                  <th className={Styles.rowActions}>操作</th>
                 </tr>
               </thead>
               {loading ? (

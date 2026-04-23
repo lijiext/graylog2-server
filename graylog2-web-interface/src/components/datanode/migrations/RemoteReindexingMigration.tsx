@@ -84,8 +84,8 @@ const RemoteReindexingMigration = ({ currentStep, onTriggerStep }: MigrationStep
 
   return (
     <Col>
-      <StyledTitle>Remote reindexing migration</StyledTitle>
-      <p>Follow these steps to migrate your existing OpenSearch 2.x or 1.3.x cluster to Data Nodes.</p>
+      <StyledTitle>远程重新索引迁移</StyledTitle>
+      <p>请按照以下步骤将现有的 OpenSearch 2.x 或 1.3.x 集群迁移到数据节点。</p>
       <MigrationStepsPanel
         currentStep={currentStep}
         sortedMigrationSteps={REMOTE_REINDEXING_MIGRATION_STEPS}

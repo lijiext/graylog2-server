@@ -114,10 +114,10 @@ class DecoratorSummary extends React.Component<Props, State> {
 
     return (
       <SpacedActions>
-        <DropdownButton id={`decorator-${decorator.id}-actions`} bsStyle="default" bsSize="xsmall" title="Actions">
-          <MenuItem onSelect={this._handleEditClick}>Edit</MenuItem>
+        <DropdownButton id={`decorator-${decorator.id}-actions`} bsStyle="default" bsSize="xsmall" title="操作">
+          <MenuItem onSelect={this._handleEditClick}>编辑</MenuItem>
           <MenuItem divider />
-          <DeleteMenuItem onSelect={this._handleDeleteClick}>Delete</DeleteMenuItem>
+          <DeleteMenuItem onSelect={this._handleDeleteClick}>删除</DeleteMenuItem>
         </DropdownButton>
       </SpacedActions>
     );
@@ -138,7 +138,7 @@ class DecoratorSummary extends React.Component<Props, State> {
       <ConfigurationForm<Decorator['config']>
         key="configuration-form-decorator"
         configFields={requestedConfiguration}
-        title={`Edit ${name}`}
+        title={`编辑 ${name}`}
         typeName={decorator.type}
         includeTitleField={false}
         submitAction={this._handleSubmit}

@@ -102,40 +102,36 @@ const UrlAllowListConfig = () => {
 
   return (
     <div>
-      <h2>URL Allowlist Configuration {disabled ? <small>(Disabled)</small> : <small>(Enabled)</small>}</h2>
+      <h2>URL 允许列表配置 {disabled ? <small>(已禁用)</small> : <small>(已启用)</small>}</h2>
       <p>
-        When enabled, outgoing HTTP requests from {productName} servers, such as event notifications or HTTP-based data
-        adapter requests, are validated against the allowlists configured here. Because the HTTP requests are made from
-        the {productName} servers, they might be able to reach more sensitive systems than an external user would have
-        access to, including AWS EC2 metadata, which can contain keys and other secrets, Elasticsearch and others.
-        Allowlist administrative access is separate from data adapters and event notification configuration.
+        启用后，来自的出站 HTTP 请求 {productName} 服务器，例如事件通知或基于 HTTP 的数据适配器请求，将在此处配置的允许列表中进行验证。由于 HTTP 请求是由 {productName} 服务器可能能够访问外部用户无法访问的更敏感系统，包括 AWS EC2 元数据，其中可能包含密钥和其他机密信息，以及 Elasticsearch 等。允许管理访问与数据适配器和事件通知配置是分开的。
       </p>
       <Table striped bordered condensed className="top-margin">
         <thead>
           <tr>
             <th>#</th>
-            <th>Title</th>
+            <th>标题</th>
             <th>URL</th>
-            <th>Type</th>
+            <th>类型</th>
           </tr>
         </thead>
         <tbody>{summary()}</tbody>
       </Table>
       <IfPermitted permissions="urlallowlist:write">
         <Button bsStyle="info" bsSize="xs" onClick={openModal}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
       {showConfigModal && (
         <BootstrapModalForm
           show
           bsSize="lg"
-          title="Update Allowlist Configuration"
+          title="更新白名单配置"
           onSubmitForm={saveConfig}
           onCancel={closeModal}
           submitButtonDisabled={!isValid}
-          submitButtonText="Update configuration">
-          <h3>Allowlist URLs</h3>
+          submitButtonText="更新配置">
+          <h3>允许访问的 URL</h3>
           <UrlAllowListForm urls={entries} disabled={disabled} onUpdate={update} />
         </BootstrapModalForm>
       )}

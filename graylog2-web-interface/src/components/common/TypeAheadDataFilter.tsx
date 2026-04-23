@@ -204,10 +204,10 @@ const TypeAheadDataFilter = ({
           onKeyDown={onFilterKeyDown}
         />
         <StyledButton type="button" onClick={applyFilters}>
-          Filter
+          过滤器
         </StyledButton>
         <StyledButton type="button" onClick={resetFilters} disabled={filterText === ''}>
-          Reset
+          重置
         </StyledButton>
       </div>
     </div>

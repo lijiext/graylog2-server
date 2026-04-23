@@ -49,16 +49,14 @@ const StaticFieldForm = ({ input, setShowModal }: Props) => {
   return (
     <BootstrapModalForm
       show
-      title="Add static field"
-      submitButtonText="Add field"
+      title="添加静态字段"
+      submitButtonText="添加字段"
       onCancel={() => {
         setShowModal(false);
       }}
       onSubmitForm={addStaticField}>
       <p>
-        Define a static field that is added to every message that comes in via this input. The field is not overwritten
-        If the message already has that key. Key must only contain alphanumeric characters or underscores and not be a
-        reserved field.
+        定义一个静态字段，该字段将添加到通过此输入端进入的每条消息中。如果消息已包含该键，则不会覆盖该字段。键只能包含字母数字字符或下划线，且不能是保留字段。
       </p>
       <Input
         type="text"
@@ -67,10 +65,10 @@ const StaticFieldForm = ({ input, setShowModal }: Props) => {
           handleFieldChange('name', event);
         }}
         id="field-name"
-        label="Field name"
+        label="字段名称"
         required
         pattern="[A-Za-z0-9_]*"
-        title="Should consist only of alphanumeric characters and underscores."
+        title="应仅包含字母数字字符和下划线。"
         autoFocus
       />
       <Input
@@ -80,7 +78,7 @@ const StaticFieldForm = ({ input, setShowModal }: Props) => {
         }}
         type="text"
         id="field-value"
-        label="Field value"
+        label="字段值"
         required
       />
     </BootstrapModalForm>

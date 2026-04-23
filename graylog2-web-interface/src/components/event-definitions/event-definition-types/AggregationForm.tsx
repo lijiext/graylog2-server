@@ -85,16 +85,15 @@ const AggregationForm = ({ aggregationFunctions, eventDefinition, validation, on
 
   return (
     <fieldset>
-      <h2 className={commonStyles.title}>Aggregation</h2>
+      <h2 className={commonStyles.title}>聚合</h2>
       <p>
-        Summarize log messages matching the Filter defined above by using a function. You can optionally group the
-        Filter results by identical field values.
+        使用函数汇总上述过滤器匹配的日志消息。您可以选择按相同的字段值对过滤器结果进行分组。
       </p>
       <Row>
         <Col lg={7}>
           <FormGroup controlId="group-by">
             <ControlLabel>
-              Group by Field(s) <small className="text-muted">(Optional)</small>
+              按字段分组 <small className="text-muted">（可选）</small>
             </ControlLabel>
             <MultiSelect
               id="group-by"
@@ -105,15 +104,13 @@ const AggregationForm = ({ aggregationFunctions, eventDefinition, validation, on
               allowCreate
             />
             <HelpBlock>
-              Select fields to group filter results when they have identical values. <b>Example:</b>
+              选择字段以在具有相同值时分组过滤结果。 <b>示例:</b>
               <br />
-              Assuming you created a Filter with all failed log-in attempts in your network, an alert could be triggered
-              when there are more than 5 failed log-in attempts overall. Now, add <code>username</code> as Group by
-              Field and an alert will be triggered{' '}
+              假设您已创建一个过滤器，用于筛选网络中所有失败的登录尝试，当失败的登录尝试总数超过 5 次时，可能会触发告警。现在，添加 <code>username</code> 作为按字段分组，并将触发告警{' '}
               <em>
-                for each <code>username</code>
+                对于每个 <code>username</code>
               </em>{' '}
-              with more than 5 failed log-in attempts.
+              登录尝试失败超过 5 次。
             </HelpBlock>
           </FormGroup>
         </Col>

@@ -166,7 +166,7 @@ const Metric = ({ index }: Props) => {
           {({ field: { name, value }, meta: { error } }) => (
             <Input
               id="metric-function-select"
-              label="Function"
+              label="函数"
               error={error}
               labelClassName="col-sm-3"
               wrapperClassName="col-sm-9">
@@ -175,7 +175,7 @@ const Metric = ({ index }: Props) => {
                 clearable={false}
                 name={name}
                 value={value}
-                placeholder="Select a function"
+                placeholder="选择功能"
                 size="small"
                 onChange={onFunctionChange}
               />
@@ -190,7 +190,7 @@ const Metric = ({ index }: Props) => {
               {({ field: { name, value, onChange }, meta: { error } }) => (
                 <Input
                   id="metric-field"
-                  label="Field"
+                  label="字段"
                   error={error}
                   labelClassName="col-sm-3"
                   wrapperClassName="col-sm-9">
@@ -223,7 +223,7 @@ const Metric = ({ index }: Props) => {
             {({ field: { name, value, onChange }, meta: { error } }) => (
               <Input
                 id="metric-percentile-select"
-                label="Percentile"
+                label="百分位数"
                 error={error}
                 labelClassName="col-sm-3"
                 wrapperClassName="col-sm-9">
@@ -232,7 +232,7 @@ const Metric = ({ index }: Props) => {
                   clearable={false}
                   name={name}
                   value={value}
-                  aria-label="Select percentile"
+                  aria-label="选择百分位数"
                   size="small"
                   onChange={(newValue) => onChange({ target: { name, value: newValue } })}
                 />
@@ -248,7 +248,7 @@ const Metric = ({ index }: Props) => {
               {({ field: { name, value, onChange }, meta: { error } }) => (
                 <Input
                   id="metric-percentage-strategy-select"
-                  label="Strategy"
+                  label="策略"
                   error={error}
                   labelClassName="col-sm-3"
                   wrapperClassName="col-sm-9">
@@ -257,7 +257,7 @@ const Metric = ({ index }: Props) => {
                     clearable={false}
                     name={name}
                     value={value ?? 'COUNT'}
-                    aria-label="Select strategy"
+                    aria-label="选择策略"
                     size="small"
                     onChange={(newValue) => onChange({ target: { name, value: newValue } })}
                   />
@@ -270,7 +270,7 @@ const Metric = ({ index }: Props) => {
               {({ field: { name, value, onChange }, meta: { error } }) => (
                 <Input
                   id="metric-field"
-                  label="Field"
+                  label="字段"
                   error={error}
                   labelClassName="col-sm-3"
                   wrapperClassName="col-sm-9">
@@ -295,11 +295,11 @@ const Metric = ({ index }: Props) => {
           id="name"
           label={
             <>
-              Name <Opt />
+              名称 <Opt />
             </>
           }
           bsSize="small"
-          placeholder="Specify display name"
+          placeholder="指定显示名称"
           name={`metrics.${index}.name`}
           labelClassName="col-sm-3"
           wrapperClassName="col-sm-9"
@@ -313,7 +313,7 @@ const Metric = ({ index }: Props) => {
                 <FormikInput
                   type="checkbox"
                   wrapperClassName="col-sm-12"
-                  label="Show line thresholds"
+                  label="显示行阈值"
                   id={`${name}-input`}
                   name={name}
                   onChange={() => {
@@ -329,7 +329,7 @@ const Metric = ({ index }: Props) => {
           </Col>
           {currentMetric.showThresholds && (
             <Col sm={1}>
-              <IconButton onClick={addThresholds} size="sm" name="add" title="Add a threshold" />
+              <IconButton onClick={addThresholds} size="sm" name="add" title="添加阈值" />
             </Col>
           )}
           {currentMetric.showThresholds && (

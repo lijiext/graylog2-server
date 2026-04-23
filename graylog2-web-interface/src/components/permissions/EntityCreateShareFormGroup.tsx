@@ -153,7 +153,7 @@ const EntityCreateShareFormGroup = ({
       {entityShareState ? (
         <>
           <ShareFormSection>
-            <GranteesSelectorHeadline>Add Collaborator</GranteesSelectorHeadline>
+            <GranteesSelectorHeadline>添加协作者</GranteesSelectorHeadline>
             <p>{description}</p>
             <ShareFormElements>
               <GranteesSelect
@@ -162,7 +162,7 @@ const EntityCreateShareFormGroup = ({
                 options={_granteesOptions(
                   getAvailableGrantee(entityShareState.availableGrantees, entityShareState.selectedGranteeCapabilities),
                 )}
-                placeholder="Search for users and teams"
+                placeholder="搜索用户和团队"
                 value={shareSelection.granteeId}
               />
               <EntityCreateCapabilitySelect
@@ -172,10 +172,10 @@ const EntityCreateShareFormGroup = ({
               />
               <ShareSubmitButton
                 bsStyle="primary"
-                title="Add Collaborator"
+                title="添加协作者"
                 onClick={handleAddCollaborator}
                 disabled={disableSubmit || !shareSelection.granteeId}>
-                Add Collaborator
+                添加协作者
               </ShareSubmitButton>
             </ShareFormElements>
           </ShareFormSection>
@@ -188,7 +188,7 @@ const EntityCreateShareFormGroup = ({
               onDelete={handleDeletion}
               onCapabilityChange={handleSelection}
               selectedGrantees={entityShareState?.selectedGrantees}
-              title="Collaborators"
+              title="协作者"
               isCreating
             />
           </ShareFormSection>

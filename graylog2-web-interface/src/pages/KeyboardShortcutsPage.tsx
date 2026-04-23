@@ -21,9 +21,9 @@ import { Col, Row } from 'components/bootstrap';
 import KeyboardShortcutsList from 'components/hotkeys/KeyboardShortcutsList';
 
 const KeyboardShortcutsPage = () => (
-  <DocumentTitle title="Keyboard Shortcuts">
-    <PageHeader title="Keyboard Shortcuts">
-      <span>A list of all available shortcuts</span>
+  <DocumentTitle title="键盘快捷键">
+    <PageHeader title="键盘快捷键">
+      <span>所有可用快捷键的列表</span>
     </PageHeader>
     <Row className="content">
       <Col md={12}>

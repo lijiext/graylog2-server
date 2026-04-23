@@ -77,8 +77,8 @@ const SyncedUsersSection = ({ roles, authenticationBackend }: Props) => {
   const _userOverviewItem = (user) => <SyncedUsersOverviewItem user={user} roles={roles} />;
 
   return (
-    <SectionComponent title="Synchronized Users" showLoading={loading}>
-      <p className="description">Found {paginatedUsers.pagination.total} synchronized users.</p>
+    <SectionComponent title="同步用户" showLoading={loading}>
+      <p className="description">已找到 {paginatedUsers.pagination.total} 已同步用户。</p>
       <PaginatedList
         activePage={page}
         totalItems={paginatedUsers.pagination.total}
@@ -97,7 +97,7 @@ const SyncedUsersSection = ({ roles, authenticationBackend }: Props) => {
           headerCellFormatter={_headerCellFormatter}
           headers={TABLE_HEADERS}
           id="synced-users-overview"
-          noDataText={<NoSearchResult>No synchronized users have been found.</NoSearchResult>}
+          noDataText={<NoSearchResult>未找到已同步的用户。</NoSearchResult>}
           rowClassName="no-bm"
           rows={users.toJS()}
           sortByKey="username"

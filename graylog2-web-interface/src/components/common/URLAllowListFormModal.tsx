@@ -130,18 +130,18 @@ const URLAllowListFormModal = ({ newUrlEntry = '', urlType = undefined, onUpdate
       <>
         <IfPermitted permissions="urlallowlist:write">
           <Button bsStyle="info" bsSize="xs" onClick={openModal}>
-            Add to URL allowlist
+            添加到 URL 允许列表
           </Button>
         </IfPermitted>
         <BootstrapModalForm
           show={showConfigModal}
           bsSize="lg"
-          title="Update Allowlist Configuration"
+          title="更新白名单配置"
           onCancel={closeModal}
           onSubmitForm={saveConfig}
           submitButtonDisabled={!isValid}
-          submitButtonText="Update configuration">
-          <h3>Allowlist URLs</h3>
+          submitButtonText="更新配置">
+          <h3>允许访问的 URL</h3>
           <UrlAllowListForm
             key={newUrlEntryId}
             urls={entries}

@@ -69,24 +69,24 @@ class NodesActions extends React.Component<
     return (
       <ButtonToolbar>
         <LinkContainer to={Routes.SYSTEM.CLUSTER.NODE_SHOW(node.node_id)}>
-          <Button>Details</Button>
+          <Button>详情</Button>
         </LinkContainer>
 
         <LinkContainer to={Routes.SYSTEM.METRICS(node.node_id)}>
-          <Button>Metrics</Button>
+          <Button>指标</Button>
         </LinkContainer>
 
-        <ExternalLinkButton href={apiBrowserURI}>API browser</ExternalLinkButton>
+        <ExternalLinkButton href={apiBrowserURI}>API 浏览器</ExternalLinkButton>
 
-        <DropdownButton title="More actions" id={`more-actions-dropdown-${node.node_id}`} pullRight>
+        <DropdownButton title="更多操作" id={`more-actions-dropdown-${node.node_id}`} pullRight>
           <IfPermitted permissions="processing:changestate">
             <MenuItem onSelect={this._toggleMessageProcessing}>
-              {systemOverview.is_processing ? 'Pause' : 'Resume'} message processing
+              {systemOverview.is_processing ? 'Pause' : 'Resume'} 消息处理
             </MenuItem>
           </IfPermitted>
 
           <IfPermitted permissions="lbstatus:change">
-            <DropdownSubmenu title="Override LB status" left>
+            <DropdownSubmenu title="覆盖负载均衡器状态" left>
               <MenuItem onSelect={this._changeLBStatus('ALIVE')}>ALIVE</MenuItem>
               <MenuItem onSelect={this._changeLBStatus('DEAD')}>DEAD</MenuItem>
             </DropdownSubmenu>
@@ -101,23 +101,23 @@ class NodesActions extends React.Component<
           <HideOnCloud>
             <IfPermitted permissions="inputs:read">
               <LinkContainer to={Routes.node_inputs(node.node_id)}>
-                <MenuItem>Local message inputs</MenuItem>
+                <MenuItem>本地消息输入端</MenuItem>
               </LinkContainer>
             </IfPermitted>
           </HideOnCloud>
           <IfPermitted permissions="threads:dump">
             <LinkContainer to={Routes.SYSTEM.THREADDUMP(node.node_id)}>
-              <MenuItem>Get thread dump</MenuItem>
+              <MenuItem>获取线程转储</MenuItem>
             </LinkContainer>
           </IfPermitted>
           <IfPermitted permissions="processbuffer:dump">
             <LinkContainer to={Routes.SYSTEM.PROCESSBUFFERDUMP(node.node_id)}>
-              <MenuItem>Get process-buffer dump</MenuItem>
+              <MenuItem>获取进程缓冲区转储</MenuItem>
             </LinkContainer>
           </IfPermitted>
           <IfPermitted permissions="loggersmessages:read">
             <LinkContainer to={Routes.SYSTEM.SYSTEMLOGS(node.node_id)}>
-              <MenuItem>Get recent system log messages</MenuItem>
+              <MenuItem>获取最近的系统日志消息</MenuItem>
             </LinkContainer>
           </IfPermitted>
         </DropdownButton>

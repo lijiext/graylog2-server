@@ -29,12 +29,12 @@ const EventNotificationActionLinks = ({ notificationId }: EventNotificationActio
   <ButtonToolbar>
     <IfPermitted permissions={`eventnotifications:read:${notificationId}`}>
       <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.show(notificationId)}>
-        <Button>View Details</Button>
+        <Button>查看详情</Button>
       </LinkContainer>
     </IfPermitted>
     <IfPermitted permissions={`eventnotifications:edit:${notificationId}`}>
       <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.edit(notificationId)}>
-        <Button bsStyle="primary">Edit Notification</Button>
+        <Button bsStyle="primary">编辑通知</Button>
       </LinkContainer>
     </IfPermitted>
   </ButtonToolbar>

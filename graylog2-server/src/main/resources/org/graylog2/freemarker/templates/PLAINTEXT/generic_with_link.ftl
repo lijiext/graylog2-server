@@ -8,6 +8,6 @@ ${title}
     </#if>
     <br>
     <#if GENERIC_URL?has_content>
-        You can click here to solve this: ${GENERIC_URL}
+        您可点击此处解决此问题：${GENERIC_URL}
     </#if>
 </#if>

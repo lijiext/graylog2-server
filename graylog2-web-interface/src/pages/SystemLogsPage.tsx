@@ -73,10 +73,10 @@ const SystemLogsPage = () => {
   const { short_node_id: shortNodeId, hostname } = node;
   const title = (
     <span>
-      The most recent system logs (limited to {DEFAULT_LIMIT}) of node {shortNodeId} / {hostname}
+      最新的系统日志（限制为 {DEFAULT_LIMIT}) of node {shortNodeId} / {hostname}
       &nbsp;
       <small>
-        Taken at <Timestamp dateTime={taken} />
+        采集时间 <Timestamp dateTime={taken} />
       </small>
     </span>
   );
@@ -85,10 +85,10 @@ const SystemLogsPage = () => {
     <Col md={12}>
       <div className="pull-left">
         <Button onClick={fetchLogs} disabled={isReloadingResults}>
-          <small>Reload&nbsp;</small>
+          <small>重新加载 </small>
           <Icon name="sync" spin={isReloadingResults} />
         </Button>
-        <StyledButton onClick={onCancel}>Back</StyledButton>
+        <StyledButton onClick={onCancel}>返回</StyledButton>
       </div>
     </Col>
   );
@@ -96,7 +96,7 @@ const SystemLogsPage = () => {
   const logs = sysLogs ? <pre className="threaddump">{sysLogs}</pre> : <Spinner />;
 
   return (
-    <DocumentTitle title={`System Logs of node ${shortNodeId} / ${hostname}`}>
+    <DocumentTitle title={`节点 ${shortNodeId} / ${hostname} 的系统日志`}>
       <div>
         <PageHeader title={title} />
         <Row className="content">{control}</Row>

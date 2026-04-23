@@ -48,7 +48,7 @@ public class IPSubnetConverter implements Converter<Set<IpSubnet>> {
     @Override
     public String convertTo(Set<IpSubnet> value) {
         if (value == null) {
-            throw new ParameterException("Couldn't convert IP subnets <null> to string.");
+            throw new ParameterException("无法将 IP 子网 <null> 转换为字符串。");
         }
         return Joiner.on(",").skipNulls().join(value);
     }

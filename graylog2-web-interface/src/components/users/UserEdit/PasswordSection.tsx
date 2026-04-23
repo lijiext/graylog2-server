@@ -74,10 +74,10 @@ const PasswordGroup = () => {
   return (
     <>
       <FormikFormGroup
-        label="New Password"
+        label="新密码"
         name="password"
         type="password"
-        help="Passwords must be at least 6 characters long. We recommend using a strong password."
+        help="密码长度至少为 6 个字符。我们建议使用强密码。"
         maxLength={100}
         minLength={6}
         autoComplete="new-password"
@@ -86,7 +86,7 @@ const PasswordGroup = () => {
         required
       />
       <FormikFormGroup
-        label="Repeat Password"
+        label="重复密码"
         name="password_repeat"
         type="password"
         minLength={6}
@@ -114,7 +114,7 @@ const PasswordSection = ({ user: { id } }: Props) => {
   }
 
   return (
-    <SectionComponent title="Password">
+    <SectionComponent title="密码">
       <Formik onSubmit={(formData) => _onSubmit(formData, id)} validate={_validate} initialValues={{}}>
         {({ isSubmitting, isValid }) => (
           <Form className="form form-horizontal">
@@ -127,7 +127,7 @@ const PasswordSection = ({ user: { id } }: Props) => {
             />
             {requiresOldPassword && (
               <FormikFormGroup
-                label="Old Password"
+                label="旧密码"
                 name="old_password"
                 type="password"
                 maxLength={100}
@@ -141,8 +141,8 @@ const PasswordSection = ({ user: { id } }: Props) => {
             <Row className="no-bm">
               <Col xs={12}>
                 <div className="pull-right">
-                  <Button bsStyle="primary" disabled={isSubmitting || !isValid} title="Change Password" type="submit">
-                    Change Password
+                  <Button bsStyle="primary" disabled={isSubmitting || !isValid} title="更改密码" type="submit">
+                    更改密码
                   </Button>
                 </div>
               </Col>

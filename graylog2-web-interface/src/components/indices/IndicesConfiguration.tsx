@@ -34,8 +34,7 @@ const IndicesConfiguration = ({ indexSet }: Props) => {
     return (
       <Row>
         <Col md={12}>
-          Index set is not writable and will not be included in index rotation and retention. It is also not possible to
-          assign it to a stream.
+          索引集不可写，将不会包含在索引轮转和保留策略中。也无法将其分配给数据流。
         </Col>
       </Row>
     );

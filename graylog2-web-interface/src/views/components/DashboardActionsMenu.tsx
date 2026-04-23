@@ -75,7 +75,7 @@ const DashboardActionsMenu = () => {
     <>
       <MenuItem divider />
       <MenuItem onSelect={() => setDebugOpen(true)} icon="code">
-        Debug
+        调试
       </MenuItem>
     </>
   );
@@ -185,10 +185,10 @@ const DashboardActionsMenu = () => {
             </>
           )}
           <MenuItem onSelect={() => setEditDashboardOpen(true)} disabled={isNewView || !allowedToEdit} icon="edit">
-            Edit metadata
+            编辑元数据
           </MenuItem>
           <MenuItem onSelect={() => setExportOpen(true)} icon="download">
-            Export
+            导出
           </MenuItem>
           {debugOverlay}
           <MenuItem divider />
@@ -201,8 +201,8 @@ const DashboardActionsMenu = () => {
           show
           view={view.toBuilder().newId().build()}
           dashboardId={view.id}
-          title="Save new dashboard"
-          submitButtonText="Create dashboard"
+          title="保存新仪表盘"
+          submitButtonText="创建仪表盘"
           onClose={() => setSaveNewDashboardOpen(false)}
           onSave={(newDashboard, entityShare) => _onSaveNewDashboard(newDashboard, entityShare)}
         />
@@ -212,8 +212,8 @@ const DashboardActionsMenu = () => {
           show
           view={view}
           dashboardId={view.id}
-          title="Editing dashboard"
-          submitButtonText="Update dashboard"
+          title="编辑仪表盘"
+          submitButtonText="更新仪表盘"
           onClose={() => setEditDashboardOpen(false)}
           onSave={_onUpdateView}
         />
@@ -224,7 +224,7 @@ const DashboardActionsMenu = () => {
           entityId={view.id}
           entityType="dashboard"
           entityTitle={view.title}
-          description="Search for a User or Team to add as collaborator on this dashboard."
+          description="搜索用户或团队以将其添加为此仪表盘的协作者。"
           onClose={() => setShareViewOpen(false)}
         />
       )}

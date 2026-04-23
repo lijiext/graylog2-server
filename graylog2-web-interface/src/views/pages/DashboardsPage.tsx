@@ -29,9 +29,9 @@ const DashboardsPage = () => {
   const sendTelemetry = useSendTelemetry();
 
   return (
-    <DocumentTitle title="Dashboards">
+    <DocumentTitle title="仪表盘">
       <PageHeader
-        title="Dashboards"
+        title="仪表盘"
         actions={
           <IfPermitted permissions="dashboards:create">
             <LinkContainer to={Routes.pluginRoute('DASHBOARDS_NEW')}>
@@ -44,7 +44,7 @@ const DashboardsPage = () => {
                     app_action_value: 'dashboard-create-button',
                   });
                 }}>
-                Create new dashboard
+                创建新仪表盘
               </Button>
             </LinkContainer>
           </IfPermitted>
@@ -54,8 +54,7 @@ const DashboardsPage = () => {
           path: DocsHelper.PAGES.DASHBOARDS,
         }}>
         <span>
-          Use dashboards to create specific views on your messages. Create a new dashboard here and add any graph or
-          chart you create in other parts of the application with one click.
+          使用仪表盘创建消息的特定视图。在此处创建新仪表盘，并一键添加您在应用程序其他部分创建的任何图表。
         </span>
       </PageHeader>
 

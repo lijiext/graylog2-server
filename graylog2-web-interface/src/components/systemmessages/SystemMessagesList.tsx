@@ -42,9 +42,9 @@ const SystemMessagesList = ({ messages }: SystemMessagesListProps) => (
   <SystemMessagesTable striped hover condensed>
     <thead>
       <tr>
-        <TimestampTH>Timestamp</TimestampTH>
-        <th>Node</th>
-        <th>Message</th>
+        <TimestampTH>时间戳</TimestampTH>
+        <th>节点</th>
+        <th>消息</th>
       </tr>
     </thead>
 

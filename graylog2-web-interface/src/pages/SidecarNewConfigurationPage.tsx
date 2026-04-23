@@ -22,15 +22,15 @@ import SidecarsPageNavigation from 'components/sidecars/common/SidecarsPageNavig
 import DocsHelper from 'util/DocsHelper';
 
 const SidecarNewConfigurationPage = () => (
-  <DocumentTitle title="New Collector Configuration">
+  <DocumentTitle title="新采集器配置">
     <SidecarsPageNavigation />
     <PageHeader
-      title="New Collector Configuration"
+      title="新采集器配置"
       documentationLink={{
         title: 'Sidecar documentation',
         path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
       }}>
-      <span>Some words about collector configurations.</span>
+      <span>关于采集器配置的一些说明。</span>
     </PageHeader>
     <ConfigurationForm action="create" />
   </DocumentTitle>

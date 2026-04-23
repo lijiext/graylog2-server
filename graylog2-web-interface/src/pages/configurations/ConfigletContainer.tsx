@@ -29,7 +29,7 @@ type ErrorFallbackProps = {
 const ErrorFallback = ({ error, title }: ErrorFallbackProps) => (
   <>
     <h2>{title}</h2>
-    <p>Something went wrong:</p>
+    <p>出错了：</p>
     <pre>{error.message}</pre>
   </>
 );

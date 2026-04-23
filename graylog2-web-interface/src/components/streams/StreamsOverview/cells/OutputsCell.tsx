@@ -34,7 +34,7 @@ const OutputsCell = ({ stream }: Props) => {
 
   const outputCount = stream.outputs?.length || 0;
 
-  return <CountBadge count={outputCount} ref={buttonRef} title="Stream Outputs" />;
+  return <CountBadge count={outputCount} ref={buttonRef} title="数据流输出端" />;
 };
 
 export default OutputsCell;

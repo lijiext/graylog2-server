@@ -44,7 +44,7 @@ const DataNodeStatusCell = ({ dataNode }: Props) => {
       &nbsp;
       {dataNode.action_queue && (
         <StatusLabel bsStyle="warning" title={dataNode.data_node_status} aria-label={dataNode.data_node_status}>
-          queued for {dataNode.action_queue}
+          排队中 {dataNode.action_queue}
         </StatusLabel>
       )}
     </>

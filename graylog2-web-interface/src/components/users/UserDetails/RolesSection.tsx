@@ -47,9 +47,9 @@ const RolesSection = ({ user: { username } }: Props) => {
   );
 
   return (
-    <SectionComponent title="Roles" showLoading={loading}>
+    <SectionComponent title="角色" showLoading={loading}>
       <PaginatedItemOverview
-        noDataText="No selected roles have been found."
+        noDataText="未找到已选择的角色。"
         onLoad={_onLoad}
         queryHelper={<RolesQueryHelper />}
       />

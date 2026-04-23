@@ -51,7 +51,7 @@ function CachePicker({ onCreateClick, caches = [] }: Props) {
     <fieldset>
       <Input
         id="cache-select"
-        label="Cache"
+        label="缓存"
         required
         bsStyle={errorMessage ? 'error' : undefined}
         labelClassName="d-block mb-1"
@@ -59,15 +59,15 @@ function CachePicker({ onCreateClick, caches = [] }: Props) {
         formGroupClassName="mb-3">
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
           <StyledSelect
-            placeholder="Select a cache"
+            placeholder="选择缓存"
             clearable={false}
             options={sortedCaches}
             onBlur={() => setTouched(true)}
             onChange={(v) => setValue(v)}
             value={value}
           />
-          <StyledButton type="button" aria-label="Create Cache" onClick={onCreateClick}>
-            Create Cache
+          <StyledButton type="button" aria-label="创建缓存" onClick={onCreateClick}>
+            创建缓存
           </StyledButton>
         </div>
         <div className={`mb-1 ${errorMessage ? 'text-danger' : 'text-muted'}`}>

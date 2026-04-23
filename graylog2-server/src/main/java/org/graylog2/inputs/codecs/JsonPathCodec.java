@@ -88,10 +88,10 @@ public class JsonPathCodec extends AbstractCodec {
                 fields = flatten(json);
             } catch (JsonFlattenException e) {
                 throw InputProcessingException.create(
-                        "JSON contains type not supported by flatten method.", e, rawMessage, json);
+                        "JSON 包含 flatten 方法不支持的类型。", e, rawMessage, json);
             } catch (JsonProcessingException e) {
                 throw InputProcessingException.create(
-                        "Could not parse JSON.", e, rawMessage, json);
+                        "无法解析 JSON。", e, rawMessage, json);
             }
         } else {
             if (jsonPath == null) {

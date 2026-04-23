@@ -27,21 +27,21 @@ const ExistingDataMigrationQuestion = ({ currentStep, onTriggerStep, hideActions
 
   return (
     <>
-      <p>Do you want to migrate your existing data?</p>
+      <p>您是否要迁移现有数据？</p>
       <Space h="md" />
       <p>
-        Please remove the <code>elasticsearch_hosts</code> line from your Graylog configuration file (
+        请移除 <code>elasticsearch_hosts</code> 来自您的 Graylog 配置文件的一行 (
         <code>server.conf</code>).
       </p>
       <p>
-        E.g.,{' '}
+        例如，{' '}
         <code>
           elasticsearch_hosts =
           https://admin:admin@opensearch1:9200,https://admin:admin@opensearch2:9200,https://admin:admin@opensearch3:9200
         </code>
       </p>
       <Space h="md" />
-      <p>Once that is done please restart {productName} to finish the migration.</p>
+      <p>完成后请重启 {productName} 完成迁移。</p>
       <Space h="md" />
       <MigrationStepTriggerButtonToolbar
         hidden={hideActions}

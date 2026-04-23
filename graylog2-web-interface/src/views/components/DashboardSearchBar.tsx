@@ -163,7 +163,7 @@ const DashboardSearchBar = ({ scrollContainer }: Props) => {
     <WidgetFocusContext.Consumer>
       {({ focusedWidget: { editing } = { editing: false } }) => (
         <FormWarningsProvider>
-          <ScrollToHint ifValueChanges={queryString} scrollContainer={scrollContainer} title="Scroll to search bar" />
+          <ScrollToHint ifValueChanges={queryString} scrollContainer={scrollContainer} title="滚动到搜索栏" />
           <DashboardSearchForm
             initialValues={initialValues}
             limitDuration={limitDuration}
@@ -222,7 +222,7 @@ const DashboardSearchBar = ({ scrollContainer }: Props) => {
                                       value={value}
                                       view={view}
                                       timeRange={values?.timerange}
-                                      placeholder="Apply filter to all widgets"
+                                      placeholder="将过滤器应用于所有小部件"
                                       name={name}
                                       onChange={onChange}
                                       disableExecution={disableSearchSubmit}

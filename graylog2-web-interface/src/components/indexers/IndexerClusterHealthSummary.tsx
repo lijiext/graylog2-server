@@ -75,8 +75,8 @@ const IndexerClusterHealthSummary = ({
 
   return (
     <ESClusterStatus bsStyle={alertClassForHealth()}>
-      {formattedTextForHealth} Shards: {health.shards.active} active, {health.shards.initializing} initializing,{' '}
-      {health.shards.relocating} relocating, {health.shards.unassigned} unassigned,{' '}
+      {formattedTextForHealth} 分片: {health.shards.active} 活动, {health.shards.initializing} 初始化中，{' '}
+      {health.shards.relocating} 正在重新定位， {health.shards.unassigned} 未分配，{' '}
       <DocumentationLink page={DocsHelper.PAGES.CLUSTER_STATUS_EXPLAINED} text="What does this mean?" />
     </ESClusterStatus>
   );

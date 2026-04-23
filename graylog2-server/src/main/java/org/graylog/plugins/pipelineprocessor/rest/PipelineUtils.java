@@ -83,7 +83,7 @@ public class PipelineUtils {
                 .filter(ruleRef -> isSystemRule(ruleService, ruleRef))
                 .findAny()
                 .ifPresent(rule -> {
-                    throw new BadRequestException("System rules cannot be assigned to other pipelines.");
+                    throw new BadRequestException("系统规则无法分配给其他处理管道。");
                 });
     }
 

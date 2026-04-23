@@ -38,7 +38,7 @@ class SystemOverviewDetails extends React.Component<
   _toggleMessageProcessing = () => {
     if (
       confirm(
-        `You are about to ${this.props.information.is_processing ? 'pause' : 'resume'} message processing in this node. Are you sure?`,
+        `您即将在此节点中 ${this.props.information.is_processing ? 'pause' : 'resume'} 消息处理。确定吗？`,
       )
     ) {
       if (this.props.information.is_processing) {
@@ -65,7 +65,7 @@ class SystemOverviewDetails extends React.Component<
       processingStatus = (
         <span>
           <Icon name="warning" />
-          &nbsp; Node is <strong>not</strong> processing messages
+            节点是 <strong>not</strong> 处理消息
         </span>
       );
     }
@@ -78,7 +78,7 @@ class SystemOverviewDetails extends React.Component<
               {' '}
               <DocumentationLink page={DocsHelper.PAGES.LOAD_BALANCERS} text="What does this mean?" />
             </span>
-            Lifecycle state: <strong>{StringUtils.capitalizeFirstLetter(this.props.information.lifecycle)}</strong>
+            生命周期状态: <strong>{StringUtils.capitalizeFirstLetter(this.props.information.lifecycle)}</strong>
           </Alert>
         </Col>
         <Col md={4}>
@@ -87,7 +87,7 @@ class SystemOverviewDetails extends React.Component<
               {' '}
               <DocumentationLink page={DocsHelper.PAGES.LOAD_BALANCERS} text="What does this mean?" />
             </span>
-            Marked as <strong>{lbStatus}</strong> for load balancers
+            标记为 <strong>{lbStatus}</strong> 用于负载均衡器
           </Alert>
         </Col>
         <Col md={4}>

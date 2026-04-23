@@ -193,10 +193,10 @@ const DataTieringConfiguration = <ValuesPrefix extends string | undefined>({
         <FormikInput
           type="number"
           id="data-tiering-index-lifetime-max"
-          label="Max. days in storage"
+          label="存储中的最大天数"
           name={fieldName('index_lifetime_max')}
           min={0}
-          help="After how many days your data should be deleted."
+          help="数据应在多少天后被删除。"
           validate={validateMaxDaysInStorage}
           required
           disabled={
@@ -208,12 +208,12 @@ const DataTieringConfiguration = <ValuesPrefix extends string | undefined>({
         <FormikInput
           type="number"
           id="data-tiering-index-lifetime-min"
-          label="Min. days in storage"
+          label="存储最小天数"
           name={fieldName('index_lifetime_min')}
           min={0}
           max={formValue('index_lifetime_max')}
           validate={validateMinDaysInStorage}
-          help="How many days at minimum your data should be stored."
+          help="数据至少应存储多少天。"
           required
           disabled={
             (immutableFields.includes('data_tiering.index_lifetime_min') || sectionDisabled) && !ignoreFieldRestrictions
@@ -227,9 +227,9 @@ const DataTieringConfiguration = <ValuesPrefix extends string | undefined>({
             <FormikInput
               type="checkbox"
               id="data_tiering-archive-before-deletion"
-              label="Archive before deletion"
+              label="删除前归档"
               name={fieldName('archive_before_deletion')}
-              help="Archive this index before it is deleted?"
+              help="在删除此索引之前将其归档？"
               disabled={
                 (immutableFields.includes('data_tiering.archive_before_deletion') || sectionDisabled) &&
                 !ignoreFieldRestrictions

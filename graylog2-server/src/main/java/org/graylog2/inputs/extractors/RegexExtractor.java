@@ -46,7 +46,7 @@ public class RegexExtractor extends Extractor {
         super(metricRegistry, id, title, order, Type.REGEX, cursorStrategy, sourceField, targetField, extractorConfig, creatorUserId, converters, conditionType, conditionValue);
 
         if (extractorConfig == null || extractorConfig.get(CONFIG_REGEX_VALUE) == null || ((String) extractorConfig.get(CONFIG_REGEX_VALUE)).isEmpty()) {
-            throw new ConfigurationException("Missing regex configuration field: regex_value");
+            throw new ConfigurationException("缺少正则配置字段：regex_value");
         }
 
         pattern = Pattern.compile((String) extractorConfig.get(CONFIG_REGEX_VALUE), Pattern.DOTALL);

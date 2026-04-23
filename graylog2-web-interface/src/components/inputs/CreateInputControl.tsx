@@ -130,7 +130,7 @@ const CreateInputControl = () => {
         <StyledForm className="form-inline" onSubmit={handleInputTypeSubmit}>
           <FormGroup>
             <Select
-              placeholder="Select input"
+              placeholder="选择输入端"
               options={formatSelectOptions()}
               onChange={onInputSelect}
               value={selectedInput}
@@ -138,7 +138,7 @@ const CreateInputControl = () => {
           </FormGroup>
           &nbsp;
           <Button bsStyle="primary" type="submit" disabled={!selectedInput}>
-            Launch new input
+            启动新输入端
           </Button>
         </StyledForm>
         {selectedInputDefinition &&
@@ -153,10 +153,10 @@ const CreateInputControl = () => {
                 description={selectedInputDefinition.description}
                 title={
                   <span>
-                    Launch new <em>{inputTypes[selectedInput] ?? ''}</em> input
+                    启动新 <em>{inputTypes[selectedInput] ?? ''}</em> input
                   </span>
                 }
-                submitButtonText="Launch Input"
+                submitButtonText="启动输入端"
                 typeName={selectedInput}
                 handleSubmit={createInput}
               />

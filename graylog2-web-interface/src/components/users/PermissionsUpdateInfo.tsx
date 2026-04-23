@@ -24,12 +24,12 @@ import { Icon } from 'components/common';
 const PermissionsUpdateInfo = () => (
   <Row className="content">
     <Col xs={12}>
-      <Alert bsStyle="info" title="Granting Permissions">
-        Granting permissions for an entity like streams and dashboards can be configured using the{' '}
+      <Alert bsStyle="info" title="授予权限">
+        为实体（如数据流和仪表盘）授予权限可使用以下方式进行配置{' '}
         <b>
-          <Icon name="person_add" /> Share
+          <Icon name="person_add" /> 分享
         </b>{' '}
-        button of an entity. You can find the button e.g. on the entities overview page. Learn more in the{' '}
+        实体的按钮。您可以在实体概览页面找到该按钮。了解更多{' '}
         <DocumentationLink page={DocsHelper.PAGES.PERMISSIONS} text="documentation" />.
       </Alert>
     </Col>

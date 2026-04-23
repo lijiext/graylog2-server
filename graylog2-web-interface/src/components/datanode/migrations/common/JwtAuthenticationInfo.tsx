@@ -39,17 +39,14 @@ const JwtAuthenticationInfo = () => {
   return (
     <StyledPanel bsStyle="info">
       <Panel.Heading>
-        <Panel.Title componentClass="h3">JWT authentication</Panel.Title>
+        <Panel.Title componentClass="h3">JWT 认证</Panel.Title>
       </Panel.Heading>
       <Panel.Body>
         <p>
-          Depending on how you secured your existing cluster, some preliminary changes are needed to the security
-          configuration. We use JWT authentication to access OpenSearch from ${productName}. In the next step, you have
-          to manually enable JWT authentication in your existing OpenSearch cluster to make sure the data can be
-          accessed in the data node.
+          根据您保护现有集群的方式，可能需要对安全配置进行一些初步更改。我们使用 JWT 认证从 $ 访问 OpenSearch{productName}在下一步中，您必须手动在现有的 OpenSearch 集群中启用 JWT 认证，以确保数据节点可以访问数据。
         </p>
         <p>
-          To do this, you should add the following snippet to your <code>opensearch-security/config.yml</code>
+          为此，您应将以下代码段添加到您的 <code>opensearch-security/config.yml</code>
         </p>
         <pre>
           {`jwt_auth_domain:
@@ -70,8 +67,7 @@ const JwtAuthenticationInfo = () => {
             type: noop`}
         </pre>
         <p>
-          Please replace the signing key with your <code>GRAYLOG_PASSWORD_SECRET</code> in base64 encoding. To encode
-          it, you can run
+          请使用您的 <code>GRAYLOG_PASSWORD_SECRET</code> 以 base64 编码。要对其进行编码，您可以运行
         </p>
         <pre>echo &quot;YOUR SECRET&quot; | base64</pre>
       </Panel.Body>

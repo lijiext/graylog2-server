@@ -32,7 +32,7 @@ type Props = {
 const ShardRouting = ({ route }: Props) => {
   const tooltip = (
     <>
-      State: <i>{route.state}</i> on {route.node_hostname} ({route.node_name})
+      状态: <i>{route.state}</i> on {route.node_hostname} ({route.node_name})
     </>
   );
 

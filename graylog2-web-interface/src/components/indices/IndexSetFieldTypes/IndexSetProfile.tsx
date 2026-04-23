@@ -37,15 +37,15 @@ const IndexSetProfile = () => {
 
   return (
     <Container title={title}>
-      <b>Field type mapping profile:</b>
+      <b>字段类型映射配置文件:</b>
       {id ? (
         <Link target="_blank" to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(id)}>
           {name}
         </Link>
       ) : (
-        <i>Not set</i>
+        <i>未设置</i>
       )}
-      <IconButton name="edit_square" onClick={toggleModal} title="Set field type profile" />
+      <IconButton name="edit_square" onClick={toggleModal} title="设置字段类型配置文件" />
       {showSetModal && <SetProfileModal show={showSetModal} onClose={toggleModal} currentProfile={id} />}
     </Container>
   );

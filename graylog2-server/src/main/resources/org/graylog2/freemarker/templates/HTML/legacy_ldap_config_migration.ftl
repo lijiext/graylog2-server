@@ -1,25 +1,22 @@
-<#if _title>Legacy LDAP/Active Directory configuration has been migrated to an Authentication Service</#if>
+<#if _title>遗留的 LDAP/Active Directory 配置已迁移至认证服务</#if>
 
 <#if _description><span>
     <#if AUTHENTICATION_BACKEND?has_content>
-The legacy LDAP/Active Directory configuration of this system has been upgraded to a new
-<a href="${AUTHENTICATION_BACKEND}" authentication service</a>.
-Since the new authentication service requires some information that is not present in the legacy
-configuration, it <strong>requires a manual review</strong>!
+本系统的遗留 LDAP/Active Directory 配置已升级至新的
+<a href="${AUTHENTICATION_BACKEND}" 认证服务</a>。
+由于新的认证服务需要一些在遗留配置中不存在的信息，因此<strong>需要人工审查</strong>！
 <br /> <br />
-<strong>After reviewing the <a href="${AUTHENTICATION_BACKEND}" authentication service</a> it must be enabled to allow LDAP or Active Directory users
-to log in again!
+<strong>在审查 <a href="${AUTHENTICATION_BACKEND}" 认证服务</a> 后，必须启用它，以便 LDAP 或 Active Directory 用户能够再次登录！
 </strong>
     <#else>
-The legacy LDAP/Active Directory configuration of this system has been upgraded to a new authentication service<.
-Since the new authentication service requires some information that is not present in the legacy
-configuration, it <strong>requires a manual review</strong>!
+本系统的遗留 LDAP/Active Directory 配置已升级至新的认证服务<。
+由于新的认证服务需要一些在遗留配置中不存在的信息，因此<strong>需要人工审查</strong>！
 <br /> <br />
-        <strong>After reviewing the authentication service it must be enabled to allow LDAP or Active Directory users to log in again!
+<strong>在审查认证服务后，必须启用它，以便 LDAP 或 Active Directory 用户能够再次登录！
 </strong>
     </#if>
 <br />
 <br />
-Please check the <a href="https://docs.graylog.org/docs/upgrading-graylog">upgrade guide</a>
-for more details.
+请查看 <a href="https://docs.graylog.org/docs/upgrading-graylog">升级指南</a>
+以获取更多信息。
 </span></#if>

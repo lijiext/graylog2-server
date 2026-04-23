@@ -20,9 +20,9 @@ import QueryHelper from 'components/common/QueryHelper';
 
 const queryExample = (
   <p>
-    Find shared entities with a title containing security:
+    查找标题包含 security 的共享实体:
     <br />
-    <kbd>title:security</kbd>
+    <kbd>标题：安全</kbd>
     <br />
   </p>
 );

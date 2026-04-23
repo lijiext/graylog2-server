@@ -119,12 +119,12 @@ const TimeBasedSizeOptimizingStrategyConfiguration = ({
     <div>
       <RangeInput
         disabled={disabled}
-        label="Lifetime in days"
+        label="存活天数"
         id="lifetime-range"
         value={timeSizeOptimizingFixedLeeway ? indexLifetimeRange[0] : indexLifetimeRange}
         help={
           isValidRange(indexLifetimeRange)
-            ? `The ${rangeHelpTitle} number of days the data in this index is kept before it is retained. ${maxRotationPeriodHelpText} ${fixedLeewayHint}`
+            ? `此索引中数据在保留前保留的天数。${rangeHelpTitle} ${maxRotationPeriodHelpText} ${fixedLeewayHint}`
             : errorMessage
         }
         min={1}

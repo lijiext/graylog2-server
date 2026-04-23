@@ -69,7 +69,7 @@ export const EnterpriseStore = singletonStore('core.Enterprise', () =>
         (error) => {
           const errorMessage = get(error, 'additional.body.message', error.message);
 
-          UserNotification.error(`Couldn't load license information: ${errorMessage}`, 'Error');
+          UserNotification.error(`无法加载许可证信息：${errorMessage}`, '错误');
         },
       );
 

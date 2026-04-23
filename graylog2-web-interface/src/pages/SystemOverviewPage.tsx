@@ -27,7 +27,7 @@ import GraylogClusterOverview from 'components/cluster/GraylogClusterOverview';
 import HideOnCloud from 'util/conditional/HideOnCloud';
 
 const SystemOverviewPage = () => (
-  <DocumentTitle title="System overview">
+  <DocumentTitle title="系统概览">
     <span>
       <IfPermitted permissions="notifications:read">
         <NotificationsList />

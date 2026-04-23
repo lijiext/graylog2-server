@@ -35,12 +35,12 @@ const HelpMenu = () => {
 
   return (
     <NavDropdown title={<NavIcon type="help" />} hoverTitle="Help" noCaret>
-      <HelpMenuLinkItem href={DocsHelper.versionedDocsHomePage()}>Documentation</HelpMenuLinkItem>
+      <HelpMenuLinkItem href={DocsHelper.versionedDocsHomePage()}>文档</HelpMenuLinkItem>
 
-      <Menu.Item onClick={() => setShowHotkeysModal(true)}>Keyboard Shortcuts</Menu.Item>
+      <Menu.Item onClick={() => setShowHotkeysModal(true)}>键盘快捷键</Menu.Item>
 
       <IfPermitted permissions="api_browser:read">
-        <HelpMenuLinkItem href={Routes.global_api_browser()}>Cluster Global API browser</HelpMenuLinkItem>
+        <HelpMenuLinkItem href={Routes.global_api_browser()}>集群全局 API 浏览器</HelpMenuLinkItem>
       </IfPermitted>
     </NavDropdown>
   );

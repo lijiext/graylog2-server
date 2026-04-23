@@ -82,7 +82,7 @@ public class ClusterSystemResource extends ProxiedResource {
     @Timed
     @ApiOperation(value = "Get JVM information of the given node")
     @Path("{nodeId}/jvm")
-    public SystemJVMResponse jvm(@ApiParam(name = "nodeId", value = "The id of the node to retrieve JVM information.", required = true)
+    public SystemJVMResponse jvm(@ApiParam(name = "nodeId", value = "要检索 JVM 信息的节点 ID。", required = true)
                                  @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Node targetNode = nodeService.byNodeId(nodeId);
 
@@ -103,7 +103,7 @@ public class ClusterSystemResource extends ProxiedResource {
     @ApiOperation(value = "Get a thread dump of the given node")
     @RequiresPermissions(RestPermissions.THREADS_DUMP)
     @Path("{nodeId}/threaddump")
-    public SystemThreadDumpResponse threadDump(@ApiParam(name = "nodeId", value = "The id of the node to get a thread dump.", required = true)
+    public SystemThreadDumpResponse threadDump(@ApiParam(name = "nodeId", value = "获取线程转储的节点 ID。", required = true)
                                                @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Node targetNode = nodeService.byNodeId(nodeId);
 
@@ -124,7 +124,7 @@ public class ClusterSystemResource extends ProxiedResource {
     @ApiOperation(value = "Get a process buffer dump of the given node")
     @RequiresPermissions(RestPermissions.PROCESSBUFFER_DUMP)
     @Path("{nodeId}/processbufferdump")
-    public SystemProcessBufferDumpResponse processBufferDump(@ApiParam(name = "nodeId", value = "The id of the node to get a process buffer dump.", required = true)
+    public SystemProcessBufferDumpResponse processBufferDump(@ApiParam(name = "nodeId", value = "要获取进程缓冲区转储的节点 ID。", required = true)
                                                              @PathParam("nodeId") String nodeId) throws IOException, NodeNotFoundException {
         final Node targetNode = nodeService.byNodeId(nodeId);
 

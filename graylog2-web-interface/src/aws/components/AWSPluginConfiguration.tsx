@@ -96,8 +96,8 @@ const AWSPluginConfiguration = ({
       },
       (error) => {
         UserNotification.error(
-          `AWS plugin configuration failed with status: ${error}`,
-          'Could not save AWS plugin configuration.',
+          `AWS 插件配置失败，状态为：${error}`,
+          '无法保存 AWS 插件配置。',
         );
       },
     );
@@ -105,22 +105,20 @@ const AWSPluginConfiguration = ({
 
   return (
     <div>
-      <h3>AWS Plugin Configuration</h3>
+      <h3>AWS 插件配置</h3>
 
       <p>
-        Base configuration for all plugins the AWS module is providing. Note that some parameters will be stored in
-        MongoDB without encryption. Users with required permissions will be able to read them in the configuration
-        dialog on this page.
+        AWS 模块提供的所有插件的基础配置。注意，某些参数将以未加密形式存储在 MongoDB 中。具有所需权限的用户可以在本页的配置对话框中读取这些参数。
       </p>
 
       <dl className="deflist">
-        <dt>Instance detail lookups:</dt>
+        <dt>实例详情查找:</dt>
         <dd>{config.lookups_enabled === true ? 'Enabled' : 'Disabled'}</dd>
 
         <dt>Connect through proxy:</dt>
         <dd>{config.proxy_enabled === true ? 'Enabled' : 'Disabled'}</dd>
 
-        <dt>Lookup regions:</dt>
+        <dt>查找区域:</dt>
         <dd>{config.lookup_regions ? config.lookup_regions : '[not set]'}</dd>
 
         <dt>Access Key:</dt>
@@ -132,26 +130,24 @@ const AWSPluginConfiguration = ({
 
       <IfPermitted permissions="clusterconfigentry:edit">
         <Button bsStyle="info" bsSize="xs" onClick={openModal}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
 
       <BootstrapModalForm
         show={showAwsConfigModal}
-        title="Update AWS Plugin Configuration"
+        title="更新 AWS 插件配置"
         onSubmitForm={saveConfig}
         onCancel={resetConfig}
-        submitButtonText="Update configuration">
+        submitButtonText="更新配置">
         <fieldset>
           <Input
             id="aws-lookups-enabled"
             type="checkbox"
-            label="Run AWS instance detail lookups for IP addresses?"
+            label="是否对 IP 地址运行 AWS 实例详细信息查找？"
             help={
               <span>
-                When enabled, a message processor will try to identify IP addresses of your AWS entities (like EC2, ELB,
-                RDS, ...) and add additional information abut the service or instance behind it. It can take up to a
-                minute for a change of this to take effect.
+                启用后，消息处理器将尝试识别您的 AWS 实体（如 EC2、ELB、RDS 等）的 IP 地址，并添加有关其背后服务或实例的附加信息。此更改生效可能需要长达一分钟。
               </span>
             }
             name="lookups_enabled"
@@ -162,11 +158,10 @@ const AWSPluginConfiguration = ({
           <Input
             id="aws-access-key"
             type="text"
-            label="AWS Access Key"
+            label="AWS 访问密钥"
             help={
               <span>
-                Note that this will only be used in encrypted connections but stored in plaintext. Please consult the
-                documentation for suggested rights to assign to the underlying IAM user.
+                请注意，此内容仅用于加密连接，但将以明文形式存储。请参阅文档以获取分配给底层 IAM 用户的建议权限。
               </span>
             }
             name="access_key"
@@ -177,11 +172,10 @@ const AWSPluginConfiguration = ({
           <Input
             id="aws-secret-key"
             type="password"
-            label="AWS Secret Key"
+            label="AWS 密钥"
             help={
               <span>
-                Note that this will only be used in encrypted connections and will be stored encrypted (using the system
-                secret). Please consult the documentation for suggested rights to assign to the underlying IAM user.
+                请注意，此内容仅用于加密连接，并将使用系统密钥进行加密存储。请参阅文档以获取分配给底层 IAM 用户的建议权限。
               </span>
             }
             name="secret_key"
@@ -193,13 +187,10 @@ const AWSPluginConfiguration = ({
           <Input
             id="aws-lookup-regions"
             type="text"
-            label="Lookup regions"
+            label="查找区域"
             help={
               <span>
-                The AWS instance lookup message processor keeps a table of instances for fast address translation.
-                Define the AWS regions you want to include in the tables. This should be all regions you run AWS
-                services in. Remember that your IAM user needs permission for these regions or you will see warnings in
-                your {productName} server logs.
+                AWS 实例查找消息处理器会维护一个实例表以进行快速地址转换。定义要包含在表中的 AWS 区域。这应包含您运行 AWS 服务的所有区域。请记住，您的 IAM 用户需要这些区域的权限，否则您将看到警告 {productName} 服务器日志。
               </span>
             }
             name="lookup_regions"
@@ -210,13 +201,13 @@ const AWSPluginConfiguration = ({
           <Input
             id="aws-proxy-enabled"
             type="checkbox"
-            label="Use HTTP proxy?"
+            label="使用 HTTP 代理？"
             help={
               <span>
-                When enabled, we&apos;ll access the AWS APIs through the HTTP proxy configured (
-                <code>http_proxy_uri</code>) in your {productName} configuration file.
+                启用后，我们将通过配置的 HTTP 代理访问 AWS API (
+                <code>http_proxy_uri</code>) in your {productName} 配置文件。
                 <br />
-                <em>Important:</em> You have to restart all AWS inputs for this configuration to take effect.
+                <em>重要：</em> 您必须重启所有 AWS 输入端，此配置才会生效。
               </span>
             }
             name="proxy_enabled"

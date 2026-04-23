@@ -97,7 +97,7 @@ class SourceViewModal extends React.Component<
         <Modal.Header>
           <Modal.Title>
             <span>
-              Configuration <em>{this.state.name}</em>
+              配置 <em>{this.state.name}</em>
             </span>
           </Modal.Title>
         </Modal.Header>
@@ -108,7 +108,7 @@ class SourceViewModal extends React.Component<
         </Modal.Body>
         <Modal.Footer>
           <Button type="button" onClick={this.props.onHide}>
-            Close
+            关闭
           </Button>
         </Modal.Footer>
       </BootstrapModalWrapper>

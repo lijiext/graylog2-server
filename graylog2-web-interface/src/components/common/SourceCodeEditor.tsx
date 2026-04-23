@@ -241,7 +241,7 @@ class SourceCodeEditor extends React.Component<Props, State> {
     } = this.props;
     const validCssWidth = isFinite(width) ? width : '100%';
     const overlay = (
-      <>Press Ctrl+V (&#8984;V in macOS) or select Edit&thinsp;&rarr;&thinsp;Paste to paste from clipboard.</>
+      <>按 Ctrl+V（macOS 下为 ⌘V）或选择“编辑”→“粘贴”以从剪贴板粘贴。</>
     );
 
     return (
@@ -263,7 +263,7 @@ class SourceCodeEditor extends React.Component<Props, State> {
                   <Button
                     bsStyle="link"
                     bsSize="sm"
-                    title="Paste (Ctrl+V / &#8984;V)"
+                    title="粘贴 (Ctrl+V / ⌘V)"
                     disabled={this.isPasteDisabled()}>
                     <Icon name="content_copy" />
                   </Button>
@@ -274,7 +274,7 @@ class SourceCodeEditor extends React.Component<Props, State> {
                   bsStyle="link"
                   bsSize="sm"
                   onClick={this.handleUndo}
-                  title="Undo (Ctrl+Z / &#8984;Z)"
+                  title="撤销 (Ctrl+Z / ⌘Z)"
                   disabled={this.isUndoDisabled()}>
                   <Icon name="undo" />
                 </Button>
@@ -282,7 +282,7 @@ class SourceCodeEditor extends React.Component<Props, State> {
                   bsStyle="link"
                   bsSize="sm"
                   onClick={this.handleRedo}
-                  title="Redo (Ctrl+Shift+Z / &#8984;&#8679;Z)"
+                  title="重做 (Ctrl+Shift+Z / ⌘⇧Z)"
                   disabled={this.isRedoDisabled()}>
                   <Icon name="redo" />
                 </Button>

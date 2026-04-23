@@ -109,13 +109,13 @@ const AddOutputButton = ({ stream, getTypeDefinition, assignableOutputs, availab
 
   return (
     <>
-      <Button bsStyle="default" bsSize="sm" onClick={onShowAddOutput} title="Edit Output">
-        <Icon name="add" size="sm" /> Add output
+      <Button bsStyle="default" bsSize="sm" onClick={onShowAddOutput} title="编辑输出端">
+        <Icon name="add" size="sm" /> 添加输出端
       </Button>
       {showAddOutput && (
         <BootstrapModalWrapper showModal onHide={() => setShowAddOutput(false)}>
           <Modal.Header>
-            <Modal.Title>Add output to stream</Modal.Title>
+            <Modal.Title>将输出端添加到数据流</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <SegmentedControl<SegmentType> data={SEGMENTS} value={currentSegment} onChange={setCurrentSegment} />
@@ -134,7 +134,7 @@ const AddOutputButton = ({ stream, getTypeDefinition, assignableOutputs, availab
           </Modal.Body>
           <Modal.Footer>
             <Button type="button" onClick={onCancel}>
-              Cancel
+              取消
             </Button>
           </Modal.Footer>
         </BootstrapModalWrapper>

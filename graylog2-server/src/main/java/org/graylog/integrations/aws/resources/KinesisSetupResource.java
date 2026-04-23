@@ -74,7 +74,7 @@ public class KinesisSetupResource extends RestResource implements PluginRestReso
     @POST
     @Timed
     @Path("/create_stream")
-    @ApiOperation(value = "Step 1: Attempt to create a new kinesis stream and wait for it to be ready.")
+    @ApiOperation(value = "步骤 1：尝试创建新的 Kinesis 数据流并等待其就绪。")
     @RequiresPermissions(AWSPermissions.AWS_READ)
     @AuditEvent(type = IntegrationsAuditEventTypes.KINESIS_SETUP_CREATE_STREAM)
     public KinesisNewStreamResponse createNewKinesisStream(@ApiParam(name = "JSON body", required = true)
@@ -92,7 +92,7 @@ public class KinesisSetupResource extends RestResource implements PluginRestReso
     @POST
     @Timed
     @Path("/create_subscription_policy")
-    @ApiOperation(value = "Step 2: Create AWS IAM policy needed for CloudWatch to write logs to Kinesis")
+    @ApiOperation(value = "步骤 2：创建 AWS IAM 策略，以便 CloudWatch 将日志写入 Kinesis")
     @RequiresPermissions(AWSPermissions.AWS_READ)
     @AuditEvent(type = IntegrationsAuditEventTypes.KINESIS_SETUP_CREATE_POLICY)
     public CreateRolePermissionResponse autoKinesisPermissions(@ApiParam(name = "JSON body", required = true)
@@ -104,7 +104,7 @@ public class KinesisSetupResource extends RestResource implements PluginRestReso
     @POST
     @Timed
     @Path("/create_subscription")
-    @ApiOperation(value = "Step 3: Subscribe a Kinesis stream to a CloudWatch log group")
+    @ApiOperation(value = "步骤 3：将 Kinesis 数据流订阅到 CloudWatch 日志组")
     @RequiresPermissions(AWSPermissions.AWS_READ)
     @AuditEvent(type = IntegrationsAuditEventTypes.KINESIS_SETUP_CREATE_SUBSCRIPTION)
     public CreateLogSubscriptionResponse createSubscription(@ApiParam(name = "JSON body", required = true)

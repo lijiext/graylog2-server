@@ -41,8 +41,8 @@ const useFavoriteItemMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Adding item to favorites failed with status: ${errorThrown}`,
-        'Could not add item to favorites',
+        `将项目添加到收藏夹失败，状态为：${errorThrown}`,
+        '无法将项目添加到收藏夹',
       );
     },
   });
@@ -52,8 +52,8 @@ const useFavoriteItemMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Deleting item from favorites failed with status: ${errorThrown}`,
-        'Could not delete item from favorites',
+        `从收藏夹删除项目失败，状态为：${errorThrown}`,
+        '无法从收藏夹中删除项目',
       );
     },
   });

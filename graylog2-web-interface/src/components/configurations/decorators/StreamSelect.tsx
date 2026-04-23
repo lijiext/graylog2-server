@@ -49,7 +49,7 @@ const StreamSelect = ({ onChange, value, streams }: Props) => {
         onChange={onChange}
         options={options}
         clearable={false}
-        placeholder="There are no decorators configured for any stream."
+        placeholder="未为任何数据流配置装饰器。"
         value={options.map(({ value: id }) => id).includes(value) ? value : ''}
       />
     </SelectContainer>

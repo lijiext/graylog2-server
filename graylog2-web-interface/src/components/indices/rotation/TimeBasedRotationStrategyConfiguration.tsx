@@ -94,11 +94,10 @@ const TimeBasedRotationStrategyConfiguration: React.FC<IndexRotationConfigCompon
         disabled={disabled}
         id="rotation-period"
         type="text"
-        label="Rotation period (ISO8601 Duration)"
+        label="轮转周期 (ISO8601 持续时间)"
         value={rotationPeriod}
         onChange={handlePeriodUpdate}
-        help={`How long an index gets written to before it is rotated. (i.e. "P1D" for 1 day, "PT6H" for 6 hours).${
-          max_rotation_period
+        help={`索引在轮换前写入的时长。（例如，"P1D"表示1天，"PT6H"表示6小时）。${max_rotation_period
             ? ` The max rotation period is set to ${moment.duration(max_rotation_period).humanize()} by Administrator.`
             : ''
         }`}
@@ -110,10 +109,10 @@ const TimeBasedRotationStrategyConfiguration: React.FC<IndexRotationConfigCompon
         disabled={disabled}
         id="rotate-empty-index-sets-checkbox"
         type="checkbox"
-        label="Rotate empty index set"
+        label="轮换空索引集"
         onChange={handleRotateEmptyIndexSetUpdate}
         checked={rotateEmptyIndexSet}
-        help="Apply the rotation strategy even when the index set is empty (not recommended)."
+        help="即使索引集为空也应用轮转策略（不推荐）。"
       />
     </div>
   );

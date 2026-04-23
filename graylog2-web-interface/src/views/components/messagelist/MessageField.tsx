@@ -69,7 +69,7 @@ const MessageField = ({ fieldName, fieldType, message, value }: Props) => {
   const ValueContext = isDecoratedField
     ? ({ children }) => (
         <InteractiveContext.Provider value={false}>
-          {children} <DecoratedField>(decorated)</DecoratedField>
+          {children} <DecoratedField>(已装饰)</DecoratedField>
         </InteractiveContext.Provider>
       )
     : ({ children }) => children;

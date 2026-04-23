@@ -104,7 +104,7 @@ const ShowMessagePage = ({ message, messageId, index }: ShowMessagePageProps) =>
 
     return (
       <ViewsStoreProvider view={view} initialQuery="none" isNew={false} executionState={executionState}>
-        <DocumentTitle title={`Message ${messageId} on ${index}`}>
+        <DocumentTitle title={`在 ${index} 上的消息 ${messageId}`}>
           <Row className="content" id="sticky-augmentations-container">
             <Col md={12}>
               <WindowDimensionsContextProvider>
@@ -146,9 +146,8 @@ const ShowMessagePageLoader = ({ params: { index, messageId } }: Props) => {
 
   return isError ? (
     <ErrorPage
-      title="Index/Message not found"
-      description="The index or message specified was not found. The most probable reason for this is that the index containing the
-      message referenced has been deleted. The full error message is:">
+      title="未找到索引/消息"
+      description="未找到指定的索引或消息。最可能的原因是包含所引用消息的索引已被删除。完整错误消息为：">
       <ErrorPre>{error.details}</ErrorPre>
     </ErrorPage>
   ) : (

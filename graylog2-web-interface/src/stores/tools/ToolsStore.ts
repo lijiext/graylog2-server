@@ -38,8 +38,8 @@ const ToolsStore = {
     promise.catch((errorThrown) => {
       if (errorThrown.additional.status !== 422) {
         UserNotification.error(
-          `Loading keyword preview failed with status: ${errorThrown}`,
-          'Could not load keyword preview',
+          `加载关键词预览失败，状态为：${errorThrown}`,
+          '无法加载关键词预览',
         );
       }
     });
@@ -67,8 +67,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'We were not able to run the grok extraction. Please check your parameters.',
+        `详细信息：${errorThrown}`,
+        '无法运行 Grok 提取。请检查您的参数。',
       );
     });
 
@@ -110,8 +110,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'We were not able to run the JSON extraction. Please check your parameters.',
+        `详细信息：${errorThrown}`,
+        '无法执行 JSON 提取。请检查您的参数。',
       );
     });
 
@@ -125,8 +125,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'Could not validate regular expression. Make sure that it is valid.',
+        `详细信息：${errorThrown}`,
+        '无法验证正则表达式。请确保其有效。',
       );
     });
 
@@ -142,7 +142,7 @@ const ToolsStore = {
     });
 
     promise.catch((errorThrown) => {
-      UserNotification.error(`Details: ${errorThrown}`, 'Could not verify if the url is in the allowlist.');
+      UserNotification.error(`详细信息：${errorThrown}`, '无法验证该 URL 是否在允许列表中。');
     });
 
     return promise;
@@ -161,7 +161,7 @@ const ToolsStore = {
     });
 
     promise.catch((errorThrown) => {
-      UserNotification.error(`Details: ${errorThrown}`, 'Could not generate regex.');
+      UserNotification.error(`详细信息：${errorThrown}`, '无法生成正则表达式。');
     });
 
     return promise;
@@ -185,8 +185,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'Could not try regular expression. Make sure that it is valid.',
+        `详细信息：${errorThrown}`,
+        '无法尝试正则表达式。请确保其有效。',
       );
     });
 
@@ -218,8 +218,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'Could not try regular expression. Make sure that it is valid.',
+        `详细信息：${errorThrown}`,
+        '无法尝试正则表达式。请确保其有效。',
       );
     });
 
@@ -247,8 +247,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'We were not able to run the split and index extraction. Please check your parameters.',
+        `详细信息：${errorThrown}`,
+        '无法执行拆分和索引提取。请检查您的参数。',
       );
     });
 
@@ -276,8 +276,8 @@ const ToolsStore = {
 
     promise.catch((errorThrown) => {
       UserNotification.error(
-        `Details: ${errorThrown}`,
-        'We were not able to run the substring extraction. Please check index boundaries.',
+        `详细信息：${errorThrown}`,
+        '无法执行子串提取。请检查索引边界。',
       );
     });
 
@@ -297,7 +297,7 @@ const ToolsStore = {
     });
 
     promise.catch((errorThrown) => {
-      UserNotification.error(`Details: ${errorThrown}`, 'Could not check if field contains the string');
+      UserNotification.error(`详细信息：${errorThrown}`, '无法检查字段是否包含该字符串');
     });
 
     return promise;
@@ -322,7 +322,7 @@ const ToolsStore = {
     });
 
     promise.catch((errorThrown) => {
-      UserNotification.error(`Details: ${errorThrown}`, 'Could not check if lookup table translates the string');
+      UserNotification.error(`详细信息：${errorThrown}`, '无法检查查找表是否翻译了该字符串');
     });
 
     return promise;

@@ -21,8 +21,7 @@ import { IconButton, OverlayTrigger } from 'components/common';
 const title = 'Export widget';
 const Explanation = () => (
   <span>
-    Export aggregation widget feature is available for the enterprise version. This feature provides options to export
-    your data into popular file formats such as CSV, JSON, YAML, XML, etc.
+    聚合小部件导出功能仅在企业版中提供。此功能允许您将数据导出为流行的文件格式，如 CSV、JSON、YAML、XML 等。
   </span>
 );
 

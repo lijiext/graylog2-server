@@ -58,7 +58,7 @@ const FormatReceivedBy = ({
 
   return (
     <div>
-      <dt>Received by</dt>
+      <dt>接收者</dt>
       <dd>
         <em>{_inputName(inputs, sourceInputId)}</em> on <NodeName nodeId={sourceNodeId} />
       </dd>

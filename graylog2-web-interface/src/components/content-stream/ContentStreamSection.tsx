@@ -114,7 +114,7 @@ const ContentStreamSection = () => {
     <SectionGrid $columns="2fr 1fr">
       {isNewsSectionEnabledForBrand && (
         <StyledNewsSectionComponent
-          title="News"
+          title="新闻"
           $enabled={contentStreamEnabled}
           headerActions={<ToggleActionButton onClick={toggleNews} isOpen={contentStreamEnabled} />}>
           {contentStreamEnabled && (
@@ -127,7 +127,7 @@ const ContentStreamSection = () => {
       )}
       {isReleaseSectionEnabledForBrand && (
         <StyledReleaseSectionComponent
-          title="Releases"
+          title="发布"
           $enabled={releasesSectionEnabled}
           headerActions={<ToggleActionButton onClick={toggleRelease} isOpen={releasesSectionEnabled} />}>
           {releasesSectionEnabled && <ContentStreamReleasesSection />}

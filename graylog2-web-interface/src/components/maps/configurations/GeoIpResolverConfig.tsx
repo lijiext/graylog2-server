@@ -111,32 +111,30 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
 
   return (
     <div>
-      <h3>Geo-Location Processor Configuration</h3>
+      <h3>地理位置处理器配置</h3>
 
       <p>
-        The Geo-Location Processor plugin scans all messages for fields containing <strong>exclusively</strong> an IP
-        address, and puts their geo-location information (coordinates, ISO country code, and city name) into different
-        fields. Read more in the <DocumentationLink page="geolocation" text="documentation" />.
+        Geo-Location Processor 插件扫描所有消息以查找包含 <strong>exclusively</strong> 一个IP地址，并将其地理位置信息（坐标、ISO国家代码和城市名称）放入不同的字段。在以下位置阅读更多： <DocumentationLink page="geolocation" text="documentation" />.
       </p>
 
       <dl className="deflist">
-        <dt>Enabled:</dt>
+        <dt>已启用:</dt>
         <dd>{config.enabled === true ? 'Yes' : 'No'}</dd>
         {config.enabled && (
           <>
-            <dt>Enforce default schema:</dt>
+            <dt>强制使用默认模式：</dt>
             <dd>{config.enforce_graylog_schema === true ? 'Yes' : 'No'}</dd>
-            <dt>Database vendor type:</dt>
+            <dt>数据库供应商类型:</dt>
             <dd>{activeVendorType(config.db_vendor_type)}</dd>
-            <dt>City database path:</dt>
+            <dt>城市数据库路径:</dt>
             <dd>{config.city_db_path}</dd>
-            <dt>ASN database path:</dt>
+            <dt>ASN 数据库路径:</dt>
             <dd>{config.asn_db_path === '' ? '-' : config.asn_db_path}</dd>
-            <dt>Database refresh interval:</dt>
+            <dt>数据库刷新间隔:</dt>
             <dd>
               {config.refresh_interval} {config.refresh_interval_unit}
             </dd>
-            <dt>Pull files from cloud storage bucket:</dt>
+            <dt>从云存储桶拉取文件:</dt>
             <dd>
               {config.pull_from_cloud
                 ? cloudStorageOptions.find((option) => option.value === config.pull_from_cloud)?.label
@@ -153,7 +151,7 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
           onClick={() => {
             setShowModal(true);
           }}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
       <Modal show={showModal} onHide={resetConfig}>
@@ -166,26 +164,26 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
               <Modal.Body>
                 <Row>
                   <Col sm={6}>
-                    <FormikInput id="enabled" type="checkbox" label="Enable Geo-Location processor" name="enabled" />
+                    <FormikInput id="enabled" type="checkbox" label="启用地理位置处理器" name="enabled" />
                   </Col>
                   <Col sm={6}>
                     <FormikInput
                       id="enforce_graylog_schema"
                       type="checkbox"
                       disabled={!values.enabled}
-                      label="Enforce default schema"
+                      label="强制执行默认架构"
                       name="enforce_graylog_schema"
                     />
                   </Col>
                 </Row>
                 <Field id="db_vendor_type_select" name="db_vendor_type_field">
                   {() => (
-                    <Input id="db_vendor_type_input" label="Select the GeoIP database vendor">
+                    <Input id="db_vendor_type_input" label="选择 GeoIP 数据库供应商">
                       <Select
                         id="db_vendor_type"
                         name="db_vendor_type"
                         clearable={false}
-                        placeholder="Select the GeoIP database vendor"
+                        placeholder="选择 GeoIP 数据库供应商"
                         required
                         disabled={!values.enabled}
                         options={availableVendorTypes()}
@@ -201,7 +199,7 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
                   id="city_db_path"
                   type="text"
                   disabled={!values.enabled}
-                  label="Path to the city database"
+                  label="城市数据库路径"
                   name="city_db_path"
                   required
                 />
@@ -209,16 +207,16 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
                   id="asn_db_path"
                   type="text"
                   disabled={!values.enabled}
-                  label="Path to the ASN database"
+                  label="ASN 数据库路径"
                   name="asn_db_path"
                 />
                 <TimeUnitInput
-                  label="Database refresh interval"
+                  label="数据库刷新间隔"
                   update={(value, unit) => {
                     setFieldValue('refresh_interval', value);
                     setFieldValue('refresh_interval_unit', unit);
                   }}
-                  help="Interval at which the database files are checked for modifications and refreshed changes are detected on disk."
+                  help="数据库文件被检查以检测修改的间隔，当在磁盘上检测到刷新更改时。"
                   value={values.refresh_interval}
                   unit={values.refresh_interval_unit || 'MINUTES'}
                   defaultEnabled={values.enabled}
@@ -233,13 +231,13 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
                       id="pull_from_cloud_input"
                       label={
                         <>
-                          Pull files from cloud storage bucket <InputOptionalInfo />
+                          从云存储桶拉取文件 <InputOptionalInfo />
                         </>
                       }>
                       <Select
                         id="pull_from_cloud"
                         name="pull_from_cloud"
-                        placeholder="Select cloud storage"
+                        placeholder="选择云存储"
                         disabled={!values.enabled}
                         options={cloudStorageOptions}
                         value={values.pull_from_cloud}
@@ -264,7 +262,7 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
                       disabled={!values.enabled}
                       label={
                         <>
-                          Googe Cloud Storage Project ID <InputOptionalInfo />
+                          Googe Cloud Storage 项目 ID <InputOptionalInfo />
                         </>
                       }
                       name="gcs_project_id"
@@ -277,8 +275,8 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
                   onCancel={resetConfig}
                   isSubmitting={isSubmitting}
                   isAsyncSubmit
-                  submitButtonText="Update configuration"
-                  submitLoadingText="Updating configuration..."
+                  submitButtonText="更新配置"
+                  submitLoadingText="正在更新配置..."
                 />
               </Modal.Footer>
             </Form>

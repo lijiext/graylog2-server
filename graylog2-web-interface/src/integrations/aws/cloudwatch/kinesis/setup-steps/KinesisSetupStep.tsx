@@ -68,7 +68,7 @@ const KinesisSetupStep = ({ label, progress }: KinesisSetupStepProps) => {
       </IconWrap>
 
       <Content>
-        <StepHeader>Create {label}</StepHeader>
+        <StepHeader>创建 {label}</StepHeader>
 
         <StepDetails>{defaultText}</StepDetails>
       </Content>

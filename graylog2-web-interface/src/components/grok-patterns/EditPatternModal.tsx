@@ -174,7 +174,7 @@ class EditPatternModal extends React.Component<
     if (create) {
       triggerButtonContent = 'Create pattern';
     } else {
-      triggerButtonContent = <span>Edit</span>;
+      triggerButtonContent = <span>编辑</span>;
     }
 
     return (
@@ -184,17 +184,17 @@ class EditPatternModal extends React.Component<
         </Button>
         <BootstrapModalForm
           show={showModal}
-          title={`${create ? 'Create' : 'Edit'} Grok Pattern ${name}`}
+          title={`${create ? 'Create' : 'Edit'} Grok 模式 ${name}`}
           data-telemetry-title={`${create ? 'Create' : 'Edit'} Grok Pattern`}
           bsSize="large"
           onSubmitForm={this._save}
           onCancel={this._closeModal}
-          submitButtonText={`${create ? 'Create' : 'Update'} pattern`}>
+          submitButtonText={`${create ? 'Create' : 'Update'} 模式`}>
           <fieldset>
             <Input
               type="text"
               id={this._getId('pattern-name')}
-              label="Name"
+              label="名称"
               onChange={this._onNameChange}
               value={name}
               bsStyle={error ? 'error' : null}
@@ -208,20 +208,20 @@ class EditPatternModal extends React.Component<
             />
             <GrokPatternInput onPatternChange={this._onPatternChange} pattern={pattern} patterns={patterns} />
             {testError && (
-              <Panel bsStyle="danger" header="Grok Error">
+              <Panel bsStyle="danger" header="Grok 错误">
                 <code style={{ display: 'block', whiteSpace: 'pre-wrap' }}>{testError}</code>
               </Panel>
             )}
             <Input
               type="textarea"
               id={this._getId('sampleData')}
-              label="Sample Data"
-              help="Here you can add sample data to test your pattern"
+              label="示例数据"
+              help="在此处可添加示例数据以测试您的模式"
               onChange={this._onSampleDataChange}
               value={sampleData}
             />
             <Button bsStyle="info" onClick={this._testPattern}>
-              Test with Sample Data
+              使用示例数据测试
             </Button>
             <br />
             <br />
@@ -230,8 +230,8 @@ class EditPatternModal extends React.Component<
               id={this._getId('test_result')}
               readOnly
               rows={8}
-              help="Will contain the result of your test in a JSON format"
-              label="Test Result"
+              help="将以 JSON 格式包含您的测试结果"
+              label="测试结果"
               value={testResult}
             />
           </fieldset>

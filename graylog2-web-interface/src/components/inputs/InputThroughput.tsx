@@ -78,15 +78,15 @@ const getValueFromMetric = (metric) => {
 
 const Connections = ({ openConnections, totalConnections }: { openConnections: number; totalConnections: number }) => (
   <span>
-    Active connections: <span className="active">{formatCount(openConnections)} </span>(
-    <span className="total">{formatCount(totalConnections)}</span> total)
+    活动连接数: <span className="active">{formatCount(openConnections)} </span>(
+    <span className="total">{formatCount(totalConnections)}</span> 总计)
     <br />
   </span>
 );
 
 const NetworkStats = ({ writtenBytes1Sec, writtenBytesTotal, readBytes1Sec, readBytesTotal }) => (
   <InputIO>
-    <span>Network IO: </span>
+    <span>网络 IO: </span>
     <span className="persec">
       <Icon name="arrow_drop_down" className="channel-direction channel-direction-down" />
       <span className="rx value">{NumberUtils.formatBytes(readBytes1Sec)} </span>
@@ -96,7 +96,7 @@ const NetworkStats = ({ writtenBytes1Sec, writtenBytesTotal, readBytes1Sec, read
     </span>
 
     <span className="total">
-      <span> (total: </span>
+      <span> (总计: </span>
       <Icon name="arrow_drop_down" className="channel-direction channel-direction-down" />
       <span className="rx value">{NumberUtils.formatBytes(readBytesTotal)} </span>
 
@@ -166,11 +166,11 @@ class InputThroughput extends React.Component<Props, State> {
         )}
         {!isNaN(emptyMessages) && (
           <span>
-            Empty messages discarded: {formatCount(emptyMessages)}
+            丢弃的空消息： {formatCount(emptyMessages)}
             <br />
           </span>
         )}
-        {isNaN(writtenBytes1Sec) && isNaN(openConnections) && <span>No metrics available for this node</span>}
+        {isNaN(writtenBytes1Sec) && isNaN(openConnections) && <span>此节点无可用指标</span>}
         <br />
       </span>
     );
@@ -247,14 +247,14 @@ class InputThroughput extends React.Component<Props, State> {
 
     return (
       <div className="graylog-input-metrics">
-        <h3>Throughput / Metrics</h3>
+        <h3>吞吐量 / 指标</h3>
         <span>
           {isNaN(incomingMessages) && isNaN(writtenBytes1Sec) && isNaN(openConnections) && (
-            <i>No metrics available for this input</i>
+            <i>此输入端无可用指标</i>
           )}
           {!isNaN(incomingMessages) && (
             <span>
-              1 minute average rate: {formatCount(incomingMessages)} msg/s
+              1 分钟平均速率: {formatCount(incomingMessages)} 条/秒
               <br />
             </span>
           )}
@@ -271,7 +271,7 @@ class InputThroughput extends React.Component<Props, State> {
           )}
           {!isNaN(emptyMessages) && (
             <span>
-              Empty messages discarded: {formatCount(emptyMessages)}
+              丢弃的空消息： {formatCount(emptyMessages)}
               <br />
             </span>
           )}

@@ -32,11 +32,11 @@ type Props = {
 
 const MaxmindAdapterSummary = ({ dataAdapter: { config } }: Props) => (
   <dl>
-    <dt>Database file path</dt>
+    <dt>数据库文件路径</dt>
     <dd>{config.path}</dd>
-    <dt>Database type</dt>
+    <dt>数据库类型</dt>
     <dd>{DATABASE_TYPES[config.database_type]}</dd>
-    <dt>Check interval</dt>
+    <dt>检查间隔</dt>
     <dd>
       <TimeUnit value={config.check_interval} unit={config.check_interval_unit} />
     </dd>

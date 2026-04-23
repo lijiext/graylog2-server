@@ -92,27 +92,26 @@ const NodeOverview = ({
 
       <Row className="content">
         <Col md={12}>
-          <h2 style={{ marginBottom: 5 }}>Memory/Heap usage</h2>
+          <h2 style={{ marginBottom: 5 }}>内存/堆使用率</h2>
           <JvmHeapUsage nodeId={node.node_id} />
         </Col>
       </Row>
 
       <Row className="content">
         <Col md={12}>
-          <h2>Buffers</h2>
+          <h2>缓冲区</h2>
           <p className="description">
-            Buffers are built to cache small amounts of messages for a very short time (usually milliseconds) on their
-            way through the different processors.
+            缓冲区用于在消息通过不同处理器时，缓存少量消息，持续时间极短（通常为毫秒级）。
           </p>
           <Row>
             <Col md={4}>
-              <BufferUsage nodeId={node.node_id} title="Input buffer" bufferType="input" />
+              <BufferUsage nodeId={node.node_id} title="输入缓冲区" bufferType="input" />
             </Col>
             <Col md={4}>
-              <BufferUsage nodeId={node.node_id} title="Process buffer" bufferType="process" />
+              <BufferUsage nodeId={node.node_id} title="处理缓冲区" bufferType="process" />
             </Col>
             <Col md={4}>
-              <BufferUsage nodeId={node.node_id} title="Output buffer" bufferType="output" />
+              <BufferUsage nodeId={node.node_id} title="输出缓冲区" bufferType="output" />
             </Col>
           </Row>
         </Col>
@@ -120,12 +119,9 @@ const NodeOverview = ({
 
       <Row className="content">
         <Col md={12}>
-          <h2>Disk Journal</h2>
+          <h2>磁盘日志</h2>
           <p className="description">
-            Incoming messages are written to the disk journal to ensure they are kept safe in case of a server failure.
-            The journal also helps maintain functionality if any of the outputs is too slow to keep up with the message
-            rate or whenever there is a peak in incoming messages. It makes sure that memory is not overloaded and
-            avoids overly long garbage collection pauses that way.
+            传入的消息会写入磁盘日志，以确保在服务器故障时数据得到安全保存。此外，如果任何输出端处理速度跟不上消息速率，或传入消息出现峰值，日志还能帮助维持系统功能。这确保了内存不会过载，并避免了过长的垃圾回收暂停。
           </p>
           <JournalDetails nodeId={node.node_id} />
         </Col>
@@ -133,7 +129,7 @@ const NodeOverview = ({
       {DataLakeJournal && <DataLakeJournal nodeId={node.node_id} />}
       <Row className="content">
         <Col md={6}>
-          <h2>System</h2>
+          <h2>系统</h2>
           <SystemInformation node={node} systemInformation={systemOverview} jvmInformation={jvmInformation} />
         </Col>
         <Col md={6}>
@@ -145,7 +141,7 @@ const NodeOverview = ({
       <Row className="content">
         <Col md={12}>
           <h2>
-            Installed plugins <small>{pluginCount}</small>
+            已安装的插件 <small>{pluginCount}</small>
           </h2>
           <PluginsDataTable plugins={plugins} />
         </Col>
@@ -157,13 +153,13 @@ const NodeOverview = ({
             <span className="pull-right">
               <LinkContainer to={Routes.node_inputs(node.node_id)}>
                 <Button bsStyle="primary" bsSize="small">
-                  Manage inputs
+                  管理输入端
                 </Button>
               </LinkContainer>
             </span>
           </HideOnCloud>
           <h2 style={{ marginBottom: 15 }}>
-            Available input types <small>{inputCount}</small>
+            可用输入端类型 <small>{inputCount}</small>
           </h2>
           <InputTypesDataTable inputDescriptions={inputDescriptions} />
         </Col>

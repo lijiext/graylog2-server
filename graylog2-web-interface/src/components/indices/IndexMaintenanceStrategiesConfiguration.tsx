@@ -339,14 +339,14 @@ const IndexMaintenanceStrategiesConfiguration = ({
       {helpText && <StyledAlert>{helpText}</StyledAlert>}
       {shouldShowMaxRetentionWarning && (
         <StyledAlert bsStyle="warning">
-          The effective retention period value calculated from the
-          <b>Rotation period</b> and the <b>max number of indices</b> should not be greater than the
-          <b>Max retention period </b> of <b>{maxRetentionPeriod}</b> set by the Administrator.
+          从以下计算得出的有效保留期值
+          <b>轮转周期</b> 并且 <b>最大索引数</b> 不应大于
+          <b>最大保留期限 </b> of <b>{maxRetentionPeriod}</b> 由管理员设置。
         </StyledAlert>
       )}
       {shouldShowInvalidRetentionWarning() && (
         <StyledAlert bsStyle="danger">
-          {getDisplayName()} strategy was deactivated. Please configure a valid retention strategy.
+          {getDisplayName()} 保留策略已停用。请配置有效的保留策略。
         </StyledAlert>
       )}
       <Row>

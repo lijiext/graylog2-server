@@ -39,14 +39,14 @@ const MessageActions = ({ messageIndex, messageId }: { messageIndex: string | un
   <ButtonGroup className="pull-right">
     <MessagePermalinkButton messageIndex={messageIndex} messageId={messageId} />
 
-    <ClipboardButton title="Copy ID" bsSize="small" text={messageId} />
+    <ClipboardButton title="复制 ID" bsSize="small" text={messageId} />
   </ButtonGroup>
 );
 
 const InputName = ({ inputs, inputId }: { inputs: Immutable.Map<string, Input> | undefined; inputId: string }) => {
   const input = inputs?.get(inputId);
 
-  return input ? <Span>{input.title}</Span> : <>deleted input</>;
+  return input ? <Span>{input.title}</Span> : <>已删除的输入端</>;
 };
 
 const StreamLinks = ({
@@ -103,7 +103,7 @@ const MessageDetail = ({
   const streamIds = Immutable.Set(message.stream_ids);
   const rawTimestamp = message.fields.timestamp;
   const timestamp = [
-    <dt key={`dt-${rawTimestamp}`}>Timestamp</dt>,
+    <dt key={`dt-${rawTimestamp}`}>时间戳</dt>,
     <dd key={`dd-${rawTimestamp}`}>
       <Timestamp dateTime={rawTimestamp} />
     </dd>,
@@ -125,7 +125,7 @@ const MessageDetail = ({
               <Link to={Routes.message_show(message.index, message.id)}>{message.id}</Link>
             ) : (
               <span>
-                {message.id} <Label bsStyle="warning">Not stored</Label>
+                {message.id} <Label bsStyle="warning">未存储</Label>
               </span>
             )}
           </MessageDetailsTitle>
@@ -137,7 +137,7 @@ const MessageDetail = ({
             {timestamp}
             {message.source_input_id && message.source_node_id && (
               <div>
-                <dt>Received by</dt>
+                <dt>接收者</dt>
                 <dd>
                   <em>
                     <InputName inputs={inputs} inputId={message.source_input_id} />
@@ -152,7 +152,7 @@ const MessageDetail = ({
                         <em>
                           <InputName inputs={inputs} inputId={message.source_radio_input_id} />
                         </em>{' '}
-                        on radio <NodeName nodeId={message.source_radio_id} />
+                        选中单选按钮 <NodeName nodeId={message.source_radio_id} />
                       </span>
                     </>
                   )}
@@ -160,12 +160,12 @@ const MessageDetail = ({
               </div>
             )}
 
-            <dt>Stored in index</dt>
+            <dt>存储在索引中</dt>
             <dd>{message.index ? message.index : 'Message is not stored'}</dd>
 
             {streamIds.size > 0 && (
               <>
-                <dt>Routed into streams</dt>
+                <dt>路由到数据流</dt>
                 <dd className="stream-list">
                   <ul>
                     <StreamLinks messageStreams={message.streams} streamIds={streamIds} streams={streams} />

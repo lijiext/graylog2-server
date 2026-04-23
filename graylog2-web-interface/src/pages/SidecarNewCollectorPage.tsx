@@ -23,15 +23,15 @@ import SidecarsPageNavigation from 'components/sidecars/common/SidecarsPageNavig
 import DocsHelper from 'util/DocsHelper';
 
 const SidecarNewCollectorPage = () => (
-  <DocumentTitle title="New Log Collector">
+  <DocumentTitle title="新建日志采集器">
     <SidecarsPageNavigation />
     <PageHeader
-      title="New Log Collector"
+      title="新建日志采集器"
       documentationLink={{
         title: 'Sidecar documentation',
         path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
       }}>
-      <span>Some words about log collectors.</span>
+      <span>关于日志采集器的一些说明。</span>
     </PageHeader>
 
     <Row className="content">

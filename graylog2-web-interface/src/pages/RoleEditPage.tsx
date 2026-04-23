@@ -36,7 +36,7 @@ type Props = {
 
 const PageTitle = ({ name }: { name: string | undefined | null }) => (
   <>
-    Edit Role{' '}
+    编辑角色{' '}
     {name && (
       <>
         - <i>{name}</i>
@@ -54,20 +54,20 @@ const RoleEditPage = ({ params }: Props) => {
   }, [roleId]);
 
   return (
-    <DocumentTitle title={`Edit Role ${loadedRole?.name ?? ''}`}>
+    <DocumentTitle title={`编辑角色 ${loadedRole?.name ?? ''}`}>
       <PageHeader
         title={<PageTitle name={loadedRole?.name} />}
         actions={<RoleActionLinks roleId={roleId} />}
         topActions={
           <LinkContainer to={Routes.SYSTEM.AUTHZROLES.OVERVIEW}>
-            <Button bsStyle="info">Roles Overview</Button>
+            <Button bsStyle="info">角色概览</Button>
           </LinkContainer>
         }
         documentationLink={{
           title: 'Permissions documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>You can assign the role to users.</span>
+        <span>您可以将角色分配给用户。</span>
       </PageHeader>
       <RoleEdit role={roleId === loadedRole?.id ? loadedRole : undefined} />
     </DocumentTitle>

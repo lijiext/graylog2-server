@@ -165,7 +165,7 @@ public class DecodingProcessor implements EventHandler<MessageEvent> {
             metricRegistry.meter(name(baseMetricName, "failures")).mark();
             failureSubmissionService.submitInputFailure(
                     InputProcessingException.create(
-                            "Unable to decode raw message due to an unexpected error.", e, raw), inputIdOnCurrentNode);
+                            "由于发生意外错误，无法解码原始消息。", e, raw), inputIdOnCurrentNode);
             throw e;
         } finally {
             decodeTime = decodeTimeCtx.stop();

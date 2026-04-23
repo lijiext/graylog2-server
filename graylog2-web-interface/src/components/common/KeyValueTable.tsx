@@ -142,7 +142,7 @@ class KeyValueTable extends React.Component<
               bsStyle="danger"
               bsSize={this.props.actionsSize}
               onClick={this._deleteRow(key)}>
-              Delete
+              删除
             </Button>,
           );
 
@@ -195,7 +195,7 @@ class KeyValueTable extends React.Component<
         </td>
         <td>
           <Button bsStyle="primary" bsSize="small" onClick={this._addRow} disabled={addRowDisabled}>
-            Add
+            添加
           </Button>
         </td>
       </tr>

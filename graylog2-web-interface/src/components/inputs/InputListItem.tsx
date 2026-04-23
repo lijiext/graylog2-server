@@ -164,7 +164,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
               app_action_value: 'show-received-messages',
             });
           }}>
-          Show received messages
+          显示接收到的消息
         </Button>
       </LinkContainer>
     </IfPermitted>,
@@ -183,7 +183,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
                 app_action_value: 'manage-extractors',
               });
             }}>
-            Manage extractors
+            管理提取器
           </Button>
         </LinkContainer>
       </IfPermitted>
@@ -193,12 +193,12 @@ const InputListItem = ({ input, currentNode }: Props) => {
     </IfPermitted>,
     <DropdownButton
       key={`more-actions-${input.id}`}
-      title="More actions"
+      title="更多操作"
       id={`more-actions-dropdown-${input.id}`}
       pullRight>
       <IfPermitted permissions={[`inputs:edit:${input.id}`, `input_types:create:${input.type}`]}>
         <MenuItem key={`edit-input-${input.id}`} onSelect={editInput} disabled={definition === undefined}>
-          Edit input
+          编辑输入端
         </MenuItem>
 
         <LinkContainer to={Routes.SYSTEM.INPUT_DIAGNOSIS(input.id)}>
@@ -210,7 +210,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
                 app_action_value: 'input-diagnosis',
               });
             }}>
-            Input Diagnosis
+            输入诊断
           </MenuItem>
         </LinkContainer>
 
@@ -220,7 +220,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
               key={`remove-setup-mode-${input.id}`}
               onSelect={exitInputSetupMode}
               disabled={definition === undefined}>
-              Exit Setup mode
+              退出设置模式
             </MenuItem>
           ) : (
             !isInputRunning(inputStates, input.id) && (
@@ -228,7 +228,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
                 key={`setup-mode-${input.id}`}
                 onSelect={enterInputSetupMode}
                 disabled={definition === undefined}>
-                Enter Setup mode
+                进入设置模式
               </MenuItem>
             )
           ))}
@@ -244,7 +244,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
                 app_action_value: 'show-metrics',
               });
             }}>
-            Show metrics
+            显示指标
           </MenuItem>
         </LinkContainer>
       )}
@@ -255,7 +255,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
           onSelect={() => {
             setShowStaticFieldForm(true);
           }}>
-          Add static field
+          添加静态字段
         </MenuItem>
       </IfPermitted>
 
@@ -264,7 +264,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
       </IfPermitted>
       <IfPermitted permissions={['inputs:terminate', `input_types:create:${input.type}`]}>
         <DeleteMenuItem key={`delete-input-${input.id}`} onSelect={deleteInput}>
-          Delete input
+          删除输入端
         </DeleteMenuItem>
       </IfPermitted>
     </DropdownButton>,
@@ -275,7 +275,7 @@ const InputListItem = ({ input, currentNode }: Props) => {
 
     return (
       <span>
-        On node <LinkToNode nodeId={input.node} />
+        在节点上 <LinkToNode nodeId={input.node} />
       </span>
     );
   };
@@ -302,12 +302,12 @@ const InputListItem = ({ input, currentNode }: Props) => {
           nodeValue={input.node}
           configFields={definition.requested_configuration}
           description={definition?.description}
-          title={`Editing Input ${input.title}`}
+          title={`编辑输入 ${input.title}`}
           titleValue={input.title}
           typeName={input.type}
           includeTitleField
           handleSubmit={updateInput}
-          submitButtonText="Update input"
+          submitButtonText="更新输入端"
           values={input.attributes}
         />
       )}
@@ -325,8 +325,8 @@ const InputListItem = ({ input, currentNode }: Props) => {
         contentRow={additionalContent}
       />
       {showConfirmDeleteDialog && (
-        <ConfirmDialog title="Deleting Input" show onConfirm={handleConfirmDelete} onCancel={cancelDelete}>
-          Do you really want to delete input {input.title}?
+        <ConfirmDialog title="删除输入端" show onConfirm={handleConfirmDelete} onCancel={cancelDelete}>
+          您确定要删除输入端吗 {input.title}?
         </ConfirmDialog>
       )}
     </>

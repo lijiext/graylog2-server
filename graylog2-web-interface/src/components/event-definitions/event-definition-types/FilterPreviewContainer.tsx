@@ -32,7 +32,7 @@ const FilterPreviewContainer = ({ eventDefinition }: FilterPreviewContainerProps
   return streams?.length ? (
     <FilterPreview config={eventDefinition?.config} />
   ) : (
-    <FilterPreviewResults>Unable to preview filter, user does not have access to any streams.</FilterPreviewResults>
+    <FilterPreviewResults>无法预览过滤器，用户无权访问任何数据流。</FilterPreviewResults>
   );
 };
 

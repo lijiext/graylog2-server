@@ -66,7 +66,7 @@ class OutputList extends React.Component<
       return (
         <Row className="content">
           <Col md={12}>
-            <NoEntitiesExist>No outputs configured.</NoEntitiesExist>
+            <NoEntitiesExist>未配置输出端。</NoEntitiesExist>
           </Col>
         </Row>
       );

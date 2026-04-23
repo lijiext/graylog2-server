@@ -16,5 +16,5 @@
  */
 import * as React from 'react';
 
-const MigrationFinishedStep = () => <p>The migration is finished !</p>;
+const MigrationFinishedStep = () => <p>迁移已完成！</p>;
 export default MigrationFinishedStep;

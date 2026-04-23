@@ -74,11 +74,11 @@ function WizardButtons({ isCreate, stepIds, activeStepId, onStepChange, isLoadin
   if (activeStepId === 'summary') {
     return (
       <ButtonsRow $align="center" $justify="flex-end" $width="100%">
-        <Button onClick={onCancel}>Cancel</Button>
+        <Button onClick={onCancel}>取消</Button>
         <Button bsStyle="primary" onClick={onSubmit} disabled={!isValid || isLoading || !canModify}>
           {isLoading ? (
             <Row $gap="xs" $align="center">
-              <Spinner text="" /> <span>{isCreate ? 'Creating' : 'Updating'} Lookup Table...</span>
+              <Spinner text="" /> <span>{isCreate ? 'Creating' : 'Updating'} 查找表...</span>
             </Row>
           ) : (
             `${isCreate ? 'Create' : 'Update'} Lookup Table`
@@ -91,9 +91,9 @@ function WizardButtons({ isCreate, stepIds, activeStepId, onStepChange, isLoadin
   return (
     <ButtonsRow $align="center" $justify="space-between" $width="100%">
       <Button onClick={onPrev} disabled={onFirstStep}>
-        Previous
+        上一页
       </Button>
-      <Button onClick={onNext}>Next</Button>
+      <Button onClick={onNext}>下一步</Button>
     </ButtonsRow>
   );
 }

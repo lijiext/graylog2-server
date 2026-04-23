@@ -68,19 +68,19 @@ const GreyNoiseAdapterFieldSet = ({
   return (
     <fieldset>
       {showResetPasswordButton ? (
-        <Input id="api_token" label="User Password" labelClassName="col-sm-3" wrapperClassName="col-sm-9">
-          <Button onClick={toggleUserPasswordReset}>Reset token</Button>
+        <Input id="api_token" label="用户密码" labelClassName="col-sm-3" wrapperClassName="col-sm-9">
+          <Button onClick={toggleUserPasswordReset}>重置令牌</Button>
         </Input>
       ) : (
         <Input
           type="password"
           id="api_token"
           name="api_token"
-          label="API Token"
+          label="API 令牌"
           buttonAfter={
             !isCreate ? (
               <Button type="button" onClick={toggleUserPasswordReset}>
-                Undo Reset
+                撤销重置
               </Button>
             ) : undefined
           }

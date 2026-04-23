@@ -76,7 +76,7 @@ class SidecarRow extends React.Component<
         <td className={style.sidecarName}>
           <Link to={Routes.SYSTEM.SIDECARS.STATUS(sidecar.node_id)}>{sidecar.node_name}</Link>
         </td>
-        <td aria-label="Status">
+        <td aria-label="状态">
           <StatusIndicator
             status={sidecarStatus.status}
             message={sidecarStatus.message}
@@ -105,7 +105,7 @@ class SidecarRow extends React.Component<
           <ButtonToolbar>
             <LinkContainer to={`${Routes.SYSTEM.SIDECARS.ADMINISTRATION}?node_id=${sidecar.node_id}`}>
               <Button bsSize="xsmall" bsStyle="info">
-                Manage sidecar
+                管理 Sidecar
               </Button>
             </LinkContainer>
             <LinkContainer
@@ -115,7 +115,7 @@ class SidecarRow extends React.Component<
                 recentMessagesTimeRange(),
               )}>
               <Button bsSize="xsmall" bsStyle="info">
-                Show messages
+                显示消息
               </Button>
             </LinkContainer>
           </ButtonToolbar>

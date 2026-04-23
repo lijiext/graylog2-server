@@ -40,7 +40,7 @@ const UNITS = {
 
 const TimeUnit = ({ value, unit, zeroIsNever = true }: Props) => {
   if (value === 0 && zeroIsNever) {
-    return <span>Never</span>;
+    return <span>从不</span>;
   }
 
   return (

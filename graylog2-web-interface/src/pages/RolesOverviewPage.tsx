@@ -29,35 +29,31 @@ const RolesOverviewPage = () => {
   const productName = useProductName();
 
   return (
-    <DocumentTitle title="Roles Overview">
+    <DocumentTitle title="角色概览">
       <PageHeader
-        title="Roles Overview"
+        title="角色概览"
         documentationLink={{
           title: 'Permissions documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}
         topActions={
           <LinkContainer to={Routes.SYSTEM.AUTHZROLES.OVERVIEW}>
-            <Button bsStyle="info">Roles Overview</Button>
+            <Button bsStyle="info">角色概览</Button>
           </LinkContainer>
         }>
         <span>
-          Overview of all roles available in {productName}. Roles allow granting capabilities to users, like creating
-          dashboards or event definitions.
+          所有可用角色的概述 {productName}. 角色允许向用户授予权限，例如创建仪表盘或事件定义。
         </span>
       </PageHeader>
 
       <Row className="content">
         <Col xs={12}>
-          <Alert bsStyle="info" title={<>Granting Permissions</>}>
-            The built-in roles allow granting capabilities to users, like creating dashboards or viewing the archive
-            catalog. But they do not grant permissions for a specific dashboard or stream. It is also not possible to
-            create an own role. Granting permissions for a specific entity can be done by using its{' '}
+          <Alert bsStyle="info" title={<>授予权限</>}>
+            内置角色允许向用户授予能力，例如创建仪表盘或查看归档目录。但它们不会为特定仪表盘或数据流授予权限。也无法创建自定义角色。为特定实体授予权限可通过使用其{' '}
             <b>
-              <Icon name="person_add" /> Share
+              <Icon name="person_add" /> 分享
             </b>{' '}
-            button. You can find the button e.g. on the entities overview page. If you want to grant permissions for an
-            entity to multiple users at once, you can use teams. Learn more in the{' '}
+            按钮。您可以在实体概览页面等位置找到该按钮。如果您希望一次性为实体授予多个用户的权限，可以使用团队。在以下位置了解更多{' '}
             <DocumentationLink page={DocsHelper.PAGES.PERMISSIONS} text="documentation" />.
           </Alert>
         </Col>

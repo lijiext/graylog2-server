@@ -31,8 +31,8 @@ const ToggleDetails = styled.div`
 
 const description = (
   <>
-    <p>It seems like the page you navigated to contained an error.</p>
-    <p>You can use the navigation to reach other parts of the product, refresh the page or submit an error report.</p>
+    <p>您访问的页面似乎包含错误。</p>
+    <p>您可以使用导航访问产品的其他部分、刷新页面或提交错误报告。</p>
   </>
 );
 
@@ -53,7 +53,7 @@ const RuntimeErrorPage = ({ error, componentStack }: Props) => {
   }, []);
 
   return (
-    <ErrorPage title="Something went wrong." description={description}>
+    <ErrorPage title="发生错误。" description={description}>
       {isDefaultProduct && (
         <div className="content" style={{ padding: '2em' }}>
           <SupportSources />
@@ -61,7 +61,7 @@ const RuntimeErrorPage = ({ error, componentStack }: Props) => {
       )}
       <dl>
         <dt>
-          Error:
+          错误:
           <ToggleDetails className="pull-right">
             <Button bsStyle="link" tabIndex={0} onClick={_toggleDetails}>
               {showDetails ? 'Show less' : 'Show more'}

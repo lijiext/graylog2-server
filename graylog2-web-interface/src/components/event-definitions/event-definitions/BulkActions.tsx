@@ -126,18 +126,18 @@ const BulkActions = () => {
           const notUpdatedDefinitionIds = failures.map(({ entity_id }) => entity_id);
           setSelectedEntities(notUpdatedDefinitionIds);
           UserNotification.error(
-            `${notUpdatedDefinitionIds.length} out of ${selectedItemsAmount} selected ${getDescriptor(selectedItemsAmount)} could not be ${actionType}d.`,
+            `${notUpdatedDefinitionIds.length} 个选定的 ${getDescriptor(selectedItemsAmount)} 中的 ${selectedItemsAmount} 个无法被 ${actionType}。`,
           );
         } else {
           setSelectedEntities([]);
           UserNotification.success(
             `${selectedItemsAmount} ${getDescriptor(selectedItemsAmount)} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} ${actionType}d successfully.`,
-            'Success',
+            '成功',
           );
         }
       })
       .catch((error) => {
-        UserNotification.error(`An error occurred while ${actionType} event definition. ${error}`);
+        UserNotification.error(`在 ${actionType} 事件定义时发生错误。${error}`);
       })
       .finally(() => {
         refetchEventDefinitions();
@@ -152,8 +152,8 @@ const BulkActions = () => {
   return (
     <>
       <BulkActionsDropdown>
-        <MenuItem onSelect={() => handleAction(ACTION_TYPES.ENABLE)}>Enable</MenuItem>
-        <MenuItem onSelect={() => handleAction(ACTION_TYPES.DISABLE)}>Disable</MenuItem>
+        <MenuItem onSelect={() => handleAction(ACTION_TYPES.ENABLE)}>启用</MenuItem>
+        <MenuItem onSelect={() => handleAction(ACTION_TYPES.DISABLE)}>禁用</MenuItem>
         <DeleteMenuItem onSelect={() => handleAction(ACTION_TYPES.DELETE)} />
       </BulkActionsDropdown>
       {showDialog && (

@@ -25,7 +25,7 @@ const inputTypeFormatter = (inputType: { name: string; type: string; link_to_doc
     <td className="limited">{inputType.name}</td>
     <td className="limited">{inputType.type}</td>
     <td className="limited" style={{ width: 150 }}>
-      {inputType.link_to_docs && <ExternalLink href={inputType.link_to_docs}>Documentation</ExternalLink>}
+      {inputType.link_to_docs && <ExternalLink href={inputType.link_to_docs}>文档</ExternalLink>}
     </td>
   </tr>
 );
@@ -40,7 +40,7 @@ const InputTypesDataTable = ({ inputDescriptions = undefined }: Props) => {
   }
 
   if (Object.keys(inputDescriptions).length === 0) {
-    return <Alert bsStyle="warning">Input types are unavailable.</Alert>;
+    return <Alert bsStyle="warning">输入端类型不可用。</Alert>;
   }
 
   const headers = ['Name', 'Type', 'Documentation'];

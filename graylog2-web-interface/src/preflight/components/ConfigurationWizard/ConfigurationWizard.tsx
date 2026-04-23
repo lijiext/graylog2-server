@@ -87,7 +87,7 @@ const FetchErrorsOverview = ({ errors }: FetchErrorsOverviewProps) => (
   <>
     {errors.map(({ entityName, error }) => (
       <Alert bsStyle="danger" key={entityName}>
-        There was an error fetching the {entityName}: {error.message}
+        获取时出错 {entityName}: {error.message}
       </Alert>
     ))}
   </>
@@ -139,7 +139,7 @@ const ConfigurationWizard = ({ setIsWaitingForStartup }: Props) => {
           })}
         </List>
         <Space h="md" />
-        You can always <RestartConfigurationButton /> the configuration
+        您始终可以 <RestartConfigurationButton /> 配置
       </Grid.Col>
       <Grid.Col span={{ base: 12, md: 6, orderMd: 1 }}>
         {activeStepKey === CONFIGURATION_STEPS.CA_CONFIGURATION.key && <CAConfiguration />}

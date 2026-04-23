@@ -93,8 +93,8 @@ const BulkActions = () => {
         setSelectedEntities(notDeletedNotificationIds);
         refetchEventNotifications();
         UserNotification.success(
-          `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} deleted successfully.`,
-          'Success',
+          `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} 已成功删除。`,
+          '成功',
         );
       });
     }

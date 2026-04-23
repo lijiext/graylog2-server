@@ -101,7 +101,7 @@ const TrafficGraphWithDaySelect = ({ traffic, trafficLimit = undefined, title = 
           id="graph-days"
           type="select"
           bsSize="small"
-          label="Days"
+          label="天"
           value={graphDays}
           onChange={onGraphDaysChange}
           formGroupClassName="graph-days-select">
@@ -117,7 +117,7 @@ const TrafficGraphWithDaySelect = ({ traffic, trafficLimit = undefined, title = 
         {title ?? 'Outgoing traffic'}{' '}
         {bytesOut && (
           <small>
-            Last {graphDays} days: {formattedTotalTraffic}
+            最后 {graphDays} 天: {formattedTotalTraffic}
           </small>
         )}
       </StyledH3>

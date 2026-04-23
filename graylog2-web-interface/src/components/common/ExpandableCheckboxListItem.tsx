@@ -41,7 +41,7 @@ const Header = ({ checked, readOnly, onChange, children, indeterminate }) => {
         inputRef={(ref) => {
           checkboxRef.current = ref;
         }}
-        title="Select item"
+        title="选择项目"
         checked={checked}
         readOnly={readOnly}
         onClick={(e) => e.stopPropagation()}

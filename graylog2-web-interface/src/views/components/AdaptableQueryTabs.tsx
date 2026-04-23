@@ -147,7 +147,7 @@ const MoreTabsLi = ({ menuItems }: { menuItems: OrderedSet<React.ReactNode> }) =
       title={<Icon name="more_horiz" />}
       className={MORE_TABS_BUTTON_CLASS}
       id="query-tabs-more"
-      aria-label="More Dashboard Pages"
+      aria-label="更多仪表盘页面"
       noCaret
       bsStyle="link"
       keepMounted
@@ -305,7 +305,7 @@ const AdaptableQueryTabs = ({
       dispatch(_onCopyToDashboard(selectedDashboardId))
         .then(([newDashboard, newQueryId]) => loadDashboard(history, newDashboard.id, newQueryId))
         .catch((error) => {
-          UserNotification.error(`Copying dashboard page failed with error ${error}`);
+          UserNotification.error(`复制仪表盘页面失败，错误为 ${error}`);
         }),
     [dispatch, history],
   );
@@ -403,7 +403,7 @@ const AdaptableQueryTabs = ({
         <QueryTab
           key="new"
           eventKey="new"
-          title="Create New Page"
+          title="创建新页面"
           onClick={() => {
             sendTelemetry(TELEMETRY_EVENT_TYPE.DASHBOARD_ACTION.DASHBOARD_CREATE_PAGE, {
               app_pathname: 'dashboard',
@@ -418,7 +418,7 @@ const AdaptableQueryTabs = ({
         </QueryTab>
       </StyledQueryNav>
       <IconButton
-        title="Open pages configuration"
+        title="打开页面配置"
         name="settings"
         ref={queriesConfigBtn}
         className="query-config-btn"
@@ -447,8 +447,8 @@ const AdaptableQueryTabs = ({
           onCreateNewDashboard={isNew ? undefined : onCreateNewDashboard}
           onCancel={toggleCopyToDashboardModal}
           activeDashboardId={dashboardId}
-          submitButtonText="Copy page"
-          submitLoadingText="Copying page..."
+          submitButtonText="复制页面"
+          submitLoadingText="正在复制页面..."
         />
       )}
     </Container>

@@ -60,14 +60,14 @@ const DestinationOutputs = ({ stream }: Props) => {
 
   return (
     <Section
-      title="Outputs"
+      title="输出端"
       collapsible
       defaultClosed
       disableCollapseButton={!hasAssignedOutput}
       headerLeftSection={
         <>
           <DestinationSwitch
-            aria-label="Toggle Output"
+            aria-label="切换输出端"
             name="toggle-indexset"
             checked={hasAssignedOutput}
             disabled

@@ -80,7 +80,7 @@ const TypeAheadFieldInput = ({
         onBlur={onBlur}
         value={defaultValue}
         options={options}
-        placeholder="Select Field"
+        placeholder="选择字段"
         autoFocus={autoFocus}
       />
       <HelpBlock />

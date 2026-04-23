@@ -30,9 +30,7 @@ const GettingStarted = ({ title = undefined }: Props) => (
     <Col md={6} mdOffset={3}>
       <EmptyEntity title={title}>
         <p>
-          Beside the built-in authentication mechanisms like its internal user database or LDAP/Active Directory,
-          authentication services can also be extended by plugins to support other authentication mechanisms. Select an
-          authentication service to setup a new one.
+          除了内置的认证机制（如内部用户数据库或 LDAP/Active Directory）外，认证服务还可以通过插件扩展以支持其他认证机制。请选择一个认证服务以设置新的服务。
         </p>
         <ServiceSelect />
       </EmptyEntity>

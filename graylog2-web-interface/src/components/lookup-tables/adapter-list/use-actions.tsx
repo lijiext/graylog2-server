@@ -63,20 +63,20 @@ function Actions({ adapter }: ActionsProps) {
         buttonTitle={adapter.id}
         noCaret
         pullRight>
-        <MenuItem onSelect={handleEdit}>Edit</MenuItem>
+        <MenuItem onSelect={handleEdit}>编辑</MenuItem>
         <MenuItem divider />
-        <DeleteMenuItem onSelect={() => setShowDeleteModal(true)}>Delete</DeleteMenuItem>
+        <DeleteMenuItem onSelect={() => setShowDeleteModal(true)}>删除</DeleteMenuItem>
       </DropdownButton>
       {showDeleteModal && (
         <BootstrapModalConfirm
           showModal
-          title="Delete Data Adapter"
+          title="删除数据适配器"
           onCancel={() => setShowDeleteModal(false)}
           onConfirm={handleDelete}
           cancelButtonDisabled={deletingDataAdapter}
           confirmButtonDisabled={deletingDataAdapter}
           confirmButtonText="Delete">
-          <p>Are you sure you want to delete the data adapter &quot;{adapter.title}&quot;?</p>
+          <p>您确定要删除数据适配器 "{adapter.title}&quot;?</p>
         </BootstrapModalConfirm>
       )}
     </>

@@ -37,17 +37,16 @@ const SkipHealthCheck = ({ onChange, onSubmit }: SkipHealthCheckProps) => {
   const { formData } = useContext(FormDataContext);
 
   return (
-    <AdditionalFields title="Skip Health Check">
+    <AdditionalFields title="跳过健康检查">
       <StyledFormWrap
         onSubmit={onSubmit}
         buttonContent="Confirm"
-        title="Choose Log Type &amp; Skip Health Check"
+        title="选择日志类型并跳过健康检查"
         disabled={!(formData.awsCloudWatchKinesisInputType && formData.awsCloudWatchKinesisInputType.value)}
         description={
           <p>
-            If you&apos;re sure of the data contained within your new{' '}
-            <strong>{formData.awsCloudWatchKinesisStream.value}</strong> stream, then choose your option below to skip
-            our automated check.
+            如果您确定新数据中包含的内容{' '}
+            <strong>{formData.awsCloudWatchKinesisStream.value}</strong> 数据流，然后在下方选择选项以跳过我们的自动检查。
           </p>
         }>
         <ValidatedInput
@@ -55,7 +54,7 @@ const SkipHealthCheck = ({ onChange, onSubmit }: SkipHealthCheckProps) => {
           type="select"
           fieldData={formData.awsCloudWatchKinesisInputType}
           onChange={onChange}
-          label="Choose AWS Input Type"
+          label="选择 AWS 输入类型"
           required>
           {renderOptions(KINESIS_LOG_TYPES, 'Choose Log Type')}
         </ValidatedInput>

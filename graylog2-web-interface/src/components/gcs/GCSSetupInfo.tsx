@@ -36,29 +36,26 @@ const StyledOl = styled.ol(
 
 const GCSSetupInfo = () => (
   <Alert bsStyle="info">
-    <p>To setup a Google Cloud Storage backend, the steps are as follows: </p>
+    <p>要设置 Google Cloud Storage 后端，步骤如下： </p>
     <StyledOl>
       <li>
         Create a Google Cloud Storage Bucket with a unique name - see Google&lsquo;s documentation on{' '}
-        <ExternalLink href="https://cloud.google.com/storage/docs/creating-buckets">Buckets</ExternalLink>. The default
-        Standard Storage Class is recommended.
+        <ExternalLink href="https://cloud.google.com/storage/docs/creating-buckets">存储桶</ExternalLink>。建议使用默认的 Standard Storage Class。
       </li>
       <li>
         Create a Google Cloud Service Account, with permissions to read/write/delete from that Bucket - see
         Google&lsquo;s documentation on{' '}
-        <ExternalLink href="https://cloud.google.com/iam/docs/service-account-overview">Service Accounts</ExternalLink>.
+        <ExternalLink href="https://cloud.google.com/iam/docs/service-account-overview">服务账户</ExternalLink>.
       </li>
       <li>
-        Set up Application Default credentials on all Graylog nodes. The method differs depending on how your cluster is
-        hosted - see Google&lsquo;s documentation on{' '}
+        在所有 Graylog 节点上设置应用程序默认凭据。具体方法取决于集群的托管方式——请参阅 Google 的文档{' '}
         <ExternalLink href="https://cloud.google.com/docs/authentication/provide-credentials-adc#how-to">
-          Setting up Application Default credentials
+          设置应用程序默认凭据
         </ExternalLink>
         .
       </li>
       <li>
-        On this page, you are now ready to set up a Google Cloud Storage Backend. You will need to provide the unique
-        name of the Google Cloud storage created during the first step.
+        在此页面上，您现在可以设置 Google Cloud Storage 后端。您需要提供第一步中创建的 Google Cloud 存储的唯一名称。
       </li>
     </StyledOl>
   </Alert>

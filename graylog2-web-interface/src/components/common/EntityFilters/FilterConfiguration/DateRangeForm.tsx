@@ -182,10 +182,10 @@ const DateRangeForm = ({ filter, onSubmit }: Props) => {
               <UntilPicker />
             </PickerContainer>
             <Info>
-              All timezones using: <b>{userTimezone}</b>.
+              所有使用的时区: <b>{userTimezone}</b>.
             </Info>
             <ModalSubmit
-              submitButtonText={`${filter ? 'Update' : 'Create'} filter`}
+              submitButtonText={`${filter ? 'Update' : 'Create'} 过滤器`}
               bsSize="small"
               disabledSubmit={!isValid}
               displayCancel={false}

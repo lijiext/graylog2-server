@@ -34,11 +34,10 @@ const LoadViewError = ({ error }: { error: Error }) => {
 
   return (
     <ErrorPage
-      title="Something went wrong"
+      title="出错了"
       description={
         <p>
-          An unknown error has occurred. Please have a look at the following message and the {productName} server log
-          for more information.
+          发生未知错误。请查看以下消息和 {productName} 服务器日志以获取更多信息。
         </p>
       }>
       <pre>{error?.message}</pre>

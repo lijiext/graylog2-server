@@ -65,7 +65,7 @@ function CacheFormFields() {
       <FormikFormGroup
         type="text"
         name="title"
-        label="* Title"
+        label="* 标题"
         required
         help={touched.title && errors.title ? null : 'A short title for this cache.'}
         onChange={handleTitleChange}
@@ -75,15 +75,15 @@ function CacheFormFields() {
       <FormikFormGroup
         type="text"
         name="description"
-        label="Description"
-        help="Cache description."
+        label="描述"
+        help="缓存描述。"
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9"
       />
       <FormikFormGroup
         type="text"
         name="name"
-        label="* Name"
+        label="* 名称"
         required
         error={touched.name && errors.name ? errors.name : null}
         onChange={() => setGenerateName(!touched.name)}

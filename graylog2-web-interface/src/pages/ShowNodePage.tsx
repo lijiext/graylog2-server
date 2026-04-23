@@ -70,22 +70,22 @@ const ShowNodePage = () => {
 
   const title = (
     <span>
-      Node {node.short_node_id} / {node.hostname}
+      节点 {node.short_node_id} / {node.hostname}
     </span>
   );
 
   return (
-    <DocumentTitle title={`Node ${node.short_node_id} / ${node.hostname}`}>
+    <DocumentTitle title={`节点 ${node.short_node_id} / ${node.hostname}`}>
       <div>
         <PageHeader title={title} actions={<NodeMaintenanceDropdown node={node} />}>
           <span>
-            This page shows details of a {productName} server node that is active and reachable in your cluster.
+            此页面显示 {productName} 集群中处于活动状态并可访问的服务器节点。
             <br />
             {node.is_leader ? (
-              <span>This is the leader node.</span>
+              <span>这是主节点。</span>
             ) : (
               <span>
-                This is <em>not</em> the leader node.
+                这是 <em>not</em> 主节点。
               </span>
             )}
           </span>

@@ -86,7 +86,7 @@ const TokenList = ({ creatingToken = false, onCreate, user, onDelete = () => {},
   return (
     <>
       <IfPermitted permissions={[`users:tokencreate:${user.username}`]} anyPermissions>
-        <Headline>Create And Edit Tokens</Headline>
+        <Headline>创建和编辑令牌</Headline>
         <CreateTokenForm
           onCreate={handleTokenCreation}
           creatingToken={creatingToken}
@@ -97,36 +97,36 @@ const TokenList = ({ creatingToken = false, onCreate, user, onDelete = () => {},
         <StyledTokenPanel bsStyle="success">
           <Panel.Heading>
             <Panel.Title>
-              Token <em>{createdToken.name}</em> created!
+              Token <em>{createdToken.name}</em> 已创建!
             </Panel.Title>
           </Panel.Heading>
           <Panel.Body>
-            <p>This is your new token. Make sure to copy it now, you will not be able to see it again.</p>
+            <p>这是您的新令牌。请立即复制，您将无法再次查看它。</p>
             <pre>
               {createdToken.token}
               <StyledCopyTokenButton title={<Icon name="content_copy" />} text={createdToken.token} bsSize="xsmall" />
             </pre>
             <Button bsStyle="primary" onClick={() => setCreatedToken(undefined)}>
-              Done
+              完成
             </Button>
           </Panel.Body>
         </StyledTokenPanel>
       )}
       <hr />
 
-      <Headline>Tokens</Headline>
-      <StyledSearchForm onSearch={updateQuery} onReset={updateQuery} label="Filter" useLoadingState={false} />
+      <Headline>令牌</Headline>
+      <StyledSearchForm onSearch={updateQuery} onReset={updateQuery} label="过滤器" useLoadingState={false} />
       {effectiveTokens.length === 0 ? (
         <NoEntitiesExist>{query === '' ? 'No tokens to display.' : 'No tokens match the filter.'}</NoEntitiesExist>
       ) : (
         <Table striped bordered condensed>
           <thead>
             <tr>
-              <th>Token Name</th>
-              <th>Created</th>
-              <th>Last Access</th>
-              <th>Expires At</th>
-              <th className="text-right">Actions</th>
+              <th>令牌名称</th>
+              <th>已创建</th>
+              <th>最后访问时间</th>
+              <th>过期时间</th>
+              <th className="text-right">操作</th>
             </tr>
           </thead>
           <tbody>

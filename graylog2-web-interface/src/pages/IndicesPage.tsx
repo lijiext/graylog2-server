@@ -27,15 +27,15 @@ import { IndexerClusterHealth } from 'components/indexers';
 import AllIndicesMaintenanceDropdown from 'components/indices/AllIndicesMaintenanceDropdown';
 
 const IndicesPage = () => (
-  <DocumentTitle title="Indices and Index Sets">
+  <DocumentTitle title="索引和索引集">
     <IndicesPageNavigation />
     <PageHeader
-      title="Indices & Index Sets"
+      title="索引与索引集"
       actions={
         <ButtonToolbar>
           <IfPermitted permissions="indexsets:create">
             <LinkContainer to={Routes.SYSTEM.INDEX_SETS.CREATE}>
-              <Button bsStyle="primary">Create index set</Button>
+              <Button bsStyle="primary">创建索引集</Button>
             </LinkContainer>
           </IfPermitted>
           <IfPermitted permissions="indexranges:rebuild">
@@ -48,9 +48,7 @@ const IndicesPage = () => (
         path: DocsHelper.PAGES.INDEX_MODEL,
       }}>
       <span>
-        A stream writes messages to an index set, which is a configuration for retention, sharding, and replication of
-        the stored data. By configuring index sets, you could, for example, have different retention times for certain
-        streams.
+        数据流将消息写入索引集，索引集是用于配置存储数据的保留、分片和复制的设置。通过配置索引集，例如，您可以为特定数据流设置不同的保留时间。
       </span>
     </PageHeader>
 

@@ -36,12 +36,12 @@ const ExportExtractorsPage = () => {
   }
 
   return (
-    <DocumentTitle title={`Export extractors of ${input.title}`}>
+    <DocumentTitle title={`导出 ${input.title} 的提取器`}>
       <div>
         <PageHeader
           title={
             <span>
-              Export extractors of <em>{input.title}</em>
+              导出提取器 <em>{input.title}</em>
             </span>
           }>
           <span>

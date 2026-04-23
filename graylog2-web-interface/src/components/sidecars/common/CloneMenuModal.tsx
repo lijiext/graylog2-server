@@ -42,16 +42,16 @@ const CloneMenuModal = ({
 }: CloneMenuModalProps) => (
   <BootstrapModalForm
     show={showModal}
-    title="Clone"
+    title="克隆"
     onSubmitForm={onSave}
     onCancel={onClose}
     submitButtonDisabled={Boolean(error)}
-    submitButtonText="Done">
+    submitButtonText="完成">
     <fieldset>
       <Input
         type="text"
         id={id}
-        label="Name"
+        label="名称"
         defaultValue={name}
         onChange={onChange}
         bsStyle={error ? 'error' : null}

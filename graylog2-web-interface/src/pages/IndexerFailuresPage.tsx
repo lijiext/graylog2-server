@@ -65,20 +65,18 @@ class IndexerFailuresPage extends React.Component<
     }
 
     return (
-      <DocumentTitle title="Indexer failures">
+      <DocumentTitle title="索引器故障">
         <span>
           <PageHeader
-            title="Indexer failures"
+            title="索引器故障"
             documentationLink={{
               title: 'Indexer failures documentation',
               path: DocsHelper.PAGES.INDEXER_FAILURES,
             }}>
             <span>
-              This is a list of message index attempts that failed. A failure means that a message was properly
-              processed but writing it to the indexer cluster failed. Note that the list is capped to a size of 50 MB so
-              it will contain a lot of failure logs but not necessarily all that ever occurred.
+              这是消息索引尝试失败的列表。失败表示消息已正确处理，但写入索引器集群失败。请注意，该列表大小限制为 50 MB，因此将包含大量失败日志，但不一定包含所有曾经发生的失败。
               <br />
-              Collection containing a total of {numeral(this.state.total).format('0,0')} indexer failures.
+              包含总计的集合 {numeral(this.state.total).format('0,0')} 索引器失败。
             </span>
           </PageHeader>
           <Row className="content">

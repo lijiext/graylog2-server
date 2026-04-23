@@ -189,7 +189,7 @@ public class RoleServiceImpl implements RoleService {
         }
         final Set<ConstraintViolation<Role>> violations = validate(roleImpl);
         if (!violations.isEmpty()) {
-            throw new ValidationException("Validation failed.", violations.toString());
+            throw new ValidationException("验证失败。", violations.toString());
         }
         final RoleImpl result = collection.findOneAndReplace(eq(NAME_LOWER, roleImpl.nameLower()), roleImpl,
                 new FindOneAndReplaceOptions().returnDocument(ReturnDocument.AFTER).upsert(true));

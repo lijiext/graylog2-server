@@ -44,13 +44,13 @@ const CaCreateForm = () => {
     mutationFn: createCA,
 
     onSuccess: () => {
-      UserNotification.success('CA created successfully');
+      UserNotification.success('CA 创建成功');
       queryClient.invalidateQueries({ queryKey: DATA_NODES_CA_QUERY_KEY });
       queryClient.invalidateQueries({ queryKey: MIGRATION_STATE_QUERY_KEY });
     },
 
     onError: (error) => {
-      UserNotification.error(`CA creation failed with error: ${error}`);
+      UserNotification.error(`CA 创建失败，错误：${error}`);
     },
   });
 
@@ -67,7 +67,7 @@ const CaCreateForm = () => {
     <div>
       <p>
         Click on the &ldquo;Create CA&rdquo; button to quickly create a new certificate authority for your {productName}{' '}
-        Data Nodes.
+        数据节点。
       </p>
       <Formik
         initialValues={{ organization: `${productName} CA` }}
@@ -76,9 +76,9 @@ const CaCreateForm = () => {
           <Form>
             <FormikInput
               id="organization"
-              placeholder="Organization Name"
+              placeholder="组织名称"
               name="organization"
-              label="Organization Name"
+              label="组织名称"
               required
             />
             <Button bsStyle="primary" bsSize="small" disabled={isSubmitting || !isValid} type="submit">

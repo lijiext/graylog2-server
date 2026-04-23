@@ -53,7 +53,7 @@ function EventProcedureCheckbox({ checked, onChange, validation }: EventProcedur
     <Input
       id="include_event_procedure"
       name="include_event_procedure"
-      label="Include Event Procedure"
+      label="包含事件过程"
       help={
         validation?.errors?.include_event_procedure?.[0] ||
         "Append a formatted version of the event definition's event procedure to the end of the notification body."
@@ -168,15 +168,15 @@ class SlackNotificationForm extends React.Component<Props, any> {
     const { isBacklogSizeEnabled, backlogSize } = this.state;
     const element = (
       <p>
-        Custom message to be appended below the alert title. See{' '}
-        <DocumentationLink text="docs" page="alerts#notifications" /> for more details.
+        附加在告警标题下方的自定义消息。查看{' '}
+        <DocumentationLink text="docs" page="alerts#notifications" /> 更多详情。
       </p>
     );
 
     return (
       <>
         <FormGroup controlId="color">
-          <ControlLabel>Configuration color</ControlLabel>
+          <ControlLabel>配置颜色</ControlLabel>
           <div>
             <ColorLabel color={config.color} />
             <div style={{ display: 'inline-block', marginLeft: 15 }}>
@@ -184,12 +184,12 @@ class SlackNotificationForm extends React.Component<Props, any> {
                 id="color"
                 color={config.color || '#f06292'}
                 placement="right"
-                triggerNode={<Button bsSize="xsmall">Change color</Button>}
+                triggerNode={<Button bsSize="xsmall">更改颜色</Button>}
                 onChange={this.handleColorChange}
               />
             </div>
           </div>
-          <HelpBlock>Choose a color to use for this configuration.</HelpBlock>
+          <HelpBlock>选择用于此配置的颜色。</HelpBlock>
         </FormGroup>
         <Input
           id="notification-webhookUrl"
@@ -205,7 +205,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
         <Input
           id="notification-channel"
           name="channel"
-          label="Channel"
+          label="通道"
           type="text"
           bsStyle={validation.errors.channel ? 'error' : null}
           help={validation?.errors?.channel?.[0] || 'Name of Slack #channel or @user for a direct message'}
@@ -216,7 +216,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
         <Input
           id="notification-customMessage"
           name="custom_message"
-          label="Custom Message (optional)"
+          label="自定义消息（可选）"
           type="textarea"
           bsStyle={validation.errors.custom_message ? 'error' : null}
           help={validation?.errors?.custom_message?.[0] || element}
@@ -230,8 +230,8 @@ class SlackNotificationForm extends React.Component<Props, any> {
         />
         <Input
           id="notification-time-zone"
-          help="Time zone used for timestamps in the notification body."
-          label="Time zone for date/time values">
+          help="通知正文中时间戳使用的时区。"
+          label="日期/时间值的时区">
           <TimezoneSelect
             className="timezone-select"
             name="time_zone"
@@ -241,7 +241,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
           />
         </Input>
         <FormGroup>
-          <ControlLabel>Message Backlog Limit (optional)</ControlLabel>
+          <ControlLabel>消息积压限制（可选）</ControlLabel>
           <InputGroup>
             <InputGroup.Addon>
               <input
@@ -262,15 +262,14 @@ class SlackNotificationForm extends React.Component<Props, any> {
             />
           </InputGroup>
           <HelpBlock>
-            Limit the number of backlog messages sent as part of the Slack notification. If set to 0, no limit will be
-            enforced.
+            限制作为 Slack 通知发送的积压消息数量。如果设置为 0，则不强制执行限制。
           </HelpBlock>
         </FormGroup>
 
         <Input
           id="notification-userName"
           name="user_name"
-          label="User Name (optional)"
+          label="用户名（可选）"
           type="text"
           bsStyle={validation.errors.user_name ? 'error' : null}
           help={validation?.errors?.user_name?.[0] || 'User name of the sender in Slack'}
@@ -282,7 +281,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
             <Input
               id="include_title"
               name="include_title"
-              label="Include Title"
+              label="包含标题"
               bsStyle={validation.errors.include_title ? 'error' : null}
               help={
                 validation?.errors?.include_title?.[0] ||
@@ -297,7 +296,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
             <Input
               id="notification-notifyChannel"
               name="notify_channel"
-              label="Notify Channel"
+              label="通知渠道"
               type="checkbox"
               bsStyle={validation.errors.notify_channel ? 'error' : null}
               help={
@@ -312,7 +311,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
             <Input
               id="notification-notifyHere"
               name="notify_here"
-              label="Notify Here"
+              label="在此通知"
               type="checkbox"
               bsStyle={validation.errors.notify_here ? 'error' : null}
               help={
@@ -326,7 +325,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
         <Input
           id="notification-linkNames"
           name="link_names"
-          label="Link Names"
+          label="链接名称"
           type="checkbox"
           bsStyle={validation.errors.link_names ? 'error' : null}
           help={validation?.errors?.link_names?.[0] || 'Find and link channel names and user names'}
@@ -336,7 +335,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
         <Input
           id="notification-iconUrl"
           name="icon_url"
-          label="Icon URL (optional)"
+          label="图标 URL（可选）"
           type="text"
           bsStyle={validation.errors.icon_url ? 'error' : null}
           help={validation?.errors?.icon_url?.[0] || 'Image to use as the icon for this message'}
@@ -346,7 +345,7 @@ class SlackNotificationForm extends React.Component<Props, any> {
         <Input
           id="notification-iconEmoji"
           name="icon_emoji"
-          label="Icon Emoji (optional)"
+          label="图标表情（可选）"
           type="text"
           bsStyle={validation.errors.icon_emoji ? 'error' : null}
           help={validation?.errors?.icon_emoji?.[0] || 'Emoji to use as the icon for this message (overrides Icon URL)'}

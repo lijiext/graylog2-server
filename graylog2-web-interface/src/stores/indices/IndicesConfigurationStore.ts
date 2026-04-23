@@ -80,8 +80,8 @@ export const IndicesConfigurationStore = singletonStore('core.IndicesConfigurati
         },
         (error) => {
           UserNotification.error(
-            `Fetching rotation strategies failed: ${error}`,
-            'Could not retrieve rotation strategies',
+            `获取轮换策略失败：${error}`,
+            '无法检索轮转策略',
           );
         },
       );
@@ -100,8 +100,8 @@ export const IndicesConfigurationStore = singletonStore('core.IndicesConfigurati
         },
         (error) => {
           UserNotification.error(
-            `Fetching retention strategies failed: ${error}`,
-            'Could not retrieve retention strategies',
+            `获取保留策略失败：${error}`,
+            '无法检索保留策略',
           );
         },
       );

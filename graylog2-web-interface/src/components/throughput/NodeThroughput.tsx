@@ -56,21 +56,21 @@ const NodeThroughput = ({ nodeId, longFormat = false }: Props) => {
   const metrics = MetricsExtractor.getValuesForNode(nodeMetrics, metricNames);
 
   if (Object.keys(metrics).length === 0) {
-    return <span>Unable to load throughput.</span>;
+    return <span>无法加载吞吐量。</span>;
   }
 
   if (longFormat) {
     return (
       <span>
-        Processing <strong>{numeral(metrics.totalIn).format('0,0')}</strong> incoming and{' '}
-        <strong>{numeral(metrics.totalOut).format('0,0')}</strong> outgoing msg/s.
+        处理中 <strong>{numeral(metrics.totalIn).format('0,0')}</strong> 传入和{' '}
+        <strong>{numeral(metrics.totalOut).format('0,0')}</strong> 传出消息/秒
       </span>
     );
   }
 
   return (
     <span>
-      In {numeral(metrics.totalIn).format('0,0')} / Out {numeral(metrics.totalOut).format('0,0')} msg/s.
+      输入 {numeral(metrics.totalIn).format('0,0')} / 输出 {numeral(metrics.totalOut).format('0,0')} 消息/秒
     </span>
   );
 };

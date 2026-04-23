@@ -61,8 +61,8 @@ export const PipelineConnectionsStore = singletonStore('core.PipelineConnections
     list() {
       const failCallback = (error) => {
         UserNotification.error(
-          `Fetching pipeline connections failed with status: ${error.message}`,
-          'Could not retrieve pipeline connections',
+          `获取处理管道连接失败，状态为：${error.message}`,
+          '无法检索处理管道连接',
         );
       };
 
@@ -91,7 +91,7 @@ export const PipelineConnectionsStore = singletonStore('core.PipelineConnections
         }
 
         this.trigger({ connections: this.connections });
-        UserNotification.success('Pipeline connections updated successfully');
+        UserNotification.success('处理管道连接已成功更新');
       }, this._failUpdateCallback);
     },
 
@@ -113,14 +113,14 @@ export const PipelineConnectionsStore = singletonStore('core.PipelineConnections
         });
 
         this.trigger({ connections: this.connections });
-        UserNotification.success('Pipeline connections updated successfully');
+        UserNotification.success('处理管道连接已成功更新');
       }, this._failUpdateCallback);
     },
 
     _failUpdateCallback(error) {
       UserNotification.error(
-        `Updating pipeline connections failed with status: ${error.message}`,
-        'Could not update pipeline connections',
+        `更新处理管道连接失败，状态为：${error.message}`,
+        '无法更新处理管道连接',
       );
     },
   }),

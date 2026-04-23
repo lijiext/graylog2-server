@@ -1,7 +1,7 @@
-<#if _title>You are running an outdated version</#if>
+<#if _title>您正在使用过时的版本</#if>
 
 <#if _description><span>
-The most recent stable version is <em>${current_version}</em>.
-See what&apos;s new in the <a href="https://docs.graylog.org/docs/changelog" target="_blank" rel="noreferrer">Open</a>
-and <a href="https://docs.graylog.org/docs/changelog-graylog" target="_blank" rel="noreferrer">Operations</a> changelogs!
+当前最新稳定版本为 <em>${current_version}</em>。
+请查看 <a href="https://docs.graylog.org/docs/changelog" target="_blank" rel="noreferrer">Open</a>
+和 <a href="https://docs.graylog.org/docs/changelog-graylog" target="_blank" rel="noreferrer">Operations</a> 的更新日志！
 </span></#if>

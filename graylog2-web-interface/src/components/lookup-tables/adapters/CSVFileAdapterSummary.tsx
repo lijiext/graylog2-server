@@ -29,27 +29,27 @@ const CSVFileAdapterSummary = ({ dataAdapter }: Props) => {
 
   return (
     <dl>
-      <dt>File path</dt>
+      <dt>文件路径</dt>
       <dd>{config.path}</dd>
-      <dt>Separator</dt>
+      <dt>分隔符</dt>
       <dd>
         <code>{config.separator}</code>
       </dd>
-      <dt>Quote character</dt>
+      <dt>引号字符</dt>
       <dd>
         <code>{config.quotechar}</code>
       </dd>
-      <dt>Key column</dt>
+      <dt>键列</dt>
       <dd>{config.key_column}</dd>
       <dt>{valueLabel}</dt>
       <dd>{value}</dd>
-      <dt>Check interval</dt>
+      <dt>检查间隔</dt>
       <dd>{config.check_interval} seconds</dd>
-      <dt>Multi-value lookup</dt>
+      <dt>多值查找表</dt>
       <dd>{config.multi_value_lookup ? 'yes' : 'no'}</dd>
-      <dt>Case-insensitive lookup</dt>
+      <dt>不区分大小写的查找</dt>
       <dd>{config.case_insensitive_lookup ? 'yes' : 'no'}</dd>
-      <dt>CIDR lookup</dt>
+      <dt>CIDR 查找</dt>
       <dd>{config.cidr_lookup ? 'yes' : 'no'}</dd>
     </dl>
   );

@@ -1,8 +1,8 @@
-<#if _title>Output failing</#if>
+<#if _title>输出失败</#if>
 
 <#if _description>
-The output &quot;${outputTitle}&quot; (id: ${outputId})
-in stream &quot;${streamTitle}&quot; (id: ${streamId})
-is unable to send messages to the configured destination.
-The error message from the output is: ${errorMessage}
+输出端 "${outputTitle}" (ID: ${outputId})
+在数据流 "${streamTitle}" (ID: ${streamId})
+中无法将消息发送到配置的目的地。
+输出端的错误消息为：${errorMessage}
 </#if>

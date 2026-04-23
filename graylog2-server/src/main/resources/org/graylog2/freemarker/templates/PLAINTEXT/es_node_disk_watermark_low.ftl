@@ -1,8 +1,8 @@
-<#if _title>Indexer nodes disk usage above low watermark</#if>
+<#if _title>索引器节点磁盘使用率超过低水位线</#if>
 
 <#if _description>
-There are Indexer nodes in the cluster running out of disk space, their disk usage is above the low watermark.
-For this reason, no new shards will be allocated on the affected nodes.
-The affected nodes are: [${nodes}]
-Check for more details: https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html
+集群中的索引器节点磁盘空间不足，其磁盘使用率已超过低水位线。
+因此，受影响的节点上将不再分配新的分片。
+受影响的节点为：[${nodes}]
+查看详细信息：https://www.elastic.co/guide/en/elasticsearch/reference/master/disk-allocator.html
 </#if>

@@ -54,7 +54,7 @@ class HTTPJSONPathAdapterFieldSet extends React.Component<Props> {
     return (
       <fieldset>
         <URLAllowListInput
-          label="Lookup URL"
+          label="查找 URL"
           onChange={handleFormEvent}
           validationMessage={validationMessage(
             'url',
@@ -70,7 +70,7 @@ class HTTPJSONPathAdapterFieldSet extends React.Component<Props> {
           type="text"
           id="single_value_jsonpath"
           name="single_value_jsonpath"
-          label="Single value JSONPath"
+          label="单值 JSONPath"
           required
           onChange={handleFormEvent}
           help={validationMessage(
@@ -86,7 +86,7 @@ class HTTPJSONPathAdapterFieldSet extends React.Component<Props> {
           type="text"
           id="multi_value_jsonpath"
           name="multi_value_jsonpath"
-          label="Multi value JSONPath"
+          label="多值 JSONPath"
           onChange={handleFormEvent}
           help={validationMessage(
             'multi_value_jsonpath',
@@ -101,18 +101,18 @@ class HTTPJSONPathAdapterFieldSet extends React.Component<Props> {
           type="text"
           id="user_agent"
           name="user_agent"
-          label="HTTP User-Agent"
+          label="HTTP 用户代理"
           required
           onChange={handleFormEvent}
-          help="The User-Agent header to use for the HTTP request."
+          help="用于 HTTP 请求的 User-Agent 头。"
           value={config.user_agent}
           labelClassName="col-sm-3"
           wrapperClassName="col-sm-9"
         />
         <Input
           id="http_headers"
-          label="HTTP Headers"
-          help="The custom HTTP headers to use for the HTTP request. Multiple values must be comma-separated."
+          label="HTTP 头"
+          help="用于 HTTP 请求的自定义 HTTP 头。多个值必须用逗号分隔。"
           labelClassName="col-sm-3"
           wrapperClassName="col-sm-9">
           <KeyValueTable pairs={config.headers || {}} editable onChange={this.onHTTPHeaderUpdate} />

@@ -39,7 +39,7 @@ const EventDefinition = ({ value }: { value: string }) => {
     return <Spinner />;
   }
 
-  return eventDefinition?.title ? <span>{eventDefinition.title}</span> : <i>Missing Event Definition: {value}</i>;
+  return eventDefinition?.title ? <span>{eventDefinition.title}</span> : <i>缺少事件定义: {value}</i>;
 };
 
 export default EventDefinition;

@@ -66,7 +66,7 @@ const SplitAndIndexExtractorConfiguration = ({
     promise.then((result) => {
       if (!result.successful) {
         UserNotification.warning(
-          'We were not able to run the split and index extraction. Please check your parameters.',
+          '无法执行拆分和索引提取。请检查您的参数。',
         );
 
         return;
@@ -82,15 +82,15 @@ const SplitAndIndexExtractorConfiguration = ({
 
   const splitByHelpMessage = (
     <span>
-      What character to split on. <strong>Example:</strong> A whitespace character will split <em>foo bar baz</em> to{' '}
+      按哪个字符进行分割。 <strong>示例:</strong> 空白字符将作为分隔符 <em>foo bar baz</em> to{' '}
       <em>[foo,bar,baz]</em>.
     </span>
   );
 
   const indexHelpMessage = (
     <span>
-      What part of the split string to you want to use? <strong>Example:</strong> <em>2</em> selects <em>bar</em> from{' '}
-      <em>foo bar baz</em> when split by whitespace.
+      您想使用拆分字符串的哪一部分？ <strong>示例:</strong> <em>2</em> selects <em>bar</em> from{' '}
+      <em>foo bar baz</em> 当按空白字符分割时。
     </span>
   );
 
@@ -106,7 +106,7 @@ const SplitAndIndexExtractorConfiguration = ({
       <Input
         type="text"
         id="split_by"
-        label="Split by"
+        label="按...拆分"
         labelClassName="col-md-2"
         wrapperClassName="col-md-10"
         defaultValue={configuration.split_by}
@@ -118,7 +118,7 @@ const SplitAndIndexExtractorConfiguration = ({
       <Input
         type="number"
         id="index"
-        label="Target index"
+        label="目标索引"
         labelClassName="col-md-2"
         wrapperClassName="col-md-10"
         defaultValue={configuration.index}

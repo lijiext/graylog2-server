@@ -30,7 +30,7 @@ type Props = {
 const attributesList = detailsAttributes.map(({ id, title }) => ({ id, title }));
 
 const ActionsWrapper = ({ children }) => (
-  <DropdownButton title="Actions" buttonTitle="Actions">
+  <DropdownButton title="操作" buttonTitle="Actions">
     {children}
   </DropdownButton>
 );

@@ -61,9 +61,9 @@ const CreateStreamButton = ({
       </Button>
       {showCreateModal && (
         <StreamModal
-          title="Create stream"
-          submitButtonText="Create stream"
-          submitLoadingText="Creating stream..."
+          title="创建数据流"
+          submitButtonText="创建数据流"
+          submitLoadingText="正在创建数据流..."
           indexSets={indexSets}
           onSubmit={onCreate}
           onClose={toggleCreateModal}

@@ -88,7 +88,7 @@ const FilterEditButton = ({
       offset={{ alignmentAxis: -25 }}
       onClose={onClose}>
       <Menu.Target>
-        <IconButton name="edit" title={`Edit ${columnTitle(column)} filter`} onClick={() => setOpen(true)} />
+        <IconButton name="edit" title={`编辑 ${columnTitle(column)} 过滤器`} onClick={() => setOpen(true)} />
       </Menu.Target>
       <Menu.Dropdown>
         {filterComponent.configuration(

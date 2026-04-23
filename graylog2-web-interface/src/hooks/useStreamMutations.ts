@@ -52,7 +52,7 @@ const useStreamMutations = () => {
   const createMutation = useMutation({
     mutationFn: createStream,
     onError: (errorThrown) => {
-      UserNotification.error(`Saving Stream failed with status: ${errorThrown}`, 'Could not save Stream');
+      UserNotification.error(`保存数据流失败，状态为：${errorThrown}`, '无法保存数据流');
     },
   });
 

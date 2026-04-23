@@ -192,7 +192,7 @@ public class RolesResource extends RestResource {
     @GET
     @Path("{rolename}/members")
     @RequiresPermissions({RestPermissions.USERS_LIST, RestPermissions.ROLES_READ})
-    @ApiOperation("Retrieve the role's members")
+    @ApiOperation("获取角色的成员")
     public RoleMembershipResponse getMembers(@ApiParam(name = "rolename", required = true) @PathParam("rolename") String name) throws NotFoundException {
         final Role role = roleService.load(name);
         final Collection<User> users = userService.loadAllForRole(role);
@@ -251,7 +251,7 @@ public class RolesResource extends RestResource {
     @AuditEvent(type = AuditEventTypes.ROLE_MEMBERSHIP_UPDATE)
     public Response addMember(@ApiParam(name = "rolename") @PathParam("rolename") String rolename,
                               @ApiParam(name = "username") @PathParam("username") String username,
-                              @ApiParam(name = "JSON Body", value = "Placeholder because PUT requests should have a body. Set to '{}', the content will be ignored.", defaultValue = "{}") String body) throws NotFoundException {
+                              @ApiParam(name = "JSON Body", value = "占位符，因为 PUT 请求应包含主体。设置为 '{}' 时，内容将被忽略。", defaultValue = "{}") String body) throws NotFoundException {
         checkPermission(RestPermissions.USERS_EDIT, username);
         checkPermission(RestPermissions.ROLES_ASSIGN, rolename);
 

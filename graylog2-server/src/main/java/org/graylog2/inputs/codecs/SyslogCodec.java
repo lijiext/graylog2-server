@@ -101,7 +101,7 @@ public class SyslogCodec extends AbstractCodec {
             }
             return Optional.of(parse(msg, remoteAddress == null ? null : remoteAddress.getAddress(), rawMessage.getTimestamp()));
         } catch (Exception e) {
-            throw InputProcessingException.create("Could not deserialize Syslog message.", e, rawMessage, msg);
+            throw InputProcessingException.create("无法反序列化 Syslog 消息。", e, rawMessage, msg);
         }
     }
 

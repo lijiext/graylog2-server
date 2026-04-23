@@ -127,10 +127,10 @@ const InputsList = ({ node = undefined }: Props) => {
 
       <InputListRow id="filter-input" className="content">
         <Col md={12}>
-          <SearchForm onSearch={setFilter} topMargin={0} onReset={resetFilter} placeholder="Filter by title" />
+          <SearchForm onSearch={setFilter} topMargin={0} onReset={resetFilter} placeholder="按标题筛选" />
           <br />
           <h2>
-            Global inputs &nbsp;
+            全局输入端  
             <small>
               {globalInputs.length} configured{nodeAffix}
             </small>
@@ -145,7 +145,7 @@ const InputsList = ({ node = undefined }: Props) => {
           <br />
           <br />
           <h2>
-            Local inputs &nbsp;
+            本地输入端  
             <small>
               {localInputs.length} configured{nodeAffix}
             </small>

@@ -66,7 +66,7 @@ const ContentPackConstraints = ({ constraints = Set(), isFulfilled = false }: Co
 
   return (
     <div>
-      <h2>Constraints</h2>
+      <h2>约束条件</h2>
       <br />
       <br />
       <DataTable

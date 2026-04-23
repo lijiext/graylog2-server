@@ -36,14 +36,14 @@ const TeamsNotificationDetails = ({ notification }: TeamsNotificationSummaryType
   <>
     <ReadOnlyFormGroup label="Webhook URL" value={notification.config.webhook_url} />
     <ReadOnlyFormGroup
-      label="Custom Message Template "
+      label="自定义消息模板"
       value={
-        <NewExampleWell bsSize="small">{notification.config.custom_message || <em>Empty body</em>}</NewExampleWell>
+        <NewExampleWell bsSize="small">{notification.config.custom_message || <em>空主体</em>}</NewExampleWell>
       }
     />
-    <ReadOnlyFormGroup label="Message Backlog Limit" value={notification.config.backlog_size} />
-    <ReadOnlyFormGroup label="Icon URL" value={notification.config.icon_url} />
-    <ReadOnlyFormGroup label="Time Zone" value={notification.config.time_zone} />
+    <ReadOnlyFormGroup label="消息积压限制" value={notification.config.backlog_size} />
+    <ReadOnlyFormGroup label="图标 URL" value={notification.config.icon_url} />
+    <ReadOnlyFormGroup label="时区" value={notification.config.time_zone} />
   </>
 );
 

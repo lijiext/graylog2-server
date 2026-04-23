@@ -85,17 +85,16 @@ const UserLoginTest = ({ prepareSubmitPayload }: Props) => {
   return (
     <>
       <p>
-        Verify the settings by loading the entry for the given user name. If you omit the password, no authentication
-        attempt will be made.
+        通过加载给定用户名的条目来验证设置。如果省略密码，则不会进行认证尝试。
       </p>
       <Formik onSubmit={_handleLoginTest} initialValues={{ password: '', username: '' }}>
         <Form className="form">
           <Row className="no-bm">
             <Col sm={6}>
-              <FormikInput label="Username" name="username" id="user-login-username" required />
+              <FormikInput label="用户名" name="username" id="user-login-username" required />
             </Col>
             <Col sm={6}>
-              <FormikInput label="Password" name="password" type="password" id="user-login-password" required />
+              <FormikInput label="密码" name="password" type="password" id="user-login-password" required />
             </Col>
           </Row>
           <Button type="submit">{loading ? <Spinner delay={0} text="Test User Login" /> : 'Test User Login'}</Button>
@@ -111,8 +110,8 @@ const UserLoginTest = ({ prepareSubmitPayload }: Props) => {
                   <table className="table">
                     <thead>
                       <tr>
-                        <th>User Attribute</th>
-                        <th>Value</th>
+                        <th>用户属性</th>
+                        <th>值</th>
                       </tr>
                     </thead>
 

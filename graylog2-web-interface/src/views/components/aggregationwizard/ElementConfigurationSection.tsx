@@ -125,7 +125,7 @@ const ElementConfigurationSection = ({
       <Header $isEmpty={isEmpty}>
         <ElementTitle $isEmpty={isEmpty}>{title}</ElementTitle>
         <ElementActions>
-          {allowCreate && <StyledIconButton title={`Add a ${elementTitle}`} name="add" onClick={onCreate} />}
+          {allowCreate && <StyledIconButton title={`添加 ${elementTitle}`} name="add" onClick={onCreate} />}
         </ElementActions>
       </Header>
       <div>{children}</div>

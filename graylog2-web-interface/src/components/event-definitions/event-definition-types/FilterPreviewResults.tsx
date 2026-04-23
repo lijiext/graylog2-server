@@ -26,7 +26,7 @@ type Props = React.PropsWithChildren<{
 const FilterPreviewResults = ({ children = undefined, hasError = false }: Props) => (
   <Panel className={styles.filterPreview} bsStyle={hasError ? 'danger' : 'default'}>
     <Panel.Heading>
-      <Panel.Title>Filter Preview</Panel.Title>
+      <Panel.Title>过滤器预览</Panel.Title>
     </Panel.Heading>
     <Panel.Body>{children}</Panel.Body>
   </Panel>

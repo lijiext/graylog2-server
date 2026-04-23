@@ -148,7 +148,7 @@ public class HttpConfiguration {
                 }
             } catch (Exception e) {
                 LOG.error("Could not guess primary network address for \"http_publish_uri\". Please configure it in your Graylog configuration.", e);
-                throw new ParameterException("No http_publish_uri.", e);
+                throw new ParameterException("没有 http_publish_uri。", e);
             }
 
             try {
@@ -248,7 +248,7 @@ public class HttpConfiguration {
     @SuppressWarnings("unused")
     public void validateHttpPublishUriPathEndsWithSlash() throws ValidationException {
         if (!getHttpPublishUri().getPath().endsWith("/")) {
-            throw new ValidationException("\"http_publish_uri\" must end with a slash (\"/\")");
+            throw new ValidationException("\"http_publish_uri\"必须以斜杠 (\"/\") 结尾");
         }
     }
 
@@ -256,7 +256,7 @@ public class HttpConfiguration {
     @SuppressWarnings("unused")
     public void validateHttpExternalUriPathEndsWithSlash() throws ValidationException {
         if (!getHttpExternalUri().getPath().endsWith("/")) {
-            throw new ValidationException("\"http_external_uri\" must end with a slash (\"/\")");
+            throw new ValidationException("\"http_external_uri\"必须以斜杠（\"/\"）结尾");
         }
     }
 

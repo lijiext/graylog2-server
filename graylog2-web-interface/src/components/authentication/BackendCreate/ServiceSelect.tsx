@@ -99,7 +99,7 @@ const BackendCreateSelect = () => {
                         onChange({ target: { value: authService, name } });
                       }}
                       options={authServicesOptions}
-                      placeholder="Select a service"
+                      placeholder="选择服务"
                       value={value}
                     />
                     <InputDescription error={error} />
@@ -109,7 +109,7 @@ const BackendCreateSelect = () => {
             </FormGroup>
             &nbsp;
             <Button bsStyle="primary" disabled={isSubmitting || !isValid} type="submit">
-              Get started
+              开始使用
             </Button>
           </ElementsContainer>
         </StyledForm>

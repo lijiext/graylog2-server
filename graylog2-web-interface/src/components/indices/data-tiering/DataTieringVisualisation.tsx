@@ -184,7 +184,7 @@ const DataTieringVisualisation = ({
                 id="min-days-in-hot-and-storage"
                 arrowOffsetLeft={minDaysInHotPercentage <= PERCENTAGE_SPACING_THRESHOLD ? '10px' : '100%'}
                 value={minDaysInHotPercentage}>
-                Min. # of days in Hot Tier and storage
+                热层和存储中的最少天数
               </StyledTooltip>
             ) : (
               <StyledTooltip
@@ -192,7 +192,7 @@ const DataTieringVisualisation = ({
                 id="min-days-in-hot"
                 arrowOffsetLeft={minDaysInHotPercentage <= PERCENTAGE_SPACING_THRESHOLD ? '10px' : '100%'}
                 value={minDaysInHotPercentage}>
-                Min. # of days in Hot Tier
+                热层最少天数
               </StyledTooltip>
             ))}
           {minDaysPercentage > 0 && showMinDaysTooltip && (
@@ -201,7 +201,7 @@ const DataTieringVisualisation = ({
               id="min-days-in-storage"
               arrowOffsetLeft={minDaysPercentage <= PERCENTAGE_SPACING_THRESHOLD ? '10px' : '100%'}
               value={minDaysPercentage}>
-              Min. # of days in storage
+              存储中的最少天数
             </StyledTooltip>
           )}
         </AnnotationBar>

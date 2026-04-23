@@ -32,26 +32,26 @@ function PagerDutyNotificationSummary({ notification, ...restProps }: PagerDutyN
   return (
     <CommonNotificationSummary {...restProps} notification={notification}>
       <tr>
-        <td>Routing Key</td>
+        <td>路由键</td>
         <td>
           <code>{notification?.config?.routing_key}</code>
         </td>
       </tr>
       <tr>
-        <td>Incident Title</td>
+        <td>事件标题</td>
         <td>
           <code>{notification?.config?.pager_duty_title ?? 'Default'}</code>
         </td>
       </tr>
       <tr>
-        <td>Use Custom Incident Key</td>
+        <td>使用自定义事件键</td>
         <td>
           <code>{notification?.config?.custom_incident ? 'Yes' : 'No'}</code>
         </td>
       </tr>
       {notification?.config?.custom_incident && notification?.config?.key_prefix && (
         <tr>
-          <td>Incident Key Prefix</td>
+          <td>事件键前缀</td>
           <td>
             <code>{notification?.config?.key_prefix}</code>
           </td>
@@ -59,20 +59,20 @@ function PagerDutyNotificationSummary({ notification, ...restProps }: PagerDutyN
       )}
       {notification?.config?.custom_incident && notification?.config?.incident_key && (
         <tr>
-          <td>Incident Key</td>
+          <td>事件键</td>
           <td>
             <code>{notification?.config?.incident_key}</code>
           </td>
         </tr>
       )}
       <tr>
-        <td>Client Name</td>
+        <td>客户端名称</td>
         <td>
           <code>{notification?.config?.client_name}</code>
         </td>
       </tr>
       <tr>
-        <td>Client URL</td>
+        <td>客户端 URL</td>
         <td>
           <code>{notification?.config?.client_url}</code>
         </td>

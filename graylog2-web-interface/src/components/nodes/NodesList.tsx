@@ -53,7 +53,7 @@ const NodesList = ({ nodes = undefined }: Props) => {
     <Row className="content">
       <Col md={12}>
         <h2>
-          There <Pluralize value={nodesNo} singular="is" plural="are" /> {nodesNo} active{' '}
+          存在 <Pluralize value={nodesNo} singular="is" plural="are" /> {nodesNo} active{' '}
           <Pluralize value={nodesNo} singular="node" plural="nodes" />
         </h2>
         <EntityList bsNoItemsStyle="info" noItemsText="There are no active nodes." items={_formattedNodes} />

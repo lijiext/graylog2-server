@@ -33,7 +33,7 @@ function LUTTablesPage() {
       pageDescription="Lookup tables can be used in extractors, converters and processing pipelines to translate message fields or to enrich messages."
       actions={
         <Button bsStyle="primary" onClick={() => navigate(Routes.SYSTEM.LOOKUPTABLES.CREATE)}>
-          Create lookup table
+          创建查找表
         </Button>
       }>
       <LookupTablesOverview />

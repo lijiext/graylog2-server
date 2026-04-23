@@ -43,7 +43,7 @@ export default class WidgetErrorBoundary extends React.Component<Props, State> {
 
     return error ? (
       <ErrorWidget
-        title="While rendering this widget, the following error occurred:"
+        title="渲染此小部件时发生以下错误:"
         errors={[{ description: error.toString() }]}
       />
     ) : (

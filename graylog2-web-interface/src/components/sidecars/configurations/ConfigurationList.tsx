@@ -73,18 +73,17 @@ class ConfigurationList extends React.Component<Props> {
             <div className="pull-right">
               <LinkContainer to={Routes.SYSTEM.SIDECARS.NEW_CONFIGURATION}>
                 <Button onClick={this.openModal} bsStyle="primary" bsSize="small">
-                  Create Configuration
+                  创建配置
                 </Button>
               </LinkContainer>
             </div>
             <h2>
-              Configurations <small>{total} total</small>
+              配置 <small>{total} total</small>
             </h2>
           </Col>
           <Col md={12}>
             <p>
-              These are the Configurations to use in your Collectors. Remember to apply new configurations to Collectors
-              in the Administration page.
+              这些是您的采集器中要使用的配置。请记得在管理页面中将新配置应用到采集器。
             </p>
           </Col>
         </Row>
@@ -95,7 +94,7 @@ class ConfigurationList extends React.Component<Props> {
               query={query}
               onSearch={onQueryChange}
               onReset={onQueryChange}
-              placeholder="Find configurations"
+              placeholder="查找配置"
               wrapperClass={style.inline}
               topMargin={0}
               useLoadingState
@@ -117,7 +116,7 @@ class ConfigurationList extends React.Component<Props> {
                   rows={configurations}
                   rowClassName="row-sm"
                   dataRowFormatter={this._collectorConfigurationFormatter}
-                  noDataText="There are no configurations to display, try creating one or changing your query."
+                  noDataText="没有要显示的配置，请尝试创建一个新的或更改您的查询。"
                   filterLabel=""
                   filterKeys={[]}
                   useResponsiveTable={false}

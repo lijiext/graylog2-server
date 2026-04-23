@@ -65,7 +65,7 @@ const FilterValueDropdown = ({
       show={show}
       closeOnSelect={false}
       toggleChild={
-        <CenteredButton bsSize="xsmall" title="Change filter value">
+        <CenteredButton bsSize="xsmall" title="更改过滤器值">
           {filterValueRenderer ? filterValueRenderer(value, title) : title}
         </CenteredButton>
       }
@@ -112,7 +112,7 @@ const ActiveFilter = ({
   return (
     <Container className="btn-group" data-testid={`${attribute.id}-filter-${value}`}>
       {attribute.type === 'BOOLEAN' && (
-        <CenteredButton bsSize="xsmall" onClick={onChangeBooleanValue} title="Change filter value">
+        <CenteredButton bsSize="xsmall" onClick={onChangeBooleanValue} title="更改过滤器值">
           {filterValueRenderer ? filterValueRenderer(value, title) : title}
         </CenteredButton>
       )}
@@ -125,7 +125,7 @@ const ActiveFilter = ({
           filterValueRenderer={filterValueRenderer}
         />
       )}
-      <CenteredButton bsSize="xsmall" onClick={() => onDeleteFilter(attribute.id, value)} title="Delete filter">
+      <CenteredButton bsSize="xsmall" onClick={() => onDeleteFilter(attribute.id, value)} title="删除过滤器">
         <Icon name="close" />
       </CenteredButton>
     </Container>

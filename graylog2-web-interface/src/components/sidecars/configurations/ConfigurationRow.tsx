@@ -98,11 +98,11 @@ class ConfigurationRow extends React.Component<
           <ButtonToolbar>
             <LinkContainer to={Routes.SYSTEM.SIDECARS.EDIT_CONFIGURATION(configuration.id)}>
               <Button onClick={this.openModal} bsStyle="info" bsSize="xsmall">
-                Edit
+                编辑
               </Button>
             </LinkContainer>
             <MoreActions>
-              <MenuItem onSelect={() => this.openModal()}>Clone</MenuItem>
+              <MenuItem onSelect={() => this.openModal()}>克隆</MenuItem>
 
               <MenuItem divider />
               <DeleteMenuItem onSelect={this._handleDelete} />

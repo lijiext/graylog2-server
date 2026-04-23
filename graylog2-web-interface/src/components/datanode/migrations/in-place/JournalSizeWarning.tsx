@@ -33,14 +33,12 @@ const JournalSizeWarning = () => {
     <StyledHelpPanel bsStyle="warning">
       <Panel.Heading>
         <Panel.Title componentClass="h3">
-          <Icon name="warning" /> Journal size warning
+          <Icon name="warning" /> Journal 大小警告
         </Panel.Title>
       </Panel.Heading>
       <Panel.Body>
         <p>
-          Please note that during migration you will have to stop processing on your {productName} node, this will
-          result in the journal growing in size. Therefore you will have to increase your journal volume size during the
-          Journal size downsize step or earlier.
+          请注意，在迁移过程中，您将不得不停止处理您的 {productName} 节点，这将导致日志文件体积增大。因此，您必须在“日志文件大小缩减”步骤或更早阶段增加日志文件卷的大小。
         </p>
       </Panel.Body>
     </StyledHelpPanel>

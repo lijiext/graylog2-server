@@ -155,40 +155,40 @@ const DataNodeActions = ({ dataNode, refetch = undefined, displayAs = 'dropdown'
     <IfPermitted permissions="datanode:start">
       {displayAs === 'dropdown' && (
         <MoreActions>
-          <MenuItem onSelect={() => renewDatanodeCertificate(dataNode.node_id)}>Renew certificate</MenuItem>
-          {!isDatanodeRunning && <MenuItem onSelect={handleStartDatanode}>Start</MenuItem>}
-          {isDatanodeRunning && <MenuItem onSelect={() => handleAction(DIALOG_TYPES.STOP)}>Stop</MenuItem>}
-          {isDatanodeRemoved && <MenuItem onSelect={() => handleAction(DIALOG_TYPES.REJOIN)}>Rejoin</MenuItem>}
+          <MenuItem onSelect={() => renewDatanodeCertificate(dataNode.node_id)}>续期证书</MenuItem>
+          {!isDatanodeRunning && <MenuItem onSelect={handleStartDatanode}>开始</MenuItem>}
+          {isDatanodeRunning && <MenuItem onSelect={() => handleAction(DIALOG_TYPES.STOP)}>停止</MenuItem>}
+          {isDatanodeRemoved && <MenuItem onSelect={() => handleAction(DIALOG_TYPES.REJOIN)}>重新加入</MenuItem>}
           {(!isDatanodeRemoved || isRemovingDatanode) && (
-            <MenuItem onSelect={() => handleAction(DIALOG_TYPES.REMOVE)}>Remove</MenuItem>
+            <MenuItem onSelect={() => handleAction(DIALOG_TYPES.REMOVE)}>移除</MenuItem>
           )}
-          <MenuItem onSelect={() => setShowLogsDialog(true)}>Show logs</MenuItem>
+          <MenuItem onSelect={() => setShowLogsDialog(true)}>显示日志</MenuItem>
         </MoreActions>
       )}
       {displayAs === 'buttons' && (
         <>
           {!isDatanodeRunning && (
             <ActionButton onClick={handleStartDatanode} bsSize="small">
-              Start
+              开始
             </ActionButton>
           )}
           {isDatanodeRunning && (
             <ActionButton onClick={() => handleAction(DIALOG_TYPES.STOP)} bsSize="small">
-              Stop
+              停止
             </ActionButton>
           )}
           {isDatanodeRemoved && (
             <ActionButton onClick={() => handleAction(DIALOG_TYPES.REJOIN)} bsSize="small">
-              Rejoin
+              重新加入
             </ActionButton>
           )}
           {(!isDatanodeRemoved || isRemovingDatanode) && (
             <ActionButton onClick={() => handleAction(DIALOG_TYPES.REMOVE)} bsSize="small">
-              Remove
+              移除
             </ActionButton>
           )}
           <ActionButton onClick={() => setShowLogsDialog(true)} bsSize="small">
-            Show logs
+            显示日志
           </ActionButton>
         </>
       )}

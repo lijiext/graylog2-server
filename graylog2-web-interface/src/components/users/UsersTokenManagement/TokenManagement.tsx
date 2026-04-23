@@ -56,15 +56,15 @@ const TokenManagement = () => {
   const tokenExamples = (
     <>
       <p>
-        Find tokens created by a given user:
+        查找由给定用户创建的令牌:
         <br />
-        <code>username:givenName</code>
+        <code>用户名：givenName</code>
         <br />
       </p>
       <p>
-        Find token by a given token name:
+        根据给定的令牌名称查找令牌:
         <br />
-        <code>name:tokenName</code>
+        <code>名称：tokenName</code>
         <br />
       </p>
     </>
@@ -75,7 +75,7 @@ const TokenManagement = () => {
       <Row className="content">
         <Col xs={12}>
           <Header>
-            <h2>Tokens</h2>
+            <h2>令牌</h2>
           </Header>
           <PaginatedEntityTable<Token>
             humanName="tokens"

@@ -30,9 +30,9 @@ export default (
   shouldUpdateGroupSync: boolean | undefined = true,
 ) => {
   const enterpriseGroupSyncPlugin = getEnterpriseGroupSyncPlugin();
-  const notifyOnSuccess = () => UserNotification.success('Authentication service was updated successfully.', 'Success');
+  const notifyOnSuccess = () => UserNotification.success('认证服务已成功更新。', '成功');
   const notifyOnError = (error) =>
-    UserNotification.error(`Updating authentication service failed with status: ${error}`, 'Error');
+    UserNotification.error(`更新身份验证服务失败，状态为：${error}`, '错误');
 
   return AuthenticationActions.update(backendId, {
     ...payload,

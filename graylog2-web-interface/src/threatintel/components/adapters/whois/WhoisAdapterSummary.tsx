@@ -30,9 +30,9 @@ const WhoisAdapterSummary = ({ dataAdapter }: WhoisAdapterSummaryProps) => {
 
   return (
     <dl>
-      <dt>Connect timeout</dt>
+      <dt>连接超时</dt>
       <dd>{config.connect_timeout} ms</dd>
-      <dt>Read timeout</dt>
+      <dt>读取超时</dt>
       <dd>{config.read_timeout} ms</dd>
     </dl>
   );

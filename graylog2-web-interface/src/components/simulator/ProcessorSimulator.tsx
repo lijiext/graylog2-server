@@ -89,10 +89,9 @@ class ProcessorSimulator extends React.Component<
         <div>
           <Row className="row-sm">
             <Col md={8} mdOffset={2}>
-              <Panel bsStyle="danger" header="No streams found">
-                Pipelines operate on streams, but your system currently has no streams. Please{' '}
-                <Link to={Routes.STREAMS}>create a stream</Link> and come back here later to test pipelines processing
-                messages in your new stream.
+              <Panel bsStyle="danger" header="未找到数据流">
+                处理管道作用于数据流，但您的系统当前没有数据流。请{' '}
+                <Link to={Routes.STREAMS}>创建数据流</Link> 稍后返回此处，以测试处理管道在新数据流中处理消息。
               </Panel>
             </Col>
           </Row>
@@ -102,7 +101,7 @@ class ProcessorSimulator extends React.Component<
 
     const streamHelp = (
       <span>
-        Select a stream to use during simulation, the <em>{this.defaultStream.title}</em> stream is used by default.
+        在模拟期间选择一个数据流，该 <em>{this.defaultStream.title}</em> 默认使用数据流。
       </span>
     );
 
@@ -110,18 +109,17 @@ class ProcessorSimulator extends React.Component<
       <div>
         <Row>
           <Col md={12}>
-            <h1>Load a message</h1>
+            <h1>加载消息</h1>
             <p>
-              Build an example message that will be used in the simulation.{' '}
+              构建一条将在模拟中使用的示例消息。{' '}
               <strong>
-                No real messages will be altered. All actions are purely simulated on the temporary input you provide
-                below.
+                不会修改任何真实消息。所有操作仅对您在下文提供的临时输入进行模拟。
               </strong>
             </p>
             <Row className="row-sm">
               <Col md={7}>
                 <FormGroup id="streamSelectorSimulation">
-                  <ControlLabel>Stream</ControlLabel>
+                  <ControlLabel>数据流</ControlLabel>
                   <Select
                     options={getFormattedStreams(this.props.streams)}
                     onChange={this._onStreamSelect}

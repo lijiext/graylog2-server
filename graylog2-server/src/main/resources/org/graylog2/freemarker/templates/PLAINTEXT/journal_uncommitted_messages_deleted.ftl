@@ -1,7 +1,5 @@
-<#if _title>Uncommitted messages deleted from journal</#if>
+<#if _title>未提交的日志消息已从日志中删除</#if>
 
 <#if _description>
-Some messages were deleted from the journal before they could be written to the Indexer. Please
-verify that your Indexer cluster is healthy and fast enough. You may also want to review your
-journal settings and set a higher limit. (Node: ${node_id})
+部分日志消息在写入索引器之前已从日志中删除。请验证您的索引器集群是否健康且速度足够。您可能还需要检查日志设置并提高限制。(节点：${node_id})
 </#if>

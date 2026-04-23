@@ -32,12 +32,11 @@ const EmptyContent = () => (
     <Col md={6} mdOffset={3} lg={4} lgOffset={4}>
       <EmptyEntity>
         <p>
-          Create Event Definitions that are able to search, aggregate or correlate Messages and other Events, allowing
-          you to record significant Events and alert on them.
+          创建事件定义，用于搜索、聚合或关联消息和其他事件，从而记录重要事件并对其进行告警。
         </p>
         <IfPermitted permissions="eventdefinitions:create">
           <LinkContainer to={Routes.ALERTS.DEFINITIONS.CREATE}>
-            <Button bsStyle="primary">Get Started!</Button>
+            <Button bsStyle="primary">开始使用！</Button>
           </LinkContainer>
         </IfPermitted>
       </EmptyEntity>
@@ -100,7 +99,7 @@ const EventDefinitions = ({
           query={query}
           onSearch={onQueryChange}
           onReset={onQueryChange}
-          placeholder="Find Event Definitions"
+          placeholder="查找事件定义"
           wrapperClass={styles.inline}
           queryHelpComponent={<QueryHelper entityName="event definition" />}
           topMargin={0}

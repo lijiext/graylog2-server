@@ -82,8 +82,8 @@ const ConfigurationModal = ({ onSave, view, show, onClose }: ConfigurationModalP
       bsSize="large"
       onCancel={onClose}
       onSubmitForm={_onSave}
-      submitButtonText="Start full screen view"
-      title="Configuring Full Screen"
+      submitButtonText="开始全屏视图"
+      title="配置全屏"
       show={show}>
       <Input
         autoFocus
@@ -91,8 +91,8 @@ const ConfigurationModal = ({ onSave, view, show, onClose }: ConfigurationModalP
         type="number"
         min="1"
         name="refresh-interval"
-        label="Refresh Interval"
-        help="After how many seconds should the dashboard refresh?"
+        label="刷新间隔"
+        help="仪表盘应在多少秒后刷新？"
         onChange={({ target: { value } }) => setRefreshInterval(Number.parseInt(value, 10))}
         required
         step={1}
@@ -100,7 +100,7 @@ const ConfigurationModal = ({ onSave, view, show, onClose }: ConfigurationModalP
       />
 
       <FormGroup>
-        <ControlLabel>Tabs</ControlLabel>
+        <ControlLabel>标签页</ControlLabel>
         <ul>
           {availableTabs.map(([idx, title]) => (
             <li key={`${idx}-${title}`}>
@@ -115,7 +115,7 @@ const ConfigurationModal = ({ onSave, view, show, onClose }: ConfigurationModalP
             </li>
           ))}
         </ul>
-        <HelpBlock>Select the query tabs to include in rotation.</HelpBlock>
+        <HelpBlock>选择要包含在轮转中的查询标签页。</HelpBlock>
       </FormGroup>
 
       <Input
@@ -123,8 +123,8 @@ const ConfigurationModal = ({ onSave, view, show, onClose }: ConfigurationModalP
         type="number"
         min="1"
         name="query-cycle-interval"
-        label="Tab cycle interval"
-        help="After how many seconds should the next tab be shown?"
+        label="标签切换间隔"
+        help="多少秒后应显示下一个标签页？"
         onChange={({ target: { value } }) => setQueryCycleInterval(Number.parseInt(value, 10))}
         required
         step="1"
@@ -190,7 +190,7 @@ const BigDisplayModeConfiguration = ({ disabled = false, show = false, view }: P
         <ConfigurationModal onClose={() => setShowConfigurationModal(false)} onSave={onSave} show view={view} />
       )}
       <MenuItem disabled={disabled} onSelect={() => setShowConfigurationModal(true)} icon="live_tv">
-        Full Screen
+        全屏
       </MenuItem>
     </>
   );

@@ -84,15 +84,15 @@ class DnsAdapterFieldSet extends React.Component<
     return (
       <fieldset>
         <Input
-          label="DNS Lookup Type"
+          label="DNS 查找类型"
           id="lookup-type"
           required
           autoFocus
-          help="Select the type of DNS lookup to perform."
+          help="选择要执行的 DNS 查找类型。"
           labelClassName="col-sm-3"
           wrapperClassName="col-sm-9">
           <Select
-            placeholder="Select the type of DNS lookup"
+            placeholder="选择 DNS 查找类型"
             clearable={false}
             options={lookupTypes}
             onChange={this._onLookupTypeSelect}
@@ -103,7 +103,7 @@ class DnsAdapterFieldSet extends React.Component<
           type="text"
           id="server_ips"
           name="server_ips"
-          label="DNS Server IP Address"
+          label="DNS 服务器 IP 地址"
           onChange={handleFormEvent}
           help={validationMessage('server_ips', 'An optional comma-separated list of DNS server IP addresses.')}
           bsStyle={validationState('server_ips')}
@@ -115,7 +115,7 @@ class DnsAdapterFieldSet extends React.Component<
           type="number"
           id="request_timeout"
           name="request_timeout"
-          label="DNS Request Timeout"
+          label="DNS 请求超时"
           required
           onChange={handleFormEvent}
           help={validationMessage('request_timeout', 'DNS request timeout in milliseconds.')}
@@ -125,8 +125,8 @@ class DnsAdapterFieldSet extends React.Component<
           wrapperClassName="col-sm-9"
         />
         <TimeUnitInput
-          label="Cache TTL Override"
-          help="If enabled, the cache TTL will be overridden with the specified value."
+          label="缓存TTL覆盖"
+          help="如果启用，缓存TTL将被指定的值覆盖。"
           update={this.updateCacheTTLOverride}
           value={config.cache_ttl_override}
           unit={config.cache_ttl_override_unit || 'MINUTES'}

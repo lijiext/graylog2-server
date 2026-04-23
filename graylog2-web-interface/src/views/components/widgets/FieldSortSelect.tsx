@@ -65,11 +65,11 @@ const FieldSortSelect = ({ fields, onChange, sort }: Props) => {
 
   return (
     <Select
-      placeholder="None: click to add fields"
+      placeholder="无：点击添加字段"
       onChange={(newValue) => onOptionChange(options, onChange, newValue)}
       options={options}
       clearable={false}
-      aria-label="Select field for sorting"
+      aria-label="选择用于排序的字段"
       value={currentValue(sort, options)}
     />
   );

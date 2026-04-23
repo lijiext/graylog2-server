@@ -43,18 +43,18 @@ const BulkActions = () => {
             const notDeletedDashboardIds = failures.map(({ entity_id }) => entity_id);
             setSelectedEntities(notDeletedDashboardIds);
             UserNotification.error(
-              `${notDeletedDashboardIds.length} out of ${selectedItemsAmount} selected ${descriptor} could not be deleted.`,
+              `${notDeletedDashboardIds.length} 个选定的 ${descriptor} 中的 ${selectedItemsAmount} 个无法删除。`,
             );
           } else {
             setSelectedEntities([]);
             UserNotification.success(
-              `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} deleted successfully.`,
-              'Success',
+              `${selectedItemsAmount} ${descriptor} ${StringUtils.pluralize(selectedItemsAmount, 'was', 'were')} 已成功删除。`,
+              '成功',
             );
           }
         })
         .catch((error) => {
-          UserNotification.error(`An error occurred while deleting dashboards. ${error}`);
+          UserNotification.error(`删除仪表盘时发生错误。${error}`);
         })
         .finally(() => {
           queryClient.invalidateQueries({

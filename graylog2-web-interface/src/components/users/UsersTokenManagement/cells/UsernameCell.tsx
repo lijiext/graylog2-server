@@ -28,7 +28,7 @@ type Props = {
 
 const UsernameCell = ({ token }: Props) => (
   <>
-    {token.user_deleted && <ErrorPopover placement="right" errorText="User does not exist." title="Token user error" />}
+    {token.user_deleted && <ErrorPopover placement="right" errorText="User does not exist." title="令牌用户错误" />}
     <Link to={Routes.SYSTEM.USERS.show(token.user_id)}>{token.username}</Link>
   </>
 );

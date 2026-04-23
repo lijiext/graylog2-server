@@ -101,12 +101,12 @@ const PipelineListItem = ({ pipeline, pipelines, connections, streams, onDeleteP
         if (stageNumbers.indexOf(usedStage) === -1) {
           return (
             <PipelineStage key={`${pipeline.id}-stage${usedStage}`} $idle>
-              Idle
+              空闲
             </PipelineStage>
           );
         }
 
-        return <PipelineStage key={`${pipeline.id}-stage${usedStage}`}>Stage {usedStage}</PipelineStage>;
+        return <PipelineStage key={`${pipeline.id}-stage${usedStage}`}>阶段 {usedStage}</PipelineStage>;
       });
   };
   if (loadingScopePermissions) {
@@ -121,7 +121,7 @@ const PipelineListItem = ({ pipeline, pipelines, connections, streams, onDeleteP
         </Link>
         {isManaged && (
           <DefaultLabel bsStyle="default" bsSize="xsmall">
-            Managed by Application
+            由应用程序管理
           </DefaultLabel>
         )}
         <br />
@@ -137,7 +137,7 @@ const PipelineListItem = ({ pipeline, pipelines, connections, streams, onDeleteP
           connections={connections}
           streams={streams}
           streamsFormatter={_formatConnectedStreams}
-          noConnectionsMessage={<em>Not connected</em>}
+          noConnectionsMessage={<em>未连接</em>}
         />
       </StreamListTD>
       <td>{_formatStages()}</td>
@@ -145,7 +145,7 @@ const PipelineListItem = ({ pipeline, pipelines, connections, streams, onDeleteP
         <ButtonToolbar>
           <LinkContainer to={Routes.SYSTEM.PIPELINES.PIPELINE(id)}>
             <Button disabled={!isPermitted(currentUser.permissions, 'pipeline:edit')} bsSize="xsmall">
-              Edit
+              编辑
             </Button>
           </LinkContainer>
           <Button
@@ -153,7 +153,7 @@ const PipelineListItem = ({ pipeline, pipelines, connections, streams, onDeleteP
             bsStyle="danger"
             bsSize="xsmall"
             onClick={() => onDeletePipeline()}>
-            Delete
+            删除
           </Button>
         </ButtonToolbar>
       </td>

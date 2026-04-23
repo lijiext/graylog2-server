@@ -1,10 +1,9 @@
-<#if _title>Indices could not be archived yet</#if>
+<#if _title>索引尚未归档</#if>
 
 <#if _description><span>
-There was an error while archiving some indices. We will continue trying to archive those
-indices and will retain all indices until they are successfully archived.
+归档部分索引时发生错误。我们将继续尝试归档这些索引，并在成功归档前保留所有索引。
 <br />
-Please check the following error messages as your assistance may be necessary to resolve the issue:
+请检查以下错误消息，您的协助可能对解决问题至关重要：
 <br />
 <ul>
     <#list archiveErrors as error>

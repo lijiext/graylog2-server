@@ -42,8 +42,8 @@ const createSupportBundle = async (
     await refetchList();
   } catch (errorThrown) {
     UserNotification.error(
-      `Creating the Support Bundle failed with status: ${errorThrown}`,
-      'Could not create the Support Bundle.',
+      `创建支持包失败，状态为：${errorThrown}`,
+      '无法创建支持包。',
     );
   } finally {
     setLoading(false);
@@ -56,8 +56,8 @@ const deleteSupportBundle = async (filename: string, refetchList: () => Promise<
     await refetchList();
   } catch (errorThrown) {
     UserNotification.error(
-      `Deleting the Support Bundle failed with status: ${errorThrown}`,
-      'Could not delete the Support Bundle.',
+      `删除支持包失败，状态为：${errorThrown}`,
+      '无法删除支持包。',
     );
   }
 };
@@ -67,8 +67,8 @@ const downloadSupportBundle = async (filename: string) => {
     window.open(qualifyUrl(ApiRoutes.ClusterSupportBundleController.download(filename).url), '_self');
   } catch (errorThrown) {
     UserNotification.error(
-      `Downloading the Support Bundle failed with status: ${errorThrown}`,
-      'Could not download the Support Bundle.',
+      `下载支持包失败，状态为：${errorThrown}`,
+      '无法下载支持包。',
     );
   }
 };

@@ -24,6 +24,6 @@ const StyledSpan = styled.span(
 `,
 );
 
-const InputOptionalInfo = () => <StyledSpan>(Opt.)</StyledSpan>;
+const InputOptionalInfo = () => <StyledSpan>(可选)</StyledSpan>;
 
 export default InputOptionalInfo;

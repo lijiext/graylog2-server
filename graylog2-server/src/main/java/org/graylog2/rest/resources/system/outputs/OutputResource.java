@@ -102,9 +102,9 @@ public class OutputResource extends RestResource {
     @ApiOperation(value = "Get specific output")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such output on this node.")
+            @ApiResponse(code = 404, message = "此节点上没有输出端。")
     })
-    public OutputSummary get(@ApiParam(name = "outputId", value = "The id of the output we want.", required = true) @PathParam("outputId") String outputId) throws NotFoundException {
+    public OutputSummary get(@ApiParam(name = "outputId", value = "我们想要的输出端的 ID。", required = true) @PathParam("outputId") String outputId) throws NotFoundException {
         checkPermission(RestPermissions.OUTPUTS_READ, outputId);
         final Output output = outputService.load(outputId);
         return OutputSummary.create(output.getId(), output.getTitle(), output.getType(), output.getCreatorUserId(), new DateTime(output.getCreatedAt()), output.getConfiguration(), output.getContentPack());
@@ -116,7 +116,7 @@ public class OutputResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 400, message = "Invalid output specification in input.", response = OutputSummary.class)
+            @ApiResponse(code = 400, message = "输入中的输出规格无效。", response = OutputSummary.class)
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_OUTPUT_CREATE)
     public Response create(@ApiParam(name = "JSON body", required = true) CreateOutputRequest csor) throws ValidationException {
@@ -159,7 +159,7 @@ public class OutputResource extends RestResource {
     @ApiOperation(value = "Delete output")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such stream/output on this node.")
+            @ApiResponse(code = 404, message = "此节点上不存在该数据流/输出端。")
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_OUTPUT_DELETE)
     public void delete(@ApiParam(name = "outputId", value = "The id of the output that should be deleted", required = true)
@@ -185,7 +185,7 @@ public class OutputResource extends RestResource {
     @ApiOperation(value = "Update output")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such output on this node.")
+            @ApiResponse(code = 404, message = "此节点上没有输出端。")
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_OUTPUT_UPDATE)
     public Output update(@ApiParam(name = "outputId", value = "The id of the output that should be deleted", required = true)

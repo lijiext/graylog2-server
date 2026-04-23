@@ -54,14 +54,14 @@ const TokenActions = ({ userId, username, tokenId, tokenName, onDeleteCallback =
   return (
     <IfPermitted permissions={[`users:tokenremove:${username}`]}>
       {showDeleteDialog && (
-        <ConfirmDialog show={showDeleteDialog} title="Deleting token" onCancel={cancelDelete} onConfirm={handleDelete}>
-          <p>You are about to delete the token: &quot;{tokenName}&quot;. Are you sure?</p>
+        <ConfirmDialog show={showDeleteDialog} title="删除令牌" onCancel={cancelDelete} onConfirm={handleDelete}>
+          <p>您即将删除令牌："{tokenName}"。你确定吗？</p>
         </ConfirmDialog>
       )}
 
       <ButtonToolbar className="pull-right">
         <Button bsSize="xs" disabled={isDeleting} bsStyle="danger" onClick={onDelete}>
-          Delete
+          删除
         </Button>
       </ButtonToolbar>
     </IfPermitted>

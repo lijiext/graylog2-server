@@ -31,7 +31,7 @@ const StyledIcon = styled(Icon)(
 );
 
 const RestrictedAccessTooltip = ({ entityName, capabilityName }: Props) => (
-  <Tooltip label={`You don't have permissions to ${capabilityName} this ${entityName}.`}>
+  <Tooltip label={`您没有权限对 ${capabilityName} 此 ${entityName}。`}>
     <StyledIcon size="xs" name="lock" />
   </Tooltip>
 );

@@ -29,13 +29,13 @@ type Props = {
 
 const ExecutionInfo = ({ duration, executedAt, total = undefined, showTotal = true, executionFinished }: Props) => {
   if (!executionFinished) {
-    return <i>No query executed yet.</i>;
+    return <i>尚未执行任何查询。</i>;
   }
 
   return (
     <i>
-      Query executed in {numeral(duration).format('0,0')}ms at <Timestamp dateTime={executedAt} />{' '}
-      {showTotal && <>Total results: {numeral(total).format('0,0')}</>}
+      查询执行于 {numeral(duration).format('0,0')}毫秒 <Timestamp dateTime={executedAt} />{' '}
+      {showTotal && <>结果总数: {numeral(total).format('0,0')}</>}
     </i>
   );
 };

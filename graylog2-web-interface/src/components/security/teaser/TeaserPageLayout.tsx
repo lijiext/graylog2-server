@@ -108,11 +108,11 @@ const TeaserPageLayout = ({ children }: PropsWithChildren) => {
           <StyledAlert bsStyle="info" noIcon>
             <Banner>
               <LeftItems>
-                <BoldText>Security Demo</BoldText>
-                <span>For more information and booking a full demo of the product visit Graylog website.</span>
+                <BoldText>安全演示</BoldText>
+                <span>有关更多信息以及预订产品的完整演示，请访问 Graylog 网站。</span>
               </LeftItems>
               <Button bsStyle="primary" role="link" target="_blank" href="https://graylog.org/explore-security/">
-                Graylog Security <Icon name="open_in_new" />
+                Graylog 安全 <Icon name="open_in_new" />
               </Button>
             </Banner>
           </StyledAlert>
@@ -122,17 +122,14 @@ const TeaserPageLayout = ({ children }: PropsWithChildren) => {
       {showModal && (
         <ConfirmDialog
           show
-          title="Security Demo"
+          title="安全演示"
           onConfirm={() => setShowModal(false)}
           onCancel={() => setShowModal(false)}
           btnConfirmText="Close">
           <Col>
             <h2 className="text-danger">OVERVIEW</h2>
             <p>
-              Graylog Security is designed to revolutionize cybersecurity for IT teams, offering the combined
-              capabilities of SIEM, Security Analytics, Incident Investigation, and Anomaly Detection. By using our
-              platform, you can work more efficiently, tackling critical tasks quicker, and mitigating risk caused by
-              malicious actors and credential-based attacks.
+              Graylog Security 旨在为 IT 团队彻底革新网络安全，提供 SIEM、安全分析、事件调查和异常检测的综合能力。使用我们的平台，您可以更高效地工作，更快地处理关键任务，并减轻由恶意行为者和凭据攻击带来的风险。
             </p>
             <Row $justify="space-between" $fullWidth>
               <Col>

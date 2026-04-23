@@ -103,7 +103,7 @@ const EntityShareModal = ({
       showModal
       title={
         <>
-          Sharing {entityTypeTitle ?? entityType}: <i>{entityTitle}</i>
+          共享 {entityTypeTitle ?? entityType}: <i>{entityTitle}</i>
         </>
       }>
       {entityShareState && entityShareState.entity === entityGRN ? (

@@ -49,7 +49,7 @@ const _formatMessageTitle = (index, id) => {
 
   return (
     <span>
-      {id} <Label bsStyle="warning">Not stored</Label>
+      {id} <Label bsStyle="warning">未存储</Label>
     </span>
   );
 };
@@ -134,7 +134,7 @@ const MessageDetail = ({
     timestamp = [];
     const rawTimestamp = fields.timestamp;
 
-    timestamp.push(<dt key={`dt-${rawTimestamp}`}>Timestamp</dt>);
+    timestamp.push(<dt key={`dt-${rawTimestamp}`}>时间戳</dt>);
     timestamp.push(
       <dd key={`dd-${rawTimestamp}`}>
         <Timestamp dateTime={rawTimestamp} format="complete" />

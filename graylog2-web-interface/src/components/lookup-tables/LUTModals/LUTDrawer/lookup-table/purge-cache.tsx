@@ -59,9 +59,9 @@ function PurgeCache({ table }: Props) {
   return (
     <Col $gap="sm">
       <Col $gap="xs">
-        <h2>Purge Cache</h2>
+        <h2>清除缓存</h2>
         <Description>
-          You can purge the complete cache for this lookup table or only the cache entry for a single key.
+          您可以清除此查找表的整个缓存，或仅清除单个键的缓存条目。
         </Description>
       </Col>
       <form onSubmit={handlePurgeKey} style={{ width: '100%' }}>
@@ -70,19 +70,19 @@ function PurgeCache({ table }: Props) {
             type="text"
             id="purge-key"
             name="purgekey"
-            placeholder="Insert key which should be purged"
-            label="Key"
+            placeholder="插入应被清除的密钥"
+            label="键"
             onChange={onChange}
-            help="Key to purge from cache"
+            help="要清除的缓存键"
             required
             value={purgeKey.value}
           />
           <Row $justify="flex-end">
             <Button type="submit" disabled={!purgeKey.valid}>
-              Purge key
+              清除密钥
             </Button>
             <Button type="button" bsStyle="primary" onClick={hadlePurgeAll}>
-              Purge all
+              清除全部
             </Button>
           </Row>
         </fieldset>

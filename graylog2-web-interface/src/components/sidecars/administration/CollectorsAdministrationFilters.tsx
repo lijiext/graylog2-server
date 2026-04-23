@@ -84,10 +84,10 @@ const CollectorsAdministrationFilters = (props: Props) => {
 
     return (
       <SelectPopover
-        title="Filter by collector"
+        title="按采集器筛选"
         triggerNode={
           <Button bsSize="small" bsStyle="link">
-            Collector <span className="caret" />
+            采集器 <span className="caret" />
           </Button>
         }
         items={collectorItems}
@@ -135,10 +135,10 @@ const CollectorsAdministrationFilters = (props: Props) => {
 
     return (
       <SelectPopover
-        title="Filter by configuration"
+        title="按配置筛选"
         triggerNode={
           <Button bsSize="small" bsStyle="link">
-            Configuration <span className="caret" />
+            配置 <span className="caret" />
           </Button>
         }
         items={configurationItems}
@@ -163,7 +163,7 @@ const CollectorsAdministrationFilters = (props: Props) => {
 
     return (
       <SelectPopover
-        title="Filter by OS"
+        title="按操作系统筛选"
         triggerNode={
           <Button bsSize="small" bsStyle="link">
             OS <span className="caret" />
@@ -188,10 +188,10 @@ const CollectorsAdministrationFilters = (props: Props) => {
 
     return (
       <SelectPopover
-        title="Filter by collector status"
+        title="按采集器状态筛选"
         triggerNode={
           <Button bsSize="small" bsStyle="link">
-            Collector Status <span className="caret" />
+            采集器状态 <span className="caret" />
           </Button>
         }
         items={status}

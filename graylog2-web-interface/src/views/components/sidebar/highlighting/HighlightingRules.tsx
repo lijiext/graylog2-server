@@ -131,12 +131,12 @@ const HighlightingRules = ({
     <>
       <SectionInfo>{description}</SectionInfo>
       <SectionSubheadline>
-        Active highlights{' '}
+        高亮显示{' '}
         <IconButton
           className="pull-right"
           name="add"
           onClick={() => setShowForm(!showForm)}
-          title="Add highlighting rule"
+          title="添加高亮规则"
         />
       </SectionSubheadline>
       {showForm && <HighlightForm onClose={() => setShowForm(false)} onSubmit={onCreateRule} />}
@@ -144,7 +144,7 @@ const HighlightingRules = ({
       {showSearchHighlightInfo && (
         <Container $displayBorder={!!rulesWithId?.length}>
           <ColorPreview color={DEFAULT_HIGHLIGHT_COLOR} />
-          <RuleContainer>Search terms</RuleContainer>
+          <RuleContainer>搜索条件</RuleContainer>
         </Container>
       )}
       <SortableList items={rulesWithId} onMoveItem={updateRules} customListItemRender={listItemRender} />

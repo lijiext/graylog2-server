@@ -71,7 +71,7 @@ const DataAdapterTableEntry = ({ adapter, error }: Props) => {
     <tbody>
       <tr>
         <td>
-          {error && <ErrorPopover errorText={error} title="Lookup table problem" placement="right" />}
+          {error && <ErrorPopover errorText={error} title="查找表问题" placement="right" />}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.show(adapterName)}>{adapterTitle}</Link>
         </td>
         <td>{adapterDescription}</td>
@@ -88,10 +88,10 @@ const DataAdapterTableEntry = ({ adapter, error }: Props) => {
             scopePermissions.is_mutable && (
               <Actions>
                 <Button bsSize="xsmall" onClick={_onEdit} role="button" name="edit_square">
-                  Edit
+                  编辑
                 </Button>
                 <Button bsSize="xsmall" bsStyle="danger" onClick={_onDelete} role="button" name="delete">
-                  Delete
+                  删除
                 </Button>
               </Actions>
             )

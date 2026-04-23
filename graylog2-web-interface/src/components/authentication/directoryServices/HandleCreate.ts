@@ -28,9 +28,9 @@ export default (
   shouldUpdateGroupSync: boolean | undefined = true,
 ) => {
   const enterpriseGroupSyncPlugin = getEnterpriseGroupSyncPlugin();
-  const notifyOnSuccess = () => UserNotification.success('Authentication service was created successfully.', 'Success');
+  const notifyOnSuccess = () => UserNotification.success('认证服务创建成功。', '成功');
   const notifyOnError = (error) =>
-    UserNotification.error(`Creating authentication service failed with status: ${error}`, 'Error');
+    UserNotification.error(`创建身份验证服务失败，状态为：${error}`, '错误');
 
   return AuthenticationActions.create(payload)
     .then((result) => {

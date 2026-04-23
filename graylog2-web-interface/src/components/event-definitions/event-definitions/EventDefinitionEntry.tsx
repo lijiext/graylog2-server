@@ -97,10 +97,10 @@ const EventDefinitionEntry = ({ context, eventDefinition, onDisable, onEnable, o
     onEnable(eventDefinition);
   };
 
-  let toggle = <MenuItem onClick={handleDisable}>Disable</MenuItem>;
+  let toggle = <MenuItem onClick={handleDisable}>禁用</MenuItem>;
 
   if (!isScheduled) {
-    toggle = <MenuItem onClick={handleEnable}>Enable</MenuItem>;
+    toggle = <MenuItem onClick={handleEnable}>启用</MenuItem>;
   }
 
   const actions = (
@@ -109,7 +109,7 @@ const EventDefinitionEntry = ({ context, eventDefinition, onDisable, onEnable, o
         <IfPermitted permissions={`eventdefinitions:edit:${eventDefinition.id}`}>
           <LinkContainer to={Routes.ALERTS.DEFINITIONS.edit(eventDefinition.id)}>
             <Button>
-              <Icon name="edit_square" /> Edit
+              <Icon name="edit_square" /> 编辑
             </Button>
           </LinkContainer>
         </IfPermitted>
@@ -122,8 +122,8 @@ const EventDefinitionEntry = ({ context, eventDefinition, onDisable, onEnable, o
       />
 
       {!isSystemEventDefinition() && (
-        <DropdownButton id="more-dropdown" title="More" pullRight>
-          <MenuItem onClick={handleCopy}>Duplicate</MenuItem>
+        <DropdownButton id="more-dropdown" title="更多" pullRight>
+          <MenuItem onClick={handleCopy}>复制</MenuItem>
           <MenuItem divider />
 
           {toggle}
@@ -160,7 +160,7 @@ const EventDefinitionEntry = ({ context, eventDefinition, onDisable, onEnable, o
           entityType="event_definition"
           entityTypeTitle="event definition"
           entityTitle={eventDefinition.title}
-          description="Search for a User or Team to add as collaborator on this event definition."
+          description="搜索用户或团队以将其添加为此事件定义的协作者。"
           onClose={() => setShowEntityShareModal(false)}
         />
       )}

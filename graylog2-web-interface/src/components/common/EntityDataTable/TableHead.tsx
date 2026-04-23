@@ -117,7 +117,7 @@ const TableHead = <Entity extends EntityBase>({
             />
           );
         })}
-        {displayActionsCol ? <ActionsHead $width={actionsColWidth}>Actions</ActionsHead> : null}
+        {displayActionsCol ? <ActionsHead $width={actionsColWidth}>操作</ActionsHead> : null}
       </tr>
     </Thead>
   );

@@ -62,14 +62,14 @@ function TableSummary({ table }: { table: LookupTable }) {
   return (
     <Col $gap="lg">
       <Col $gap="sm">
-        <h2>Lookup Table Details</h2>
+        <h2>查找表详情</h2>
         <Row>
           <MuttedText>Title:</MuttedText>
-          <span>{table.title || <DangerText>No title set (required)</DangerText>}</span>
+          <span>{table.title || <DangerText>未设置标题（必需）</DangerText>}</span>
         </Row>
         <Row>
-          <MuttedText>Name:</MuttedText>
-          <span>{table.name || <DangerText>No name set (required)</DangerText>}</span>
+          <MuttedText>名称:</MuttedText>
+          <span>{table.name || <DangerText>未设置名称（必需）</DangerText>}</span>
         </Row>
       </Col>
       <LookupTableDetails table={table} />
@@ -87,7 +87,7 @@ function CacheSummary({ cache }: { cache: LookupTableCache }) {
   if (!cache)
     return (
       <Alert style={{ width: '100%' }} bsStyle="danger">
-        No cache selected.
+        未选择缓存。
       </Alert>
     );
 
@@ -98,7 +98,7 @@ function AdapterSummary({ adapter }: { adapter: LookupTableAdapter }) {
   if (!adapter)
     return (
       <Alert style={{ width: '100%' }} bsStyle="danger">
-        No data adapter selected.
+        未选择数据适配器。
       </Alert>
     );
 
@@ -124,7 +124,7 @@ function SummaryStep() {
             <Spinner text="Loading cache..." />
           ) : (
             <Col $gap="sm">
-              <h2>Cache Details</h2>
+              <h2>缓存详情</h2>
               <CacheSummary cache={cache} />
             </Col>
           )}
@@ -132,7 +132,7 @@ function SummaryStep() {
             <Spinner text="Loading data adapter..." />
           ) : (
             <Col $gap="sm">
-              <h2>Data Adapter Details</h2>
+              <h2>数据适配器详情</h2>
               <AdapterSummary adapter={dataAdapter} />
             </Col>
           )}

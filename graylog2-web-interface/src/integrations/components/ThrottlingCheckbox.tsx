@@ -35,8 +35,8 @@ const ThrottlingCheckbox = ({ id, defaultChecked, onChange }: Props) => {
       value="enable-throttling"
       defaultChecked={defaultChecked}
       onChange={onChange}
-      label="Enable Throttling"
-      help={`If enabled, no new messages will be read from this input until the ${productName} server catches up with its message load. This is typically useful for inputs reading from files or message queue systems like AMQP or Kafka. If you regularly poll an external system, e.g. via HTTP, you normally want to leave this disabled.`}
+      label="启用限流"
+      help={`如果启用，直到 ${productName} 服务器追上其消息负载之前，此输入将不会读取新消息。这通常适用于从文件或消息队列系统（如 AMQP 或 Kafka）读取的输入。如果您定期轮询外部系统（例如通过 HTTP），通常应将其禁用。`}
     />
   );
 };

@@ -25,8 +25,8 @@ const TimezoneFormGroup = () => (
     {({ field: { name, value, onChange } }) => (
       <Input
         id="timezone-select"
-        label="Time Zone"
-        help="Choose your local time zone or leave it as it is to use the browser's default."
+        label="时区"
+        help="选择您的本地时区，或保持默认以使用浏览器的默认设置。"
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9">
         <TimezoneSelect

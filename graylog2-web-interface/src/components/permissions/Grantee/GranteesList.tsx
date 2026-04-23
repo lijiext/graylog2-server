@@ -107,7 +107,7 @@ const GranteesList = ({
             .toArray()}
         </StyledGranteeList>
       ) : (
-        <Alert>This {entityTypeTitle || entityType} has no collaborators.</Alert>
+        <Alert>此 {entityTypeTitle || entityType} 没有协作者。</Alert>
       )}
       <GranteeListPaginationWrapper>
         <GranteeListStyledPagination totalPages={totalPages} currentPage={currentPage} onChange={setCurrentPage} />

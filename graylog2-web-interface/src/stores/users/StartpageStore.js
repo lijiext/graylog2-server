@@ -39,14 +39,14 @@ export const StartpageStore = singletonStore('core.Startpage', () =>
       return fetch('PUT', url, { startpage: payload }).then(
         (response) => {
           this.trigger();
-          UserNotification.success('Your start page was changed successfully');
+          UserNotification.success('您的起始页面已成功更改');
 
           return response;
         },
         (error) =>
           UserNotification.error(
-            `Changing your start page failed with error: ${error}`,
-            'Could not change your start page',
+            `更改您的起始页面失败，错误为：${error}`,
+            '无法更改您的起始页面',
           ),
       );
     },

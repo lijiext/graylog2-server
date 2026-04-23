@@ -129,16 +129,16 @@ const DecoratorsConfigUpdate = ({ streams, decorators, types, show = false, onCa
         <Modal.Title>{modalTitle}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Select the stream for which you want to change the set of default decorators.</p>
+        <p>选择要更改默认装饰器集的数据流。</p>
 
         <StreamSelect onChange={setCurrentStream} value={currentStream} streams={streams} />
 
         {!canEditStream && currentStream && (
-          <Alert bsStyle="warning">Read only access - you need permission to edit the selected stream</Alert>
+          <Alert bsStyle="warning">只读访问 - 您需要权限才能编辑所选数据流</Alert>
         )}
 
         <IfPermitted permissions="decorators:create">
-          <p>Select the type to create a new decorator for this stream:</p>
+          <p>选择要为此数据流创建的新装饰器类型:</p>
           <AddDecoratorButton
             stream={currentStream}
             nextOrder={nextOrder}
@@ -149,7 +149,7 @@ const DecoratorsConfigUpdate = ({ streams, decorators, types, show = false, onCa
           />
         </IfPermitted>
 
-        <p>Use drag and drop to change the execution order of the decorators.</p>
+        <p>使用拖放功能更改装饰器的执行顺序。</p>
 
         <DecoratorList decorators={decoratorItems} onReorder={onReorder} />
       </Modal.Body>
@@ -157,7 +157,7 @@ const DecoratorsConfigUpdate = ({ streams, decorators, types, show = false, onCa
         <ModalSubmit
           onSubmit={onSubmit}
           onCancel={_onCancel}
-          submitButtonText="Update configuration"
+          submitButtonText="更新配置"
           disabledSubmit={!canEditStream}
         />
       </Modal.Footer>

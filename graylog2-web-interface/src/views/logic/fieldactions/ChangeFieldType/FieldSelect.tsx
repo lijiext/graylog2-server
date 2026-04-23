@@ -51,16 +51,16 @@ const FieldSelect = ({ indexSetId, onFieldChange, field }: Props) => {
 
   return (
     <>
-      <StyledLabel>Select Field</StyledLabel>
+      <StyledLabel>选择字段</StyledLabel>
       <Input id="field">
         <StyledSelect
           inputId="field"
           options={options}
           value={field}
           onChange={_onFieldChange}
-          placeholder="Select or type the field"
+          placeholder="选择或输入字段"
           disabled={isLoading}
-          aria-label="Select Field"
+          aria-label="选择字段"
           required
           allowCreate
         />

@@ -85,7 +85,7 @@ public class McpRestResource extends RestResource {
     @SkipCSRFProtection("server-to-server")
     @RequiresPermissions(RestPermissions.MCP_SERVER_ACCESS)
     @NoAuditEvent("Has custom audit events")
-    @ApiOperation("JSON-RPC endpoint for MCP clients to connect to")
+    @ApiOperation("MCP 客户端连接的 JSON-RPC 端点")
     public Response post(@HeaderParam(HttpHeaders.ACCEPT) String acceptHeader,
                          @HeaderParam(HEADER_MCP_PROTOCOL_VERSION) String protocolVersionHeader,
                          @HeaderParam(HEADER_MCP_SESSION_ID) String mcpSessionIdHeader,

@@ -28,19 +28,19 @@ const AuthenticationCreatePage = () => {
   const { finishedLoading, activeBackend } = useActiveBackend();
 
   return (
-    <DocumentTitle title="Create Authentication Service">
+    <DocumentTitle title="创建认证服务">
       <AuthenticationPageNavigation />
       <PageHeader
-        title="Create Authentication Service"
+        title="创建认证服务"
         actions={<BackendActionLinks activeBackend={activeBackend} finishedLoading={finishedLoading} />}
         documentationLink={{
           title: 'Authentication documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>Configure authentication services of this cluster.</span>
+        <span>配置此集群的认证服务。</span>
       </PageHeader>
 
-      <GettingStarted title="Create New Authentication Service" />
+      <GettingStarted title="创建新的认证服务" />
     </DocumentTitle>
   );
 };

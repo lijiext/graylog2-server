@@ -96,7 +96,7 @@ const RuleBlockFormField = ({
   const primaryInputButtonAfter = () => {
     if (!shouldHandlePrimaryParam() || filteredOutputVariableList().length <= 0) return null;
 
-    return <Button onClick={() => onPrimaryInputToggle('select')}>Use output from previous steps</Button>;
+    return <Button onClick={() => onPrimaryInputToggle('select')}>使用上一步骤的输出</Button>;
   };
 
   const showOutputVariableSelect = () => {
@@ -138,7 +138,7 @@ const RuleBlockFormField = ({
         {...field}>
         <>
           <option key="placeholder" value="">
-            Select output from list
+            从列表中选择输出端
           </option>
           {filteredOutputVariableList().map(({ variableName, stepOrder }) => (
             <option
@@ -211,7 +211,7 @@ const RuleBlockFormField = ({
             {...field}>
             <>
               <option key="placeholder" value="">
-                Select output from list
+                从列表中选择输出端
               </option>
               {filteredOutputVariableList().map(({ variableName, stepOrder }) => (
                 <option

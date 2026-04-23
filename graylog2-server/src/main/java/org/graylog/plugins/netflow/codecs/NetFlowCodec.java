@@ -155,7 +155,7 @@ public class NetFlowCodec extends AbstractCodec implements MultiMessageCodec {
                     ByteBufUtil.prettyHexDump(Unpooled.wrappedBuffer(rawMessage.getPayload())));
         } catch (InvalidProtocolBufferException e) {
             throw InputProcessingException.create(
-                    "Invalid NetFlowV9 entry found, cannot parse the messages",
+                    "发现无效的 NetFlowV9 条目，无法解析消息",
                     ExceptionUtils.getRootCause(e),
                     rawMessage,
                     ByteBufUtil.prettyHexDump(Unpooled.wrappedBuffer(rawMessage.getPayload())));

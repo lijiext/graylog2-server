@@ -38,7 +38,7 @@ const NodeListItem = ({ systemOverview = undefined, node }: Props) => {
       <EntityListItem
         key={`entry-list-${node.node_id}`}
         title={title}
-        description="System information is currently unavailable."
+        description="系统信息当前不可用。"
       />
     );
   }

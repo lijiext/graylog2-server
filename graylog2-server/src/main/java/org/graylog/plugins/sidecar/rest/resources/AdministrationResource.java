@@ -160,7 +160,7 @@ public class AdministrationResource extends RestResource implements PluginRestRe
     @Path("/action")
     @RequiresPermissions(SidecarRestPermissions.SIDECARS_UPDATE)
     @ApiOperation(value = "Set collector actions in bulk")
-    @ApiResponses(value = {@ApiResponse(code = 400, message = "The supplied action is not valid.")})
+    @ApiResponses(value = {@ApiResponse(code = 400, message = "提供的操作无效。")})
     @AuditEvent(type = SidecarAuditEventTypes.ACTION_UPDATE)
     public Response setAction(@ApiParam(name = "JSON body", required = true)
                               @Valid @NotNull BulkActionsRequest request) {

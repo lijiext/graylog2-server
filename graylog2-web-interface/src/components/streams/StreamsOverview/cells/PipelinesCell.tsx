@@ -36,7 +36,7 @@ const PipelinesCell = ({ stream }: Props) => {
 
   const pipelinesCount = data?.length || 0;
 
-  return <CountBadge count={pipelinesCount} ref={buttonRef} title="Connected pipelines" />;
+  return <CountBadge count={pipelinesCount} ref={buttonRef} title="已连接的处理管道" />;
 };
 
 export default PipelinesCell;

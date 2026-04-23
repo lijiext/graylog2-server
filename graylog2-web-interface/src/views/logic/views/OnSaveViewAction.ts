@@ -32,8 +32,8 @@ export default (view: View, entityShare?: EntitySharePayload) => async (dispatch
     await ViewManagementActions.update(view, entityShare);
     dispatch(setIsNew(false));
     dispatch(setIsDirty(false));
-    UserNotification.success(`Saving view "${view.title}" was successful!`, 'Success!');
+    UserNotification.success(`保存视图 "${view.title}" 成功！`, '成功！');
   } catch (error) {
-    UserNotification.error(`Saving view failed: ${_extractErrorMessage(error)}`, 'Error!');
+    UserNotification.error(`保存视图失败：${_extractErrorMessage(error)}`, '错误！');
   }
 };

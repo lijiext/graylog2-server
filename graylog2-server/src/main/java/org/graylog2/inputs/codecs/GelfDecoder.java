@@ -85,7 +85,7 @@ public class GelfDecoder {
             }
 
         } catch (final Exception e) {
-            throw InputProcessingException.create("JSON is null/could not be parsed (invalid JSON)",
+            throw InputProcessingException.create("JSON 为空/无法解析（JSON 无效）",
                     e, rawMessage, json);
         }
 

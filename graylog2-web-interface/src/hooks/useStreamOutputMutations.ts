@@ -32,13 +32,13 @@ const useStreamOutputMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Adding output to stream failed with status: ${errorThrown}`,
-        'Could not add output to stream',
+        `向数据流添加输出失败，状态为：${errorThrown}`,
+        '无法将输出端添加到数据流',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Output has been successfully added to Stream.', 'Success!');
+      UserNotification.success('输出端已成功添加到数据流。', '成功！');
     },
   });
 
@@ -47,13 +47,13 @@ const useStreamOutputMutation = () => {
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Deleting output from stream failed with status: ${errorThrown}`,
-        'Could not delete output from stream',
+        `从数据流删除输出失败，状态为：${errorThrown}`,
+        '无法从数据流删除输出端',
       );
     },
 
     onSuccess: () => {
-      UserNotification.success('Output has been successfully removed from stream.', 'Success!');
+      UserNotification.success('输出端已从数据流中成功移除。', '成功！');
     },
   });
 

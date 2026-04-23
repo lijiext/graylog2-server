@@ -32,14 +32,14 @@ const TimeBasedSizeOptimizingStrategySummary = ({
   return (
     <div>
       <dl>
-        <dt>Index rotation strategy:</dt>
-        <dd>Index Time Size Optimizing</dd>
-        <dt>Minimum lifetime:</dt>
+        <dt>索引轮转策略:</dt>
+        <dd>索引时间与大小优化</dd>
+        <dt>最小生存期:</dt>
         <dd>
           {index_lifetime_min} ({minLifetimeAsDays} <Pluralize singular="day" plural="days" value={minLifetimeAsDays} />{' '}
           )
         </dd>
-        <dt>Maximum lifetime:</dt>
+        <dt>最大生存期：</dt>
         <dd>
           {index_lifetime_max} ({maxLifetimeAsDays} <Pluralize singular="day" plural="days" value={maxLifetimeAsDays} />
           )

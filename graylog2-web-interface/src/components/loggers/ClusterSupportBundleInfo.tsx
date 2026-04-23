@@ -22,12 +22,10 @@ import usePluginEntities from 'hooks/usePluginEntities';
 export const UnlicensedText = () => (
   <>
     <strong>
-      Please examine the bundle content before sharing it. It might contain sensitive data like IP addresses, hostnames
-      or even passwords!
+      在共享之前，请仔细检查捆绑包的内容。它可能包含敏感数据，如 IP 地址、主机名甚至密码！
     </strong>
     <br />
-    Only paid license users are entitled to use Graylog enterprise support. You may however use this file for other
-    means of debugging.
+    只有付费许可用户才有权使用 Graylog 企业支持。不过，您可以使用此文件进行其他调试手段。
   </>
 );
 
@@ -37,10 +35,9 @@ const ClusterSupportBundleInfo = () => {
 
   return (
     <p className="description">
-      Create a zip file which contains useful debugging information from your Graylog cluster.
+      创建一个包含来自 Graylog 集群的有用调试信息的 zip 文件。
       <br />
-      Graylog Enterprise customers can attach bundles to their support ticket, which will help the Graylog technical
-      support team with analyzing and diagnosing issues.
+      Graylog 企业版客户可以将捆绑包附加到其支持工单中，这将帮助 Graylog 技术支持团队分析和诊断问题。
       <br />
       <br />
       {InfoComponent && <InfoComponent />}

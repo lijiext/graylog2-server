@@ -145,8 +145,8 @@ const DescriptionPopover = ({ description }: { description: string }) => (
     trigger="click"
     rootClose
     placement="bottom"
-    overlay={description ?? <i>No widget description provided</i>}>
-    <IconButton title="Show description for widget" name="help" />
+    overlay={description ?? <i>未提供小部件描述</i>}>
+    <IconButton title="显示小部件描述" name="help" />
   </OverlayTrigger>
 );
 
@@ -163,7 +163,7 @@ const WidgetDescription = ({ onChange = undefined, editing, description }: Widge
       <DescriptionInput
         type="text"
         id="widget-description"
-        placeholder="Please add a helpful description to the widget"
+        placeholder="请为小部件添加有用的描述"
         onChange={(e) => onChange(e.target.value)}
         defaultValue={description}
         required
@@ -201,7 +201,7 @@ const WidgetHeader = ({
     <Container>
       <Col>
         {hideDragHandle || (
-          <DragHandleContainer className={widgetDragHandleClass} title={`Drag handle for ${title}`}>
+          <DragHandleContainer className={widgetDragHandleClass} title={`${title} 的拖动手柄`}>
             <WidgetDragHandle name="drag_indicator" />
           </DragHandleContainer>
         )}

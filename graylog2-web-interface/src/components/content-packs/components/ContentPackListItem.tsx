@@ -46,7 +46,7 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
   const states = installed ? ['installed'] : [];
   const updateButton = states.includes('updatable') ? (
     <Button bsSize="small" bsStyle="primary">
-      Update
+      更新
     </Button>
   ) : (
     ''
@@ -83,19 +83,19 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
           <ButtonToolbar className="pull-right">
             {updateButton}
             <Button bsSize="small" onClick={handleInstall}>
-              Install
+              安装
             </Button>
-            <DropdownButton id={`more-actions-${pack.id}`} title="More Actions" bsSize="small" pullRight>
+            <DropdownButton id={`more-actions-${pack.id}`} title="更多操作" bsSize="small" pullRight>
               <LinkContainer to={Routes.SYSTEM.CONTENTPACKS.show(pack.id)}>
-                <MenuItem>Show</MenuItem>
+                <MenuItem>显示</MenuItem>
               </LinkContainer>
               <LinkContainer
                 to={Routes.SYSTEM.CONTENTPACKS.edit(encodeURIComponent(pack.id), encodeURIComponent(pack.rev))}>
-                <MenuItem>Create New Version</MenuItem>
+                <MenuItem>创建新版本</MenuItem>
               </LinkContainer>
-              <MenuItem onSelect={handleDownload}>Download</MenuItem>
+              <MenuItem onSelect={handleDownload}>下载</MenuItem>
               <MenuItem divider />
-              <DeleteMenuItem onSelect={handleDeleteAllVersions}>Delete All Versions</DeleteMenuItem>
+              <DeleteMenuItem onSelect={handleDeleteAllVersions}>删除所有版本</DeleteMenuItem>
             </DropdownButton>
           </ButtonToolbar>
         </Col>
@@ -106,13 +106,13 @@ const ContentPackListItem = ({ pack, contentPackMetadata, onDeletePack, onInstal
       {showInstallModal && (
         <Modal show={showInstallModal} onHide={onCloseInstallModal} bsSize="large">
           <Modal.Header>
-            <Modal.Title>Install Content Pack</Modal.Title>
+            <Modal.Title>安装内容包</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <ContentPackInstall ref={installRef} contentPack={pack} onInstall={onInstallProp} />
           </Modal.Body>
           <Modal.Footer>
-            <ModalSubmit submitButtonText="Install" onSubmit={onInstall} onCancel={onCloseInstallModal} />
+            <ModalSubmit submitButtonText="安装" onSubmit={onInstall} onCancel={onCloseInstallModal} />
           </Modal.Footer>
         </Modal>
       )}

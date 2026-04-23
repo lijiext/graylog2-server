@@ -135,14 +135,14 @@ const FilterAggregationForm = ({ entityTypes, eventDefinition, streams, validati
 
           {onlyFilters || (
             <FormGroup>
-              <ControlLabel>Create Events for Definition if...</ControlLabel>
+              <ControlLabel>如果...则为定义创建事件</ControlLabel>
               <Radio
                 id="filter-type"
                 name="conditionType"
                 value={conditionTypes.FILTER}
                 checked={conditionType === conditionTypes.FILTER}
                 onChange={handleTypeChange}>
-                Filter has results
+                过滤器有结果
               </Radio>
               <Radio
                 id="aggregation-type"
@@ -150,7 +150,7 @@ const FilterAggregationForm = ({ entityTypes, eventDefinition, streams, validati
                 value={conditionTypes.AGGREGATION}
                 checked={conditionType === conditionTypes.AGGREGATION}
                 onChange={handleTypeChange}>
-                Aggregation of results reaches a threshold
+                聚合结果达到阈值
               </Radio>
             </FormGroup>
           )}
@@ -160,7 +160,7 @@ const FilterAggregationForm = ({ entityTypes, eventDefinition, streams, validati
                 <Input
                   id="event-limit"
                   name="event_limit"
-                  label="Event Limit"
+                  label="事件限制"
                   type="number"
                   bsStyle={validation.errors.event_limit ? 'error' : null}
                   help={

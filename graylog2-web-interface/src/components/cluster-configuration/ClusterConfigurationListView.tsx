@@ -73,11 +73,11 @@ const ClusterConfigurationListView = ({ clusterNodes }: Props) => (
   <StyledTable>
     <thead>
       <tr>
-        <NodeInfoTH>Node</NodeInfoTH>
-        <th>Type</th>
-        <th>Role</th>
-        <th>State</th>
-        <th className="text-right">Actions</th>
+        <NodeInfoTH>节点</NodeInfoTH>
+        <th>类型</th>
+        <th>角色</th>
+        <th>状态</th>
+        <th className="text-right">操作</th>
       </tr>
     </thead>
     <tbody>

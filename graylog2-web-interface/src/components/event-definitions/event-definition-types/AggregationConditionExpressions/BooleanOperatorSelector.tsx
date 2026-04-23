@@ -68,7 +68,7 @@ const BooleanOperatorSelector = ({
         />
       </BooleanOperatorSelect>
       <FormGroup>
-        <FormControl.Static> of the following rules:</FormControl.Static>
+        <FormControl.Static> 以下规则之一：</FormControl.Static>
       </FormGroup>
     </OperatorSelector>
   </Col>

@@ -32,15 +32,15 @@ type Props = {
 const AbuseChRansomAdapterSummary = ({ dataAdapter: { config } }: Props) => (
   <div>
     <dl>
-      <dt>Blocklist type</dt>
+      <dt>黑名单类型</dt>
       <dd>{BLOCKLIST_TYPE[config.blocklist_type]}</dd>
-      <dt>Update interval</dt>
+      <dt>更新间隔</dt>
       <dd>
         <TimeUnit value={config.refresh_interval} unit={config.refresh_interval_unit} />
       </dd>
     </dl>
-    <Alert style={{ marginBottom: 10 }} bsStyle="warning" title="Deprecation Warning">
-      <p>The abuse.ch Ransomware Tracker was shut down on 2019-12-08. This Data Adapter should not be used.</p>
+    <Alert style={{ marginBottom: 10 }} bsStyle="warning" title="弃用警告">
+      <p>abuse.ch 勒索软件追踪器已于 2019-12-08 关闭。不应使用此数据适配器。</p>
     </Alert>
   </div>
 );

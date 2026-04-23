@@ -91,8 +91,8 @@ const DashboardPropertiesModal = ({
           id="title"
           type="text"
           name="title"
-          label="Title"
-          help="The title of the dashboard."
+          label="标题"
+          help="仪表盘的标题。"
           required
           onChange={_onChange}
           value={updatedDashboard.title}
@@ -101,8 +101,8 @@ const DashboardPropertiesModal = ({
           id="summary"
           type="text"
           name="summary"
-          label="Summary"
-          help="A helpful summary of the dashboard."
+          label="摘要"
+          help="仪表盘的简要说明。"
           onChange={_onChange}
           value={updatedDashboard.summary}
         />
@@ -110,14 +110,14 @@ const DashboardPropertiesModal = ({
           id="description"
           type="textarea"
           name="description"
-          label="Description"
-          help="A longer, helpful description of the dashboard and its functionality."
+          label="描述"
+          help="仪表盘的较长且有帮助的描述及其功能。"
           onChange={_onChange}
           value={updatedDashboard.description}
         />
         {dashboardId !== view.id && (
           <EntityCreateShareFormGroup
-            description="Search for a User or Team to add as collaborator on this dashboard."
+            description="搜索用户或团队以将其添加为此仪表盘的协作者。"
             entityType="dashboard"
             entityTitle=""
             onSetEntityShare={(payload) => setSharePayload(payload)}

@@ -29,7 +29,7 @@ const ConfigurationTagsSelect = ({ tags, availableTags, onChange }: Props) => {
   const tagsOptions = availableTags.map((tag) => ({ value: tag.name, label: tag.name }));
 
   return (
-    <MultiSelect options={tagsOptions} value={tagsValue} onChange={onChange} placeholder="Choose tags..." allowCreate />
+    <MultiSelect options={tagsOptions} value={tagsValue} onChange={onChange} placeholder="选择标签..." allowCreate />
   );
 };
 

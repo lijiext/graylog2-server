@@ -78,7 +78,7 @@ export const InputsStore = singletonStore('core.Inputs', () =>
           return this.inputs;
         },
         (error) => {
-          UserNotification.error(`Fetching Inputs failed with status: ${error}`, 'Could not retrieve Inputs');
+          UserNotification.error(`获取输入失败，状态为：${error}`, '无法检索输入端');
         },
       );
 
@@ -102,8 +102,8 @@ export const InputsStore = singletonStore('core.Inputs', () =>
         (error) => {
           if (showError) {
             UserNotification.error(
-              `Fetching input ${inputId} failed with status: ${error}`,
-              'Could not retrieve input',
+              `获取输入 ${inputId} 失败，状态为：${error}`,
+              '无法检索输入端',
             );
           } else {
             this.trigger(this._state());
@@ -119,13 +119,13 @@ export const InputsStore = singletonStore('core.Inputs', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Input '${input.title}' launched successfully`);
+          UserNotification.success(`输入 '${input.title}' 启动成功`);
           InputsActions.list();
         },
         (error) => {
           UserNotification.error(
-            `Launching input '${input.title}' failed with status: ${error}`,
-            'Could not launch input',
+            `启动输入 '${input.title}' 失败，状态为：${error}`,
+            '无法启动输入端',
           );
         },
       );
@@ -141,13 +141,13 @@ export const InputsStore = singletonStore('core.Inputs', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Input '${inputTitle}' deleted successfully`);
+          UserNotification.success(`输入 '${inputTitle}' 已成功删除`);
           InputsActions.list();
         },
         (error) => {
           UserNotification.error(
-            `Deleting input '${inputTitle}' failed with status: ${error}`,
-            'Could not delete input',
+            `删除输入 '${inputTitle}' 失败，状态为：${error}`,
+            '无法删除输入端',
           );
         },
       );
@@ -160,13 +160,13 @@ export const InputsStore = singletonStore('core.Inputs', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Input '${input.title}' updated successfully`);
+          UserNotification.success(`输入 '${input.title}' 更新成功`);
           InputsActions.list();
         },
         (error) => {
           UserNotification.error(
-            `Updating input '${input.title}' failed with status: ${error}`,
-            'Could not update input',
+            `更新输入 '${input.title}' 失败，状态为：${error}`,
+            '无法更新输入端',
           );
         },
       );

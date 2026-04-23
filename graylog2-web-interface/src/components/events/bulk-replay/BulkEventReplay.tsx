@@ -109,14 +109,13 @@ const ReplayedSearch = ({
   if (!selectedEvent && total === completed) {
     return (
       <Center>
-        You are done reviewing all events. You can now select a bulk action to apply to all remaining events, or close
-        the page to return to the events list.
+        您已完成所有事件的审查。现在可以选择批量操作应用于所有剩余事件，或关闭页面返回事件列表。
       </Center>
     );
   }
 
   if (!selectedEvent) {
-    return <Center>You have no event selected. Please select an event from the list to replay its search.</Center>;
+    return <Center>您未选择任何事件。请从列表中选择事件以重播其搜索。</Center>;
   }
 
   return (
@@ -144,13 +143,12 @@ const BulkEventReplay = ({ initialEventIds, events: _events, onClose, BulkAction
   return (
     <Container>
       <EventsListSidebar>
-        <Headline>Replay Search</Headline>
+        <Headline>重放搜索</Headline>
         <p>
-          The following list contains all of the events/alerts you selected in the previous step, allowing you to review
-          the replayed search for each of them.
+          以下列表包含您在上一步骤中选择的所事件/告警，允许您逐一查看其重放搜索结果。
         </p>
         <i>
-          Review of {completed}/{total} events completed.
+          审查 {completed}/{total} 事件已完成。
         </i>
         <StyledList>
           {eventIds.map(({ id: eventId, status }) => (
@@ -167,7 +165,7 @@ const BulkEventReplay = ({ initialEventIds, events: _events, onClose, BulkAction
         </StyledList>
         <ActionsBar>
           <BulkActions events={remainingEvents} completed={total > 0 && total === completed} />
-          <Button onClick={onClose}>Close</Button>
+          <Button onClick={onClose}>关闭</Button>
         </ActionsBar>
       </EventsListSidebar>
       <ReplayedSearchContainer>

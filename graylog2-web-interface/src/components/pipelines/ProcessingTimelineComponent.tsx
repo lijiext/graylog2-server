@@ -140,7 +140,7 @@ const ProcessingTimelineComponent = () => {
           customFilter={searchFilter}
           filterKeys={[]}
           filterLabel="Filter Pipelines"
-          noDataText="No pipelines have been found"
+          noDataText="未找到任何处理管道"
           dataRowFormatter={dataRowFormater}
         />
       </StyledPaginatedList>

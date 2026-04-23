@@ -49,7 +49,7 @@ const EditOutputButton = ({
   return (
     <span>
       <Button disabled={disabled} onClick={handleClick}>
-        Edit
+        编辑
       </Button>
       {typeDefinition && (
         <ConfigurationForm
@@ -57,11 +57,11 @@ const EditOutputButton = ({
           cancelAction={() => onModalClose()}
           key={`configuration-form-output-${output.id}`}
           configFields={typeDefinition}
-          title={`Editing Output ${output.title}`}
+          title={`编辑输出 ${output.title}`}
           typeName={output.type}
           titleHelpText="Select a name of your new output that describes it."
           submitAction={handleSubmit}
-          submitButtonText="Update output"
+          submitButtonText="更新输出端"
           values={output.configuration}
           titleValue={output.title}
         />

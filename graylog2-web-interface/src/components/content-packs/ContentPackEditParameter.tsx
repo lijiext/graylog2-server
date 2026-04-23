@@ -215,7 +215,7 @@ class ContentPackEditParameter extends React.Component<
               value={this.state.newParameter.title}
               onChange={this._bindValue}
               bsStyle={this.state.titleError ? 'error' : null}
-              label="Title"
+              label="标题"
               help={this.state.titleError ? this.state.titleError : 'Give a descriptive title for this content pack.'}
               required
             />
@@ -227,7 +227,7 @@ class ContentPackEditParameter extends React.Component<
               bsStyle={this.state.nameError ? 'error' : null}
               value={this.state.newParameter.name}
               onChange={this._bindValue}
-              label="Name"
+              label="名称"
               help={
                 this.state.nameError
                   ? this.state.nameError
@@ -243,7 +243,7 @@ class ContentPackEditParameter extends React.Component<
               maxLength={250}
               value={this.state.newParameter.description}
               onChange={this._bindValue}
-              label="Description"
+              label="描述"
               help={
                 this.state.descrError
                   ? this.state.descrError
@@ -258,13 +258,13 @@ class ContentPackEditParameter extends React.Component<
               disabled={disableType}
               value={this.state.newParameter.type}
               onChange={this._bindValue}
-              label="Value Type"
-              help="Give the type of the parameter."
+              label="值类型"
+              help="指定参数的类型。"
               required>
-              <option value="string">String</option>
-              <option value="integer">Integer</option>
-              <option value="double">Double</option>
-              <option value="boolean">Boolean</option>
+              <option value="string">字符串</option>
+              <option value="integer">整数</option>
+              <option value="double">双</option>
+              <option value="boolean">布尔值</option>
             </Input>
             <Input
               name="default_value"
@@ -274,7 +274,7 @@ class ContentPackEditParameter extends React.Component<
               bsStyle={this.state.defaultValueError ? 'error' : null}
               value={this.state.newParameter.default_value}
               onChange={this._bindValue}
-              label="Default value"
+              label="默认值"
               help={
                 this.state.defaultValueError
                   ? this.state.defaultValueError

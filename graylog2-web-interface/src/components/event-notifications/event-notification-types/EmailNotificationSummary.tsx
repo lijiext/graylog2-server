@@ -32,78 +32,78 @@ const EmailNotificationSummary = ({ notification = {}, ...otherProps }: EmailNot
   <CommonNotificationSummary notification={notification} {...otherProps}>
     <>
       <tr>
-        <td>Use Lookup Table for Sender</td>
+        <td>使用查找表进行发件人</td>
         <td>{notification.config.lookup_sender_email ? 'Yes' : 'No'}</td>
       </tr>
       {notification.config.lookup_sender_email ? (
         <>
           <tr>
-            <td>Sender Email Lookup Table Name</td>
+            <td>发件人邮箱查找表名称</td>
             <td>{notification.config.sender_lut_name}</td>
           </tr>
           <tr>
-            <td>Sender Email Lookup Table Key</td>
+            <td>发件人邮箱查找表键</td>
             <td>{notification.config.sender_lut_key}</td>
           </tr>
         </>
       ) : (
         <tr>
-          <td>Sender</td>
+          <td>发送者</td>
           <td>{notification.config.sender}</td>
         </tr>
       )}
       <tr>
-        <td>Subject</td>
+        <td>主题</td>
         <td>{notification.config.subject}</td>
       </tr>
       <tr>
-        <td>Send as Single Email</td>
+        <td>作为单封邮件发送</td>
         <td>{notification.config.single_email}</td>
       </tr>
       <tr>
-        <td>Use Lookup Table for Reply-To</td>
+        <td>使用查找表作为回复地址</td>
         <td>{notification.config.lookup_reply_to_email ? 'Yes' : 'No'}</td>
       </tr>
       {notification.config.lookup_reply_to_email ? (
         <>
           <tr>
-            <td>Reply-To Email Lookup Table Name</td>
+            <td>回复邮箱查找表名称</td>
             <td>{notification.config.reply_to_lut_name}</td>
           </tr>
           <tr>
-            <td>Reply-To Email Lookup Table Key</td>
+            <td>回复邮箱查找表键</td>
             <td>{notification.config.reply_to_lut_key}</td>
           </tr>
         </>
       ) : (
         <tr>
-          <td>Reply-To</td>
+          <td>回复至</td>
           <td>{notification.config.reply_to}</td>
         </tr>
       )}
 
       <tr>
-        <td>User Recipients</td>
+        <td>用户收件人</td>
         <td>{notification.config.user_recipients.join(', ') || 'No users will receive this notification.'}</td>
       </tr>
       <tr>
-        <td>Use Lookup Table for Email Recipients</td>
+        <td>使用查找表作为电子邮件收件人</td>
         <td>{notification.config.lookup_recipient_emails ? 'Yes' : 'No'}</td>
       </tr>
       {notification.config.lookup_recipient_emails ? (
         <>
           <tr>
-            <td>Email Recipients Lookup Table Name</td>
+            <td>收件人邮箱查找表名称</td>
             <td>{notification.config.recipients_lut_name}</td>
           </tr>
           <tr>
-            <td>Email Recipients Lookup Table Key</td>
+            <td>收件人邮箱查找表键</td>
             <td>{notification.config.recipients_lut_key}</td>
           </tr>
         </>
       ) : (
         <tr>
-          <td>Email Recipients</td>
+          <td>邮件收件人</td>
           <td>
             {notification.config.email_recipients.join(', ') ||
               'No email addresses are configured to receive this notification.'}
@@ -112,27 +112,27 @@ const EmailNotificationSummary = ({ notification = {}, ...otherProps }: EmailNot
       )}
 
       <tr>
-        <td>Users to CC</td>
+        <td>抄送用户</td>
         <td>{notification.config.cc_users.join(', ') || "No users will be cc'd on this notification."}</td>
       </tr>
       <tr>
-        <td>Use Lookup Table for CC Emails</td>
+        <td>使用查找表处理抄送邮箱</td>
         <td>{notification.config.lookup_cc_emails ? 'Yes' : 'No'}</td>
       </tr>
       {notification.config.lookup_cc_emails ? (
         <>
           <tr>
-            <td>CC Emails Lookup Table Name</td>
+            <td>抄送邮箱查找表名称</td>
             <td>{notification.config.cc_emails_lut_name}</td>
           </tr>
           <tr>
-            <td>CC Emails Lookup Table Key</td>
+            <td>抄送邮箱 查找表键</td>
             <td>{notification.config.cc_emails_lut_key}</td>
           </tr>
         </>
       ) : (
         <tr>
-          <td>CC Emails</td>
+          <td>抄送邮箱</td>
           <td>
             {notification.config.cc_emails.join(', ') ||
               "No email addresses are configured to be cc'd on this notification."}
@@ -141,27 +141,27 @@ const EmailNotificationSummary = ({ notification = {}, ...otherProps }: EmailNot
       )}
 
       <tr>
-        <td>Users to BCC</td>
+        <td>抄送给用户的收件人</td>
         <td>{notification.config.bcc_users.join(', ') || "No users will be bcc'd on this notification."}</td>
       </tr>
       <tr>
-        <td>Use Lookup Table for BCC Emails</td>
+        <td>使用查找表处理密送邮箱</td>
         <td>{notification.config.lookup_bcc_emails ? 'Yes' : 'No'}</td>
       </tr>
       {notification.config.lookup_bcc_emails ? (
         <>
           <tr>
-            <td>BCC Emails Lookup Table Name</td>
+            <td>BCC 邮件查找表名称</td>
             <td>{notification.config.bcc_emails_lut_name}</td>
           </tr>
           <tr>
-            <td>BCC Emails Lookup Table Key</td>
+            <td>BCC 电子邮件查找表键</td>
             <td>{notification.config.bcc_emails_lut_key}</td>
           </tr>
         </>
       ) : (
         <tr>
-          <td>BCC Emails</td>
+          <td>密送邮箱</td>
           <td>
             {notification.config.bcc_emails.join(', ') ||
               "No email addresses are configured to be bcc'd on this notification."}
@@ -170,24 +170,24 @@ const EmailNotificationSummary = ({ notification = {}, ...otherProps }: EmailNot
       )}
 
       <tr>
-        <td>Email Body</td>
+        <td>邮件正文</td>
         <td>
           <Well bsSize="small" className={styles.bodyPreview}>
-            {notification.config.body_template || <em>Empty body</em>}
+            {notification.config.body_template || <em>空主体</em>}
           </Well>
         </td>
       </tr>
       <tr>
-        <td>Email HTML Body</td>
+        <td>电子邮件 HTML 正文</td>
         <td>
           <Well bsSize="small" className={styles.bodyPreview}>
-            {notification.config.html_body_template || <em>Empty HTML body</em>}
+            {notification.config.html_body_template || <em>空的 HTML 正文</em>}
           </Well>
         </td>
       </tr>
       {usePluggableLicenseCheck('/license/security')?.data?.valid && (
         <tr>
-          <td>Include Event Procedure in Email Body</td>
+          <td>在邮件正文中包含事件过程</td>
           <td>{notification.config.include_event_procedure ? 'Yes' : 'No'}</td>
         </tr>
       )}

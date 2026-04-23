@@ -1,8 +1,7 @@
-<#if _title>Processing of a stream has been disabled due to excessive processing time</#if>
+<#if _title>由于处理时间过长，数据流处理已被禁用</#if>
 
 <#if _description>
-The processing of stream ${stream_title} (${stream_id}) has taken too long for ${fault_count} times.
-To protect the stability of message processing, this stream has been disabled. Please correct the
-stream rules and reenable the stream.
-Check here for more details: https://docs.graylog.org/docs/streams#stream-processing-runtime-limits
+数据流 ${stream_title} (${stream_id}) 的处理已超时 ${fault_count} 次。
+为保护消息处理的稳定性，该数据流已被禁用。请修正数据流规则并重新启用该数据流。
+点击此处查看详细信息：https://docs.graylog.org/docs/streams#stream-processing-runtime-limits
 </#if>

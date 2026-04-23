@@ -26,8 +26,8 @@ const TemplatesHelper = () => {
       <Table responsive>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>名称</th>
+            <th>描述</th>
           </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@ const TemplatesHelper = () => {
               <code>{_buildVariableName('operatingSystem')}</code>
             </td>
             <td>
-              Name of the operating system the sidecar is running on, e.g.{' '}
+              运行 sidecar 的操作系统名称，例如{' '}
               <code>&quot;Linux&quot;, &quot;Windows&quot;</code>
             </td>
           </tr>
@@ -44,25 +44,25 @@ const TemplatesHelper = () => {
             <td>
               <code>{_buildVariableName('nodeName')}</code>
             </td>
-            <td>The name of the sidecar, defaults to hostname if not set.</td>
+            <td>sidecar 的名称，如果未设置则默认为主机名。</td>
           </tr>
           <tr>
             <td>
               <code>{_buildVariableName('nodeId')}</code>
             </td>
-            <td>UUID of the sidecar.</td>
+            <td>Sidecar 的 UUID。</td>
           </tr>
           <tr>
             <td>
               <code>{_buildVariableName('sidecarVersion')}</code>
             </td>
-            <td>Version string of the running sidecar.</td>
+            <td>运行中 Sidecar 的版本字符串。</td>
           </tr>
           <tr>
             <td>
               <code>{_buildVariableName('spoolDir')}</code>
             </td>
-            <td>A directory that is unique per configuration and can be used to store collector data.</td>
+            <td>每个配置下唯一的目录，可用于存储采集器数据。</td>
           </tr>
           <tr>
             <td>

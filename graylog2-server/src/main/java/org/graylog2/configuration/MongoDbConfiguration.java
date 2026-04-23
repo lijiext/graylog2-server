@@ -65,7 +65,7 @@ public class MongoDbConfiguration {
     @ValidatorMethod
     public void validate() throws ValidationException {
         if (getMongoClientURI() == null) {
-            throw new ValidationException("mongodb_uri is not a valid MongoDB connection string");
+            throw new ValidationException("mongodb_uri 不是有效的 MongoDB 连接字符串");
         }
     }
 }

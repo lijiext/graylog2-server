@@ -63,14 +63,14 @@ const ManualMigrationStep = () => {
           <form className="form form-horizontal" onSubmit={() => {}}>
             <Input
               id="datanode-migration-type-select"
-              label="Migration type"
+              label="迁移类型"
               required
               autoFocus
-              help="The type of migration you want to do."
+              help="您想要执行的迁移类型。"
               labelClassName="col-sm-3"
               wrapperClassName="col-sm-9">
               <Select
-                placeholder="Select migration type"
+                placeholder="选择迁移类型"
                 clearable={false}
                 inputId="datanode-migration-type-select"
                 options={migrationTypeOptions}

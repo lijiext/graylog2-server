@@ -54,7 +54,7 @@ const BulkActions = ({ selectedEntitiesData }: Props) => {
   return (
     <>
       <BulkActionsDropdown>
-        {replayableEvents.length > 0 && <MenuItem onClick={onReplaySearchClick}>Replay Search</MenuItem>}
+        {replayableEvents.length > 0 && <MenuItem onClick={onReplaySearchClick}>重放搜索</MenuItem>}
         {actions}
       </BulkActionsDropdown>
       {pluggableActionModals}

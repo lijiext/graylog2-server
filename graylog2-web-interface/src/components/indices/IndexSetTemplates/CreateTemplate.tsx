@@ -67,8 +67,8 @@ const CreateTemplate = () => {
   return (
     <TemplateForm
       onCancel={onCancel}
-      submitButtonText="Create template"
-      submitLoadingText="Creating template..."
+      submitButtonText="创建模板"
+      submitLoadingText="正在创建模板..."
       onSubmit={onSubmit}
     />
   );

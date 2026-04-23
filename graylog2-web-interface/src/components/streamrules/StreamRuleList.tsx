@@ -49,7 +49,7 @@ const StreamRuleList = ({ matchData = undefined, onDelete = () => {}, onSubmit =
           />
         ))}
 
-      {!hasStreamRules && <ListGroupItem>No rules defined.</ListGroupItem>}
+      {!hasStreamRules && <ListGroupItem>未定义规则。</ListGroupItem>}
     </ListGroup>
   );
 };

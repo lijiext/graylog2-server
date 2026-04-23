@@ -34,7 +34,7 @@ type Props = {
 
 const PageTitle = ({ fullName }: { fullName: string }) => (
   <>
-    User Details{' '}
+    用户详情{' '}
     {fullName && (
       <>
         - <i>{fullName}</i>
@@ -52,7 +52,7 @@ const UserDetailsPage = ({ params }: Props) => {
   }, [userId]);
 
   return (
-    <DocumentTitle title={`User Details ${loadedUser?.fullName ?? ''}`}>
+    <DocumentTitle title={`用户详情 ${loadedUser?.fullName ?? ''}`}>
       <UsersPageNavigation />
       <PageHeader
         title={<PageTitle fullName={loadedUser?.fullName} />}
@@ -67,7 +67,7 @@ const UserDetailsPage = ({ params }: Props) => {
           title: 'Permissions documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>Overview of details like profile information, settings, teams and roles.</span>
+        <span>概述个人资料信息、设置、团队和角色等详情。</span>
       </PageHeader>
 
       <UserDetails user={userId === loadedUser?.id ? loadedUser : undefined} />

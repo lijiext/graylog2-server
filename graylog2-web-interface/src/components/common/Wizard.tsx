@@ -408,12 +408,12 @@ class Wizard<StepKey extends BaseStepKey> extends React.Component<Props<StepKey>
                   bsSize="small"
                   bsStyle="info"
                   disabled={this._disableButton('previous')}>
-                  Previous
+                  上一页
                 </Button>
               </Col>
               <Col className="text-right" xs={6}>
                 <Button onClick={this._onNext} bsSize="small" bsStyle="info" disabled={this._disableButton('next')}>
-                  Next
+                  下一步
                 </Button>
               </Col>
             </Row>
@@ -434,7 +434,7 @@ class Wizard<StepKey extends BaseStepKey> extends React.Component<Props<StepKey>
             <HorizontalButtonToolbar>
               <Button
                 onClick={this._onPrevious}
-                aria-label="Previous"
+                aria-label="上一页"
                 bsSize="xsmall"
                 bsStyle="info"
                 disabled={this._disableButton('previous')}>
@@ -442,7 +442,7 @@ class Wizard<StepKey extends BaseStepKey> extends React.Component<Props<StepKey>
               </Button>
               <Button
                 onClick={this._onNext}
-                aria-label="Next"
+                aria-label="下一步"
                 bsSize="xsmall"
                 bsStyle="info"
                 disabled={this._disableButton('next')}>

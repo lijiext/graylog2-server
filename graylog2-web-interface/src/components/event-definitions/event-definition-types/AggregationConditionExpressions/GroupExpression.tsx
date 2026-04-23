@@ -63,7 +63,7 @@ const GroupExpression = ({
       <BooleanOperatorSelector
         operator={expression.operator}
         onOperatorChange={handleOperatorChange}
-        placeholder={`Boolean operator group ${level + 1}`}
+        placeholder={`布尔运算符组 ${level + 1}`}
       />
       <Clearfix />
       <Group>

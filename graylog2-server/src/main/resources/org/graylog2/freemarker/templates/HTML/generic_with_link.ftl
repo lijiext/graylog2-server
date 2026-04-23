@@ -8,6 +8,6 @@ ${title}
     </#if>
     <br>
     <#if GENERIC_URL?has_content>
-        You can click <a href="${GENERIC_URL}" target="_blank" rel="noreferrer">here</a> to solve this.
+        您可以点击 <a href="${GENERIC_URL}" target="_blank" rel="noreferrer">此处</a> 来解决此问题。
     </#if>
 </#if>

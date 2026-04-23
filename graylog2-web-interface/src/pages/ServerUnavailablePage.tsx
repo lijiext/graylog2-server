@@ -53,7 +53,7 @@ const ServerUnavailablePage = ({ server = undefined }: Props) => {
     const noInformationMessage = (
       <div>
         <hr />
-        <p>There is no information available.</p>
+        <p>暂无可用信息。</p>
       </div>
     );
 
@@ -66,27 +66,27 @@ const ServerUnavailablePage = ({ server = undefined }: Props) => {
     const errorDetails = [];
 
     if (error.message) {
-      errorDetails.push(<dt key="error-title">Error message</dt>, <dd key="error-desc">{error.message}</dd>);
+      errorDetails.push(<dt key="error-title">错误消息</dt>, <dd key="error-desc">{error.message}</dd>);
     }
 
     if (error.originalError) {
       const { originalError } = error;
 
       errorDetails.push(
-        <dt key="status-original-request-title">Original Request</dt>,
+        <dt key="status-original-request-title">原始请求</dt>,
         <dd key="status-original-request-content">
           {String(originalError.method)} {String(originalError.url)}
         </dd>,
       );
 
       errorDetails.push(
-        <dt key="status-code-title">Status code</dt>,
+        <dt key="status-code-title">状态码</dt>,
         <dd key="status-code-desc">{String(originalError.status)}</dd>,
       );
 
       if (typeof originalError.toString === 'function') {
         errorDetails.push(
-          <dt key="full-error-title">Full error message</dt>,
+          <dt key="full-error-title">完整错误消息</dt>,
           <dd key="full-error-desc">{originalError.toString()}</dd>,
         );
       }
@@ -99,7 +99,7 @@ const ServerUnavailablePage = ({ server = undefined }: Props) => {
     return (
       <div>
         <hr style={{ marginTop: 10, marginBottom: 10 }} />
-        <p>This is the last response we received from the server:</p>
+        <p>这是我们从服务器收到的最后一条响应:</p>
         <Well bsSize="small" style={{ whiteSpace: 'pre-line' }}>
           <dl style={{ marginBottom: 0 }}>{errorDetails}</dl>
         </Well>
@@ -110,7 +110,7 @@ const ServerUnavailablePage = ({ server = undefined }: Props) => {
   const modalTitle = 'Server currently unavailable';
 
   return (
-    <DocumentTitle title="Server unavailable">
+    <DocumentTitle title="服务器不可用">
       <LoginChrome>
         <Modal show onHide={() => {}}>
           <Modal.Header>
@@ -121,14 +121,13 @@ const ServerUnavailablePage = ({ server = undefined }: Props) => {
           <Modal.Body>
             <div>
               <p>
-                We are experiencing problems connecting to the {productName} server running on <i>{qualifyUrl('')}</i>.
-                Please verify that the server is healthy and working correctly.
+                连接 $&#123;var&#125; 时遇到问题 {productName} 服务器运行于 <i>{qualifyUrl('')}</i>。请验证服务器是否健康且运行正常。
               </p>
-              <p>You will be automatically redirected to the previous page once we can connect to the server.</p>
+              <p>一旦我们能够连接到服务器，您将自动重定向到上一页。</p>
               <p>
-                Do you need a hand?{' '}
+                需要帮忙吗？{' '}
                 <a href={DocsHelper.PAGES.SERVER_UNAVAILABLE} rel="noopener noreferrer" target="_blank">
-                  We can help you
+                  我们可以为您提供帮助
                 </a>
                 .
               </p>

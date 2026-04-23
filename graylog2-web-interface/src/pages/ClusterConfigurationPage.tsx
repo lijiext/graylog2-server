@@ -36,15 +36,12 @@ const ClusterConfigurationPage = () => {
   };
 
   return (
-    <DocumentTitle title="Cluster Configuration">
+    <DocumentTitle title="集群配置">
       <ClusterConfigurationPageNavigation />
       <div>
-        <PageHeader title="Cluster Configuration">
+        <PageHeader title="集群配置">
           <span>
-            This page provides a real-time overview of the nodes in your cluster. You can pause message processing at
-            any time. The process buffers will not accept any new messages until you resume it. If the message journal
-            is enabled for a node, which it is by default, incoming messages will be persisted to disk, even when
-            processing is disabled.
+            此页面提供集群中节点的实时概览。您可以随时暂停消息处理。在恢复处理之前，处理缓冲区将不接受任何新消息。如果为节点启用了消息日志（默认情况下已启用），即使处理已禁用，传入的消息也会持久化到磁盘。
           </span>
         </PageHeader>
         <HideOnCloud>
@@ -52,7 +49,7 @@ const ClusterConfigurationPage = () => {
         </HideOnCloud>
         <Row className="content">
           <Col xs={6}>
-            <h2>Nodes</h2>
+            <h2>节点</h2>
           </Col>
           <Col md={12}>
             <TableFetchContextProvider

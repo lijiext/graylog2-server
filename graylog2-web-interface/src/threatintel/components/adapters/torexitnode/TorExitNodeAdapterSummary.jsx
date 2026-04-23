@@ -16,6 +16,6 @@
  */
 import React from 'react';
 
-const TorExitNodeAdapterSummary = () => <i>No configuration necessary</i>;
+const TorExitNodeAdapterSummary = () => <i>无需配置</i>;
 
 export default TorExitNodeAdapterSummary;

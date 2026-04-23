@@ -102,15 +102,15 @@ const TimeRangePresetFormItem = ({ idx, id, timerange, description, onChange, on
         <StyledInput
           type="text"
           id={`quick-access-time-range-description-${id}`}
-          placeholder="Add description..."
-          title="Time range preset description"
-          aria-label="Time range preset description"
+          placeholder="添加描述..."
+          title="时间范围预设描述"
+          aria-label="时间范围预设描述"
           required
           defaultValue={description}
           onChange={({ target: { value } }) => debounceHandleOnChangeDescription(value)}
           formGroupClassName=""
         />
-        <IconWrapper className="input-group-addon" onClick={handleOnRemove} title="Remove preset">
+        <IconWrapper className="input-group-addon" onClick={handleOnRemove} title="移除预设">
           <Icon name="delete" style={{ cursor: 'pointer' }} />
         </IconWrapper>
       </Description>
@@ -174,9 +174,9 @@ const TimeRangePresetForm = ({
 
   return (
     <div className="form-group">
-      <strong>Search Time Range Presets</strong>
+      <strong>搜索时间范围预设</strong>
       <span className="help-block">
-        <span>Configure the available search time range presets.</span>
+        <span>配置可用的搜索时间范围预设。</span>
       </span>
       <div className="wrapper">
         <TimeRangeInputSettingsContext.Provider value={contextSettings}>
@@ -192,9 +192,9 @@ const TimeRangePresetForm = ({
       <Button
         bsSize="xs"
         onClick={addTimeRange}
-        title="Add new search time range preset"
-        aria-label="Add new search time range preset">
-        Add option
+        title="添加新的搜索时间范围预设"
+        aria-label="添加新的搜索时间范围预设">
+        添加选项
       </Button>
     </div>
   );

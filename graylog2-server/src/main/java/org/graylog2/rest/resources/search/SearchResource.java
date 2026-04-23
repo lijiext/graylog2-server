@@ -117,7 +117,7 @@ public abstract class SearchResource extends RestResource {
     protected List<String> parseFields(String fields) {
         if (isNullOrEmpty(fields)) {
             LOG.warn("Missing fields parameter. Returning HTTP 400");
-            throw new BadRequestException("Missing required parameter `fields`");
+            throw new BadRequestException("缺少必需参数 `fields`");
         }
         return parseOptionalFields(fields);
     }

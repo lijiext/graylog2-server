@@ -29,42 +29,40 @@ export const HELP = {
   // server config help
   systemUserDn: (
     <span>
-      The username for the initial connection to the Active Directory server, e.g. <code>ldapbind@some.domain</code>.
+      用于初始连接到 Active Directory 服务器的用户名，例如 <code>ldapbind@some.domain</code>.
       <br />
-      This needs to match the <code>userPrincipalName</code> of that user.
+      这必须匹配 <code>userPrincipalName</code> 该用户的。
     </span>
   ),
   systemUserPassword: 'The password for the initial connection to the Active Directory server.',
   // user sync help
   userSearchBase: (
     <span>
-      The base tree to limit the Active Directory search query to, e.g. <code>cn=users,dc=example,dc=com</code>.
+      限制 Active Directory 搜索查询的基础树，例如 <code>cn=users,dc=example,dc=com</code>.
     </span>
   ),
   userSearchPattern: (
     <span>
-      For example{' '}
-      <code className="text-nowrap">{'(&(objectClass=user)(|(sAMAccountName={0})(userPrincipalName={0})))'}</code>. The
-      string <code>{'{0}'}</code> will be replaced by the entered username.
+      例如{' '}
+      <code className="text-nowrap">{'(&(objectClass=user)(|(sAMAccountName={0})(userPrincipalName={0})))'}</code>。该字符串 <code>{'{0}'}</code> 将被输入的用户名替换。
     </span>
   ),
   userNameAttribute: (
     <span>
-      Which Active Directory attribute to use for the full name of the synchronized user, e.g.{' '}
+      要使用哪个 Active Directory 属性作为同步用户的完整姓名，例如{' '}
       <code>userPrincipalName</code>.<br />
-      Try to load a test user in the sidebar section <i>User Login Test</i>, if you are unsure which attribute to use.
+      尝试在侧边栏部分加载测试用户 <i>用户登录测试</i>, if you are unsure which attribute to use.
     </span>
   ),
   userFullNameAttribute: (
     <span>
-      Which Active Directory attribute to use for the full name of a synchronized user, e.g. <code>displayName</code>.
+      要使用哪个 Active Directory 属性作为同步用户的完整姓名，例如 <code>displayName</code>.
       <br />
     </span>
   ),
   defaultRoles: (
     <span>
-      The default roles synchronized user will obtain. All users need the <code>Reader</code> role, to use the web
-      interface
+      同步用户将获得的默认角色。所有用户都需要 <code>阅读器</code> 角色，以使用 Web 界面
     </span>
   ),
 };
@@ -97,7 +95,7 @@ const BackendCreate = () => {
   const excludedFields = { ...groupSyncExcludedFields, userUniqueIdAttribute: true, emailAttributes: true };
 
   return (
-    <DocumentTitle title="Create Active Directory Authentication Services">
+    <DocumentTitle title="创建活动目录认证服务">
       <WizardPageHeader />
       <BackendWizard
         authBackendMeta={AUTH_BACKEND_META}

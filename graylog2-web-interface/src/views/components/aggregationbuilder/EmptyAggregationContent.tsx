@@ -55,32 +55,32 @@ const EmptyAggregationContent = ({ toggleEdit, editing = false }: Props) => {
   const interactive = useContext(InteractiveContext);
   const text = editing ? (
     <p>
-      You are now editing the widget.
+      您现在正在编辑小部件。
       <br />
-      To see results, add at least one metric. You can group data by adding rows/columns.
+      要查看结果，请添加至少一个指标。您可以通过添加行/列来对数据进行分组。
       <br />
-      You can preview widget search results by clicking on &quot;{UPDATE_WIDGET_PREVIEW_BTN_TEXT}&quot;.
+      您可以通过点击"来预览小部件的搜索结果{UPDATE_WIDGET_PREVIEW_BTN_TEXT}&quot;.
       <br />
-      To finish, click &quot;{UPDATE_WIDGET_BTN_TEXT}&quot; to save, &quot;Cancel&quot; to abandon changes.
+      完成，请点击 "{UPDATE_WIDGET_BTN_TEXT}按"保存"以保存，按"取消"以放弃更改。
     </p>
   ) : (
     <p>
-      Please{' '}
+      请{' '}
       {interactive ? (
         <Button bsStyle="info" onClick={toggleEdit}>
-          Edit
+          编辑
         </Button>
       ) : (
         'edit'
       )}{' '}
-      the widget to see results here.
+      在此处查看结果的组件。
     </p>
   );
 
   return (
     <Container>
       <div>
-        <SpacedHeading>Empty Aggregation</SpacedHeading>
+        <SpacedHeading>空聚合</SpacedHeading>
 
         {text}
       </div>

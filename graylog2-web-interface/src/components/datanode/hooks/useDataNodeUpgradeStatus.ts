@@ -85,13 +85,13 @@ export const stopShardReplication = async (): Promise<FlushResponse> => {
   try {
     const response = await fetch('POST', qualifyUrl('datanodes/upgrade/replication/stop'));
 
-    UserNotification.success(`Shard replication stopped successfully`);
+    UserNotification.success(`分片复制已成功停止`);
 
     return response;
   } catch (errorThrown) {
     UserNotification.error(
-      `Stopping shard replication failed with status: ${errorThrown}`,
-      'Could not stop shard replication.',
+      `停止分片复制失败，状态为：${errorThrown}`,
+      '无法停止分片复制。',
     );
 
     return { total: 0, failed: 0, successful: 0 };
@@ -104,13 +104,13 @@ export const startShardReplication = async (): Promise<FlushResponse> => {
 
     const response = await fetch('POST', qualifyUrl('datanodes/upgrade/replication/start'));
 
-    UserNotification.success(`Shard replication started successfully`);
+    UserNotification.success(`分片复制已成功启动`);
 
     return response;
   } catch (errorThrown) {
     UserNotification.error(
-      `Starting shard replication failed with status: ${errorThrown}`,
-      'Could not start shard replication.',
+      `分片复制启动失败，状态为：${errorThrown}`,
+      '无法启动分片复制。',
     );
 
     return { total: 0, failed: 0, successful: 0 };

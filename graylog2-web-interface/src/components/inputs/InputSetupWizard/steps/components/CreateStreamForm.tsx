@@ -109,16 +109,16 @@ const CreateStreamForm = ({
     <Formik<FormValues> initialValues={initialFormValues} onSubmit={submitForm} validate={validate}>
       {({ isValid, isValidating, dirty, values }) => (
         <Form>
-          <FormikInput label="Title" name="title" id="title" help="A descriptive name of the new stream" />
+          <FormikInput label="标题" name="title" id="title" help="新数据流的描述性名称" />
           <FormikInput
             label={
               <>
-                Description <InputOptionalInfo />
+                描述 <InputOptionalInfo />
               </>
             }
             name="description"
             id="description"
-            help="What kind of messages are routed into this stream?"
+            help="哪些类型的消息被路由到此数据流？"
           />
           <FormikInput
             label={<>Remove matches from &lsquo;Default Stream&rsquo;</>}
@@ -129,32 +129,31 @@ const CreateStreamForm = ({
           />
 
           <FormikInput
-            label={<>Create a new pipeline for this stream</>}
+            label={<>为此数据流创建新的处理管道</>}
             name="create_new_pipeline"
             id="create_new_pipeline"
             type="checkbox"
           />
-          <SubHeadline>Select Index Set</SubHeadline>
+          <SubHeadline>选择索引集</SubHeadline>
           <SelectedIndexSetAlert indexSets={indexSets} selectedIndexSetId={values.index_set_id} />
           <IndexSetInfoText>
-            Messages that match this stream will be written to the configured Index Set. Index Sets are used to
-            rationally partition data to allow faster searches.
+            匹配此数据流的日志消息将写入配置的索引集。索引集用于合理划分数据，以实现更快的搜索。
             <br />
-            We recommend creating a new Index Set for each Input type.
+            我们建议为每种输入类型创建一个新的索引集。
           </IndexSetInfoText>
-          <RecommendedTooltip opened withArrow position="right" label="Recommended!">
-            <NewIndexSetButton onClick={handleNewIndexSetClick}>Create a new Index Set</NewIndexSetButton>
+          <RecommendedTooltip opened withArrow position="right" label="推荐！">
+            <NewIndexSetButton onClick={handleNewIndexSetClick}>创建新的索引集</NewIndexSetButton>
           </RecommendedTooltip>
-          <IndexSetSelect label="Select Index Set" indexSets={indexSets} />
+          <IndexSetSelect label="选择索引集" indexSets={indexSets} />
 
           <Row>
             <ButtonCol md={12}>
-              <Button onClick={handleBackClick}>Back</Button>
+              <Button onClick={handleBackClick}>返回</Button>
               <Button
                 bsStyle="primary"
                 type="submit"
                 disabled={isValidating || !isValid || (!dirty && !prevCreatedStream)}>
-                Next
+                下一步
               </Button>
             </ButtonCol>
           </Row>

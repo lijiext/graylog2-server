@@ -101,13 +101,13 @@ const EventDetailsForm = ({ eventDefinition, eventDefinitionEventProcedure, vali
   return (
     <Row>
       <Col md={7} lg={12}>
-        <h2 className={commonStyles.title}>Event Details</h2>
+        <h2 className={commonStyles.title}>事件详情</h2>
         <fieldset>
           <div style={{ display: 'flex', flexDirection: 'row', gap: '2rem' }}>
             <Input
               id="event-definition-title"
               name="title"
-              label="Title"
+              label="标题"
               type="text"
               bsStyle={validation.errors.title ? 'error' : null}
               help={
@@ -120,7 +120,7 @@ const EventDetailsForm = ({ eventDefinition, eventDefinitionEventProcedure, vali
             />
 
             <FormGroup controlId="event-definition-priority">
-              <ControlLabel>Priority</ControlLabel>
+              <ControlLabel>优先级</ControlLabel>
               <Select
                 options={priorityOptions}
                 value={toString(eventDefinition.priority)}
@@ -129,7 +129,7 @@ const EventDetailsForm = ({ eventDefinition, eventDefinitionEventProcedure, vali
                 disabled={readOnly}
                 required
               />
-              <HelpBlock>Choose the priority for Events created from this Definition.</HelpBlock>
+              <HelpBlock>选择从此事件定义创建的事件的优先级。</HelpBlock>
             </FormGroup>
           </div>
 
@@ -138,11 +138,11 @@ const EventDetailsForm = ({ eventDefinition, eventDefinitionEventProcedure, vali
             name="description"
             label={
               <span>
-                Description <small className="text-muted">(Optional)</small>
+                描述 <small className="text-muted">（可选）</small>
               </span>
             }
             type="textarea"
-            help="Longer description for this Event Definition."
+            help="此事件定义的更长描述。"
             value={eventDefinition.description}
             onChange={handleChange}
             readOnly={readOnly}
@@ -165,7 +165,7 @@ const EventDetailsForm = ({ eventDefinition, eventDefinitionEventProcedure, vali
           )}
           {showEventProcedureSummar && (
             <Col>
-              <ControlLabel>Event Procedure Summary</ControlLabel>
+              <ControlLabel>事件过程摘要</ControlLabel>
               <PluggableEventProcedureSummary
                 eventProcedureId={eventDefinitionEventProcedure}
                 canEdit={!readOnly}
@@ -177,10 +177,10 @@ const EventDetailsForm = ({ eventDefinition, eventDefinitionEventProcedure, vali
           )}
           {showAddNewEventProcedure && (
             <>
-              <ControlLabel>Event Procedure Summary</ControlLabel>
-              <p>This Event Definition does not have any Event Procedures yet.</p>
+              <ControlLabel>事件过程摘要</ControlLabel>
+              <p>此事件定义尚未配置任何事件处理程序。</p>
               <Button bsStyle="primary" onClick={() => setShowAddEventProcedureForm(true)}>
-                Add Event Procedure
+                添加事件过程
               </Button>
             </>
           )}

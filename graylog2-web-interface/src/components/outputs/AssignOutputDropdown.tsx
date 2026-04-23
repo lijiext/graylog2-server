@@ -55,7 +55,7 @@ class AssignOutputDropdown extends React.Component<Props, { selectedOutput: stri
         <div className="form-inline">
           <select value={selectedOutput} name="outputId" className="form-control" onChange={this._handleUpdate}>
             <option value={this.PLACEHOLDER} disabled>
-              Select existing output
+              选择现有输出端
             </option>
             {outputs.length > 0 ? (
               outputs.map((output) => (
@@ -64,7 +64,7 @@ class AssignOutputDropdown extends React.Component<Props, { selectedOutput: stri
                 </option>
               ))
             ) : (
-              <option disabled>No outputs available</option>
+              <option disabled>暂无可用输出端</option>
             )}
           </select>
           &nbsp;
@@ -74,7 +74,7 @@ class AssignOutputDropdown extends React.Component<Props, { selectedOutput: stri
             type="button"
             disabled={selectedOutput === this.PLACEHOLDER}
             onClick={this._handleClick}>
-            Assign existing Output
+            分配现有输出端
           </Button>
         </div>
       </div>

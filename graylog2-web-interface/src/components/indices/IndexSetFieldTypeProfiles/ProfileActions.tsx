@@ -39,7 +39,7 @@ const ProfileActions = ({ profileId, profileName }: { profileId: string; profile
   return (
     <ButtonToolbar>
       <LinkContainer to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(profileId)}>
-        <Button bsSize="xs">Edit</Button>
+        <Button bsSize="xs">编辑</Button>
       </LinkContainer>
       <MoreActions>
         <DeleteMenuItem onSelect={onDelete} />

@@ -95,23 +95,23 @@ const UserConfig = () => {
 
   return (
     <div>
-      <h2>Users Configuration</h2>
-      <p>These settings can be used to set a global session timeout value.</p>
+      <h2>用户配置</h2>
+      <p>这些设置可用于设置全局会话超时值。</p>
 
       {!viewConfig ? (
         <Spinner />
       ) : (
         <>
           <StyledDefList>
-            <dt>Global session timeout:</dt>
+            <dt>全局会话超时：</dt>
             <dd>{viewConfig.enable_global_session_timeout ? 'Enabled' : 'Disabled'}</dd>
-            <dt>Timeout interval:</dt>
+            <dt>超时间隔:</dt>
             <dd>{viewConfig.enable_global_session_timeout ? viewConfig.global_session_timeout_interval : '-'}</dd>
-            <dt>Allow users to create personal access tokens:&nbsp;</dt>
+            <dt>允许用户创建个人访问令牌: </dt>
             <dd>{!viewConfig.restrict_access_token_to_admins ? 'Enabled' : 'Disabled'}</dd>
-            <dt>Allow access token for external users:&nbsp;</dt>
+            <dt>允许外部用户使用访问令牌: </dt>
             <dd>{viewConfig.allow_access_token_for_external_user ? 'Enabled' : 'Disabled'}</dd>
-            <dt>Default TTL for new tokens:</dt>
+            <dt>新令牌的默认 TTL:</dt>
             <dd>{viewConfig.default_ttl_for_new_tokens ? viewConfig.default_ttl_for_new_tokens : '-'}</dd>
           </StyledDefList>
 
@@ -124,7 +124,7 @@ const UserConfig = () => {
                 onClick={() => {
                   setShowModal(true);
                 }}>
-                Edit configuration
+                编辑配置
               </Button>
             </p>
           </IfPermitted>
@@ -145,9 +145,9 @@ const UserConfig = () => {
                             type="checkbox"
                             name="enable_global_session_timeout"
                             id="enable_global_session_timeout"
-                            label={<LabelSpan>Enable global session timeout</LabelSpan>}
+                            label={<LabelSpan>启用全局会话超时</LabelSpan>}
                           />
-                          <InputDescription help="If enabled, it will be set for all the users." />
+                          <InputDescription help="如果启用，它将设置为所有用户。" />
                         </Col>
                         <Col sm={12}>
                           <fieldset>
@@ -155,8 +155,8 @@ const UserConfig = () => {
                               id="global_session_timeout_interval"
                               duration={values.global_session_timeout_interval}
                               update={(value) => setFieldValue('global_session_timeout_interval', value)}
-                              label="Global session timeout interval (as ISO8601 Duration)"
-                              help="Session automatically end after this amount of time, unless they are actively used. Example, for 60 seconds: PT60S, for 60 minutes: PT60M"
+                              label="全局会话超时间隔（以 ISO8601 时长格式表示）"
+                              help="会话将在该时间段后自动结束，除非它们正在被使用。例如，60 秒：PT60S，60 分钟：PT60M"
                               validator={timeoutIntervalValidator}
                               errorText="invalid (min: 1 second)"
                               disabled={!values.enable_global_session_timeout}
@@ -169,18 +169,18 @@ const UserConfig = () => {
                             type="checkbox"
                             name="restrict_access_token_to_admins"
                             id="restrict_access_token_to_admins"
-                            label={<LabelSpan>Allow users to create personal access tokens</LabelSpan>}
+                            label={<LabelSpan>允许用户创建个人访问令牌</LabelSpan>}
                           />
-                          <InputDescription help="If enabled, it will allow users to create access tokens." />
+                          <InputDescription help="启用后，将允许用户创建访问令牌。" />
                         </Col>
                         <Col sm={12}>
                           <FormikInput
                             type="checkbox"
                             name="allow_access_token_for_external_user"
                             id="allow_access_token_for_external_user"
-                            label={<LabelSpan>Allow access token for external users</LabelSpan>}
+                            label={<LabelSpan>允许外部用户使用访问令牌</LabelSpan>}
                           />
-                          <InputDescription help="If enabled, it will allow external users to create access tokens." />
+                          <InputDescription help="如果启用，将允许外部用户创建访问令牌。" />
                         </Col>
                         <Col sm={12}>
                           <fieldset>
@@ -188,8 +188,8 @@ const UserConfig = () => {
                               id="default_ttl_for_new_tokens"
                               duration={values.default_ttl_for_new_tokens}
                               update={(value) => setFieldValue('default_ttl_for_new_tokens', value)}
-                              label="Default TTL for new tokens (as ISO8601 Duration)"
-                              help="Tokens will be automatically invalidated after this amount of time. Example, for 24 hours: PT24H, for 30 days: P30D"
+                              label="新令牌的默认TTL（以ISO8601持续时间格式）"
+                              help="令牌将在该时间后自动失效。例如，24 小时：PT24H，30 天：P30D"
                               validator={defaultTokenTtlValidator}
                               errorText="invalid (min: 1 day)"
                               disabled={!values.default_ttl_for_new_tokens}
@@ -206,8 +206,8 @@ const UserConfig = () => {
                       onCancel={resetConfig}
                       isSubmitting={isSubmitting}
                       isAsyncSubmit
-                      submitLoadingText="Update configuration"
-                      submitButtonText="Update configuration"
+                      submitLoadingText="更新配置"
+                      submitButtonText="更新配置"
                     />
                   </Modal.Footer>
                 </Form>

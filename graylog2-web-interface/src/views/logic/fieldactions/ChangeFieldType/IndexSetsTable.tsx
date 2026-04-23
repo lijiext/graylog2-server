@@ -149,7 +149,7 @@ const IndexSetsTable = ({ field, setIndexSetSelection, fieldTypes, initialSelect
         showPageSizeSelect={false}
         useQueryParameter={false}>
         {!list?.length ? (
-          <StyledNoEntitiesExist>No index sets have been found.</StyledNoEntitiesExist>
+          <StyledNoEntitiesExist>未找到任何索引集。</StyledNoEntitiesExist>
         ) : (
           <EntityDataTable<FieldTypeUsage>
             activeSort={layoutConfig.sort}

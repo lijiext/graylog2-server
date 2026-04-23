@@ -63,10 +63,10 @@ const GenericFilterInput = ({ filter = undefined, onSubmit }: Props) => {
               name="value"
               formGroupClassName=""
               required
-              placeholder="Enter value to filter for"
+              placeholder="输入要过滤的值"
             />
             <ModalSubmit
-              submitButtonText={`${filter ? 'Update' : 'Create'} filter`}
+              submitButtonText={`${filter ? 'Update' : 'Create'} 过滤器`}
               bsSize="small"
               disabledSubmit={!isValid}
               displayCancel={false}

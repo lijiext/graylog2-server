@@ -83,10 +83,10 @@ const BulkActions = ({ indexSetId, selectedEntitiesData }: Props) => {
       <BulkActionsDropdown>
         <>
           <StyledMenuItem disabled={!removableFields.length} onSelect={toggleResetModal}>
-            Reset
+            重置
             {!removableFields.length && '(overridden only)'}
           </StyledMenuItem>
-          <MenuItem onSelect={createNewProfile}>Create new profile</MenuItem>
+          <MenuItem onSelect={createNewProfile}>创建新配置文件</MenuItem>
         </>
       </BulkActionsDropdown>
       {showResetModal && (

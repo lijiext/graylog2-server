@@ -60,7 +60,7 @@ const ShareableEntityURL = ({ entityGRN }: Props) => {
           </InputGroupAddon>
         </InputGroup>
       </FormGroup>
-      <div>You or anyone authorized to view can access this link.</div>
+      <div>您或任何被授权查看的人均可访问此链接。</div>
     </div>
   );
 };

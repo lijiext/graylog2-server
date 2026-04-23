@@ -70,19 +70,18 @@ const ShowMetricsPage = () => {
   const node = nodes[nodeId];
   const title = (
     <span>
-      Metrics of node {node.short_node_id} / {node.hostname}
+      节点指标 {node.short_node_id} / {node.hostname}
     </span>
   );
 
   return (
-    <DocumentTitle title={`Metrics of node ${node.short_node_id} / ${node.hostname}`}>
+    <DocumentTitle title={`节点 ${node.short_node_id} / ${node.hostname} 的指标`}>
       <span>
         <PageHeader title={title}>
           <span>
-            All {productName} nodes provide a set of internal metrics for diagnosis, debugging and monitoring. Note that
-            you can access all metrics via JMX, too.
+            全部 {productName} 节点提供一组内部指标，用于诊断、调试和监控。请注意，您也可以通过 JMX 访问所有指标。
             <br />
-            This node is reporting a total of {(names || []).length} metrics.
+            此节点报告的总数为 {(names || []).length} 指标。
           </span>
         </PageHeader>
 

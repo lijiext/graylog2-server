@@ -93,16 +93,16 @@ const StreamModal = ({
               <Modal.Title>{modalTitle}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <FormikInput label="Title" name="title" id="title" help="A descriptive name of the new stream" />
+              <FormikInput label="标题" name="title" id="title" help="新数据流的描述性名称" />
               <FormikInput
                 label={
                   <>
-                    Description <InputOptionalInfo />
+                    描述 <InputOptionalInfo />
                   </>
                 }
                 name="description"
                 id="description"
-                help="What kind of messages are routed into this stream?"
+                help="哪些类型的消息被路由到此数据流？"
               />
               <IndexSetSelect indexSets={indexSets} />
               <FormikInput
@@ -116,7 +116,7 @@ const StreamModal = ({
               />
               {isNew && (
                 <EntityCreateShareFormGroup
-                  description="Search for a User or Team to add as collaborator on this stream."
+                  description="搜索用户或团队以将其添加为此数据流的协作者。"
                   entityType="stream"
                   entityTitle=""
                   onSetEntityShare={(payload) => setFieldValue('share_request', payload)}

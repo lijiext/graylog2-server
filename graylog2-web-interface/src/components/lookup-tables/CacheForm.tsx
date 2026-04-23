@@ -159,7 +159,7 @@ const CacheForm = ({
                   <FormikFormGroup
                     type="text"
                     name="title"
-                    label="* Title"
+                    label="* 标题"
                     required
                     help={errors.title ? null : 'A short title for this cache.'}
                     onChange={handleTitleChange(values, setValues)}
@@ -170,15 +170,15 @@ const CacheForm = ({
                   <FormikFormGroup
                     type="text"
                     name="description"
-                    label="Description"
-                    help="Cache description."
+                    label="描述"
+                    help="缓存描述。"
                     labelClassName="col-sm-3"
                     wrapperClassName="col-sm-9"
                   />
                   <FormikFormGroup
                     type="text"
                     name="name"
-                    label="* Name"
+                    label="* 名称"
                     required
                     error={validationErrors.name ? validationErrors.name[0] : null}
                     onChange={() => setGenerateName(false)}
@@ -201,8 +201,8 @@ const CacheForm = ({
               <Col md={3} mdOffset={9}>
                 {create && (
                   <FormSubmit
-                    submitButtonText="Create cache"
-                    submitLoadingText="Creating cache..."
+                    submitButtonText="创建缓存"
+                    submitLoadingText="正在创建缓存..."
                     isSubmitting={isSubmitting || creatingCache}
                     isAsyncSubmit
                     onCancel={onCancel}
@@ -210,8 +210,8 @@ const CacheForm = ({
                 )}
                 {updatable && (
                   <FormSubmit
-                    submitButtonText="Update cache"
-                    submitLoadingText="Updating cache..."
+                    submitButtonText="更新缓存"
+                    submitLoadingText="正在更新缓存..."
                     isAsyncSubmit
                     isSubmitting={isSubmitting || updatingCache}
                     onCancel={onCancel}

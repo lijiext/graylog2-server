@@ -81,11 +81,11 @@ function AdapterTypeSelect({ adapterConfigType, onAdapterChange }: Props) {
   return (
     <Input
       id="data-adapter-type-select"
-      label="Data Adapter Type"
+      label="数据适配器类型"
       required
-      help="The type of data adapter to configure.">
+      help="要配置的数据适配器类型。">
       <Select
-        placeholder="Select Data Adapter Type"
+        placeholder="选择数据适配器类型"
         clearable={false}
         options={sortedAdapters}
         onChange={handleTypeSelect}

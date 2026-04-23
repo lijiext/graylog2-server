@@ -88,9 +88,9 @@ const RuleForm = ({ create = false, isManaged = false }: Props) => {
     <form onSubmit={handleSubmit}>
       <fieldset>
         <FormGroup id="ruleTitleInformation">
-          <ControlLabel>Title</ControlLabel>
+          <ControlLabel>标题</ControlLabel>
           <FormControl.Static>
-            You can set the rule title in the rule source. See the quick reference for more information.
+            您可以在规则源中设置规则标题。有关更多信息，请参阅快速参考。
           </FormControl.Static>
         </FormGroup>
 
@@ -101,20 +101,20 @@ const RuleForm = ({ create = false, isManaged = false }: Props) => {
         <Input
           type="textarea"
           id="description"
-          label="Description"
+          label="描述"
           value={description}
           onChange={handleDescriptionChange}
           autoFocus
           rows={1}
-          help="Rule description (optional)."
+          help="规则描述（可选）。"
         />
 
         <PipelinesUsingRule create={create} />
 
         <Input
           id="rule-source-editor"
-          label="Rule source"
-          help="Rule source, see quick reference for more information."
+          label="规则源"
+          help="规则来源，请参阅快速参考以获取更多信息。"
           error={errorMessage}>
           <SourceCodeEditor
             id={`source${create ? '-create' : '-edit'}`}
@@ -137,7 +137,7 @@ const RuleForm = ({ create = false, isManaged = false }: Props) => {
             centerCol={
               !create && (
                 <Button type="button" bsStyle="info" disabled={isManaged} onClick={handleApply}>
-                  Update rule
+                  更新规则
                 </Button>
               )
             }

@@ -170,12 +170,12 @@ const FieldSelect = ({
         <ButtonRow>
           {_showSelectAllRest && (
             <Button bsSize="xs" onClick={_onSelectAllRest}>
-              Select all fields
+              选择所有字段
             </Button>
           )}
           {_showDeSelectAll && (
             <Button bsSize="xs" onClick={onDeSelectAll}>
-              Deselect all fields
+              取消选择所有字段
             </Button>
           )}
         </ButtonRow>

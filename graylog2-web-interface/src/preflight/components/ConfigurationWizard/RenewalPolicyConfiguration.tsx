@@ -80,12 +80,12 @@ const RenewalPolicyConfiguration = () => {
     mutationFn: createPolicy,
 
     onSuccess: () => {
-      UserNotification.success('Renewal policy created successfully');
+      UserNotification.success('续订策略创建成功');
       queryClient.invalidateQueries({ queryKey: RENEWAL_POLICY_QUERY_KEY });
     },
 
     onError: (error) => {
-      UserNotification.error(`Renewal policy creation failed with error: ${error}`);
+      UserNotification.error(`续订策略创建失败，错误：${error}`);
     },
   });
 
@@ -93,12 +93,11 @@ const RenewalPolicyConfiguration = () => {
 
   return (
     <>
-      <Title order={3}>Configure Renewal Policy</Title>
+      <Title order={3}>配置续订策略</Title>
       <p>
-        In this step you can configure if certificates which are close to expiration should be renewed automatically.
+        在此步骤中，您可以配置是否应自动续订即将过期的证书。
         <br />
-        If you choose manual renewal, a system notification will show up when the expiration date is near, requiring you
-        to confirm renewal.
+        如果您选择手动续订，在到期日临近时，系统将显示通知，要求您确认续订。
       </p>
       <Space h="md" />
       <Formik
@@ -110,16 +109,16 @@ const RenewalPolicyConfiguration = () => {
             <Field name="renewal_policy">
               {({ field: { value, name } }) => (
                 <Select
-                  placeholder="Select Renewal Policy"
+                  placeholder="选择续订策略"
                   data={['Automatic', 'Manual']}
                   required
                   value={value}
                   onChange={(newPolicy) => setFieldValue(name, newPolicy)}
-                  label="Renewal Policy"
+                  label="续订策略"
                 />
               )}
             </Field>
-            <Input.Label required>Certificate lifetime</Input.Label>
+            <Input.Label required>证书有效期</Input.Label>
             <Group>
               <Field name="lifetime_value">
                 {({ field: { name, value } }) => (
@@ -127,7 +126,7 @@ const RenewalPolicyConfiguration = () => {
                     value={value}
                     onChange={(newValue) => setFieldValue(name, newValue)}
                     required
-                    placeholder="Enter lifetime"
+                    placeholder="输入生存期"
                     step={1}
                   />
                 )}
@@ -135,7 +134,7 @@ const RenewalPolicyConfiguration = () => {
               <Field name="lifetime_unit">
                 {({ field: { name, value } }) => (
                   <Select
-                    placeholder="Select Unit"
+                    placeholder="选择单位"
                     data={unitOptions}
                     required
                     value={value}

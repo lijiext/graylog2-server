@@ -350,7 +350,7 @@ const StartInputStep = () => {
     if (startInputStatus === 'NOT_STARTED' || startInputStatus === 'ROLLED_BACK') {
       return (
         <Button onClick={handleStart} disabled={!isInputStartable()} bsStyle="primary">
-          Start Input
+          启动输入端
         </Button>
       );
     }
@@ -358,7 +358,7 @@ const StartInputStep = () => {
     if (startInputStatus === 'FAILED' || startInputStatus === 'ROLLING_BACK') {
       return (
         <Button disabled={startInputStatus === 'ROLLING_BACK'} onClick={handleRollback} bsStyle="primary">
-          Rollback Input
+          回滚输入端
         </Button>
       );
     }
@@ -366,7 +366,7 @@ const StartInputStep = () => {
     if (hasNextStep) {
       return (
         <Button disabled={startInputStatus === 'RUNNING'} onClick={goToInputDiagnosis} bsStyle="primary">
-          Launch Input Diagnosis
+          启动输入诊断
         </Button>
       );
     }
@@ -378,7 +378,7 @@ const StartInputStep = () => {
     <StepWrapper>
       <Row>
         <DescriptionCol md={12}>
-          <p>Set up and start the Input according to the configuration made.</p>
+          <p>根据配置设置并启动输入端。</p>
         </DescriptionCol>
       </Row>
       <Row>
@@ -386,12 +386,12 @@ const StartInputStep = () => {
           {hasBeenStarted &&
             (isRollback ? (
               <>
-                <StyledHeading>Rolling back Input...</StyledHeading>
+                <StyledHeading>正在回滚输入端...</StyledHeading>
                 {renderProgressMessages(rollBackMutations)}
               </>
             ) : (
               <>
-                <StyledHeading>Setting up Input...</StyledHeading>
+                <StyledHeading>正在设置输入端...</StyledHeading>
                 {renderProgressMessages(stepMutations)}
                 {startInputStatus && (
                   <ProgressMessage
@@ -406,7 +406,7 @@ const StartInputStep = () => {
             ))}
 
           {!hasBeenStarted && !isInputStartable() && (
-            <p>Your Input is not ready to be setup yet. Please complete the previous steps.</p>
+            <p>您的输入端尚未准备好进行设置。请完成之前的步骤。</p>
           )}
         </Col>
       </Row>
@@ -416,7 +416,7 @@ const StartInputStep = () => {
           <ButtonCol md={12}>
             {hasPreviousStep && (
               <Button disabled={isRunning} onClick={handleBackClick}>
-                Back
+                返回
               </Button>
             )}
             {renderNextButton()}

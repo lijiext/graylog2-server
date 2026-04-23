@@ -48,7 +48,7 @@ public class ClusterStatsResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Cluster status information.",
+    @ApiOperation(value = "集群状态信息。",
                   notes = "This resource returns information about the Graylog cluster.")
     public ClusterStats systemStats() {
         return clusterStatsService.clusterStats();
@@ -57,7 +57,7 @@ public class ClusterStatsResource extends RestResource {
     @GET
     @Path("/elasticsearch")
     @Timed
-    @ApiOperation(value = "Elasticsearch information.",
+    @ApiOperation(value = "Elasticsearch 信息。",
                   notes = "This resource returns information about the Elasticsearch Cluster.")
     public ElasticsearchStats elasticsearchStats() {
         return clusterStatsService.elasticsearchStats();
@@ -66,7 +66,7 @@ public class ClusterStatsResource extends RestResource {
     @GET
     @Path("/mongo")
     @Timed
-    @ApiOperation(value = "MongoDB information.",
+    @ApiOperation(value = "MongoDB 信息。",
                   notes = "This resource returns information about MongoDB.")
     public MongoStats mongoStats() {
         return clusterStatsService.mongoStats();

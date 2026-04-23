@@ -57,7 +57,7 @@ function LookupTableFormFields() {
       <FormikFormGroup
         type="text"
         name="title"
-        label="Title *"
+        label="标题 *"
         help={touched.title && errors.title ? undefined : 'A short title for this lookup table.'}
         labelClassName="d-block mb-1"
         wrapperClassName="d-block"
@@ -68,8 +68,8 @@ function LookupTableFormFields() {
       <FormikFormGroup
         type="text"
         name="description"
-        label="Description"
-        help="Description of the lookup table."
+        label="描述"
+        help="查找表的描述。"
         labelClassName="d-block mb-1"
         wrapperClassName="d-block"
         formGroupClassName="mb-3"
@@ -79,7 +79,7 @@ function LookupTableFormFields() {
       <FormikFormGroup
         type="text"
         name="name"
-        label="Name *"
+        label="名称 *"
         help={
           touched.name && errors.name
             ? undefined
@@ -96,8 +96,8 @@ function LookupTableFormFields() {
           id="enable_single_value"
           name="enable_single_value"
           type="checkbox"
-          label="Enable single default value"
-          help="Enable if the lookup table should provide a default for the single value."
+          label="启用单个默认值"
+          help="如果查找表应为单值提供默认值，请启用。"
           labelClassName="d-block mb-1"
           wrapperClassName="d-block"
           formGroupClassName="mb-3"
@@ -114,7 +114,7 @@ function LookupTableFormFields() {
         />
         {values.enable_single_value && (
           <StyledJSONValueInput
-            label="Default single value *"
+            label="默认单值 *"
             help={
               (touched.default_single_value && errors.default_single_value) ||
               'The single value that is being used as lookup result if the data adapter or cache does not find a value.'
@@ -138,8 +138,8 @@ function LookupTableFormFields() {
           id="enable_multi_value"
           name="enable_multi_value"
           type="checkbox"
-          label="Enable multi default value"
-          help="Enable if the lookup table should provide a default for the multi value."
+          label="启用多默认值"
+          help="如果查找表应为多值提供默认值，请启用。"
           labelClassName="d-block mb-1"
           wrapperClassName="d-block"
           formGroupClassName="mb-3"
@@ -156,7 +156,7 @@ function LookupTableFormFields() {
         />
         {values.enable_multi_value && (
           <StyledJSONValueInput
-            label="Default multi value *"
+            label="默认多值 *"
             help={
               (touched.default_multi_value && errors.default_multi_value) ||
               'The multi value that is being used as lookup result if the data adapter or cache does not find a value.'

@@ -46,10 +46,10 @@ function LookupTableDetails({ table, canEdit = false }: Props) {
     <>
       <Col $gap="xs">
         <Row $align="flex-end" $justify="space-between">
-          <h2>Description</h2>
+          <h2>描述</h2>
           {canEdit && (
             <Button bsStyle="primary" bsSize="sm" onClick={handleEdit} name="edit_square">
-              Edit
+              编辑
             </Button>
           )}
         </Row>
@@ -60,7 +60,7 @@ function LookupTableDetails({ table, canEdit = false }: Props) {
           <Col $gap="xs">
             {table.default_single_value && (
               <Row>
-                <span style={{ width: 208 }}>Default single value</span>
+                <span style={{ width: 208 }}>默认单个值</span>
                 <Row $gap="md">
                   <code>{table.default_single_value}</code>
                   <span>
@@ -71,7 +71,7 @@ function LookupTableDetails({ table, canEdit = false }: Props) {
             )}
             {table.default_multi_value && (
               <Row>
-                <span style={{ width: 208 }}>Default multi value</span>
+                <span style={{ width: 208 }}>默认多值</span>
                 <Row $gap="md">
                   <code>{table.default_multi_value}</code>
                   <span>

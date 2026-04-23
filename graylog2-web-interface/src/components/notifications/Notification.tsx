@@ -75,7 +75,7 @@ const Notification = ({ notification }: Props) => {
         <>
           <div dangerouslySetInnerHTML={{ __html: _sanitizeDescription(message?.title) }} />
           <NotificationTimestamp>
-            (triggered <RelativeTime dateTime={notification.timestamp} />)
+            (已触发 <RelativeTime dateTime={notification.timestamp} />)
           </NotificationTimestamp>
         </>
       }

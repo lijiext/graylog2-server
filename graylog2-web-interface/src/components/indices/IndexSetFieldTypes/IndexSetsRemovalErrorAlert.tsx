@@ -40,7 +40,7 @@ const IndexSetRemovalErrors = ({
       {!!errors.length && (
         <li>
           <h5>
-            <b>General errors:</b>
+            <b>常规错误：</b>
           </h5>
           <ul>
             {errors.map((error) => (
@@ -54,7 +54,7 @@ const IndexSetRemovalErrors = ({
       {!!failures.length && (
         <li>
           <h4>
-            <b>Field errors:</b>
+            <b>字段错误：</b>
           </h4>
           <ul>
             {failures.map(({ entityId, failureExplanation }) => (
@@ -76,7 +76,7 @@ const IndexSetsRemovalErrorAlert = ({
   removalResponse: RemovalResponse;
   indexSets: Record<string, IndexSet>;
 }) => (
-  <Alert bsStyle="danger" title="Removing some of field type overrides failed">
+  <Alert bsStyle="danger" title="部分字段类型覆盖失败">
     {Object.values(removalResponse).map(({ indexSetId, failures, errors }) => (
       <IndexSetRemovalErrors key={indexSetId} failures={failures} errors={errors} title={indexSets[indexSetId].title} />
     ))}

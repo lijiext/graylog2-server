@@ -107,17 +107,17 @@ function TestLookup({ table }: Props) {
   return (
     <Col $gap="sm">
       <Col $gap="xs">
-        <h2>Test lookup</h2>
+        <h2>测试查找表</h2>
         <Description>
-          You can manually query the lookup table using this form. The data will be cached as configured by{' '}
+          您可以使用此表单手动查询查找表。数据将按配置进行缓存{' '}
           {productName}.
         </Description>
       </Col>
       {lutError && <StyledAlert bsStyle="danger">{lutError}</StyledAlert>}
       {!supported && !lutError && (
-        <StyledAlert bsStyle="warning">This lookup table doesn&apos;t support keys preview</StyledAlert>
+        <StyledAlert bsStyle="warning">此查找表不支持键预览</StyledAlert>
       )}
-      {supported && !lutError && total < 1 && <StyledAlert>No result to show</StyledAlert>}
+      {supported && !lutError && total < 1 && <StyledAlert>无结果可显示</StyledAlert>}
       {supported && !lutError && total > 0 && (
         <Col $gap="xs">
           <form onSubmit={handleLookupKey} style={{ width: '100%' }}>
@@ -126,20 +126,20 @@ function TestLookup({ table }: Props) {
                 type="text"
                 id="key"
                 name="lookupkey"
-                placeholder="Insert key that should be looked up"
-                label="Key"
+                placeholder="插入要查找的键"
+                label="键"
                 required
                 onKeyDown={onKeyDown}
                 onChange={onChange}
-                help="Key to look up a value for."
+                help="用于查找值的键。"
                 value={lookupKey.value}
               />
               <Row $justify="flex-end">
                 <Button name="reset" disabled={!lookupResult} onClick={onReset}>
-                  Reset
+                  重置
                 </Button>
                 <Button type="submit" name="lookupbutton" bsStyle="primary" disabled={!lookupKey.valid}>
-                  Look up
+                  查找
                 </Button>
               </Row>
             </fieldset>
@@ -147,7 +147,7 @@ function TestLookup({ table }: Props) {
           <Col $gap="xs" style={{ marginTop: 20 }}>
             <h4 style={{ width: '100%' }}>
               <Row $align="center" $justify="space-between">
-                <span>Lookup result</span>
+                <span>查找结果</span>
                 <Row $width="auto" $align="center">
                   <NoMarginInput>
                     <Input

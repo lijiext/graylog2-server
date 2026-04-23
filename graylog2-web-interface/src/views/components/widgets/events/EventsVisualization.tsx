@@ -35,7 +35,7 @@ const EventsVisualization = (props: WidgetComponentProps<EventsWidgetConfig, Eve
     return <EventsNumber {...props} />;
   }
 
-  return <div>Unknown widget visualization type {config.mode ?? 'undefined'}</div>;
+  return <div>未知的小部件可视化类型 {config.mode ?? 'undefined'}</div>;
 };
 
 export default EventsVisualization;

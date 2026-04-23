@@ -42,15 +42,15 @@ const RemoveOutputButton = ({ output, streamId }: Props) => {
 
   return (
     <>
-      <Button bsStyle="link" bsSize="xsmall" onClick={() => setShowConfirmRemove(true)} title="Edit Output">
+      <Button bsStyle="link" bsSize="xsmall" onClick={() => setShowConfirmRemove(true)} title="编辑输出端">
         <Icon name="delete" type="regular" />
       </Button>
       <ConfirmDialog
         show={showConfirmRemove}
         onConfirm={onConfirmRemoveOutput}
         onCancel={() => setShowConfirmRemove(false)}
-        title="Remove Output">
-        <p>Do you really want to remove this output from the stream?</p>
+        title="移除输出端">
+        <p>您确定要从数据流中移除此输出端吗？</p>
       </ConfirmDialog>
     </>
   );

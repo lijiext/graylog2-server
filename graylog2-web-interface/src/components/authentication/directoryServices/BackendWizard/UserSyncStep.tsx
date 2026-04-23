@@ -109,28 +109,28 @@ const UserSyncStep = ({
         <Form className="form form-horizontal">
           <FormikFormGroup
             help={help.userSearchBase}
-            label="Search Base DN"
+            label="搜索基础 DN"
             error={backendValidationErrors?.userSearchBase}
             name="userSearchBase"
-            placeholder="Search Base DN"
+            placeholder="搜索基础 DN"
             validate={validateField(FORM_VALIDATION.userSearchBase)}
           />
 
           <FormikFormGroup
             help={help.userSearchPattern}
-            label="Search Pattern"
+            label="搜索模式"
             name="userSearchPattern"
             error={backendValidationErrors?.userSearchPattern}
-            placeholder="Search Pattern"
+            placeholder="搜索模式"
             validate={validateField(FORM_VALIDATION.userSearchPattern)}
           />
 
           <FormikFormGroup
             help={help.userNameAttribute}
-            label="Name Attribute"
+            label="名称属性"
             name="userNameAttribute"
             error={backendValidationErrors?.userNameAttribute}
-            placeholder="Name Attribute"
+            placeholder="名称属性"
             validate={validateField(FORM_VALIDATION.userNameAttribute)}
           />
 
@@ -142,12 +142,12 @@ const UserSyncStep = ({
                   help={help.emailAttributes}
                   error={error ?? backendValidationErrors?.emailAttributes}
                   id="email-attributes-input"
-                  label="Email Attributes"
+                  label="电子邮件属性"
                   labelClassName="col-sm-3"
                   wrapperClassName="col-sm-9">
                   <StyledInputList
                     id="userEmailAttributes"
-                    placeholder="Email Attributes"
+                    placeholder="电子邮件属性"
                     name={name}
                     values={value}
                     isClearable
@@ -159,9 +159,9 @@ const UserSyncStep = ({
           )}
           <FormikFormGroup
             help={help.userFullNameAttribute}
-            label="Full Name Attribute"
+            label="全名属性"
             name="userFullNameAttribute"
-            placeholder="Full Name Attribute"
+            placeholder="全名属性"
             error={backendValidationErrors?.userFullNameAttribute}
             validate={validateField(FORM_VALIDATION.userFullNameAttribute)}
           />
@@ -169,9 +169,9 @@ const UserSyncStep = ({
           {!excludedFields.userUniqueIdAttribute && (
             <FormikFormGroup
               help={help.userUniqueIdAttribute}
-              label="ID Attribute"
+              label="ID 属性"
               name="userUniqueIdAttribute"
-              placeholder="ID Attribute"
+              placeholder="ID 属性"
               error={backendValidationErrors?.userUniqueIdAttribute}
               validate={validateField(FORM_VALIDATION.userUniqueIdAttribute)}
             />
@@ -180,9 +180,8 @@ const UserSyncStep = ({
           <Row>
             <Col sm={9} smOffset={3}>
               <Panel bsStyle="info">
-                Changing the static role assignment will only affect new users created via{' '}
-                {stepsState.authBackendMeta.serviceTitle}! Existing user accounts will be updated on their next login,
-                or if you edit their roles manually.
+                更改静态角色分配将仅影响通过此方式创建的新用户{' '}
+                {stepsState.authBackendMeta.serviceTitle}! 现有用户账户将在其下次登录时更新，或如果您手动编辑其角色时更新。
               </Panel>
             </Col>
           </Row>
@@ -194,7 +193,7 @@ const UserSyncStep = ({
                 help={help.defaultRoles}
                 error={error ?? backendValidationErrors?.defaultRoles}
                 id="default-roles-select"
-                label="Default Roles"
+                label="默认角色"
                 labelClassName="col-sm-3"
                 wrapperClassName="col-sm-9">
                 <Select
@@ -202,7 +201,7 @@ const UserSyncStep = ({
                   onBlur={onBlur}
                   onChange={(selectedRoles) => onChange({ target: { value: selectedRoles, name } })}
                   options={rolesOptions}
-                  placeholder="Search for roles"
+                  placeholder="搜索角色"
                   value={value}
                 />
               </Input>
@@ -212,7 +211,7 @@ const UserSyncStep = ({
           <Row>
             <Col sm={9} smOffset={3}>
               <Alert bsStyle="info">
-                We recommend you test your user login in the sidebar panel to verify your settings.
+                我们建议您在侧边栏面板中测试用户登录，以验证您的设置。
               </Alert>
             </Col>
           </Row>
@@ -221,7 +220,7 @@ const UserSyncStep = ({
 
           <ButtonToolbar className="pull-right">
             <Button disabled={isSubmitting} onClick={() => _onSubmitAll(validateForm)} type="button">
-              Finish & Save Identity Service
+              完成并保存身份服务
             </Button>
             <Button
               bsStyle="primary"
@@ -234,7 +233,7 @@ const UserSyncStep = ({
                 });
               }}
               type="submit">
-              Next: Group Synchronization
+              下一步：组同步
             </Button>
           </ButtonToolbar>
         </Form>

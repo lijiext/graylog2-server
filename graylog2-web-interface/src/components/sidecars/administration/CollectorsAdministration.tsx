@@ -231,7 +231,7 @@ const CollectorsAdministration = ({
           ref={selectAllInput}
           id="select-all-checkbox"
           type="checkbox"
-          label={selectedItems === 0 ? 'Select all' : `${selectedItems} selected`}
+          label={selectedItems === 0 ? 'Select all' : `${selectedItems} 已选中`}
           disabled={enabledCollectors.length === 0}
           checked={isAllSelected(enabledCollectors, selected)}
           onChange={toggleSelectAll}
@@ -260,7 +260,7 @@ const CollectorsAdministration = ({
         </Row>
         <Row>
           <Col md={12}>
-            <span>No collectors compatible with {sidecar.node_details.operating_system}</span>
+            <span>没有与兼容的采集器 {sidecar.node_details.operating_system}</span>
           </Col>
         </Row>
       </DisabledCollector>
@@ -319,7 +319,7 @@ const CollectorsAdministration = ({
             {configAssignments.length > 0 && (
               <IconButton
                 name="edit_square"
-                title="Edit configuration"
+                title="编辑配置"
                 onClick={() => {
                   setSelected([collectorId]);
                   setShowConfigurationModal(true);
@@ -353,7 +353,7 @@ const CollectorsAdministration = ({
                 {sidecar.node_name} <OperatingSystemIcon operatingSystem={sidecar.node_details.operating_system} />
                 &emsp;
                 <small>
-                  {sidecar.node_id} {!sidecar.active && <b>&mdash; inactive</b>}
+                  {sidecar.node_id} {!sidecar.active && <b>— 未激活</b>}
                 </small>
               </AlignedInformation>
             </Col>

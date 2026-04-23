@@ -159,8 +159,8 @@ const HighlightingRule = (
           <strong>{field}</strong> {ConditionLabelMap[condition]} <i>&quot;{String(value)}&quot;</i>.
         </RuleContainer>
         <ButtonContainer>
-          <IconButton title="Edit this Highlighting Rule" name="edit_square" onClick={() => setShowForm(true)} />
-          <IconButton title="Remove this Highlighting Rule" name="delete" onClick={_onDelete} />
+          <IconButton title="编辑此高亮规则" name="edit_square" onClick={() => setShowForm(true)} />
+          <IconButton title="移除此高亮规则" name="delete" onClick={_onDelete} />
           {dragHandleProps && (
             <DragHandle {...dragHandleProps}>
               <Icon name="drag_indicator" />

@@ -27,7 +27,7 @@ const SelectTemplateButton = ({ onClick }: { onClick: () => void }) => {
   const isCloud = AppConfig.isCloud();
   if (isCloud) return null;
 
-  return <Button onClick={onClick}>Select Template</Button>;
+  return <Button onClick={onClick}>选择模板</Button>;
 };
 
 const IndexSetCreationPage = () => {
@@ -35,11 +35,11 @@ const IndexSetCreationPage = () => {
 
   return (
     <SelectIndexSetTemplateProvider>
-      <DocumentTitle title="Create Index Set">
+      <DocumentTitle title="创建索引集">
         <IndicesPageNavigation />
         <div>
           <PageHeader
-            title="Create Index Set"
+            title="创建索引集"
             documentationLink={{
               title: 'Index model documentation',
               path: DocsHelper.PAGES.INDEX_MODEL,
@@ -50,8 +50,7 @@ const IndexSetCreationPage = () => {
               </IfPermitted>
             }>
             <span>
-              Create a new index set that will let you configure the retention, sharding, and replication of messages
-              coming from one or more streams.
+              创建新的索引集，以便配置来自一个或多个数据流的日志消息的保留、分片和复制。
             </span>
           </PageHeader>
 

@@ -266,7 +266,7 @@ public class PipelineResource extends RestResource implements PluginRestResource
 
     public record RoutingResponse(@JsonProperty(value = "rule_id") String ruleId) {}
 
-    @ApiOperation(value = "Add a stream routing rule to the default routing pipeline.")
+    @ApiOperation(value = "向默认路由管道添加数据流路由规则。")
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/routing")
     @PUT
@@ -343,7 +343,7 @@ public class PipelineResource extends RestResource implements PluginRestResource
 
     private void checkReservedName(PipelineSource update) {
         if (GL_INPUT_ROUTING_PIPELINE.equals(update.title())) {
-            throw new BadRequestException("Pipeline name is reserved and cannot be used.");
+            throw new BadRequestException("管道名称已被保留，无法使用。");
         }
     }
 

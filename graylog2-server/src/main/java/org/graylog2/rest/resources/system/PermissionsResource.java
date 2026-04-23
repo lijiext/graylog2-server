@@ -62,7 +62,7 @@ public class PermissionsResource extends RestResource {
     @GET
     @Timed
     @RequiresGuest // turns off authentication for this action
-    @ApiOperation(value = "Get all available user permissions.")
+    @ApiOperation(value = "获取所有可用的用户权限。")
     public Map<String, Map<String, Collection<String>>> permissions() {
         return ImmutableMap.of("permissions", permissions.allPermissionsMap());
     }

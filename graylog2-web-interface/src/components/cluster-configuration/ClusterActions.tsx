@@ -56,20 +56,20 @@ const ClusterActions = ({ node }: Props) => {
 
   return (
     <>
-      <DropdownButton bsSize="xs" title="More" id={`more-actions-dropdown-${node.node_id}`} pullRight>
+      <DropdownButton bsSize="xs" title="更多" id={`more-actions-dropdown-${node.node_id}`} pullRight>
         <IfPermitted permissions="processing:changestate">
           <MenuItem onSelect={() => setShowMessageProcessingModal(true)}>
-            {node.is_processing ? 'Pause' : 'Resume'} message processing
+            {node.is_processing ? 'Pause' : 'Resume'} 消息处理
           </MenuItem>
         </IfPermitted>
         <IfPermitted permissions="lbstatus:change">
           {node.lb_status === 'alive' ? (
             <MenuItem onSelect={() => setLoadBalancerStatusToConfirm('DEAD')}>
-              Override load Balancer status to DEAD
+              将负载均衡器状态覆盖为 DEAD
             </MenuItem>
           ) : (
             <MenuItem onSelect={() => setLoadBalancerStatusToConfirm('ALIVE')}>
-              Override load Balancer status to ALIVE
+              将负载均衡器状态覆盖为 ALIVE
             </MenuItem>
           )}
         </IfPermitted>
@@ -79,33 +79,33 @@ const ClusterActions = ({ node }: Props) => {
           </IfPermitted>
         </IfPermitted>
         <LinkContainer to={Routes.SYSTEM.METRICS(node.node_id)}>
-          <MenuItem>Metrics</MenuItem>
+          <MenuItem>指标</MenuItem>
         </LinkContainer>
         <HideOnCloud>
           <IfPermitted permissions="inputs:read">
             <LinkContainer to={Routes.node_inputs(node.node_id)}>
-              <MenuItem>Local message inputs</MenuItem>
+              <MenuItem>本地消息输入端</MenuItem>
             </LinkContainer>
           </IfPermitted>
         </HideOnCloud>
         <IfPermitted permissions="threads:dump">
           <LinkContainer to={Routes.SYSTEM.THREADDUMP(node.node_id)}>
-            <MenuItem>Get thread dump</MenuItem>
+            <MenuItem>获取线程转储</MenuItem>
           </LinkContainer>
         </IfPermitted>
         <IfPermitted permissions="processbuffer:dump">
           <LinkContainer to={Routes.SYSTEM.PROCESSBUFFERDUMP(node.node_id)}>
-            <MenuItem>Get process-buffer dump</MenuItem>
+            <MenuItem>获取进程缓冲区转储</MenuItem>
           </LinkContainer>
         </IfPermitted>
         <IfPermitted permissions="loggersmessages:read">
           <LinkContainer to={Routes.SYSTEM.SYSTEMLOGS(node.node_id)}>
-            <MenuItem>Get recent system log messages</MenuItem>
+            <MenuItem>获取最近的系统日志消息</MenuItem>
           </LinkContainer>
         </IfPermitted>
         <IfPermitted permissions="api_browser:read">
           <MenuItem href={apiBrowserURI} target="_blank">
-            <ExternalLink>API Browser</ExternalLink>
+            <ExternalLink>API 浏览器</ExternalLink>
           </MenuItem>
         </IfPermitted>
       </DropdownButton>
@@ -114,10 +114,10 @@ const ClusterActions = ({ node }: Props) => {
           show
           onConfirm={toggleMessageProcessing}
           onCancel={() => setShowMessageProcessingModal(false)}
-          title="Message Processing">
+          title="消息处理">
           <>
-            You are about to <b>{node.is_processing ? 'pause' : 'resume'}</b> message processing in <b>{nodeName}</b>{' '}
-            node. Are you sure?
+            您即将 <b>{node.is_processing ? 'pause' : 'resume'}</b> 消息处理中 <b>{nodeName}</b>{' '}
+            节点。确定吗？
           </>
         </ConfirmDialog>
       )}
@@ -126,10 +126,10 @@ const ClusterActions = ({ node }: Props) => {
           show
           onConfirm={() => updateLoadBalancerStatus(loadBalancerStatusToConfirm)}
           onCancel={() => setLoadBalancerStatusToConfirm(undefined)}
-          title="Load Balancer">
+          title="负载均衡器">
           <>
-            You are about to change the load balancer status for <b>{nodeName}</b> node to{' '}
-            <b>{loadBalancerStatusToConfirm}</b>. Are you sure?
+            您即将更改负载均衡器的状态 <b>{nodeName}</b> 节点到{' '}
+            <b>{loadBalancerStatusToConfirm}</b>。您确定吗？
           </>
         </ConfirmDialog>
       )}

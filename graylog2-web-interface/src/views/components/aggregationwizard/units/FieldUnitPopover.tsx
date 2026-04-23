@@ -97,8 +97,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string; predefined
 
     return (
       <>
-        Unit <b>{unitName}</b> was configured for field <b>{field}</b>. Changing this unit might represent data
-        incorrectly on the charts.
+        单位 <b>{unitName}</b> 已配置为字段 <b>{field}</b>. 更改此单位可能会导致图表上的数据显示不正确。
       </>
     );
   }, [field, predefinedUnit?.abbrev, predefinedUnit?.isDefined, predefinedUnit?.unitType]);
@@ -112,18 +111,18 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string; predefined
     <Popover position="right" opened={show} withArrow>
       <Popover.Target>
         <ButtonContainer>
-          <StyledButton bsSize="xs" onClick={toggleShow} title={`${field} unit settings`}>
+          <StyledButton bsSize="xs" onClick={toggleShow} title={`${field} 单元设置`}>
             {badgeLabel}
           </StyledButton>
         </ButtonContainer>
       </Popover.Target>
-      <Popover.Dropdown title={`${field} unit settings`}>
+      <Popover.Dropdown title={`${field} 单元设置`}>
         <Container>
           <Field name={`units.${field}.unitType`}>
             {({ field: { name, value }, meta: { error } }) => (
               <Input
                 id="metric-unit-type-field"
-                label="Type"
+                label="类型"
                 error={error}
                 labelClassName="col-sm-3"
                 wrapperClassName="col-sm-9">
@@ -132,7 +131,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string; predefined
                   onChange={onUnitTypeChange}
                   name={name}
                   value={value}
-                  aria-label="Select a unit type"
+                  aria-label="选择单位类型"
                   options={unitTypesOptions}
                   size="small"
                 />
@@ -146,9 +145,9 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string; predefined
                   id="metric-unit-field"
                   label={
                     <span>
-                      Unit{' '}
+                      单位{' '}
                       <HoverForHelp displayLeftMargin>
-                        Unit used to calculate the displayed value on charts.
+                        用于计算图表上显示值的单位。
                       </HoverForHelp>
                     </span>
                   }
@@ -160,7 +159,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string; predefined
                     onChange={(fieldName) => onChange({ target: { name, value: fieldName } })}
                     name={name}
                     value={value}
-                    aria-label="Select a unit"
+                    aria-label="选择单位"
                     options={unitOptions}
                     size="small"
                   />
@@ -171,7 +170,7 @@ const FieldUnitPopover = ({ field, predefinedUnit }: { field: string; predefined
           {predefinedInfo && <Alert bsStyle="info">{predefinedInfo}</Alert>}
           <ModalButtonToolbar>
             <Button bsSize="xs" onClick={onClear}>
-              Clear
+              清除
             </Button>
             <Button bsSize="xs" bsStyle="primary" onClick={toggleShow}>
               OK

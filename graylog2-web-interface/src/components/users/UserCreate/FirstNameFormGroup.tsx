@@ -19,7 +19,7 @@ import * as React from 'react';
 import { FormikFormGroup } from 'components/common';
 
 const FirstNameFormGroup = () => (
-  <FormikFormGroup label="First Name" name="first_name" maxLength={200} required help="The user's first name." />
+  <FormikFormGroup label="名字" name="first_name" maxLength={200} required help="用户的名字。" />
 );
 
 export default FirstNameFormGroup;

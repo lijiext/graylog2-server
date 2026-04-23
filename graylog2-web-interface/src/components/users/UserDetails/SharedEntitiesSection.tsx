@@ -34,7 +34,7 @@ const SharedEntitiesSection = ({ userId }: Props) => {
   );
 
   return (
-    <SectionComponent title="Shared Entities" showLoading={loading}>
+    <SectionComponent title="共享实体" showLoading={loading}>
       <SharedEntitiesOverview setLoading={setLoading} entityType="user" searchPaginated={_searchPaginated} />
     </SectionComponent>
   );

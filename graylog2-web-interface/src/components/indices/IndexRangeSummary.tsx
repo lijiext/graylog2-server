@@ -26,14 +26,14 @@ const IndexRangeSummary = ({ indexRange }: Props) => {
   if (!indexRange) {
     return (
       <span>
-        <i>No index range available.</i>
+        <i>没有可用的索引范围。</i>
       </span>
     );
   }
 
   return (
     <span>
-      Range re-calculated <RelativeTime dateTime={indexRange.calculated_at} /> in {indexRange.took_ms}ms.
+      范围已重新计算 <RelativeTime dateTime={indexRange.calculated_at} /> in {indexRange.took_ms}ms.
     </span>
   );
 };

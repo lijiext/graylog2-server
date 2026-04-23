@@ -35,7 +35,7 @@ type Props = {
 
 const PageTitle = ({ fullName }: { fullName: string | null | undefined }) => (
   <>
-    Edit User{' '}
+    编辑用户{' '}
     {fullName && (
       <>
         - <i>{fullName}</i>
@@ -63,7 +63,7 @@ const UserEditPage = ({ params }: Props) => {
   const userToEdit = userId === loadedUser?.id ? loadedUser : undefined;
 
   return (
-    <DocumentTitle title={`Edit User ${fullName}`}>
+    <DocumentTitle title={`编辑用户 ${fullName}`}>
       <UsersPageNavigation />
       <PageHeader
         title={<PageTitle fullName={fullName} />}
@@ -72,7 +72,7 @@ const UserEditPage = ({ params }: Props) => {
           title: 'Permissions documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>You can change the user details and password here and assign roles and teams.</span>
+        <span>您可以在此处更改用户详情和密码，并分配角色和团队。</span>
       </PageHeader>
       <UserEdit user={userToEdit} />
     </DocumentTitle>

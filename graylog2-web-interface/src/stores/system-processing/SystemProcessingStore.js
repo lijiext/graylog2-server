@@ -31,12 +31,12 @@ export const SystemProcessingStore = singletonStore('core.SystemProcessing', () 
       return fetch('POST', URLUtils.qualifyUrl(`${this.sourceUrl(nodeId)}/pause`)).then(
         () => {
           this.trigger({});
-          UserNotification.success(`Message processing paused successfully in '${nodeId}'`);
+          UserNotification.success(`在 '${nodeId}' 中成功暂停消息处理`);
         },
         (error) => {
           UserNotification.error(
-            `Pausing message processing in '${nodeId}' failed: ${error}`,
-            `Could not pause message processing in node '${nodeId}'`,
+            `在 '${nodeId}' 中暂停消息处理失败：${error}`,
+            `无法在节点 '${nodeId}' 中暂停消息处理`,
           );
         },
       );
@@ -46,12 +46,12 @@ export const SystemProcessingStore = singletonStore('core.SystemProcessing', () 
       return fetch('POST', URLUtils.qualifyUrl(`${this.sourceUrl(nodeId)}/resume`)).then(
         () => {
           this.trigger({});
-          UserNotification.success(`Message processing resumed successfully in '${nodeId}'`);
+          UserNotification.success(`消息处理在 '${nodeId}' 中成功恢复`);
         },
         (error) => {
           UserNotification.error(
-            `Resuming message processing in '${nodeId}' failed: ${error}`,
-            `Could not resume message processing in node '${nodeId}'`,
+            `在 '${nodeId}' 中恢复消息处理失败：${error}`,
+            `无法在节点 '${nodeId}' 中恢复消息处理`,
           );
         },
       );

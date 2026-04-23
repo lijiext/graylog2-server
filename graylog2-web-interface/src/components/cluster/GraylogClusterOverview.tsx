@@ -37,7 +37,7 @@ const StyledH2 = styled.h2(
   `,
 );
 
-const Header = () => <StyledH2>Cluster</StyledH2>;
+const Header = () => <StyledH2>集群</StyledH2>;
 
 const ClusterInfo = () => {
   const nodes = useStore(NodesStore);
@@ -50,9 +50,9 @@ const ClusterInfo = () => {
 
   return (
     <StyledDl className="system-dl">
-      <dt>Cluster ID:</dt>
+      <dt>集群 ID:</dt>
       <dd>{clusterId || 'Not available'}</dd>
-      <dt>Number of nodes:</dt>
+      <dt>节点数量:</dt>
       <dd>{nodeCount}</dd>
     </StyledDl>
   );

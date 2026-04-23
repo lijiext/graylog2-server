@@ -46,18 +46,17 @@ const DataNodesMigrationPage = () => {
   }, [currentStep.next_steps, currentStep.state, isLoading, onTriggerNextState]);
 
   return (
-    <DocumentTitle title="Data Node Migration">
+    <DocumentTitle title="数据节点迁移">
       <ClusterConfigurationPageNavigation />
       <PageHeader
-        title="Data Node Migration"
+        title="数据节点迁移"
         actions={<ResetMigrationButton />}
         documentationLink={{
           title: 'Data Nodes documentation',
           path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
         }}>
         <span>
-          {productName} Data Nodes offer a better integration with {productName} and simplify future updates. They allow
-          you to index and search through all the messages in your {productName} message database.
+          {productName} 数据节点提供更好的集成 {productName} 并简化未来的更新。它们允许您索引和搜索所有消息 {productName} 消息数据库。
         </span>
       </PageHeader>
       <Row className="content">

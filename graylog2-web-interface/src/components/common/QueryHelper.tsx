@@ -51,13 +51,13 @@ const row = (field: CommonFields, description: string) => (
 const defaultExample = (entityName: string) => (
   <>
     <p>
-      Find all {entityName}s with a description containing security:
+      查找全部 {entityName}s 的描述中包含安全:
       <br />
-      <code>description:security</code>
+      <code>描述：安全</code>
       <br />
     </p>
     <p>
-      Find a {entityName} with the id 5f4dfb9c69be46153b9a9a7b:
+      查找 {entityName} ID 为 5f4dfb9c69be46153b9a9a7b 的：
       <br />
       <code>id:5f4dfb9c69be46153b9a9a7b</code>
       <br />
@@ -73,13 +73,13 @@ const queryHelpPopover = (
 ) => (
   <>
     <p>
-      <strong>Available search fields</strong>
+      <strong>可用的搜索字段</strong>
     </p>
     <Table condensed>
       <thead>
         <tr>
-          <th>Field</th>
-          <th>Description</th>
+          <th>字段</th>
+          <th>描述</th>
         </tr>
       </thead>
       <tbody>
@@ -88,7 +88,7 @@ const queryHelpPopover = (
       </tbody>
     </Table>
     <p>
-      <strong>Examples</strong>
+      <strong>示例</strong>
     </p>
     {example || defaultExample(entityName)}
   </>
@@ -105,7 +105,7 @@ const QueryHelper = ({
     rootClose
     placement="right"
     overlay={queryHelpPopover(commonFields, fieldMap, example, entityName)}
-    title="Search Syntax Help"
+    title="搜索语法帮助"
     width={500}>
     <QueryHelpButton bsStyle="link">
       <Icon name="help" />

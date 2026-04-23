@@ -64,7 +64,7 @@ class FlexdateConverterConfiguration extends React.Component<
   render() {
     const timezoneHelpMessage = (
       <span>
-        Time zone to apply to date. Read more in the{' '}
+        要应用的时区。请阅读更多{' '}
         <DocumentationLink page={DocsHelper.PAGES.PAGE_FLEXIBLE_DATE_CONVERTER} text="documentation" />.
       </span>
     );
@@ -74,7 +74,7 @@ class FlexdateConverterConfiguration extends React.Component<
         <Input
           type="checkbox"
           id={`enable-${this.props.type}-converter`}
-          label="Flexibly parse date"
+          label="灵活解析日期"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked
           onChange={this._toggleConverter}
@@ -83,7 +83,7 @@ class FlexdateConverterConfiguration extends React.Component<
           <Col md={9} mdOffset={2}>
             <div className="xtrc-converter-subfields">
               <Input
-                label="Time Zone"
+                label="时区"
                 id={`${this.props.type}_converter_timezone`}
                 labelClassName="col-sm-3"
                 wrapperClassName="col-sm-9"

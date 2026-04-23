@@ -1,8 +1,6 @@
-<#if _title>Multiple leader nodes in the cluster</#if>
+<#if _title>集群中存在多个主节点</#if>
 
 <#if _description><span>
-There were multiple server instances configured as leader in your cluster. The cluster handles
-this automatically by launching new nodes as followers if there already is a leader but you should still fix this.
-Check the config file of every node and make sure that only one instance has  <code>is_leader = true</code>. Close this
-notification if you think you resolved the problem. It will pop back up if you start a second leader node again.
+您的集群中配置了多个作为主节点的服务器实例。集群会自动处理此情况，如果已有主节点，则会启动新节点作为从节点，但仍建议您修复此问题。
+请检查每个节点的配置文件，确保只有一个实例设置了 <code>is_leader = true</code>。如果您认为已解决问题，可关闭此通知。若再次启动第二个主节点，该通知将再次弹出。
 </span></#if>

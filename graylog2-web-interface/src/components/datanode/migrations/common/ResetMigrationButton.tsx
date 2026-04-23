@@ -39,15 +39,15 @@ const ResetMigrationButton = () => {
     mutationFn: resetMigration,
 
     onSuccess: () => {
-      UserNotification.success('Migration state reset successful.');
+      UserNotification.success('迁移状态重置成功。');
       queryClient.invalidateQueries({ queryKey: DATA_NODES_CA_QUERY_KEY });
       queryClient.invalidateQueries({ queryKey: MIGRATION_STATE_QUERY_KEY });
     },
 
     onError: (error) => {
       UserNotification.error(
-        `Resetting migration state failed with status: ${error}`,
-        'Could not reset the migration state.',
+        `重置迁移状态失败，状态为：${error}`,
+        '无法重置迁移状态。',
       );
     },
   });
@@ -74,15 +74,15 @@ const ResetMigrationButton = () => {
   return (
     <>
       <Button bsStyle="primary" bsSize="small" onClick={handleResetClick}>
-        Reset Migration
+        重置迁移
       </Button>
       {showDialog && (
         <ConfirmDialog
-          title="Reset Migration"
+          title="重置迁移"
           show
           onConfirm={handleConfirmClick}
           onCancel={() => setShowDialog(false)}>
-          Are you sure you want to reset the migration?
+          您确定要重置迁移吗？
         </ConfirmDialog>
       )}
     </>

@@ -36,11 +36,11 @@ const TeamsNotificationDetails = ({ notification }: TeamsNotificationSummaryV2Ty
   <>
     <ReadOnlyFormGroup label="Webhook URL" value={notification.config.webhook_url} />
     <ReadOnlyFormGroup
-      label="Adaptive Card Template"
+      label="自适应卡片模板"
       value={<NewExampleWell bsSize="small">{notification.config.adaptive_card}</NewExampleWell>}
     />
-    <ReadOnlyFormGroup label="Message Backlog Limit" value={notification.config.backlog_size} />
-    <ReadOnlyFormGroup label="Time Zone" value={notification.config.time_zone} />
+    <ReadOnlyFormGroup label="消息积压限制" value={notification.config.backlog_size} />
+    <ReadOnlyFormGroup label="时区" value={notification.config.time_zone} />
   </>
 );
 

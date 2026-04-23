@@ -231,12 +231,12 @@ export const ConfigurationsStore = singletonStore('core.Configuration', () =>
         () => {
           this.configuration = { ...this.configuration, [configType]: config };
           this.propagateChanges();
-          UserNotification.success('Index defaults configuration updated successfully');
+          UserNotification.success('索引默认配置更新成功');
 
           return config;
         },
         (error) => {
-          UserNotification.error(error.additional.body.message, 'Index defaults configuration update failed');
+          UserNotification.error(error.additional.body.message, '索引默认配置更新失败');
         },
       );
 
@@ -250,14 +250,14 @@ export const ConfigurationsStore = singletonStore('core.Configuration', () =>
         (response) => {
           this.configuration = { ...this.configuration, [configType]: response };
           this.propagateChanges();
-          UserNotification.success('Configuration updated successfully');
+          UserNotification.success('配置更新成功');
 
           return response;
         },
         (error) => {
           UserNotification.error(
-            `Search config update failed: ${error}`,
-            `Could not update search config: ${configType}`,
+            `搜索配置更新失败：${error}`,
+            `无法更新搜索配置：${configType}`,
           );
         },
       );
@@ -272,14 +272,14 @@ export const ConfigurationsStore = singletonStore('core.Configuration', () =>
         () => {
           this.configuration = { ...this.configuration, [configType]: config };
           this.propagateChanges();
-          UserNotification.success('Url allowlist Configuration updated successfully');
+          UserNotification.success('URL 允许列表配置已成功更新');
 
           return config;
         },
         (error) => {
           UserNotification.error(
-            `Url allowlist config update failed: ${error}`,
-            `Could not update Url allowlist: ${configType}`,
+            `URL 允许列表配置更新失败：${error}`,
+            `无法更新 URL 允许列表：${configType}`,
           );
         },
       );
@@ -294,14 +294,14 @@ export const ConfigurationsStore = singletonStore('core.Configuration', () =>
         (response) => {
           this.configuration = { ...this.configuration, [configType]: response };
           this.propagateChanges();
-          UserNotification.success('Configuration updated successfully');
+          UserNotification.success('配置更新成功');
 
           return response;
         },
         (error) => {
           UserNotification.error(
-            `Message processors config update failed: ${error}`,
-            `Could not update config: ${configType}`,
+            `消息处理器配置更新失败：${error}`,
+            `无法更新配置：${configType}`,
           );
         },
       );

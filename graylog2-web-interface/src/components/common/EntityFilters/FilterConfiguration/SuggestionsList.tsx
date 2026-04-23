@@ -108,7 +108,7 @@ const SuggestionsList = ({
         type="text"
         id="search-filters-input"
         formGroupClassName=""
-        placeholder={`Search for ${attribute.title.toLowerCase()}`}
+        placeholder={`搜索 ${attribute.title.toLowerCase()}`}
         onChange={({ target: { value } }) => debounceOnSearch(value)}
       />
       {isLoading && <Spinner />}
@@ -151,11 +151,11 @@ const SuggestionsList = ({
         </PaginatedList>
       )}
 
-      {!suggestions?.length && <NoSearchResult>No entities found</NoSearchResult>}
+      {!suggestions?.length && <NoSearchResult>未找到实体</NoSearchResult>}
 
       {multiSelect && (
         <Hint>
-          <i>Hold Shift to select multiple</i>
+          <i>按住 Shift 键以选择多个</i>
         </Hint>
       )}
     </Container>

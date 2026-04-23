@@ -35,7 +35,7 @@ type Props = {
 
 const PageTitle = ({ fullName }: { fullName: string | null | undefined }) => (
   <>
-    Edit Tokens Of User{' '}
+    编辑用户令牌{' '}
     {fullName && (
       <>
         - <i>{fullName}</i>
@@ -83,7 +83,7 @@ const UserEditPage = ({ params }: Props) => {
   }, [loadTokens, loadedUser]);
 
   return (
-    <DocumentTitle title={`Edit Tokens Of User ${loadedUser?.fullName ?? ''}`}>
+    <DocumentTitle title={`编辑用户 ${loadedUser?.fullName ?? ''} 的令牌`}>
       <UsersPageNavigation />
       <PageHeader
         title={<PageTitle fullName={loadedUser?.fullName} />}
@@ -98,7 +98,7 @@ const UserEditPage = ({ params }: Props) => {
           title: 'Permissions documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>You can create new tokens or delete old ones.</span>
+        <span>您可以创建新令牌或删除旧令牌。</span>
       </PageHeader>
 
       <Row className="content">

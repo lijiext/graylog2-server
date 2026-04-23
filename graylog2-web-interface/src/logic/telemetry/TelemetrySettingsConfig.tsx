@@ -63,12 +63,12 @@ const TelemetrySettingsConfigComponent = () => {
   };
 
   return (
-    <SectionComponent title="Telemetry">
+    <SectionComponent title="遥测">
       <TelemetryInfoText />
       <Formik<UserTelemetrySettings> onSubmit={onSubmit} initialValues={settings}>
         {({ isSubmitting, isValid }) => (
           <Form className="form form-horizontal">
-            <Input id="timeout-controls" labelClassName="col-sm-3" wrapperClassName="col-sm-9" label="Enable telemetry">
+            <Input id="timeout-controls" labelClassName="col-sm-3" wrapperClassName="col-sm-9" label="启用遥测">
               <FormikFormGroup
                 label="enabled"
                 name="telemetry_enabled"
@@ -83,9 +83,9 @@ const TelemetrySettingsConfigComponent = () => {
                   <Button
                     bsStyle="primary"
                     disabled={isSubmitting || !isValid}
-                    title="Update Preferences"
+                    title="更新偏好设置"
                     type="submit">
-                    Update telemetry
+                    更新遥测数据
                   </Button>
                 </div>
               </Col>

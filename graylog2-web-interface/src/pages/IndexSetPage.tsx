@@ -54,16 +54,14 @@ const ElasticsearchUnavailableInformation = () => {
             bsStyle="danger"
             header={
               <span>
-                <Icon name="warning" /> Indices overview unavailable
+                <Icon name="warning" /> 索引概览不可用
               </span>
             }>
             <p>
-              We could not get the indices overview information. This usually means there was a problem connecting to
-              the indexer, and <strong>you should ensure the indexer is up and reachable from {productName}</strong>.
+              无法获取索引概览信息。这通常意味着与索引器连接时出现问题，且 <strong>您应确保索引器已启动并可从 {productName}</strong>.
             </p>
             <p>
-              Messages will continue to be stored in the journal, but searching on them will not be possible until the
-              indexer is reachable again.
+              消息将继续存储在日志中，但在索引器再次可访问之前，将无法搜索这些消息。
             </p>
           </Panel>
         </div>
@@ -155,7 +153,7 @@ class IndexSetPage extends React.Component<Props, State> {
 
     const pageHeader = indexSet && (
       <PageHeader
-        title={`Index Set: ${indexSet.title}`}
+        title={`索引集：${indexSet.title}`}
         documentationLink={{
           title: 'Index model documentation',
           path: DocsHelper.PAGES.INDEX_MODEL,
@@ -163,15 +161,14 @@ class IndexSetPage extends React.Component<Props, State> {
         actions={
           <ButtonToolbar>
             <LinkContainer to={Routes.SYSTEM.INDEX_SETS.CONFIGURATION(indexSet.id, 'details')}>
-              <Button bsStyle="info">Edit Index Set</Button>
+              <Button bsStyle="info">编辑索引集</Button>
             </LinkContainer>
             <IndicesMaintenanceDropdown indexSetId={indexSetId} indexSet={indexSet} />
             <IndicesConfigurationDropdown indexSetId={indexSetId} />
           </ButtonToolbar>
         }>
         <span>
-          This is an overview of all indices (message stores) in this index set currently being considered for searches
-          and analysis.
+          这是当前考虑用于搜索和分析的此索引集中所有索引（消息存储）的概览。
         </span>
       </PageHeader>
     );
@@ -194,8 +191,8 @@ class IndexSetPage extends React.Component<Props, State> {
       indicesInfo = (
         <span>
           <Alert bsStyle="success" style={{ marginTop: '10' }}>
-            {this._totalIndexCount()} indices with a total of {numeral(indexerOverview.counts.events).format('0,0')}{' '}
-            messages under management, current write-active index is <i>{deflectorInfo.current_target}</i>.
+            {this._totalIndexCount()} 索引总数为 {numeral(indexerOverview.counts.events).format('0,0')}{' '}
+            正在管理的消息数，当前写入活动索引为 <i>{deflectorInfo.current_target}</i>.
           </Alert>
           <HideOnCloud>
             <IndexerClusterHealthSummary health={indexerOverview.indexer_cluster.health} />
@@ -212,7 +209,7 @@ class IndexSetPage extends React.Component<Props, State> {
     }
 
     return (
-      <DocumentTitle title={`Index Set - ${indexSet ? indexSet.title : ''}`}>
+      <DocumentTitle title={`索引集 - ${indexSet ? indexSet.title : ''}`}>
         <IndicesPageNavigation />
         <div>
           {pageHeader}

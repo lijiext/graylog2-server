@@ -125,7 +125,7 @@ const ProfileFormSelect = ({
         onChange={(newVal) => {
           onChange({ target: { value: newVal, name } });
         }}
-        aria-label={`Select ${name}`}
+        aria-label={`选择 ${name}`}
         placeholder={placeholder}
         allowCreate={allowCreate}
       />
@@ -178,31 +178,31 @@ const ProfileForm = ({
           <Form>
             <FormikInput
               name="name"
-              label="Profile name"
+              label="配置文件名称"
               id="index-set-field-type-profile-name"
-              placeholder="Type a profile name"
-              help="A descriptive name of the new profile"
+              placeholder="输入配置文件名称"
+              help="新配置的描述性名称"
               required
             />
             <FormikInput
               name="description"
               id="index-set-field-type-profile-description"
-              placeholder="Type a profile description"
+              placeholder="输入个人资料描述"
               label={
                 <>
-                  Description <InputOptionalInfo />
+                  描述 <InputOptionalInfo />
                 </>
               }
               type="textarea"
-              help="Longer description for profile"
+              help="个人资料的详细描述"
               rows={6}
             />
             <FieldArray
               name="customFieldMappings"
               render={({ remove, push }) => (
                 <>
-                  <StyledLabel>Set up mappings</StyledLabel>
-                  <HelpBlock>Here you can set up type mapping to any field.</HelpBlock>
+                  <StyledLabel>设置映射</StyledLabel>
+                  <HelpBlock>在此处您可以将类型映射到任何字段。</HelpBlock>
                   <List>
                     {isLoading || isLoadingFieldTypes ? (
                       <Spinner />
@@ -218,7 +218,7 @@ const ProfileForm = ({
                                   options={fields}
                                   name={name}
                                   error={error}
-                                  placeholder="Select or type field name"
+                                  placeholder="选择或输入字段名称"
                                   allowCreate
                                 />
                               )}
@@ -231,21 +231,21 @@ const ProfileForm = ({
                                   options={fieldTypeOptions}
                                   name={name}
                                   error={error}
-                                  placeholder="Select field type"
+                                  placeholder="选择字段类型"
                                   allowCreate={false}
                                 />
                               )}
                             </Field>
                           </SelectGroup>
                           {customFieldMappings.length > 1 && (
-                            <IconButton name="delete" onClick={() => remove(index)} title="Remove mapping" />
+                            <IconButton name="delete" onClick={() => remove(index)} title="移除映射" />
                           )}
                         </Item>
                       ))
                     )}
                   </List>
-                  <Button bsSize="xs" onClick={() => push({})} name="plus" title="Add mapping">
-                    Add mapping
+                  <Button bsSize="xs" onClick={() => push({})} name="plus" title="添加映射">
+                    添加映射
                   </Button>
                 </>
               )}

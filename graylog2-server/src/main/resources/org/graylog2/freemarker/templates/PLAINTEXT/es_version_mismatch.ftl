@@ -1,10 +1,7 @@
-<#if _title>Indexer version is incompatible</#if>
+<#if _title>索引器版本不兼容</#if>
 
 <#if _description><
-The Indexer version which is currently running (${current_version}) has a different major version than
-the one the leader node was started with (${initial_version}).
-This will most probably result in errors during indexing or searching. A full restart is required after a major
-Indexer version upgrade.
-For details, please see our notes here: "https://docs.graylog.org/docs/rolling-es-upgrade
+当前运行的索引器版本（${current_version}）与启动领导节点时使用的版本（${initial_version}）主版本号不同。
+这很可能导致索引或搜索过程中出现错误。在升级索引器主版本后，需要进行完整重启。
+详细信息，请参见我们的说明文档："https://docs.graylog.org/docs/rolling-es-upgrade
 </#if>
-

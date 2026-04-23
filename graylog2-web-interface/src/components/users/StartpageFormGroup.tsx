@@ -168,18 +168,18 @@ const StartpageFormGroup = ({ userId, permissions }: Props) => {
 
         const error =
           value?.id && options.findIndex(({ value: v }) => v === value.id) < 0 ? (
-            <Alert bsStyle="warning">User is missing permission for the configured page</Alert>
+            <Alert bsStyle="warning">用户缺少配置页面的权限</Alert>
           ) : null;
 
         const resetBtn = value?.type ? (
-          <ResetBtn onClick={() => onChange({ target: { name, value: null } })}>Reset</ResetBtn>
+          <ResetBtn onClick={() => onChange({ target: { name, value: null } })}>重置</ResetBtn>
         ) : null;
 
         return (
           <Input
             id="startpage"
-            label="Start page"
-            help="Select the page the user sees right after log in. Only entities are selectable which the user has permissions for."
+            label="起始页"
+            help="选择用户登录后看到的页面。仅可选择用户具有权限的实体。"
             labelClassName="col-sm-3"
             wrapperClassName="col-sm-9"
             error={meta?.error}>
@@ -187,7 +187,7 @@ const StartpageFormGroup = ({ userId, permissions }: Props) => {
               <Container>
                 <TypeSelect
                   options={validSecurityLicense ? [...typeOptions, securityOverviewOption] : typeOptions}
-                  placeholder="Select type"
+                  placeholder="选择类型"
                   onChange={(newType) => {
                     if (!newType) {
                       onChange({ target: { name, value: null } });
@@ -200,7 +200,7 @@ const StartpageFormGroup = ({ userId, permissions }: Props) => {
                 {value?.type !== 'graylog_security_welcome' && (
                   <ValueSelect
                     options={options}
-                    placeholder={`Select ${value?.type ?? 'entity'}`}
+                    placeholder={`选择 ${value?.type ?? 'entity'}`}
                     onChange={(newId) => onChange({ target: { name, value: { type: type, id: newId } } })}
                     value={value?.id}
                   />

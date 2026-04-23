@@ -70,7 +70,7 @@ const GranteesSelectorFormGroup = ({ availableGrantees, availableCapabilities }:
             onChange={(granteeId) => onChange({ target: { value: granteeId, name } })}
             optionRenderer={_renderGranteesSelectOption}
             options={granteesOptions}
-            placeholder="Search for users and teams"
+            placeholder="搜索用户和团队"
             value={value}
           />
         )}

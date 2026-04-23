@@ -38,8 +38,8 @@ const SaveAsDashboardButton = ({ onClick, openSaveAsModal }: Props) => {
   });
 
   return (
-    <Button onClick={onClick} disabled={hasUndeclaredParameters} title="Save as new dashboard">
-      <Icon name="content_copy" /> Save as
+    <Button onClick={onClick} disabled={hasUndeclaredParameters} title="另存为新仪表盘">
+      <Icon name="content_copy" /> 另存为
     </Button>
   );
 };

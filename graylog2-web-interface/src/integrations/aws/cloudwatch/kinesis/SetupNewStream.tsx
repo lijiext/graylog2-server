@@ -67,7 +67,7 @@ const KinesisSetup = ({ onChange, onSubmit, toggleSetup = null }: KinesisSetupPr
           full_message: groupNamesStatus.error,
           nice_message: (
             <span>
-              We&apos;re unable to find any groups in your chosen region. Please try selecting a different region.
+              我们无法在所选区域中找到任何组。请尝试选择其他区域。
             </span>
           ),
         });
@@ -110,36 +110,35 @@ const KinesisSetup = ({ onChange, onSubmit, toggleSetup = null }: KinesisSetupPr
       }
       loading={groupNamesStatus.loading}
       error={formError}
-      title="Set Up Kinesis Automatically"
+      title="自动设置 Kinesis"
       description="">
       <p>
-        Complete the fields below to start the automated Kinesis setup. This will perform the following operations
-        within your AWS account. See{' '}
+        填写以下字段以启动自动 Kinesis 设置。这将在您的 AWS 账户内执行以下操作。请参见{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html">
-          Using CloudWatch Logs Subscription Filters
+          使用 CloudWatch Logs 订阅过滤器
         </a>{' '}
-        in the AWS documentation for more information.
+        有关更多信息，请参阅 AWS 文档。
       </p>
 
       <ol>
-        <li>Create a new Kinesis stream with the specified name.</li>
-        <li>Create the IAM role/policy needed to subscribe the Kinesis stream to the CloudWatch Log Group.</li>
-        <li>Subscribe the new Kinesis stream to the Log Group.</li>
+        <li>使用指定的名称创建新的 Kinesis 数据流。</li>
+        <li>创建 IAM 角色/策略，以便将 Kinesis 数据流订阅到 CloudWatch 日志组。</li>
+        <li>将新的 Kinesis 数据流订阅到日志组。</li>
       </ol>
 
       <ValidatedInput
         id="awsCloudWatchKinesisStream"
         type="text"
-        label="Kinesis Stream Name"
-        placeholder="Stream Name"
+        label="Kinesis 数据流名称"
+        placeholder="数据流名称"
         onChange={onChange}
         fieldData={formData.awsCloudWatchKinesisStream}
         disabled={disabledForm}
         pattern="[a-zA-Z0-9_.-]{1,128}$"
-        help="1-128 alphanumeric characters and special characters underscore (_), period (.), and hyphen (-)."
+        help="1-128 个字母数字字符以及特殊字符下划线 (_)、句点 (.) 和连字符 (-)。"
         required
       />
 
@@ -148,7 +147,7 @@ const KinesisSetup = ({ onChange, onSubmit, toggleSetup = null }: KinesisSetupPr
         type="select"
         fieldData={formData.awsCloudWatchAwsGroupName}
         onChange={onChange}
-        label="CloudWatch Group Name"
+        label="CloudWatch 组名称"
         required
         disabled={groupNamesStatus.loading || disabledGroups || disabledForm}>
         {renderOptions(availableGroups, 'Choose CloudWatch Group', groupNamesStatus.loading)}
@@ -156,7 +155,7 @@ const KinesisSetup = ({ onChange, onSubmit, toggleSetup = null }: KinesisSetupPr
 
       {toggleSetup && (
         <BackButton onClick={toggleSetup} type="button" disabled={disabledForm}>
-          Back to stream Selection
+          返回数据流选择
         </BackButton>
       )}
 

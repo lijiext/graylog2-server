@@ -103,41 +103,41 @@ const SidecarConfig = () => {
 
   return (
     <div>
-      <h2>Sidecars Configuration</h2>
+      <h2>Sidecars 配置</h2>
 
       <dl className="deflist">
-        <dt>Inactive threshold:</dt>
+        <dt>非活跃阈值:</dt>
         <dd>{viewConfig.sidecar_inactive_threshold}</dd>
-        <dt>Expiration threshold:</dt>
+        <dt>过期阈值:</dt>
         <dd>{viewConfig.sidecar_expiration_threshold}</dd>
-        <dt>Update interval:</dt>
+        <dt>更新间隔：</dt>
         <dd>{viewConfig.sidecar_update_interval}</dd>
-        <dt>Send status:</dt>
+        <dt>发送状态:</dt>
         <dd>{StringUtils.capitalizeFirstLetter(viewConfig.sidecar_send_status.toString())}</dd>
-        <dt>Override configuration:</dt>
+        <dt>覆盖配置:</dt>
         <dd>{StringUtils.capitalizeFirstLetter(viewConfig.sidecar_configuration_override.toString())}</dd>
       </dl>
 
       <IfPermitted permissions="clusterconfigentry:edit">
         <Button bsStyle="info" bsSize="xs" onClick={openModal}>
-          Edit configuration
+          编辑配置
         </Button>
       </IfPermitted>
 
       {showConfigModal && formConfig && (
         <BootstrapModalForm
           show
-          title="Update Sidecars System Configuration"
+          title="更新 Sidecars 系统配置"
           onSubmitForm={saveConfig}
           onCancel={closeModal}
-          submitButtonText="Update configuration">
+          submitButtonText="更新配置">
           <fieldset>
             <ISODurationInput
               id="inactive-threshold-field"
               duration={formConfig.sidecar_inactive_threshold}
               update={onUpdate('sidecar_inactive_threshold')}
-              label="Inactive threshold (as ISO8601 Duration)"
-              help="Amount of time of inactivity after which Sidecars are flagged as inactive."
+              label="非活跃阈值（以 ISO8601 时长表示）"
+              help="Sidecars 被标记为不活动前的不活动时间长度。"
               validator={inactiveThresholdValidator}
               errorText="invalid (min: 1 second)"
               required
@@ -147,8 +147,8 @@ const SidecarConfig = () => {
               id="sidecar-expiration-field"
               duration={formConfig.sidecar_expiration_threshold}
               update={onUpdate('sidecar_expiration_threshold')}
-              label="Expiration threshold (as ISO8601 Duration)"
-              help="Amount of time after which inactive Sidecars are purged from the database."
+              label="过期阈值（以 ISO8601 时长表示）"
+              help="不活动的 Sidecar 从数据库中被清除的时间量。"
               validator={expirationThresholdValidator}
               errorText="invalid (min: 1 minute)"
               required
@@ -157,8 +157,8 @@ const SidecarConfig = () => {
               id="sidecar-update-field"
               duration={formConfig.sidecar_update_interval}
               update={onUpdate('sidecar_update_interval')}
-              label="Update interval (as ISO8601 Duration)"
-              help="Time between Sidecar update requests."
+              label="更新间隔（以 ISO8601 时长表示）"
+              help="Sidecar 更新请求之间的时间间隔。"
               validator={updateIntervalValidator}
               errorText="invalid (min: 1 second, but less than Inactive threshold)"
               required
@@ -167,18 +167,18 @@ const SidecarConfig = () => {
           <Input
             type="checkbox"
             id="send-status-updates-checkbox"
-            label="Send status updates"
+            label="发送状态更新"
             checked={formConfig.sidecar_send_status}
             onChange={onUpdate('sidecar_send_status')}
-            help="Send Sidecar status and host metrics from each client"
+            help="从每个客户端发送 Sidecar 状态和主机指标"
           />
           <Input
             type="checkbox"
             id="override-sidecar-config-checkbox"
-            label="Override Sidecar configuration"
+            label="覆盖 Sidecar 配置"
             checked={formConfig.sidecar_configuration_override}
             onChange={onUpdate('sidecar_configuration_override')}
-            help="Override configuration file settings for all Sidecars"
+            help="覆盖所有 Sidecar 的配置文件设置"
           />
         </BootstrapModalForm>
       )}

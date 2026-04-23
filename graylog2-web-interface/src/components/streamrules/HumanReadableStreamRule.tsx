@@ -69,7 +69,7 @@ const HumanReadableStreamRule = ({ streamRule, inputs }: Props) => {
   const longDesc = streamRuleType ? streamRuleType.long_desc : null;
 
   if (streamRule.type === STREAM_RULE_TYPES.ALWAYS_MATCHES) {
-    return <span>Rule always matches</span>;
+    return <span>规则始终匹配</span>;
   }
 
   return (

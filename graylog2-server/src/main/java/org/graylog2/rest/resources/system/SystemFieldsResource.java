@@ -75,7 +75,7 @@ public class SystemFieldsResource extends RestResource {
                   notes = "This operation is comparatively fast because it reads directly from the indexer mapping.")
     @RequiresPermissions(RestPermissions.FIELDNAMES_READ)
     @Produces(APPLICATION_JSON)
-    public MessageFieldsDTO fields(@ApiParam(name = "limit", value = "Maximum number of fields to return. Set to 0 for all fields.")
+    public MessageFieldsDTO fields(@ApiParam(name = "limit", value = "返回字段的最大数量。设置为 0 以返回所有字段。")
                                    @QueryParam("limit") int limit) {
         boolean unlimited = limit <= 0;
 

@@ -37,7 +37,7 @@ const Title = ({ count }: { count: number }) =>
 const Notifications = ({ count, notifications }: { count: number; notifications: Array<NotificationType> }) =>
   count === 0 ? (
     <Alert bsStyle="success" className="notifications-none">
-      No notifications
+      无通知
     </Alert>
   ) : (
     notifications?.map((notification) => (
@@ -64,8 +64,7 @@ const NotificationsList = () => {
           <Title count={total} />
         </h2>
         <p className="description">
-          Notifications indicate a situation you should act upon. Many notification types will also provide a link to
-          the documentation if you need more information or assistance.
+          通知表示您应采取行动的情况。许多通知类型还会提供指向文档的链接，以便您在需要更多信息或帮助时查阅。
         </p>
 
         <Notifications count={total} notifications={notifications} />

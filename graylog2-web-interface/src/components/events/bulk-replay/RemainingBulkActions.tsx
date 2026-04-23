@@ -27,7 +27,7 @@ const RemainingBulkActions = ({ completed, events }: RemainingBulkActionsProps) 
   return (
     <>
       <DropdownButton
-        title="Bulk actions"
+        title="批量操作"
         bsStyle={completed ? 'success' : 'default'}
         id="bulk-actions-dropdown"
         disabled={!events?.length}>

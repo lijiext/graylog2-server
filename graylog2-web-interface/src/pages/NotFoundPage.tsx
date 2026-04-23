@@ -27,14 +27,14 @@ type Props = {
 const NotFoundPage = ({ displayPageLayout = true }: Props) => {
   const description = (
     <>
-      <p>The page you are looking for does not exist (anymore).</p>
+      <p>您正在查找的页面不存在（或已不再存在）。</p>
       <p>
-        You can head back to the <Link to={Routes.WELCOME}>Main Page</Link> and navigate from there.
+        您可以返回到 <Link to={Routes.WELCOME}>主页</Link> 并从此处进行导航。
       </p>
     </>
   );
 
-  return <ErrorPage title="Page not found" description={description} displayPageLayout={displayPageLayout} />;
+  return <ErrorPage title="未找到页面" description={description} displayPageLayout={displayPageLayout} />;
 };
 
 export default NotFoundPage;

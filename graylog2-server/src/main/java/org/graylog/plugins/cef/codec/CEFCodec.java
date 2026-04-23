@@ -122,7 +122,7 @@ public class CEFCodec extends AbstractCodec {
                 return Optional.of(decodeCEF(rawMessage, s));
             }
         } catch (Exception e) {
-            throw InputProcessingException.create("Could not decode CEF message.", e, rawMessage, s);
+            throw InputProcessingException.create("无法解码 CEF 消息。", e, rawMessage, s);
         }
     }
 

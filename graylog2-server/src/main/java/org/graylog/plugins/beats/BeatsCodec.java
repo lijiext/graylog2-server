@@ -62,7 +62,7 @@ public class BeatsCodec extends AbstractCodec {
             final byte[] payload = rawMessage.getPayload();
             return Optional.of(parseEvent(objectMapper.readValue(payload, TypeReferences.MAP_STRING_OBJECT)));
         } catch (Exception e) {
-            throw InputProcessingException.create("Couldn't decode beats message",
+            throw InputProcessingException.create("无法解码 Beats 消息",
                     e, rawMessage, new String(rawMessage.getPayload(), charset));
         }
     }

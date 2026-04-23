@@ -125,7 +125,7 @@ const OutputsComponent = ({ streamId = undefined, permissions }: Props) => {
     // eslint-disable-next-line no-alert
     if (window.confirm('Do you really want to terminate this output?')) {
       OutputsStore.remove(outputId, (response) => {
-        UserNotification.success('Output was terminated.', 'Success');
+        UserNotification.success('输出已终止。', '成功');
         _handleUpdate();
 
         return response;
@@ -142,7 +142,7 @@ const OutputsComponent = ({ streamId = undefined, permissions }: Props) => {
     // eslint-disable-next-line no-alert
     if (window.confirm('Do you really want to remove this output from the stream?')) {
       StreamsStore.removeOutput(_streamId, outputId, (response) => {
-        UserNotification.success('Output was removed from stream.', 'Success');
+        UserNotification.success('输出端已从数据流中移除。', '成功');
         _handleUpdate();
 
         return response;

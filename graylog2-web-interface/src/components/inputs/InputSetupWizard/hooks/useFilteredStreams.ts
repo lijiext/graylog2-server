@@ -49,7 +49,7 @@ const useStreams = (): {
     queryFn: () =>
       onError(getStreams(), (errorThrown: FetchError) => {
         if (!(errorThrown.status === 404)) {
-          UserNotification.error(`Loading streams failed with: ${errorThrown}`);
+          UserNotification.error(`加载数据流失败：${errorThrown}`);
         }
       }),
   });

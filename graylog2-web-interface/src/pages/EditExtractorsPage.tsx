@@ -66,11 +66,11 @@ const EditExtractorsPage = () => {
   }
 
   return (
-    <DocumentTitle title={`Edit extractor ${extractor.title}`}>
+    <DocumentTitle title={`编辑提取器 ${extractor.title}`}>
       <PageHeader
         title={
           <span>
-            Edit extractor <em>{extractor.title}</em> for input <em>{input.title}</em>
+            编辑提取器 <em>{extractor.title}</em> 用于输入 <em>{input.title}</em>
           </span>
         }
         documentationLink={{
@@ -78,8 +78,7 @@ const EditExtractorsPage = () => {
           path: DocsHelper.PAGES.EXTRACTORS,
         }}>
         <span>
-          Extractors are applied on every message that is received by an input. Use them to extract and transform any
-          text data into fields that allow you easy filtering and analysis later on.
+          提取器应用于输入端接收到的每条消息。使用它们将任何文本数据提取并转换为字段，以便您稍后进行轻松的过滤和分析。
         </span>
       </PageHeader>
       <EditExtractor

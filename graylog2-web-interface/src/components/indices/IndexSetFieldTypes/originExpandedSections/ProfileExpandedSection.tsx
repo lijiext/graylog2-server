@@ -26,9 +26,8 @@ const IndexExpandedSection = ({ type }: ExpandedSectionProps) => {
 
   return (
     <p>
-      Field type <i>{type}</i> comes from profile{' '}
-      <Link to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(id)}>{profileName}</Link>. It overrides possible mappings
-      from the search engine index mapping, either immediately (if index was rotated) or during the next rotation.
+      字段类型 <i>{type}</i> 来自配置文件{' '}
+      <Link to={Routes.SYSTEM.INDICES.FIELD_TYPE_PROFILES.edit(id)}>{profileName}</Link>. 它会覆盖搜索引擎索引映射中的可能映射，要么立即生效（如果索引已轮转），要么在下次轮转时生效。
     </p>
   );
 };

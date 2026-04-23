@@ -191,14 +191,14 @@ public class GrokResource extends RestResource {
                                        // deprecated. used to drop all existing patterns before import
                                        @Deprecated @QueryParam("replace") @DefaultValue("false")
                                        boolean deprecatedDropAllExisting,
-                                       @ApiParam(name = "import-strategy", value = "Strategy to apply when importing.")
+                                       @ApiParam(name = "import-strategy", value = "导入时应用的策略。")
                                        @QueryParam("import-strategy")
                                        ImportStrategy importStrategy) throws ValidationException {
         checkPermission(RestPermissions.INPUTS_CREATE);
 
         try {
             if (!grokPatternService.validateAll(patternList.patterns())) {
-                throw new ValidationException("Invalid pattern contained. Did not save any patterns.");
+                throw new ValidationException("包含无效模式。未保存任何模式。");
             }
         } catch (GrokException | IllegalArgumentException e) {
             throw new ValidationException("Invalid pattern. Did not save any patterns\n" + e.getMessage());
@@ -220,7 +220,7 @@ public class GrokResource extends RestResource {
                                                    // deprecated. used to drop all existing patterns before import
                                                    @Deprecated @QueryParam("replace") @DefaultValue("false")
                                                    boolean deprecatedDropAllExisting,
-                                                   @ApiParam(name = "import-strategy", value = "Strategy to apply when importing.")
+                                                   @ApiParam(name = "import-strategy", value = "导入时应用的策略。")
                                                    @QueryParam("import-strategy")
                                                    ImportStrategy importStrategy) throws ValidationException, IOException {
         checkPermission(RestPermissions.INPUTS_CREATE);
@@ -230,7 +230,7 @@ public class GrokResource extends RestResource {
         if (!grokPatterns.isEmpty()) {
             try {
                 if (!grokPatternService.validateAll(grokPatterns)) {
-                    throw new ValidationException("Invalid pattern contained. Did not save any patterns.");
+                    throw new ValidationException("包含无效模式。未保存任何模式。");
                 }
             } catch (GrokException | IllegalArgumentException e) {
                 throw new ValidationException("Invalid pattern. Did not save any patterns\n" + e.getMessage());

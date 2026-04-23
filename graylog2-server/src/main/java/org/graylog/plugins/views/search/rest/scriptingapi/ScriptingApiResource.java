@@ -65,7 +65,7 @@ public class ScriptingApiResource extends RestResource implements PluginRestReso
     }
 
     @POST
-    @ApiOperation(value = "Execute query specified by `queryRequestSpec`",
+    @ApiOperation(value = "执行由 `queryRequestSpec` 指定的查询",
                   nickname = "messagesByQueryRequestSpec",
                   response = TabularResponse.class)
     @Path("messages")
@@ -83,14 +83,14 @@ public class ScriptingApiResource extends RestResource implements PluginRestReso
     @ApiOperation(value = "Execute query specified by query parameters", nickname = "messagesByQueryParameters")
     @Path("messages")
     @NoAuditEvent("Creating audit event manually in method body.")
-    public TabularResponse executeQuery(@ApiParam(name = "query", value = "Query (Lucene syntax)", required = true) @QueryParam("query") String query,
+    public TabularResponse executeQuery(@ApiParam(name = "query", value = "查询（Lucene 语法）", required = true) @QueryParam("query") String query,
                                         @ApiParam(name = "streams", value = "Comma separated list of streams to search in") Set<String> streams,
                                         @ApiParam(name = "stream_categories", value = "Comma separated list of streams categories to search in") @QueryParam("stream_categories") Set<String> streamCategories,
-                                        @ApiParam(name = "timerange", value = "Timeframe to search in. See method description.", required = true) @QueryParam("timerange") String timerangeKeyword,
+                                        @ApiParam(name = "timerange", value = "搜索时间范围。请参阅方法描述。", required = true) @QueryParam("timerange") String timerangeKeyword,
                                         @ApiParam(name = "fields", value = "Fields from the message to show as columns in result") @QueryParam("fields") List<String> fields,
                                         @ApiParam(name = "sort", value = "Field to sort on") @QueryParam("sort") String sort,
-                                        @ApiParam(name = "sortOrder", value = "Sort order - asc/desc") @QueryParam("sortOrder") SortSpec.Direction sortOrder,
-                                        @ApiParam(name = "from", value = "For paging results. Starting from result") @QueryParam("from") int from,
+                                        @ApiParam(name = "sortOrder", value = "排序顺序 - 升序/降序") @QueryParam("sortOrder") SortSpec.Direction sortOrder,
+                                        @ApiParam(name = "from", value = "用于分页结果。从结果开始") @QueryParam("from") int from,
                                         @ApiParam(name = "size", value = "Page size") @QueryParam("size") int size,
                                         @Context SearchUser searchUser) {
 
@@ -111,7 +111,7 @@ public class ScriptingApiResource extends RestResource implements PluginRestReso
     }
 
     @POST
-    @ApiOperation(value = "Execute aggregation specified by `searchRequestSpec`",
+    @ApiOperation(value = "执行由 `searchRequestSpec` 指定的聚合",
                   nickname = "aggregateSearchRequestSpec",
                   response = TabularResponse.class)
     @Path("aggregate")
@@ -129,12 +129,12 @@ public class ScriptingApiResource extends RestResource implements PluginRestReso
     @ApiOperation(value = "Execute aggregation specified by query parameters", nickname = "aggregateForQueryParameters")
     @Path("aggregate")
     @NoAuditEvent("Creating audit event manually in method body.")
-    public TabularResponse executeQuery(@ApiParam(name = "query", value = "Query (Lucene syntax)", required = true) @QueryParam("query") String query,
-                                        @ApiParam(name = "streams", value = "Comma separated list of streams to search in (can be empty)", required = true) @QueryParam("streams") Set<String> streams,
-                                        @ApiParam(name = "stream_categories", value = "Comma separated list of streams categories to search in (can be empty)", required = true) @QueryParam("stream_categories") Set<String> streamCategories,
-                                        @ApiParam(name = "timerange", value = "Timeframe to search in. See method description.", required = true) @QueryParam("timerange") String timerangeKeyword,
-                                        @ApiParam(name = "group_by", value = "Group aggregation by fields/limits.", required = true) @QueryParam("groups") List<String> groups,
-                                        @ApiParam(name = "metrics", value = "Metrics to be used.", required = true) @QueryParam("metrics") List<String> metrics,
+    public TabularResponse executeQuery(@ApiParam(name = "query", value = "查询（Lucene 语法）", required = true) @QueryParam("query") String query,
+                                        @ApiParam(name = "streams", value = "要搜索的数据流的逗号分隔列表（可以为空）", required = true) @QueryParam("streams") Set<String> streams,
+                                        @ApiParam(name = "stream_categories", value = "要搜索的数据流类别的逗号分隔列表（可以为空）", required = true) @QueryParam("stream_categories") Set<String> streamCategories,
+                                        @ApiParam(name = "timerange", value = "搜索时间范围。请参阅方法描述。", required = true) @QueryParam("timerange") String timerangeKeyword,
+                                        @ApiParam(name = "group_by", value = "按字段/限制进行分组聚合。", required = true) @QueryParam("groups") List<String> groups,
+                                        @ApiParam(name = "metrics", value = "要使用的指标。", required = true) @QueryParam("metrics") List<String> metrics,
                                         @Context SearchUser searchUser) {
         try {
             AggregationRequestSpec aggregationRequestSpec = queryParamsToFullRequestSpecificationMapper.simpleQueryParamsToFullRequestSpecification(

@@ -87,7 +87,7 @@ const AuthenticationPage = () => {
           title: 'Authentication documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>Configure authentication services of this cluster.</span>
+        <span>配置此集群的认证服务。</span>
       </PageHeader>
 
       {finishedLoading && activeBackend && <BackendDetails authenticationBackend={activeBackend} />}

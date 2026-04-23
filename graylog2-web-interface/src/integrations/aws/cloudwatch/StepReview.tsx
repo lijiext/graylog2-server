@@ -88,7 +88,7 @@ type DefaultProps = {
 
 const Default = ({ value }: DefaultProps) => (
   <>
-    {value} <small>(default)</small>
+    {value} <small>(默认)</small>
   </>
 );
 
@@ -147,7 +147,7 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit = false }: Step
     if (fetchSubmitStatus.error) {
       setFormError({
         full_message: fetchSubmitStatus.error,
-        nice_message: <span>We were unable to save your Input, please try again in a few moments.</span>,
+        nice_message: <span>无法保存您的输入端，请稍后重试。</span>,
       });
     }
   }, [fetchSubmitStatus.error]);
@@ -168,92 +168,91 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit = false }: Step
       buttonContent="Complete CloudWatch Setup"
       loading={fetchSubmitStatus.loading}
       error={formError}
-      title="Final Review"
-      description="Check out everything below to make sure it's correct, then click the button below to complete your CloudWatch setup!">
+      title="最终审查"
+      description="请检查下方的所有内容以确保正确，然后点击下方按钮完成 CloudWatch 设置！">
       <Container>
         <Subheader>
-          Setting up CloudWatch{' '}
+          设置 CloudWatch{' '}
           <small>
-            <EditAnchor onClick={onEditClick('authorize')}>Edit</EditAnchor>
+            <EditAnchor onClick={onEditClick('authorize')}>编辑</EditAnchor>
           </small>
         </Subheader>
         <ReviewItems>
           <li>
-            <strong>Name</strong>
+            <strong>名称</strong>
             <span>{awsCloudWatchName.value}</span>
           </li>
 
           <li>
-            <strong>Authorization Type</strong>
+            <strong>认证类型</strong>
             <span>{awsAuthenticationType.value}</span>
           </li>
 
           {awsAccessKey.value && (
             <li>
-              <strong>AWS Key</strong>
+              <strong>AWS 密钥</strong>
               <span>{awsAccessKey.value}</span>
             </li>
           )}
 
           {awsAssumeRoleARN.value && (
             <li>
-              <strong>AWS Assumed ARN Role</strong>
+              <strong>AWS 假设 ARN 角色</strong>
               <span>{awsAssumeRoleARN.value}</span>
             </li>
           )}
 
           {awsEndpointCloudWatch.value && (
             <li>
-              <strong>CloudWatch VPC Endpoint</strong>
+              <strong>CloudWatch VPC 端点</strong>
               <span>{awsEndpointCloudWatch.value}</span>
             </li>
           )}
 
           {awsEndpointDynamoDB.value && (
             <li>
-              <strong>DynamoDB VPC Endpoint</strong>
+              <strong>DynamoDB VPC 端点</strong>
               <span>{awsEndpointDynamoDB.value}</span>
             </li>
           )}
 
           {awsEndpointIAM.value && (
             <li>
-              <strong>IAM VPC Endpoint</strong>
+              <strong>IAM VPC 端点</strong>
               <span>{awsEndpointIAM.value}</span>
             </li>
           )}
 
           {awsEndpointKinesis.value && (
             <li>
-              <strong>Kinesis VPC Endpoint</strong>
+              <strong>Kinesis VPC 端点</strong>
               <span>{awsEndpointKinesis.value}</span>
             </li>
           )}
 
           <li>
-            <strong>AWS Region</strong>
+            <strong>AWS 区域</strong>
             <span>{awsCloudWatchAwsRegion.value}</span>
           </li>
         </ReviewItems>
 
         <Subheader>
-          Setting up Kinesis{' '}
+          设置 Kinesis{' '}
           <small>
-            <EditAnchor onClick={onEditClick('kinesis-setup')}>Edit</EditAnchor>
+            <EditAnchor onClick={onEditClick('kinesis-setup')}>编辑</EditAnchor>
           </small>
         </Subheader>
         <ReviewItems>
           <li>
-            <strong>Kinesis Stream</strong>
+            <strong>Kinesis 数据流</strong>
             <span>{awsCloudWatchKinesisStream.value}</span>
           </li>
           <li>
-            <strong>Kinesis Stream ARN</strong>
+            <strong>Kinesis 数据流 ARN</strong>
             <span>
               {!awsCloudwatchKinesisStreamArn ? (
                 <ArnErrorMessage>
-                  Error: Failed to get stream ARN. Please ensure the IAM role includes the kinesis:DescribeStream
-                  permission.
+                  错误：无法获取数据流 ARN。请确保 IAM 角色包含 kinesis:DescribeStream 权限。
                 </ArnErrorMessage>
               ) : (
                 awsCloudwatchKinesisStreamArn
@@ -262,13 +261,13 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit = false }: Step
           </li>
 
           <li>
-            <strong>Global Input</strong>
+            <strong>全局输入端</strong>
             <span>
               <Icon name="check" />
             </span>
           </li>
           <li>
-            <strong>Record Batch Size</strong>
+            <strong>记录批次大小</strong>
             <span>
               {awsCloudWatchBatchSize.value ? (
                 awsCloudWatchBatchSize.value
@@ -278,35 +277,35 @@ const StepReview = ({ onSubmit, onEditClick, externalInputSubmit = false }: Step
             </span>
           </li>
           <li>
-            <strong>Enable Throttling</strong>
+            <strong>启用限流</strong>
             <span>
               <StatusIcon active={throttleEnabled} />
             </span>
           </li>
           <li>
-            <strong>Add Flow Log prefix to field names</strong>
+            <strong>为字段名称添加流日志前缀</strong>
             <span>
               <StatusIcon active={addPrefix} />
             </span>
           </li>
           {overrideSource.value && (
             <li>
-              <strong>Override Source</strong>
+              <strong>覆盖源</strong>
               <span>{overrideSource.value}</span>
             </li>
           )}
         </ReviewItems>
 
-        <Subheader>Formatting</Subheader>
+        <Subheader>格式化</Subheader>
         <ReviewItems>
           <li>
-            <strong>Log Type</strong>
+            <strong>日志类型</strong>
             <span>{KINESIS_LOG_TYPES.find((type) => type.value === awsCloudWatchKinesisInputType.value).label}</span>
           </li>
         </ReviewItems>
         <p>
-          If you need your logs parsed differently check out our{' '}
-          <Link to={Routes.SYSTEM.PIPELINES.RULES}>Pipeline Rule</Link> for additional details and instructions.
+          如果您需要以不同方式解析日志，请查看我们的{' '}
+          <Link to={Routes.SYSTEM.PIPELINES.RULES}>管道规则</Link> 有关详细信息和说明。
         </p>
 
         <Input

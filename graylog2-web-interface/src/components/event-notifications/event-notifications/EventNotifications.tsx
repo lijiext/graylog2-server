@@ -45,12 +45,11 @@ const renderEmptyContent = () => (
     <Col md={4} mdOffset={4}>
       <EmptyEntity>
         <p>
-          Configure Event Notifications that can alert you when an Event occurs. You can also use Notifications to
-          integrate Alerts with an external alerting system you use.
+          配置事件通知，以便在发生事件时向您发出警报。您还可以使用通知将告警与您使用的外部告警系统集成。
         </p>
         <IfPermitted permissions="eventnotifications:create">
           <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.CREATE}>
-            <Button bsStyle="primary">Get Started!</Button>
+            <Button bsStyle="primary">开始使用！</Button>
           </LinkContainer>
         </IfPermitted>
       </EmptyEntity>
@@ -122,7 +121,7 @@ class EventNotifications extends React.Component<
           key={`event-definition-${notification.id}`}
           title={<EventNotificationLink id={notification.id} title={notification.title} />}
           titleSuffix={plugin?.displayName || notification.config.type}
-          description={notification.description || <em>No description given</em>}
+          description={notification.description || <em>未提供描述</em>}
           actions={actions}
           contentRow={content}
         />
@@ -138,7 +137,7 @@ class EventNotifications extends React.Component<
         <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.edit(notification.id)}>
           <IfPermitted permissions={`eventnotifications:edit:${notification.id}`}>
             <Button>
-              <Icon name="edit_square" /> Edit
+              <Icon name="edit_square" /> 编辑
             </Button>
           </IfPermitted>
         </LinkContainer>
@@ -150,7 +149,7 @@ class EventNotifications extends React.Component<
         <IfPermitted
           permissions={[`eventnotifications:edit:${notification.id}`, `eventnotifications:delete:${notification.id}`]}
           anyPermissions>
-          <DropdownButton id={`more-dropdown-${notification.id}`} title="More" pullRight>
+          <DropdownButton id={`more-dropdown-${notification.id}`} title="更多" pullRight>
             <IfPermitted permissions={`eventnotifications:edit:${notification.id}`}>
               <MenuItem disabled={isTestLoading} onClick={onTest(notification)}>
                 {isTestLoading ? 'Testing...' : 'Test Notification'}
@@ -184,7 +183,7 @@ class EventNotifications extends React.Component<
               query={query}
               onSearch={onQueryChange}
               onReset={onQueryChange}
-              placeholder="Find Notifications"
+              placeholder="查找通知"
               wrapperClass={styles.inline}
               queryHelpComponent={<QueryHelper entityName="notification" />}
               topMargin={0}
@@ -202,7 +201,7 @@ class EventNotifications extends React.Component<
           <EntityShareModal
             entityId={notificationToShare.id}
             entityType="notification"
-            description="Search for a User or Team to add as collaborator on this notification."
+            description="搜索用户或团队以将其添加为此通知的协作者。"
             entityTitle={notificationToShare.title}
             onClose={() => setNotificationToShare(undefined)}
           />

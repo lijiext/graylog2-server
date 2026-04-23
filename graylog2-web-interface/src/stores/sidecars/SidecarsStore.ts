@@ -148,8 +148,8 @@ export const SidecarsStore = singletonStore('core.Sidecars', () =>
         },
         (error) => {
           UserNotification.error(
-            error.status === 400 ? error.responseMessage : `Fetching Sidecars failed with status: ${error.message}`,
-            'Could not retrieve Sidecars',
+            error.status === 400 ? error.responseMessage : `获取 Sidecar 失败，状态为：${error.message}`,
+            '无法检索 Sidecars',
           );
         },
       );
@@ -167,7 +167,7 @@ export const SidecarsStore = singletonStore('core.Sidecars', () =>
           errorMessage = `Unable to find a sidecar with ID <${sidecarId}>, maybe it was inactive for too long.`;
         }
 
-        UserNotification.error(errorMessage, 'Could not retrieve Sidecar');
+        UserNotification.error(errorMessage, '无法检索 Sidecar');
       });
 
       SidecarsActions.getSidecar.promise(promise);
@@ -181,7 +181,7 @@ export const SidecarsStore = singletonStore('core.Sidecars', () =>
       const promise = fetch('PUT', URLUtils.qualifyUrl(`${this.sourceUrl}/${sidecarId}/action`), [action]);
 
       promise.catch((error) => {
-        UserNotification.error(`Restarting Sidecar failed with status: ${error}`, 'Could not restart Sidecar');
+        UserNotification.error(`重启 Sidecar 失败，状态为：${error}`, '无法重启 Sidecar');
       });
 
       SidecarsActions.restartCollector.promise(promise);
@@ -192,8 +192,8 @@ export const SidecarsStore = singletonStore('core.Sidecars', () =>
 
       promise.catch((error) => {
         UserNotification.error(
-          `Fetching Sidecar actions failed with status: ${error}`,
-          'Could not retrieve Sidecar actions',
+          `获取 Sidecar 操作失败，状态为：${error}`,
+          '无法获取 Sidecar 操作',
         );
       });
 
@@ -225,14 +225,14 @@ export const SidecarsStore = singletonStore('core.Sidecars', () =>
 
       promise.then(
         (response) => {
-          UserNotification.success('', `Configuration change for ${sidecars.length} collectors requested`);
+          UserNotification.success('', `请求对 ${sidecars.length} 个收集器进行配置更改`);
 
           return response;
         },
         (error) => {
           UserNotification.error(
-            `Fetching Sidecar actions failed with status: ${error}`,
-            'Could not retrieve Sidecar actions',
+            `获取 Sidecar 操作失败，状态为：${error}`,
+            '无法获取 Sidecar 操作',
           );
         },
       );

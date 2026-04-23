@@ -52,12 +52,10 @@ const SelectedIndexSetAlert = ({ selectedIndexSetId = undefined, indexSets }: Pr
     return (
       <Row>
         <Col md={12}>
-          <StyledAlert title="Default Index Set selected" bsStyle="info">
-            You have selected the Default Index Set.
+          <StyledAlert title="默认索引集已选择" bsStyle="info">
+            您已选择默认索引集。
             <br />
-            We recommend against this: as the potential recipient of messages of many different formats (any message
-            with no routing, via the Default Stream), the Default Index Set is susceptible to reaching the maximum
-            per-Index field limit of the search backend if used extensively.
+            我们不推荐这样做：作为许多不同格式消息的潜在接收者（任何没有路由的消息，通过默认数据流），如果广泛使用，默认索引集可能会达到搜索后端每个索引的字段数量上限。
           </StyledAlert>
         </Col>
       </Row>
@@ -68,13 +66,12 @@ const SelectedIndexSetAlert = ({ selectedIndexSetId = undefined, indexSets }: Pr
     return (
       <Row>
         <Col md={12}>
-          <Alert title="Selected index set already associated with another stream" bsStyle="info">
-            The selected index set is already associated with another stream(s).
+          <Alert title="所选索引集已关联到另一个数据流" bsStyle="info">
+            所选索引集已与其他数据流关联。
             <br />
-            Note that each Index has a unique field limit, defaulting to 1000.
+            请注意，每个索引都有唯一的字段限制，默认为 1000。
             <br />
-            For this reason, we recommend that streams be organised by log format across multiple Index Sets where
-            possible.
+            出于此原因，我们建议尽可能按日志格式将数据流组织到多个索引集中。
           </Alert>
         </Col>
       </Row>

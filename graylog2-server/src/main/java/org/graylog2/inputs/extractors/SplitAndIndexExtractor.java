@@ -47,14 +47,14 @@ public class SplitAndIndexExtractor extends Extractor {
         super(metricRegistry, id, title, order, Type.SPLIT_AND_INDEX, cursorStrategy, sourceField, targetField, extractorConfig, creatorUserId, converters, conditionType, conditionValue);
 
         if (extractorConfig == null || extractorConfig.get("index") == null || extractorConfig.get("split_by") == null) {
-            throw new ConfigurationException("Missing configuration fields. Required: index, split_by");
+            throw new ConfigurationException("缺少配置字段。必需项：index, split_by");
         }
 
         try {
             index = ((Integer) extractorConfig.get("index")) - 1;
             splitChar = (String) extractorConfig.get("split_by");
         } catch (ClassCastException e) {
-            throw new ConfigurationException("Parameters cannot be casted.");
+            throw new ConfigurationException("参数无法转换。");
         }
     }
 

@@ -41,10 +41,10 @@ const ProcessBufferDumpPage = () => {
 
   const title = (
     <span>
-      Process-buffer dump of node {node.short_node_id} / {node.hostname}
+      节点处理缓冲区转储 {node.short_node_id} / {node.hostname}
       &nbsp;
       <small>
-        Taken at <Timestamp dateTime={new Date()} />{' '}
+        采集时间 <Timestamp dateTime={new Date()} />{' '}
       </small>
     </span>
   );
@@ -56,7 +56,7 @@ const ProcessBufferDumpPage = () => {
   );
 
   return (
-    <DocumentTitle title={`Process-buffer dump of node ${node.short_node_id} / ${node.hostname}`}>
+    <DocumentTitle title={`节点 ${node.short_node_id} / ${node.hostname} 的进程缓冲区转储`}>
       <div>
         <PageHeader title={title} />
         <Row className="content">

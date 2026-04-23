@@ -79,12 +79,12 @@ const LookupTableParameterEdit = ({
       <Input
         id={`lookup-table-parameter-table-${identifier}`}
         name="query-param-table-name"
-        label="Lookup Table"
+        label="查找表"
         bsStyle={validationState?.lookupTable?.[0]}
         error={validationState?.lookupTable?.[1]}
-        help="Select the lookup table to use for retrieving the values.">
+        help="选择用于检索值的查找表。">
         <Select
-          placeholder="Select lookup table"
+          placeholder="选择查找表"
           onChange={_handleChange('lookupTable')}
           options={lookupTableOptions}
           value={lookupTable}
@@ -96,12 +96,12 @@ const LookupTableParameterEdit = ({
       <Input
         type="text"
         id={`lookup-table-parameter-key-${identifier}`}
-        label="Lookup Table Key"
+        label="查找表键"
         name="key"
         defaultValue={tableKey}
         onChange={_handleInputChange('key')}
         bsStyle={validationState?.key?.[0]}
-        help="Select the lookup table key"
+        help="选择查找表键"
         error={validationState?.key?.[0] === 'error' ? validationState?.key?.[1] : undefined}
         spellCheck={false}
         required
@@ -110,8 +110,8 @@ const LookupTableParameterEdit = ({
         id={`lookup-table-parameter-default-value-${identifier}`}
         type="text"
         name="defaultValue"
-        label="Default Value"
-        help="Select a default value in case the lookup result is empty"
+        label="默认值"
+        help="如果查找结果为空，请选择默认值"
         defaultValue={defaultValue}
         spellCheck={false}
         onChange={_handleInputChange('defaultValue')}
@@ -119,32 +119,27 @@ const LookupTableParameterEdit = ({
 
       <Panel id="lookup-table-parameter-help" defaultExpanded={defaultExpandHelp}>
         <Panel.Heading>
-          <Panel.Title toggle>How to use lookup table parameters</Panel.Title>
+          <Panel.Title toggle>如何使用查找表参数</Panel.Title>
         </Panel.Heading>
         <Panel.Collapse>
           <Panel.Body>
-            <h5>General Usage</h5>
+            <h5>常规用法</h5>
             <p>
-              After declaring it, the parameter
+              声明后，该参数
               <StyledInlineCode>{parameterSyntax}</StyledInlineCode>
-              in your query, will be replaced with the list of results from the lookup table. The list of results will
-              be presented in the form of a Lucene BooleanQuery. E.g.:
+              在您的查询中，将替换为来自查找表的结果列表。结果列表将以 Lucene BooleanQuery 的形式呈现。例如:
               <StyledInlineCode>(&quot;foo&quot; OR &quot;bar&quot; OR &quot;baz&quot;)</StyledInlineCode>
             </p>
-            <h5>Behaviour on empty lookup result list</h5>
+            <h5>查找结果列表为空时的行为</h5>
             <p>
-              The event definition query is only executed if a value for the parameter is present. If the lookup result
-              is empty, the execution will be skipped and treated as if the <i>Search Query</i> found no messages. If an
-              execution is desired a <i>Default Value</i> that yields the desired search result needs to be provided.
-              For example, (depending on the use case) a wildcard like
+              仅当存在参数值时，才会执行事件定义查询。如果查找结果为空，则跳过执行，并视为 <i>搜索查询</i> 未找到任何消息。如果需要执行，请 <i>默认值</i> 需要提供能够产生所需搜索结果的内容。例如（根据用例），通配符如
               <StyledInlineCode>*</StyledInlineCode>
-              can be a meaningful Default Value.
+              可以是有效的默认值。
             </p>
-            <h5>Limitations</h5>
+            <h5>限制</h5>
             <p>
-              Please note, the maximum number of supported results is depending on the
-              <StyledInlineCode>opensearch_indices_query_bool_max_clause_count</StyledInlineCode> setting. If the lookup
-              table returns more results, the query will fail in your indexer.
+              请注意，支持的最大结果数量取决于
+              <StyledInlineCode>opensearch_indices_query_bool_max_clause_count</StyledInlineCode> 设置。如果查找表返回更多结果，查询将在您的索引器中失败。
             </p>
           </Panel.Body>
         </Panel.Collapse>

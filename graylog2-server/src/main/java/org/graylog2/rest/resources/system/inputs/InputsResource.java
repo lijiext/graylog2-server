@@ -126,7 +126,7 @@ public class InputsResource extends AbstractInputsResource {
     @ApiOperation(value = "Get information of a single input on this node")
     @Path("/{inputId}")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input.")
+            @ApiResponse(code = 404, message = "不存在该输入端。")
     })
     public InputSummary get(@ApiParam(name = "inputId", required = true)
                             @PathParam("inputId") String inputId) throws org.graylog2.database.NotFoundException {
@@ -142,7 +142,7 @@ public class InputsResource extends AbstractInputsResource {
     @ApiOperation(value = "Get diagnostic information of a single input")
     @Path("/diagnostics/{inputId}")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input.")
+            @ApiResponse(code = 404, message = "不存在该输入端。")
     })
     public InputDiagnostics diagnostics(@ApiParam(name = "inputId", required = true)
                                         @PathParam("inputId") String inputId,
@@ -168,7 +168,7 @@ public class InputsResource extends AbstractInputsResource {
     @ApiOperation(value = "Returns any streams or pipeline that reference the given input")
     @Path("/references/{inputId}")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input.")
+            @ApiResponse(code = 404, message = "不存在该输入端。")
     })
     public InputReferences getReferences(@ApiParam(name = "inputId", required = true)
                                              @PathParam("inputId") String inputId) {
@@ -235,10 +235,10 @@ public class InputsResource extends AbstractInputsResource {
             return Response.created(inputUri).entity(InputCreated.create(newId)).build();
         } catch (NoSuchInputTypeException e) {
             LOG.error("There is no such input type registered.", e);
-            throw new NotFoundException("There is no such input type registered.", e);
+            throw new NotFoundException("未注册此类输入端。", e);
         } catch (ConfigurationException e) {
             LOG.error("Missing or invalid input configuration.", e);
-            throw new BadRequestException("Missing or invalid input configuration.", e);
+            throw new BadRequestException("输入配置缺失或无效。", e);
         }
 
     }
@@ -248,7 +248,7 @@ public class InputsResource extends AbstractInputsResource {
     @Path("/{inputId}")
     @ApiOperation(value = "Terminate input on this node")
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node.")
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。")
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_DELETE)
     public void terminate(@ApiParam(name = "inputId", required = true) @PathParam("inputId") String inputId) throws org.graylog2.database.NotFoundException {
@@ -268,8 +268,8 @@ public class InputsResource extends AbstractInputsResource {
             response = InputCreated.class
     )
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "No such input on this node."),
-            @ApiResponse(code = 400, message = "Missing or invalid input configuration.")
+            @ApiResponse(code = 404, message = "此节点上不存在该输入端。"),
+            @ApiResponse(code = 400, message = "输入配置缺失或无效。")
     })
     @AuditEvent(type = AuditEventTypes.MESSAGE_INPUT_UPDATE)
     public Response update(@ApiParam(name = "JSON body", required = true) @Valid @NotNull InputCreateRequest lr,
@@ -307,7 +307,7 @@ public class InputsResource extends AbstractInputsResource {
 
     private void throwBadRequestIfNotGlobal(InputCreateRequest lr) {
         if ((config.isCloud() || config.isGlobalInputsOnly()) && !lr.global()) {
-            throw new BadRequestException("Only global inputs are allowed!");
+            throw new BadRequestException("仅允许全局输入端！");
         }
     }
 }

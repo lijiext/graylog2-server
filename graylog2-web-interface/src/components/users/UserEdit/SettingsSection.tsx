@@ -71,7 +71,7 @@ const SettingsSection = ({
   const isGlobalTimeoutEnabled = useIsGlobalTimeoutEnabled();
 
   return (
-    <SectionComponent title="Settings">
+    <SectionComponent title="设置">
       <Formik<SettingsFormValues>
         onSubmit={onSubmit}
         validate={_validate}
@@ -81,14 +81,14 @@ const SettingsSection = ({
             <IfPermitted permissions="*">
               {isGlobalTimeoutEnabled ? (
                 <GlobalTimeoutMessage
-                  label="Sessions Timeout"
+                  label="会话超时"
                   value={
                     <NoSearchResult>
-                      User session timeout is not editable because the{' '}
+                      用户会话超时不可编辑，因为{' '}
                       <IfPermitted permissions={['clusterconfigentry:read']}>
-                        <Link to={Routes.SYSTEM.CONFIGURATIONS}>global session timeout</Link>
+                        <Link to={Routes.SYSTEM.CONFIGURATIONS}>全局会话超时</Link>
                       </IfPermitted>{' '}
-                      is enabled.
+                      已启用。
                     </NoSearchResult>
                   }
                 />
@@ -105,8 +105,8 @@ const SettingsSection = ({
             <Row className="no-bm">
               <Col xs={12}>
                 <div className="pull-right">
-                  <Button bsStyle="primary" disabled={isSubmitting || !isValid} title="Update Settings" type="submit">
-                    Update Settings
+                  <Button bsStyle="primary" disabled={isSubmitting || !isValid} title="更新设置" type="submit">
+                    更新设置
                   </Button>
                 </div>
               </Col>

@@ -40,7 +40,7 @@ import StreamModal from 'components/streams/StreamModal';
 import usePluggableEntitySharedActions from 'hooks/usePluggableEntitySharedActions';
 
 const DefaultStreamHelp = () => (
-  <HoverForHelp displayLeftMargin>Action not available for the default stream</HoverForHelp>
+  <HoverForHelp displayLeftMargin>默认数据流不可用此操作</HoverForHelp>
 );
 
 const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array<IndexSet> }) => {
@@ -121,11 +121,11 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
     StreamsStore.remove(stream.id)
       .then(() => {
         deselectEntity(stream.id);
-        UserNotification.success(`Stream '${stream.title}' was deleted successfully.`, 'Success');
+        UserNotification.success(`数据流 '${stream.title}' 已成功删除。`, '成功');
         toggleDeleteModal();
       })
       .catch((error) => {
-        UserNotification.error(`An error occurred while deleting the stream. ${error}`);
+        UserNotification.error(`删除数据流时发生错误。${error}`);
       });
   }, [deselectEntity, sendTelemetry, stream.id, stream.title, toggleDeleteModal]);
 
@@ -137,7 +137,7 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
           app_action_value: 'stream-item-rule',
         });
 
-        UserNotification.success('Stream rule was created successfully.', 'Success');
+        UserNotification.success('数据流规则创建成功。', '成功');
       }),
     [sendTelemetry, stream.id],
   );
@@ -149,7 +149,7 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
           app_pathname: 'streams',
         });
 
-        UserNotification.success(`Stream '${newStream.title}' was updated successfully.`, 'Success');
+        UserNotification.success(`数据流 '${newStream.title}' 已成功更新。`, '成功');
 
         return response;
       }),
@@ -163,7 +163,7 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
       });
 
       return StreamsStore.cloneStream(stream.id, newStream, (response) => {
-        UserNotification.success(`Stream was successfully cloned as '${newStream.title}'.`, 'Success');
+        UserNotification.success(`Stream was successfully cloned as '${newStream.title}'.`, '成功');
 
         return response;
       });
@@ -184,7 +184,7 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
                 app_pathname: 'stream',
               });
             }}>
-            Data routing
+            数据路由
           </Button>
         </LinkContainer>
       </IfPermitted>
@@ -202,12 +202,12 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
         </IfPermitted>
         <IfPermitted permissions={`streams:edit:${stream.id}`}>
           <MenuItem onSelect={toggleStreamRuleModal} disabled={isDefaultStream}>
-            Quick add rule {isDefaultStream && <DefaultStreamHelp />}
+            快速添加规则 {isDefaultStream && <DefaultStreamHelp />}
           </MenuItem>
         </IfPermitted>
         <IfPermitted permissions={`streams:edit:${stream.id}`}>
           <MenuItem onSelect={toggleUpdateModal} disabled={isDefaultStream}>
-            Edit stream {isDefaultStream && <DefaultStreamHelp />}
+            编辑数据流 {isDefaultStream && <DefaultStreamHelp />}
           </MenuItem>
         </IfPermitted>
 
@@ -217,16 +217,16 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
 
         <IfPermitted permissions={[`streams:edit:${stream.id}`]}>
           <MenuItem disabled={isDefaultStream || isNotEditable} href={Routes.stream_edit(stream.id)}>
-            Manage Rules {isDefaultStream && <DefaultStreamHelp />}
+            管理规则 {isDefaultStream && <DefaultStreamHelp />}
           </MenuItem>
         </IfPermitted>
         <HideOnCloud>
           <IfPermitted permissions="stream_outputs:read">
-            <MenuItem href={Routes.stream_outputs(stream.id)}>Manage Outputs</MenuItem>
+            <MenuItem href={Routes.stream_outputs(stream.id)}>管理输出端</MenuItem>
           </IfPermitted>
         </HideOnCloud>
         <IfPermitted permissions={`streams:edit:${stream.id}`}>
-          <MenuItem href={Routes.stream_alerts(stream.id)}>Manage Alerts</MenuItem>
+          <MenuItem href={Routes.stream_alerts(stream.id)}>管理告警</MenuItem>
         </IfPermitted>
         {moreActions}
         <IfPermitted permissions={`streams:edit:${stream.id}`}>
@@ -234,49 +234,49 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
         </IfPermitted>
 
         <MenuItem onSelect={setStartpage} disabled={currentUser.readOnly}>
-          Set as startpage
+          设为起始页
         </MenuItem>
 
         <IfPermitted permissions={['streams:create', `streams:read:${stream.id}`]}>
           <MenuItem onSelect={toggleCloneModal} disabled={isDefaultStream}>
-            Clone this stream {isDefaultStream && <DefaultStreamHelp />}
+            克隆此数据流 {isDefaultStream && <DefaultStreamHelp />}
           </MenuItem>
         </IfPermitted>
 
         <IfPermitted permissions={`streams:edit:${stream.id}`}>
           <DeleteMenuItem onSelect={toggleDeleteModal} disabled={isDefaultStream}>
-            Delete this stream {isDefaultStream && <DefaultStreamHelp />}
+            删除此数据流 {isDefaultStream && <DefaultStreamHelp />}
           </DeleteMenuItem>
         </IfPermitted>
       </MoreActions>
       {showUpdateModal && (
         <StreamModal
-          title="Editing Stream"
+          title="编辑数据流"
           onSubmit={onUpdate}
           onClose={toggleUpdateModal}
-          submitButtonText="Update stream"
-          submitLoadingText="Updating stream..."
+          submitButtonText="更新数据流"
+          submitLoadingText="正在更新数据流..."
           initialValues={stream}
           indexSets={indexSets}
         />
       )}
       {showCloneModal && (
         <StreamModal
-          title="Cloning Stream"
+          title="克隆数据流"
           initialValues={stream}
           onSubmit={onCloneSubmit}
           onClose={toggleCloneModal}
-          submitButtonText="Clone stream"
-          submitLoadingText="Cloning stream..."
+          submitButtonText="克隆数据流"
+          submitLoadingText="正在克隆数据流..."
           indexSets={indexSets}
         />
       )}
       {showStreamRuleModal && (
         <StreamRuleModal
           onClose={toggleStreamRuleModal}
-          title="New Stream Rule"
-          submitButtonText="Create Rule"
-          submitLoadingText="Creating Rule..."
+          title="新建数据流规则"
+          submitButtonText="创建规则"
+          submitLoadingText="正在创建规则..."
           onSubmit={onSaveStreamRule}
         />
       )}
@@ -285,7 +285,7 @@ const StreamActions = ({ stream, indexSets }: { stream: Stream; indexSets: Array
           entityId={stream.id}
           entityType="stream"
           entityTitle={stream.title}
-          description="Search for a User or Team to add as collaborator on this stream."
+          description="搜索用户或团队以将其添加为此数据流的协作者。"
           onClose={toggleEntityShareModal}
         />
       )}

@@ -191,11 +191,11 @@ const TimeRangePicker = ({
 
   const title = (
     <PopoverTitle>
-      <span>Search Time Range</span>
+      <span>搜索时间范围</span>
       {limitDuration > 0 && (
         <LimitLabel>
           <Icon name="warning" />
-          <span>Admin has limited searching to {moment.duration(-limitDuration, 'seconds').humanize(true)}</span>
+          <span>管理员已将搜索范围限制为 {moment.duration(-limitDuration, 'seconds').humanize(true)}</span>
         </LimitLabel>
       )}
     </PopoverTitle>
@@ -253,7 +253,7 @@ const TimeRangePicker = ({
                 <Row className="row-sm">
                   <Col md={6}>
                     <Timezone>
-                      All timezones using: <b>{userTimezone}</b>
+                      所有使用的时区: <b>{userTimezone}</b>
                     </Timezone>
                   </Col>
                   <Col md={6}>
@@ -261,13 +261,13 @@ const TimeRangePicker = ({
                       leftCol={
                         noOverride && (
                           <Button bsStyle="link" onClick={handleNoOverride}>
-                            No Override
+                            不覆盖
                           </Button>
                         )
                       }
                       onCancel={handleCancel}
                       disabledSubmit={!isValid || isValidating}
-                      submitButtonText="Update time range"
+                      submitButtonText="更新时间范围"
                     />
                   </Col>
                 </Row>

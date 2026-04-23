@@ -1,11 +1,11 @@
 <#if _title>
-Check the system clocks of your server nodes
+检查服务器节点的系统时钟
 </#if>
 
 <#if _description>
 <span>
-A server node detected a condition where it was deemed to be inactive immediately after being active.
-This usually indicates either a significant jump in system time, e.g. via NTP, or that a second server node
-is active on a system that has a different system time. Please make sure that the clocks are synchronized.
+检测到某个服务器节点在处于活动状态后立即变为非活动状态。
+这通常表明系统时间发生了显著跳变（例如通过 NTP 同步），或者在同一系统上存在具有不同系统时间的第二个服务器节点。
+请确保所有时钟已同步。
 </span>
 </#if>

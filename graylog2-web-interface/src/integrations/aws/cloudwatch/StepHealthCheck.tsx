@@ -117,17 +117,16 @@ const StepHealthCheck = ({ onChange, onSubmit }: StepHealthCheckProps) => {
         header={
           <Notice>
             <Icon name="warning" size="2x" />
-            <span>We haven&apos;t received a response back from Amazon yet.</span>
+            <span>我们尚未收到来自 Amazon 的回复。</span>
           </Notice>
         }>
         <p>
-          Hang out for a few moments while we keep checking your AWS stream for logs. Amazon&apos;s servers parse logs
-          every 10 minutes, so grab a cup of coffee because this may take some time!
+          请稍作等待，我们将持续检查您的 AWS 数据流中的日志。Amazon 的服务器每 10 分钟解析一次日志，因此请泡杯咖啡，因为这可能需要一些时间！
         </p>
 
         <CheckAgain>
           <strong>
-            Checking again in: <Countdown timeInSeconds={120} callback={checkForLogs} paused={pauseCountdown} />
+            再次检查时间： <Countdown timeInSeconds={120} callback={checkForLogs} paused={pauseCountdown} />
           </strong>
 
           <Button type="button" bsStyle="primary" bsSize="sm" onClick={checkForLogs} disabled={logDataProgress.loading}>
@@ -137,8 +136,7 @@ const StepHealthCheck = ({ onChange, onSubmit }: StepHealthCheckProps) => {
 
         <p>
           <em>
-            Do not refresh your browser, we are continually checking for your logs and this page will automatically
-            refresh when your logs are available.
+            请勿刷新浏览器，我们正在持续检查您的日志，当日志可用时，此页面将自动刷新。
           </em>
         </p>
 
@@ -159,12 +157,12 @@ const StepHealthCheck = ({ onChange, onSubmit }: StepHealthCheckProps) => {
       onSubmit={handleSubmit}
       buttonContent="Review &amp; Finalize"
       disabled={false}
-      title="Create Kinesis Stream"
-      description={<p>If available, a parsed sample {logTypeLabel} message from the stream will be shown below.</p>}>
+      title="创建 Kinesis 数据流"
+      description={<p>如果可用，一个解析后的样本 {logTypeLabel} 来自数据流的消息将显示在下方。</p>}>
       <Input
         id="awsCloudWatchLog"
         type="textarea"
-        label="Formatted Log Message"
+        label="格式化日志消息"
         value={logData.message || 'No messages found in stream.'}
         rows={10}
         disabled

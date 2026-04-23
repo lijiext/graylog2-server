@@ -36,7 +36,7 @@ type Props = {
 
 const PageTitle = ({ fullName }: { fullName: string | undefined | null }) => (
   <>
-    Role Details{' '}
+    角色详情{' '}
     {fullName && (
       <>
         - <i>{fullName}</i>
@@ -54,7 +54,7 @@ const RoleDetailsPage = ({ params }: Props) => {
   }, [roleId]);
 
   return (
-    <DocumentTitle title={`Role Details ${loadedRole?.name ?? ''}`}>
+    <DocumentTitle title={`角色详情 ${loadedRole?.name ?? ''}`}>
       <PageHeader
         title={<PageTitle fullName={loadedRole?.name} />}
         actions={<RoleActionLinks roleId={roleId} />}
@@ -64,10 +64,10 @@ const RoleDetailsPage = ({ params }: Props) => {
         }}
         topActions={
           <LinkContainer to={Routes.SYSTEM.AUTHZROLES.OVERVIEW}>
-            <Button bsStyle="info">Roles Overview</Button>
+            <Button bsStyle="info">角色概览</Button>
           </LinkContainer>
         }>
-        <span>Overview of details like name, description and assigned users.</span>
+        <span>名称、描述和分配用户的详细信息概览。</span>
       </PageHeader>
       <RoleDetails role={roleId === loadedRole?.id ? loadedRole : undefined} />
     </DocumentTitle>

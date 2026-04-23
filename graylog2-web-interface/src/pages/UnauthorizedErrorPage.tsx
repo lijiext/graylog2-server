@@ -55,8 +55,8 @@ const UnauthorizedErrorPage = ({
   const pageDetails = `The permissions check for the following request failed,\nwhile trying to access ${pathname}.`;
   const defaultDescription = (
     <>
-      <p>You do not have the required permissions to view this resource.</p>
-      <p>Please contact your administrator and provide the error details.</p>
+      <p>您没有查看此资源所需的权限。</p>
+      <p>请联系您的管理员并提供错误详情。</p>
     </>
   );
   const errorMessageString = createErrorMessageString(errorDetails, pageDetails, errorMessage);

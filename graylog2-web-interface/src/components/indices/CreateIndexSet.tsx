@@ -77,8 +77,8 @@ const CreateIndexSet = ({ showSelectTemplateModal, setShowSelectTemplateModal }:
         retentionStrategiesContext={retentionStrategiesContext}
         rotationStrategies={rotationStrategies}
         retentionStrategies={retentionStrategies}
-        submitButtonText="Create index set"
-        submitLoadingText="Creating index set..."
+        submitButtonText="创建索引集"
+        submitLoadingText="正在创建索引集..."
         create
         cancelLink={Routes.SYSTEM.INDICES.LIST}
         onUpdate={_saveConfiguration}

@@ -97,7 +97,7 @@ const SubstringExtractorConfiguration = ({
 
       promise.then((result) => {
         if (!result.successful) {
-          UserNotification.warning('We were not able to run the substring extraction. Please check index boundaries.');
+          UserNotification.warning('无法执行子串提取。请检查索引边界。');
 
           return;
         }
@@ -119,7 +119,7 @@ const SubstringExtractorConfiguration = ({
 
   const endIndexHelpMessage = (
     <span>
-      Where to end extracting. (Exclusive) <strong>Example:</strong> <em>1,5</em> cuts <em>love</em> from the string{' '}
+      提取结束位置。（不包含） <strong>示例:</strong> <em>1,5</em> cuts <em>love</em> 来自字符串{' '}
       <em>ilovelogs</em>.
     </span>
   );
@@ -132,14 +132,14 @@ const SubstringExtractorConfiguration = ({
           setBeginIndex(_beginIndex);
         }}
         id="begin_index"
-        label="Begin index"
+        label="起始索引"
         labelClassName="col-md-2"
         wrapperClassName="col-md-10"
         defaultValue={configuration.begin_index}
         onChange={_onChange('begin_index')}
         min="0"
         required
-        help="Character position from where to start extracting. (Inclusive)"
+        help="开始提取的字符位置。（包含）"
       />
 
       <Input
@@ -148,7 +148,7 @@ const SubstringExtractorConfiguration = ({
           setEndIndex(_endIndex);
         }}
         id="end_index"
-        label="End index"
+        label="结束索引"
         labelClassName="col-md-2"
         wrapperClassName="col-md-10"
         defaultValue={configuration.end_index}

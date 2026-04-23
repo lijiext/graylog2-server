@@ -60,7 +60,7 @@ const Rule = ({ create = false, title = '', isRuleBuilder = false }: Props) => {
   } else {
     pageTitle = (
       <span>
-        Pipeline rule <em>{title}</em>
+        管道规则 <em>{title}</em>
       </span>
     );
   }
@@ -84,7 +84,7 @@ const Rule = ({ create = false, title = '', isRuleBuilder = false }: Props) => {
 
                 setShowConfirmSourceCodeEditor(true);
               }}>
-              Use Source Code Editor
+              使用源代码编辑器
             </Button>
           ) : undefined
         }
@@ -93,8 +93,7 @@ const Rule = ({ create = false, title = '', isRuleBuilder = false }: Props) => {
           path: DocsHelper.PAGES.PIPELINE_RULES,
         }}>
         <span>
-          Rules are a way of applying changes to messages. A rule consists of a condition and a list of actions. The
-          condition is evaluated against a message, and the actions are executed if the condition is satisfied.
+          规则是应用于消息更改的一种方式。规则由条件和操作列表组成。条件针对消息进行求值，如果条件满足，则执行操作。
         </span>
       </PageHeader>
       {isRuleBuilder ? (
@@ -102,7 +101,7 @@ const Rule = ({ create = false, title = '', isRuleBuilder = false }: Props) => {
       ) : (
         <Row className="content">
           <Col md={6}>
-            {isManaged && <Alert bsStyle="warning">This rule is managed by Application. You cannot edit it.</Alert>}
+            {isManaged && <Alert bsStyle="warning">此规则由应用程序管理。您无法对其进行编辑。</Alert>}
             <RuleForm create={create} isManaged={isManaged} />
           </Col>
           <Col md={6}>
@@ -114,7 +113,7 @@ const Rule = ({ create = false, title = '', isRuleBuilder = false }: Props) => {
       {showConfirmSourceCodeEditor && (
         <BootstrapModalConfirm
           showModal
-          title="Switch to Source Code Editor"
+          title="切换到源代码编辑器"
           onConfirm={() => {
             sendTelemetry(TELEMETRY_EVENT_TYPE.PIPELINE_RULE_BUILDER.SWITCH_TO_SOURCE_CODE_EDITOR_CONFIRM_CLICKED, {
               app_pathname: getPathnameWithoutId(pathname),
@@ -134,8 +133,8 @@ const Rule = ({ create = false, title = '', isRuleBuilder = false }: Props) => {
 
             setShowConfirmSourceCodeEditor(false);
           }}>
-          <div>You are about to leave this page and go to the Source Code Editor.</div>
-          <div>Make sure you have no unsaved changes.</div>
+          <div>您即将离开此页面并进入源代码编辑器。</div>
+          <div>请确保没有未保存的更改。</div>
         </BootstrapModalConfirm>
       )}
     </div>

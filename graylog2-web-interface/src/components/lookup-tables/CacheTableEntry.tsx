@@ -135,10 +135,10 @@ const CacheTableEntry = ({ cache }: Props) => {
             scopePermissions.is_mutable && (
               <Actions>
                 <Button bsSize="xsmall" onClick={handleEdit} role="button" name="edit_square">
-                  Edit
+                  编辑
                 </Button>
                 <Button bsSize="xsmall" bsStyle="danger" onClick={handleDelete} role="button" name="delete">
-                  Delete
+                  删除
                 </Button>
               </Actions>
             )

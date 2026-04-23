@@ -75,8 +75,8 @@ const EditProfile = ({ profile }: Props) => {
   return (
     <ProfileForm
       onCancel={onCancel}
-      submitButtonText="Update profile"
-      submitLoadingText="Updating profile..."
+      submitButtonText="更新个人资料"
+      submitLoadingText="正在更新配置文件..."
       onSubmit={onSubmit}
       initialValues={initialValues}
     />

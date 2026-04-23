@@ -33,10 +33,10 @@ const EventDefinitionsPage = () => {
   const sendTelemetry = useSendTelemetry();
 
   return (
-    <DocumentTitle title="Event Definitions">
+    <DocumentTitle title="事件定义">
       <EventsPageNavigation />
       <PageHeader
-        title="Event Definitions"
+        title="事件定义"
         actions={
           <IfPermitted permissions="eventdefinitions:create">
             <LinkContainer to={Routes.ALERTS.DEFINITIONS.CREATE}>
@@ -49,7 +49,7 @@ const EventDefinitionsPage = () => {
                     app_action_value: 'create-event-definition-button',
                   });
                 }}>
-                Create event definition
+                创建事件定义
               </Button>
             </LinkContainer>
           </IfPermitted>
@@ -59,7 +59,7 @@ const EventDefinitionsPage = () => {
           path: DocsHelper.PAGES.ALERTS,
         }}>
         <span>
-          Create new Event Definitions that will allow you to search for different Conditions and alert on them.
+          创建新的事件定义，以便您搜索不同的条件并对其进行告警。
         </span>
       </PageHeader>
 

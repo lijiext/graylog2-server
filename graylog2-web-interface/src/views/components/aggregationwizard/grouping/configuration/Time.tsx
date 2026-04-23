@@ -53,18 +53,18 @@ type Props = {
 
 const IntervalCheckboxDesc = () => (
   <IntervalCheckboxDescWithHelp>
-    Auto
-    <IntervalHoverForHelp title="Interval Types">
+    自动
+    <IntervalHoverForHelp title="间隔类型">
       <ul>
         <li>
-          <h4>Auto bucket size</h4>
-          For example, 1.5x. A smaller granularity leads to <strong>less</strong>; conversely, a larger one shows{' '}
-          <strong>more</strong> values.
+          <h4>自动桶大小</h4>
+          例如，1.5x。更小的粒度会导致 <strong>less</strong>; 反之，较大的一个显示{' '}
+          <strong>more</strong> 值。
         </li>
 
         <li>
-          <h4>Fixed bucket size</h4>
-          For example, 2 minutes. The time defines the size of the buckets for this timestamp type.
+          <h4>固定桶大小</h4>
+          例如，2 分钟。该时间定义了此时间戳类型的桶大小。
         </li>
       </ul>
     </IntervalHoverForHelp>
@@ -89,7 +89,7 @@ const Time = ({ index }: Props) => (
     {({ field: { name, value, onChange }, meta: { error } }) => (
       <Input
         id="group-by-interval"
-        label="Interval"
+        label="间隔"
         error={error}
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9">

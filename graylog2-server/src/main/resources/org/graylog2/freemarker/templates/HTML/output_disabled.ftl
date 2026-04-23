@@ -1,9 +1,9 @@
-<#if _title>Output disabled</#if>
+<#if _title>输出已禁用</#if>
 
 <#if _description>
 <span>
-The output with the id ${outputId} in stream &quot;${streamTitle}&quot;
-(id: ${streamId}) has been disabled for ${faultPenaltySeconds}
-seconds because there were ${faultCount} failures.
-(Node: <em>${node_id}</em>, Fault threshold: <em>${faultCountThreshold}</em>)
+ID 为 ${outputId} 的输出端在数据流 &quot;${streamTitle}&quot;
+（ID: ${streamId}）中已禁用 ${faultPenaltySeconds}
+秒，因为发生了 ${faultCount} 次故障。
+（节点：<em>${node_id}</em>，故障阈值：<em>${faultCountThreshold}</em>）
 </span></#if>

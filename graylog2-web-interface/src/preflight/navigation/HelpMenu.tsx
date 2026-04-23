@@ -40,7 +40,7 @@ const HelpMenu = () => {
       <Menu.Target>
         <StyledButton>
           <Text fw={500} size="sm" mr={3}>
-            Get Help
+            获取帮助
           </Text>
           <Icon name="keyboard_arrow_down" />
         </StyledButton>
@@ -51,25 +51,25 @@ const HelpMenu = () => {
           rightSection={<Icon name="open_in_new" />}
           href={DocsHelper.versionedDocsHomePage()}
           target="_blank">
-          Documentation
+          文档
         </Menu.Item>
         <Menu.Item
           component="a"
           rightSection={<Icon name="open_in_new" />}
           href={DocsHelper.toString(DocsHelper.PAGES.CHANGELOG)}
           target="_blank">
-          Changelogs
+          变更日志
         </Menu.Item>
         <Menu.Item
           component="a"
           rightSection={<Icon name="open_in_new" />}
           href={DocsHelper.toString(DocsHelper.PAGES.OPERATIONS_CHANGELOG)}
           target="_blank">
-          Operations changelogs
+          操作变更日志
         </Menu.Item>
         {enabled && (
           <Menu.Item component="a" rightSection={<Icon name="open_in_new" />} href={url} target="_blank">
-            Support
+            支持
           </Menu.Item>
         )}
       </Menu.Dropdown>

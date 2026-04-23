@@ -41,7 +41,7 @@ const DetailsForType = ({ metric }: { metric: Metric }) => {
     case 'timer':
       return <TimerDetails metric={metric} />;
     default:
-      return <i>Invalid metric type: {metric}</i>;
+      return <i>无效的指标类型： {metric}</i>;
   }
 };
 

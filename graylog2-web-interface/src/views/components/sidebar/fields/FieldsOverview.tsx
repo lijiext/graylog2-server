@@ -82,7 +82,7 @@ const FieldsOverview = ({ allFields, activeQueryFields }: Props) => {
               className="query form-control"
               onChange={handleSearch}
               value={filter || ''}
-              placeholder="Filter fields"
+              placeholder="过滤字段"
               type="text"
               autoComplete="off"
               spellCheck="false"
@@ -90,17 +90,17 @@ const FieldsOverview = ({ allFields, activeQueryFields }: Props) => {
           </FilterInputWrapper>
           <div className="form-group">
             <Button type="reset" className="reset-button" onClick={handleSearchReset}>
-              Reset
+              重置
             </Button>
           </div>
         </FilterForm>
         <FieldGroups>
-          List fields of{' '}
+          列出字段{' '}
           <FieldGroup
             selected={currentGroup === 'current'}
             group="current"
             text="current query"
-            title="This shows fields which occur in your current query."
+            title="此显示当前查询中出现的字段。"
             onSelect={setCurrentGroup}
           />
           {', '}
@@ -108,7 +108,7 @@ const FieldsOverview = ({ allFields, activeQueryFields }: Props) => {
             selected={currentGroup === 'all'}
             group="all"
             text="all"
-            title="This shows all fields, but no reserved (gl2_*) fields."
+            title="此显示所有字段，但不包括保留字段 (gl2_*)。"
             onSelect={setCurrentGroup}
           />
           {' or '}
@@ -117,7 +117,7 @@ const FieldsOverview = ({ allFields, activeQueryFields }: Props) => {
             selected={currentGroup === 'allreserved'}
             group="allreserved"
             text="all including reserved"
-            title="This shows all fields, including reserved (gl2_*) fields."
+            title="此界面显示所有字段，包括保留字段 (gl2_*)。"
           />
           {' fields.'}
         </FieldGroups>

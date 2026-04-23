@@ -41,14 +41,14 @@ const StartStreamsActions = ({ handleFailures, refetchStreams, descriptor, onSel
     fetch('POST', qualifyUrl(ApiRoutes.StreamsApiController.bulk_resume().url), { entity_ids: selectedEntities })
       .then(({ failures }) => handleFailures(failures, 'started'))
       .catch((error) => {
-        UserNotification.error(`An error occurred while starting streams. ${error}`);
+        UserNotification.error(`启动数据流时发生错误。${error}`);
       })
       .finally(() => {
         refetchStreams();
       });
   }, [handleFailures, onSelect, refetchStreams, selectedEntities]);
 
-  return <MenuItem onSelect={onStartStreams}>Start {descriptor}</MenuItem>;
+  return <MenuItem onSelect={onStartStreams}>开始 {descriptor}</MenuItem>;
 };
 
 export default StartStreamsActions;

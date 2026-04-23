@@ -201,8 +201,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
     const { isBacklogSizeEnabled, backlogSize } = this.state;
     const element = (
       <p>
-        Adaptive Card to post to Teams. See <DocumentationLink page={DocsHelper.PAGES.ALERTS} text="docs " /> for more
-        details.
+        要发布到 Teams 的自适应卡片。请参见 <DocumentationLink page={DocsHelper.PAGES.ALERTS} text="docs " /> 更多详情。
       </p>
     );
 
@@ -217,7 +216,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
           autofocus={false}
         />
         <FormGroup>
-          <ControlLabel>Adaptive Card Template</ControlLabel>
+          <ControlLabel>自适应卡片模板</ControlLabel>
           <SourceCodeEditor
             id="notification-adaptiveCard"
             mode="text"
@@ -231,8 +230,8 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
         <FormGroup>
           <Input
             id="notification-time-zone"
-            help="Time zone used for timestamps in the notification body."
-            label="Time zone for date/time values">
+            help="通知正文中时间戳使用的时区。"
+            label="日期/时间值的时区">
             <TimezoneSelect
               className="timezone-select"
               name="time_zone"
@@ -241,7 +240,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
               clearable={false}
             />
           </Input>
-          <ControlLabel>Message Backlog Limit (optional)</ControlLabel>
+          <ControlLabel>消息积压限制（可选）</ControlLabel>
           <InputGroup>
             <InputGroup.Addon>
               <input
@@ -262,8 +261,7 @@ class TeamsNotificationV2Form extends React.Component<TeamsNotificationFormV2Typ
             />
           </InputGroup>
           <HelpBlock>
-            Limit the number of backlog messages sent as part of the Microsoft Teams notification. If set to 0, no limit
-            will be enforced.
+            限制作为 Microsoft Teams 通知发送的积压消息数量。如果设置为 0，则不强制执行限制。
           </HelpBlock>
         </FormGroup>
       </>

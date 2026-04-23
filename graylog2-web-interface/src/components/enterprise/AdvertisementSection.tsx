@@ -38,20 +38,19 @@ const AdvertisementSection = () => {
   return (
     <Row className="content">
       <Col md={6}>
-        <GraylogEnterpriseHeader>{productName} Enterprise</GraylogEnterpriseHeader>
+        <GraylogEnterpriseHeader>{productName} 企业版</GraylogEnterpriseHeader>
         <p>
-          Designed to meet the needs of resource-constrained IT Operations and Software Engineering teams, {productName}{' '}
-          Enterprise provides numerous productivity enhancements that will save you thousands of hours per year in
-          collecting and analyzing log data to uncover the root cause of performance, outage, and error issues.
+          旨在满足资源受限的 IT 运维和软件工程团队的需求， {productName}{' '}
+          Enterprise 提供了众多生产力增强功能，每年可为您节省数千小时用于收集和分析日志数据，从而发现性能、中断和错误问题的根本原因。
         </p>
         <ProductLinkComponent href="https://go2.graylog.org/request-graylog-operations" clusterId={clusterId}>
-          Request now
+          立即请求
         </ProductLinkComponent>
       </Col>
       <Col md={6}>
-        <GraylogEnterpriseHeader>{productName} Security</GraylogEnterpriseHeader>
+        <GraylogEnterpriseHeader>{productName} 安全</GraylogEnterpriseHeader>
         <p>
-          Extend {productName} Open’s capabilities for detecting, investigating, and responding to cybersecurity threats
+          扩展 {productName} Open’s capabilities for detecting, investigating, and responding to cybersecurity threats
           with security-specific dashboards and alerts, anomaly detection AI/ML engine, integrations with other security
           tools, SOAR capabilities, and numerous compliance reporting features.
         </p>
@@ -59,7 +58,7 @@ const AdvertisementSection = () => {
           href="https://go2.graylog.org/request-graylog-security"
           licenseSubject="/license/security"
           clusterId={clusterId}>
-          Request now
+          立即请求
         </ProductLinkComponent>
       </Col>
     </Row>

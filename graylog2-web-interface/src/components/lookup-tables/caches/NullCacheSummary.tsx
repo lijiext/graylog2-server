@@ -16,6 +16,6 @@
  */
 import * as React from 'react';
 
-const NullCacheSummary = () => <p>This cache has no configuration.</p>;
+const NullCacheSummary = () => <p>此缓存无配置。</p>;
 
 export default NullCacheSummary;

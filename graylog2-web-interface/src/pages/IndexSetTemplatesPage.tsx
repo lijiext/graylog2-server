@@ -23,26 +23,24 @@ import CreateIndexSetTemplateButton from 'components/indices/IndexSetTemplates/C
 import { IndicesPageNavigation } from 'components/indices';
 
 const IndexSetTemplatesPage = () => (
-  <DocumentTitle title="Index Set Templates">
+  <DocumentTitle title="索引集模板">
     <IndicesPageNavigation />
     <PageHeader
-      title="Index Set Templates"
+      title="索引集模板"
       actions={
         <IfPermitted permissions="indexset_templates:create">
           <CreateIndexSetTemplateButton />
         </IfPermitted>
       }>
       <span>
-        View and manage your Index Set Templates. These allow Index Set configurations to be saved and re-used upon
-        creating a new Index Sets.
+        查看和管理您的索引集模板。这些模板允许在创建新索引集时保存和重用索引集配置。
       </span>
     </PageHeader>
 
     <Row className="content">
       <Col md={12}>
         <Alert>
-          Define a default template here in order to control the configuration of Index Sets created by Illuminate
-          packs.
+          在此处定义默认模板，以控制由 Illuminate 内容包创建的索引集的配置。
         </Alert>
 
         <IndexSetTemplatesList />

@@ -73,14 +73,14 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
           deselectEntity(notification.id);
 
           UserNotification.success(
-            'Event Notification deleted successfully',
-            `Event Notification "${notification.title}" was deleted successfully.`,
+            '事件通知删除成功',
+            `事件通知 "${notification.title}" 已成功删除。`,
           );
         },
         (error) => {
           UserNotification.error(
-            `Deleting Event Notification "${notification.title}" failed with status: ${error}`,
-            'Could not delete Event Notification',
+            `删除事件通知 "${notification.title}" 失败，状态为：${error}`,
+            '无法删除事件通知',
           );
         },
       )
@@ -102,7 +102,7 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
         <MoreActions>
           <IfPermitted permissions={`eventnotifications:edit:${notification.id}`}>
             <LinkContainer to={Routes.ALERTS.NOTIFICATIONS.edit(notification.id)}>
-              <MenuItem>Edit</MenuItem>
+              <MenuItem>编辑</MenuItem>
             </LinkContainer>
           </IfPermitted>
           <IfPermitted
@@ -122,7 +122,7 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
         </MoreActions>
       </ButtonToolbar>
       {showDialog && (
-        <ConfirmDialog title="Delete Notification" show onConfirm={handleDelete} onCancel={handleClearState}>
+        <ConfirmDialog title="删除通知" show onConfirm={handleDelete} onCancel={handleClearState}>
           {`Are you sure you want to delete "${notification.title}"`}
         </ConfirmDialog>
       )}
@@ -130,7 +130,7 @@ const EventNotificationActions = ({ isTestLoading, notification, onTest }: Props
         <EntityShareModal
           entityId={notification.id}
           entityType="notification"
-          description="Search for a user or team to add as collaborator on this notification."
+          description="搜索用户或团队以将其添加为此通知的协作者。"
           entityTitle={notification.title}
           onClose={() => setShowShareNotification(undefined)}
         />

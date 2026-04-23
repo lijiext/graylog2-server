@@ -36,15 +36,15 @@ const DSVHTTPAdapterDocumentation = () => {
       label: 'Example 1',
       content: (
         <div>
-          <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+          <h5 style={{ marginBottom: 10 }}>配置</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
             Separator: <code>,</code>
             <br />
-            Quote character: <code>&#34;</code>
+            引号字符: <code>&#34;</code>
             <br />
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>DSV File</h5>
+          <h5 style={{ marginBottom: 10 }}>DSV 文件</h5>
           <pre>{csvFile1}</pre>
         </div>
       ),
@@ -54,15 +54,15 @@ const DSVHTTPAdapterDocumentation = () => {
       label: 'Example 2',
       content: (
         <div>
-          <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+          <h5 style={{ marginBottom: 10 }}>配置</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
             Separator: <code>;</code>
             <br />
-            Quote character: <code>&#39;</code>
+            引号字符: <code>&#39;</code>
             <br />
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>DSV File</h5>
+          <h5 style={{ marginBottom: 10 }}>DSV 文件</h5>
           <pre>{csvFile2}</pre>
         </div>
       ),
@@ -71,15 +71,15 @@ const DSVHTTPAdapterDocumentation = () => {
 
   return (
     <div>
-      <p>The DSV data adapter can read key value pairs (or check for the presence of a key) from a DSV file.</p>
-      <p>Please make sure your DSV file is formatted according to your configuration settings.</p>
+      <p>DSV 数据适配器可以从 DSV 文件读取键值对（或检查键是否存在）。</p>
+      <p>请确保您的 DSV 文件已按照配置设置进行格式化。</p>
 
-      <h4>CSV file requirements</h4>
+      <h4>CSV 文件要求</h4>
       <p>
-        The file uses <strong>utf-8</strong> encoding
+        该文件使用 <strong>utf-8</strong> encoding
       </p>
       <p>
-        The file is accessible using the same URL by <strong>every</strong> {productName} server node
+        该文件可通过相同的 URL 访问，使用 <strong>every</strong> {productName} 服务器节点
       </p>
 
       <hr />

@@ -49,18 +49,18 @@ const CSVFileAdapterDocumentation = () => {
       label: 'Example 1',
       content: (
         <div>
-          <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+          <h5 style={{ marginBottom: 10 }}>配置</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
             Separator: <code>,</code>
             <br />
-            Quote character: <code>"</code>
+            引号字符: <code>"</code>
             <br />
-            Key column: <code>ipaddr</code>
+            键列: <code>ipaddr</code>
             <br />
-            Value column: <code>hostname</code>
+            值列: <code>hostname</code>
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+          <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
           <pre>{csvFile1}</pre>
         </div>
       ),
@@ -70,18 +70,18 @@ const CSVFileAdapterDocumentation = () => {
       label: 'Example 2',
       content: (
         <div>
-          <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+          <h5 style={{ marginBottom: 10 }}>配置</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
             Separator: <code>;</code>
             <br />
-            Quote character: <code>'</code>
+            引号字符: <code>'</code>
             <br />
-            Key column: <code>ipaddr</code>
+            键列: <code>ipaddr</code>
             <br />
-            Value column: <code>hostname</code>
+            值列: <code>hostname</code>
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+          <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
           <pre>{csvFile2}</pre>
         </div>
       ),
@@ -91,22 +91,22 @@ const CSVFileAdapterDocumentation = () => {
       label: 'Multi Value Example',
       content: (
         <div>
-          <h3 style={{ marginBottom: 10 }}>Multi-Value Example</h3>
+          <h3 style={{ marginBottom: 10 }}>多值示例</h3>
 
-          <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+          <h5 style={{ marginBottom: 10 }}>配置</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
             Separator: <code>,</code>
             <br />
-            Quote character: <code>"</code>
+            引号字符: <code>"</code>
             <br />
-            Key column: <code>user_id</code>
+            键列: <code>user_id</code>
             <br />
-            Value columns: <code>first_name,last_name,username</code>
+            值列: <code>first_name,last_name,username</code>
             <br />
-            Multi-value lookup: <code>true</code>
+            多值查找: <code>true</code>
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+          <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
           <pre>{multiValueCsvFile}</pre>
         </div>
       ),
@@ -117,30 +117,30 @@ const CSVFileAdapterDocumentation = () => {
       content: (
         <div>
           <p style={{ marginBottom: 10, padding: 0 }}>
-            If this data adapter will be used to lookup IP address keys against CIDR addresses
+            如果此数据适配器将用于将 IP 地址键与 CIDR 地址进行查找
             <br />
-            then it should be marked as a CIDR lookup. For example:
+            然后它应标记为 CIDR 查找。例如:
             <br />
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>Configuration</h5>
+          <h5 style={{ marginBottom: 10 }}>配置</h5>
           <p style={{ marginBottom: 10, padding: 0 }}>
             Separator: <code>,</code>
             <br />
-            Quote character: <code>"</code>
+            引号字符: <code>"</code>
             <br />
-            Key column: <code>cidr</code>
+            键列: <code>cidr</code>
             <br />
-            Value column: <code>subnet</code>
+            值列: <code>subnet</code>
             <br />
-            CIDR lookup: <code>true</code>
+            CIDR 查找: <code>true</code>
           </p>
 
-          <h5 style={{ marginBottom: 10 }}>CSV File</h5>
+          <h5 style={{ marginBottom: 10 }}>CSV 文件</h5>
           <pre>{csvFile3}</pre>
 
           <p>
-            Given this CSV file and configuration looking up the key 192.168.101.64 would return 'IT Department subnet'.
+            给定此 CSV 文件和配置，查找键 192.168.101.64 将返回'IT Department subnet'。
           </p>
         </div>
       ),
@@ -149,16 +149,16 @@ const CSVFileAdapterDocumentation = () => {
 
   return (
     <div>
-      <p>The CSV data adapter can read key value pairs from a CSV file.</p>
-      <p>Please make sure your CSV file is formatted according to your configuration settings.</p>
+      <p>CSV 数据适配器可以从 CSV 文件中读取键值对。</p>
+      <p>请确保您的 CSV 文件格式符合您的配置设置。</p>
 
-      <h4>CSV file requirements</h4>
-      <p>The first line in the CSV file needs to be a list of field/column names</p>
+      <h4>CSV 文件要求</h4>
+      <p>CSV 文件的第一行需要是字段/列名的列表</p>
       <p>
-        The file uses <strong>utf-8</strong> encoding
+        该文件使用 <strong>utf-8</strong> encoding
       </p>
       <p>
-        The file is readable by <strong>every</strong> {productName} server node
+        文件可由 <strong>every</strong> {productName} 服务器节点
       </p>
 
       <hr />

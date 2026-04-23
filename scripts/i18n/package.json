@@ -1,0 +1,21 @@
+{
+  "name": "graylog-i18n-zh",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Graylog 中文本地化脚本：AST 抽取、Gemini 翻译、AST 回写",
+  "scripts": {
+    "extract": "node extract.mjs",
+    "extract:be": "node extract-backend.mjs",
+    "translate": "node translate.mjs",
+    "apply": "node apply.mjs"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.25.0",
+    "@babel/traverse": "^7.25.0",
+    "@babel/generator": "^7.25.0",
+    "@babel/types": "^7.25.0",
+    "glob": "^10.3.4",
+    "yaml": "^2.5.0"
+  }
+}

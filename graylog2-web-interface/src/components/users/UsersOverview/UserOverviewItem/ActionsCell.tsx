@@ -47,20 +47,20 @@ const EditTokensAction = ({
   wrapperComponent: React.ComponentType<any>;
 }) => (
   <LinkContainer to={Routes.SYSTEM.USERS.TOKENS.edit(id)}>
-    <WrapperComponent id={`edit-tokens-${id}`} bsSize="xs" title={`Edit tokens of user ${fullName}`}>
-      Edit tokens
+    <WrapperComponent id={`edit-tokens-${id}`} bsSize="xs" title={`编辑用户 ${fullName} 的令牌`}>
+      编辑令牌
     </WrapperComponent>
   </LinkContainer>
 );
 
 const ReadOnlyActions = ({ user }: { user: UserOverview }) => {
-  const tooltip = <>System users can only be modified in the server configuration file.</>;
+  const tooltip = <>系统用户只能在服务器配置文件中修改。</>;
 
   return (
     <>
       <OverlayTrigger placement="left" overlay={tooltip} trigger={['hover']}>
         <Button bsSize="xs" bsStyle="info" disabled>
-          System user
+          系统用户
         </Button>
       </OverlayTrigger>
       <EditTokensAction user={user} wrapperComponent={Button} />
@@ -119,8 +119,8 @@ const EditActions = ({
     <>
       <IfPermitted permissions={[`users:edit:${username}`]}>
         <LinkContainer to={Routes.SYSTEM.USERS.edit(id)}>
-          <Button id={`edit-user-${id}`} bsSize="xs" title={`Edit user ${fullName}`}>
-            Edit
+          <Button id={`edit-user-${id}`} bsSize="xs" title={`编辑用户 ${fullName}`}>
+            编辑
           </Button>
         </LinkContainer>
       </IfPermitted>
@@ -133,11 +133,11 @@ const EditActions = ({
             <MenuItem
               id={`set-status-user-${id}`}
               onClick={_toggleStatus}
-              title={`Set new account status for ${fullName}`}>
+              title={`为 ${fullName} 设置新的账户状态`}>
               {accountStatus === 'enabled' ? 'Disable' : 'Enable'}
             </MenuItem>
           )}
-          <DeleteMenuItem id={`delete-user-${id}`} title={`Delete user ${fullName}`} onClick={_deleteUser} />
+          <DeleteMenuItem id={`delete-user-${id}`} title={`删除用户 ${fullName}`} onClick={_deleteUser} />
         </IfPermitted>
       </MoreActions>
     </>

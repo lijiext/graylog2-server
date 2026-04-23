@@ -65,7 +65,7 @@ public class UrlAllowlistResource extends RestResource {
 
     @GET
     @Timed
-    @ApiOperation(value = "Get url allowlist.")
+    @ApiOperation(value = "获取 URL 允许列表。")
     @RequiresPermissions(RestPermissions.URL_ALLOWLIST_READ)
     public UrlAllowlist get() {
         checkPermission(RestPermissions.URL_ALLOWLIST_READ);
@@ -74,7 +74,7 @@ public class UrlAllowlistResource extends RestResource {
 
     @PUT
     @Timed
-    @ApiOperation(value = "Update url allowlist.")
+    @ApiOperation(value = "更新 URL 允许列表。")
     @AuditEvent(type = AuditEventTypes.URL_ALLOWLIST_UPDATE)
     @Consumes(MediaType.APPLICATION_JSON)
     @RequiresPermissions(RestPermissions.URL_ALLOWLIST_WRITE)
@@ -86,7 +86,7 @@ public class UrlAllowlistResource extends RestResource {
     @POST
     @Path("/check")
     @Timed
-    @ApiOperation(value = "Check if a url is allowlisted.")
+    @ApiOperation(value = "检查 URL 是否在允许列表中。")
     @NoAuditEvent("Validation only")
     @Consumes(MediaType.APPLICATION_JSON)
     // Checking can be done without any special permission.
@@ -99,7 +99,7 @@ public class UrlAllowlistResource extends RestResource {
     @POST
     @Path("/generate_regex")
     @Timed
-    @ApiOperation(value = "Generates a regex that can be used as a value for a allowlist entry.")
+    @ApiOperation(value = "生成一个正则表达式，可用作允许列表条目的值。")
     @NoAuditEvent("Utility function only.")
     @Consumes(MediaType.APPLICATION_JSON)
     public AllowlistRegexGenerationResponse generateRegex(@ApiParam(name = "JSON body", required = true)

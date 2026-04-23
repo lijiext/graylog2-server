@@ -78,18 +78,17 @@ const IndexSetConfigurationPage = () => {
 
   return (
     <SelectIndexSetTemplateProvider>
-      <DocumentTitle title="Configure Index Set">
+      <DocumentTitle title="配置索引集">
         <IndicesPageNavigation />
         <div>
           <PageHeader
-            title="Configure Index Set"
+            title="配置索引集"
             documentationLink={{
               title: 'Index model documentation',
               path: DocsHelper.PAGES.INDEX_MODEL,
             }}>
             <span>
-              Modify the current configuration for this index set, allowing you to customize the retention, sharding,
-              and replication of messages coming from one or more streams.
+              修改此索引集的当前配置，允许您自定义来自一个或多个数据流的消息的保留、分片和复制。
             </span>
           </PageHeader>
 
@@ -100,8 +99,8 @@ const IndexSetConfigurationPage = () => {
                 retentionStrategiesContext={retentionStrategiesContext}
                 rotationStrategies={rotationStrategies}
                 retentionStrategies={retentionStrategies}
-                submitButtonText="Update index set"
-                submitLoadingText="Updating index set..."
+                submitButtonText="更新索引集"
+                submitLoadingText="正在更新索引集..."
                 cancelLink={formCancelLink()}
                 onUpdate={saveConfiguration}
               />

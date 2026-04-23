@@ -34,7 +34,7 @@ const _pageTitle = (authBackend) => {
 
     return (
       <>
-        Edit Authentication Service - <i>{backendTitle}</i>
+        编辑认证服务 - <i>{backendTitle}</i>
       </>
     );
   }
@@ -56,7 +56,7 @@ const WizardPageHeader = ({ authenticationBackend: authBackend = undefined }: Pr
           title: 'Authentication documentation',
           path: DocsHelper.PAGES.USERS_ROLES,
         }}>
-        <span>Configure authentication services of this cluster.</span>
+        <span>配置此集群的认证服务。</span>
       </PageHeader>
     </>
   );

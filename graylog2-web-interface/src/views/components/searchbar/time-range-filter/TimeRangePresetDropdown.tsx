@@ -179,7 +179,7 @@ const TimeRangePresetDropdown = ({
     <DropdownButton
       title={displayTitle && 'Load Preset'}
       id="relative-timerange-selector"
-      aria-label="Open time range preset select"
+      aria-label="打开时间范围预设选择"
       bsSize={bsSize}
       className={className}
       onToggle={onToggle}
@@ -193,13 +193,13 @@ const TimeRangePresetDropdown = ({
         ))
       ) : (
         <MenuItem eventKey="loading" key="loading" disabled>
-          Loading...
+          加载中...
         </MenuItem>
       )}
       <IfPermitted permissions="clusterconfigentry:edit">
         <MenuItem divider />
         <AdminMenuItem href="/system/configurations" target="_blank">
-          Configure presets <ExternalIcon name="open_in_new" />
+          配置预设 <ExternalIcon name="open_in_new" />
         </AdminMenuItem>
       </IfPermitted>
     </DropdownButton>

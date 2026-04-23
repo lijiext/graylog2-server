@@ -52,8 +52,8 @@ export const GrokPatternsStore = singletonStore('core.GrokPatterns', () =>
     loadPatterns(callback: (patterns: Array<GrokPattern>) => void) {
       const failCallback = (error) => {
         UserNotification.error(
-          `Loading Grok patterns failed with status: ${error.message}`,
-          'Could not load Grok patterns',
+          `加载 Grok 模式失败，状态为：${error.message}`,
+          '无法加载 Grok 模式',
         );
       };
 
@@ -90,7 +90,7 @@ export const GrokPatternsStore = singletonStore('core.GrokPatterns', () =>
           };
         })
         .catch((errorThrown) => {
-          UserNotification.error(`Loading patterns failed with status: ${errorThrown}`, 'Could not load streams');
+          UserNotification.error(`加载模式失败，状态为：${errorThrown}`, '无法加载数据流');
         });
     },
 
@@ -135,8 +135,8 @@ export const GrokPatternsStore = singletonStore('core.GrokPatterns', () =>
         }
 
         UserNotification.error(
-          `Testing Grok pattern "${pattern.name}" failed with status: ${errorMessage}`,
-          'Could not test Grok pattern',
+          `测试 Grok 模式 "${pattern.name}" 失败，状态为：${errorMessage}`,
+          '无法测试 Grok 模式',
         );
       };
 
@@ -171,14 +171,14 @@ export const GrokPatternsStore = singletonStore('core.GrokPatterns', () =>
     deletePattern(pattern: GrokPattern, callback: () => void) {
       const failCallback = (error) => {
         UserNotification.error(
-          `Deleting Grok pattern "${pattern.name}" failed with status: ${error.message}`,
-          'Could not delete Grok pattern',
+          `删除 Grok 模式 "${pattern.name}" 失败，状态为：${error.message}`,
+          '无法删除 Grok 模式',
         );
       };
 
       fetch('DELETE', `${this.URL}/${pattern.id}`).then((response) => {
         callback();
-        UserNotification.success(`Grok pattern "${pattern.name}" successfully deleted`);
+        UserNotification.success(`Grok 模式 "${pattern.name}" 已成功删除`);
 
         return response;
       }, failCallback);
@@ -200,8 +200,8 @@ export const GrokPatternsStore = singletonStore('core.GrokPatterns', () =>
         }
 
         UserNotification.error(
-          `Importing Grok pattern file failed with status: ${errorMessage}`,
-          'Could not load Grok patterns',
+          `导入 Grok 模式文件失败，状态为：${errorMessage}`,
+          '无法加载 Grok 模式',
         );
       };
 

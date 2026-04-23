@@ -48,14 +48,14 @@ const AssignIndexSetModal = ({ toggleShowModal, indexSets, refetchStreams, descr
       .then(() => {
         refetchStreams();
         UserNotification.success(
-          `Index set was assigned to ${selectedEntities.length} ${descriptor} successfully.`,
-          'Success',
+          `索引集已成功分配给 ${selectedEntities.length} ${descriptor}。`,
+          '成功',
         );
         setSelectedEntities([]);
         toggleShowModal();
       })
       .catch((error: FetchError) => {
-        UserNotification.error(`Assigning index set failed with status: ${error}`, 'Error');
+        UserNotification.error(`分配索引集失败，状态为：${error}`, '错误');
       });
 
   const validate = ({ index_set_id }: AssignIndexSetFormValues) => {
@@ -79,13 +79,13 @@ const AssignIndexSetModal = ({ toggleShowModal, indexSets, refetchStreams, descr
             <Modal.Body>
               <IndexSetSelect
                 indexSets={indexSets}
-                help="Messages that match the selected streams will be written to the configured index set."
+                help="匹配所选数据流的消息将写入配置的索引集。"
               />
             </Modal.Body>
             <Modal.Footer>
               <ModalSubmit
-                submitButtonText="Assign index set"
-                submitLoadingText="Assigning index set..."
+                submitButtonText="分配索引集"
+                submitLoadingText="正在分配索引集..."
                 onCancel={toggleShowModal}
                 disabledSubmit={isValidating}
                 isSubmitting={isSubmitting}

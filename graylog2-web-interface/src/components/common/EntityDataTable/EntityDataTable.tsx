@@ -265,7 +265,7 @@ const EntityDataTable = <Entity extends EntityBase, Meta = unknown>({
           <ActionsRow>
             <div>{displayBulkAction && <BulkActionsRow bulkActions={actions} />}</div>
             <LayoutConfigRow>
-              Show
+              显示
               <ButtonGroup>
                 {displayPageSizeSelect && (
                   <PageSizeSelect pageSize={pageSize} showLabel={false} onChange={onPageSizeChange} />

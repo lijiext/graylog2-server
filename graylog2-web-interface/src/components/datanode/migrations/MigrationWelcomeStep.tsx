@@ -60,30 +60,26 @@ const MigrationWelcomeStep = ({ currentStep, onTriggerStep, hideActions }: Migra
       <Col md={isRemoteReindexingEnabled ? 6 : 12}>
         {isElasticsearch && !isRemoteReindexingEnabled && (
           <Alert bsStyle="warning">
-            Incompatible search backend. Please upgrade to OpenSearch to be able to use the migration wizard.
+            不兼容的搜索后端。请升级至 OpenSearch 以使用迁移向导。
           </Alert>
         )}
         <MigrationError errorMessage={currentStep.error_message} />
-        <Headline>Data Nodes Migration</Headline>
+        <Headline>数据节点迁移</Headline>
         <p>
-          The {productName} Data Node is a management component designed to configure and optimize OpenSearch for use
-          with {productName}, reducing administrative overhead and simplifying future updates.
+          该 {productName} 数据节点是一个管理组件，旨在配置和优化 OpenSearch 以用于 {productName}，减少管理开销并简化未来更新。
         </p>
         <p>
-          Deployments earlier than v5.2 or that opted to not install with a Data Node will need to migrate the message
-          databases to Data Nodes.
+          v5.2 之前的部署或选择不与数据节点一起安装的部署需要将消息数据库迁移到数据节点。
         </p>
         <p>
-          This migration tool will check the compatibility of your components and guide you through to migrate your
-          existing OpenSearch data to a Data Node.
+          此迁移工具将检查您的组件兼容性，并指导您将现有的 OpenSearch 数据迁移到数据节点。
           <br />
         </p>
         <p>
-          Migrating to Data Node will require some steps to be performed on the OS, within your current OS/ES cluster,
-          and in your configuration files.
+          迁移到数据节点需要在操作系统、当前操作系统/ES 集群以及配置文件中执行一些步骤。
         </p>
         <p>
-          You can get more information on the Data Node migration{' '}
+          您可以获取有关数据节点迁移的更多信息{' '}
           <DocumentationLink page="graylog-data-node" text="documentation" />.
         </p>
         <br />
@@ -101,32 +97,29 @@ const MigrationWelcomeStep = ({ currentStep, onTriggerStep, hideActions }: Migra
           <StyledHelpPanel bsStyle="info">
             <Panel.Heading>
               <Panel.Title componentClass="h3">
-                <Icon name="info" /> Methods for migration
+                <Icon name="info" /> 迁移方法
               </Panel.Title>
             </Panel.Heading>
             <Panel.Body>
               <p>
-                During the migration, you can choose between two options for migrating your existing ElasticSearch or
-                OpenSearch data to the data nodes. You should choose between them based on your individual prerequisites
-                and requirements.
+                在迁移过程中，您可以选择两种选项之一，将现有的 ElasticSearch 或 OpenSearch 数据迁移到数据节点。您应根据个人前提条件和需求进行选择。
               </p>
               <p>
-                If you are already running <code>OpenSearch (1.x or 2.x)</code> as your search backend, you can choose{' '}
-                <code>in-place migration</code>. In this migration scenario, the data node’s OpenSearch will use the
+                如果您已经在运行 <code>OpenSearch (1.x 或 2.x)</code> 作为您的搜索后端，您可以选择{' '}
+                <code>原地迁移</code>. In this migration scenario, the data node’s OpenSearch will use the
                 existing data directory of OpenSearch to serve all data previously available in your existing
                 OpenSearch. This is the recommended method if you want to quickly migrate to data node.
               </p>
               <p>
-                If you want to selectively migrate data (e.g. if you use your search backend non-exclusively for{' '}
-                {productName}), you should choose the <code>remote reindexing migration</code>. In this scenario, all
+                如果您想选择性迁移数据（例如，如果您非独占地使用搜索后端进行{' '}
+                {productName}), 您应选择 <code>远程重新索引迁移</code>. In this scenario, all
                 data will be copied from your existing search backend to data node’s OpenSearch. Depending on your
                 setup, this can take some time and imposes additional disk space for the copied data to be available.
-                During the remote reindexing, {productName} is ingesting data into data node and can be used, but will
-                only serve the data from the old search backend as it becomes available.
+                During the remote reindexing, {productName} 正在向数据节点摄入数据，可以正常使用，但只会从旧搜索后端提供可用的数据。
               </p>
               <p>
-                If you are running <code>ElasticSearch</code> as your search backend{' '}
-                <code>remote reindexing migration</code> will automatically be chosen.
+                如果您正在运行 <code>ElasticSearch</code> 作为您的搜索后端{' '}
+                <code>远程重新索引迁移</code> 将自动选择。
               </p>
               <p>
                 If you don’t plan to migrate any existing data or only want to migrate a small subset of data we

@@ -30,17 +30,17 @@ const EnterprisePage = () => {
   const UpsellWrapper = usePluggableUpsellWrapper();
 
   return (
-    <DocumentTitle title={`${productName} Enterprise`}>
+    <DocumentTitle title={`${productName} 企业版`}>
       <div>
         <PageHeader
           title={
             <>
-              <UpsellWrapper>Try</UpsellWrapper> {productName} Enterprise
+              <UpsellWrapper>尝试</UpsellWrapper> {productName} 企业版
             </>
           }>
           <span>
             <UpsellWrapper>
-              <EnterpriseProductLink>Learn More</EnterpriseProductLink> about {productName} Enterprise features.
+              <EnterpriseProductLink>了解更多</EnterpriseProductLink> about {productName} 企业版功能。
             </UpsellWrapper>
           </span>
         </PageHeader>

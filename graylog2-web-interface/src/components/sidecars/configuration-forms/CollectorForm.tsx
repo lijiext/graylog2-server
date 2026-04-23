@@ -231,7 +231,7 @@ class CollectorForm extends React.Component<
             <Input
               type="text"
               id="name"
-              label="Name"
+              label="名称"
               onChange={this._onNameChange}
               bsStyle={this._validationState('name')}
               help={
@@ -247,13 +247,13 @@ class CollectorForm extends React.Component<
             />
 
             <FormGroup controlId="service_type" validationState={this._validationState('service_type')}>
-              <ControlLabel>Process management</ControlLabel>
+              <ControlLabel>进程管理</ControlLabel>
               <Select
                 inputId="service_type"
                 options={formatServiceTypes()}
                 value={formData.service_type}
                 onChange={this._formDataUpdate('service_type')}
-                placeholder="Service Type"
+                placeholder="服务类型"
                 required
               />
               <HelpBlock>
@@ -268,13 +268,13 @@ class CollectorForm extends React.Component<
             <FormGroup
               controlId="node_operating_system"
               validationState={this._validationState('node_operating_system')}>
-              <ControlLabel>Operating System</ControlLabel>
+              <ControlLabel>操作系统</ControlLabel>
               <Select
                 inputId="node_operating_system"
                 options={formatOperatingSystems()}
                 value={formData.node_operating_system}
                 onChange={this._formDataUpdate('node_operating_system')}
-                placeholder="Name"
+                placeholder="名称"
                 required
               />
               <HelpBlock>
@@ -289,7 +289,7 @@ class CollectorForm extends React.Component<
             <Input
               type="text"
               id="executablePath"
-              label="Executable Path"
+              label="可执行文件路径"
               onChange={this._onInputChange('executable_path')}
               bsStyle={this._validationState('executable_path')}
               help={
@@ -308,14 +308,14 @@ class CollectorForm extends React.Component<
               id="executeParameters"
               label={
                 <span>
-                  Execute Parameters <small className="text-muted">(Optional)</small>
+                  执行参数 <small className="text-muted">（可选）</small>
                 </span>
               }
               onChange={this._onInputChange('execute_parameters')}
               help={
                 <span>
-                  Parameters the collector is started with.
-                  <strong> %s will be replaced by the path to the configuration file.</strong>
+                  采集器启动时使用的参数。
+                  <strong> %s 将被替换为配置文件的路径。</strong>
                 </span>
               }
               value={executeParameters || ''}
@@ -326,14 +326,14 @@ class CollectorForm extends React.Component<
               id="validationParameters"
               label={
                 <span>
-                  Parameters for Configuration Validation <small className="text-muted">(Optional)</small>
+                  配置验证参数 <small className="text-muted">（可选）</small>
                 </span>
               }
               onChange={this._onInputChange('validation_parameters')}
               help={
                 <span>
-                  Parameters that validate the configuration file.{' '}
-                  <strong> %s will be replaced by the path to the configuration file.</strong>
+                  验证配置文件的参数。{' '}
+                  <strong> %s 将被替换为配置文件的路径。</strong>
                 </span>
               }
               value={validationParameters || ''}
@@ -342,7 +342,7 @@ class CollectorForm extends React.Component<
             <FormGroup controlId="defaultTemplate">
               <ControlLabel>
                 <span>
-                  Default Template <small className="text-muted">(Optional)</small>
+                  默认模板 <small className="text-muted">（可选）</small>
                 </span>
               </ControlLabel>
               <SourceCodeEditor
@@ -350,14 +350,14 @@ class CollectorForm extends React.Component<
                 value={formData.default_template || ''}
                 onChange={this._formDataUpdate('default_template')}
               />
-              <HelpBlock>The default Collector configuration.</HelpBlock>
+              <HelpBlock>默认采集器配置。</HelpBlock>
             </FormGroup>
           </fieldset>
 
           <Row>
             <Col md={12}>
               <FormSubmit
-                submitButtonText={`${action === 'create' ? 'Create' : 'Update'} collector`}
+                submitButtonText={`${action === 'create' ? 'Create' : 'Update'} 收集器`}
                 disabledSubmit={this.hasErrors()}
                 onCancel={this._onCancel}
               />

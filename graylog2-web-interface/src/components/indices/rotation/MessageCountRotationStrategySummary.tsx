@@ -23,9 +23,9 @@ type MessageCountRotationStrategySummaryProps = {
 const MessageCountRotationStrategySummary = ({ config }: MessageCountRotationStrategySummaryProps) => (
   <div>
     <dl>
-      <dt>Index rotation strategy:</dt>
-      <dd>Message Count</dd>
-      <dt>Max docs per index:</dt>
+      <dt>索引轮转策略:</dt>
+      <dd>消息数量</dd>
+      <dt>每个索引的最大文档数:</dt>
       <dd>{config.max_docs_per_index}</dd>
     </dl>
   </div>

@@ -182,7 +182,7 @@ const ExportModal = ({ closeModal = () => {}, view, directExportWidgetId = null 
                   leftCol={
                     allowWidgetSelection && (
                       <Button bsStyle="link" onClick={resetSelectedWidget} className="pull-left">
-                        Select different message table
+                        选择不同的消息表
                       </Button>
                     )
                   }
@@ -190,9 +190,9 @@ const ExportModal = ({ closeModal = () => {}, view, directExportWidgetId = null 
                   disabledSubmit={!enableDownload}
                   isSubmitting={loading}
                   isAsyncSubmit
-                  submitLoadingText="Downloading..."
+                  submitLoadingText="下载中..."
                   submitIcon="download"
-                  submitButtonText="Start Download"
+                  submitButtonText="开始下载"
                 />
               </Modal.Footer>
             </Form>

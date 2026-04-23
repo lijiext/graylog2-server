@@ -35,7 +35,7 @@ const WhoisAdapterFieldSet = ({ config, handleFormEvent, validationMessage, vali
       type="number"
       id="connect_timeout"
       name="connect_timeout"
-      label="Connect timeout"
+      label="连接超时"
       required
       onChange={handleFormEvent}
       help={validationMessage('connect_timeout', 'WHOIS connection timeout in milliseconds.')}
@@ -48,7 +48,7 @@ const WhoisAdapterFieldSet = ({ config, handleFormEvent, validationMessage, vali
       type="number"
       id="read_timeout"
       name="read_timeout"
-      label="Read timeout"
+      label="读取超时"
       required
       onChange={handleFormEvent}
       help={validationMessage('read_timeout', 'WHOIS connection read timeout in milliseconds.')}

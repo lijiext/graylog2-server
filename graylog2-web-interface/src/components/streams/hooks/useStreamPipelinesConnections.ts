@@ -46,15 +46,15 @@ const useStreamPipelinesConnectionMutation = (): {
       });
 
       UserNotification.success(
-        'Saving stream pipelines connection was successful.',
-        'Saving stream pipeline connection.',
+        '保存数据流处理管道连接成功。',
+        '正在保存数据流处理管道连接。',
       );
     },
 
     onError: (errorThrown) => {
       UserNotification.error(
-        `Saving stream pipelines connection failed with status: ${errorThrown}`,
-        'Saving stream pipeline connection.',
+        `保存数据流管道连接失败，状态为：${errorThrown}`,
+        '正在保存数据流处理管道连接。',
       );
     },
   });

@@ -51,11 +51,11 @@ const usePipelineMutations = () => {
     mutationFn: createPipeline,
 
     onError: (errorThrown) => {
-      UserNotification.error(`Creating pipeline failed with status: ${errorThrown}`, 'Could not create pipeline');
+      UserNotification.error(`创建处理管道失败，状态为：${errorThrown}`, '无法创建处理管道');
     },
 
     onSuccess: () => {
-      UserNotification.success('Pipeline has been successfully created.', 'Success!');
+      UserNotification.success('处理管道已成功创建。', '成功！');
       queryClient.invalidateQueries({ queryKey: PIPELINES_QUERY_KEY });
     },
   });
@@ -64,11 +64,11 @@ const usePipelineMutations = () => {
     mutationFn: updatePipeline,
 
     onError: (errorThrown) => {
-      UserNotification.error(`Updating pipeline failed with status: ${errorThrown}`, 'Could not update pipeline');
+      UserNotification.error(`更新处理管道失败，状态为：${errorThrown}`, '无法更新处理管道');
     },
 
     onSuccess: () => {
-      UserNotification.success('Pipeline has been successfully updated.', 'Success!');
+      UserNotification.success('处理管道已成功更新。', '成功！');
       queryClient.invalidateQueries({ queryKey: PIPELINES_QUERY_KEY });
       queryClient.invalidateQueries({ queryKey: PIPELINE_QUERY_KEY });
     },
@@ -78,11 +78,11 @@ const usePipelineMutations = () => {
     mutationFn: deletePipeline,
 
     onError: (errorThrown) => {
-      UserNotification.error(`Deleting pipeline failed with status: ${errorThrown}`, 'Could not delete pipeline');
+      UserNotification.error(`删除处理管道失败，状态为：${errorThrown}`, '无法删除处理管道');
     },
 
     onSuccess: () => {
-      UserNotification.success('Pipeline has been successfully deleted.', 'Success!');
+      UserNotification.success('处理管道已成功删除。', '成功！');
       queryClient.invalidateQueries({ queryKey: PIPELINES_QUERY_KEY });
       queryClient.invalidateQueries({ queryKey: PIPELINE_QUERY_KEY });
     },

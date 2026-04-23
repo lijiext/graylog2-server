@@ -67,7 +67,7 @@ public class SupportBundleResource extends RestResource {
     @GET
     @Path("/manifest")
     @Produces(MediaType.APPLICATION_JSON)
-    @ApiOperation(value = "Get a nodes' Support Bundle Manifest")
+    @ApiOperation(value = "获取节点的 Support Bundle Manifest")
     @RequiresPermissions(SUPPORTBUNDLE_READ)
     public SupportBundleNodeManifest getNodeManifest() {
         return supportBundleService.getManifest();
@@ -75,7 +75,7 @@ public class SupportBundleResource extends RestResource {
 
     @GET
     @Path("/logfile/{id}")
-    @ApiOperation(value = "Retrieve the nodes' server logfile")
+    @ApiOperation(value = "获取节点的服务器日志文件")
     @RequiresPermissions(SUPPORTBUNDLE_READ)
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public Response getLogFile(@PathParam("id") @ApiParam(name = "id", value = "The id of the logfile as referenced from the Support Bundle Manifest") String id) {

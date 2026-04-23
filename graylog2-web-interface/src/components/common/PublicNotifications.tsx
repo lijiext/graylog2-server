@@ -97,7 +97,7 @@ const PublicNotification = ({ notificationId, notification, onDismissPublicNotif
           <ShortContent>{shortMessage}</ShortContent>
           {longMessage && (
             <Button bsStyle="link" onClick={toggleReadMore}>
-              Read {showReadMore ? 'Less' : 'More'}
+              读取 {showReadMore ? 'Less' : 'More'}
             </Button>
           )}
         </FlexWrap>

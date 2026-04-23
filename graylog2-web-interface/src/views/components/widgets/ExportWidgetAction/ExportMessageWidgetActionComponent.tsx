@@ -32,7 +32,7 @@ const ExportMessageWidgetActionComponent = ({ widget, disabled }: WidgetMenuActi
         disabled={disabled}
         onClick={showMessageExportModal}
         name="download"
-        title="Export all search results"
+        title="导出所有搜索结果"
       />
       {showExport && (
         <ExportModal view={view} directExportWidgetId={widget.id} closeModal={() => setShowExport(false)} />

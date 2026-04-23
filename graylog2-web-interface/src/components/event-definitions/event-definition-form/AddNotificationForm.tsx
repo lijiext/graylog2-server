@@ -130,33 +130,32 @@ class AddNotificationForm extends React.Component<
     const { displayNewNotificationForm, selectedNotification } = this.state;
     const doneButton = displayNewNotificationForm ? (
       <Button bsStyle="primary" type="submit" form="new-notification-form">
-        Add notification
+        添加通知
       </Button>
     ) : (
       <Button bsStyle="primary" onClick={this.handleSubmit}>
-        Add notification
+        添加通知
       </Button>
     );
 
     return (
       <Row>
         <Col md={7} lg={6}>
-          <h2 className={commonStyles.title}>Add Notification</h2>
+          <h2 className={commonStyles.title}>添加通知</h2>
 
           <fieldset>
             <FormGroup controlId="notification-select">
-              <ControlLabel>Choose Notification</ControlLabel>
+              <ControlLabel>选择通知</ControlLabel>
               <Select
                 id="notification-select"
-                placeholder="Select Notification"
+                placeholder="选择通知"
                 onChange={this.handleSelectNotificationChange}
                 options={this.formatNotifications(notifications)}
                 value={selectedNotification}
                 menuPlacement="bottom"
               />
               <HelpBlock>
-                Select a Notification to use on Alerts of this kind or create a new Notification that you can later use
-                in other Alerts.
+                选择一种通知以用于此类告警，或创建一个新的通知，以便稍后在其他告警中使用。
               </HelpBlock>
             </FormGroup>
 
@@ -172,7 +171,7 @@ class AddNotificationForm extends React.Component<
 
           <ButtonToolbar>
             {doneButton}
-            <Button onClick={this.handleCancel}>Cancel</Button>
+            <Button onClick={this.handleCancel}>取消</Button>
           </ButtonToolbar>
         </Col>
       </Row>

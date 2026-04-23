@@ -93,7 +93,7 @@ class SidecarList extends React.Component<
     return (
       <NoSearchResult>
         <Icon name="info" />
-        &nbsp;There are no sidecars matching the search criteria. Try adjusting your search filter{showInactiveHint}.
+         没有与搜索条件匹配的 Sidecar。请尝试调整搜索过滤器{showInactiveHint}.
       </NoSearchResult>
     );
   };
@@ -105,7 +105,7 @@ class SidecarList extends React.Component<
       return this.formatNoMatchingListAlert();
     }
 
-    return <NoEntitiesExist>There are no sidecars configured.</NoEntitiesExist>;
+    return <NoEntitiesExist>未配置任何 Sidecar。</NoEntitiesExist>;
   };
 
   render() {
@@ -119,7 +119,7 @@ class SidecarList extends React.Component<
         <div className={style.sidecarsFilter}>
           <SidecarSearchForm query={query} onSearch={onQueryChange} onReset={onQueryChange}>
             <Button bsStyle="primary" onClick={toggleShowInactive} className={style.inactiveSidecarsButton}>
-              {showOrHideInactive} inactive sidecars
+              {showOrHideInactive} 未激活的 Sidecar
             </Button>
           </SidecarSearchForm>
         </div>

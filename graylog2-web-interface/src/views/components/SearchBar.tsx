@@ -225,7 +225,7 @@ const SearchBar = ({ onSubmit = defaultProps.onSubmit, scrollContainer }: Props)
           <ScrollToHint
             scrollContainer={scrollContainer}
             ifValueChanges={query.query_string}
-            title="Scroll to search bar"
+            title="滚动到搜索栏"
           />
           <SearchBarForm
             initialValues={initialValues}
@@ -322,7 +322,7 @@ const SearchBar = ({ onSubmit = defaultProps.onSubmit, scrollContainer }: Props)
                                         streams={values.streams}
                                         name={name}
                                         onChange={onChange}
-                                        placeholder='Type your search query here and press enter. E.g.: ("not found" AND http) OR http_response_code:[400 TO 404]'
+                                        placeholder='在此输入您的搜索查询并按回车键。例如：("not found" AND http) OR http_response_code:[400 TO 404]'
                                         error={error}
                                         isValidating={isValidating}
                                         warning={warnings.queryString}

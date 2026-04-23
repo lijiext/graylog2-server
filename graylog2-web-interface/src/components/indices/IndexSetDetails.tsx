@@ -43,14 +43,14 @@ const IndexSetDetails = ({ indexSet }: Props) => {
           <dt>Index prefix:</dt>
           <dd>{indexSet.index_prefix}</dd>
           <HideOnCloud>
-            <dt>Shards:</dt>
+            <dt>分片:</dt>
             <dd>{indexSet.shards}</dd>
-            <dt>Replicas:</dt>
+            <dt>副本数:</dt>
             <dd>{indexSet.replicas}</dd>
           </HideOnCloud>
-          <dt>Field type refresh interval:</dt>
+          <dt>字段类型刷新间隔：</dt>
           <dd>{indexSet.field_type_refresh_interval / 1000.0} seconds</dd>
-          <dt>Field type profile:</dt>
+          <dt>字段类型配置:</dt>
           {!isFetching && (
             <dd>
               {indexSet.field_type_profile ? (
@@ -58,7 +58,7 @@ const IndexSetDetails = ({ indexSet }: Props) => {
                   {profileName}
                 </Link>
               ) : (
-                <i>Not set</i>
+                <i>未设置</i>
               )}
             </dd>
           )}

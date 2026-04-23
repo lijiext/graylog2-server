@@ -66,17 +66,17 @@ const DataNodePage = () => {
   }
 
   if (!isInitialLoading && (!data || error)) {
-    return <NoSearchResult>Error: {error?.message}</NoSearchResult>;
+    return <NoSearchResult>错误: {error?.message}</NoSearchResult>;
   }
 
   const datanode = data as DataNode;
   const datanodeDisabled = datanode.data_node_status !== 'AVAILABLE';
 
   return (
-    <DocumentTitle title={`Data Nodes: ${datanode.hostname}`}>
+    <DocumentTitle title={`数据节点：${datanode.hostname}`}>
       <ClusterConfigurationPageNavigation />
       <PageHeader
-        title={`Data Nodes: ${datanode.hostname}`}
+        title={`数据节点：${datanode.hostname}`}
         documentationLink={{
           title: 'Data Nodes documentation',
           path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
@@ -85,13 +85,13 @@ const DataNodePage = () => {
       <Row className="content">
         <Col xs={12}>
           <Col xs={9}>
-            <h2>Details:</h2>
+            <h2>详情:</h2>
             <StyledHorizontalDl>
               <dt>Hostname:</dt>
               <dd>{datanode.hostname}</dd>
-              <dt>Transport address:</dt>
+              <dt>传输地址:</dt>
               <dd>{datanode.transport_address || '-'}</dd>
-              <dt>Status:</dt>
+              <dt>状态:</dt>
               <dd>
                 <StatusLabel
                   bsStyle={datanodeDisabled ? 'warning' : 'success'}
@@ -101,12 +101,12 @@ const DataNodePage = () => {
                   {datanode.data_node_status || 'N/A'}
                 </StatusLabel>
               </dd>
-              <dt>Certificate valid until:</dt>
+              <dt>证书有效期至：</dt>
               <dd>
                 <RelativeTime dateTime={datanode.cert_valid_until} />{' '}
                 <CertRenewalButton nodeId={datanode.node_id} status={datanode.status} />
               </dd>
-              <dt>Datanode version:</dt>
+              <dt>数据节点版本:</dt>
               <dd>{datanode.datanode_version}</dd>
             </StyledHorizontalDl>
           </Col>

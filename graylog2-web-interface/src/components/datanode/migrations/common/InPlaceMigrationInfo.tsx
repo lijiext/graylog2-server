@@ -35,15 +35,12 @@ export const StyledPanel = styled(Panel)<{ bsStyle: string }>(
 const InPlaceMigrationInfo = () => (
   <StyledPanel bsStyle="info">
     <Panel.Heading>
-      <Panel.Title componentClass="h3">In-Place migration</Panel.Title>
+      <Panel.Title componentClass="h3">原地迁移</Panel.Title>
     </Panel.Heading>
     <Panel.Body>
-      For In-Place migrations, please ensure the configuration of your Data Nodes in <code>datanode.conf</code>,
-      specifically the <code>opensearch_data_location</code> configuration option, points to the correct existing
-      OpenSearch data directory on every node.
+      对于就地迁移，请确保您的数据节点的配置位于 <code>datanode.conf</code>，特别是 <code>opensearch_data_location</code> 配置选项，指向每个节点上正确的现有 OpenSearch 数据目录。
       <br />
-      During the time of the migration, both the Data Node&apos;s and the OpenSearch&apos;s system user will need to be
-      able to access and write to the data directory. To ensure this, you can run for example
+      在迁移期间，Data Node 和 OpenSearch 的系统用户都需要能够访问并写入数据目录。为确保这一点，您可以运行例如
       <br />
       <code>sudo chmod -R 757 &lt;your_data_directory&gt;</code>
     </Panel.Body>

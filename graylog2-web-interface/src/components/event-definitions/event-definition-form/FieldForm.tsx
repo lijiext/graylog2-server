@@ -236,7 +236,7 @@ class FieldForm extends React.Component<
         currentUser: currentUser,
       })
     ) : (
-      <div>Selected provider is not available.</div>
+      <div>所选提供者不可用。</div>
     );
   };
 
@@ -253,7 +253,7 @@ class FieldForm extends React.Component<
           <Input
             id="field-name"
             name="name"
-            label="Name"
+            label="名称"
             type="text"
             value={fieldName}
             onChange={this.handleFieldNameChange}
@@ -264,8 +264,8 @@ class FieldForm extends React.Component<
 
           <FormGroup validationState={validation.errors.key_position ? 'error' : null}>
             <ControlLabel>
-              Use Field as Event Key&emsp;
-              <HoverForHelp title="More about Event Keys" trigger={['click', 'hover']} placement="right">
+              使用字段作为事件键 
+              <HoverForHelp title="有关事件键的更多信息" trigger={['click', 'hover']} placement="right">
                 <EventKeyHelpPopover />
               </HoverForHelp>
             </ControlLabel>
@@ -275,7 +275,7 @@ class FieldForm extends React.Component<
                   id="is-key"
                   name="is-key"
                   type="checkbox"
-                  aria-label="Use Field as Event Key"
+                  aria-label="使用字段作为事件键"
                   onChange={this.toggleKey}
                   checked={isKey}
                 />
@@ -295,18 +295,18 @@ class FieldForm extends React.Component<
           </FormGroup>
 
           <FormGroup>
-            <ControlLabel>Field Data Type</ControlLabel>
-            <FormControl.Static>String</FormControl.Static>
+            <ControlLabel>字段数据类型</ControlLabel>
+            <FormControl.Static>字符串</FormControl.Static>
           </FormGroup>
 
           <FormGroup
             controlId="event-field-provider"
             validationState={validation.errors['config.providers[0].type'] ? 'error' : null}>
-            <ControlLabel>Set Value From</ControlLabel>
+            <ControlLabel>从...设置值</ControlLabel>
             <Select
               name="event-field-provider"
               ignoreAccents={false}
-              placeholder="Select Value Source"
+              placeholder="选择值来源"
               onChange={this.handleProviderTypeChange}
               options={formatFieldValueProviders()}
               value={getConfigProviderType(config, '')}
@@ -325,7 +325,7 @@ class FieldForm extends React.Component<
             <Button bsStyle="primary" onClick={this.handleSubmit}>
               {isEditingField ? 'Update custom field' : 'Add custom field'}
             </Button>
-            <Button onClick={this.handleCancel}>Cancel</Button>
+            <Button onClick={this.handleCancel}>取消</Button>
           </ButtonToolbar>
         </Col>
       </Row>

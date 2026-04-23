@@ -182,8 +182,8 @@ const SearchActionsMenu = () => {
         .then((createdView) => {
           viewLoaderFunc(createdView.id);
         })
-        .then(() => UserNotification.success(`Saving view "${newView.title}" was successful!`, 'Success!'))
-        .catch((error) => UserNotification.error(`Saving view failed: ${_extractErrorMessage(error)}`, 'Error!'));
+        .then(() => UserNotification.success(`保存视图 "${newView.title}" 成功！`, '成功！'))
+        .catch((error) => UserNotification.error(`保存视图失败：${_extractErrorMessage(error)}`, '错误！'));
     },
     [currentUser.permissions, pluggableSaveViewControls, toggleFormModal, view, viewLoaderFunc],
   );
@@ -192,7 +192,7 @@ const SearchActionsMenu = () => {
     (deletedView: View) =>
       ViewManagementActions.delete(deletedView)
         .then(() =>
-          UserNotification.success(`Deleting saved search "${deletedView.title}" was successful!`, 'Success!'),
+          UserNotification.success(`成功删除保存的搜索 "${deletedView.title}"！`, '成功！'),
         )
         .then(() => {
           if (deletedView.id === view.id) {
@@ -202,7 +202,7 @@ const SearchActionsMenu = () => {
           return Promise.resolve();
         })
         .catch((error) =>
-          UserNotification.error(`Deleting saved search failed: ${_extractErrorMessage(error)}`, 'Error!'),
+          UserNotification.error(`删除保存的搜索失败：${_extractErrorMessage(error)}`, '错误！'),
         ),
     [history, view.id],
   );
@@ -225,7 +225,7 @@ const SearchActionsMenu = () => {
   });
 
   return (
-    <Container aria-label="Search Meta Buttons">
+    <Container aria-label="搜索元按钮">
       <SavedSearchForm
         key={currentTitle}
         show={showForm}
@@ -238,8 +238,8 @@ const SearchActionsMenu = () => {
         viewId={!isNew && view.id}>
         <SaveViewButton title={title} ref={formTarget} onClick={toggleFormModal} />
       </SavedSearchForm>
-      <Button title="Load a previously saved search" onClick={toggleListModal}>
-        <Icon name="folder" type="regular" /> Load
+      <Button title="加载之前保存的搜索" onClick={toggleListModal}>
+        <Icon name="folder" type="regular" /> 加载
       </Button>
       {showList && (
         <SavedSearchesModal
@@ -257,23 +257,23 @@ const SearchActionsMenu = () => {
       />
       <DropdownButton
         title={<Icon name="more_horiz" />}
-        aria-label="Open search actions dropdown"
+        aria-label="打开搜索操作下拉菜单"
         id="search-actions-dropdown"
         pullRight
         noCaret>
         <MenuItem onSelect={toggleMetadataEdit} disabled={!isAllowedToEdit} icon="edit">
-          Edit metadata
+          编辑元数据
         </MenuItem>
         <IfPermitted permissions="dashboards:create">
           <MenuItem onSelect={_loadAsDashboard} icon="dashboard">
-            Export to dashboard
+            导出到仪表盘
           </MenuItem>
         </IfPermitted>
         <MenuItem onSelect={toggleExport} icon="download">
-          Export
+          导出
         </MenuItem>
         <MenuItem disabled={disableReset} onSelect={loadNewView} icon="restart_alt">
-          Reset search
+          重置搜索
         </MenuItem>
         {pluggableActions.length ? (
           <>
@@ -287,8 +287,8 @@ const SearchActionsMenu = () => {
         <ViewPropertiesModal
           show
           view={view}
-          title="Editing saved search"
-          submitButtonText="Update search"
+          title="编辑已保存的搜索"
+          submitButtonText="更新搜索"
           onClose={toggleMetadataEdit}
           onSave={onUpdateView}
         />
@@ -298,7 +298,7 @@ const SearchActionsMenu = () => {
           entityId={view.id}
           entityType="search"
           entityTitle={view.title}
-          description="Search for a User or Team to add as collaborator on this saved search."
+          description="搜索用户或团队以将其添加为此保存搜索的协作者。"
           onClose={toggleShareSearch}
         />
       )}

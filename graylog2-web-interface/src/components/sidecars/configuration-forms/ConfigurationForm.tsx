@@ -261,8 +261,7 @@ const ConfigurationForm = ({
         <>
           <FormControl.Static>{_formatCollector(collector)}</FormControl.Static>
           <HelpBlock bsClass="warning">
-            <b>Note:</b> Log Collector cannot change while the Configuration is in use. Clone the Configuration to test
-            it using another Collector.
+            <b>注意：</b> 配置正在使用时无法更改日志采集器。请克隆该配置，以便使用另一个采集器进行测试。
           </HelpBlock>
         </>
       );
@@ -275,10 +274,10 @@ const ConfigurationForm = ({
           options={_formatCollectorOptions()}
           value={collectorId}
           onChange={_onCollectorChange}
-          placeholder="Collector"
+          placeholder="采集器"
           required
         />
-        <HelpBlock>Choose the log collector this configuration is meant for.</HelpBlock>
+        <HelpBlock>选择此配置对应的日志采集器。</HelpBlock>
       </>
     );
   };
@@ -292,7 +291,7 @@ const ConfigurationForm = ({
               <Input
                 type="text"
                 id="name"
-                label="Name"
+                label="名称"
                 onChange={_onNameChange}
                 bsStyle={_validationState('name')}
                 help={_formatValidationMessage('name', 'Required. Name for this configuration')}
@@ -301,7 +300,7 @@ const ConfigurationForm = ({
                 required
               />
               <FormGroup controlId="color">
-                <ControlLabel>Configuration color</ControlLabel>
+                <ControlLabel>配置颜色</ControlLabel>
                 <div>
                   <ColorLabel color={formData.color} />
                   <div style={{ display: 'inline-block', marginLeft: 15 }}>
@@ -309,16 +308,16 @@ const ConfigurationForm = ({
                       id="color"
                       placement="right"
                       color={formData.color}
-                      triggerNode={<Button bsSize="xsmall">Change color</Button>}
+                      triggerNode={<Button bsSize="xsmall">更改颜色</Button>}
                       onChange={_formDataUpdate('color')}
                     />
                   </div>
                 </div>
-                <HelpBlock>Choose a color to use for this configuration.</HelpBlock>
+                <HelpBlock>选择用于此配置的颜色。</HelpBlock>
               </FormGroup>
 
               <FormGroup controlId="tags">
-                <ControlLabel>Configuration Assignment Tags</ControlLabel>
+                <ControlLabel>配置分配标签</ControlLabel>
                 <div>
                   <ConfigurationTagsSelect
                     availableTags={formData.tags.map((tag) => ({ name: tag }))}
@@ -327,17 +326,17 @@ const ConfigurationForm = ({
                   />
                 </div>
                 <HelpBlock>
-                  Sidecars which are configured with a matching tag will automatically receive this configuration.
+                  配置了匹配标签的 Sidecar 将自动接收此配置。
                 </HelpBlock>
               </FormGroup>
 
               <FormGroup controlId="collector_id">
-                <ControlLabel>Collector</ControlLabel>
+                <ControlLabel>采集器</ControlLabel>
                 {_renderCollectorTypeField(formData.collector_id, collectors, configurationSidecars)}
               </FormGroup>
 
               <FormGroup controlId="template" validationState={_validationState('template')}>
-                <ControlLabel>Configuration</ControlLabel>
+                <ControlLabel>配置</ControlLabel>
                 <SourceCodeEditor
                   id="template"
                   height={400}
@@ -345,7 +344,7 @@ const ConfigurationForm = ({
                   onChange={_onTemplateChange}
                 />
                 <Button className="pull-right" bsStyle="link" bsSize="sm" onClick={_onShowSource}>
-                  Preview
+                  预览
                 </Button>
                 <HelpBlock>
                   {_formatValidationMessage(
@@ -359,7 +358,7 @@ const ConfigurationForm = ({
             <Row>
               <Col md={12}>
                 <FormSubmit
-                  submitButtonText={`${action === 'create' ? 'Create' : 'Update'} configuration`}
+                  submitButtonText={`${action === 'create' ? 'Create' : 'Update'} 配置`}
                   disabledSubmit={_hasErrors()}
                   onCancel={_onCancel}
                 />

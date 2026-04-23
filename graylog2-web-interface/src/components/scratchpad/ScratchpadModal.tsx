@@ -202,7 +202,7 @@ const Scratchpad = () => {
 
   return (
     <InteractableModal
-      title="Scratchpad"
+      title="草稿箱"
       onClose={() => setScratchpadVisibility(false)}
       onDrag={handleDrag}
       onResize={handleSize}
@@ -212,10 +212,10 @@ const Scratchpad = () => {
         {!isSecurityWarningConfirmed && (
           <StyledAlert bsStyle="warning">
             <AlertNote>
-              We recommend you do <strong>not</strong> store any sensitive information, such as passwords, in this area.
+              我们建议您执行 <strong>not</strong> 请勿在此区域存储任何敏感信息，例如密码。
             </AlertNote>
             <Button bsStyle="link" bsSize="sm" onClick={handleGotIt}>
-              Got It!
+              知道了！
             </Button>
           </StyledAlert>
         )}
@@ -234,8 +234,7 @@ const Scratchpad = () => {
             trigger={['hover', 'focus']}
             overlay={
               <>
-                You can use this space to store personal notes and other information, without leaving your browser
-                window. For example, store timestamps, user IDs, or IP addresses you need in various investigations.
+                您可以在此处存储个人笔记和其他信息，而无需离开浏览器窗口。例如，存储您在各种调查中需要的时间戳、用户 ID 或 IP 地址。
               </>
             }>
             <Button bsStyle="link">
@@ -248,10 +247,10 @@ const Scratchpad = () => {
           </StatusMessage>
 
           <ButtonGroup>
-            <Button id="scratchpad-actions" onClick={copyCallback} title="Copy">
+            <Button id="scratchpad-actions" onClick={copyCallback} title="复制">
               <Icon name="content_copy" />
             </Button>
-            <Button onClick={openConfirmClear} title="Clear">
+            <Button onClick={openConfirmClear} title="清除">
               <Icon name="delete" />
             </Button>
           </ButtonGroup>
@@ -260,10 +259,10 @@ const Scratchpad = () => {
 
       <BootstrapModalConfirm
         showModal={showModal}
-        title="Are you sure?"
+        title="您确定吗？"
         onConfirm={handleClearText}
         onCancel={handleCancelClear}>
-        This will clear out your Scratchpad content, do you wish to proceed?
+        这将清除您的草稿箱内容，您确定要继续吗？
       </BootstrapModalConfirm>
     </InteractableModal>
   );

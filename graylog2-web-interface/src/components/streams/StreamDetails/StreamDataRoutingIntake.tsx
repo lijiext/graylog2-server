@@ -52,12 +52,11 @@ const StreamDataRoutingInstake = ({ stream }: Props) => {
   return (
     <>
       <Alert bsStyle="default">
-        Stream Rules take effect first in the default processing order, and are used to direct messages from Inputs into
-        Streams. Any message that meets the criteria of the Stream Rule(s) will be directed into this Stream.
+        管道规则在默认处理顺序中优先生效，用于将来自输入端的消息定向到数据流。任何符合管道规则条件的消息都将被定向到此数据流。
       </Alert>
 
       <Section
-        title="Stream rules"
+        title="数据流规则"
         actions={
           <IfPermitted permissions={`streams:edit:${stream.id}`}>
             <CreateStreamRuleButton
@@ -71,7 +70,7 @@ const StreamDataRoutingInstake = ({ stream }: Props) => {
         <Table condensed striped hover>
           <thead>
             <tr>
-              <th colSpan={2}>Rule</th>
+              <th colSpan={2}>规则</th>
             </tr>
           </thead>
           <tbody>
@@ -82,7 +81,7 @@ const StreamDataRoutingInstake = ({ stream }: Props) => {
 
             {!hasStreamRules && (
               <tr>
-                <td>No rules defined.</td>
+                <td>未定义规则。</td>
               </tr>
             )}
           </tbody>

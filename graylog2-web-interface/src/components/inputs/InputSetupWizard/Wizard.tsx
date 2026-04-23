@@ -48,19 +48,19 @@ const Wizard = ({ show, input, onClose }: Props) => {
     () => ({
       [INPUT_WIZARD_STEPS.SETUP_ROUTING]: {
         key: INPUT_WIZARD_STEPS.SETUP_ROUTING,
-        title: <>Routing</>,
+        title: <>路由</>,
         component: <SetupRoutingStep />,
         disabled: true,
       },
       [INPUT_WIZARD_STEPS.START_INPUT]: {
         key: INPUT_WIZARD_STEPS.START_INPUT,
-        title: <>Launch</>,
+        title: <>启动</>,
         component: <StartInputStep />,
         disabled: true,
       },
       [INPUT_WIZARD_STEPS.INPUT_DIAGNOSIS]: {
         key: INPUT_WIZARD_STEPS.INPUT_DIAGNOSIS,
-        title: <>Diagnosis</>,
+        title: <>诊断</>,
         component: <InputDiagnosisStep onClose={() => onClose()} />,
         disabled: true,
       },
@@ -86,7 +86,7 @@ const Wizard = ({ show, input, onClose }: Props) => {
 
   return (
     <Modal show onHide={onClose} backdrop={false}>
-      <Modal.Header>Input Setup Wizard</Modal.Header>
+      <Modal.Header>输入端设置向导</Modal.Header>
       <Modal.Body>
         <InputSetupWizardStepsProvider>
           {EnterpriseWizard ? (

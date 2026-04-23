@@ -38,7 +38,7 @@ const StatusCell = ({ accountStatus, authServiceEnabled }: Props) => (
       position="right"
       label={
         <>
-          {`User is ${accountStatus}`}
+          {`用户为 ${accountStatus}`}
           {!authServiceEnabled ? ' (authentication service is disabled)' : ''}
         </>
       }>

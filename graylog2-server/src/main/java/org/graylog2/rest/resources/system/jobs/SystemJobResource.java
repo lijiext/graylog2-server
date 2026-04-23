@@ -123,7 +123,7 @@ public class SystemJobResource extends RestResource {
     @ApiOperation(value = "Get information of a specific currently running job")
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 404, message = "Job not found.")
+            @ApiResponse(code = 404, message = "未找到作业。")
     })
     public SystemJobSummary get(@ApiParam(name = "jobId", required = true)
                                 @PathParam("jobId") @NotEmpty String jobId) {
@@ -154,9 +154,9 @@ public class SystemJobResource extends RestResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @ApiResponses(value = {
-            @ApiResponse(code = 202, message = "Job accepted."),
-            @ApiResponse(code = 400, message = "There is no such systemjob type."),
-            @ApiResponse(code = 403, message = "Maximum concurrency level of this systemjob type reached.")
+            @ApiResponse(code = 202, message = "任务已接受。"),
+            @ApiResponse(code = 400, message = "不存在此类系统作业类型。"),
+            @ApiResponse(code = 403, message = "此系统作业类型的最大并发级别已达到。")
     })
     @AuditEvent(type = AuditEventTypes.SYSTEM_JOB_START)
     public Response trigger(@ApiParam(name = "JSON body", required = true)

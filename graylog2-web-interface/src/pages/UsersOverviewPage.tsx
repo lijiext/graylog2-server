@@ -25,14 +25,14 @@ import UsersOverview from 'components/users/UsersOverview';
 import UsersPageNavigation from 'components/users/navigation/UsersPageNavigation';
 
 const UsersOverviewPage = () => (
-  <DocumentTitle title="Users Overview">
+  <DocumentTitle title="用户概览">
     <UsersPageNavigation />
     <PageHeader
-      title="Users Overview"
+      title="用户概览"
       actions={
         <IfPermitted permissions="users:create">
           <LinkContainer to={Routes.SYSTEM.USERS.CREATE}>
-            <Button bsStyle="primary">Create user</Button>
+            <Button bsStyle="primary">创建用户</Button>
           </LinkContainer>
         </IfPermitted>
       }
@@ -40,7 +40,7 @@ const UsersOverviewPage = () => (
         title: 'Permissions documentation',
         path: DocsHelper.PAGES.USERS_ROLES,
       }}>
-      <span>Overview of all registered users.</span>
+      <span>所有已注册用户概览。</span>
     </PageHeader>
 
     <UsersOverview />

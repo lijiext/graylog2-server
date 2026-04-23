@@ -52,7 +52,7 @@ const NodeName = ({ nodeId }: Props) => {
   const node = useStore(NodesStore, (state) => state?.nodes?.[nodeId]);
 
   if (!node) {
-    return <BreakWord>stopped node</BreakWord>;
+    return <BreakWord>已停止的节点</BreakWord>;
   }
 
   if (AppConfig.isCloud()) {
@@ -60,7 +60,7 @@ const NodeName = ({ nodeId }: Props) => {
   }
 
   return (
-    <Link to={Routes.SYSTEM.CLUSTER.NODE_SHOW(nodeId)} title={`Cluster node ${node.short_node_id} / ${node.hostname}`}>
+    <Link to={Routes.SYSTEM.CLUSTER.NODE_SHOW(nodeId)} title={`集群节点 ${node.short_node_id} / ${node.hostname}`}>
       <NodeTitle shortNodeId={node.short_node_id} hostname={node.hostname} />
     </Link>
   );

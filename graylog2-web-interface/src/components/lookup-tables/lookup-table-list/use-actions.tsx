@@ -63,20 +63,20 @@ function Actions({ lut }: ActionsProps) {
         buttonTitle={lut.id}
         noCaret
         pullRight>
-        <MenuItem onSelect={handleEdit}>Edit</MenuItem>
+        <MenuItem onSelect={handleEdit}>编辑</MenuItem>
         <MenuItem divider />
-        <DeleteMenuItem onSelect={() => setShowDeleteModal(true)}>Delete</DeleteMenuItem>
+        <DeleteMenuItem onSelect={() => setShowDeleteModal(true)}>删除</DeleteMenuItem>
       </DropdownButton>
       {showDeleteModal && (
         <BootstrapModalConfirm
           showModal
-          title="Delete Lookup Table"
+          title="删除查找表"
           onCancel={() => setShowDeleteModal(false)}
           onConfirm={handleDelete}
           cancelButtonDisabled={deletingLookupTable}
           confirmButtonDisabled={deletingLookupTable}
           confirmButtonText="Delete">
-          <p>Are you sure you want to delete lookup table &quot;{lut.title}&quot;?</p>
+          <p>您确定要删除查找表 "{lut.title}&quot;?</p>
         </BootstrapModalConfirm>
       )}
     </>

@@ -27,19 +27,19 @@ const HTTPJSONPathAdapterSummary = ({ dataAdapter }: HTTPJSONPathAdapterSummaryP
 
   return (
     <dl>
-      <dt>Lookup URL</dt>
+      <dt>查找 URL</dt>
       <dd>{config.url}</dd>
-      <dt>Single value JSONPath</dt>
+      <dt>单值 JSONPath</dt>
       <dd>
         <code>{config.single_value_jsonpath}</code>
       </dd>
-      <dt>Multi value JSONPath</dt>
+      <dt>多值 JSONPath</dt>
       <dd>
         <code>{config.multi_value_jsonpath}</code>
       </dd>
-      <dt>HTTP User-Agent</dt>
+      <dt>HTTP 用户代理</dt>
       <dd>{config.user_agent}</dd>
-      <dt>HTTP Headers</dt>
+      <dt>HTTP 头</dt>
       <dd>
         <KeyValueTable pairs={config.headers || {}} />
       </dd>

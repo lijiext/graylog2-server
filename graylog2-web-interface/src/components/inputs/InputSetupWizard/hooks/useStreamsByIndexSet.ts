@@ -50,7 +50,7 @@ const useStreamsByIndexSet = (
     queryFn: () =>
       onError(fetchStreamsByIndexSet(indexSetId), (errorThrown: FetchError) => {
         if (!(errorThrown.status === 404)) {
-          UserNotification.error(`Loading streams by index set failed with: ${errorThrown}`);
+          UserNotification.error(`按索引集加载数据流失败：${errorThrown}`);
         }
       }),
 

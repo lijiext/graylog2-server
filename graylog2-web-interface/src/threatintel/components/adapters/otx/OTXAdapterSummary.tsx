@@ -32,19 +32,19 @@ type OTXAdapterSummaryProps = {
 
 const OTXAdapterSummary = ({ dataAdapter: { config } }: OTXAdapterSummaryProps) => (
   <dl>
-    <dt>Indicator</dt>
+    <dt>指标</dt>
     <dd>{config.indicator}</dd>
-    <dt>OTX API Key</dt>
+    <dt>OTX API 密钥</dt>
     <dd>{config.api_key || 'n/a'}</dd>
     <dt>OTX API URL</dt>
     <dd>{config.api_url}</dd>
-    <dt>HTTP User-Agent</dt>
+    <dt>HTTP 用户代理</dt>
     <dd>{config.http_user_agent}</dd>
-    <dt>HTTP Connect Timeout</dt>
+    <dt>HTTP 连接超时</dt>
     <dd>{config.http_connect_timeout} ms</dd>
-    <dt>HTTP Write Timeout</dt>
+    <dt>HTTP 写入超时</dt>
     <dd>{config.http_write_timeout} ms</dd>
-    <dt>HTTP Read Timeout</dt>
+    <dt>HTTP 读取超时</dt>
     <dd>{config.http_read_timeout} ms</dd>
   </dl>
 );

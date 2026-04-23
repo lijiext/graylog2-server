@@ -86,7 +86,7 @@ public class OTelCodec implements Codec {
             case LOG ->
                     logsCodec.decode(journalRecord.getLog(), rawMessage.getTimestamp(), rawMessage.getRemoteAddress());
             case PAYLOAD_NOT_SET -> throw InputProcessingException.create(
-                    "Error handling OpenTelemetry message. No payload set.", rawMessage);
+                    "处理 OpenTelemetry 消息时出错。未设置有效负载。", rawMessage);
         };
     }
 

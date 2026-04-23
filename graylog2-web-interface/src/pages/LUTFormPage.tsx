@@ -52,7 +52,7 @@ function LUTFormPage() {
         pageDescription="Lookup tables can be used in extractors, converters and processing pipelines to translate message fields or to enrich messages."
         actions={
           <Button bsStyle="primary" onClick={() => navigate(Routes.SYSTEM.LOOKUPTABLES.OVERVIEW)}>
-            Back to list
+            返回列表
           </Button>
         }>
         <Row className="content" style={{ flexGrow: 1 }}>

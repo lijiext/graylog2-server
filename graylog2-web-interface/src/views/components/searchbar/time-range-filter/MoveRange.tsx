@@ -140,14 +140,14 @@ const MoveRangeInner = ({
         onMoveRange={onMoveRange}
         disabled={disableButton}
         direction={DIRECTIONS.backward}
-        title={disableButton ? 'Show previous' : `Show previous ${readableDuration}`}
+        title={disableButton ? 'Show previous' : `显示前 ${readableDuration}`}
       />
       {children}
       <MoveRangeButton
         onMoveRange={onMoveRange}
         disabled={disableButton}
         direction={DIRECTIONS.forward}
-        title={disableButton ? 'Show next' : `Show next ${readableDuration}`}
+        title={disableButton ? 'Show next' : `显示下一个 ${readableDuration}`}
       />
     </>
   );

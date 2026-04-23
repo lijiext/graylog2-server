@@ -43,40 +43,40 @@ const NoWidgetsInfo = () => {
   return (
     <StyledJumbotron>
       <h2>
-        <IfDashboard>This dashboard has no widgets yet</IfDashboard>
-        <IfSearch>There are no widgets defined to visualize the search result</IfSearch>
+        <IfDashboard>此仪表盘尚未包含任何小部件</IfDashboard>
+        <IfSearch>未定义用于可视化搜索结果的组件</IfSearch>
       </h2>
       <br />
       <p>
-        Create a new widget by selecting a widget type in the left sidebar section &quot;Create&quot;.
+        在左侧边栏的“创建”部分选择小部件类型以创建新的小部件。
         <br />
       </p>
-      <p>A few tips for creating searches and dashboards</p>
+      <p>一些关于创建搜索和仪表盘的提示</p>
       <ul>
         <li>
           <p>
-            1. Start with a <b>question</b> you want to answer. Define the problem you want to solve.
+            1. 从开始 <b>question</b> 您想要回答的问题。请定义您想要解决的问题。
           </p>
         </li>
         <li>
           <p>
-            2. <b>Limit</b> the data to only the data points you want to see.
+            2. <b>限制</b> 仅显示您想要查看的数据点。
           </p>
         </li>
         <li>
           <p>
-            3. <b>Visualize</b> the data. Does it answer your question?
+            3. <b>可视化</b> 数据。它是否回答了您的问题？
           </p>
         </li>
         <IfDashboard>
           <li>
             <p>
-              4. <b>Share</b> the dashboard with your colleagues. Prepare it for <b>reuse</b> by using parameters
+              4. <b>分享</b> 与您的同事共享仪表盘。准备好它 <b>reuse</b> 通过使用参数
               <UpsellWrapper>
                 {' '}
-                (contained in{' '}
+                (包含在{' '}
                 <a href="https://www.graylog.org/graylog-enterprise-edition" target="_blank" rel="noopener noreferrer">
-                  Graylog Enterprise
+                  Graylog 企业版
                 </a>
                 )
               </UpsellWrapper>
@@ -86,7 +86,7 @@ const NoWidgetsInfo = () => {
         </IfDashboard>
       </ul>
       <p>
-        You can also have a look at the <DocumentationLink page={DocsHelper.PAGES.DASHBOARDS} text="documentation" />,
+        您也可以查看 <DocumentationLink page={DocsHelper.PAGES.DASHBOARDS} text="documentation" />,
         to learn more about the widget creation.
       </p>
     </StyledJumbotron>

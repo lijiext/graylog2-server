@@ -143,20 +143,20 @@ class HttpNotificationForm extends React.Component<
           name="skip_tls_verification"
           onChange={this.handleChange}
           checked={config.skip_tls_verification}>
-          Skip TLS verification
+          跳过 TLS 验证
         </Checkbox>
         <Row>
           <Col md={12}>
             {basic_auth?.keep_value ? (
               <>
-                <ControlLabel>Basic authentication</ControlLabel>
+                <ControlLabel>基本认证</ControlLabel>
                 <StyledButton
                   bsStyle="default"
                   type="button"
                   onClick={() => {
                     this.resetSecret('basic_auth');
                   }}>
-                  Reset Secret
+                  重置密钥
                 </StyledButton>
               </>
             ) : (
@@ -164,7 +164,7 @@ class HttpNotificationForm extends React.Component<
                 id="basicAuth"
                 label={
                   <span>
-                    Basic authentication <small className="text-muted">(Optional)</small>
+                    基本认证 <small className="text-muted">（可选）</small>
                   </span>
                 }
                 name="basic_auth"
@@ -179,7 +179,7 @@ class HttpNotificationForm extends React.Component<
                       onClick={() => {
                         this.undoResetSecret('basic_auth');
                       }}>
-                      Undo Reset
+                      撤销重置
                     </Button>
                   ) : undefined
                 }
@@ -194,7 +194,7 @@ class HttpNotificationForm extends React.Component<
               name="api_key"
               label={
                 <span>
-                  API Key <small className="text-muted">(Optional)</small>
+                  API 密钥 <small className="text-muted">（可选）</small>
                 </span>
               }
               type="text"
@@ -209,14 +209,14 @@ class HttpNotificationForm extends React.Component<
           <Col md={12}>
             {api_secret?.keep_value ? (
               <>
-                <ControlLabel>API Secret</ControlLabel>
+                <ControlLabel>API 密钥</ControlLabel>
                 <StyledButton
                   bsStyle="default"
                   type="button"
                   onClick={() => {
                     this.resetSecret('api_secret');
                   }}>
-                  Reset Secret
+                  重置密钥
                 </StyledButton>
               </>
             ) : (
@@ -224,7 +224,7 @@ class HttpNotificationForm extends React.Component<
                 id="apiSecret"
                 label={
                   <span>
-                    API Secret <small className="text-muted">(Optional)</small>
+                    API 密钥 <small className="text-muted">（可选）</small>
                   </span>
                 }
                 name="api_secret"
@@ -240,7 +240,7 @@ class HttpNotificationForm extends React.Component<
                       onClick={() => {
                         this.undoResetSecret('api_secret');
                       }}>
-                      Undo Reset
+                      撤销重置
                     </Button>
                   ) : undefined
                 }
@@ -251,7 +251,7 @@ class HttpNotificationForm extends React.Component<
               name="api_key_as_header"
               onChange={this.handleChange}
               checked={config.api_key_as_header}>
-              Send API Key/Secret as Header
+              将 API 密钥/密钥作为请求头发送
             </Checkbox>
           </Col>
         </Row>

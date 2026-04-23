@@ -1,10 +1,10 @@
 <#if _title>
-An error occurred while trying to send an email!
+发送电子邮件时发生错误！
 </#if>
 
 <#if _description>
 <span>
-An error was encountered while trying to send an email.
-This is the detailed error message: ${exception}
+发送电子邮件时遇到错误。
+这是详细的错误信息：${exception}
 </span>
 </#if>

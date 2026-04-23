@@ -107,7 +107,7 @@ class TimeRangeOptionsForm extends React.Component<Props> {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Add description..."
+                  placeholder="添加描述..."
                   value={description}
                   onChange={this._onChange(idx, 'description')}
                 />

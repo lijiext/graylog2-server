@@ -95,10 +95,10 @@ function Editor({ id = undefined, value, height, readOnly = false, onChange, onF
       <div style={{ position: 'relative' }}>
         <TabsRow>
           <Tab $active={!showPreview} onClick={() => setShowPreview(false)}>
-            Edit
+            编辑
           </Tab>
           <Tab $active={showPreview} onClick={() => setShowPreview(true)}>
-            Preview
+            预览
           </Tab>
         </TabsRow>
         {!showPreview && (
@@ -115,10 +115,10 @@ function Editor({ id = undefined, value, height, readOnly = false, onChange, onF
         <ExpandIconButton
           data-testid="expand-icon"
           name="expand_content"
-          title="Expand Preview"
+          title="展开预览"
           onClick={() => handleOnFullMode(true)}
           size="sm"
-          aria-label="Expand preview"
+          aria-label="展开预览"
         />
       </div>
       {fullView && (

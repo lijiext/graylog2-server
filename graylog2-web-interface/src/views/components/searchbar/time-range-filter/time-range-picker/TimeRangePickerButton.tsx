@@ -36,7 +36,7 @@ const TimeRangePickerButton = ({ hasError = false, disabled = false, onClick = u
     bsStyle={hasError ? 'danger' : 'info'}
     disabled={disabled}
     onClick={onClick}
-    aria-label="Open Time Range Selector">
+    aria-label="打开时间范围选择器">
     <Icon name={hasError ? 'warning' : 'schedule'} />
   </StyledButton>
 );

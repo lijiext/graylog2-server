@@ -79,7 +79,7 @@ const TextField = ({ field, title, typeName, dirty = false, onChange, value = ''
     if (isResetted) {
       return (
         <Button type="button" onClick={handleUndoReset}>
-          Undo Reset
+          撤销重置
         </Button>
       );
     }
@@ -90,7 +90,7 @@ const TextField = ({ field, title, typeName, dirty = false, onChange, value = ''
 
     return (
       <Button type="button" onClick={handleReset}>
-        Reset
+        重置
       </Button>
     );
   };

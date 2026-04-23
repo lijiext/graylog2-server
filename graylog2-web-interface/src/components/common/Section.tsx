@@ -133,7 +133,7 @@ const Section = ({
               bsStyle={opened ? 'primary' : 'default'}
               onClick={toggle}
               data-testid="collapseButton"
-              title={`Toggle ${title.toLowerCase()} section`}
+              title={`切换 ${title.toLowerCase()} 部分`}
               disabled={disableCollapseButton}>
               <Icon size="sm" name={opened ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />
             </Button>

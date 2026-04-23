@@ -42,7 +42,7 @@ public class DateConverter extends AbstractDateConverter {
         super(Type.DATE, config);
 
         if (config.get("date_format") == null || ((String) config.get("date_format")).isEmpty()) {
-            throw new ConfigurationException("Missing config [date_format].");
+            throw new ConfigurationException("缺少配置 [date_format]。");
         }
 
         this.dateFormat = ((String) config.get("date_format")).trim();

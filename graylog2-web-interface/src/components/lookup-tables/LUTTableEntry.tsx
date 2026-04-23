@@ -86,18 +86,18 @@ const LUTTableEntry = ({
     <tbody>
       <tr>
         <td>
-          {errors.table && <ErrorPopover placement="right" errorText={errors.table} title="Lookup Table problem" />}
+          {errors.table && <ErrorPopover placement="right" errorText={errors.table} title="查找表问题" />}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.CACHES.show(cache.name)}>{cache.title}</Link>
         </td>
         <td>{table.description}</td>
         <td>{table.name}</td>
         <td>
-          {errors.cache && <ErrorPopover placement="bottom" errorText={errors.cache} title="Cache problem" />}
+          {errors.cache && <ErrorPopover placement="bottom" errorText={errors.cache} title="缓存问题" />}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.CACHES.show(cache.name)}>{cache.title}</Link>
         </td>
         <td>
           {errors.dataAdapter && (
-            <ErrorPopover placement="bottom" errorText={errors.dataAdapter} title="Data adapter problem" />
+            <ErrorPopover placement="bottom" errorText={errors.dataAdapter} title="数据适配器问题" />
           )}
           <Link to={Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.show(dataAdapter.name)}>{dataAdapter.title}</Link>
         </td>
@@ -108,10 +108,10 @@ const LUTTableEntry = ({
             scopePermissions.is_mutable && (
               <Actions>
                 <Button bsSize="xsmall" onClick={handleEdit} role="button" name="edit_square">
-                  Edit
+                  编辑
                 </Button>
                 <Button bsSize="xsmall" bsStyle="danger" onClick={handleDelete} role="button" name="delete">
-                  Delete
+                  删除
                 </Button>
               </Actions>
             )

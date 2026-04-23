@@ -48,10 +48,10 @@ const UsernameFormGroup = () => {
 
   return (
     <FormikFormGroup
-      label="Username"
+      label="用户名"
       name="username"
       required
-      help="Select a unique user name used to log in with."
+      help="选择一个用于登录的唯一用户名。"
       validate={debouncedValidateUsername}
       onChange={() => setFieldTouched('username')}
     />

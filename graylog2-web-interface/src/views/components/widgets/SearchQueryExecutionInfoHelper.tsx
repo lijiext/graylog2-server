@@ -71,38 +71,38 @@ const HelpPopover = ({ widgetExecutionData }: { widgetExecutionData: WidgetExecu
     <tbody>
       <tr>
         <td>
-          <i>Executed at:</i>
+          <i>执行时间：</i>
         </td>
-        <td aria-label="Executed at">
+        <td aria-label="执行时间">
           <Timestamp dateTime={widgetExecutionData?.timestamp} />
         </td>
       </tr>
       <tr>
         <td>
-          <i>Executed in:</i>{' '}
+          <i>执行于:</i>{' '}
         </td>
         <td>{numeral(widgetExecutionData?.duration).format('0,0')}ms</td>
       </tr>
       <tr>
         <td colSpan={2}>
-          <i>Effective time range:</i>
+          <i>生效时间范围:</i>
         </td>
       </tr>
       <tr>
-        <td>From</td>
-        <td aria-label="Effective time range from">
+        <td>来自</td>
+        <td aria-label="生效时间范围从">
           <Timestamp dateTime={widgetExecutionData?.effectiveTimerange?.from} format="complete" />
         </td>
       </tr>
       <tr>
-        <td>To</td>
-        <td aria-label="Effective time range to">
+        <td>到</td>
+        <td aria-label="生效时间范围至">
           <Timestamp dateTime={widgetExecutionData?.effectiveTimerange?.to} format="complete" />
         </td>
       </tr>
       <tr>
         <td>
-          <i>Total results:</i>
+          <i>结果总数:</i>
         </td>
         <td>{numeral(widgetExecutionData?.total).format('0,0')}</td>
       </tr>
@@ -150,8 +150,8 @@ const SearchQueryExecutionInfoHelper = ({ currentWidgetMapping, children }: Prop
           </>
         </TargetContainer>
       </Popover.Target>
-      <Popover.Dropdown title="Execution Info">
-        {isEmpty(result) ? <i>No query executed yet.</i> : <HelpPopover widgetExecutionData={widgetExecutionData} />}
+      <Popover.Dropdown title="执行信息">
+        {isEmpty(result) ? <i>尚未执行任何查询。</i> : <HelpPopover widgetExecutionData={widgetExecutionData} />}
       </Popover.Dropdown>
     </Popover>
   ) : (

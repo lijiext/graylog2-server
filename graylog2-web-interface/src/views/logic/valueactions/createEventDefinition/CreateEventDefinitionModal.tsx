@@ -132,7 +132,7 @@ const CreateEventDefinitionModal = ({
   return (
     <Modal onHide={onClose} show={show}>
       <Modal.Header>
-        <Modal.Title>Configure new event definition</Modal.Title>
+        <Modal.Title>配置新事件定义</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <RadioSection strategyAvailabilities={strategyAvailabilities} strategy={strategy} onChange={onStrategyChange} />
@@ -182,7 +182,7 @@ const CreateEventDefinitionModal = ({
           onClick={onContinueConfigurationClick}
           href={eventDefinitionCreationUrl}
           target="_blank">
-          Continue configuration
+          继续配置
         </Button>
       </Modal.Footer>
     </Modal>

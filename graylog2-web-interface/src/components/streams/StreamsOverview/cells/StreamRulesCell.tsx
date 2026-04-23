@@ -43,7 +43,7 @@ const StreamRulesCell = ({ stream }: Props) => {
       count={stream.rules.length}
       onClick={toggleRulesSection}
       ref={buttonRef}
-      title={`${streamRulesSectionIsOpen ? 'Hide' : 'Show'} stream rules`}
+      title={`${streamRulesSectionIsOpen ? 'Hide' : 'Show'} 数据流规则`}
     />
   );
 };

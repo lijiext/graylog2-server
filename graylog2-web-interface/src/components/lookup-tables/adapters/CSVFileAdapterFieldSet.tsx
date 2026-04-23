@@ -39,7 +39,7 @@ const CSVFileAdapterFieldSet = ({ config, handleFormEvent, validationState, vali
         type="text"
         id="path"
         name="path"
-        label="File path"
+        label="文件路径"
         autoFocus
         required
         onChange={handleFormEvent}
@@ -53,10 +53,10 @@ const CSVFileAdapterFieldSet = ({ config, handleFormEvent, validationState, vali
         type="number"
         id="check_interval"
         name="check_interval"
-        label="Check interval"
+        label="检查间隔"
         required
         onChange={handleFormEvent}
-        help="The interval to check if the CSV file needs a reload. (in seconds)"
+        help="检查 CSV 文件是否需要重新加载的间隔时间（秒）。"
         value={config.check_interval}
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9"
@@ -65,10 +65,10 @@ const CSVFileAdapterFieldSet = ({ config, handleFormEvent, validationState, vali
         type="text"
         id="separator"
         name="separator"
-        label="Separator"
+        label="分隔符"
         required
         onChange={handleFormEvent}
-        help="The delimiter to use for separating entries."
+        help="用于分隔条目的分隔符。"
         value={config.separator}
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9"
@@ -77,10 +77,10 @@ const CSVFileAdapterFieldSet = ({ config, handleFormEvent, validationState, vali
         type="text"
         id="quotechar"
         name="quotechar"
-        label="Quote character"
+        label="引号字符"
         required
         onChange={handleFormEvent}
-        help="The character to use for quoted elements."
+        help="用于引用元素的字符。"
         value={config.quotechar}
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9"
@@ -89,10 +89,10 @@ const CSVFileAdapterFieldSet = ({ config, handleFormEvent, validationState, vali
         type="text"
         id="key_column"
         name="key_column"
-        label="Key column"
+        label="键列"
         required
         onChange={handleFormEvent}
-        help="The column name that should be used for the key lookup."
+        help="应使用哪列名称进行键查找。"
         value={config.key_column}
         labelClassName="col-sm-3"
         wrapperClassName="col-sm-9"
@@ -113,30 +113,30 @@ const CSVFileAdapterFieldSet = ({ config, handleFormEvent, validationState, vali
         type="checkbox"
         id="multi_value_lookup"
         name="multi_value_lookup"
-        label="Multi-value lookup"
+        label="多值查找表"
         checked={config.multi_value_lookup}
         onChange={handleFormEvent}
-        help="Enable for multiple value columns."
+        help="为多个值列启用。"
         wrapperClassName="col-md-offset-3 col-md-9"
       />
       <Input
         type="checkbox"
         id="case_insensitive_lookup"
         name="case_insensitive_lookup"
-        label="Allow case-insensitive lookups"
+        label="允许不区分大小写的查找"
         checked={config.case_insensitive_lookup}
         onChange={handleFormEvent}
-        help="Enable if the key lookup should be case-insensitive."
+        help="如果密钥查找应不区分大小写，请启用。"
         wrapperClassName="col-md-offset-3 col-md-9"
       />
       <Input
         type="checkbox"
         id="cidr_lookup"
         name="cidr_lookup"
-        label="CIDR lookup"
+        label="CIDR 查找"
         checked={config.cidr_lookup}
         onChange={handleFormEvent}
-        help="Enable if the keys in the lookup table are in CIDR notation and lookups will be done with IPs"
+        help="如果查找表中的键采用 CIDR 表示法且查找将基于 IP 地址执行，请启用此项"
         wrapperClassName="col-md-offset-3 col-md-9"
       />
     </fieldset>

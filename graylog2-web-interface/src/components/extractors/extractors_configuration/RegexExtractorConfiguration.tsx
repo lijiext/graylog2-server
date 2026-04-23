@@ -58,13 +58,13 @@ class RegexExtractorConfiguration extends React.Component<Props, { trying: boole
 
     promise.then((result) => {
       if (!result.matched) {
-        UserNotification.warning('Regular expression did not match.');
+        UserNotification.warning('正则表达式未匹配。');
 
         return;
       }
 
       if (!result.match) {
-        UserNotification.warning('Regular expression does not contain any matcher group to extract.');
+        UserNotification.warning('正则表达式不包含任何用于提取的匹配器组。');
 
         return;
       }
@@ -82,7 +82,7 @@ class RegexExtractorConfiguration extends React.Component<Props, { trying: boole
   render() {
     const helpMessage = (
       <span>
-        The regular expression used for extraction. First matcher group is used. Learn more in the{' '}
+        用于提取的正则表达式。使用第一个匹配器组。在以下位置了解更多信息{' '}
         <DocumentationLink page={DocsHelper.PAGES.EXTRACTORS} text="documentation" />.
       </span>
     );
@@ -91,7 +91,7 @@ class RegexExtractorConfiguration extends React.Component<Props, { trying: boole
       <div>
         <Input
           id="regex-value-input"
-          label="Regular expression"
+          label="正则表达式"
           labelClassName="col-md-2"
           wrapperClassName="col-md-10"
           help={helpMessage}>

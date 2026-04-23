@@ -79,7 +79,7 @@ public class MetricsResource extends RestResource {
     @GET
     @Timed
     @Path("/names")
-    @ApiOperation(value = "Get all metrics keys/names")
+    @ApiOperation(value = "获取所有指标键/名称")
     @RequiresPermissions(RestPermissions.METRICS_ALLKEYS)
     @Produces(MediaType.APPLICATION_JSON)
     public MetricNamesResponse metricNames() {

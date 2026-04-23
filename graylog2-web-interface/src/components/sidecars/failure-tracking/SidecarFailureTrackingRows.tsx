@@ -91,7 +91,7 @@ const SidecarFailureTrackingRows = ({ sidecar, collectors, onShowDetails }: Prop
                   onClick={() =>
                     onShowDetails({ name: collectorData?.name, verbose_message: collector.verbose_message })
                   }>
-                  Show more
+                  显示更多
                 </ShowDetailsLink>
               </td>
             </tr>

@@ -80,7 +80,7 @@ const InputStateControl = ({ input, openWizard }: Props) => {
   if (inputSetupFeatureFlagIsEnabled && isInputInSetupMode(inputStates, input.id)) {
     return (
       <Button bsStyle="warning" onClick={setupInput}>
-        Set-up Input
+        设置输入端
       </Button>
     );
   }

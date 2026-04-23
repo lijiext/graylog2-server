@@ -34,7 +34,7 @@ const pluginInfoFormatter = (plugin) => (
     <td className="limited" style={{ width: '50%' }}>
       {plugin.description}
       &nbsp;&nbsp;
-      <StyledExternalLink href={plugin.url}>Website</StyledExternalLink>
+      <StyledExternalLink href={plugin.url}>网站</StyledExternalLink>
     </td>
   </tr>
 );
@@ -49,7 +49,7 @@ const PluginsDataTable = ({ plugins = undefined }: Props) => {
   }
 
   if (plugins.length === 0) {
-    return <Alert bsStyle="info">This node has not any installed plugins.</Alert>;
+    return <Alert bsStyle="info">此节点未安装任何插件。</Alert>;
   }
 
   const headers = ['Name', 'Version', 'Author', 'Description'];

@@ -28,10 +28,9 @@ type Props = {
 const StreamPermissionErrorPage = ({ error, missingStreamIds = [] }: Props) => {
   const description = (
     <>
-      <p>This resource includes streams you do not have permissions for.</p>
+      <p>此资源包含您没有权限的数据流。</p>
       <p>
-        Please contact your administrator and provide the error details which include a list of streams you need access
-        to.
+        请联系您的管理员并提供错误详情，其中包含您需要访问的数据流列表。
       </p>
     </>
   );
@@ -43,7 +42,7 @@ const StreamPermissionErrorPage = ({ error, missingStreamIds = [] }: Props) => {
     <UnauthorizedErrorPage
       error={error}
       description={description}
-      title="Missing Stream Permissions"
+      title="缺少数据流权限"
       errorDetails={errorDetails}
     />
   );

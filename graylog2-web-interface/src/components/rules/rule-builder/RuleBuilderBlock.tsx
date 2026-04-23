@@ -255,7 +255,7 @@ const RuleBuilderBlock = ({
             <Modal show bsSize="lg" onHide={resetInsertBlock}>
               <Modal.Header>
                 <Modal.Title>
-                  Insert new action {insertMode} action N°{order + 1}
+                  插入新操作 {insertMode} 操作 N°{order + 1}
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>

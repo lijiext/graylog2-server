@@ -20,9 +20,9 @@ import QueryHelper from 'components/common/QueryHelper';
 
 const queryExample = (
   <p>
-    Find users with a email containing example.com:
+    查找邮箱包含 example.com 的用户：
     <br />
-    <kbd>email:example.com</kbd>
+    <kbd>邮箱：example.com</kbd>
     <br />
   </p>
 );

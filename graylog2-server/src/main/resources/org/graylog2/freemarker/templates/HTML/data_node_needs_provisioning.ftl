@@ -1,18 +1,18 @@
 <#if _title>
-    A data node needs provisioning
+    数据节点需要配置
 </#if>
 
 <#if _description>
     <span>
-A data node has recently been started for the first time and is waiting for admission to the cluster and certificate provisioning.
+数据节点最近首次启动，正在等待加入集群和证书配置。
 
-Due to the configured manual certificate renewal policy, a manual action is required for the provisioning of this node.
+由于配置了手动证书续期策略，需要手动操作才能完成此节点的配置。
 
 <p />
 
     <#if _cloud == false>
         <#if DATA_NODE_CONFIGURATION?has_content>
-        You can click <a href="${DATA_NODE_CONFIGURATION}" target="_blank" rel="noreferrer">here</a> to solve this.
+        您可以点击<a href="${DATA_NODE_CONFIGURATION}" target="_blank" rel="noreferrer">此处</a>来解决此问题。
         </#if>
     </#if>
 </span>

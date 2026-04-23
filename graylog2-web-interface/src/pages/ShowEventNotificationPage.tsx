@@ -57,9 +57,9 @@ const ShowEventDefinitionPage = () => {
 
   if (!notification) {
     return (
-      <DocumentTitle title="Notification Details">
+      <DocumentTitle title="通知详情">
         <span>
-          <PageHeader title="Notification Details">
+          <PageHeader title="通知详情">
             <Spinner text="Loading Notification information..." />
           </PageHeader>
         </span>
@@ -68,10 +68,10 @@ const ShowEventDefinitionPage = () => {
   }
 
   return (
-    <DocumentTitle title={`View "${notification.title}" Notification`}>
+    <DocumentTitle title={`查看“${notification.title}”通知`}>
       <EventsPageNavigation />
       <PageHeader
-        title={`View "${notification.title}" Notification`}
+        title={`查看“${notification.title}”通知`}
         actions={notification && <EventNotificationActionLinks notificationId={notification.id} />}
         documentationLink={{
           title: 'Alerts documentation',

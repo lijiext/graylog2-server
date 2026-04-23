@@ -76,8 +76,7 @@ const ServerConnectionTest = ({ prepareSubmitPayload }: Props) => {
   return (
     <>
       <p>
-        Performs a background connection check with the address and credentials defined in the step &quot;Server
-        Configuration&quot;.
+        在步骤“服务器配置”中定义的地址和凭据上执行后台连接检查。
       </p>
       <Button onClick={_handleConnectionCheck} type="button">
         {loading ? <Spinner delay={0} text="Test Server Connection" /> : 'Test Server Connection'}

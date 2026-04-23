@@ -145,7 +145,7 @@ function Preview({
           <Markdown text={value} augment />
         </MarkdownStyles>
         {withFullView && (
-          <ExpandIconButton name="expand_content" title="Expand content" size="sm" onClick={() => setFullView(true)} />
+          <ExpandIconButton name="expand_content" title="展开内容" size="sm" onClick={() => setFullView(true)} />
         )}
         <PreviewModal value={value} show={fullView} onClose={() => setFullView(false)} />
       </Container>

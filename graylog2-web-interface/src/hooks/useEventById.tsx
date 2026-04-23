@@ -44,8 +44,8 @@ const useEventById = (
         if (onErrorHandler) onErrorHandler(errorThrown);
 
         UserNotification.error(
-          `Loading event or alert failed with status: ${errorThrown}`,
-          'Could not load event or alert',
+          `加载事件或告警失败，状态为：${errorThrown}`,
+          '无法加载事件或告警',
         );
       }),
 

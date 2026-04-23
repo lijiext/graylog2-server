@@ -72,13 +72,13 @@ const CreateOutputDropdown = ({ types, getTypeDefinition, onSubmit }: CreateOutp
           onChange={_onTypeChange}
           className="form-control">
           <option value={PLACEHOLDER} disabled>
-            Select Output Type
+            选择输出类型
           </option>
           {outputTypes}
         </select>
         &nbsp;
         <Button bsStyle="primary" disabled={typeName === PLACEHOLDER} onClick={_openModal}>
-          Launch new output
+          启动新输出端
         </Button>
       </div>
 
@@ -86,10 +86,10 @@ const CreateOutputDropdown = ({ types, getTypeDefinition, onSubmit }: CreateOutp
         ref={configurationForm}
         key="configuration-form-output"
         configFields={typeDefinition}
-        title="Create new Output"
+        title="创建新输出端"
         titleHelpText="Select a name of your new output that describes it."
         typeName={typeName}
-        submitButtonText="Create output"
+        submitButtonText="创建输出端"
         submitAction={onSubmit}
       />
     </div>

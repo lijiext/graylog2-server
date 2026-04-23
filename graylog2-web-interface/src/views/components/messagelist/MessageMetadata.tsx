@@ -32,12 +32,12 @@ const MessageMetadata = ({ timestamp, receivedBy, index, streams, assets }: Prop
     {timestamp}
     {receivedBy}
 
-    <dt>Stored in index</dt>
+    <dt>存储在索引中</dt>
     <dd>{index || 'Message is not stored'}</dd>
 
     {streams.size > 0 && (
       <>
-        <dt>Routed into streams</dt>
+        <dt>路由到数据流</dt>
         <dd className="stream-list">
           <ul>{streams.toArray()}</ul>
         </dd>

@@ -52,15 +52,15 @@ const SidecarEditCollectorPage = () => {
   }
 
   return (
-    <DocumentTitle title="Log Collector">
+    <DocumentTitle title="日志采集器">
       <SidecarsPageNavigation />
       <PageHeader
-        title="Log Collector"
+        title="日志采集器"
         documentationLink={{
           title: 'Sidecar documentation',
           path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
         }}>
-        <span>Some words about log collectors.</span>
+        <span>关于日志采集器的一些说明。</span>
       </PageHeader>
 
       <Row className="content">

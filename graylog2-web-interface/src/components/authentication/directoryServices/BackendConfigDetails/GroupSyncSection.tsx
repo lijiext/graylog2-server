@@ -40,7 +40,7 @@ const GroupSyncSection = ({ authenticationBackend, roles, excludedFields = undef
   if (!GroupSyncSectionPlugin) {
     return (
       <SectionComponent
-        title="Group Synchronization"
+        title="组同步"
         headerActions={<EditLinkButton authenticationBackendId={authenticationBackend.id} stepKey={GROUP_SYNC_KEY} />}>
         <EnterprisePluginNotFound featureName="group synchronization" />
       </SectionComponent>

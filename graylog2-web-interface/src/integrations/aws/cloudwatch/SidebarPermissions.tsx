@@ -22,11 +22,10 @@ import DocsHelper from 'util/DocsHelper';
 
 export default function SidebarPermissions() {
   return (
-    <Panel bsStyle="info" header={<span>AWS Policy Permissions</span>}>
+    <Panel bsStyle="info" header={<span>AWS 策略权限</span>}>
       <p>
-        Please refer to the{' '}
-        <DocumentationLink page={DocsHelper.PAGES.AWS_KINESIS_CLOUDWATCH_INPUT} text="official documentation" /> for
-        information on required AWS permissions.
+        请参阅{' '}
+        <DocumentationLink page={DocsHelper.PAGES.AWS_KINESIS_CLOUDWATCH_INPUT} text="official documentation" /> 有关所需 AWS 权限的信息。
         <br />
       </p>
     </Panel>

@@ -29,7 +29,7 @@ const MessagePermalinkButton = ({ messageIndex, messageId }: Props) => {
 
   return (
     <Button href={messageUrl} disabled={!messageIndex} bsSize="small">
-      Permalink
+      永久链接
     </Button>
   );
 };

@@ -25,7 +25,7 @@ const Meter = ({ meter }) => {
     return (
       <span>
         {value}{' '}
-        <span title={`${meter.time_seconds}s`}>(took {moment.duration(meter.time_seconds, 'seconds').humanize()})</span>
+        <span title={`${meter.time_seconds}s`}>（耗时 {moment.duration(meter.time_seconds, 'seconds').humanize()})</span>
       </span>
     );
   }
@@ -42,12 +42,12 @@ const ShardMeter = ({ shardMeter, title }: Props) => (
   <span>
     <h3 style={{ display: 'inline' }}>{title}</h3>
     <dl>
-      <dt>Index:</dt>
+      <dt>索引:</dt>
       <dd>
         <Meter meter={shardMeter.index} />
       </dd>
 
-      <dt>Flush:</dt>
+      <dt>刷新:</dt>
       <dd>
         <Meter meter={shardMeter.flush} />
       </dd>
@@ -57,22 +57,22 @@ const ShardMeter = ({ shardMeter, title }: Props) => (
         <Meter meter={shardMeter.merge} />
       </dd>
 
-      <dt>Query:</dt>
+      <dt>查询:</dt>
       <dd>
         <Meter meter={shardMeter.search_query} />
       </dd>
 
-      <dt>Fetch:</dt>
+      <dt>获取:</dt>
       <dd>
         <Meter meter={shardMeter.search_fetch} />
       </dd>
 
-      <dt>Get:</dt>
+      <dt>获取:</dt>
       <dd>
         <Meter meter={shardMeter.get} />
       </dd>
 
-      <dt>Refresh:</dt>
+      <dt>刷新:</dt>
       <dd>
         <Meter meter={shardMeter.refresh} />
       </dd>

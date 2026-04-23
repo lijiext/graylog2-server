@@ -41,12 +41,12 @@ const CertificateProvisioning = ({ onSkipProvisioning }: Props) => {
     mutationFn: onProvisionCertificate,
 
     onSuccess: () => {
-      UserNotification.success('Started certificate provisioning successfully');
+      UserNotification.success('证书配置已成功启动');
       queryClient.invalidateQueries({ queryKey: DATA_NODES_OVERVIEW_QUERY_KEY });
     },
 
     onError: (error) => {
-      UserNotification.error(`Starting certificate provisioning failed with error: ${error}`);
+      UserNotification.error(`证书配置启动失败，错误为：${error}`);
       queryClient.invalidateQueries({ queryKey: DATA_NODES_OVERVIEW_QUERY_KEY });
       setIsProvisioning(false);
     },
@@ -59,15 +59,15 @@ const CertificateProvisioning = ({ onSkipProvisioning }: Props) => {
 
   return (
     <div>
-      <Title order={3}>Provision certificates</Title>
+      <Title order={3}>配置证书</Title>
       <p>
-        Certificate authority has been configured successfully.
+        证书颁发机构已成功配置。
         <br />
-        You can now provision certificate for your data nodes.
+        您现在可以为数据节点配置证书。
       </p>
       {!dataNodes.length && !isInitialLoading ? (
         <Alert bsStyle="warning">
-          At least one Graylog data node needs to run before the certificate can be provisioned.
+          在配置证书之前，至少需要运行一个 Graylog 数据节点。
         </Alert>
       ) : (
         <Space h="sm" />
@@ -77,7 +77,7 @@ const CertificateProvisioning = ({ onSkipProvisioning }: Props) => {
           {isProvisioning ? 'Provisioning certificate...' : 'Provision certificate and continue'}
         </Button>
         <Button onClick={() => onSkipProvisioning()} disabled={isProvisioning}>
-          Skip provisioning
+          跳过配置
         </Button>
       </Group>
     </div>

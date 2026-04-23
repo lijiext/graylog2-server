@@ -540,7 +540,7 @@ public class StreamServiceImpl implements StreamService {
                     .orElseThrow(() -> new ValidationException("Index set with ID <" + requestedIndexSet + "> does not exist!"));
 
             if (!indexSetConfig.isWritable()) {
-                throw new ValidationException("Assigned index set must be writable!");
+                throw new ValidationException("分配的索引集必须可写！");
             }
             if (!indexSetConfig.isRegularIndex()) {
                 throw new ValidationException("Assigned index set is not usable");

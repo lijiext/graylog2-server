@@ -47,7 +47,7 @@ const PluginList = () => {
 
   return (
     <>
-      <p>This is the status of {productName} Enterprise modules in this cluster:</p>
+      <p>这是 {productName} 此集群中的企业模块：</p>
       <ul className={style.enterprisePlugins}>{enterprisePluginList}</ul>
     </>
   );

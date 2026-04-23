@@ -62,8 +62,7 @@ const useAttributeComponents = () => {
           <>
             <AlertTimestamp dateTime={eventDefinition.updated_at} />
             <HoverForHelp displayLeftMargin iconSize="xs">
-              Event definition <i>{eventDefinition.title}</i> was edited after this event happened. Some of aggregations
-              widgets might not be representative for this event.
+              事件定义 <i>{eventDefinition.title}</i> 在此事件发生后进行了编辑。某些聚合小部件可能无法代表此事件。
             </HoverForHelp>
           </>
         ),

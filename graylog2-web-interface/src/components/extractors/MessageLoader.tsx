@@ -42,9 +42,9 @@ const LoadMessageForm = ({ loadMessage, children, loading }: LoadMessageFormProp
       <form className="form-inline message-loader-form" onSubmit={loadMessage}>
         {children}
         <StyledFormSubmit
-          submitButtonText="Load message"
+          submitButtonText="加载消息"
           isSubmitting={loading}
-          submitLoadingText="Loading message..."
+          submitLoadingText="正在加载消息..."
           isAsyncSubmit
           displayCancel
           onCancel={() => history.goBack()}
@@ -105,9 +105,9 @@ const MessageLoader = ({
     <div className="message-loader">
       {hideText || (
         <p>
-          Wrong example?{' '}
+          示例错误？{' '}
           <Button bsSize="sm" onClick={toggleMessageForm}>
-            Load another message
+            加载另一条消息
           </Button>
         </p>
       )}
@@ -117,7 +117,7 @@ const MessageLoader = ({
             ref={messageIdRef}
             type="text"
             className="form-control message-id-input"
-            placeholder="Message ID"
+            placeholder="消息 ID"
             required
             value={messageId}
             onChange={onChangeMessageId}
@@ -125,7 +125,7 @@ const MessageLoader = ({
           <input
             type="text"
             className="form-control"
-            placeholder="Index"
+            placeholder="索引"
             required
             value={index}
             onChange={onChangeIndex}

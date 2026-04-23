@@ -113,7 +113,7 @@ const TabAbsoluteTimeRange = ({ disabled = false, limitDuration = 0 }: Props) =>
         <AccordionItem name="Timestamp">
           <TimestampContent>
             <p>
-              Date should be formatted as <code>YYYY-MM-DD [HH:mm:ss[.SSS]]</code>.
+              日期格式应为 <code>YYYY-MM-DD [HH:mm:ss[.SSS]]</code>.
             </p>
             <FlexWrap>
               <RangeWrapper>
@@ -121,7 +121,7 @@ const TabAbsoluteTimeRange = ({ disabled = false, limitDuration = 0 }: Props) =>
                   disabled={disabled}
                   timeRange={activeTabTimeRange}
                   range="from"
-                  label="From timestamp"
+                  label="起始时间戳"
                 />
               </RangeWrapper>
 
@@ -130,7 +130,7 @@ const TabAbsoluteTimeRange = ({ disabled = false, limitDuration = 0 }: Props) =>
               </IconWrap>
 
               <RangeWrapper>
-                <AbsoluteTimestamp disabled={disabled} timeRange={activeTabTimeRange} range="to" label="To timestamp" />
+                <AbsoluteTimestamp disabled={disabled} timeRange={activeTabTimeRange} range="to" label="至时间戳" />
               </RangeWrapper>
             </FlexWrap>
           </TimestampContent>

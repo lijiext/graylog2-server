@@ -54,12 +54,12 @@ const ContentPackDetails = ({
     <Row>
       <Col smOffset={offset} sm={9}>
         <div id="content-pack-details">
-          <h2>Details</h2>
+          <h2>详情</h2>
           <br />
           <div>
             <dl className="deflist">
               <dt>Version:</dt> <dd>{contentPack.rev}</dd>
-              <dt>Name:</dt> <dd>{contentPack.name}&nbsp;</dd>
+              <dt>名称:</dt> <dd>{contentPack.name}&nbsp;</dd>
               <dt>Summary:</dt> <dd>{contentPack.summary}&nbsp;</dd>
               <dt>Vendor:</dt> <dd>{contentPack.vendor}&nbsp;</dd>
               <dt>URL:</dt> <dd>{contentPackAnchor}&nbsp;</dd>
@@ -73,19 +73,19 @@ const ContentPackDetails = ({
               )}
               {contentPack.parameters && !verbose && (
                 <span>
-                  <dt>Parameters:</dt> <dd>{contentPack.parameters.length}</dd>
+                  <dt>参数:</dt> <dd>{contentPack.parameters.length}</dd>
                 </span>
               )}
               {contentPack.entities && !verbose && (
                 <span>
-                  <dt>Entities:</dt> <dd>{contentPack.entities.length}</dd>
+                  <dt>实体:</dt> <dd>{contentPack.entities.length}</dd>
                 </span>
               )}
             </dl>
           </div>
           {contentPack.description && (
             <div>
-              <h2>Description</h2>
+              <h2>描述</h2>
               <br />
               <Well>
                 <Markdown text={contentPack.description} />

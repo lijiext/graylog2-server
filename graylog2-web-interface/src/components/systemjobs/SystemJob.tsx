@@ -98,7 +98,7 @@ const SystemJob = ({ job }: SystemJobProps) => {
     e.preventDefault();
 
     SystemJobsActions.acknowledgeJob(job.id).catch((error) => {
-      UserNotification.error(error.responseMessage, 'Unable to acknowledge the job');
+      UserNotification.error(error.responseMessage, '无法确认作业');
     });
   };
 
@@ -108,7 +108,7 @@ const SystemJob = ({ job }: SystemJobProps) => {
     // eslint-disable-next-line no-alert
     if (window.confirm(`Are you sure you want to cancel system job "${job.info}"?`)) {
       SystemJobsActions.cancelJob(job.id).catch((error) => {
-        UserNotification.error(error.responseMessage, 'Unable to cancel the job');
+        UserNotification.error(error.responseMessage, '无法取消作业');
       });
     }
   };
@@ -120,13 +120,13 @@ const SystemJob = ({ job }: SystemJobProps) => {
         <span data-toggle="tooltip" title={job.name}>
           {job.info}
         </span>{' '}
-        - on <LinkToNode nodeId={job.node_id} /> <RelativeTime dateTime={job.started_at} />{' '}
-        <span data-toggle="tooltip" title={`runtime: ${job.execution_duration}`}>
+        - 开启 <LinkToNode nodeId={job.node_id} /> <RelativeTime dateTime={job.started_at} />{' '}
+        <span data-toggle="tooltip" title={`运行时间：${job.execution_duration}`}>
           <StatusBadge status={mappedJobStatus}>{mappedJobStatus}</StatusBadge>
         </span>
         {!jobIsOver && job.is_cancelable ? (
           <Button type="button" bsSize="xs" bsStyle="primary" className="pull-right" onClick={_onCancel()}>
-            Cancel
+            取消
           </Button>
         ) : (
           <AcknowledgeButton
@@ -135,7 +135,7 @@ const SystemJob = ({ job }: SystemJobProps) => {
             onClick={_onAcknowledge()}
             bsSize="xs"
             className="pull-right"
-            title="Acknowledge">
+            title="确认">
             <Icon name="close" />
           </AcknowledgeButton>
         )}

@@ -39,12 +39,12 @@ const ButtonLabel = () => {
   const { refreshConfig } = useAutoRefresh();
 
   if (!refreshConfig?.enabled) {
-    return <>Not updating</>;
+    return <>未更新</>;
   }
 
   return (
     <>
-      Every <ReadableDuration duration={refreshConfig.interval} />
+      每个 <ReadableDuration duration={refreshConfig.interval} />
     </>
   );
 };
@@ -121,7 +121,7 @@ const RefreshControls = ({
   ]);
 
   return (
-    <FlexibleButtonGroup aria-label={`Refresh ${humanName} Controls`}>
+    <FlexibleButtonGroup aria-label={`刷新 ${humanName} 控件`}>
       {refreshConfig?.enabled && animationId && (
         <ProgressAnimation
           key={`${refreshConfig.interval}-${animationId}`}
@@ -151,7 +151,7 @@ const RefreshControls = ({
                 {label}
                 {isBelowMinimum && (
                   <HoverForHelp displayLeftMargin>
-                    Interval of <ReadableDuration duration={interval} /> ({interval}) is below configured minimum
+                    间隔 <ReadableDuration duration={interval} /> ({interval}) is below configured minimum
                     interval of <ReadableDuration duration={minimumRefreshInterval} /> ({minimumRefreshInterval}).
                   </HoverForHelp>
                 )}

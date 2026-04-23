@@ -64,13 +64,13 @@ class RegexReplaceExtractorConfiguration extends React.Component<Props, { trying
 
     promise.then((result) => {
       if (!result.matched) {
-        UserNotification.warning('Regular expression did not match.');
+        UserNotification.warning('正则表达式未匹配。');
 
         return;
       }
 
       if (!result.match) {
-        UserNotification.warning('Regular expression does not contain any matcher group to extract.');
+        UserNotification.warning('正则表达式不包含任何用于提取的匹配器组。');
 
         return;
       }
@@ -92,21 +92,21 @@ class RegexReplaceExtractorConfiguration extends React.Component<Props, { trying
   render() {
     const regexHelpMessage = (
       <span>
-        The regular expression used for extraction. Learn more in the{' '}
+        用于提取的正则表达式。在以下位置了解更多信息：{' '}
         <DocumentationLink page={DocsHelper.PAGES.EXTRACTORS} text="documentation" />.
       </span>
     );
 
     const replacementHelpMessage = (
       <span>
-        The replacement used for the matching text. Please refer to the{' '}
+        用于匹配文本的替换内容。请参阅{' '}
         <a
           target="_blank"
           href="https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html#replaceAll(java.lang.String)"
           rel="noreferrer">
-          Matcher
+          匹配器
         </a>{' '}
-        API documentation for the possible options.
+        可能选项的 API 文档。
       </span>
     );
 
@@ -115,7 +115,7 @@ class RegexReplaceExtractorConfiguration extends React.Component<Props, { trying
         <Input
           type="text"
           id="regex"
-          label="Regular expression"
+          label="正则表达式"
           labelClassName="col-md-2"
           placeholder="^.*string(.+)$"
           onChange={this._onChange('regex')}
@@ -128,7 +128,7 @@ class RegexReplaceExtractorConfiguration extends React.Component<Props, { trying
         <Input
           type="text"
           id="replacement"
-          label="Replacement"
+          label="替换"
           labelClassName="col-md-2"
           placeholder="$1"
           onChange={this._onChange('replacement')}
@@ -141,11 +141,11 @@ class RegexReplaceExtractorConfiguration extends React.Component<Props, { trying
         <Input
           type="checkbox"
           id="replace_all"
-          label="Replace all occurrences of the pattern"
+          label="替换所有匹配项"
           wrapperClassName="col-md-offset-2 col-md-10"
           defaultChecked={this.props.configuration.replace_all}
           onChange={this._onChange('replace_all')}
-          help="Whether to replace all occurrences of the given pattern or only the first occurrence."
+          help="是否替换给定模式的所有出现项，还是仅替换第一次出现项。"
         />
 
         <Row>

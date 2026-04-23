@@ -44,8 +44,8 @@ const TitleCell = ({ title, id, isDefault, isEnabled }: Props) => {
   if (!isEnabled) {
     return (
       <>
-        <DisabledTitle>{title} (disabled)</DisabledTitle>
-        {isDefault && <StyledBadge>Default</StyledBadge>}
+        <DisabledTitle>{title} (已禁用)</DisabledTitle>
+        {isDefault && <StyledBadge>默认</StyledBadge>}
       </>
     );
   }
@@ -53,7 +53,7 @@ const TitleCell = ({ title, id, isDefault, isEnabled }: Props) => {
   return (
     <Link to={Routes.SYSTEM.INDICES.TEMPLATES.view(id)}>
       <span>{title}</span>
-      {isDefault && <StyledBadge>Default</StyledBadge>}
+      {isDefault && <StyledBadge>默认</StyledBadge>}
     </Link>
   );
 };

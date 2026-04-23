@@ -115,9 +115,9 @@ class AggregationConditionsForm extends React.Component<
 
     return (
       <>
-        <h3 className={commonStyles.title}>Create Events for Definition</h3>
+        <h3 className={commonStyles.title}>为定义创建事件</h3>
         {validation.errors.conditions && (
-          <StyledAlert bsStyle="danger" title="Errors found">
+          <StyledAlert bsStyle="danger" title="发现错误">
             <p>{validation?.errors?.conditions[0]}</p>
           </StyledAlert>
         )}

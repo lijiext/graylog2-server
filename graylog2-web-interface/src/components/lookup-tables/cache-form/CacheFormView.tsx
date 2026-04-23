@@ -44,7 +44,7 @@ function CacheFormView({ saved = undefined, onCancel, cache = undefined, isStep 
       {isCreate && (
         <RowContainer>
           <CacheTypeSelect cacheConfigType={lutCache ? lutCache.config.type : null} onCacheChange={setLutCache} />
-          {isStep && <UseExistingButton onClick={onCancel}>Use Existing Cache</UseExistingButton>}
+          {isStep && <UseExistingButton onClick={onCancel}>使用现有缓存</UseExistingButton>}
         </RowContainer>
       )}
       {lutCache && (
@@ -52,7 +52,7 @@ function CacheFormView({ saved = undefined, onCancel, cache = undefined, isStep 
           cache={lutCache}
           type={lutCache?.config?.type}
           create={isCreate}
-          title="Configure Cache"
+          title="配置缓存"
           saved={saved}
           onCancel={onCancel}
         />

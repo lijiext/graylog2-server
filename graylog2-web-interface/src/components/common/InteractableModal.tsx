@@ -242,7 +242,7 @@ const InteractableModal = ({
             {title}
           </Title>
 
-          <CloseButton bsStyle="link" onClick={onClose} bsSize="small" title="Close">
+          <CloseButton bsStyle="link" onClick={onClose} bsSize="small" title="关闭">
             <Icon name="close" size="lg" />
           </CloseButton>
         </Header>

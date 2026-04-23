@@ -66,7 +66,7 @@ class MetricContainer extends React.Component<Props> {
     const { children, metrics, name: fullName, zeroOnMissing } = this.props;
 
     if (!metrics) {
-      return <span>Loading...</span>;
+      return <span>加载中...</span>;
     }
 
     let throughput = Object.keys(metrics)

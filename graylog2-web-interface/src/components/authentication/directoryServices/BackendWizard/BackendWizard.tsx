@@ -55,7 +55,7 @@ const SubmitAllError = ({ error, backendId }: { error: FetchError; backendId: st
       <Alert
         bsStyle="danger"
         style={{ wordBreak: 'break-word' }}
-        title={`Failed to ${backendId ? 'edit' : 'create'} authentication service`}>
+        title={`无法 ${backendId ? 'edit' : 'create'} 认证服务`}>
         {error?.message && (
           <>
             {error.message}

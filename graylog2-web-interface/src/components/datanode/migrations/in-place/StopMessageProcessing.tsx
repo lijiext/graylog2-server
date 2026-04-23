@@ -33,20 +33,18 @@ const StopMessageProcessing = ({ currentStep, onTriggerStep, hideActions }: Migr
 
   return (
     <>
-      <p>{productName} processing is stopped.</p>
+      <p>{productName} 处理已停止。</p>
       <StyledHelpPanel bsStyle="warning">
         <Panel.Heading>
           <Panel.Title componentClass="h3">
             <Icon name="warning" />
-            Stop OpenSearch
+            停止 OpenSearch
           </Panel.Title>
         </Panel.Heading>
         <Panel.Body>
-          <p>Please stop your OpenSearch cluster before proceeding.</p>
+          <p>请在继续之前停止您的 OpenSearch 集群。</p>
           <p>
-            If you are migrating existing OpenSearch data by pointing the data node to its data directory, make sure to
-            change the owner of the data directory to the user running the data node (usually graylog-datanode) and
-            reset the correct permissions, e.g. by running
+            如果您正在通过将数据节点指向其数据目录来迁移现有的 OpenSearch 数据，请确保将数据目录的所有者更改为运行数据节点的用户（通常是 graylog-datanode），并重置正确的权限，例如通过运行
           </p>
           <p>
             <code>sudo chown -R graylog-datanode:graylog-datanode &lt;your_data_directory&gt;</code>

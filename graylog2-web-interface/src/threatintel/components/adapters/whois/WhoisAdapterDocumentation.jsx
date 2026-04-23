@@ -21,22 +21,20 @@ const WhoisAdapterDocumentation = () => {
 
   return (
     <div>
-      <p style={style}>The whois IP lookup data adapter can request network ownership information for an IP address.</p>
+      <p style={style}>whois IP 查找数据适配器可以请求 IP 地址的网络所有权信息。</p>
 
-      <h3 style={style}>Configuration</h3>
+      <h3 style={style}>配置</h3>
 
-      <h5 style={style}>Connect timeout</h5>
+      <h5 style={style}>连接超时</h5>
 
       <p style={style}>
-        The connection timeout for the socket to the whois server in milliseconds. If you set this to a high value, it
-        can affect your processing performance.
+        套接字连接到 whois 服务器的连接超时（毫秒）。如果将其设置为高值，可能会影响处理性能。
       </p>
 
-      <h5 style={style}>Read timeout</h5>
+      <h5 style={style}>读取超时</h5>
 
       <p style={style}>
-        The connection read timeout for the socket to the whois server in milliseconds. If you set this to a high value,
-        it can affect your processing performance.
+        到 whois 服务器的套接字连接读取超时（毫秒）。如果将其设置为高值，可能会影响处理性能。
       </p>
     </div>
   );

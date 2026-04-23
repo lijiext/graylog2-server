@@ -24,23 +24,23 @@ type Props = {
 };
 const MeterDetails = ({ metric: { metric: meter } }: Props) => (
   <dl className="metric-def metric-meter">
-    <dt>Total:</dt>
+    <dt>总计:</dt>
     <dd>
       <span className="number-format">{numeral(meter.rate.total).format('0,0')}</span> events
     </dd>
-    <dt>Mean:</dt>
+    <dt>平均值:</dt>
     <dd>
       <span className="number-format">{numeral(meter.rate.mean).format('0,0.[00]')}</span> {meter.rate_unit}
     </dd>
-    <dt>1 minute avg:</dt>
+    <dt>1 分钟平均值:</dt>
     <dd>
       <span className="number-format">{numeral(meter.rate.one_minute).format('0,0.[00]')}</span> {meter.rate_unit}
     </dd>
-    <dt>5 minute avg:</dt>
+    <dt>5 分钟平均值:</dt>
     <dd>
       <span className="number-format">{numeral(meter.rate.five_minute).format('0,0.[00]')}</span> {meter.rate_unit}
     </dd>
-    <dt>15 minute avg:</dt>
+    <dt>15 分钟平均值:</dt>
     <dd>
       <span className="number-format">{numeral(meter.rate.fifteen_minute).format('0,0.[00]')}</span> {meter.rate_unit}
     </dd>

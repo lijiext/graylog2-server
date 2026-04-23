@@ -71,7 +71,7 @@ const NetworkStats = ({ writtenBytes1Sec, writtenBytesTotal, readBytes1Sec, read
     </span>
 
     <span className="total">
-      <span> (total: </span>
+      <span> (总计: </span>
       <Icon name="arrow_drop_down" className="channel-direction channel-direction-down" />
       <span className="rx value">{NumberUtils.formatBytes(readBytesTotal)} </span>
 

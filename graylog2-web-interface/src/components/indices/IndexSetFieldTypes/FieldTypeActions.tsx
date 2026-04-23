@@ -49,19 +49,18 @@ const FieldTypeActions = ({ onSubmitCallback, fieldType, indexSetId }: Props) =>
         role="button"
         bsSize="xsmall"
         disabled={fieldType.isReserved}
-        title={`Edit field type for ${fieldType.fieldName}`}
+        title={`编辑 ${fieldType.fieldName} 的字段类型`}
         tabIndex={0}>
-        Edit{' '}
+        编辑{' '}
         {fieldType.isReserved && (
-          <HoverForHelp displayLeftMargin title="Reserved field is not editable" pullRight={false}>
-            We use reserved fields internally and expect a certain structure from them. Changing the field type for
-            reserved fields might impact the stability of {productName}
+          <HoverForHelp displayLeftMargin title="保留字段不可编辑" pullRight={false}>
+            我们内部使用保留字段，并期望它们具有特定的结构。更改保留字段的字段类型可能会影响稳定性 {productName}
           </HoverForHelp>
         )}
       </Button>
       {showResetButton && (
-        <Button onClick={toggleResetModal} role="button" bsSize="xsmall" title="Reset custom type" tabIndex={0}>
-          Reset
+        <Button onClick={toggleResetModal} role="button" bsSize="xsmall" title="重置自定义类型" tabIndex={0}>
+          重置
         </Button>
       )}
       {showResetModal && (

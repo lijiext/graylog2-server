@@ -325,7 +325,7 @@ export const LookupTablesStore = singletonStore('core.LookupTables', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Purging cache key "${key}" for lookup table "${table.name}"`, 'Success!');
+          UserNotification.success(`清理查找表 "${table.name}" 的缓存键 "${key}"`, '成功！');
         },
         this._errorHandler(`Could not purge cache for key "${key}" in lookup table "${table.name}"`, 'Failed!'),
       );
@@ -340,7 +340,7 @@ export const LookupTablesStore = singletonStore('core.LookupTables', () =>
 
       promise.then(
         () => {
-          UserNotification.success(`Purging cache for lookup table "${table.name}"`, 'Success!');
+          UserNotification.success(`正在清理查找表 "${table.name}" 的缓存`, '成功！');
         },
         this._errorHandler(`Could not purge cache for lookup table "${table.name}"`, 'Failed!'),
       );

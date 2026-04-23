@@ -1,9 +1,9 @@
 <#if _title>
-Email Transport Configuration is missing or invalid!
+邮件传输配置缺失或无效！
 </#if>
 
 <#if _description>
-The configuration for the email transport subsystem has shown to be missing or invalid.
-Please check the related section of your server configuration file.
-This is the detailed error message: ${exception}
+邮件传输子系统的配置显示缺失或无效。
+请检查服务器配置文件中相关部分。
+这是详细的错误消息：${exception}
 </#if>

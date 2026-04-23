@@ -235,13 +235,13 @@ const AbsoluteTimeInput = ({ dateTime, range, onChange = () => {} }: Props) => {
   return (
     <SetTimeOption>
       <FormGroupGrid>
-        <label htmlFor={`${range}-time-hours`} title={`${range} hours label`}>
+        <label htmlFor={`${range}-time-hours`} title={`${range} 小时标签`}>
           HH
         </label>
-        <label htmlFor={`${range}-time-minutes`} title={`${range} minutes label`}>
+        <label htmlFor={`${range}-time-minutes`} title={`${range} 分钟标签`}>
           mm
         </label>
-        <label htmlFor={`${range}-time-seconds`} title={`${range} seconds label`}>
+        <label htmlFor={`${range}-time-seconds`} title={`${range} 秒标签`}>
           ss
         </label>
         <GridInputGroup>
@@ -250,14 +250,14 @@ const AbsoluteTimeInput = ({ dateTime, range, onChange = () => {} }: Props) => {
               bsStyle="link"
               bsSize="small"
               onClick={_onClickHourToggle}
-              title="Toggle between beginning and end of day">
+              title="切换至当天开始或结束">
               <Icon name={hourIcon.current} />
             </StyledButton>
           </StyledInputAddon>
           <StyledFormControl
             type="number"
             id={`${range}-time-hours`}
-            title={`${range} hour`}
+            title={`${range} 小时`}
             value={initialDateTime.hours ?? ''}
             onChange={_onChangeSetTime}
             onFocus={_onFocusSelect}
@@ -267,7 +267,7 @@ const AbsoluteTimeInput = ({ dateTime, range, onChange = () => {} }: Props) => {
           <StyledFormControl
             type="number"
             id={`${range}-time-minutes`}
-            title={`${range} minutes`}
+            title={`${range} 分钟`}
             value={initialDateTime.minutes ?? ''}
             onChange={_onChangeSetTime}
             onFocus={_onFocusSelect}
@@ -277,14 +277,14 @@ const AbsoluteTimeInput = ({ dateTime, range, onChange = () => {} }: Props) => {
           <StyledFormControl
             type="number"
             id={`${range}-time-seconds`}
-            title={`${range} seconds`}
+            title={`${range} 秒`}
             value={initialDateTime.seconds ?? ''}
             onChange={_onChangeSetTime}
             onFocus={_onFocusSelect}
             bsSize="sm"
           />
           <StyledInputAddon>
-            <StyledButton bsStyle="link" bsSize="small" onClick={_onClickTimeNow} title="Set to current local time">
+            <StyledButton bsStyle="link" bsSize="small" onClick={_onClickTimeNow} title="设置为当前本地时间">
               <Icon name="calendar_clock" />
             </StyledButton>
           </StyledInputAddon>
