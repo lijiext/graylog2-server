@@ -32,12 +32,22 @@ function isUserVisible(s) {
   if (!s || s.length < 4) return false;
   if (!/[A-Za-z]/.test(s)) return false;
   if (isAlreadyChinese(s)) return false;
-  if (!/\s/.test(s) && !(/^[A-Z]/.test(s) && s.length >= 6 && /[A-Z][a-z]/.test(s))) return false;
+  if (!/\s/.test(s) && !/[.!?,:;]/.test(s)) return false;
   if (/^https?:\/\//.test(s)) return false;
   if (/^[a-z][a-zA-Z]*\.[a-z]/.test(s)) return false;
   if (/^[A-Z][A-Z0-9_]*$/.test(s)) return false;
   if (/^[a-z]+:[a-z]/.test(s)) return false;
   return true;
+}
+
+function hasLiteralTypeAnnotation(declaratorNode) {
+  const ann = declaratorNode.id?.typeAnnotation?.typeAnnotation;
+  if (!ann) return false;
+  if (ann.type === 'TSLiteralType' && ann.literal?.type === 'StringLiteral') return true;
+  if (ann.type === 'TSUnionType') {
+    return ann.types.some((t) => t.type === 'TSLiteralType' && t.literal?.type === 'StringLiteral');
+  }
+  return false;
 }
 
 function quoteOf(node) {
@@ -79,7 +89,10 @@ async function processFile(file, ctx, translations) {
   }
 
   traverse(ast, {
-    VariableDeclarator(p) { tryRecord(p.node.init); },
+    VariableDeclarator(p) {
+      if (hasLiteralTypeAnnotation(p.node)) return;
+      tryRecord(p.node.init);
+    },
     ObjectProperty(p) {
       const key = p.node.key?.name || p.node.key?.value;
       if (KEY_NAMES.has(key)) tryRecord(p.node.value);

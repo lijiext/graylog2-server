@@ -36,16 +36,39 @@ function shouldKeep(s) {
   if (!s) return false;
   if (s.length < 2) return false;
   if (isAlreadyChinese(s)) return false;
-  if (!/[A-Za-z]{2,}/.test(s)) return false;          // 至少 2 字母
-  // 排除明显的 CSS / 标识符 / icon name
+  if (!/[A-Za-z]{2,}/.test(s)) return false;
   if (/^(auto|hidden|visible|none|block|inline|flex|grid|absolute|relative|static|fixed|sticky|true|false|null|undefined|asc|desc|left|right|center|top|bottom|small|large|medium)$/i.test(s)) return false;
-  if (/^[a-z][a-zA-Z]*$/.test(s) && s.length < 8) return false; // camelCase 短词如 keyboardArrowUp
-  if (/^[a-z_]+$/.test(s) && s.length < 12) return false;        // snake_case 短词
-  if (/^\w+\.\w+/.test(s) && !/\s/.test(s)) return false;       // dot-notation 标识符
-  if (/^[a-z]+:[a-z]/.test(s)) return false;                    // 查询样例 name:foo
-  if (/^[A-Z_]+$/.test(s) && s.length < 8) return false;         // ENUM 短常量
+  if (/^[a-z][a-zA-Z]*$/.test(s) && s.length < 8) return false;
+  if (/^[a-z_]+$/.test(s) && s.length < 12) return false;
+  if (/^\w+\.\w+/.test(s) && !/\s/.test(s)) return false;
+  if (/^[a-z]+:[a-z]/.test(s)) return false;
+  if (/^[A-Z_]+$/.test(s) && s.length < 8) return false;
   if (/^https?:\/\//.test(s)) return false;
+  // 单 PascalCase 词（如 ReactError, Viewer, Ascending）通常是 enum/type 标识符
+  if (/^[A-Z][a-zA-Z]*$/.test(s) && !/\s/.test(s)) return false;
   return true;
+}
+
+function hasLiteralTypeAnnotation(declaratorNode) {
+  const ann = declaratorNode.id?.typeAnnotation?.typeAnnotation;
+  if (!ann) return false;
+  if (ann.type === 'TSLiteralType' && ann.literal?.type === 'StringLiteral') return true;
+  if (ann.type === 'TSUnionType') {
+    return ann.types.some((t) => t.type === 'TSLiteralType' && t.literal?.type === 'StringLiteral');
+  }
+  return false;
+}
+
+// 在 ternary 上方找最近的 VariableDeclarator，看其 type annotation 是否字面量类型
+function ternaryHasLiteralTargetType(p) {
+  let cur = p.parentPath;
+  while (cur) {
+    const n = cur.node;
+    if (n.type === 'VariableDeclarator') return hasLiteralTypeAnnotation(n);
+    if (n.type === 'CallExpression' || n.type === 'JSXAttribute' || n.type === 'Program' || n.type === 'ReturnStatement') return false;
+    cur = cur.parentPath;
+  }
+  return false;
 }
 
 function isInWhitelistedContext(p, ctx) {
@@ -119,6 +142,7 @@ async function main() {
     traverse(ast, {
       ConditionalExpression(p) {
         if (!isInWhitelistedContext(p, ctx)) return;
+        if (ternaryHasLiteralTargetType(p)) return;
         for (const branchKey of ['consequent', 'alternate']) {
           const branch = p.node[branchKey];
           if (!branch || branch.type !== 'StringLiteral') continue;

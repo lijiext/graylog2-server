@@ -45,7 +45,29 @@ function shouldKeep(s) {
   if (/^[a-z]+:[a-z]/.test(s)) return false;
   if (/^[A-Z_]+$/.test(s) && s.length < 8) return false;
   if (/^https?:\/\//.test(s)) return false;
+  if (/^[A-Z][a-zA-Z]*$/.test(s) && !/\s/.test(s)) return false;
   return true;
+}
+
+function hasLiteralTypeAnnotation(declaratorNode) {
+  const ann = declaratorNode.id?.typeAnnotation?.typeAnnotation;
+  if (!ann) return false;
+  if (ann.type === 'TSLiteralType' && ann.literal?.type === 'StringLiteral') return true;
+  if (ann.type === 'TSUnionType') {
+    return ann.types.some((t) => t.type === 'TSLiteralType' && t.literal?.type === 'StringLiteral');
+  }
+  return false;
+}
+
+function ternaryHasLiteralTargetType(p) {
+  let cur = p.parentPath;
+  while (cur) {
+    const n = cur.node;
+    if (n.type === 'VariableDeclarator') return hasLiteralTypeAnnotation(n);
+    if (n.type === 'CallExpression' || n.type === 'JSXAttribute' || n.type === 'Program' || n.type === 'ReturnStatement') return false;
+    cur = cur.parentPath;
+  }
+  return false;
 }
 
 function isInWhitelistedContext(p, ctx) {
@@ -111,6 +133,7 @@ async function processFile(file, ctx, translations) {
   traverse(ast, {
     ConditionalExpression(p) {
       if (!isInWhitelistedContext(p, ctx)) return;
+      if (ternaryHasLiteralTargetType(p)) return;
       for (const branchKey of ['consequent', 'alternate']) {
         const branch = p.node[branchKey];
         if (!branch || branch.type !== 'StringLiteral') continue;

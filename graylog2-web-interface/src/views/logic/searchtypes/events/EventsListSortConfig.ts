@@ -43,7 +43,7 @@ export default class EventsListSortConfig {
   }
 
   static fromJSON({ field, direction }: EventsListSortConfigJson) {
-    const directionJSON = Direction.fromJSON(direction === 'ASC' ? '升序' : '降序');
+    const directionJSON = Direction.fromJSON(direction === 'ASC' ? 'Ascending' : 'Descending');
 
     return new EventsListSortConfig(field, directionJSON);
   }

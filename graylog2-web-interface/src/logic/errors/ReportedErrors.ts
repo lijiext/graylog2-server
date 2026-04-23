@@ -19,10 +19,10 @@ import type { $PropertyType } from 'utility-types';
 
 import type FetchError from 'logic/errors/FetchError';
 
-export const ReactErrorType = 'React 错误';
-export const NotFoundErrorType = '未找到错误';
+export const ReactErrorType = 'ReactError';
+export const NotFoundErrorType = 'NotFoundError';
 export const UnauthorizedErrorType = 'UnauthorizedError';
-export const StreamPermissionErrorType = '数据流权限错误';
+export const StreamPermissionErrorType = 'StreamPermissionError';
 
 type ReactError = {
   error: Error,

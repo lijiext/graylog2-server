@@ -41,12 +41,26 @@ function isUserVisible(s) {
   if (!s || s.length < 4) return false;
   if (!/[A-Za-z]/.test(s)) return false;
   if (isAlreadyChinese(s)) return false;
-  if (!/\s/.test(s) && !(/^[A-Z]/.test(s) && s.length >= 6 && /[A-Z][a-z]/.test(s))) return false;
+  // 必须是多词短语：含空格 或 含英文标点。单 PascalCase 词通常是 enum/type 标识符
+  if (!/\s/.test(s) && !/[.!?,:;]/.test(s)) return false;
   if (/^https?:\/\//.test(s)) return false;
   if (/^[a-z][a-zA-Z]*\.[a-z]/.test(s)) return false;
   if (/^[A-Z][A-Z0-9_]*$/.test(s)) return false;
   if (/^[a-z]+:[a-z]/.test(s)) return false;
   return true;
+}
+
+// 跳过被 TypeScript 类型注解约束的 VariableDeclarator
+function hasLiteralTypeAnnotation(declaratorNode) {
+  const ann = declaratorNode.id?.typeAnnotation?.typeAnnotation;
+  if (!ann) return false;
+  // 直接是 string literal type
+  if (ann.type === 'TSLiteralType' && ann.literal?.type === 'StringLiteral') return true;
+  // union of literal types (e.g. 'Asc' | 'Desc')
+  if (ann.type === 'TSUnionType') {
+    return ann.types.some((t) => t.type === 'TSLiteralType' && t.literal?.type === 'StringLiteral');
+  }
+  return false;
 }
 
 async function main() {
@@ -88,6 +102,7 @@ async function main() {
       VariableDeclarator(p) {
         const init = p.node.init;
         if (init?.type !== 'StringLiteral') return;
+        if (hasLiteralTypeAnnotation(p.node)) return;
         const s = normalize(init.value);
         if (!isUserVisible(s)) return;
         if (isBlacklistedString(s, ctx)) return;
