@@ -83,7 +83,7 @@ class SidecarStatusPage extends React.Component {
         <SidecarsPageNavigation />
         <PageHeader title={<span>Sidecar <em>{sidecar.node_name} status</em></span>}
                     documentationLink={{
-                      title: 'Sidecars documentation',
+                      title: 'Sidecars 文档',
                       path: DocsHelper.PAGES.COLLECTOR_STATUS,
                     }}>
           <span>

@@ -38,7 +38,7 @@ import ExecutionInfo from 'views/components/views/ExecutionInfo';
 const links = {
   [View.Type.Dashboard]: ({ id, title }) => [{
     link: Routes.DASHBOARDS,
-    label: 'Dashboards',
+    label: '仪表盘',
   },
   {
     label: title || id,
@@ -47,7 +47,7 @@ const links = {
   ],
   [View.Type.Search]: ({ id, title }) => [{
     link: Routes.SEARCH,
-    label: 'Search',
+    label: '搜索',
   },
   {
     label: title || id,
@@ -57,7 +57,7 @@ const links = {
   alert: ({ id }) => [
     {
       link: Routes.ALERTS.LIST,
-      label: 'Alerts & Events',
+      label: '告警与事件',
     },
     {
       label: id,
@@ -67,7 +67,7 @@ const links = {
   eventDefinition: ({ id, title }) => [
     {
       link: Routes.ALERTS.DEFINITIONS.LIST,
-      label: 'Event definitions',
+      label: '事件定义',
     },
     {
       link: Routes.ALERTS.DEFINITIONS.show(id),

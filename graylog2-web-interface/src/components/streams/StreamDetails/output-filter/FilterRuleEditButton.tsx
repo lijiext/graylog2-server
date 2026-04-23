@@ -64,7 +64,7 @@ const FilterRuleEditButton = ({ streamId, filterRule, destinationType }: Props) 
     });
   };
 
-  const title = isNew ? 'Create Filter Rule' : 'Edit Filter Rule';
+  const title = isNew ? '创建过滤规则' : '编辑过滤规则';
 
   return (
     <>

@@ -21,8 +21,8 @@ import PageNavigation from 'components/common/PageNavigation';
 import { Row } from 'components/bootstrap';
 
 const NAV_ITEMS = [
-  { title: 'Authentication Services', path: Routes.SYSTEM.AUTHENTICATION.BACKENDS.OVERVIEW },
-  { title: 'Authenticators', path: Routes.SYSTEM.AUTHENTICATION.AUTHENTICATORS.SHOW },
+  { title: '认证服务', path: Routes.SYSTEM.AUTHENTICATION.BACKENDS.OVERVIEW },
+  { title: '认证器', path: Routes.SYSTEM.AUTHENTICATION.AUTHENTICATORS.SHOW },
 ];
 
 const AuthenticationPageNavigation = () => (

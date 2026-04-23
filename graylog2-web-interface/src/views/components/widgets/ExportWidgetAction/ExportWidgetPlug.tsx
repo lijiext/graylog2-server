@@ -18,7 +18,7 @@ import React from 'react';
 
 import { IconButton, OverlayTrigger } from 'components/common';
 
-const title = 'Export widget';
+const title = '导出小部件';
 const Explanation = () => (
   <span>聚合小部件功能仅在企业版中提供。Graylog 提供选项，可将您的数据导出为大多数流行的文件格式，如 CSV、JSON、YAML、XML 等。
   </span>

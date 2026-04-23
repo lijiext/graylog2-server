@@ -116,7 +116,7 @@ const InputStateBadge = ({ input }: Props) => {
     );
   }
 
-  const text = input.global || input.node === undefined ? '0 RUNNING' : 'NOT RUNNING';
+  const text = input.global || input.node === undefined ? '0 RUNNING' : '未运行';
 
   return (
     <Label bsStyle="warning" bsSize="xsmall">{text}</Label>

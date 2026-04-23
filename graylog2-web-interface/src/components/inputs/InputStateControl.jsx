@@ -33,7 +33,7 @@ function inputStateFilter(state) {
 
 const InputStateControl = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'InputStateControl',
+  displayName: '输入端状态控制',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

@@ -184,7 +184,7 @@ class ContentPackEditParameter extends React.Component {
   };
 
   render() {
-    const header = this.props.parameterToEdit ? 'Edit parameter' : 'Create parameter';
+    const header = this.props.parameterToEdit ? '编辑参数' : '创建参数';
     const disableType = !!this.props.parameterToEdit;
 
     return (

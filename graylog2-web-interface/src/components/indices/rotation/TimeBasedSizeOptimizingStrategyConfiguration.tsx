@@ -73,7 +73,7 @@ const TimeBasedSizeOptimizingStrategyConfiguration = ({
     return 'error';
   };
 
-  const errorMessage = 'There needs to be at least 1 day between the minimum and maximum lifetime.';
+  const errorMessage = '最小值和最大值之间至少需要间隔 1 天。';
 
   const addYearToMaxRange = (currentMax: number, currentSelectedMax: number) => {
     if (!maxRotationPeriod && currentMax <= currentSelectedMax) {

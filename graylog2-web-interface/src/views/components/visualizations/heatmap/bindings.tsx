@@ -58,7 +58,7 @@ const validate = (formValues: WidgetConfigFormValues) => {
 
 const heatmap: VisualizationType<typeof HeatmapVisualization.type, HeatmapVisualizationConfig, HeatMapVisualizationConfigFormValues> = {
   type: HeatmapVisualization.type,
-  displayName: 'Heatmap',
+  displayName: '热力图',
   component: HeatmapVisualization,
   config: {
     fromConfig: ({ autoScale, colorScale, reverseScale, defaultValue, useSmallestAsDefault, zMax, zMin }: HeatmapVisualizationConfig = HeatmapVisualizationConfig.empty()) => ({
@@ -73,18 +73,18 @@ const heatmap: VisualizationType<typeof HeatmapVisualization.type, HeatmapVisual
     createConfig: () => ({ colorScale: 'Viridis', autoScale: true }),
     fields: [{
       name: 'colorScale',
-      title: 'Color Scale',
+      title: '颜色比例',
       required: true,
       type: 'select',
       options: [...COLORSCALES].sort(defaultCompare),
     }, {
       name: 'reverseScale',
       type: 'boolean',
-      title: 'Reverse Scale',
+      title: '反向缩放',
     }, {
       name: 'autoScale',
       type: 'boolean',
-      title: 'Auto Scale',
+      title: '自动扩展',
     }, {
       name: 'zMin',
       type: 'numeric',
@@ -100,11 +100,11 @@ const heatmap: VisualizationType<typeof HeatmapVisualization.type, HeatmapVisual
     }, {
       name: 'useSmallestAsDefault',
       type: 'boolean',
-      title: 'Use smallest as default',
+      title: '使用最小值作为默认值',
     }, {
       name: 'defaultValue',
       type: 'numeric',
-      title: 'Default Value',
+      title: '默认值',
       isShown: (values: HeatMapVisualizationConfigFormValues) => !values?.useSmallestAsDefault,
       required: false,
     }],

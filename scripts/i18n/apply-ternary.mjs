@@ -49,6 +49,11 @@ function shouldKeep(s) {
 }
 
 function isInWhitelistedContext(p, ctx) {
+  const c = p.node.consequent;
+  const a = p.node.alternate;
+  if (c?.type === 'StringLiteral' && a?.type === 'StringLiteral') {
+    if (shouldKeep(c.value) && shouldKeep(a.value)) return true;
+  }
   let cur = p.parentPath;
   while (cur) {
     const n = cur.node;

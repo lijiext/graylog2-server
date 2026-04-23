@@ -26,8 +26,8 @@ const TimeoutSelect = styled(Select)`
 `;
 
 const OPTIONS = [
-  { value: `${MS_SECOND}`, label: 'Seconds' },
-  { value: `${MS_MINUTE}`, label: 'Minutes' },
+  { value: `${MS_SECOND}`, label: '秒' },
+  { value: `${MS_MINUTE}`, label: '分钟' },
   { value: `${MS_HOUR}`, label: 'Hours' },
   { value: `${MS_DAY}`, label: 'Days' },
 ];

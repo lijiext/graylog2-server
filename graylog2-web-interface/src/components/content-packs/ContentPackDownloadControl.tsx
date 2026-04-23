@@ -41,8 +41,8 @@ const ContentPackDownloadControl = ({ contentPackId, revision, show, onHide }: P
     onHide();
   };
 
-  const infoText = 'Please right click the download link below and choose "Save Link As..." to download the JSON file.';
-  const modalTitle = 'Download Content Pack';
+  const infoText = '请右键点击下方的下载链接，并选择“链接另存为...”以下载 JSON 文件。';
+  const modalTitle = '下载内容包';
 
   return (
     <BootstrapModalWrapper showModal={showDownloadModal}

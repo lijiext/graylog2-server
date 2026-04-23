@@ -38,7 +38,7 @@ LoadingPage.propTypes = {
 };
 
 LoadingPage.defaultProps = {
-  text: 'Loading, please wait...',
+  text: '加载中，请稍候...',
 };
 
 export default LoadingPage;

@@ -67,7 +67,7 @@ const deleteAction = notifyingAction({
 const changePassword = notifyingAction({
   action: UsersActions.changePassword,
   success: () => ({
-    message: 'Password was changed successfully ',
+    message: '密码修改成功',
   }),
   error: (error, userId) => ({
     message: `Changing password for user with id "${userId}" failed with status: ${error}`,

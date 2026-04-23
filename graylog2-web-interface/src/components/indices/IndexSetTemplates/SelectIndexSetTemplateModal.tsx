@@ -58,8 +58,8 @@ const SelectIndexSetTemplateModal = ({ hideModal, show }: Props) => {
   const [showBuiltInWarmTier, setShowBuiltInWarmTier] = useState<boolean>(!!dataTieringPlugin);
 
   const templateCategorySegments: Array<{value: TemplateCategorySegment, label: string}> = [
-    { value: 'built_in', label: 'Built-in Templates' },
-    { value: 'custom', label: 'Custom Templates' },
+    { value: 'built_in', label: '内置模板' },
+    { value: 'custom', label: '自定义模板' },
   ];
 
   const {

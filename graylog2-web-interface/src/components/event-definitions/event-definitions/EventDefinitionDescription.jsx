@@ -68,7 +68,7 @@ class EventDefinitionDescription extends React.Component {
   };
 
   static renderSchedulingInformation = (definition) => {
-    let schedulingInformation = 'Not scheduled.';
+    let schedulingInformation = '未计划。';
 
     if (definition.config.search_within_ms && (definition.config.use_cron_scheduling || definition.config.execute_every_ms)) {
       const executeEveryFormatted = EventDefinitionDescription.describeSchedule(definition.config.use_cron_scheduling, definition.config.use_cron_scheduling ? definition.config.cron_expression : definition.config.execute_every_ms);

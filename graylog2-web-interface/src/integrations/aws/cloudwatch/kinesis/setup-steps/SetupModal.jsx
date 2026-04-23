@@ -28,7 +28,7 @@ const SetupModal = ({ onSubmit, onCancel, groupName, streamName }) => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const buttonOtherText = (!error && !success) ? 'Creating...' : 'Close';
+  const buttonOtherText = (!error && !success) ? '正在创建...' : '关闭';
   const buttonText = success ? 'Continue Setup' : buttonOtherText;
 
   const handleSuccess = () => {

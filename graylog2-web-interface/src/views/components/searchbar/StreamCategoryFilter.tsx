@@ -35,7 +35,7 @@ type Props = {
 
 const StreamCategoryFilter = ({ disabled, value, streamCategories, onChange }: Props) => {
   const selectedCategories = value.join(',');
-  const placeholder = 'Select stream categories the search should include.';
+  const placeholder = '选择搜索应包含的数据流类别。';
   const options = streamCategories.sort(({ key: key1 }, { key: key2 }) => defaultCompare(key1, key2));
 
   const handleChange = (selected: string) => {

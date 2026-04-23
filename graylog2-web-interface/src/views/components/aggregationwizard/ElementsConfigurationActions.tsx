@@ -26,7 +26,7 @@ import AggregationElementSelect from 'views/components/aggregationwizard/Aggrega
 import aggregationElements from './aggregationElementDefinitions';
 import type { WidgetConfigFormValues } from './WidgetConfigForm';
 
-export const UPDATE_WIDGET_PREVIEW_BTN_TEXT = 'Update preview';
+export const UPDATE_WIDGET_PREVIEW_BTN_TEXT = '更新预览';
 
 const aggregationElementsByKey = Object.fromEntries(aggregationElements.map((element) => ([element.key, element])));
 

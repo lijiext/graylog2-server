@@ -21,9 +21,9 @@ import Routes from 'routing/Routes';
 import { Row } from 'components/bootstrap';
 
 const NAV_ITEMS = [
-  { title: 'Lookup Tables', path: Routes.SYSTEM.LOOKUPTABLES.OVERVIEW, exactPathMatch: true },
-  { title: 'Caches', path: Routes.SYSTEM.LOOKUPTABLES.CACHES.OVERVIEW },
-  { title: 'Data Adapters', path: Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.OVERVIEW },
+  { title: '查找表', path: Routes.SYSTEM.LOOKUPTABLES.OVERVIEW, exactPathMatch: true },
+  { title: '缓存', path: Routes.SYSTEM.LOOKUPTABLES.CACHES.OVERVIEW },
+  { title: '数据适配器', path: Routes.SYSTEM.LOOKUPTABLES.DATA_ADAPTERS.OVERVIEW },
 ];
 
 const LUTPageNavigation = () => (

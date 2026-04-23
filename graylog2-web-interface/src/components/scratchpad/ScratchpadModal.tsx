@@ -30,9 +30,9 @@ import copyToClipboard from 'util/copyToClipboard';
 
 const DEFAULT_SCRATCHDATA = '';
 const TEXTAREA_ID = 'scratchpad-text-content';
-const STATUS_CLEARED = 'Cleared.';
-const STATUS_COPIED = 'Copied!';
-const STATUS_AUTOSAVED = 'Auto saved.';
+const STATUS_CLEARED = '已清除。';
+const STATUS_COPIED = '已复制！';
+const STATUS_AUTOSAVED = '自动保存。';
 const STATUS_DEFAULT = '';
 
 type Position = { x: number, y: number };

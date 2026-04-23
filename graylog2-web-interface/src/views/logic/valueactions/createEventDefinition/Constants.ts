@@ -35,9 +35,9 @@ export const aggregationGroup: Array<ItemKey> = ['columnGroupBy', 'rowGroupBy', 
 export const searchGroup: Array<ItemKey> = ['rowValuePath', 'columnValuePath',
   'queryWithReplacedParams', 'searchFilterQuery', 'searchFromValue'];
 export const strategiesLabels: {[key in StrategyId]: { label: string, description: string}} = {
-  EXACT: { label: 'Exactly this value', description: 'Strategy includes all search queries, filters, etc which relate to current search view' },
-  ROW: { label: 'Any in row', description: 'Strategy includes row pivots' },
-  COL: { label: 'Any in column', description: 'Strategy includes column pivots' },
-  ALL: { label: 'Any in widget', description: 'Strategy includes all row and column pivot values, related to selected value' },
-  CUSTOM: { label: 'Custom', description: 'You can select any search part' },
+  EXACT: { label: '恰好此值', description: '策略包含所有与当前搜索视图相关的搜索查询、过滤器等' },
+  ROW: { label: '行中任意', description: '策略包含行透视' },
+  COL: { label: '列中任意值', description: '策略包含列旋转' },
+  ALL: { label: '小部件中的任何项', description: '策略包含与选定值相关的所有行和列透视值' },
+  CUSTOM: { label: '自定义', description: '您可以选择任意搜索部分' },
 };

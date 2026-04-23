@@ -137,7 +137,7 @@ class DecoratorSummary extends React.Component<Props, State> {
     const { disableMenu = false, decorator, decoratorTypes, typeDefinition } = this.props;
     const { editing } = this.state;
     const config = this._resolveConfigurationIds(decorator.config);
-    const decoratorType = decoratorTypes[decorator.type] || { name: 'Unknown decorator type' };
+    const decoratorType = decoratorTypes[decorator.type] || { name: '未知的装饰器类型' };
 
     const decoratorActionsMenu = disableMenu || this._formatActionsMenu();
     const { name, requested_configuration: requestedConfiguration } = typeDefinition;

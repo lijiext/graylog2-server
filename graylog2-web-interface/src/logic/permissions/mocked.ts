@@ -25,7 +25,7 @@ const searchPaginatedEntitySharesResponse = (page: number, perPage: number, quer
   const mockedEntities = new Array(perPage).fill({
     id: 'grn::::stream:57bc9188e62a2373778d9e03',
     type: 'stream',
-    title: 'Security Data',
+    title: '安全数据',
     owners: [
       {
         id: 'grn::::user:jane',

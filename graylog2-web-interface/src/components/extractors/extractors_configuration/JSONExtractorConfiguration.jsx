@@ -25,7 +25,7 @@ import FormUtils from 'util/FormsUtils';
 import ToolsStore from 'stores/tools/ToolsStore';
 
 const JSONExtractorConfiguration = createReactClass({
-  displayName: 'JSONExtractorConfiguration',
+  displayName: 'JSON 提取器配置',
 
   propTypes: {
     configuration: PropTypes.object.isRequired,

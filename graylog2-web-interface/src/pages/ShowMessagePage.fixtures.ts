@@ -22,7 +22,7 @@ const fields = {
   gl2_message_id: '01DFZKQF4D3642JY91FM6Z1WQG',
   source: 'babbage',
   message:
-    'babbage 30ac6e35e442[27354]: [2019-07-17T09:20:33,415][WARN ][o.e.d.c.ParseField       ] [Mc1oQWu] Deprecated field [split_on_whitespace] used, replaced by [This setting is ignored, the parser always splits on operator]',
+    'babbage 30ac6e35e442[27354]: [2019-07-17T09:20:33,415][WARN ][o.e.d.c.ParseField ] [Mc1oQWu] 已弃用的字段 [split_on_whitespace] 已使用，替换为 [此设置被忽略，解析器始终按运算符拆分]',
   gl2_source_input: '5c26a37b3885e50480aa12a2',
   hostname: 'babbage',
   gl2_source_node: '4c0cbe7b-c51a-4617-bb50-ea01fe6dbfd0',
@@ -63,7 +63,7 @@ export const message = {
 };
 
 export const input = {
-  title: 'syslog udp',
+  title: 'Syslog UDP',
   global: true,
   name: 'Syslog UDP',
   content_pack: null,
@@ -91,7 +91,7 @@ const eventFields = {
   origin_context: 'urn:graylog:message:es:netflow_13:459cb2f1-a878-11e9-8a11-0242ac130004',
   streams: ['000000000000000000000002'],
   source: 'localhost',
-  message: 'SSH Brute Force',
+  message: 'SSH 暴力破解',
   priority: 2,
   key_tuple: [],
   alert: false,

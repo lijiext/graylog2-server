@@ -57,7 +57,7 @@ const InputIO = styled.span(({ theme }) => css`
 `);
 
 const InputThroughput = createReactClass({
-  displayName: 'InputThroughput',
+  displayName: '输入吞吐量',
 
   propTypes: {
     input: PropTypes.object.isRequired,

@@ -85,19 +85,19 @@ const ConfigurationsPage = () => {
     catchAll?: boolean,
   }> = useMemo(() => [
     {
-      name: 'Search',
+      name: '搜索',
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: SearchesConfig,
-        title: 'Search',
+        title: '搜索',
       },
     },
     {
-      name: 'Message Processors',
+      name: '消息处理器',
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: MessageProcessorsConfig,
-        title: 'Message Processors',
+        title: '消息处理器',
       },
     },
     {
@@ -109,37 +109,37 @@ const ConfigurationsPage = () => {
       },
     },
     {
-      name: 'Events',
+      name: '事件',
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: EventsConfig,
-        title: 'Events',
+        title: '事件',
       },
 
     },
     {
-      name: 'URL Whitelist',
+      name: 'URL 白名单',
       hide: !isPermitted(currentUser.permissions, ['urlwhitelist:read']),
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: UrlWhiteListConfig,
-        title: 'URL Whitelist',
+        title: 'URL 白名单',
       },
     },
     {
-      name: 'Decorators',
+      name: '装饰器',
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: DecoratorsConfig,
-        title: 'Decorators',
+        title: '装饰器',
       },
     },
     {
-      name: 'Permissions',
+      name: '权限',
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: PermissionsConfig,
-        title: 'Permissions',
+        title: '权限',
       },
     },
     {
@@ -147,11 +147,11 @@ const ConfigurationsPage = () => {
       SectionComponent: ConfigurationSection,
       props: {
         ConfigurationComponent: UserConfig,
-        title: 'Index Set Defaults',
+        title: '索引集默认值',
       },
     },
     {
-      name: 'Plugins',
+      name: '插件',
       SectionComponent: PluginsConfig,
       showCaret: true,
       catchAll: true,

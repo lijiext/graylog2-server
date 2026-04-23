@@ -85,7 +85,7 @@ LoadingIndicator.propTypes = {
 };
 
 LoadingIndicator.defaultProps = {
-  text: 'Loading...',
+  text: '加载中...',
   longWaitText: 'This is taking a bit longer, please hold on...',
   longWaitTimeout: 20000,
 };

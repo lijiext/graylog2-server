@@ -74,7 +74,7 @@ const Rule = ({ create, title, isRuleBuilder }: Props) => {
                     </Button>
                   ) : undefined}
                   documentationLink={{
-                    title: 'Pipeline rules documentation',
+                    title: '管道规则文档',
                     path: DocsHelper.PAGES.PIPELINE_RULES,
                   }}>
         <span>

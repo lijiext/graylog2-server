@@ -49,7 +49,7 @@ const bindings = {
   eventNotificationTypes: [
     {
       type: 'pagerduty-notification-v2',
-      displayName: 'PagerDuty Notification [Official]',
+      displayName: 'PagerDuty 通知 [官方]',
       formComponent: PagerDutyNotificationForm,
       summaryComponent: PagerDutyNotificationSummary,
       detailsComponent: PagerDutyNotificationDetails,
@@ -57,7 +57,7 @@ const bindings = {
     },
     {
       type: 'slack-notification-v1',
-      displayName: 'Slack Notification',
+      displayName: 'Slack 通知',
       formComponent: SlackNotificationForm,
       summaryComponent: SlackNotificationSummary,
       detailsComponent: SlackNotificationDetails,
@@ -65,7 +65,7 @@ const bindings = {
     },
     {
       type: 'teams-notification-v1',
-      displayName: 'Microsoft Teams Notification (Deprecated - use V2)',
+      displayName: 'Microsoft Teams 通知（已弃用 - 请使用 V2）',
       formComponent: TeamsNotificationForm,
       summaryComponent: TeamsNotificationSummary,
       detailsComponent: TeamsNotificationDetails,
@@ -73,7 +73,7 @@ const bindings = {
     },
     {
       type: 'teams-notification-v2',
-      displayName: 'Microsoft Teams Notification V2',
+      displayName: 'Microsoft Teams 通知 V2',
       formComponent: TeamsNotificationV2Form,
       summaryComponent: TeamsNotificationV2Summary,
       detailsComponent: TeamsNotificationV2Details,
@@ -83,7 +83,7 @@ const bindings = {
   lookupTableAdapters: [
     {
       type: 'GreyNoise',
-      displayName: 'GreyNoise Quick IP Lookup',
+      displayName: 'GreyNoise 快速 IP 查询',
       formComponent: GreyNoiseAdapterFieldSet,
       summaryComponent: GreyNoiseAdapterSummary,
       documentationComponent: GreyNoiseAdapterDocumentation,

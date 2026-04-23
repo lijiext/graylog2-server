@@ -52,7 +52,7 @@ const IndexSetFieldTypesPage = () => {
       <IndicesPageNavigation />
       <PageHeader title={`配置 ${indexSet ? indexSet.title : '索引集'} 字段类型`}
                   documentationLink={{
-                    title: 'Index model documentation',
+                    title: '索引模型文档',
                     path: DocsHelper.PAGES.INDEX_MODEL,
                   }}
                   actions={indexFieldTypeChangeAllowed && <ChangeFieldTypeButton indexSetId={indexSetId} />}>

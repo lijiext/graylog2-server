@@ -34,7 +34,7 @@ export default {
   eventNotificationTypes: [
     {
       type: 'email-notification-v1',
-      displayName: 'Email Notification',
+      displayName: '电子邮件通知',
       formComponent: EmailNotificationFormContainer,
       summaryComponent: EmailNotificationSummary,
       detailsComponent: EmailNotificationDetails,
@@ -42,7 +42,7 @@ export default {
     },
     {
       type: 'http-notification-v1',
-      displayName: 'HTTP Notification',
+      displayName: 'HTTP 通知',
       formComponent: HttpNotificationForm,
       summaryComponent: HttpNotificationSummary,
       detailsComponent: HttpNotificationDetails,
@@ -50,7 +50,7 @@ export default {
     },
     {
       type: 'http-notification-v2',
-      displayName: 'Custom HTTP Notification',
+      displayName: '自定义 HTTP 通知',
       formComponent: HttpNotificationFormV2,
       summaryComponent: HttpNotificationSummaryV2,
       detailsComponent: HttpNotificationDetailsV2,
@@ -58,7 +58,7 @@ export default {
     },
     {
       type: 'legacy-alarm-callback-notification-v1',
-      displayName: 'Legacy Alarm Callbacks',
+      displayName: '传统告警回调',
       formComponent: LegacyNotificationFormContainer,
       summaryComponent: LegacyNotificationSummaryContainer,
       detailsComponent: LegacyNotificationDetails,

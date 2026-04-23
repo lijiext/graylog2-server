@@ -27,8 +27,8 @@ type Props = {
 }
 
 const directionOptions = [
-  { label: 'Ascending', value: 'Ascending' },
-  { label: 'Descending', value: 'Descending' },
+  { label: '升序', value: 'Ascending' },
+  { label: '降序', value: 'Descending' },
 ];
 
 const formatSeries = (metric: MetricFormValues) => {

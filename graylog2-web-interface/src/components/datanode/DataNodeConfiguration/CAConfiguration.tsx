@@ -31,7 +31,7 @@ const StyledAlert = styled(Alert)`
 
 const TAB_KEYS = ['create', 'upload'];
 
-const UploadCA = 'Upload CA';
+const UploadCA = '上传 CA';
 
 const CAConfiguration = () => {
   const sendTelemetry = useSendTelemetry();

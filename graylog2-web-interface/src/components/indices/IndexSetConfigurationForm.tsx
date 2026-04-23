@@ -200,8 +200,8 @@ const IndexSetConfigurationForm = ({
   const enableDataTieringCloud = useFeature('data_tiering_cloud');
 
   const retentionConfigSegments: Array<{value: RetentionConfigSegment, label: string}> = [
-    { value: 'data_tiering', label: 'Data Tiering' },
-    { value: 'legacy', label: 'Legacy (Deprecated)' },
+    { value: 'data_tiering', label: '数据分层' },
+    { value: 'legacy', label: '遗留 (已弃用)' },
   ];
 
   const initialSegment = () : RetentionConfigSegment => {

@@ -48,8 +48,8 @@ const SavedSearchForm = ({ children, show, isCreateNew, saveSearch, saveAsSearch
 
   const trimmedTitle = (title ?? '').trim();
   const disableSaveAs = trimmedTitle === '' || (!isCreateNew && trimmedTitle === value);
-  const createNewTitle = isCreateNew ? 'Create new' : 'Save as';
-  const createNewButtonTitle = isCreateNew ? 'Create new search' : 'Save as new search';
+  const createNewTitle = isCreateNew ? '创建新' : '另存为';
+  const createNewButtonTitle = isCreateNew ? '创建新搜索' : '保存为新搜索';
   const pluggableSaveViewControls = useSaveViewFormControls();
   const _saveSearch = useCallback(() => saveSearch(title), [saveSearch, title]);
   const _saveAsSearch = useCallback(() => saveAsSearch(title), [saveAsSearch, title]);

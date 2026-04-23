@@ -49,7 +49,7 @@ function filterConnections(state) {
 
 const PipelineDetailsPage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'PipelineDetailsPage',
+  displayName: '管道详情页面',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {
@@ -165,7 +165,7 @@ const PipelineDetailsPage = createReactClass({
           <PipelinesPageNavigation />
           <PageHeader title={title}
                       documentationLink={{
-                        title: 'Pipelines documentation',
+                        title: '处理管道文档',
                         path: DocsHelper.PAGES.PIPELINES,
                       }}>
             <span>

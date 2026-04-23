@@ -32,7 +32,7 @@ const validate = hasAtLeastOneMetric('Area chart');
 
 const areaChart: VisualizationType<typeof AreaVisualization.type, AreaVisualizationConfig, AreaVisualizationConfigFormValues> = {
   type: AreaVisualization.type,
-  displayName: 'Area Chart',
+  displayName: '面积图',
   component: AreaVisualization,
   config: {
     createConfig: () => ({ interpolation: DEFAULT_INTERPOLATION, axisType: DEFAULT_AXIS_TYPE }),
@@ -40,13 +40,13 @@ const areaChart: VisualizationType<typeof AreaVisualization.type, AreaVisualizat
     toConfig: (formValues: AreaVisualizationConfigFormValues) => AreaVisualizationConfig.create(formValues.interpolation, formValues.axisType),
     fields: [{
       name: 'interpolation',
-      title: 'Interpolation',
+      title: '插值',
       type: 'select',
       options: interpolationTypes,
       required: true,
     }, {
       name: 'axisType',
-      title: 'Axis Type',
+      title: '轴类型',
       type: 'select',
       options: axisTypes,
       required: true,

@@ -27,7 +27,7 @@ type NumberVisualizationConfigFormValues = {
 
 const singleNumber: VisualizationType<typeof NumberVisualization.type, NumberVisualizationConfig, NumberVisualizationConfigFormValues> = {
   type: NumberVisualization.type,
-  displayName: 'Single Number',
+  displayName: '单个数字',
   component: NumberVisualization,
   config: {
     fromConfig: (config: NumberVisualizationConfig | undefined) => ({ trend: config?.trend, trend_preference: config?.trendPreference }),
@@ -36,7 +36,7 @@ const singleNumber: VisualizationType<typeof NumberVisualization.type, NumberVis
       name: 'trend',
       title: 'Trend',
       type: 'boolean',
-      description: 'Show trend information for this number.',
+      description: '显示此数字的趋势信息。',
       helpComponent: () => (
         <>
           <p>
@@ -50,7 +50,7 @@ const singleNumber: VisualizationType<typeof NumberVisualization.type, NumberVis
       ),
     }, {
       name: 'trend_preference',
-      title: 'Trend Preference',
+      title: '趋势偏好',
       type: 'select',
       options: [['Lower', 'LOWER'], ['Neutral', 'NEUTRAL'], ['Higher', 'HIGHER']],
       required: true,

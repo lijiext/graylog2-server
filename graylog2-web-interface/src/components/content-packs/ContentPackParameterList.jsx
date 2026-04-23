@@ -81,7 +81,7 @@ class ContentPackParameterList extends React.Component {
   _parameterRowFormatter = (parameter) => {
     const { onDeleteParameter, readOnly } = this.props;
     const parameterApplied = this._parameterApplied(parameter.name);
-    const buttonTitle = parameterApplied ? 'Still in use' : 'Delete Parameter';
+    const buttonTitle = parameterApplied ? '仍在使用中' : '删除参数';
     const icon = parameterApplied ? 'check_circle' : 'cancel';
     const bsStyle = parameterApplied ? 'success' : 'failure';
 
@@ -148,8 +148,8 @@ class ContentPackParameterList extends React.Component {
     };
 
     const size = parameter ? 'xsmall' : 'small';
-    const titleName = parameter ? 'Edit parameter' : 'Create parameter';
-    const triggerButtonName = parameter ? 'Edit' : 'Create parameter';
+    const titleName = parameter ? '编辑参数' : '创建参数';
+    const triggerButtonName = parameter ? '编辑' : '创建参数';
 
     const modal = (
       <BootstrapModalWrapper showModal={showModal}

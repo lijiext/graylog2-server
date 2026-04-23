@@ -24,7 +24,7 @@ import NumberUtils from 'util/NumberUtils';
 import style from './SimulationTrace.lazy.css';
 
 const SimulationTrace = createReactClass({
-  displayName: 'SimulationTrace',
+  displayName: '模拟跟踪',
 
   propTypes: {
     simulationResults: PropTypes.object.isRequired,

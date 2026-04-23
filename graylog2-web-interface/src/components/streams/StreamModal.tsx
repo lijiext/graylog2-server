@@ -37,7 +37,7 @@ const validate = (values: FormValues) => {
   let errors = {};
 
   if (!values.title) {
-    errors = { ...errors, title: 'Title is required' };
+    errors = { ...errors, title: '标题为必填项' };
   }
 
   if (!values.index_set_id) {

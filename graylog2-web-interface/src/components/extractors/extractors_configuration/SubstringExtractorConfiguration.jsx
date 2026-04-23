@@ -26,7 +26,7 @@ import FormUtils from 'util/FormsUtils';
 import ToolsStore from 'stores/tools/ToolsStore';
 
 const SubstringExtractorConfiguration = createReactClass({
-  displayName: 'SubstringExtractorConfiguration',
+  displayName: '子串提取器配置',
 
   propTypes: {
     configuration: PropTypes.object.isRequired,

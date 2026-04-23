@@ -90,12 +90,12 @@ const GeoIpResolverConfig = ({ config = defaultConfig, updateConfig }: Props) =>
 
   const availableVendorTypes = (): OptionType[] => [
     { value: 'MAXMIND', label: 'MaxMind GeoIP' },
-    { value: 'IPINFO', label: 'IPInfo Standard Location' },
+    { value: 'IPINFO', label: 'IPInfo 标准位置' },
   ];
 
   const activeVendorType = (type: GeoVendorType) => availableVendorTypes().filter((t) => t.value === type)[0].label;
 
-  const modalTitle = 'Update Geo-Location Processor Configuration';
+  const modalTitle = '更新地理位置处理器配置';
 
   return (
     <div>

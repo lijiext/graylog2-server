@@ -41,7 +41,7 @@ export const DEFAULT_LAYOUT = {
 
 const expandedSections = {
   customFieldMapping: {
-    title: 'Custom Field Mappings',
+    title: '自定义字段映射',
     content: ({ customFieldMappings }: IndexSetFieldTypeProfile) => (
       <ExpandedCustomFieldTypes customFieldMappings={customFieldMappings} />
     ),

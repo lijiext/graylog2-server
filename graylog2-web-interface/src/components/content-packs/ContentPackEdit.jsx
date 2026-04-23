@@ -147,9 +147,9 @@ class ContentPackEdit extends React.Component {
                           onSave={this.props.onSave} />
     );
     const steps = [
-      { key: 'selection', title: 'Content Selection', component: selectionComponent },
-      { key: 'parameters', title: 'Parameters', component: parameterComponent, disabled: this._disableParameters() },
-      { key: 'preview', title: 'Preview', component: previewComponent, disabled: this._disablePreview() },
+      { key: 'selection', title: '内容选择', component: selectionComponent },
+      { key: 'parameters', title: '参数', component: parameterComponent, disabled: this._disableParameters() },
+      { key: 'preview', title: '预览', component: previewComponent, disabled: this._disablePreview() },
     ];
 
     return (

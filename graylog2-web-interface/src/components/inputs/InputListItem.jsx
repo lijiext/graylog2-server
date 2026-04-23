@@ -45,7 +45,7 @@ import withLocation from 'routing/withLocation';
 
 const InputListItem = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'InputListItem',
+  displayName: '输入端列表项',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

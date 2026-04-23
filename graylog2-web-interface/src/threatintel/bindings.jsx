@@ -44,7 +44,7 @@ const bindings = {
   systemConfigurations: [
     {
       component: ThreatIntelPluginConfig,
-      displayName: 'Threat Intelligence Lookup',
+      displayName: '威胁情报查找',
       configType: 'org.graylog.plugins.threatintel.ThreatIntelPluginConfiguration',
     },
   ],
@@ -58,21 +58,21 @@ const bindings = {
     },
     {
       type: 'torexitnode',
-      displayName: 'Tor Exit Node',
+      displayName: 'Tor 出口节点',
       formComponent: TorExitNodeAdapterFieldSet,
       summaryComponent: TorExitNodeAdapterSummary,
       documentationComponent: TorExitNodeAdapterDocumentation,
     },
     {
       type: 'whois',
-      displayName: 'Whois for IPs',
+      displayName: 'IP 的 Whois',
       formComponent: WhoisAdapterFieldSet,
       summaryComponent: WhoisAdapterSummary,
       documentationComponent: WhoisAdapterDocumentation,
     },
     {
       type: 'abuse-ch-ransom',
-      displayName: '[Deprecated] Ransomware blocklists from abuse.ch',
+      displayName: '[已弃用] 来自 abuse.ch 的勒索软件黑名单',
       formComponent: AbuseChRansomAdapterFieldSet,
       summaryComponent: AbuseChRansomAdapterSummary,
       documentationComponent: AbuseChRansomAdapterDocumentation,

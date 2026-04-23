@@ -55,11 +55,11 @@ const AddOutputButton = ({ stream, getTypeDefinition, assignableOutputs, availab
   const SEGMENTS = [
     {
       value: 'create' as const,
-      label: 'Create new output',
+      label: '创建新输出端',
     },
     {
       value: 'assign' as const,
-      label: 'Assign existing output',
+      label: '分配现有输出端',
     },
   ];
 

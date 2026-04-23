@@ -49,6 +49,15 @@ function shouldKeep(s) {
 }
 
 function isInWhitelistedContext(p, ctx) {
+  // 强启发式：如果两个分支都是合规的英文 StringLiteral，就算是用户可见文本
+  // 大量"const title = cond ? 'A' : 'B'" 模式不能依赖 parent JSX 上下文
+  const c = p.node.consequent;
+  const a = p.node.alternate;
+  if (c?.type === 'StringLiteral' && a?.type === 'StringLiteral') {
+    const sc = c.value, sa = a.value;
+    if (shouldKeep(sc) && shouldKeep(sa)) return true;
+  }
+  // 否则按原规则：在 JSX/call/JSXExpressionContainer 上下文里
   let cur = p.parentPath;
   while (cur) {
     const n = cur.node;

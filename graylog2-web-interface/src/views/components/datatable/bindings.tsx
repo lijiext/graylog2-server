@@ -26,7 +26,7 @@ type DataTableVisualizationConfigFormValues = {
 };
 const dataTable: VisualizationType<typeof DataTable.type> = {
   type: DataTable.type,
-  displayName: 'Data Table',
+  displayName: '数据表',
   component: DataTable,
   config: {
     createConfig: () => ({ pinnedColumns: [] }),
@@ -34,7 +34,7 @@ const dataTable: VisualizationType<typeof DataTable.type> = {
     toConfig: (formValues: DataTableVisualizationConfigFormValues) => DataTableVisualizationConfig.create(formValues.pinnedColumns),
     fields: [{
       name: 'pinnedColumns',
-      title: 'Pinned Columns',
+      title: '固定列',
       type: 'multi-select',
       options: ({ formValues }: { formValues: WidgetConfigFormValues }) => formValues?.groupBy?.groupings
         .filter((grouping) => (grouping?.direction === 'row' && grouping?.fields))

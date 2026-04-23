@@ -42,7 +42,7 @@ const _title = (disabled: boolean, disabledChange: boolean, description: string)
     return description;
   }
 
-  return disabled ? 'Start stream' : 'Pause stream';
+  return disabled ? '启动数据流' : '暂停数据流';
 };
 
 type Props = {
@@ -51,7 +51,7 @@ type Props = {
 
 const StatusCell = ({ stream }: Props) => {
   const disableChange = stream.is_default || !stream.is_editable;
-  const description = stream.disabled ? 'Paused' : 'Running';
+  const description = stream.disabled ? '已暂停' : '运行中';
   const title = _title(stream.disabled, disableChange, description);
   const sendTelemetry = useSendTelemetry();
 

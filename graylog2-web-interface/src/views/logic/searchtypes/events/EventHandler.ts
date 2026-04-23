@@ -46,7 +46,7 @@ type Shape = {
 
 export type Shapes = Array<Shape>;
 
-export const eventsDisplayName = 'Alerts';
+export const eventsDisplayName = '告警';
 
 type TimeFormatter = (timestamp: string) => string;
 

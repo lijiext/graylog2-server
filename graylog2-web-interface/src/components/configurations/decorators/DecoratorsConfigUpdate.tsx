@@ -99,7 +99,7 @@ const DecoratorsConfigUpdate = ({ streams, decorators, types, show = false, onCa
     onCancel();
   }, [decorators, onCancel]);
 
-  const modalTitle = 'Update Default Decorators Configuration';
+  const modalTitle = '更新默认装饰器配置';
 
   return (
     <BootstrapModalWrapper showModal={show}

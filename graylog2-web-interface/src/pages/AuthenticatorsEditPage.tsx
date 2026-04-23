@@ -28,7 +28,7 @@ const AuthenticatorsEditPage = () => (
     <PageHeader title="编辑认证器"
                 actions={<AuthenticatorActionLinks />}
                 documentationLink={{
-                  title: 'Authenticators documentation',
+                  title: '身份验证器文档',
                   path: DocsHelper.PAGES.AUTHENTICATORS,
                 }}>
       <span>

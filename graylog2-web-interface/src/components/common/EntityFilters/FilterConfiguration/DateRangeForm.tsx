@@ -131,8 +131,8 @@ const useInitialValues = (filter: Filter | undefined) => {
   };
 };
 
-const formatError = 'Format must be: YYYY-MM-DD [HH:mm:ss[.SSS]].';
-const rangeError = 'The "Until" date must come after the "From" date.';
+const formatError = '格式必须为：YYYY-MM-DD [HH:mm:ss[.SSS]]。';
+const rangeError = '"结束"日期必须在"开始"日期之后。';
 
 const validate = (values: FormValues) => {
   let errors: {

@@ -31,7 +31,7 @@ import withLocation from 'routing/withLocation';
 
 const NodeLoggers = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'NodeLoggers',
+  displayName: '节点日志记录器',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

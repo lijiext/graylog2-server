@@ -36,7 +36,7 @@ import AssignOutputDropdown from './AssignOutputDropdown';
 
 const OutputsComponent = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'OutputsComponent',
+  displayName: '输出端组件',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

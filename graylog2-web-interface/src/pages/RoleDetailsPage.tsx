@@ -57,7 +57,7 @@ const RoleDetailsPage = ({ params }: Props) => {
       <PageHeader title={<PageTitle fullName={loadedRole?.name} />}
                   actions={<RoleActionLinks roleId={roleId} />}
                   documentationLink={{
-                    title: 'Permissions documentation',
+                    title: '权限文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}
                   topActions={(

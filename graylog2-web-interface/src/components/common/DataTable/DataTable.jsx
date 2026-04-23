@@ -111,7 +111,7 @@ class DataTable extends React.Component {
     filterKeys: [],
     filterLabel: 'Filter',
     displayKey: 'value',
-    noDataText: 'No data available.',
+    noDataText: '暂无数据。',
     rowClassName: '',
     useResponsiveTable: true,
     // eslint-disable-next-line react/no-unstable-nested-components

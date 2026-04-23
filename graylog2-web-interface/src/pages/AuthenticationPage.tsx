@@ -31,7 +31,7 @@ import BackendDetails from 'components/authentication/BackendDetails';
 import useHistory from 'routing/useHistory';
 
 const _pageTitle = (activeBackend: AuthenticationBackend | undefined | null, returnString?: boolean) => {
-  const pageName = 'Active Authentication Service';
+  const pageName = '活动认证服务';
 
   if (activeBackend) {
     const backendTitle = StringUtils.truncateWithEllipses(activeBackend.title, 30);
@@ -78,7 +78,7 @@ const AuthenticationPage = () => {
                                         finishedLoading={finishedLoading} />
                   )}
                   documentationLink={{
-                    title: 'Authentication documentation',
+                    title: '认证文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>配置此 Graylog 集群的 Graylog 认证服务。</span>

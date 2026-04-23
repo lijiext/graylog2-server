@@ -100,7 +100,7 @@ const CloudWatch = ({ externalInputSubmit, onSubmit }) => {
     return [
       {
         key: 'authorize',
-        title: 'AWS Kinesis Authorize',
+        title: 'AWS Kinesis 授权',
         component: (<StepAuthorize onSubmit={handleSubmit}
                                    onChange={handleFieldUpdate}
                                    sidebarComponent={<SidebarPermissions />} />),
@@ -108,7 +108,7 @@ const CloudWatch = ({ externalInputSubmit, onSubmit }) => {
       },
       {
         key: 'kinesis-setup',
-        title: 'AWS Kinesis Setup',
+        title: 'AWS Kinesis 设置',
         component: (<StepKinesis onSubmit={handleSubmit}
                                  onChange={handleFieldUpdate}
                                  hasStreams={availableStreams.length > 0} />),
@@ -116,13 +116,13 @@ const CloudWatch = ({ externalInputSubmit, onSubmit }) => {
       },
       {
         key: 'health-check',
-        title: 'AWS CloudWatch Health Check',
+        title: 'AWS CloudWatch 健康检查',
         component: (<StepHealthCheck onSubmit={handleSubmit} onChange={handleFieldUpdate} />),
         disabled: isDisabledStep('health-check'),
       },
       {
         key: 'review',
-        title: 'AWS Kinesis Review',
+        title: 'AWS Kinesis 审查',
         component: (<StepReview onSubmit={handleSubmit}
                                 onEditClick={handleEditClick}
                                 externalInputSubmit={externalInputSubmit} />),

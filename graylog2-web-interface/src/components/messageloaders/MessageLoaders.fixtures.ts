@@ -20,7 +20,7 @@ import { Map } from 'immutable';
 import type { Input } from 'components/messageloaders/Types';
 
 export const input: Input = {
-  title: 'syslog udp',
+  title: 'Syslog UDP',
   global: true,
   name: 'Syslog UDP',
   content_pack: null,

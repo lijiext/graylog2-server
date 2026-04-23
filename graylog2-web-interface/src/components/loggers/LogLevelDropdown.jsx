@@ -30,7 +30,7 @@ import withLocation from 'routing/withLocation';
 
 const LogLevelDropdown = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'LogLevelDropdown',
+  displayName: '日志级别下拉菜单',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

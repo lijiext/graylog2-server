@@ -23,7 +23,7 @@ import { Spinner } from 'components/common';
 import { LookupTableDataAdaptersActions, LookupTableDataAdaptersStore } from 'stores/lookup-tables/LookupTableDataAdaptersStore';
 
 const DataAdaptersContainer = createReactClass({
-  displayName: 'DataAdaptersContainer',
+  displayName: '数据适配器容器',
 
   propTypes: {
     children: PropTypes.oneOfType([

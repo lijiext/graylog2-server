@@ -62,7 +62,7 @@ const RoleEditPage = ({ params }: Props) => {
                     </LinkContainer>
                   )}
                   documentationLink={{
-                    title: 'Permissions documentation',
+                    title: '权限文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>

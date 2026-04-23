@@ -28,6 +28,6 @@ export const COLUMNS_ORDER = ['title', 'description', 'status'];
 
 export const ADDITIONAL_ATTRIBUTES: Array<Attribute> = [
   { id: 'title', title: 'Rule' },
-  { id: 'description', title: 'Description' },
-  { id: 'status', title: 'Status' },
+  { id: 'description', title: '描述' },
+  { id: 'status', title: '状态' },
 ];

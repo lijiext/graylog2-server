@@ -86,7 +86,7 @@ const IndexSetConfigurationPage = () => {
         <div>
           <PageHeader title="配置索引集"
                       documentationLink={{
-                        title: 'Index model documentation',
+                        title: '索引模型文档',
                         path: DocsHelper.PAGES.INDEX_MODEL,
                       }}>
             <span>

@@ -30,8 +30,8 @@ const SortDirectionSelect = ({ direction, disabled, onChange }: Props) => (
   <Select disabled={disabled}
           clearable={false}
           options={[
-            { label: 'Ascending', value: 'Ascending' },
-            { label: 'Descending', value: 'Descending' },
+            { label: '升序', value: 'Ascending' },
+            { label: '降序', value: 'Descending' },
           ]}
           onChange={(value: string) => onChange(Direction.fromString(value))}
           placeholder={disabled ? '未选择排序' : '点击选择方向'}

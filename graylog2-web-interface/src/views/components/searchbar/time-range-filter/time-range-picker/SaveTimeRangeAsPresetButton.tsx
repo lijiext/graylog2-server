@@ -59,7 +59,7 @@ const isTimerangeEqual = (firstTimerange: TimeRange, secondTimerange: TimeRange)
 
 const validate = ({ description }: FormValues) => {
   if (!description) {
-    return { description: 'Description is required' };
+    return { description: '需要描述' };
   }
 
   return ({});

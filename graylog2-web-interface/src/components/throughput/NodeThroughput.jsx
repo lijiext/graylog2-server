@@ -26,7 +26,7 @@ import { MetricsActions, MetricsStore } from 'stores/metrics/MetricsStore';
 
 // TODO this is a copy of GlobalTroughput, it just renders differently and only targets a single node.
 const NodeThroughput = createReactClass({
-  displayName: 'NodeThroughput',
+  displayName: '节点吞吐量',
 
   propTypes: {
     nodeId: PropTypes.string.isRequired,

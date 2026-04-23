@@ -34,7 +34,7 @@ import { TELEMETRY_EVENT_TYPE } from 'logic/telemetry/Constants';
 const HTTPHeaderAuthConfigSection = () => {
   const [submitError, setSubmitError] = useState<string | undefined>();
   const [loadedConfig, setLoadedConfig] = useState<HTTPHeaderAuthConfig | undefined | void>();
-  const sectionTitle = 'Trusted Header Authentication';
+  const sectionTitle = '可信标头认证';
   const history = useHistory();
   const { pathname } = useLocation();
   const sendTelemetry = useSendTelemetry();

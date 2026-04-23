@@ -58,7 +58,7 @@ export const fetchIndexSetFieldTypeProfiles = async (searchParams: SearchParams)
         id: 'index_set_ids',
         searchable: false,
         sortable: false,
-        title: 'Used in',
+        title: '用于',
         type: 'STRING',
       }],
     }));

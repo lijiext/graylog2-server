@@ -34,7 +34,7 @@ type Props = {
 
 const FilterStatusCell = ({ filterOutputRule }: Props) => {
   const isEnabled = filterOutputRule.status === 'enabled';
-  const title = isEnabled ? 'Enabled' : 'Disabled';
+  const title = isEnabled ? '已启用' : '已禁用';
 
   return (
     <StatusLabel bsStyle={isEnabled ? 'success' : 'warning'}

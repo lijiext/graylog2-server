@@ -30,10 +30,10 @@ import { isValidDate, toDateObject } from 'util/DateTime';
 import debounceWithPromise from 'views/logic/debounceWithPromise';
 import ToolsStore from 'stores/tools/ToolsStore';
 
-const invalidDateFormatError = 'Format must be: YYYY-MM-DD [HH:mm:ss[.SSS]].';
-const rangeLimitError = 'Range is outside limit duration.';
-const dateLimitError = 'Date is outside limit duration.';
-const timeRangeError = 'The "Until" date must come after the "From" date.';
+const invalidDateFormatError = '格式必须为：YYYY-MM-DD [HH:mm:ss[.SSS]]。';
+const rangeLimitError = '范围超出限制时长。';
+const dateLimitError = '日期超出限制时长。';
+const timeRangeError = '"结束"日期必须在"开始"日期之后。';
 
 const exceedsDuration = (dateTime: DateTime, limitDuration: number, formatTime: (dateTime: DateTime, format: string) => string) => {
   if (limitDuration === 0) {

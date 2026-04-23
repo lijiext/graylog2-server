@@ -50,11 +50,11 @@ type InputSelectProps = {
 const ServerInputSelect = ({ inputs, selectedInputId, onInputSelect }: Subtract<InputSelectProps, {show}>) => {
   const _formatInputSelectOptions = () => {
     if (!inputs) {
-      return [{ value: 'none', label: 'Loading inputs...', disabled: true }];
+      return [{ value: 'none', label: '正在加载输入端...', disabled: true }];
     }
 
     if (inputs.size === 0) {
-      return [{ value: 'none', label: 'No inputs available' }];
+      return [{ value: 'none', label: '暂无可用输入端' }];
     }
 
     const formattedInputs = [];
@@ -222,13 +222,13 @@ const RawMessageLoader = ({ onMessageLoaded, inputIdSelector, codecTypes, inputs
 
   const _formatSelectOptions = () => {
     if (!codecTypes) {
-      return [{ value: 'none', label: 'Loading codec types...', disabled: true }];
+      return [{ value: 'none', label: '正在加载编解码器类型...', disabled: true }];
     }
 
     const codecTypesIds = Object.keys(codecTypes);
 
     if (codecTypesIds.length === 0) {
-      return [{ value: 'none', label: 'No codecs available' }];
+      return [{ value: 'none', label: '没有可用的编解码器' }];
     }
 
     return codecTypesIds
@@ -266,7 +266,7 @@ const RawMessageLoader = ({ onMessageLoaded, inputIdSelector, codecTypes, inputs
 
   const _formatConfigField = (key: string, configField) => {
     const value = codecConfiguration[key];
-    const typeName = 'RawMessageLoader';
+    const typeName = '原始消息加载器';
     const elementKey = `${typeName}-${key}`;
 
     switch (configField.type) {

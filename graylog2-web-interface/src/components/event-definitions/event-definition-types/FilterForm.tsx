@@ -82,7 +82,7 @@ const buildNewParameter = (name: string): LookupTableParameterJsonEmbryonic => (
   embryonic: true,
   type: 'lut-parameter-v1',
   data_type: 'any',
-  title: 'new title',
+  title: '新标题',
 });
 
 type EventDefinitionConfig = $PropertyType<EventDefinition, 'config'>;

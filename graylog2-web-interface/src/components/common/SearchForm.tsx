@@ -289,7 +289,7 @@ SearchForm.defaultProps = {
   onSearch: null,
   onReset: null,
   label: null,
-  placeholder: 'Enter search query...',
+  placeholder: '输入搜索查询...',
   wrapperClass: 'search',
   queryWidth: 400,
   topMargin: 0,

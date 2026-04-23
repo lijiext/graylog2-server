@@ -26,7 +26,7 @@ const SidecarNewConfigurationPage = () => (
     <SidecarsPageNavigation />
     <PageHeader title="新采集器配置"
                 documentationLink={{
-                  title: 'Sidecar documentation',
+                  title: 'Sidecar 文档',
                   path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                 }}>
       <span>

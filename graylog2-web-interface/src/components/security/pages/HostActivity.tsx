@@ -27,27 +27,27 @@ const hotspots = [
   {
     positionX: '50%',
     positionY: '120px',
-    description: 'Get a top-level view of your high, medium, and low alert counts with trending information to know if this is a normal day at the office . . . or not.',
+    description: '通过趋势信息概览您的高、中、低级别告警数量，以判断这是否是一个正常的办公日……或者不是。',
   },
   {
     positionX: '40%',
     positionY: '480px',
-    description: 'Immediately identify which hosts are generating the high alerts, to shrink MTTR.',
+    description: '立即识别哪些主机正在产生高告警，以缩短平均修复时间 (MTTR)。',
   },
   {
     positionX: '65%',
     positionY: '950px',
-    description: 'See which tech is generating the most log-ons.',
+    description: '查看哪种技术产生的登录最多。',
   },
   {
     positionX: '40%',
     positionY: '1350px',
-    description: 'Initiate an investigation when identity and access control changes come from unexpected machines.',
+    description: '当身份和访问控制变更来自意外机器时，启动调查。',
   },
   {
     positionX: '80%',
     positionY: '1730px',
-    description: 'Message counts by event source give you a daily view of regular patterns in data, spikes outside the norm will trigger investigations as to why.',
+    description: '按事件源统计的消息数量可让您每日查看数据中的常规模式，超出正常范围的峰值将触发调查以查明原因。',
   },
 ];
 

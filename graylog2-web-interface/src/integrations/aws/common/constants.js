@@ -15,9 +15,9 @@
  * <http://www.mongodb.com/licensing/server-side-public-license>.
  */
 const KINESIS_LOG_TYPES = [
-  { value: 'KINESIS_CLOUDWATCH_FLOW_LOGS', label: 'Kinesis CloudWatch Flow Logs' },
-  { value: 'KINESIS_CLOUDWATCH_RAW', label: 'Kinesis CloudWatch Raw' },
-  { value: 'KINESIS_RAW', label: 'Kinesis Raw' },
+  { value: 'KINESIS_CLOUDWATCH_FLOW_LOGS', label: 'Kinesis CloudWatch 流日志' },
+  { value: 'KINESIS_CLOUDWATCH_RAW', label: 'Kinesis CloudWatch 原始数据' },
+  { value: 'KINESIS_RAW', label: 'Kinesis 原始数据' },
 ];
 
 const DEFAULT_KINESIS_LOG_TYPE = 'KINESIS_CLOUDWATCH_FLOW_LOGS';

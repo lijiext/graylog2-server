@@ -22,8 +22,8 @@ import { Row } from 'components/bootstrap';
 
 const UsersPageNavigation = () => {
   const NAV_ITEMS = [
-    { title: 'Users Overview', path: Routes.SYSTEM.USERS.OVERVIEW, permissions: 'users:list' },
-    { title: 'Teams Overview', path: Routes.getPluginRoute('SYSTEM_TEAMS'), permissions: 'teams:list' },
+    { title: '用户概览', path: Routes.SYSTEM.USERS.OVERVIEW, permissions: 'users:list' },
+    { title: '团队概览', path: Routes.getPluginRoute('SYSTEM_TEAMS'), permissions: 'teams:list' },
   ];
 
   return (

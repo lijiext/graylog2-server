@@ -51,7 +51,7 @@ const DestinationOutputs = ({ stream }: Props) => {
   }
 
   const hasAssignedOutput = data.outputs.length > 0;
-  const title = hasAssignedOutput ? 'Enabled' : 'Disabled';
+  const title = hasAssignedOutput ? '已启用' : '已禁用';
 
   const streamOutputIds = data.outputs.map((output) => output.id);
   const assignableOutputs = outputs.outputs

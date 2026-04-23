@@ -21,7 +21,7 @@ import { ReadOnlyFormGroup } from 'components/common';
 
 const HttpNotificationDetails = ({ notification }) => {
   const apiKeySet = notification.config.api_secret?.is_set;
-  const apiSentAs = notification.config.api_key_as_header ? 'Header' : 'Query Parameter';
+  const apiSentAs = notification.config.api_key_as_header ? '头部' : '查询参数';
 
   return (
     <>

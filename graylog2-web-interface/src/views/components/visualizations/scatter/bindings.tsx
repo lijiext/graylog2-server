@@ -29,7 +29,7 @@ const validate = hasAtLeastOneMetric('Scatter plot');
 
 const scatterChart: VisualizationType<typeof ScatterVisualization.type, ScatterVisualizationConfig, ScatterVisualizationConfigFormValues> = {
   type: ScatterVisualization.type,
-  displayName: 'Scatter Plot',
+  displayName: '散点图',
   component: ScatterVisualization,
   config: {
     createConfig: () => ({ axisType: DEFAULT_AXIS_TYPE }),
@@ -37,7 +37,7 @@ const scatterChart: VisualizationType<typeof ScatterVisualization.type, ScatterV
     toConfig: (formValues) => ScatterVisualizationConfig.create(formValues.axisType),
     fields: [{
       name: 'axisType',
-      title: 'Axis Type',
+      title: '轴类型',
       type: 'select',
       options: axisTypes,
       required: true,

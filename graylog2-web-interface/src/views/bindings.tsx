@@ -167,7 +167,7 @@ const exports: PluginExports = {
   enterpriseWidgets: [
     {
       type: 'MESSAGES',
-      displayName: 'Message List',
+      displayName: '消息列表',
       defaultHeight: 5,
       defaultWidth: 6,
       // TODO: Subtyping needs to be taken into account
@@ -181,7 +181,7 @@ const exports: PluginExports = {
     },
     {
       type: 'AGGREGATION',
-      displayName: 'Results',
+      displayName: '结果',
       defaultHeight: 4,
       defaultWidth: 4,
       visualizationComponent: AggregationBuilder,
@@ -211,7 +211,7 @@ const exports: PluginExports = {
     },
     {
       type: 'EVENTS',
-      displayName: 'Events',
+      displayName: '事件',
       defaultHeight: 4,
       defaultWidth: 6,
       hasEditSubmitButton: true,
@@ -260,7 +260,7 @@ const exports: PluginExports = {
     },
     {
       type: 'aggregate',
-      title: 'Show top values',
+      title: '显示前 N 个值',
       thunk: AggregateActionHandler,
       isEnabled: (({
         field,
@@ -271,7 +271,7 @@ const exports: PluginExports = {
     },
     {
       type: 'statistics',
-      title: 'Statistics',
+      title: '统计',
       isEnabled: (({
         field,
         type,
@@ -282,7 +282,7 @@ const exports: PluginExports = {
     },
     {
       type: 'add-to-table',
-      title: 'Add to table',
+      title: '添加到表格',
       thunk: AddToTableActionHandler,
       isEnabled: AddToTableActionHandler.isEnabled,
       isHidden: AddToTableActionHandler.isHidden,
@@ -290,7 +290,7 @@ const exports: PluginExports = {
     },
     {
       type: 'remove-from-table',
-      title: 'Remove from table',
+      title: '从表格中移除',
       thunk: RemoveFromTableActionHandler,
       isEnabled: RemoveFromTableActionHandler.isEnabled,
       isHidden: RemoveFromTableActionHandler.isHidden,
@@ -298,28 +298,28 @@ const exports: PluginExports = {
     },
     {
       type: 'add-to-all-tables',
-      title: 'Add to all tables',
+      title: '添加到所有表',
       thunk: AddToAllTablesActionHandler,
       isEnabled: ({ field, type }) => (!isFunction(field) && !type.isDecorated()),
       resetFocus: false,
     },
     {
       type: 'remove-from-all-tables',
-      title: 'Remove from all tables',
+      title: '从所有表中移除',
       thunk: RemoveFromAllTablesActionHandler,
       isEnabled: ({ field, type }) => (!isFunction(field) && !type.isDecorated()),
       resetFocus: false,
     },
     {
       type: 'copy-field-to-clipboard',
-      title: 'Copy field name to clipboard',
+      title: '将字段名复制到剪贴板',
       handler: CopyFieldToClipboard,
       isEnabled: () => true,
       resetFocus: false,
     },
     {
       type: 'change-field-type',
-      title: 'Change field type',
+      title: '更改字段类型',
       isEnabled: isChangeFieldTypeEnabled,
       resetFocus: false,
       component: ChangeFieldType,
@@ -329,49 +329,49 @@ const exports: PluginExports = {
   valueActions: filterCloudValueActions([
     {
       type: 'exclude',
-      title: 'Exclude from results',
+      title: '从结果中排除',
       thunk: ExcludeFromQueryHandler,
       isEnabled: ({ field, type }: ActionHandlerArguments) => (!isFunction(field) && !type.isDecorated()),
       resetFocus: false,
     },
     {
       type: 'add-to-query',
-      title: 'Add to query',
+      title: '添加到查询',
       thunk: AddToQueryHandler,
       isEnabled: ({ field, type }: ActionHandlerArguments) => (!isFunction(field) && !type.isDecorated()),
       resetFocus: false,
     },
     {
       type: 'show-bucket',
-      title: 'Show documents for value',
+      title: '显示该值的文档',
       thunk: ShowDocumentsHandler,
       isEnabled: ShowDocumentsHandler.isEnabled,
       resetFocus: true,
     },
     {
       type: 'create-extractor',
-      title: 'Create extractor',
+      title: '创建提取器',
       isEnabled: ({ type, contexts }) => (!!contexts.message && !type.isDecorated() && !!contexts.isLocalNode),
       component: SelectExtractorType,
       resetFocus: false,
     },
     {
       type: 'highlight-value',
-      title: 'Highlight this value',
+      title: '高亮此值',
       thunk: HighlightValueHandler,
       isEnabled: HighlightValueHandler.isEnabled,
       resetFocus: false,
     },
     {
       type: 'copy-value-to-clipboard',
-      title: 'Copy value to clipboard',
+      title: '将值复制到剪贴板',
       handler: CopyValueToClipboard,
       isEnabled: () => true,
       resetFocus: false,
     },
     {
       type: 'create-event-definition-from-value',
-      title: 'Create event definition',
+      title: '创建事件定义',
       isEnabled: () => true,
       resetFocus: false,
       component: CreateEventDefinition,
@@ -379,41 +379,41 @@ const exports: PluginExports = {
   ], ['create-extractor']),
   visualizationTypes: visualizationBindings,
   widgetCreators: [{
-    title: 'Message Count',
+    title: '消息数量',
     func: CreateMessageCount,
     icon: () => <Icon name="tag" />,
   }, {
-    title: 'Message Table',
+    title: '消息表',
     func: CreateMessagesWidget,
     icon: () => <Icon name="list" />,
   }, {
-    title: 'Custom Aggregation',
+    title: '自定义聚合',
     func: CreateCustomAggregation,
     icon: () => <Icon name="monitoring" />,
   }, {
-    title: 'Events Overview',
+    title: '事件概览',
     func: CreateEventsWidget,
     icon: () => <Icon name="report" type="regular" />,
   }],
   creators: [
     {
       type: 'preset',
-      title: 'Message Count',
+      title: '消息数量',
       func: AddMessageCountActionHandler,
     },
     {
       type: 'preset',
-      title: 'Message Table',
+      title: '消息表',
       func: AddMessageTableActionHandler,
     },
     {
       type: 'generic',
-      title: 'Aggregation',
+      title: '聚合',
       func: AddCustomAggregation,
     },
     {
       type: 'events' as const,
-      title: 'Events Overview',
+      title: '事件概览',
       func: AddEventsWidgetActionHandler,
     },
   ],
@@ -440,7 +440,7 @@ const exports: PluginExports = {
   ],
   'views.components.widgets.messageTable.previewOptions': [
     {
-      title: 'Show message in new row',
+      title: '在新行中显示消息',
       isChecked: (config) => config.showMessageRow,
       isDisabled: () => false,
       onChange: (config, onConfigChange) => {

@@ -105,7 +105,7 @@ export const extractDurationAndUnit = (duration, timeUnits) => {
  */
 const TimeUnitInput = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'TimeUnitInput',
+  displayName: '时间单位输入',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

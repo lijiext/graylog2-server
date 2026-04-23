@@ -270,7 +270,7 @@ const RuleBuilder = () => {
           : TELEMETRY_EVENT_TYPE.PIPELINE_RULE_BUILDER.UPDATE_RULE_CLICKED, {
           app_pathname: getPathnameWithoutId(pathname),
           app_section: 'pipeline-rules',
-          app_action_value: closeAfter ? 'update-rule-and-close-button' : 'update-rule-button',
+          app_action_value: closeAfter ? '更新规则并关闭' : '更新规则',
         });
 
       await updateRule(rule);

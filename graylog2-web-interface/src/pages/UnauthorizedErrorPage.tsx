@@ -90,7 +90,7 @@ UnauthorizedErrorPage.propTypes = {
 UnauthorizedErrorPage.defaultProps = {
   description: undefined,
   errorDetails: undefined,
-  title: 'Missing Permissions',
+  title: '缺少权限',
 };
 
 export default withLocation(UnauthorizedErrorPage);

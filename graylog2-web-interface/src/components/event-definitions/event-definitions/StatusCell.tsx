@@ -42,7 +42,7 @@ const _title = (disabled: boolean, disabledChange: boolean, description: string)
     return description;
   }
 
-  return disabled ? 'Enable' : 'Disable';
+  return disabled ? '启用' : '禁用';
 };
 
 type Props ={

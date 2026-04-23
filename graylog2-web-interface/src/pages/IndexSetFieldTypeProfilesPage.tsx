@@ -44,7 +44,7 @@ const IndexSetFieldTypeProfilesPage = () => {
       <IndicesPageNavigation />
       <PageHeader title="索引集字段类型配置文件"
                   documentationLink={{
-                    title: 'Index model documentation',
+                    title: '索引模型文档',
                     path: DocsHelper.PAGES.INDEX_MODEL,
                   }}
                   actions={<CreateProfileButton />}>

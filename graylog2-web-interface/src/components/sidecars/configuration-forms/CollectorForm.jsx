@@ -47,8 +47,8 @@ ValidationMessage.propTypes = {
 const formatServiceTypes = () => {
   const options = [];
 
-  options.push({ value: 'exec', label: 'Foreground execution' });
-  options.push({ value: 'svc', label: 'Windows service' });
+  options.push({ value: 'exec', label: '前台执行' });
+  options.push({ value: 'svc', label: 'Windows 服务' });
 
   return options;
 };

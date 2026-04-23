@@ -23,7 +23,7 @@ import type { EventsWidgetSortConfigJSON } from './EventsWidgetSortConfig';
 import EventsWidgetSortConfig from './EventsWidgetSortConfig';
 
 export const LIST_MODE = 'List';
-export const NUMBER_MODE = 'Number';
+export const NUMBER_MODE = '数字';
 
 export type VisualizationType = typeof LIST_MODE | typeof NUMBER_MODE;
 

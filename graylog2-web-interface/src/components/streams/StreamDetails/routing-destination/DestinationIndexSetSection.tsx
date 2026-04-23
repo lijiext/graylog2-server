@@ -51,7 +51,7 @@ const DestinationIndexSetSection = ({ indexSet, stream }: Props) => {
   const { indexSets } = useStore(IndexSetsStore);
   const { data, isLoading } = useStreamOutputFilters(stream.id, 'indexer', pagination);
   /* eslint-disable no-constant-condition */
-  const title = true ? 'Enabled' : 'Disabled'; // TODO use api to check if enabled
+  const title = true ? '已启用' : '已禁用'; // TODO use api to check if enabled
   const { data: indexSetStats, isSuccess: isStatsLoaded } = useIndexSetStats(indexSet.id);
 
   if (isLoading) {

@@ -23,7 +23,7 @@ import { Icon } from 'components/common';
 import style from './PluginList.css';
 
 const PluginList = createReactClass({
-  displayName: 'PluginList',
+  displayName: '插件列表',
 
   ENTERPRISE_PLUGINS: {
     'graylog-plugin-enterprise': 'Graylog Plugin Enterprise',

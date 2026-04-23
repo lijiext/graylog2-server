@@ -58,7 +58,7 @@ const StreamsPage = () => {
     <DocumentTitle title="数据流">
       <PageHeader title="数据流"
                   documentationLink={{
-                    title: 'Streams documentation',
+                    title: '数据流文档',
                     path: DocsHelper.PAGES.STREAMS,
                   }}
                   actions={(

@@ -39,7 +39,7 @@ const StreamEditPage = () => {
       <div>
         <PageHeader title={<span>数据流规则 "{stream.title}&quot;</span>}
                     documentationLink={{
-                      title: 'Streams documentation',
+                      title: '数据流文档',
                       path: DocsHelper.PAGES.STREAMS,
                     }}>
           <span>

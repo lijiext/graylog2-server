@@ -41,7 +41,7 @@ const FavoriteIcon = ({ isFavorite, grn, onChange, className }: Props) => {
         .then(() => onChange(false));
     } else { putItem(grn).then(() => onChange(true)); }
   }, [isFavorite, deleteItem, grn, onChange, putItem]);
-  const title = isFavorite ? 'Remove from favorites' : 'Add to favorites';
+  const title = isFavorite ? '从收藏中移除' : '添加到收藏夹';
 
   return <StyledIcon className={className} onClick={onClick} title={title} $isFavorite={isFavorite} name="star" type={isFavorite ? 'solid' : 'regular'} />;
 };

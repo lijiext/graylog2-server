@@ -51,7 +51,7 @@ const WizardPageHeader = ({ authenticationBackend: authBackend }: Props) => {
                                         finishedLoading={finishedLoading} />
                   )}
                   documentationLink={{
-                    title: 'Authentication documentation',
+                    title: '认证文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>配置此 Graylog 集群的 Graylog 认证服务。</span>

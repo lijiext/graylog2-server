@@ -133,7 +133,7 @@ BootstrapModalForm.propTypes = {
 BootstrapModalForm.defaultProps = {
   backdrop: undefined,
   formProps: {},
-  submitButtonText: 'Submit',
+  submitButtonText: '提交',
   submitButtonDisabled: false,
   onSubmitForm: undefined,
   bsSize: undefined,

@@ -35,10 +35,10 @@ const flattenValidationTree = (validationTree, errors = []) => {
 const validateExpressionTree = (expression, series, validationTree = {}) => {
   switch (expression.expr) {
     case 'number':
-      return (Number.isFinite(expression.value) ? {} : { message: 'Threshold must be a valid number' });
+      return (Number.isFinite(expression.value) ? {} : { message: '阈值必须是有效数字' });
     case 'number-ref':
       /* eslint-disable no-case-declarations */
-      const error = { message: 'Function must be set' };
+      const error = { message: '必须设置函数' };
 
       if (!expression.ref) {
         return error;
@@ -47,7 +47,7 @@ const validateExpressionTree = (expression, series, validationTree = {}) => {
       const selectedSeries = series.find((s) => s.id === expression.ref);
 
       if (selectedSeries?.type === 'percentage' && selectedSeries?.strategy === 'SUM' && !selectedSeries?.field) {
-        return { message: 'Field must be set' };
+        return { message: '字段必须设置' };
       }
 
       if (!selectedSeries?.field && (selectedSeries?.type === 'avg'
@@ -59,7 +59,7 @@ const validateExpressionTree = (expression, series, validationTree = {}) => {
           || selectedSeries?.type === 'stddev'
           || selectedSeries?.type === 'sum'
           || selectedSeries?.type === 'sumofsquares'
-          || selectedSeries?.type === 'variance')) { return { message: 'Field must be set' }; }
+          || selectedSeries?.type === 'variance')) { return { message: '字段必须设置' }; }
 
       return (selectedSeries?.type ? {} : error);
       /* eslint-enable no-case-declarations */
@@ -77,7 +77,7 @@ const validateExpressionTree = (expression, series, validationTree = {}) => {
     case 'group':
       return { child: validateExpressionTree(expression.child, series, validationTree) };
     default:
-      return { message: 'Condition must be set' };
+      return { message: '必须设置条件' };
   }
 };
 

@@ -61,7 +61,7 @@ Spinner.propTypes = {
 
 Spinner.defaultProps = {
   name: 'progress_activity',
-  text: 'Loading...',
+  text: '加载中...',
   delay: 200,
 };
 

@@ -42,7 +42,7 @@ const SimulatorPage = () => {
       <PipelinesPageNavigation />
       <PageHeader title="模拟处理"
                   documentationLink={{
-                    title: 'Pipelines documentation',
+                    title: '处理管道文档',
                     path: DocsHelper.PAGES.PIPELINE_RULES,
                   }}>
         <span>

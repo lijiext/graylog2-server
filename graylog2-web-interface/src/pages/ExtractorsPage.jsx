@@ -32,7 +32,7 @@ import { NodesActions, NodesStore } from 'stores/nodes/NodesStore';
 
 const ExtractorsPage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'ExtractorsPage',
+  displayName: '提取器页面',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {
@@ -90,7 +90,7 @@ const ExtractorsPage = createReactClass({
                         </DropdownButton>
                       )}
                       documentationLink={{
-                        title: 'Extractors documentation',
+                        title: '提取器文档',
                         path: DocsHelper.PAGES.EXTRACTORS,
                       }}>
             <span>

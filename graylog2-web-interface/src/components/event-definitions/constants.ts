@@ -27,6 +27,6 @@ export const DEFAULT_LAYOUT = {
 export const COLUMNS_ORDER = ['title', 'description', 'priority', 'matched_at', 'status', 'scheduling'];
 
 export const ADDITIONAL_ATTRIBUTES = [
-  { id: 'scheduling', title: 'Scheduling', sortable: false },
-  { id: 'matched_at', title: 'Last Matched', sortable: true },
+  { id: 'scheduling', title: '调度', sortable: false },
+  { id: 'matched_at', title: '最后匹配', sortable: true },
 ];

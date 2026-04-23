@@ -25,7 +25,7 @@ import { LookupTableCachesActions, LookupTableCachesStore } from 'stores/lookup-
 
 const CachesContainer = createReactClass({
   // eslint-disable-next-line
-  displayName: 'CachesContainer',
+  displayName: '缓存容器',
 
   // eslint-disable-next-line
   propTypes: {

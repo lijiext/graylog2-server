@@ -43,7 +43,7 @@ const StyledForm = styled.form`
 
 const CreateInputControl = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'CreateInputControl',
+  displayName: '创建输入端控制',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {
@@ -72,7 +72,7 @@ const CreateInputControl = createReactClass({
 
       options.sort((inputTypeA, inputTypeB) => inputTypeA.label.toLowerCase().localeCompare(inputTypeB.label.toLowerCase()));
     } else {
-      options.push({ value: 'none', label: 'No inputs available', disabled: true });
+      options.push({ value: 'none', label: '暂无可用输入端', disabled: true });
     }
 
     return options;

@@ -78,7 +78,7 @@ type Props = {
 const UrlWhiteListForm = ({ urls, onUpdate, disabled, newEntryId }: Props) => {
   const literal = 'literal';
   const regex = 'regex';
-  const options = [{ value: literal, label: 'Exact match' }, { value: regex, label: 'Regex' }];
+  const options = [{ value: literal, label: '精确匹配' }, { value: regex, label: 'Regex' }];
   // eslint-disable-next-line prefer-const
   let inputs = {};
   const [config, setConfig] = useState<WhiteListConfig>({ entries: urls, disabled });
@@ -144,7 +144,7 @@ const UrlWhiteListForm = ({ urls, onUpdate, disabled, newEntryId }: Props) => {
     _validate('type', idx, type);
   };
 
-  const _getErrorMessage = (type: string) => (type === regex ? 'Not a valid Java regular expression' : 'Not a valid URL');
+  const _getErrorMessage = (type: string) => (type === regex ? '无效的 Java 正则表达式' : '无效的 URL');
 
   const _getSummary = () => (config.entries.map((url, idx) => (
     <tr key={url.id}>

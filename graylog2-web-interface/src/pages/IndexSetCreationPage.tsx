@@ -41,7 +41,7 @@ const IndexSetCreationPage = () => {
         <div>
           <PageHeader title="创建索引集"
                       documentationLink={{
-                        title: 'Index model documentation',
+                        title: '索引模型文档',
                         path: DocsHelper.PAGES.INDEX_MODEL,
                       }}
                       actions={<SelectTemplateButton onClick={() => setShowSelectTemplateModal(true)} />}>

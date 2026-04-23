@@ -125,7 +125,7 @@ const SearchActionsMenu = () => {
 
   const loaded = isNew === false;
   const disableReset = !(dirty || loaded);
-  const savedViewTitle = loaded ? 'Saved search' : 'Save search';
+  const savedViewTitle = loaded ? '保存的搜索' : '保存搜索';
   const title = dirty ? 'Unsaved changes' : savedViewTitle;
   const pluggableSaveViewControls = useSaveViewFormControls();
   const history = useHistory();

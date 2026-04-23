@@ -54,12 +54,12 @@ const getStreamTableElements = (permissions: Immutable.List<string>, isPipelineC
     'created_at',
   ];
   const additionalAttributes = [
-    { id: 'index_set_title', title: 'Index Set', sortable: true, permissions: ['indexsets:read'] },
-    { id: 'throughput', title: 'Throughput' },
+    { id: 'index_set_title', title: '索引集', sortable: true, permissions: ['indexsets:read'] },
+    { id: 'throughput', title: '吞吐量' },
     { id: 'rules', title: 'Rules' },
-    ...(isPipelineColumnPermitted ? [{ id: 'pipelines', title: 'Pipelines' }] : []),
-    { id: 'outputs', title: 'Outputs' },
-    { id: 'archiving', title: 'Archiving' },
+    ...(isPipelineColumnPermitted ? [{ id: 'pipelines', title: '处理管道' }] : []),
+    { id: 'outputs', title: '输出端' },
+    { id: 'archiving', title: '归档' },
     ...(streamDataWarehouseTableElements?.attributes || []),
   ];
 

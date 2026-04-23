@@ -74,7 +74,7 @@ export const RESERVED_FIELDS = [
   GL2_SECOND_SORT_FIELD,
 ];
 
-export const MISSING_BUCKET_NAME = '(Empty Value)';
+export const MISSING_BUCKET_NAME = '(空值)';
 export const DEFAULT_PIVOT_LIMIT = 15;
 
 export const DEFAULT_PIVOT_INTERVAL: AutoTimeConfig = {
@@ -108,8 +108,8 @@ export type InterpolationType = ArrayElement<typeof interpolationTypes>;
 
 export const percentileOptions = [25.0, 50.0, 75.0, 90.0, 95.0, 99.0].map((value) => ({ label: value, value }));
 export const percentageStrategyOptions = [
-  { label: 'Document Count', value: 'COUNT' },
-  { label: 'Field Sum', value: 'SUM' },
+  { label: '文档计数', value: 'COUNT' },
+  { label: '字段求和', value: 'SUM' },
 ];
 
 export const TimeUnits = {
@@ -124,10 +124,10 @@ export const TimeUnits = {
 export const RELATIVE_RANGE_TYPES = [
   {
     type: 'seconds',
-    label: 'Seconds',
+    label: '秒',
   }, {
     type: 'minutes',
-    label: 'Minutes',
+    label: '分钟',
   }, {
     type: 'hours',
     label: 'Hours',
@@ -154,9 +154,9 @@ export const showDashboardsPath = `${dashboardsPath}/:viewId`;
 export const extendedSearchPath = '/extendedsearch';
 
 export const availableTimeRangeTypes = [
-  { type: 'relative' as const, name: 'Relative' },
-  { type: 'absolute' as const, name: 'Absolute' },
-  { type: 'keyword' as const, name: 'Keyword' },
+  { type: 'relative' as const, name: '相对' },
+  { type: 'absolute' as const, name: '绝对' },
+  { type: 'keyword' as const, name: '关键词' },
 ];
 
 export const VISUALIZATION_TABLE_HEADER_HEIGHT = 28;

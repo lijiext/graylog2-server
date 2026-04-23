@@ -77,7 +77,7 @@ CreateStreamButton.propTypes = {
 };
 
 CreateStreamButton.defaultProps = {
-  buttonText: 'Create stream',
+  buttonText: '创建数据流',
   bsSize: undefined,
   bsStyle: undefined,
   className: undefined,

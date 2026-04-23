@@ -37,7 +37,7 @@ const filterComponents: FilterComponents = [
     configuration: (selectedValues, _editValue: string, onChange: (newValue: string) => void) => (
       <EventTypeFilter onSelect={onChange} selectedValues={selectedValues} />
     ),
-    renderValue: (isAlert: 'true' | 'false') => (isAlert === 'true' ? 'Alert' : 'Event'),
+    renderValue: (isAlert: 'true' | 'false') => (isAlert === 'true' ? '告警' : '事件'),
   },
   {
     attribute: 'priority',

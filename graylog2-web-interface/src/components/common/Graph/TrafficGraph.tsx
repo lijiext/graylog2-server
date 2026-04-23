@@ -52,7 +52,7 @@ const TrafficGraph = ({ width, traffic, trafficLimit }: Props) => {
     annotations: [
       {
         showarrow: false,
-        text: '<b>Licensed traffic limit</b>',
+        text: '<b>许可流量限制</b>',
         align: 'right',
         x: 1,
         xref: 'paper',
@@ -74,7 +74,7 @@ const TrafficGraph = ({ width, traffic, trafficLimit }: Props) => {
         x1: 1,
         y0: trafficLimit,
         y1: trafficLimit,
-        name: 'Traffic Limit',
+        name: '流量限制',
         xref: 'paper',
         yref: 'y',
         line: {
@@ -119,7 +119,7 @@ const TrafficGraph = ({ width, traffic, trafficLimit }: Props) => {
           {
             args: ['yaxis.range', [0, range]],
             args2: [{ 'yaxis.autorange': 'True' }, { 'yaxis.range': null }],
-            label: 'Zoom/Reset',
+            label: '缩放/重置',
             method: 'relayout',
           },
         ],

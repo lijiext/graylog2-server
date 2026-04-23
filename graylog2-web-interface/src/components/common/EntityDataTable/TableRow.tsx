@@ -66,7 +66,7 @@ const TableRow = <Entity extends EntityBase>({
   const isSelected = !!selectedEntities?.includes(entity.id);
   const actionButtons = displayActions ? <ButtonToolbar>{actions(entity)}</ButtonToolbar> : null;
   const isSelectDisabled = useMemo(() => !(displaySelect && isEntitySelectable(entity)), [displaySelect, entity, isEntitySelectable]);
-  const title = `${isSelected ? 'Deselect' : 'Select'} entity`;
+  const title = `${isSelected ? '取消选择' : '选择'} entity`;
 
   return (
     <tr>

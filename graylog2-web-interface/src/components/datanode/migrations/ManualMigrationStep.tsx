@@ -44,15 +44,15 @@ const ManualMigrationStep = () => {
     sendTelemetry(TELEMETRY_EVENT_TYPE.DATANODE_MIGRATION.MIGRATION_TYPE_SELECTED, {
       app_pathname: 'datanode',
       app_section: 'migration',
-      event_details: { migration_type: (step === 'SELECT_ROLLING_UPGRADE_MIGRATION') ? 'IN-PLACE' : 'REMOTE REINDEX' },
+      event_details: { migration_type: (step === 'SELECT_ROLLING_UPGRADE_MIGRATION') ? '原地' : '远程重新索引' },
     });
 
     return onTriggerNextState({ step, args });
   };
 
   const migrationTypeOptions = [
-    { label: 'In-Place migration', value: 'SELECT_ROLLING_UPGRADE_MIGRATION' },
-    { label: 'Remote Re-indexing Migration', value: 'SELECT_REMOTE_REINDEX_MIGRATION' },
+    { label: '原地迁移', value: 'SELECT_ROLLING_UPGRADE_MIGRATION' },
+    { label: '远程重新索引迁移', value: 'SELECT_REMOTE_REINDEX_MIGRATION' },
   ].filter((path) => currentStep.next_steps.includes(path.value));
 
   return (

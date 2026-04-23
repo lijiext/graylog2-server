@@ -26,7 +26,7 @@ import { Spinner } from 'components/common';
 import { MetricsActions, MetricsStore } from 'stores/metrics/MetricsStore';
 
 const LogLevelMetrics = createReactClass({
-  displayName: 'LogLevelMetrics',
+  displayName: '日志级别指标',
 
   propTypes: {
     nodeId: PropTypes.string.isRequired,

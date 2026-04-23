@@ -289,12 +289,12 @@ const QueryInput = React.forwardRef<Editor, Props>(({
   const _commands = useMemo(() => [
     ...commands,
     {
-      name: 'Execute',
+      name: '执行',
       bindKey: { win: 'Enter', mac: 'Enter' },
       exec: onExecute,
     },
     {
-      name: 'Show completions',
+      name: '显示补全',
       bindKey: { win: 'Alt-Space', mac: 'Alt-Space' },
       exec: async (editor: Editor) => {
         if (editor.getValue()) {
@@ -307,7 +307,7 @@ const QueryInput = React.forwardRef<Editor, Props>(({
       },
     },
     {
-      name: 'Show query history',
+      name: '显示查询历史',
       bindKey: { win: 'Alt-Shift-H', mac: 'Alt-Shift-H' },
       exec: async (editor: Editor) => {
         displayHistoryCompletions(editor);
@@ -315,7 +315,7 @@ const QueryInput = React.forwardRef<Editor, Props>(({
     },
     // The following will disable the mentioned hotkeys.
     {
-      name: 'Do nothing',
+      name: '不执行任何操作',
       bindKey: { win: 'Ctrl-Space|Ctrl-Shift-Space', mac: 'Ctrl-Space|Ctrl-Shift-Space' },
       exec: () => {},
     },

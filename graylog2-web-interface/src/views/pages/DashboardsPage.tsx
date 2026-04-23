@@ -47,7 +47,7 @@ const DashboardsPage = () => {
                     </IfPermitted>
                   )}
                   documentationLink={{
-                    title: 'Dashboard documentation',
+                    title: '仪表盘文档',
                     path: DocsHelper.PAGES.DASHBOARDS,
                   }}>
         <span>

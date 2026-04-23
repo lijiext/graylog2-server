@@ -212,7 +212,7 @@ const ConfigurationForm = ({
         options.push({ value: collector.id, label: _formatCollector(collector) });
       });
     } else {
-      options.push({ value: 'none', label: 'Loading collector list...', disable: true });
+      options.push({ value: 'none', label: '正在加载采集器列表...', disable: true });
     }
 
     return options;

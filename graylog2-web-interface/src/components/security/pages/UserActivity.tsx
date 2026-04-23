@@ -27,27 +27,27 @@ const hotspots = [
   {
     positionX: '67%',
     positionY: '260px',
-    description: 'Quickly see if you have concerning trends in failed logons.',
+    description: '快速查看是否存在令人担忧的失败登录趋势。',
   },
   {
     positionX: '40%',
     positionY: '500px',
-    description: 'Logon successes and failures by user can help you spot problem accounts and unusual activity.',
+    description: '按用户统计的登录成功与失败情况可帮助您发现异常账户和可疑活动。',
   },
   {
     positionX: '70%',
     positionY: '500px',
-    description: 'These are the top 15 user accounts generating high alerts!',
+    description: '这些是产生大量告警的前 15 个用户账户！',
   },
   {
     positionX: '40%',
     positionY: '940px',
-    description: 'What are the most common identity and access control changes made in your environment?',
+    description: '您的环境中最常见的身份和访问控制变更是什么？',
   },
   {
     positionX: '50%',
     positionY: '1300px',
-    description: 'Know the target of the most frequent access control changes.',
+    description: '了解访问控制变更最频繁的目标。',
   },
 ];
 

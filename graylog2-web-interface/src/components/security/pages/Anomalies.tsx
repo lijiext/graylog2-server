@@ -27,22 +27,22 @@ const hotspots = [
   {
     positionX: '50%',
     positionY: '110px',
-    description: 'Get a summary of the anomalies that are running, how many have been detected, and how that compares to the previous time period.',
+    description: '获取正在运行的异常摘要，包括已检测到的异常数量，以及与上一时间段的对比。',
   },
   {
     positionX: '60%',
     positionY: '550px',
-    description: 'Confidence intervals tell you how far off the normal the behavior is.',
+    description: '置信区间可告知您行为偏离正常状态的程度。',
   },
   {
     positionX: '40%',
     positionY: '910px',
-    description: 'There are detectors for different types of anomalies – quickly see which ones are generating alerts.',
+    description: '存在用于检测不同类型异常的检测器——快速查看哪些正在生成告警。',
   },
   {
     positionX: '70%',
     positionY: '910px',
-    description: 'Identify user accounts that have unusual-for-them behaviors for logons or security events.',
+    description: '识别在登录或安全事件中存在异常行为的用户账户。',
   },
 ];
 const Anomalies = () => (

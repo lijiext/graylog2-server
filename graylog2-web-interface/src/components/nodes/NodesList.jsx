@@ -26,7 +26,7 @@ import { ClusterOverviewStore } from 'stores/cluster/ClusterOverviewStore';
 import NodeListItem from './NodeListItem';
 
 const NodesList = createReactClass({
-  displayName: 'NodesList',
+  displayName: '节点列表',
 
   propTypes: {
     permissions: PropTypes.array.isRequired,

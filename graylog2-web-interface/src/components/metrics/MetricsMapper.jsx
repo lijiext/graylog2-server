@@ -22,7 +22,7 @@ import Reflux from 'reflux';
 import { MetricsActions, MetricsStore } from 'stores/metrics/MetricsStore';
 
 const MetricsMapper = createReactClass({
-  displayName: 'MetricsMapper',
+  displayName: '指标映射器',
 
   propTypes: {
     map: PropTypes.object.isRequired,

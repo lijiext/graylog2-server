@@ -144,7 +144,7 @@ const IndexSetsComponent = () => {
     });
   };
 
-  const statsDisabledText = 'Stats are disabled by default';
+  const statsDisabledText = '统计功能默认禁用';
 
   const formatIndexSet = (indexSet: IndexSet) => {
     const actions = (

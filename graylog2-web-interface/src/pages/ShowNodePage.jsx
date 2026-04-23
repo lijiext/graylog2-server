@@ -40,7 +40,7 @@ function clusterOverviewFilter(state) {
 
 const ShowNodePage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'ShowNodePage',
+  displayName: '显示节点页面',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

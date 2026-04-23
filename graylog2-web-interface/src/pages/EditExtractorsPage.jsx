@@ -32,7 +32,7 @@ import withHistory from 'routing/withHistory';
 
 const EditExtractorsPage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'EditExtractorsPage',
+  displayName: '编辑提取器页面',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {
@@ -91,7 +91,7 @@ const EditExtractorsPage = createReactClass({
       <DocumentTitle title={`编辑提取器 ${extractor.title}`}>
         <PageHeader title={<span>编辑提取器 <em>{extractor.title}</em> 用于输入 <em>{input.title}</em></span>}
                     documentationLink={{
-                      title: 'Extractors documentation',
+                      title: '提取器文档',
                       path: DocsHelper.PAGES.EXTRACTORS,
                     }}>
           <span>

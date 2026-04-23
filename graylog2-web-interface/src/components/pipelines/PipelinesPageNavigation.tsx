@@ -21,9 +21,9 @@ import Routes from 'routing/Routes';
 import { Row } from 'components/bootstrap';
 
 const NAV_ITEMS = [
-  { title: 'Manage pipelines', path: Routes.SYSTEM.PIPELINES.OVERVIEW, exactPathMatch: true },
-  { title: 'Manage rules', path: Routes.SYSTEM.PIPELINES.RULES },
-  { title: 'Simulator', path: Routes.SYSTEM.PIPELINES.SIMULATOR },
+  { title: '管理处理管道', path: Routes.SYSTEM.PIPELINES.OVERVIEW, exactPathMatch: true },
+  { title: '管理规则', path: Routes.SYSTEM.PIPELINES.RULES },
+  { title: '模拟器', path: Routes.SYSTEM.PIPELINES.SIMULATOR },
 ];
 
 const EventsPageNavigation = () => (

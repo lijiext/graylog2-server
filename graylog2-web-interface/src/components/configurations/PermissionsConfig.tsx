@@ -78,7 +78,7 @@ const PermissionsConfig = () => {
     setShowModal(false);
   };
 
-  const modalTitle = 'Configure Permissions';
+  const modalTitle = '配置权限';
 
   return (
     <div>

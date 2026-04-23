@@ -135,8 +135,8 @@ const HighlightForm = ({ onClose, rule }: Props) => {
     return dispatch(addHighlightingRule(HighlightingRule.create(field, value, condition, newColor))).then(onClose);
   }, [dispatch, location.pathname, onClose, rule, sendTelemetry]);
 
-  const headerPrefix = rule ? 'Edit' : 'Create';
-  const submitButtonPrefix = rule ? 'Update' : 'Create';
+  const headerPrefix = rule ? '编辑' : '创建';
+  const submitButtonPrefix = rule ? '更新' : '创建';
 
   return (
     <Formik onSubmit={onSubmit}

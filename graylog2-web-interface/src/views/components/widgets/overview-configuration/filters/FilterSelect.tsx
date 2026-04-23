@@ -23,7 +23,7 @@ import { defaultCompare } from 'logic/DefaultCompare';
 import { Menu } from 'components/bootstrap';
 import type { FilterComponents, Filter } from 'views/components/widgets/overview-configuration/filters/types';
 
-const SELECT_TITLE = 'Configure a new filter';
+const SELECT_TITLE = '配置新过滤器';
 
 const Container = styled.div`
   display: flex;

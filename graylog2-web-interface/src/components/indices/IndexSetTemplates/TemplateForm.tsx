@@ -184,8 +184,8 @@ const validate = (formValues: IndexSetTemplateFormValues, usesLegacyRetention: b
 
 const TemplateForm = ({ initialValues, submitButtonText, submitLoadingText, onCancel, onSubmit }: Props) => {
   const retentionConfigSegments: Array<{value: RetentionConfigSegment, label: string}> = [
-    { value: 'data_tiering', label: 'Data Tiering' },
-    { value: 'legacy', label: 'Legacy (Deprecated)' },
+    { value: 'data_tiering', label: '数据分层' },
+    { value: 'legacy', label: '遗留 (已弃用)' },
   ];
 
   const { loadingIndexSetTemplateDefaults, indexSetTemplateDefaults } = useIndexSetTemplateDefaults();

@@ -74,8 +74,8 @@ class ISODurationInput extends React.Component<Props, State> {
   private isoDuration: DurationInput;
 
   static defaultProps = {
-    label: 'Duration',
-    help: 'as ISO8601 Duration',
+    label: '持续时间',
+    help: '作为 ISO8601 持续时间',
     validator: () => true,
     errorText: 'invalid',
     autoFocus: false,

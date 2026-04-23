@@ -44,7 +44,7 @@ const IndexSetFieldTypeProfileEditPage = () => {
       <IndicesPageNavigation />
       <PageHeader title={`编辑索引集 "${data?.name}" 字段类型配置文件`}
                   documentationLink={{
-                    title: 'Index model documentation',
+                    title: '索引模型文档',
                     path: DocsHelper.PAGES.INDEX_MODEL,
                   }}>
         <span>

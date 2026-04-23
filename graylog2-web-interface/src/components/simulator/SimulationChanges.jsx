@@ -84,7 +84,7 @@ const FieldValue = styled.dd(({ removed, theme }) => css`
 `);
 
 const SimulationChanges = createReactClass({
-  displayName: 'SimulationChanges',
+  displayName: '模拟更改',
 
   propTypes: {
     originalMessage: PropTypes.object.isRequired,

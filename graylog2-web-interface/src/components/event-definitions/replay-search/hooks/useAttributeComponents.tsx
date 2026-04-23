@@ -40,7 +40,7 @@ const useAttributeComponents = () => {
   return useMemo(() => {
     if (!eventDefinition) {
       return [
-        { title: 'Timestamp', content: <Timestamp dateTime={eventData?.timestamp} />, show: !isEventDefinition },
+        { title: '时间戳', content: <Timestamp dateTime={eventData?.timestamp} />, show: !isEventDefinition },
       ];
     }
 
@@ -49,9 +49,9 @@ const useAttributeComponents = () => {
     const isEDUpdatedAfterEvent = !isEventDefinition && moment(eventDefinition.updated_at).diff(eventData.timestamp) > 0;
 
     return [
-      { title: 'Timestamp', content: <Timestamp dateTime={eventData?.timestamp} />, show: !isEventDefinition },
+      { title: '时间戳', content: <Timestamp dateTime={eventData?.timestamp} />, show: !isEventDefinition },
       {
-        title: 'Event definition updated at',
+        title: '事件定义更新时间',
         content: (
           <>
             <AlertTimestamp dateTime={eventDefinition.updated_at} />
@@ -63,7 +63,7 @@ const useAttributeComponents = () => {
         show: isEDUpdatedAfterEvent,
       },
       {
-        title: 'Event definition',
+        title: '事件定义',
         content: (
           <Link target="_blank"
                 to={Routes.ALERTS.DEFINITIONS.show(eventDefinition.id)}>
@@ -73,18 +73,18 @@ const useAttributeComponents = () => {
         show: !isEventDefinition,
       },
       {
-        title: 'Priority',
+        title: '优先级',
         content: upperFirst(EventDefinitionPriorityEnum.properties[eventDefinition.priority].name),
       },
-      { title: 'Execute search every', content: executeEvery?.duration && executeEvery?.unit && `${executeEvery.duration} ${executeEvery.unit.toLowerCase()}` },
-      { title: 'Search within', content: searchWithin?.duration && searchWithin?.unit && `${searchWithin.duration} ${searchWithin.unit.toLowerCase()}` },
-      { title: 'Description', content: eventDefinition.description },
+      { title: '每${var}执行搜索', content: executeEvery?.duration && executeEvery?.unit && `${executeEvery.duration} ${executeEvery.unit.toLowerCase()}` },
+      { title: '在...中搜索', content: searchWithin?.duration && searchWithin?.unit && `${searchWithin.duration} ${searchWithin.unit.toLowerCase()}` },
+      { title: '描述', content: eventDefinition.description },
       {
-        title: 'Notifications',
+        title: '通知',
         content: <Notifications />,
       },
       {
-        title: 'Aggregation conditions',
+        title: '聚合条件',
         content: <AggregationConditions />,
       },
     ];

@@ -28,10 +28,10 @@ const DataNodesPageNavigation = () => {
   const enableDataNodeMigration = AppConfig.isFeatureEnabled('data_node_migration');
 
   const NAV_ITEMS = [
-    { title: 'Data Nodes', path: Routes.SYSTEM.DATANODES.LIST, exactPathMatch: true },
-    { title: 'Cluster Management', path: Routes.SYSTEM.DATANODES.CLUSTER },
-    { title: 'Configuration', path: Routes.SYSTEM.DATANODES.CONFIGURATION },
-    showDatanodeMigration && enableDataNodeMigration && { title: 'Migration', path: Routes.SYSTEM.DATANODES.MIGRATION },
+    { title: '数据节点', path: Routes.SYSTEM.DATANODES.LIST, exactPathMatch: true },
+    { title: '集群管理', path: Routes.SYSTEM.DATANODES.CLUSTER },
+    { title: '配置', path: Routes.SYSTEM.DATANODES.CONFIGURATION },
+    showDatanodeMigration && enableDataNodeMigration && { title: '迁移', path: Routes.SYSTEM.DATANODES.MIGRATION },
   ];
 
   return (

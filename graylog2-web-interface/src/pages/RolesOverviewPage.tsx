@@ -28,7 +28,7 @@ const RolesOverviewPage = () => (
   <DocumentTitle title="角色概览">
     <PageHeader title="角色概览"
                 documentationLink={{
-                  title: 'Permissions documentation',
+                  title: '权限文档',
                   path: DocsHelper.PAGES.USERS_ROLES,
                 }}
                 topActions={(

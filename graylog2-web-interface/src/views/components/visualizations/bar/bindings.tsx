@@ -32,7 +32,7 @@ const validate = hasAtLeastOneMetric('Bar chart');
 
 const barChart: VisualizationType<typeof BarVisualization.type, BarVisualizationConfig, BarVisualizationConfigFormValues> = {
   type: BarVisualization.type,
-  displayName: 'Bar Chart',
+  displayName: '条形图',
   component: BarVisualization,
   config: {
     createConfig: () => ({ barmode: DEFAULT_BARMODE, axisType: DEFAULT_AXIS_TYPE }),
@@ -48,18 +48,18 @@ const barChart: VisualizationType<typeof BarVisualization.type, BarVisualization
         const options = {
           group: {
             label: 'Group',
-            help: 'Every series is represented by its own bar in the chart.',
+            help: '图表中的每个系列都由其独立的条形表示。',
           },
           stack: {
             label: 'Stack',
-            help: 'All series are stacked upon each other resulting in one bar.',
+            help: '所有系列相互堆叠，最终形成一根条形。',
           },
           relative: {
-            label: 'Relative',
-            help: 'All series are stacked upon each other resulting in one chart. But negative series are placed below zero.',
+            label: '相对',
+            help: '所有系列相互堆叠，最终形成一个图表。但负值系列将显示在零线下方。',
           },
           overlay: {
-            label: 'Overlay',
+            label: '覆盖层',
             help: 'All series are placed as bars upon each other. To be able to see the bars the opacity is reduced to 75%.'
               + ' It is recommended to use this option with not more than 3 series.',
           },
@@ -78,7 +78,7 @@ const barChart: VisualizationType<typeof BarVisualization.type, BarVisualization
       },
     }, {
       name: 'axisType',
-      title: 'Axis Type',
+      title: '轴类型',
       type: 'select',
       options: axisTypes,
       required: true,

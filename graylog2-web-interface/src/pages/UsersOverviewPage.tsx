@@ -34,7 +34,7 @@ const UsersOverviewPage = () => (
                   </LinkContainer>
                 )}
                 documentationLink={{
-                  title: 'Permissions documentation',
+                  title: '权限文档',
                   path: DocsHelper.PAGES.USERS_ROLES,
                 }}>
       <span>Graylog 注册用户概览。</span>

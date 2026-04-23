@@ -128,7 +128,7 @@ const EventDefinitionForm = ({
   const steps = [
     {
       key: STEP_KEYS[0],
-      title: 'Event Details',
+      title: '事件详情',
       component: <EventDetailsForm {...defaultStepProps} canEdit={canEdit} />,
     },
     {
@@ -138,17 +138,17 @@ const EventDefinitionForm = ({
     },
     {
       key: STEP_KEYS[2],
-      title: 'Fields',
+      title: '字段',
       component: <FieldsForm {...defaultStepProps} canEdit={canEdit} />,
     },
     {
       key: STEP_KEYS[3],
-      title: 'Notifications',
+      title: '通知',
       component: <NotificationsForm {...defaultStepProps} notifications={notifications} defaults={defaults} />,
     },
     {
       key: STEP_KEYS[4],
-      title: 'Summary',
+      title: '摘要',
       component: (
         <EventDefinitionSummary eventDefinition={eventDefinition}
                                 currentUser={currentUser}
@@ -161,7 +161,7 @@ const EventDefinitionForm = ({
   const handleStepChange = (nextStep: string) => {
     sendTelemetry(STEP_TELEMETRY_KEYS[STEP_KEYS.indexOf(nextStep)], {
       app_pathname: getPathnameWithoutId(pathname),
-      app_section: (action === 'create') ? 'new-event-definition' : 'edit-event-definition',
+      app_section: (action === 'create') ? '新建事件定义' : '编辑事件定义',
       app_action_value: 'event-definition-step',
       current_step: steps[STEP_KEYS.indexOf(activeStep)].title,
     });
@@ -172,7 +172,7 @@ const EventDefinitionForm = ({
   const openPrevPage = () => {
     sendTelemetry(TELEMETRY_EVENT_TYPE.EVENTDEFINITION_PREVIOUS_CLICKED, {
       app_pathname: getPathnameWithoutId(pathname),
-      app_section: (action === 'create') ? 'new-event-definition' : 'edit-event-definition',
+      app_section: (action === 'create') ? '新建事件定义' : '编辑事件定义',
       app_action_value: 'previous-button',
       current_step: steps[activeStepIndex].title,
     });
@@ -184,7 +184,7 @@ const EventDefinitionForm = ({
   const openNextPage = () => {
     sendTelemetry(TELEMETRY_EVENT_TYPE.EVENTDEFINITION_NEXT_CLICKED, {
       app_pathname: getPathnameWithoutId(pathname),
-      app_section: (action === 'create') ? 'new-event-definition' : 'edit-event-definition',
+      app_section: (action === 'create') ? '新建事件定义' : '编辑事件定义',
       app_action_value: 'next-button',
       current_step: steps[activeStepIndex].title,
     });

@@ -152,8 +152,8 @@ const EmailGroup = () => {
 
 const UserCreate = () => {
   const initialRole = {
-    name: 'Reader',
-    description: 'Grants basic permissions for every Graylog user (built-in)',
+    name: '读取器',
+    description: '为每个 Graylog 用户授予基本权限（内置）',
     id: '',
   };
   const [user, setUser] = useState(User.empty().toBuilder().roles(Immutable.Set([initialRole.name])).build());

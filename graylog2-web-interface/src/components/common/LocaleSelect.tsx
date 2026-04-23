@@ -41,7 +41,7 @@ const _formatLocales = (locales: Array<Locales>) => {
       return 0;
     });
 
-  return [{ value: 'und', label: 'Default locale' }].concat(sortedLocales);
+  return [{ value: 'und', label: '默认区域设置' }].concat(sortedLocales);
 };
 
 type Option = {

@@ -73,7 +73,7 @@ const buildSearchLink = (
 };
 
 export const ReplaySearchButtonComponent = ({ searchLink, children, onClick }: { children?: React.ReactNode, searchLink: string, onClick?: () => void }) => {
-  const title = 'Replay search';
+  const title = '重放搜索';
 
   return (
     <NeutralLink href={searchLink} target="_blank" rel="noopener noreferrer" title={title} onClick={onClick}>

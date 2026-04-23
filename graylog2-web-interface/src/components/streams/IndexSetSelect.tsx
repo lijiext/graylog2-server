@@ -61,7 +61,7 @@ const IndexSetSelect = ({ indexSets, help }: Props) => {
 };
 
 IndexSetSelect.defaultProps = {
-  help: 'Messages that match this stream will be written to the configured index set.',
+  help: '匹配此数据流的日志消息将写入配置的索引集。',
 };
 
 export default IndexSetSelect;

@@ -113,7 +113,7 @@ export const seriesToMetrics = (series: Array<Series>) => series.map((s: Series)
 
 const MetricElement: AggregationElement<'metrics'> = {
   sectionTitle: 'Metrics',
-  title: 'Metric',
+  title: '指标',
   key: 'metrics',
   order: 2,
   allowCreate: () => true,

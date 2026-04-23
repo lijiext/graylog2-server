@@ -149,7 +149,7 @@ class IndexSetPage extends React.Component<Props, State> {
     const pageHeader = indexSet && (
       <PageHeader title={`索引集：${indexSet.title}`}
                   documentationLink={{
-                    title: 'Index model documentation',
+                    title: '索引模型文档',
                     path: DocsHelper.PAGES.INDEX_MODEL,
                   }}
                   actions={(

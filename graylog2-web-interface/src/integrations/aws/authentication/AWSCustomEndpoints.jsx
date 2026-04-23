@@ -26,7 +26,7 @@ import ValidatedInput from 'integrations/aws/common/ValidatedInput';
 import { SectionTitle, SectionNote } from 'integrations/aws/common/sharedStyles';
 
 const INPUT_PATTERN = 'https://(.*)';
-const INPUT_MESSAGE = "Domain should begin with 'https://'";
+const INPUT_MESSAGE = "域名应以'https://'开头";
 const INPUT_PLACEHOLDER = 'https://vpce-1234.service.region.vpce.amazonaws.com';
 
 const StyledAdditionalFields = styled(AdditionalFields)`

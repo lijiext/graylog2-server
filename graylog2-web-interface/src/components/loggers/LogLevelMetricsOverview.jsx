@@ -23,7 +23,7 @@ import { LogLevelMetrics } from 'components/loggers';
 import { LoggersStore } from 'stores/system/LoggersStore';
 
 const LogLevelMetricsOverview = createReactClass({
-  displayName: 'LogLevelMetricsOverview',
+  displayName: '日志级别指标概览',
 
   propTypes: {
     nodeId: PropTypes.string.isRequired,

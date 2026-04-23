@@ -28,7 +28,7 @@ type Props = {
 
 const HttpNotificationDetailsV2 = ({ notification } : Props) => {
   const apiKeySet: boolean = notification.config.api_secret?.is_set;
-  const apiSentAs: string = notification.config.api_key_as_header ? 'Header' : 'Query Parameter';
+  const apiSentAs: string = notification.config.api_key_as_header ? '头部' : '查询参数';
 
   return (
     <>

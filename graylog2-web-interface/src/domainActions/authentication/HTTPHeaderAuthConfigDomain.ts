@@ -28,7 +28,7 @@ const load = notifyingAction({
 const update = notifyingAction({
   action: HTTPHeaderAuthConfigActions.update,
   success: () => ({
-    message: 'Successfully updated HTTP header authentication config',
+    message: 'HTTP 头认证配置已成功更新',
   }),
   error: (error) => ({
     message: `Updating HTTP header authentication config failed with status: ${error}`,

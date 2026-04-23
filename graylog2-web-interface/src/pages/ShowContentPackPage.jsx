@@ -38,7 +38,7 @@ import ShowContentPackStyle from './ShowContentPackPage.css';
 
 const ShowContentPackPage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'ShowContentPackPage',
+  displayName: '显示内容包页面',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

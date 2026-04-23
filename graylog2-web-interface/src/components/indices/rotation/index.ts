@@ -29,25 +29,25 @@ PluginStore.register(new PluginManifest({}, {
   indexRotationConfig: [
     {
       type: 'org.graylog2.indexer.rotation.strategies.MessageCountRotationStrategy',
-      displayName: 'Index Message Count',
+      displayName: '索引消息数',
       configComponent: MessageCountRotationStrategyConfiguration,
       summaryComponent: MessageCountRotationStrategySummary,
     },
     {
       type: 'org.graylog2.indexer.rotation.strategies.SizeBasedRotationStrategy',
-      displayName: 'Index Size',
+      displayName: '索引大小',
       configComponent: SizeBasedRotationStrategyConfiguration,
       summaryComponent: SizeBasedRotationStrategySummary,
     },
     {
       type: 'org.graylog2.indexer.rotation.strategies.TimeBasedRotationStrategy',
-      displayName: 'Index Time',
+      displayName: '索引时间',
       configComponent: TimeBasedRotationStrategyConfiguration,
       summaryComponent: TimeBasedRotationStrategySummary,
     },
     {
       type: 'org.graylog2.indexer.rotation.strategies.TimeBasedSizeOptimizingStrategy',
-      displayName: 'Index Time Size Optimizing',
+      displayName: '索引时间与大小优化',
       configComponent: TimeBasedSizeOptimizingStrategyConfiguration,
       summaryComponent: TimeBasedSizeOptimizingStrategySummary,
     },

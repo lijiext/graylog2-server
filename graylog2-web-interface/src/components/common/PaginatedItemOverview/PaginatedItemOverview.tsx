@@ -125,7 +125,7 @@ const PaginatedItemOverview = ({
 PaginatedItemOverview.defaultProps = {
   onDeleteItem: undefined,
   overrideList: undefined,
-  noDataText: 'No items found to display.',
+  noDataText: '未找到可显示的项目。',
   queryHelper: undefined,
   resultsWrapperComponent: ({ children }) => <div>{children}</div>,
   overrideItemComponent: undefined,

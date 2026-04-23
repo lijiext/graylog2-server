@@ -53,9 +53,9 @@ class AbuseChRansomAdapterFieldSet extends React.Component {
   render() {
     const { config } = this.props;
     const blocklistTypes = [
-      { label: 'Domain blocklist', value: 'DOMAINS' },
-      { label: 'URL blocklist', value: 'URLS' },
-      { label: 'IP blocklist', value: 'IPS' },
+      { label: '域名黑名单', value: 'DOMAINS' },
+      { label: 'URL 黑名单', value: 'URLS' },
+      { label: 'IP 黑名单', value: 'IPS' },
     ];
 
     return (

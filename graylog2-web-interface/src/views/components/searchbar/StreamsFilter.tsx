@@ -38,7 +38,7 @@ type Props = {
 const StreamsFilter = ({ disabled, value, streams, onChange }: Props) => {
   const sendTelemetry = useSendTelemetry();
   const selectedStreams = value.join(',');
-  const placeholder = 'Select streams the search should include. Searches in all streams if empty.';
+  const placeholder = '选择搜索应包含的数据流。如果为空，则搜索所有数据流。';
   const options = streams.sort(({ key: key1 }, { key: key2 }) => defaultCompare(key1, key2));
 
   const handleChange = (selected: string) => {

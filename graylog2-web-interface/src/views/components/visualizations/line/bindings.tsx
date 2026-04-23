@@ -32,7 +32,7 @@ const validate = hasAtLeastOneMetric('Line chart');
 
 const lineChart: VisualizationType<typeof LineVisualization.type, LineVisualizationConfig, LineVisualizationConfigFormValues> = {
   type: LineVisualization.type,
-  displayName: 'Line Chart',
+  displayName: '折线图',
   component: LineVisualization,
   config: {
     createConfig: () => ({ interpolation: DEFAULT_INTERPOLATION, axisType: DEFAULT_AXIS_TYPE }),
@@ -43,13 +43,13 @@ const lineChart: VisualizationType<typeof LineVisualization.type, LineVisualizat
     toConfig: (formValues: LineVisualizationConfigFormValues) => LineVisualizationConfig.create(formValues.interpolation, formValues.axisType),
     fields: [{
       name: 'interpolation',
-      title: 'Interpolation',
+      title: '插值',
       type: 'select',
       options: interpolationTypes,
       required: true,
     }, {
       name: 'axisType',
-      title: 'Axis Type',
+      title: '轴类型',
       type: 'select',
       options: axisTypes,
       required: true,

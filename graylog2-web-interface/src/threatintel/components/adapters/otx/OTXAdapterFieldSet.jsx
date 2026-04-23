@@ -22,16 +22,16 @@ import { Input } from 'components/bootstrap';
 import { Select } from 'components/common';
 
 const OTX_INDICATORS = [
-  { label: 'IP Auto-Detect', value: 'IPAutoDetect' },
+  { label: 'IP 自动检测', value: 'IPAutoDetect' },
   { label: 'IP v4', value: 'IPv4' },
-  { label: 'IP v6', value: 'IPv6' },
-  { label: 'Domain', value: 'domain' },
-  { label: 'Hostname', value: 'hostname' },
+  { label: 'IPv6', value: 'IPv6' },
+  { label: '域名', value: 'domain' },
+  { label: '主机名', value: 'hostname' },
   { label: 'File', value: 'file' },
   { label: 'URL', value: 'url' },
   { label: 'CVE', value: 'cve' },
   { label: 'NIDS', value: 'nids' },
-  { label: 'Correlation-Rule', value: 'correlation-rule' },
+  { label: '关联规则', value: 'correlation-rule' },
 ];
 
 class OTXAdapterFieldSet extends React.Component {

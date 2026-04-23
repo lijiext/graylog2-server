@@ -37,7 +37,7 @@ import { ContentPacksActions, ContentPacksStore } from 'stores/content-packs/Con
 
 const EditContentPackPage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'EditContentPackPage',
+  displayName: '编辑内容包页面',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {
@@ -160,7 +160,7 @@ const EditContentPackPage = createReactClass({
         (response) => {
           const message = 'Error importing content pack, please ensure it is a valid JSON file. Check your '
             + 'Graylog logs for more information.';
-          const title = 'Could not import content pack';
+          const title = '无法导入内容包';
           let smallMessage = '';
 
           if (response.additional && response.additional.body && response.additional.body.message) {

@@ -65,7 +65,7 @@ class IndexerFailuresPage extends React.Component {
         <span>
           <PageHeader title="索引器故障"
                       documentationLink={{
-                        title: 'Indexer failures documentation',
+                        title: '索引器故障文档',
                         path: DocsHelper.PAGES.INDEXER_FAILURES,
                       }}>
             <span>

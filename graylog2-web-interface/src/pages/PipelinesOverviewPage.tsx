@@ -29,7 +29,7 @@ const PipelinesOverviewPage = () => (
     <PageHeader title="处理管道概览"
                 actions={<CreatePipelineButton />}
                 documentationLink={{
-                  title: 'Pipelines documentation',
+                  title: '处理管道文档',
                   path: DocsHelper.PAGES.PIPELINES,
                 }}>
       <span>

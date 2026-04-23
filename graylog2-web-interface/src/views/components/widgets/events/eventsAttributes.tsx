@@ -27,7 +27,7 @@ const eventsAttributes: Attributes = [
     attribute: 'timestamp',
     displayValue: (value: string) => <Timestamp dateTime={value} />,
     sortable: true,
-    title: 'Created At',
+    title: '创建时间',
   },
   {
     attribute: 'alert',
@@ -39,13 +39,13 @@ const eventsAttributes: Attributes = [
     attribute: 'event_definition_id',
     displayValue: (value: string) => <EventDefinitionName eventDefinitionId={value} />,
     sortable: true,
-    title: 'Event Definition',
+    title: '事件定义',
   },
   {
     attribute: 'priority',
     displayValue: (value: number) => <PriorityName priority={value} />,
     sortable: true,
-    title: 'Priority',
+    title: '优先级',
   },
   {
     attribute: 'key',
@@ -53,7 +53,7 @@ const eventsAttributes: Attributes = [
   },
   {
     attribute: 'message',
-    title: 'Description',
+    title: '描述',
   },
 ];
 

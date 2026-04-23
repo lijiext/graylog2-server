@@ -147,7 +147,7 @@ const RulesPage = () => {
       <PageHeader title="管道规则"
                   actions={<RulesButtonToolbar />}
                   documentationLink={{
-                    title: 'Pipeline rules documentation',
+                    title: '管道规则文档',
                     path: DocsHelper.PAGES.PIPELINE_RULES,
                   }}>
         <span>

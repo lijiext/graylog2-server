@@ -23,7 +23,7 @@ import createReactClass from 'create-react-class';
  * It can also use 0 as never if `zeroIsNever` is set.
  */
 const TimeUnit = createReactClass({
-  displayName: 'TimeUnit',
+  displayName: '时间单位',
 
   propTypes: {
     /** Value to display. */

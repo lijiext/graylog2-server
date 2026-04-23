@@ -27,57 +27,57 @@ import type { ScopeName, ActiveHotkeys, HotkeyCollections, Options } from 'conte
 import HotkeysContext from 'contexts/HotkeysContext';
 
 const viewActions = {
-  undo: { keys: 'mod+shift+z', description: 'Undo last action' },
-  redo: { keys: 'mod+shift+y', description: 'Redo last action' },
+  undo: { keys: 'mod+shift+z', description: '撤销上一步操作' },
+  redo: { keys: 'mod+shift+y', description: '重做上一个操作' },
 };
 
 export const hotKeysCollections: HotkeyCollections = {
   general: {
-    title: 'General',
-    description: 'General keyboard shortcuts',
+    title: '常规',
+    description: '常规键盘快捷键',
     actions: {
-      'show-hotkeys-modal': { keys: 'shift+?', displayKeys: '?', description: 'Show available keyboard shorts' },
-      'submit-form': { keys: 'enter', description: 'Submit form' },
-      'close-modal': { keys: 'esc', description: 'Close modal' },
-      'show-scratchpad-modal': { keys: 'mod+/', description: 'Show scratchpad' },
+      'show-hotkeys-modal': { keys: 'shift+?', displayKeys: '?', description: '显示可用的键盘快捷键' },
+      'submit-form': { keys: 'enter', description: '提交表单' },
+      'close-modal': { keys: 'esc', description: '关闭模态框' },
+      'show-scratchpad-modal': { keys: 'mod+/', description: '显示草稿箱' },
     },
   },
   search: {
-    title: 'Search',
-    description: 'Keyboard shortcuts for search page',
+    title: '搜索',
+    description: '搜索页面的键盘快捷键',
     actions: {
       ...viewActions,
-      save: { keys: 'mod+s', description: 'Save search' },
-      'save-as': { keys: 'mod+shift+s', description: 'Save search as' },
+      save: { keys: 'mod+s', description: '保存搜索' },
+      'save-as': { keys: 'mod+shift+s', description: '保存搜索为' },
     },
   },
   dashboard: {
-    title: 'Dashboard',
-    description: 'Keyboard shortcuts for dashboard page',
+    title: '仪表盘',
+    description: '仪表盘的键盘快捷键',
     actions: {
       ...viewActions,
-      save: { keys: 'mod+s', description: 'Save dashboard' },
-      'save-as': { keys: 'mod+shift+s', description: 'Save dashboard as' },
+      save: { keys: 'mod+s', description: '保存仪表盘' },
+      'save-as': { keys: 'mod+shift+s', description: '保存仪表盘为' },
     },
   },
   'query-input': {
-    title: 'Query Input',
-    description: 'Keyboard shortcuts for query input in search bar, available when input is focussed.',
+    title: '查询输入',
+    description: '搜索栏中查询输入的键盘快捷键，在输入获得焦点时可用。',
     // Please note, any changes to keybindings also need to be made in the query input component.
     actions: {
-      'submit-search': { keys: 'return', description: 'Execute the search' },
-      'insert-newline': { keys: 'shift+return', description: 'Create a new line' },
-      'create-search-filter': { keys: 'alt+return', description: 'Create search filter based on current query' },
-      'show-suggestions': { keys: 'alt+space', description: 'Show suggestions, displays query history when input is empty' },
-      'show-history': { keys: 'alt+shift+h', description: 'View your search query history' },
+      'submit-search': { keys: 'return', description: '执行搜索' },
+      'insert-newline': { keys: 'shift+return', description: '创建新行' },
+      'create-search-filter': { keys: 'alt+return', description: '基于当前查询创建搜索过滤器' },
+      'show-suggestions': { keys: 'alt+space', description: '显示建议，在输入为空时显示查询历史' },
+      'show-history': { keys: 'alt+shift+h', description: '查看您的搜索查询历史' },
     },
   },
   scratchpad: {
-    title: 'Scratchpad',
-    description: 'Scratchpad shortcuts',
+    title: '草稿箱',
+    description: '便签快捷方式',
     actions: {
-      clear: { keys: ['mod+backspace', 'mod+del'], description: 'Clear scratchpad' },
-      copy: { keys: 'shift+mod+c', description: 'Copy scratchpad' },
+      clear: { keys: ['mod+backspace', 'mod+del'], description: '清空临时区' },
+      copy: { keys: 'shift+mod+c', description: '复制剪贴板' },
     },
   },
 };

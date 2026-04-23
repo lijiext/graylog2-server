@@ -21,7 +21,7 @@ import OriginExpandedSection from 'components/indices/IndexSetFieldTypes/originE
 
 const expandedSections = ({
   overriddenProfile: {
-    title: 'Origin explanation',
+    title: '来源说明',
     content: ({ type, origin, fieldName }: IndexSetFieldType) => <OriginExpandedSection origin={origin} type={type} fieldName={fieldName} />,
   },
 });

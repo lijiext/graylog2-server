@@ -18,118 +18,118 @@
 export const MIGRATION_STEP = {
   CA_CONFIGURATION: {
     key: 'CA_CONFIGURATION',
-    description: 'Configure a certificate authority',
+    description: '配置证书颁发机构',
   },
   RENEWAL_POLICY_CONFIGURATION: {
     key: 'RENEWAL_POLICY_CONFIGURATION',
-    description: 'Configure a renewal policy',
+    description: '配置续订策略',
   },
   COMPATIBILITY_CHECK: {
     key: 'COMPATIBILITY_CHECK',
-    description: 'Check OpenSearch compatibility with datanode',
+    description: '检查与 datanode 的 OpenSearch 兼容性',
   },
   MANUAL_MIGRATION_STEP: {
     key: 'MANUAL_MIGRATION_STEP',
-    description: 'Migration steps.',
+    description: '迁移步骤。',
   },
   MIGRATION_FINISHED: {
     key: 'MIGRATION_FINISHED',
-    description: 'Migration finished',
+    description: '迁移完成',
   },
 } as const;
 
 export const MIGRATION_STATE = {
   NEW: {
     key: 'NEW',
-    description: 'Migration',
+    description: '迁移',
   },
   MIGRATION_WELCOME_PAGE: {
     key: 'MIGRATION_WELCOME_PAGE',
-    description: 'Welcome',
+    description: '欢迎',
   },
   CA_CREATION_PAGE: {
     key: 'CA_CREATION_PAGE',
-    description: 'Certificate authority',
+    description: '证书颁发机构',
   },
   RENEWAL_POLICY_CREATION_PAGE: {
     key: 'RENEWAL_POLICY_CREATION_PAGE',
-    description: 'Certificate renewal policy',
+    description: '证书续期策略',
   },
   MIGRATION_SELECTION_PAGE: {
     key: 'MIGRATION_SELECTION_PAGE',
-    description: 'Migration steps',
+    description: '迁移步骤',
   },
   ROLLING_UPGRADE_MIGRATION_WELCOME_PAGE: {
     key: 'ROLLING_UPGRADE_MIGRATION_WELCOME_PAGE',
-    description: 'Welcome to In-Place migration',
+    description: '欢迎使用原地迁移',
   },
   ASK_TO_SHUTDOWN_OLD_CLUSTER: {
     key: 'ASK_TO_SHUTDOWN_OLD_CLUSTER',
-    description: 'Shut down old cluster',
+    description: '关闭旧集群',
   },
   MANUALLY_REMOVE_OLD_CONNECTION_STRING_FROM_CONFIG: {
     key: 'MANUALLY_REMOVE_OLD_CONNECTION_STRING_FROM_CONFIG',
-    description: 'Remove connection string',
+    description: '移除连接字符串',
   },
   MESSAGE_PROCESSING_STOP: {
     key: 'MESSAGE_PROCESSING_STOP',
-    description: 'Stop message processing',
+    description: '停止消息处理',
   },
   REPLACE_CLUSTER: {
     key: 'REPLACE_CLUSTER',
-    description: 'Replace existing cluster',
+    description: '替换现有集群',
   },
   RESTART_GRAYLOG: {
     key: 'RESTART_GRAYLOG',
-    description: 'Update configuration file and restart Graylog',
+    description: '更新配置文件并重启 Graylog',
   },
   REMOTE_REINDEX_WELCOME_PAGE: {
     key: 'REMOTE_REINDEX_WELCOME_PAGE',
-    description: 'Remote reindexing migration',
+    description: '远程重新索引迁移',
   },
   PROVISION_DATANODE_CERTIFICATES_PAGE: {
     key: 'PROVISION_DATANODE_CERTIFICATES_PAGE',
-    description: 'Provision Data Node with certificates',
+    description: '使用证书配置数据节点',
   },
   PROVISION_DATANODE_CERTIFICATES_RUNNING: {
     key: 'PROVISION_DATANODE_CERTIFICATES_RUNNING',
-    description: "Provision the Data Node's certificate.",
+    description: "配置数据节点的证书。",
   },
   EXISTING_DATA_MIGRATION_QUESTION_PAGE: {
     key: 'EXISTING_DATA_MIGRATION_QUESTION_PAGE',
-    description: 'Migrate existing data question',
+    description: '迁移现有数据的问题',
   },
   MIGRATE_EXISTING_DATA: {
     key: 'MIGRATE_EXISTING_DATA',
-    description: 'Migrate existing data',
+    description: '迁移现有数据',
   },
   REMOTE_REINDEX_RUNNING: {
     key: 'REMOTE_REINDEX_RUNNING',
-    description: 'Remote reindexing migration running',
+    description: '远程重新索引迁移正在运行',
   },
   DIRECTORY_COMPATIBILITY_CHECK_PAGE: {
     key: 'DIRECTORY_COMPATIBILITY_CHECK_PAGE',
-    description: 'Directory compatibility check',
+    description: '目录兼容性检查',
   },
   PROVISION_ROLLING_UPGRADE_NODES_WITH_CERTIFICATES: {
     key: 'PROVISION_ROLLING_UPGRADE_NODES_WITH_CERTIFICATES',
-    description: 'Certificate provisioning overview',
+    description: '证书配置概览',
   },
   PROVISION_ROLLING_UPGRADE_NODES_RUNNING: {
     key: 'PROVISION_ROLLING_UPGRADE_NODES_RUNNING',
-    description: "Provision the Data Node's certificate.",
+    description: "配置数据节点的证书。",
   },
   JOURNAL_SIZE_DOWNTIME_WARNING: {
     key: 'JOURNAL_SIZE_DOWNTIME_WARNING',
-    description: 'Journal size downtime warning',
+    description: 'Journal 大小停机警告',
   },
   FAILED: {
     key: 'FAILED',
-    description: 'Migration failed',
+    description: '迁移失败',
   },
   FINISHED: {
     key: 'FINISHED',
-    description: 'Migration finished',
+    description: '迁移完成',
   },
 } as const;
 
@@ -162,35 +162,35 @@ export const MIGRATION_WIZARD_STEPS = [
 export const MIGRATION_ACTIONS = {
   SHOW_RENEWAL_POLICY_CREATION: {
     key: 'SHOW_RENEWAL_POLICY_CREATION',
-    label: 'Configure certificate renewal policy',
+    label: '配置证书续期策略',
   },
   SHOW_MIGRATION_SELECTION: {
     key: 'SHOW_MIGRATION_SELECTION',
-    label: 'Go to migration steps',
+    label: '前往迁移步骤',
   },
   RUN_DIRECTORY_COMPATIBILITY_CHECK: {
     key: 'INSTALL_DATANODES_ON_EVERY_NODE',
-    label: 'Run directory compatibilty check',
+    label: '运行目录兼容性检查',
   },
   PROVISION_DATANODE_CERTIFICATES: {
     key: 'PROVISION_DATANODE_CERTIFICATES',
-    label: 'Provision Data Nodes with certificates',
+    label: '使用证书配置数据节点',
   },
   SKIP_EXISTING_DATA_MIGRATION: {
     key: 'SKIP_EXISTING_DATA_MIGRATION',
-    label: 'Skip existing data migration',
+    label: '跳过现有数据迁移',
   },
   RETRY_MIGRATE_EXISTING_DATA: {
     key: 'RETRY_MIGRATE_EXISTING_DATA',
-    label: 'Retry migrate existing data',
+    label: '重试迁移现有数据',
   },
   CHECK_REMOTE_INDEXER_CONNECTION: {
     key: 'CHECK_REMOTE_INDEXER_CONNECTION',
-    label: 'Check connection',
+    label: '检查连接',
   },
   START_REMOTE_REINDEX_MIGRATION: {
     key: 'START_REMOTE_REINDEX_MIGRATION',
-    label: 'Start migration',
+    label: '开始迁移',
   },
 };
 export default MIGRATION_STEP;

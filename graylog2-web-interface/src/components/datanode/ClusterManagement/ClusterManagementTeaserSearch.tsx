@@ -32,7 +32,7 @@ const hotspots = [
   {
     positionX: '50%',
     positionY: '120px',
-    description: 'Show performance metrics of your Data Node and managed OpenSearch cluster.',
+    description: '显示您的数据节点和托管的 OpenSearch 集群的性能指标。',
   },
 ];
 

@@ -49,7 +49,7 @@ const DataNodesMigrationPage = () => {
       <PageHeader title="数据节点迁移"
                   actions={<ResetMigrationButton />}
                   documentationLink={{
-                    title: 'Data Nodes documentation',
+                    title: '数据节点文档',
                     path: DocsHelper.PAGES.GRAYLOG_DATA_NODE,
                   }}>
         <span>

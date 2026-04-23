@@ -72,7 +72,7 @@ const FailureStreamLink = () => {
 
   return (
     <span>
-      <StreamLink stream={isErrorFailureStream ? { id: failureStreamId, title: 'Processing and Indexing Failures' } as Stream : failureStream} />
+      <StreamLink stream={isErrorFailureStream ? { id: failureStreamId, title: '处理和索引失败' } as Stream : failureStream} />
       <i> (<Link to={Routes.SYSTEM.ENTERPRISE}>企业插件</Link> 必需)</i>
     </span>
   );

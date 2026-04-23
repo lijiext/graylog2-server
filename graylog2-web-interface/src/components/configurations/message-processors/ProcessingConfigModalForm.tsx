@@ -38,7 +38,7 @@ const LabelSpan = styled.span(({ theme }) => css`
 `);
 
 const ProcessingConfigModalForm = ({ closeModal, formConfig }: Props) => {
-  const futureTimestampNormalizationHelpText = "Enable normalisation of timestamps that specify a time significantly ahead of Graylog's own system time. This typically happens when a log source runs on a server with an incorrect system clock. Future timestamps will be normalised to match the time it was first received by either a Graylog Forwarder, or Graylog. It is important to prevent future timestamps when making use of the Warm Tier, as this can otherwise degrade performance.";
+  const futureTimestampNormalizationHelpText = "启用对指定时间显著早于 Graylog 自身系统时间的时间戳进行规范化。这通常发生在日志源运行在系统时钟不正确的服务器上时。未来时间戳将被规范化以匹配其首次被 Graylog 转发器或 Graylog 接收的时间。在使用 Warm Tier 时，防止未来时间戳非常重要，否则可能会降低性能。";
   const hasNoActiveProcessor = () => formConfig.disabled_processors.length >= formConfig.processor_order.length;
 
   const saveConfig = (values: FormConfig) => {

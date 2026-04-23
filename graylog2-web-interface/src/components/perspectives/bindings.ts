@@ -23,7 +23,7 @@ const perspectivesBindings = {
   perspectives: [
     {
       id: 'default',
-      title: 'General',
+      title: '常规',
       welcomeRoute: Routes.WELCOME,
       brandComponent: DefaultBrand,
     },

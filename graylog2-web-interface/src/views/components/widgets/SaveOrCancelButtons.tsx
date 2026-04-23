@@ -21,7 +21,7 @@ import WidgetEditApplyAllChangesContext from 'views/components/contexts/WidgetEd
 import { ModalSubmit } from 'components/common';
 import DisableSubmissionStateContext from 'views/components/contexts/DisableSubmissionStateContext';
 
-export const UPDATE_WIDGET_BTN_TEXT = 'Update widget';
+export const UPDATE_WIDGET_BTN_TEXT = '更新小部件';
 
 type Props = {
   onCancel: () => void,

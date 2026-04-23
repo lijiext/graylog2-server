@@ -108,7 +108,7 @@ const queryKey = ['config', 'certificate-renewal-policy'];
 const renewalModeExplanation = 'Setting the renewal policy to "Automatic" will '
   + 'renew all expiring certificates without any user interaction. Setting it to "Manual" will create a system '
   + 'notification when one or more certificates are about to expire, allowing you to confirm their renewal.';
-const lifetimeExplanation = 'The certificate lifetime will be used for the length of the validity of newly created certificates.';
+const lifetimeExplanation = '证书有效期将用于新创建证书的有效期长度。';
 
 type Props = {
   className?: string
@@ -156,7 +156,7 @@ const CertificateRenewalPolicyConfig = ({ className }: Props) => {
     return <Spinner />;
   }
 
-  const modalTitle = 'Configure Certificate Renewal Policy';
+  const modalTitle = '配置证书续期策略';
 
   const resetConfig = () => {
     setShowModal(false);

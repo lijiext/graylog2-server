@@ -45,7 +45,7 @@ const SidecarsPage = () => {
       <SidecarsPageNavigation />
       <PageHeader title="Sidecars 概览"
                   documentationLink={{
-                    title: 'Sidecar documentation',
+                    title: 'Sidecar 文档',
                     path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                   }}>
         <span>

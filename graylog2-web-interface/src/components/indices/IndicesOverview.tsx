@@ -35,8 +35,8 @@ const IndicesOverview = ({ indexDetails, indices, indexSetId }: Props) => {
   const warmTierIndices = indicesFilteredByTier(indices, 'WARM');
   const hotTierIndices = indicesFilteredByTier(indices, 'HOT');
   const hotTierList = hotTierIndices.length > 0 ? hotTierIndices : indicesFilteredByTier(indices, undefined);
-  const hotTierSubheading = 'Indices in this section are stored as active shards within the Search cluster, facilitating fast retrieval and search jobs. Data held in the Hot Tier has a permanent footprint in the Java Heap memory of the Search Cluster and in excess, will degrade search performance.';
-  const warmTierSubheading = 'Indices in this section are stored as searchable snapshots within the Warm Tier Repository, facilitating cheap storage and low resource overheads. Retrieval and Search jobs of data held in the Warm Tier will be slower. Note that only Search nodes with the "Search" role can participate in Warm Tier search and retrieval.';
+  const hotTierSubheading = '本节中的索引作为搜索集群中的活动分片存储，便于快速检索和搜索作业。热层中保存的数据在搜索集群的 Java 堆内存中占用永久空间，过多时会导致搜索性能下降。';
+  const warmTierSubheading = '本节中的索引作为热温层存储库中的可搜索快照进行存储，从而实现低成本存储和低资源开销。热温层中数据的检索和搜索任务将变慢。请注意，只有具有“搜索”角色的搜索节点才能参与热温层搜索和检索。';
 
   return (
     <>

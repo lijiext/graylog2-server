@@ -65,7 +65,7 @@ const StyledProgressBar = styled(ProgressBar)`
 
 const JvmHeapUsage = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'JvmHeapUsage',
+  displayName: 'JVM 堆内存使用率',
 
   // eslint-disable-next-line react/no-unused-class-component-methods
   propTypes: {

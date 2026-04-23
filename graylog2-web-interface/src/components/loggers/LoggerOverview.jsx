@@ -23,7 +23,7 @@ import { NodeLoggers } from 'components/loggers';
 import { LoggersStore } from 'stores/system/LoggersStore';
 
 const LoggerOverview = createReactClass({
-  displayName: 'LoggerOverview',
+  displayName: '日志记录器概览',
   mixins: [Reflux.connect(LoggersStore)],
 
   render() {

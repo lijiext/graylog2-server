@@ -65,10 +65,10 @@ const validateForm = (formValues: FormValues) => {
 };
 
 const unitOptions = [
-  { label: 'Hour(s)', value: 'hours' },
-  { label: 'Day(s)', value: 'days' },
-  { label: 'Month(s)', value: 'months' },
-  { label: 'Year(s)', value: 'years' },
+  { label: '小时', value: 'hours' },
+  { label: '天', value: 'days' },
+  { label: '月', value: 'months' },
+  { label: '年', value: 'years' },
 ];
 
 const defaultFormValues = {

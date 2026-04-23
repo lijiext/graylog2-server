@@ -70,7 +70,7 @@ const UserEditPage = ({ params }: Props) => {
                                      userIsReadOnly={readOnly} />
                   )}
                   documentationLink={{
-                    title: 'Permissions documentation',
+                    title: '权限文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>

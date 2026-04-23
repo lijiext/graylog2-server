@@ -94,7 +94,7 @@ const preparePresetOptions = async (presets: SearchesConfig['quick_access_timera
 
   return [{
     disabled: true,
-    label: 'No available presets',
+    label: '无可用预设',
     key: 'no-available-presets',
   }];
 };

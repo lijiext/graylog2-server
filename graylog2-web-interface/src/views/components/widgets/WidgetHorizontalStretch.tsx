@@ -75,7 +75,7 @@ const WidgetHorizontalStretch = ({ onStretch, position, widgetId, widgetType }: 
   const { width } = position;
   const stretched = width === Infinity;
   const icon = stretched ? 'compress' : 'width';
-  const title = stretched ? 'Compress width' : 'Stretch width';
+  const title = stretched ? '压缩宽度' : '拉伸宽度';
 
   return (
     <StyledIconButton onClick={onClick}

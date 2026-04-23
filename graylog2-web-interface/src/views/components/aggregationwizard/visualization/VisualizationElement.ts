@@ -102,7 +102,7 @@ const validate = (formValues: WidgetConfigFormValues) => {
 };
 
 const VisualizationElement: AggregationElement<'visualization'> = {
-  title: 'Visualization',
+  title: '可视化',
   key: 'visualization',
   order: 4,
   allowCreate: (formValues: WidgetConfigFormValues) => isEmpty(formValues.visualization),

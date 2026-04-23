@@ -31,7 +31,7 @@ import { TELEMETRY_EVENT_TYPE } from 'logic/telemetry/Constants';
 import { getPathnameWithoutId } from 'util/URLUtils';
 import useLocation from 'routing/useLocation';
 
-const modalTitle = 'Create new widget';
+const modalTitle = '创建新小部件';
 
 const WidgetList = styled.div`
   display: flex;

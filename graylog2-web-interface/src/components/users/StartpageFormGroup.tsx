@@ -65,9 +65,9 @@ const UNLIMITED_ENTITY_SHARE_REQ = { page: 1, perPage: 10000, query: '' };
 const grnId = (grn) => getValuesFromGRN(grn).id;
 const _grnOptionFormatter = ({ id, title }: SharedEntity): Option => ({ value: grnId(id), label: title });
 const typeOptions = [
-  { value: 'dashboard', label: 'Dashboard' },
-  { value: 'stream', label: 'Stream' },
-  { value: 'search', label: 'Search' },
+  { value: 'dashboard', label: '仪表盘' },
+  { value: 'stream', label: '数据流' },
+  { value: 'search', label: '搜索' },
 ];
 
 const ADMIN_PERMISSION = '*';
@@ -115,7 +115,7 @@ const useStartPageOptions = (userId, permissions) => {
       case 'dashboard':
         return [...userDashboards, ...allDashboardsOptions];
       case 'search':
-        return [{ value: 'default', label: 'New Search' }, ...userSearches, ...allSearchesOptions];
+        return [{ value: 'default', label: '新建搜索' }, ...userSearches, ...allSearchesOptions];
       case 'stream':
         return [...userStreams, ...allStreamsOptions];
       default:

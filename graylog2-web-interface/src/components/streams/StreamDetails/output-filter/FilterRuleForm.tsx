@@ -38,7 +38,7 @@ const FilterRuleForm = ({ title, filterRule, onCancel, handleSubmit, destination
     let errors = {};
 
     if (!currentTitle) {
-      errors = { ...errors, title: 'The "Title" field is required.' };
+      errors = { ...errors, title: '“标题”字段为必填项。' };
     }
 
     if (!rule?.conditions || (rule?.conditions && rule.conditions.length <= 0)) {

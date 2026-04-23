@@ -105,7 +105,7 @@ const ServerUnavailablePage = ({ server }: Props) => {
     );
   };
 
-  const modalTitle = 'Server currently unavailable';
+  const modalTitle = '服务器当前不可用';
 
   return (
     <DocumentTitle title="服务器不可用">

@@ -44,7 +44,7 @@ const JournalUsageProgressBar = styled(ProgressBar)`
 `;
 
 const JournalDetails = createReactClass({
-  displayName: 'JournalDetails',
+  displayName: '日志详情',
 
   propTypes: {
     nodeId: PropTypes.string.isRequired,

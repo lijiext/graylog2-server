@@ -107,7 +107,7 @@ class ContentPackApplyParameter extends React.Component {
     const emptyOption = (name) => (<option key="EMPTY" value="">{name}</option>);
     const configOptions = [emptyOption('Choose Config Key')].concat(configKeys.map((key) => <option key={key} value={key}>{key}</option>));
     let { parameters } = this.props;
-    let emptyName = parameters.length <= 0 ? 'Create a parameter first' : 'Choose...';
+    let emptyName = parameters.length <= 0 ? '请先创建参数' : '选择...';
 
     if (this.state.config_key !== '' && parameters.length > 0) {
       const configKeyType = configPaths[this.state.config_key].getValueType();

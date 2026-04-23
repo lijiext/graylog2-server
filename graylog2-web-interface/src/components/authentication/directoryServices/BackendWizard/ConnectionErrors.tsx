@@ -55,7 +55,7 @@ ConnectionErrors.propTypes = {
 };
 
 ConnectionErrors.defaultProps = {
-  message: 'There was an error',
+  message: '发生错误',
 };
 
 export default ConnectionErrors;

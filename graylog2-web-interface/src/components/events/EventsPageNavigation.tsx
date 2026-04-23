@@ -21,9 +21,9 @@ import Routes from 'routing/Routes';
 import { Row } from 'components/bootstrap';
 
 const NAV_ITEMS = [
-  { title: 'Alerts & Events', path: Routes.ALERTS.LIST, exactPathMatch: true },
-  { title: 'Event Definitions', path: Routes.ALERTS.DEFINITIONS.LIST },
-  { title: 'Notifications', path: Routes.ALERTS.NOTIFICATIONS.LIST },
+  { title: '告警与事件', path: Routes.ALERTS.LIST, exactPathMatch: true },
+  { title: '事件定义', path: Routes.ALERTS.DEFINITIONS.LIST },
+  { title: '通知', path: Routes.ALERTS.NOTIFICATIONS.LIST },
 ];
 
 const EventsPageNavigation = () => (

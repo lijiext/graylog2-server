@@ -287,7 +287,7 @@ export const createEmptyGrouping = () => addRandomId<ValuesGrouping>({
 
 const GroupByElement: AggregationElement<'groupBy'> = {
   sectionTitle: 'Group By',
-  title: 'Grouping',
+  title: '分组',
   key: 'groupBy',
   order: 1,
   allowCreate: (formValues : WidgetConfigFormValues) => !(formValues.visualization.type === 'numeric'),

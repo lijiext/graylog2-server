@@ -70,11 +70,11 @@ class DnsAdapterFieldSet extends React.Component {
       validationState,
     } = this.props;
     const lookupTypes = [
-      { label: 'Resolve hostname to IPv4 address (A)', value: 'A' },
-      { label: 'Resolve hostname to IPv6 address (AAAA)', value: 'AAAA' },
-      { label: 'Resolve hostname to IPv4 and IPv6 addresses (A and AAAA)', value: 'A_AAAA' },
-      { label: 'Reverse lookup (PTR)', value: 'PTR' },
-      { label: 'Text lookup (TXT)', value: 'TXT' },
+      { label: '将主机名解析为 IPv4 地址 (A)', value: 'A' },
+      { label: '将主机名解析为 IPv6 地址 (AAAA)', value: 'AAAA' },
+      { label: '将主机名解析为 IPv4 和 IPv6 地址（A 和 AAAA）', value: 'A_AAAA' },
+      { label: '反向查找 (PTR)', value: 'PTR' },
+      { label: '文本查找 (TXT)', value: 'TXT' },
     ];
 
     return (

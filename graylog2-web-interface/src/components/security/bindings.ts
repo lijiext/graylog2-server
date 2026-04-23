@@ -26,11 +26,11 @@ const routes = [
 export const navigation = {
   description: SECURITY_ROUTE_DESCRIPTION,
   children: [
-    { path: Routes.SECURITY.OVERVIEW, description: 'Overview' },
-    { path: Routes.SECURITY.USER_ACTIVITY, description: 'User Activity' },
-    { path: Routes.SECURITY.HOST_ACTIVITY, description: 'Host Activity' },
-    { path: Routes.SECURITY.NETWORK_ACTIVITY, description: 'Network Activity' },
-    { path: Routes.SECURITY.ANOMALIES, description: 'Anomalies' },
+    { path: Routes.SECURITY.OVERVIEW, description: '概览' },
+    { path: Routes.SECURITY.USER_ACTIVITY, description: '用户活动' },
+    { path: Routes.SECURITY.HOST_ACTIVITY, description: '主机活动' },
+    { path: Routes.SECURITY.NETWORK_ACTIVITY, description: '网络活动' },
+    { path: Routes.SECURITY.ANOMALIES, description: '异常' },
   ],
 };
 

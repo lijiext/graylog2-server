@@ -21,25 +21,25 @@ import Routes from 'routing/Routes';
 import filterMenuItems, { filterCloudMenuItems } from 'util/conditional/filterMenuItems';
 import AppConfig from 'util/AppConfig';
 
-export const SYSTEM_DROPDOWN_TITLE = 'System';
+export const SYSTEM_DROPDOWN_TITLE = '系统';
 
 const navigationBindings: PluginExports = {
   navigation: [
     {
       path: Routes.SEARCH,
-      description: 'Search',
+      description: '搜索',
     },
     {
       path: Routes.STREAMS,
-      description: 'Streams',
+      description: '数据流',
     },
     {
       path: Routes.ALERTS.LIST,
-      description: 'Alerts',
+      description: '告警',
     },
     {
       path: Routes.DASHBOARDS,
-      description: 'Dashboards',
+      description: '仪表盘',
     },
     {
       description: SYSTEM_DROPDOWN_TITLE,
@@ -47,21 +47,21 @@ const navigationBindings: PluginExports = {
       children: filterCloudMenuItems(
         filterMenuItems(
           [
-            { path: Routes.SYSTEM.OVERVIEW, description: 'Overview' },
-            { path: Routes.SYSTEM.CONFIGURATIONS, description: 'Configurations', permissions: ['clusterconfigentry:read'] },
+            { path: Routes.SYSTEM.OVERVIEW, description: '概览' },
+            { path: Routes.SYSTEM.CONFIGURATIONS, description: '配置', permissions: ['clusterconfigentry:read'] },
             { path: Routes.SYSTEM.NODES.LIST, description: 'Nodes' },
-            { path: Routes.SYSTEM.DATANODES.LIST, description: 'Data Nodes', permissions: ['datanodes:read'] },
-            { path: Routes.SYSTEM.INPUTS, description: 'Inputs', permissions: ['inputs:read'] },
-            { path: Routes.SYSTEM.OUTPUTS, description: 'Outputs', permissions: ['outputs:read'] },
-            { path: Routes.SYSTEM.INDICES.LIST, description: 'Indices', permissions: ['indices:read'] },
-            { path: Routes.SYSTEM.LOGGING, description: 'Logging', permissions: ['loggers:read'] },
-            { path: Routes.SYSTEM.USERS.OVERVIEW, description: 'Users and Teams', permissions: ['users:list'] },
+            { path: Routes.SYSTEM.DATANODES.LIST, description: '数据节点', permissions: ['datanodes:read'] },
+            { path: Routes.SYSTEM.INPUTS, description: '输入端', permissions: ['inputs:read'] },
+            { path: Routes.SYSTEM.OUTPUTS, description: '输出端', permissions: ['outputs:read'] },
+            { path: Routes.SYSTEM.INDICES.LIST, description: '索引', permissions: ['indices:read'] },
+            { path: Routes.SYSTEM.LOGGING, description: '日志记录', permissions: ['loggers:read'] },
+            { path: Routes.SYSTEM.USERS.OVERVIEW, description: '用户与团队', permissions: ['users:list'] },
             { path: Routes.SYSTEM.AUTHZROLES.OVERVIEW, description: 'Roles', permissions: ['roles:read'] },
-            { path: Routes.SYSTEM.AUTHENTICATION.BACKENDS.ACTIVE, description: 'Authentication', permissions: ['authentication:edit'] },
-            { path: Routes.SYSTEM.CONTENTPACKS.LIST, description: 'Content Packs', permissions: ['contentpack:read'] },
-            { path: Routes.SYSTEM.GROKPATTERNS, description: 'Grok Patterns', permissions: ['grok_pattern:read'] },
-            { path: Routes.SYSTEM.LOOKUPTABLES.OVERVIEW, description: 'Lookup Tables', permissions: ['lookuptables:read'] },
-            { path: Routes.SYSTEM.PIPELINES.OVERVIEW, description: 'Pipelines', permissions: ['pipeline:read', 'pipeline_connection:read'] },
+            { path: Routes.SYSTEM.AUTHENTICATION.BACKENDS.ACTIVE, description: '认证', permissions: ['authentication:edit'] },
+            { path: Routes.SYSTEM.CONTENTPACKS.LIST, description: '内容包', permissions: ['contentpack:read'] },
+            { path: Routes.SYSTEM.GROKPATTERNS, description: 'Grok 模式', permissions: ['grok_pattern:read'] },
+            { path: Routes.SYSTEM.LOOKUPTABLES.OVERVIEW, description: '查找表', permissions: ['lookuptables:read'] },
+            { path: Routes.SYSTEM.PIPELINES.OVERVIEW, description: '处理管道', permissions: ['pipeline:read', 'pipeline_connection:read'] },
             { path: Routes.SYSTEM.SIDECARS.OVERVIEW, description: 'Sidecars', permissions: ['sidecars:read'] },
           ],
           AppConfig.isCloud() && !AppConfig.isFeatureEnabled('cloud_inputs') ? [Routes.SYSTEM.INPUTS] : [],

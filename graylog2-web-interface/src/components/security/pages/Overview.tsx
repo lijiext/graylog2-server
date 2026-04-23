@@ -27,17 +27,17 @@ const hotspots = [
   {
     positionX: '15%',
     positionY: '50px',
-    description: 'Quickly find your most critical security info in the Overview tab.',
+    description: '在“概览”标签页中快速找到您最重要的安全信息。',
   },
   {
     positionX: '50%',
     positionY: '350px',
-    description: 'Find high alerts, top event sources, and more that give you insight into your security posture.',
+    description: '查找高危告警、主要事件源等，助您深入了解安全态势。',
   },
   {
     positionX: '75%',
     positionY: '580px',
-    description: 'Hover these tool tips throughout this page to learn more about features of Graylog Security',
+    description: '在此页面中悬停这些工具提示，以了解 Graylog Security 的功能',
   },
 ];
 const Overview = () => (

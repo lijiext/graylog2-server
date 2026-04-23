@@ -43,7 +43,7 @@ export default class MessageSortConfig {
   }
 
   static fromJSON({ field, order }: MessageSortConfigJson) {
-    const direction = Direction.fromJSON(order === 'ASC' ? 'Ascending' : 'Descending');
+    const direction = Direction.fromJSON(order === 'ASC' ? '升序' : '降序');
 
     return new MessageSortConfig(field, direction);
   }

@@ -39,7 +39,7 @@ const useNotificationTest = (): UseNotificationTestType => {
             ...result,
             id: notification.id,
             error: false,
-            message: 'Notification was executed successfully.',
+            message: '通知执行成功。',
           };
 
           setTestResults({ [notification.id]: result });

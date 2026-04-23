@@ -71,7 +71,7 @@ const SearchButton = ({ dirty, disabled, glyph, displaySpinner }: Props) => {
   const sendTelemetry = useSendTelemetry();
   const location = useLocation();
   const className = disabled ? 'disabled' : '';
-  const title = dirty ? 'Perform search (changes were made after last search execution)' : 'Perform Search';
+  const title = dirty ? '执行搜索（自上次搜索执行后已进行修改）' : '执行搜索';
 
   const triggerTelemetry = () => {
     sendTelemetry(TELEMETRY_EVENT_TYPE.SEARCH_BUTTON_CLICKED, {

@@ -97,7 +97,7 @@ const _granteesOptions = (grantees: GranteesList) => grantees.map((grantee) => (
 )).toJS();
 
 const _initialCapabilityId = (capabilities: CapabilitiesList) => {
-  const initialCapabilityTitle = 'Viewer';
+  const initialCapabilityTitle = '查看器';
 
   return capabilities.find((capability) => capability.title === initialCapabilityTitle)?.id;
 };

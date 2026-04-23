@@ -26,7 +26,7 @@ const bindings: PluginExports = {
   fieldValueProviders: [
     {
       type: TemplateFieldValueProviderForm.type,
-      displayName: 'Template',
+      displayName: '模板',
       formComponent: TemplateFieldValueProviderForm,
       summaryComponent: TemplateFieldValueProviderSummary,
       defaultConfig: TemplateFieldValueProviderForm.defaultConfig,
@@ -34,7 +34,7 @@ const bindings: PluginExports = {
     },
     {
       type: LookupTableFieldValueProviderForm.type,
-      displayName: 'Lookup Table',
+      displayName: '查找表',
       formComponent: LookupTableFieldValueProviderFormContainer,
       summaryComponent: LookupTableFieldValueProviderSummary,
       defaultConfig: LookupTableFieldValueProviderForm.defaultConfig,

@@ -45,14 +45,14 @@ const MaxmindAdapterFieldSet = ({ config, updateConfig, handleFormEvent, validat
   };
 
   const ipInfoDatabaseTypes = [
-    { label: 'IPinfo location database', value: 'IPINFO_STANDARD_LOCATION' },
-    { label: 'IPinfo ASN database', value: 'IPINFO_ASN' },
+    { label: 'IPinfo 位置数据库', value: 'IPINFO_STANDARD_LOCATION' },
+    { label: 'IPinfo ASN 数据库', value: 'IPINFO_ASN' },
   ];
 
   let databaseTypes = [
-    { label: 'ASN database', value: 'MAXMIND_ASN' },
-    { label: 'City database', value: 'MAXMIND_CITY' },
-    { label: 'Country database', value: 'MAXMIND_COUNTRY' },
+    { label: 'ASN 数据库', value: 'MAXMIND_ASN' },
+    { label: '城市数据库', value: 'MAXMIND_CITY' },
+    { label: '国家数据库', value: 'MAXMIND_COUNTRY' },
   ];
 
   if (isCloud) {

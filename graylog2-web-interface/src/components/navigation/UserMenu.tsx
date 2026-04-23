@@ -38,8 +38,8 @@ const UserMenu = () => {
     ? Routes.SYSTEM.USERS.show(userId)
     : Routes.SYSTEM.USERS.edit(userId);
   const label = readOnly
-    ? 'Show profile'
-    : 'Edit profile';
+    ? '显示个人资料'
+    : '编辑个人资料';
 
   const onLogoutClicked = useLogout();
 

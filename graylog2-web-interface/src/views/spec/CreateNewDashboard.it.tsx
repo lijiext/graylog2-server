@@ -129,7 +129,7 @@ describe('Create a new dashboard', () => {
     <DefaultProviders>
       <DefaultQueryClientProvider>
         <CurrentUserProvider>
-          <StreamsContext.Provider value={[{ id: 'stream-1', title: 'Stream 1' } as Stream]}>
+          <StreamsContext.Provider value={[{ id: 'stream-1', title: '数据流 1' } as Stream]}>
             <AppRouter />
           </StreamsContext.Provider>
         </CurrentUserProvider>

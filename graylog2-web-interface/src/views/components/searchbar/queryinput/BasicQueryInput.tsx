@@ -121,7 +121,7 @@ const BasicQueryInput = forwardRef<any, Props>((props, ref) => {
     maxLines,
     minLines: 1,
     mode: 'lucene',
-    name: 'QueryEditor',
+    name: '查询编辑器',
     placeholder,
     readOnly: disabled,
     ref,

@@ -90,7 +90,7 @@ CreateStreamRuleButton.propTypes = {
 };
 
 CreateStreamRuleButton.defaultProps = {
-  buttonText: 'Create Rule',
+  buttonText: '创建规则',
   bsSize: undefined,
   bsStyle: undefined,
   className: undefined,

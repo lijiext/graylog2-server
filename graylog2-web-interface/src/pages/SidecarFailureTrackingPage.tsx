@@ -27,7 +27,7 @@ const SidecarFailureTrackingPage = () => (
     <SidecarsPageNavigation />
     <PageHeader title="故障跟踪"
                 documentationLink={{
-                  title: 'Sidecar documentation',
+                  title: 'Sidecar 文档',
                   path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                 }}>
       <span>

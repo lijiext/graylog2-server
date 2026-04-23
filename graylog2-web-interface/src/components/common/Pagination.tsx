@@ -108,7 +108,7 @@ const UltimatePagination = createUltimatePagination({
       );
     },
     [ITEM_TYPES.ELLIPSIS]: ({ isActive, onClick }) => {
-      const title = 'Open following page';
+      const title = '打开以下页面';
 
       return (
         <BootstrapPagination.Ellipsis disabled={isActive}
@@ -121,7 +121,7 @@ const UltimatePagination = createUltimatePagination({
       );
     },
     [ITEM_TYPES.FIRST_PAGE_LINK]: ({ isActive, onClick }) => {
-      const title = 'Open first page';
+      const title = '打开第一页';
 
       return (
         <BootstrapPagination.First disabled={isActive}
@@ -134,7 +134,7 @@ const UltimatePagination = createUltimatePagination({
       );
     },
     [ITEM_TYPES.PREVIOUS_PAGE_LINK]: ({ isActive, onClick }) => {
-      const title = 'Open previous page';
+      const title = '打开上一页';
 
       return (
         <BootstrapPagination.Prev disabled={isActive}
@@ -147,7 +147,7 @@ const UltimatePagination = createUltimatePagination({
       );
     },
     [ITEM_TYPES.NEXT_PAGE_LINK]: ({ isActive, onClick }) => {
-      const title = 'Open next page';
+      const title = '打开下一页';
 
       return (
         <BootstrapPagination.Next disabled={isActive}
@@ -160,7 +160,7 @@ const UltimatePagination = createUltimatePagination({
       );
     },
     [ITEM_TYPES.LAST_PAGE_LINK]: ({ isActive, onClick }) => {
-      const title = 'Open last page';
+      const title = '打开最后一页';
 
       return (
         <BootstrapPagination.Last disabled={isActive}

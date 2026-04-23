@@ -67,7 +67,7 @@ const CreateExtractorsPage = () => {
       <div>
         <PageHeader title={<span>输入端的新提取器 <em>{input.title}</em></span>}
                     documentationLink={{
-                      title: 'Extractors documentation',
+                      title: '提取器文档',
                       path: DocsHelper.PAGES.EXTRACTORS,
                     }}>
           <span>

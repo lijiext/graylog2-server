@@ -25,7 +25,7 @@ import { jsonifyText } from './rule-builder/helpers';
 
 let VALIDATE_TIMEOUT;
 
-export const DEFAULT_SIMULATOR_JSON_MESSAGE = 'message: test\nsource: unknown\n';
+export const DEFAULT_SIMULATOR_JSON_MESSAGE = '消息：测试 来源：未知';
 
 export const PipelineRulesContext = createContext(undefined);
 

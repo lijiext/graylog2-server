@@ -85,7 +85,7 @@ const UserConfig = () => {
 
   const timeoutIntervalValidator = (milliseconds: number) => milliseconds >= 1000;
 
-  const modalTitle = 'Update User Configuration';
+  const modalTitle = '更新用户配置';
 
   return (
     <div>

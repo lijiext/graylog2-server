@@ -27,7 +27,7 @@ import { SystemStore } from 'stores/system/SystemStore';
 
 const TimesList = createReactClass({
   // eslint-disable-next-line react/no-unused-class-component-methods
-  displayName: 'TimesList',
+  displayName: '时间列表',
   mixins: [Reflux.connect(CurrentUserStore), Reflux.connect(SystemStore)],
 
   getInitialState() {

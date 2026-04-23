@@ -188,7 +188,7 @@ const EventDefinitionFormContainer = ({
   const handleCancel = () => {
     sendTelemetry(TELEMETRY_EVENT_TYPE.EVENTDEFINITION_SUMMARY.CANCEL_CLICKED, {
       app_pathname: getPathnameWithoutId(pathname),
-      app_section: (action === 'create') ? 'new-event-definition' : 'edit-event-definition',
+      app_section: (action === 'create') ? '新建事件定义' : '编辑事件定义',
       app_action_value: 'cancel-button',
     });
 

@@ -229,7 +229,7 @@ class Events extends React.Component {
     }
 
     const { query, filter: { alerts: filter } } = parameters;
-    const excludedFile = filter === 'exclude' ? 'Events' : 'Alerts & Events';
+    const excludedFile = filter === 'exclude' ? '事件' : '告警与事件';
     const entity = (filter === 'only' ? 'Alerts' : excludedFile);
     const offsetLimitError = paginationQueryParameter.page * paginationQueryParameter.pageSize > EVENTS_MAX_OFFSET_LIMIT;
 

@@ -114,7 +114,7 @@ class AddNotificationForm extends React.Component {
 
     if (hasCreationPermissions) {
       formattedNotifications.unshift({
-        label: 'Create New Notification...',
+        label: '创建新通知...',
         value: 'create',
       });
     }

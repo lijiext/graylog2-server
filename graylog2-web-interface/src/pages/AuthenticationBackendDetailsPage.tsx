@@ -37,7 +37,7 @@ type Props = {
 };
 
 const _pageTitle = (authBackendTitle, returnString = false) => {
-  const pageName = 'Authentication Service Details';
+  const pageName = '认证服务详情';
   const backendTitle = StringUtils.truncateWithEllipses(authBackendTitle, 30);
 
   if (returnString) {
@@ -71,7 +71,7 @@ const AuthenticationBackendDetailsPage = ({ params: { backendId } }: Props) => {
                     </LinkContainer>
                   )}
                   documentationLink={{
-                    title: 'Authentication documentation',
+                    title: '认证文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>配置此 Graylog 集群的 Graylog 认证服务。</span>

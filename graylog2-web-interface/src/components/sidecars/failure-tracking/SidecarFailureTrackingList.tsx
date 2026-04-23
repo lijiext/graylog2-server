@@ -85,7 +85,7 @@ const SidecarTable = ({
     collector: 'Collector',
     last_seen: 'Last Seen',
     'node_details.status.status': 'Status',
-    message: 'Error Message',
+    message: '错误消息',
     verbose_message: 'Verbose Message',
   };
   const sortableColumns = ['node_name', 'last_seen'];
@@ -149,7 +149,7 @@ const SidecarFailureTrackingList = ({
 }: Props) => {
   const [collectorDetailsToShow, setCollectorDetailsToShow] = useState<{ name: string, verbose_message: string }|null>(null);
   const sidecarRows = sidecars.map((sidecar) => <SidecarFailureTrackingRows key={sidecar.node_id} sidecar={sidecar} collectors={collectors} onShowDetails={setCollectorDetailsToShow} />);
-  const showOrHideInactive = onlyActive ? 'Include' : 'Hide';
+  const showOrHideInactive = onlyActive ? '包含' : '隐藏';
 
   return (
     <div>

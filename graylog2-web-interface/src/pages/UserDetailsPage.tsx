@@ -59,7 +59,7 @@ const UserDetailsPage = ({ params }: Props) => {
                                      userIsReadOnly={loadedUser?.readOnly ?? false} />
                   )}
                   documentationLink={{
-                    title: 'Permissions documentation',
+                    title: '权限文档',
                     path: DocsHelper.PAGES.USERS_ROLES,
                   }}>
         <span>

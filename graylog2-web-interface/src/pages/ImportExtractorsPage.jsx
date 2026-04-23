@@ -25,7 +25,7 @@ import withParams from 'routing/withParams';
 import { InputsActions, InputsStore } from 'stores/inputs/InputsStore';
 
 const ImportExtractorsPage = createReactClass({
-  displayName: 'ImportExtractorsPage',
+  displayName: '导入提取器页面',
 
   propTypes: {
     params: PropTypes.object.isRequired,

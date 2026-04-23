@@ -69,7 +69,7 @@ const BulkSelectHead = <Entity extends EntityBase>({
 }: Props<Entity>) => {
   const { selectedEntities, setSelectedEntities } = useSelectedEntities();
   const { checkboxRef, checkboxStatus } = useCheckboxStatus(data, selectedEntities);
-  const title = `${checkboxStatus === 'CHECKED' ? 'Deselect' : 'Select'} all visible entities`;
+  const title = `${checkboxStatus === 'CHECKED' ? '取消选择' : '选择'} all visible entities`;
 
   const onBulkSelect = () => {
     setSelectedEntities((cur) => {

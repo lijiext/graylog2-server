@@ -56,22 +56,22 @@ type Props = {
 const INTAKE_SEGMENT = 'intake';
 const PROCESSING_SEGMENT = 'processing';
 const DESTINATIONS_SEGMENT = 'destinations';
-const INTAKE_DESCRIPTION = 'Stream Rules may be used to collect a filtered subset of messages directly from Inputs to this Stream. Note that Stream Rules are now a legacy feature, the recommended device to manage stream routing is now Pipeline Rules.';
-const PROCESSING_DESCRIPTION = 'Pipelines let you transform and process messages coming from streams. Pipelines consist of stages where rules are evaluated and applied. Messages can go through one or more stages.';
-const DESTINATION_DESCRIPTION = 'The Destinations page lets you define where messages in this stream should be routed. A stream may have multiple destinations. Note that messages routed to only Data Warehouse will not count towards License usage, unless subsequently retrieved. On a per-destination basis, filters may be applied to limit the subset of messages that destination receives.';
+const INTAKE_DESCRIPTION = '数据流规则可用于直接从输入端收集过滤后的消息子集以发送至此数据流。请注意，数据流规则现已成为遗留功能，管理数据流路由的推荐设备现在是管道规则。';
+const PROCESSING_DESCRIPTION = '处理管道允许您转换和处理来自数据流的消息。处理管道由阶段组成，在阶段中评估并应用规则。消息可以经过一个或多个阶段。';
+const DESTINATION_DESCRIPTION = '“目标”页面允许您定义此数据流中的消息应路由至何处。一个数据流可以有多个目标。请注意，仅路由到数据仓库的消息不计入许可证使用量，除非随后被检索。在单个目标基础上，可应用过滤器以限制该目标接收的消息子集。';
 
 const SEGMENTS_DETAILS = [
   {
     value: 'intake' as const,
-    label: '1: Intake',
+    label: '1: 采集',
   },
   {
     value: 'processing' as const,
-    label: '2: Processing',
+    label: '2: 处理中',
   },
   {
     value: 'destinations' as const,
-    label: '3: Destinations',
+    label: '3: 目标',
   },
 ];
 

@@ -24,7 +24,7 @@ import SectionComponent from 'components/common/Section/SectionComponent';
 
 const HTTPHeaderAuthConfigSection = () => {
   const [loadedConfig, setLoadedConfig] = useState<HTTPHeaderAuthConfig | undefined>();
-  const sectionTitle = 'Trusted Header Authentication';
+  const sectionTitle = '可信标头认证';
 
   useEffect(() => {
     HTTPHeaderAuthConfigDomain.load().then(setLoadedConfig);

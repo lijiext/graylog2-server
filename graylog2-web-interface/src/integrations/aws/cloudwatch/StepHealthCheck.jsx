@@ -99,7 +99,7 @@ const StepHealthCheck = ({ onChange, onSubmit }) => {
 
   const knownLog = logData.type === DEFAULT_KINESIS_LOG_TYPE;
   const iconName = knownLog ? 'check_circle' : 'warning';
-  const acknowledgment = knownLog ? 'Awesome!' : 'Drats!';
+  const acknowledgment = knownLog ? '太棒了！' : '糟糕！';
   const bsStyle = knownLog ? 'success' : 'warning';
   const logTypeLabel = KINESIS_LOG_TYPES.find((type) => type.value === logData.type).label;
   const logType = knownLog ? `a ${logTypeLabel}` : 'an unknown';

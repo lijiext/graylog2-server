@@ -24,7 +24,7 @@ PluginStore.register(new PluginManifest({}, {
   lookupTableAdapters: [
     {
       type: 'maxmind_geoip',
-      displayName: 'Geo IP - MaxMind\u2122 or IPinfo Databases',
+      displayName: 'Geo IP - MaxMind™ 或 IPinfo 数据库',
       formComponent: MaxmindAdapterFieldSet,
       summaryComponent: MaxmindAdapterSummary,
       documentationComponent: MaxmindAdapterDocumentation,

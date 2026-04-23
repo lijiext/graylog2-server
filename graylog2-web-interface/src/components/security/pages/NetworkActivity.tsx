@@ -27,27 +27,27 @@ const hotspots = [
   {
     positionX: '50%',
     positionY: '230px',
-    description: 'Instantly see spikes in data flows across your network.',
+    description: '立即查看网络中数据流的峰值。',
   },
   {
     positionX: '70%',
     positionY: '600px',
-    description: 'Quickly see where the data is coming from and where it is going.',
+    description: '快速查看数据的来源和去向。',
   },
   {
     positionX: '70%',
     positionY: '1030px',
-    description: 'Identify which users are sending the most amount of data across the network.',
+    description: '识别哪些用户通过网络发送了最多的数据。',
   },
   {
     positionX: '70%',
     positionY: '1450px',
-    description: 'Determine if there is an unusual pattern in DNS query results like a particular error code suddenly showing up in the Top 15 list. ',
+    description: '检查 DNS 查询结果中是否存在异常模式，例如某个特定错误代码突然出现在前 15 名列表中。',
   },
   {
     positionX: '40%',
     positionY: '1850px',
-    description: 'The top 15 platforms generating DNS requests by event source.',
+    description: '按事件源生成的 DNS 请求最多的前 15 个平台。',
   },
 ];
 

@@ -58,7 +58,7 @@ export const ChangeFieldTypeHelp = ({ contexts }: ActionHandlerArguments) => {
 
   if (hasMappingPermission(currentUser)) return null;
 
-  return ({ title: 'No permission', description: 'You don\'t have permission to do that action' });
+  return ({ title: '无权限', description: '您没有执行该操作的权限' });
 };
 
 export default ChangeFieldType;

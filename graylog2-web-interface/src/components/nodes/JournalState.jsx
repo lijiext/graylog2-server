@@ -25,7 +25,7 @@ import MetricsExtractor from 'logic/metrics/MetricsExtractor';
 import { MetricsActions, MetricsStore } from 'stores/metrics/MetricsStore';
 
 const JournalState = createReactClass({
-  displayName: 'JournalState',
+  displayName: '日志状态',
 
   propTypes: {
     nodeId: PropTypes.string.isRequired,

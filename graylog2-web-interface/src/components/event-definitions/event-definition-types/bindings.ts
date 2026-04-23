@@ -25,7 +25,7 @@ const bindings: PluginExports = {
   eventDefinitionTypes: [
     {
       type: 'aggregation-v1',
-      displayName: 'Filter & Aggregation',
+      displayName: '过滤器与聚合',
       sortOrder: 0, // Sort before conditions working on events
       description: 'Create Events from log messages by filtering them and (optionally) '
         + 'aggregating their results to match a given condition. These Events can be used as input for a Correlation Rule.',

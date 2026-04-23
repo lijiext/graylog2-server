@@ -31,7 +31,7 @@ const SidecarAdministrationPage = () => {
       <SidecarsPageNavigation />
       <PageHeader title="采集器管理"
                   documentationLink={{
-                    title: 'Sidecar documentation',
+                    title: 'Sidecar 文档',
                     path: DocsHelper.PAGES.COLLECTOR_SIDECAR,
                   }}>
         <span>
