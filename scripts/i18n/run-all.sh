@@ -3,16 +3,21 @@
 # 前置：已建 6.1.16-zh 分支、已装脚本依赖（npm install 在 scripts/i18n 下）
 #
 # 典型用法：
-#   bash run-all.sh extract       # 前后端抽取
-#   bash run-all.sh extract-dyn   # 动态模板字面量抽取
-#   bash run-all.sh translate-fe  # 前端翻译（后台挂，约 4-5 小时）
-#   bash run-all.sh translate-be  # 后端翻译（小，约 20 分钟）
-#   bash run-all.sh translate-ftl # FreeMarker 模板翻译
-#   bash run-all.sh translate-dyn # 动态模板翻译（约 5 分钟）
-#   bash run-all.sh apply         # 前后端回写
-#   bash run-all.sh apply-dyn     # 动态模板回写
-#   bash run-all.sh status        # 查看进度
-#   bash run-all.sh build         # 构建镜像
+#   bash run-all.sh extract-all       # 所有抽取轨道（前端 + 后端 + 动态 + ternary + const）
+#   bash run-all.sh translate-fe      # 前端静态翻译
+#   bash run-all.sh translate-be      # 后端 Java 翻译
+#   bash run-all.sh translate-ftl     # FreeMarker 翻译
+#   bash run-all.sh translate-dyn     # 动态模板翻译
+#   bash run-all.sh translate-ternary # ternary 分支翻译
+#   bash run-all.sh translate-const   # const/ObjectProperty 翻译
+#   bash run-all.sh apply-all         # 所有回写
+#   bash run-all.sh status            # 查看进度
+#   bash run-all.sh build             # 构建镜像
+#
+# 单独命令（按需）：
+#   extract extract-dyn extract-ternary extract-const extract-backend*
+#   apply apply-dyn apply-ternary apply-const apply-backend*
+#   (*extract-backend 与 apply-backend 来自 extract.mjs / apply-backend.mjs；由 extract/translate-be/apply 主命令触发)
 
 set -e
 CMD="${1:-status}"
@@ -67,6 +72,60 @@ case "$CMD" in
   apply-dyn)
     echo "[run-all] apply dynamic translations..."
     node apply-dynamic.mjs
+    ;;
+
+  extract-ternary)
+    echo "[run-all] ternary branch extract..."
+    node extract-ternary.mjs
+    ;;
+
+  translate-ternary)
+    echo "[run-all] translate ternary..."
+    I18N_CONCURRENCY="${I18N_CONCURRENCY:-8}" node translate.mjs \
+      --input i18n/strings-ternary.json \
+      --output i18n/translations-ternary.json
+    ;;
+
+  apply-ternary)
+    echo "[run-all] apply ternary translations..."
+    node apply-ternary.mjs
+    ;;
+
+  extract-const)
+    echo "[run-all] const/ObjectProperty extract..."
+    node extract-const.mjs
+    ;;
+
+  translate-const)
+    echo "[run-all] translate const strings..."
+    I18N_CONCURRENCY="${I18N_CONCURRENCY:-8}" node translate.mjs \
+      --input i18n/strings-const.json \
+      --output i18n/translations-const.json
+    ;;
+
+  apply-const)
+    echo "[run-all] apply const translations..."
+    node apply-const.mjs
+    ;;
+
+  extract-all)
+    echo "[run-all] full extract (all tracks)..."
+    node extract.mjs
+    node extract-dynamic.mjs
+    node extract-ternary.mjs
+    node extract-const.mjs
+    node extract-backend.mjs
+    ;;
+
+  apply-all)
+    echo "[run-all] full apply (all tracks)..."
+    node apply.mjs
+    node apply-dynamic.mjs
+    node apply-ternary.mjs
+    node apply-const.mjs
+    if [ -f "$REPO_ROOT/i18n/translations-backend.json" ]; then
+      node apply-backend.mjs
+    fi
     ;;
 
   apply)
